@@ -36,9 +36,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BDP.DPAM.WebResources", "4 
 		SlnRelativePath = "4 - Web Resources\BDP.DPAM.WebResources\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.CAPI.Contact", "3 - Workflow Activities\BDP.DPAM.WA.Contact\BDP.DPAM.CAPI.Contact.csproj", "{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - PCF", "5 - PCF", "{D83D10DF-51DC-4E11-BDBE-5F85CE5C9496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.CAPI.Contact", "3 - Custom API\BDP.DPAM.CAPI.Contact\BDP.DPAM.CAPI.Contact.csproj", "{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
