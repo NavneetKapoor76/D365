@@ -1,0 +1,11 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outDir": "Script/JS",
+        "sourceMap": true,
+        "target": "es6"
+    },
+    "include": [
+        "Script/TS/**/*", "../../1 - Shared/BDP.DPAM.Shared/Helper/CommonLibrary.cs", "../../1 - Shared/BDP.DPAM.Shared/Helper/Enum.cs"
+    ]
+}

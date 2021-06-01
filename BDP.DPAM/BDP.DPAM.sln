@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1500
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Shared", "1 - Shared", "{EB1E6AD1-FD96-4132-89F4-241879DA0E3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Plugins", "2 - Plugins", "{01EF27C2-A14F-4F59-92F0-9F0127131056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.Contact", "2 - Plugins\BDP.DPAM.Plugins.Contact\BDP.DPAM.Plugins.Contact.csproj", "{502D8AE1-BA0E-4A6B-9D77-6FF245B45AAE}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BDP.DPAM.Shared", "1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.shproj", "{50B4BF38-019B-41E7-A855-3F5960ED14F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Custom API", "3 - Custom API", "{49E653B3-2F37-4C06-9FCE-223649FA6F37}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Web Resources", "4 - Web Resources", "{20197B80-A108-428A-90CB-20ECA3535A87}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BDP.DPAM.WebResources", "4 - Web Resources\BDP.DPAM.WebResources\", "{BFB983E9-2D84-4E0E-A9AE-7ABAC83DD533}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57121"
+		Debug.AspNetCompiler.PhysicalPath = "4 - Web Resources\BDP.DPAM.WebResources\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57121\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57121"
+		Release.AspNetCompiler.PhysicalPath = "4 - Web Resources\BDP.DPAM.WebResources\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57121\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57121"
+		SlnRelativePath = "4 - Web Resources\BDP.DPAM.WebResources\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.CAPI.Contact", "3 - Workflow Activities\BDP.DPAM.WA.Contact\BDP.DPAM.CAPI.Contact.csproj", "{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - PCF", "5 - PCF", "{D83D10DF-51DC-4E11-BDBE-5F85CE5C9496}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{1fbe4876-cded-4304-8a09-bbbcdaacb5e3}*SharedItemsImports = 4
+		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{502d8ae1-ba0e-4a6b-9d77-6ff245b45aae}*SharedItemsImports = 4
+		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{50b4bf38-019b-41e7-a855-3f5960ed14f0}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{502D8AE1-BA0E-4A6B-9D77-6FF245B45AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502D8AE1-BA0E-4A6B-9D77-6FF245B45AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502D8AE1-BA0E-4A6B-9D77-6FF245B45AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502D8AE1-BA0E-4A6B-9D77-6FF245B45AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFB983E9-2D84-4E0E-A9AE-7ABAC83DD533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB983E9-2D84-4E0E-A9AE-7ABAC83DD533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFB983E9-2D84-4E0E-A9AE-7ABAC83DD533}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB983E9-2D84-4E0E-A9AE-7ABAC83DD533}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{502D8AE1-BA0E-4A6B-9D77-6FF245B45AAE} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
+		{50B4BF38-019B-41E7-A855-3F5960ED14F0} = {EB1E6AD1-FD96-4132-89F4-241879DA0E3A}
+		{BFB983E9-2D84-4E0E-A9AE-7ABAC83DD533} = {20197B80-A108-428A-90CB-20ECA3535A87}
+		{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3} = {49E653B3-2F37-4C06-9FCE-223649FA6F37}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77E50B7F-1680-4E20-BF5F-166F843FBB22}
+	EndGlobalSection
+EndGlobal
