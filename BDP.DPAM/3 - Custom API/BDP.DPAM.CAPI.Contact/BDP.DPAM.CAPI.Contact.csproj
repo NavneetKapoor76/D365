@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="checkin2.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Controller\ContactController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
