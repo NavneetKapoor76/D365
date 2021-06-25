@@ -16,6 +16,7 @@ namespace BDP.DPAM.Plugins.Contact
             catch(Exception ex)
             {
                 throw new InvalidPluginExecutionException(ex.Message);
+
                 //test
             }
 
