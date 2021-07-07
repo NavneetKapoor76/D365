@@ -14,4 +14,10 @@ namespace BDP.DPAM.Shared.Helper
 	//	Lost = 192350005,
 	//	Abandoned = 192350006
 	//}
+
+    public enum LocationStateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
 }
