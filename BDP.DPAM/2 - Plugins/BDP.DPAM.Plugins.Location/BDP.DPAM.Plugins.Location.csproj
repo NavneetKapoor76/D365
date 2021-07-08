@@ -65,6 +65,7 @@
     <Compile Include="Controller\LocationController.cs" />
     <Compile Include="PostCreateLocation.cs" />
     <Compile Include="PostUpdateLocation.cs" />
+    <Compile Include="PreCreateLocation.cs" />
     <Compile Include="PreUpdateLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

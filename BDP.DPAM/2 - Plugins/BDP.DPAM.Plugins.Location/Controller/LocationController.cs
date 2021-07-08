@@ -26,6 +26,19 @@ namespace BDP.DPAM.Plugins.Location
         }
 
         /// <summary>
+        /// Fills the field Name with concatenation of Street1, Postalcode, City, Country when a location is created
+        /// </summary>
+        internal void ConcatenateNameWhenLocationIsCreated()
+        {
+            string street1 = _target.Contains("dpam_s_street1") ? _target.GetAttributeValue<string>("dpam_s_street1") : "";
+            string postalCode = _target.Contains("dpam_s_postalcode") ? _target.GetAttributeValue<string>("dpam_s_postalcode") : "";
+            string city = _target.Contains("dpam_s_city") ? _target.GetAttributeValue<string>("dpam_s_city") : "";
+            string country = _target.Contains("dpam_lk_country") ? GetCountryName(_target.GetAttributeValue<EntityReference>("dpam_lk_country").Id) : "";
+
+            _target["dpam_s_name"] = string.Format("{0}, {1}, {2}, {3}", street1, postalCode, city, country);
+        }
+
+        /// <summary>
         /// Update the account address when a location is updated
         /// </summary>
         internal void SyncAddressAccountWhenLocationIsUpdated()
@@ -196,6 +209,23 @@ namespace BDP.DPAM.Plugins.Location
             {
                 _target["dpam_b_main"] = false;
             }
+        }
+
+        /// <summary>
+        /// Get name of Country record based on its GUID
+        /// </summary>
+        internal string GetCountryName(Guid countryID)
+        {               
+            QueryExpression query = new QueryExpression("dpam_country");
+            query.ColumnSet.AddColumns("dpam_s_name");
+            query.Criteria.AddCondition("dpam_countryid", ConditionOperator.Equal, countryID);
+
+            EntityCollection result = _service.RetrieveMultiple(query);
+
+            if (result.Entities.Count > 0)
+                return result.Entities[0].GetAttributeValue<string>("dpam_s_name");
+            else
+                return "";
         }
     }
 }
