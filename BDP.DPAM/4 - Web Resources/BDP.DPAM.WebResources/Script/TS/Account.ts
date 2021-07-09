@@ -24,18 +24,17 @@ namespace BDP.DPAM.WR.Account {
              const name = formContext.getAttribute("name").getValue();
              alert(`test ${name}`);*/
         }
-        public static onChange_dpam_lk_country() {
+        public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
 
-            this.initDefaultCountryCode();
+            this.initDefaultCountryCode(executionContext);
 
         }
 
         //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
-        static initDefaultCountryCode() {
+        static initDefaultCountryCode(executionContext: Xrm.Events.EventContext) {
 
             let _defaultPhoneCountryValue: string = "BE";
-            let _country_attribute: Xrm.Page.LookupAttribute = Xrm.Page.getAttribute<Xrm.Page.LookupAttribute>(Static.field.account.dpam_lk_country);
-
+            let _country_attribute: Xrm.Page.LookupAttribute = executionContext.getFormContext().getAttribute<Xrm.Page.LookupAttribute>(Static.field.account.dpam_lk_country);
 
             if (_country_attribute.getValue()
                 && _country_attribute.getValue()[0]
@@ -43,7 +42,7 @@ namespace BDP.DPAM.WR.Account {
 
                 let _country_lookupvalue = _country_attribute.getValue()[0];
                 Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id,
-                    `$select=${Static.field.dpam_country.dpam_s_alpha2code}`
+                    `?$select=${Static.field.dpam_country.dpam_s_alpha2code}`
 
                 ).then(function (result) {
                     _defaultPhoneCountryValue = result[Static.field.dpam_country.dpam_s_alpha2code];
@@ -51,7 +50,7 @@ namespace BDP.DPAM.WR.Account {
                     function (error) { }
 
                 ).finally(function () {
-                    Xrm.Page.getAttribute(Static.field.account.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
+                    executionContext.getFormContext().getAttribute(Static.field.account.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
                 });
             }
         }
