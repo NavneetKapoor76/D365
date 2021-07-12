@@ -25,8 +25,6 @@ var BDP;
                 Account.Static = new _Static();
                 class Form {
                     static onLoad(executionContext) {
-                        const formContext = executionContext.getFormContext();
-                        this.checkValidVATNumber(formContext);
                     }
                     static onChange_dpam_lk_country(executionContext) {
                         this.initDefaultCountryCode(executionContext);
