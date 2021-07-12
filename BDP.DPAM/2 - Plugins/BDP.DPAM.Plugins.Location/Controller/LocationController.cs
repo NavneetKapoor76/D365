@@ -82,6 +82,7 @@ namespace BDP.DPAM.Plugins.Location
             updatedAccount["address1_line3"] = null;
             updatedAccount["address1_postalcode"] = null;
             updatedAccount["address1_city"] = null;
+            updatedAccount["address1_postofficebox"] = null;
 
             _tracing.Trace("ClearAccountAddress - Update account");
             _service.Update(updatedAccount);
