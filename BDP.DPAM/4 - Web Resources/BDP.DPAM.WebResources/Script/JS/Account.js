@@ -28,8 +28,8 @@ var BDP;
                         const formContext = executionContext.getFormContext();
                         this.checkValidVATNumber(formContext);
                     }
-                    static onChange_dpam_lk_country() {
-                        this.initDefaultCountryCode();
+                    static onChange_dpam_lk_country(executionContext) {
+                        this.initDefaultCountryCode(executionContext);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -58,9 +58,9 @@ var BDP;
                         }
                     }
                     //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
-                    static initDefaultCountryCode() {
+                    static initDefaultCountryCode(executionContext) {
                         let _defaultPhoneCountryValue = "BE";
-                        let _country_attribute = Xrm.Page.getAttribute(Account.Static.field.account.dpam_lk_country);
+                        let _country_attribute = executionContext.getFormContext().getAttribute(Account.Static.field.account.dpam_lk_country);
                         if (_country_attribute.getValue()
                             && _country_attribute.getValue()[0]
                             && _country_attribute.getValue()[0].id) {
@@ -68,7 +68,7 @@ var BDP;
                             Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Account.Static.field.dpam_country.dpam_s_alpha2code}`).then(function (result) {
                                 _defaultPhoneCountryValue = result[Account.Static.field.dpam_country.dpam_s_alpha2code];
                             }, function (error) { }).finally(function () {
-                                Xrm.Page.getAttribute(Account.Static.field.account.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
+                                executionContext.getFormContext().getAttribute(Account.Static.field.account.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
                             });
                         }
                     }

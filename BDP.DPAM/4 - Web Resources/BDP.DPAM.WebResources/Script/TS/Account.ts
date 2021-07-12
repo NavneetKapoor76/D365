@@ -24,8 +24,8 @@ namespace BDP.DPAM.WR.Account {
             this.checkValidVATNumber(formContext);
         }
 
-        public static onChange_dpam_lk_country() {
-            this.initDefaultCountryCode();
+        public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
+            this.initDefaultCountryCode(executionContext);
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
@@ -62,11 +62,10 @@ namespace BDP.DPAM.WR.Account {
         }
 
         //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
-        static initDefaultCountryCode() {
+        static initDefaultCountryCode(executionContext: Xrm.Events.EventContext) {
 
             let _defaultPhoneCountryValue: string = "BE";
-            let _country_attribute: Xrm.Page.LookupAttribute = Xrm.Page.getAttribute<Xrm.Page.LookupAttribute>(Static.field.account.dpam_lk_country);
-
+            let _country_attribute: Xrm.Page.LookupAttribute = executionContext.getFormContext().getAttribute<Xrm.Page.LookupAttribute>(Static.field.account.dpam_lk_country);
 
             if (_country_attribute.getValue()
                 && _country_attribute.getValue()[0]
@@ -82,7 +81,7 @@ namespace BDP.DPAM.WR.Account {
                     function (error) { }
 
                 ).finally(function () {
-                    Xrm.Page.getAttribute(Static.field.account.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
+                    executionContext.getFormContext().getAttribute(Static.field.account.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
                 });
             }
         }
