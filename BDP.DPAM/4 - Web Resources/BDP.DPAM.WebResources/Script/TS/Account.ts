@@ -20,8 +20,7 @@ namespace BDP.DPAM.WR.Account {
 
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
-            const formContext = executionContext.getFormContext();
-            this.checkValidVATNumber(formContext);
+
         }
 
         public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
