@@ -93,6 +93,7 @@ namespace BDP.DPAM.Plugins.Location
                 { "dpam_s_street3", "address1_line3" },
                 { "dpam_s_postalcode", "address1_postalcode" },
                 { "dpam_s_city", "address1_city" },
+                { "dpam_postofficebox", "address1_postofficebox" }
             };
 
             var updatedAccount = new Entity("account");
