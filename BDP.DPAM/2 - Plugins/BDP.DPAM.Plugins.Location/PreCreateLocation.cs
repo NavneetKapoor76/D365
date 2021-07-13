@@ -12,7 +12,7 @@ namespace BDP.DPAM.Plugins.Location
             {
                 LocationController ctrl = new LocationController(serviceProvider);
                 ctrl.ValidatePipeline("dpam_location", "create", PluginStage.PreOperation);
-                ctrl.ConcatenateNameWhenLocationIsCreated();
+                ctrl.ConcatenateName();
             }
             catch (Exception ex)
             {
