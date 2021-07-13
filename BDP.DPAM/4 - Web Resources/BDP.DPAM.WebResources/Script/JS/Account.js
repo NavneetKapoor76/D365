@@ -38,12 +38,15 @@ var BDP;
                         formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).clearNotification();
                         let _VATNumber_attribute = formContext.getAttribute(Account.Static.field.account.dpam_s_vatnumber);
                         if (_VATNumber_attribute.getValue()) {
+                            //Remove spaces & non alphanumeric caracters from the VAT
+                            let _VATNumberFormatted_attribute = _VATNumber_attribute.getValue().replace(/[^0-9a-zA-Z]/g, '');
+                            formContext.getAttribute(Account.Static.field.account.dpam_s_vatnumber).setValue(_VATNumberFormatted_attribute);
                             let _country_attribute = formContext.getAttribute(Account.Static.field.account.dpam_lk_country);
                             if (_country_attribute.getValue() && _country_attribute.getValue()[0] && _country_attribute.getValue()[0].id) {
                                 let _country_lookupvalue = _country_attribute.getValue()[0];
                                 Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Account.Static.field.dpam_country.dpam_s_vatformat}`).then(function success(result) {
                                     let _VATFormatValue = result[Account.Static.field.dpam_country.dpam_s_vatformat];
-                                    if (_VATFormatValue != null && !_VATNumber_attribute.getValue().match(_VATFormatValue)) {
+                                    if (_VATFormatValue != null && !_VATNumberFormatted_attribute.match(_VATFormatValue)) {
                                         formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).setNotification("The VAT format isn't valid.", "invalidFormat");
                                     }
                                 }, function (error) {

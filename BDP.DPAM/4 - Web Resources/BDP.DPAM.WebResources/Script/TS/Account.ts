@@ -39,6 +39,10 @@ namespace BDP.DPAM.WR.Account {
             let _VATNumber_attribute: Xrm.Page.StringAttribute = formContext.getAttribute<Xrm.Page.StringAttribute>(Static.field.account.dpam_s_vatnumber);
 
             if (_VATNumber_attribute.getValue()) {
+                //Remove spaces & non alphanumeric caracters from the VAT
+                let _VATNumberFormatted_attribute = _VATNumber_attribute.getValue().replace(/[^0-9a-zA-Z]/g, '');
+                formContext.getAttribute(Static.field.account.dpam_s_vatnumber).setValue(_VATNumberFormatted_attribute);
+
                 let _country_attribute: Xrm.Page.LookupAttribute = formContext.getAttribute<Xrm.Page.LookupAttribute>(Static.field.account.dpam_lk_country);
 
                 if (_country_attribute.getValue() && _country_attribute.getValue()[0] && _country_attribute.getValue()[0].id) {
@@ -46,7 +50,7 @@ namespace BDP.DPAM.WR.Account {
                     Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Static.field.dpam_country.dpam_s_vatformat}`).then(
                         function success(result) {
                             let _VATFormatValue = result[Static.field.dpam_country.dpam_s_vatformat];
-                            if (_VATFormatValue != null && !_VATNumber_attribute.getValue().match(_VATFormatValue)) {
+                            if (_VATFormatValue != null && !_VATNumberFormatted_attribute.match(_VATFormatValue)) {
                                 formContext.getControl<Xrm.Controls.StandardControl>(Static.field.account.dpam_s_vatnumber).setNotification("The VAT format isn't valid.", "invalidFormat")
                             }
                         },
