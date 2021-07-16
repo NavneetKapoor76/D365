@@ -28,7 +28,7 @@ var BDP;
                     static onChange_dpam_lk_country(executionContext) {
                         this.initDefaultCountryCode(executionContext);
                     }
-                    //function to initialize the field dpam_s_alpha2code based on dpam_lk_country . Copied from Account.JS
+                    //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
                     static initDefaultCountryCode(executionContext) {
                         let _defaultPhoneCountryValue = "BE";
                         let _country_attribute = executionContext.getFormContext().getAttribute(Location.Static.field.dpam_location.dpam_lk_country);

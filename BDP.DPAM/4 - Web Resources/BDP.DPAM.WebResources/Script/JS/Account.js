@@ -26,9 +26,6 @@ var BDP;
                 class Form {
                     static onLoad(executionContext) {
                     }
-                    static onChange_dpam_lk_country(executionContext) {
-                        this.initDefaultCountryCode(executionContext);
-                    }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
                         this.checkValidVATNumber(formContext);
@@ -56,21 +53,6 @@ var BDP;
                             else {
                                 formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).setNotification("The country field is empty, no VAT number can be entered.", "countryEmpty");
                             }
-                        }
-                    }
-                    //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
-                    static initDefaultCountryCode(executionContext) {
-                        let _defaultPhoneCountryValue = "BE";
-                        let _country_attribute = executionContext.getFormContext().getAttribute(Account.Static.field.account.dpam_lk_country);
-                        if (_country_attribute.getValue()
-                            && _country_attribute.getValue()[0]
-                            && _country_attribute.getValue()[0].id) {
-                            let _country_lookupvalue = _country_attribute.getValue()[0];
-                            Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Account.Static.field.dpam_country.dpam_s_alpha2code}`).then(function (result) {
-                                _defaultPhoneCountryValue = result[Account.Static.field.dpam_country.dpam_s_alpha2code];
-                            }, function (error) { }).finally(function () {
-                                executionContext.getFormContext().getAttribute(Account.Static.field.account.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
-                            });
                         }
                     }
                 }

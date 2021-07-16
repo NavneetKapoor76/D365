@@ -23,10 +23,6 @@ namespace BDP.DPAM.WR.Account {
 
         }
 
-        public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
-            this.initDefaultCountryCode(executionContext);
-        }
-
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
             const formContext = executionContext.getFormContext();
             this.checkValidVATNumber(formContext);
@@ -61,31 +57,6 @@ namespace BDP.DPAM.WR.Account {
                 } else {
                     formContext.getControl<Xrm.Controls.StandardControl>(Static.field.account.dpam_s_vatnumber).setNotification("The country field is empty, no VAT number can be entered.", "countryEmpty")
                 }
-            }
-        }
-
-        //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
-        static initDefaultCountryCode(executionContext: Xrm.Events.EventContext) {
-
-            let _defaultPhoneCountryValue: string = "BE";
-            let _country_attribute: Xrm.Page.LookupAttribute = executionContext.getFormContext().getAttribute<Xrm.Page.LookupAttribute>(Static.field.account.dpam_lk_country);
-
-            if (_country_attribute.getValue()
-                && _country_attribute.getValue()[0]
-                && _country_attribute.getValue()[0].id) {
-
-                let _country_lookupvalue = _country_attribute.getValue()[0];
-                Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id,
-                    `?$select=${Static.field.dpam_country.dpam_s_alpha2code}`
-
-                ).then(function (result) {
-                    _defaultPhoneCountryValue = result[Static.field.dpam_country.dpam_s_alpha2code];
-                },
-                    function (error) { }
-
-                ).finally(function () {
-                    executionContext.getFormContext().getAttribute(Static.field.account.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
-                });
             }
         }
     }
