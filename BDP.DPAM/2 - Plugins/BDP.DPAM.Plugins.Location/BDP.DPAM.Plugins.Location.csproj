@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1FBE4876-CDED-4304-8A09-BBBCDAACB5E3}</ProjectGuid>
+    <ProjectGuid>{C5C19EE3-ED6B-47C0-B8BF-4408985FDFB0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BDP.DPAM.WA.Contact</RootNamespace>
-    <AssemblyName>BDP.DPAM.WA.Contact</AssemblyName>
+    <RootNamespace>BDP.DPAM.Plugins.Location</RootNamespace>
+    <AssemblyName>BDP.DPAM.Plugins.Location</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +35,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>BDP.DPAM.CAPI.Contact.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>BDP.DPAM.Location.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -43,10 +44,7 @@
     <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.34\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Activities" />
-    <Reference Include="System.Activities.Presentation" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
@@ -56,9 +54,6 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Workflow.Activities" />
-    <Reference Include="System.Workflow.ComponentModel" />
-    <Reference Include="System.Workflow.Runtime" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,14 +62,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="checkin2.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Controller\ContactController.cs" />
+    <Compile Include="Controller\LocationController.cs" />
+    <Compile Include="PostCreateLocation.cs" />
+    <Compile Include="PostUpdateLocation.cs" />
+    <Compile Include="PreCreateLocation.cs" />
+    <Compile Include="PreUpdateLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="BDP.DPAM.CAPI.Contact.snk" />
+    <None Include="BDP.DPAM.Location.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="..\..\1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems" Label="Shared" />
