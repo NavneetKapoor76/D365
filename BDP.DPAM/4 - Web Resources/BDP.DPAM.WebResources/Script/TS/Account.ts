@@ -5,7 +5,8 @@ namespace BDP.DPAM.WR.Account {
         readonly field = {
             dpam_country: {
                 dpam_s_alpha2code: "dpam_s_alpha2code",
-                dpam_s_vatformat: "dpam_s_vatformat"
+                dpam_s_vatformat: "dpam_s_vatformat",
+                dpam_s_vatformatexample: "dpam_s_vatformatexample"
             },
             account: {
                 dpam_lk_country: "dpam_lk_country",
@@ -43,11 +44,11 @@ namespace BDP.DPAM.WR.Account {
 
                 if (_country_attribute.getValue() && _country_attribute.getValue()[0] && _country_attribute.getValue()[0].id) {
                     let _country_lookupvalue = _country_attribute.getValue()[0];
-                    Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Static.field.dpam_country.dpam_s_vatformat}`).then(
+                    Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Static.field.dpam_country.dpam_s_vatformat}, ${Static.field.dpam_country.dpam_s_vatformatexample}`).then(
                         function success(result) {
                             let _VATFormatValue = result[Static.field.dpam_country.dpam_s_vatformat];
                             if (_VATFormatValue != null && !_VATNumberFormatted_attribute.match(_VATFormatValue)) {
-                                formContext.getControl<Xrm.Controls.StandardControl>(Static.field.account.dpam_s_vatnumber).setNotification("The VAT format isn't valid.", "invalidFormat")
+                                formContext.getControl<Xrm.Controls.StandardControl>(Static.field.account.dpam_s_vatnumber).setNotification("The format isn't valid. Please use following format: " + result[Static.field.dpam_country.dpam_s_vatformatexample], "invalidFormat")
                             }
                         },
                         function (error) {
