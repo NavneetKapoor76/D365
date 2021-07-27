@@ -12,7 +12,8 @@ var BDP;
                         this.field = {
                             dpam_country: {
                                 dpam_s_alpha2code: "dpam_s_alpha2code",
-                                dpam_s_vatformat: "dpam_s_vatformat"
+                                dpam_s_vatformat: "dpam_s_vatformat",
+                                dpam_s_vatformatexample: "dpam_s_vatformatexample"
                             },
                             account: {
                                 dpam_lk_country: "dpam_lk_country",
@@ -41,10 +42,10 @@ var BDP;
                             let _country_attribute = formContext.getAttribute(Account.Static.field.account.dpam_lk_country);
                             if (_country_attribute.getValue() && _country_attribute.getValue()[0] && _country_attribute.getValue()[0].id) {
                                 let _country_lookupvalue = _country_attribute.getValue()[0];
-                                Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Account.Static.field.dpam_country.dpam_s_vatformat}`).then(function success(result) {
+                                Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Account.Static.field.dpam_country.dpam_s_vatformat}, ${Account.Static.field.dpam_country.dpam_s_vatformatexample}`).then(function success(result) {
                                     let _VATFormatValue = result[Account.Static.field.dpam_country.dpam_s_vatformat];
                                     if (_VATFormatValue != null && !_VATNumberFormatted_attribute.match(_VATFormatValue)) {
-                                        formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).setNotification("The VAT format isn't valid.", "invalidFormat");
+                                        formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).setNotification("The format isn't valid. Please use following format: " + result[Account.Static.field.dpam_country.dpam_s_vatformatexample], "invalidFormat");
                                     }
                                 }, function (error) {
                                     console.log(error.message);
