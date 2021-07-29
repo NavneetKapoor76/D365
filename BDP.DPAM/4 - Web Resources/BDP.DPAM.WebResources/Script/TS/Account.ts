@@ -11,7 +11,9 @@ namespace BDP.DPAM.WR.Account {
             account: {
                 dpam_lk_country: "dpam_lk_country",
                 dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
-                dpam_s_vatnumber: "dpam_s_vatnumber"
+                dpam_s_vatnumber: "dpam_s_vatnumber",
+                dpam_os_counterpartytype: "dpam_os_counterpartytype",
+                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
             }
         };
 
@@ -21,7 +23,7 @@ namespace BDP.DPAM.WR.Account {
 
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
-
+            this.setBusinessSegmentationFilter(executionContext);
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
@@ -60,5 +62,37 @@ namespace BDP.DPAM.WR.Account {
                 }
             }
         }
+
+        //function to add a custom filter on the dpam_lk_businesssegmentation field
+        static filterBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
+            const formContext = executionContext.getFormContext();            
+
+            let filter = `<filter type="and" >
+                              <condition attribute="dpam_mos_counterpartytype" operator="null" >
+                              </condition>
+                            </filter>`;
+
+            let _dpam_os_counterpartytype: Xrm.Page.Attribute = formContext.getAttribute(Static.field.account.dpam_os_counterpartytype);
+            if (_dpam_os_counterpartytype != null && _dpam_os_counterpartytype.getValue() != null) {
+                filter = `<filter type="and">
+                              <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
+                                <value>${_dpam_os_counterpartytype.getValue()}</value>
+                              </condition>
+                            </filter>`;
+            }
+
+            formContext.getControl<Xrm.Page.LookupControl>(Static.field.account.dpam_lk_businesssegmentation).addCustomFilter(filter, "dpam_counterpartybusinesssegmentation");
+        }
+
+        //function to set the filter on the dpam_lk_businesssegmentation field
+        static setBusinessSegmentationFilter(executionContext: Xrm.Events.EventContext) {
+            const formContext = executionContext.getFormContext();
+            let _dpam_lk_businesssegmentation_control: Xrm.Page.LookupControl = formContext.getControl(Static.field.account.dpam_lk_businesssegmentation);
+
+            if (_dpam_lk_businesssegmentation_control != null) {
+                _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
+            }
+        }
+
     }
 }
