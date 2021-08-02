@@ -12,7 +12,7 @@ namespace BDP.DPAM.WR.Account {
                 dpam_lk_country: "dpam_lk_country",
                 dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
                 dpam_s_vatnumber: "dpam_s_vatnumber",
-                dpam_os_counterpartytype: "dpam_os_counterpartytype",
+                dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
                 dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
             }
         };
@@ -72,11 +72,18 @@ namespace BDP.DPAM.WR.Account {
                               </condition>
                             </filter>`;
 
-            let _dpam_os_counterpartytype: Xrm.Page.Attribute = formContext.getAttribute(Static.field.account.dpam_os_counterpartytype);
-            if (_dpam_os_counterpartytype != null && _dpam_os_counterpartytype.getValue() != null) {
+            let _dpam_mos_counterpartytype: Xrm.Page.Attribute = formContext.getAttribute(Static.field.account.dpam_mos_counterpartytype);
+            if (_dpam_mos_counterpartytype != null && _dpam_mos_counterpartytype.getValue() != null) {
+                let selectedOptions: Int32Array = _dpam_mos_counterpartytype.getValue();
+                let values = "";
+
+                selectedOptions.forEach(function (item) {
+                    values += `<value>${item}</value>`;
+                });
+                
                 filter = `<filter type="and">
                               <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
-                                <value>${_dpam_os_counterpartytype.getValue()}</value>
+                                ${values}
                               </condition>
                             </filter>`;
             }
