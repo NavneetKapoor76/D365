@@ -19,7 +19,7 @@ var BDP;
                                 dpam_lk_country: "dpam_lk_country",
                                 dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
                                 dpam_s_vatnumber: "dpam_s_vatnumber",
-                                dpam_os_counterpartytype: "dpam_os_counterpartytype",
+                                dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
                                 dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
                             }
                         };
@@ -66,11 +66,16 @@ var BDP;
                               <condition attribute="dpam_mos_counterpartytype" operator="null" >
                               </condition>
                             </filter>`;
-                        let _dpam_os_counterpartytype = formContext.getAttribute(Account.Static.field.account.dpam_os_counterpartytype);
-                        if (_dpam_os_counterpartytype != null && _dpam_os_counterpartytype.getValue() != null) {
+                        let _dpam_mos_counterpartytype = formContext.getAttribute(Account.Static.field.account.dpam_mos_counterpartytype);
+                        if (_dpam_mos_counterpartytype != null && _dpam_mos_counterpartytype.getValue() != null) {
+                            let selectedOptions = _dpam_mos_counterpartytype.getValue();
+                            let values = "";
+                            selectedOptions.forEach(function (item) {
+                                values += `<value>${item}</value>`;
+                            });
                             filter = `<filter type="and">
                               <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
-                                <value>${_dpam_os_counterpartytype.getValue()}</value>
+                                ${values}
                               </condition>
                             </filter>`;
                         }
