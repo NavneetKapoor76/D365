@@ -251,5 +251,32 @@ namespace BDP.DPAM.Plugins.Location
             else
                 return "";
         }
+
+        /// <summary>
+        /// Remove the main location linked to Contact
+        /// </summary>
+        internal void RemoveInactiveLocationLinkedToContact()
+        {
+            if (!_target.Contains("statecode") || _target.GetAttributeValue<OptionSetValue>("statecode")?.Value != (int)LocationStateCode.Inactive) return;
+
+            var mainLocationCondition = new ConditionExpression("dpam_lk_mainlocation", ConditionOperator.Equal, _target.Id);
+
+            var query = new QueryExpression("contact")
+            {
+                ColumnSet = new ColumnSet("contactid")
+            };
+            query.Criteria.AddCondition(mainLocationCondition);
+
+            var contactCollection = _service.RetrieveMultiple(query);
+
+            if (contactCollection == null || contactCollection.Entities.Count < 1) return;
+
+            foreach (var contact in contactCollection.Entities)
+            {
+                contact["dpam_lk_mainlocation"] = null;
+                _tracing.Trace($"RemoveInactiveLocationLinkedToContact function - Update contact ({contact.Id})");
+                _service.Update(contact);
+            }
+        }
     }
 }

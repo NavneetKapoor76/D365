@@ -14,6 +14,7 @@ namespace BDP.DPAM.Plugins.Location
                 ctrl.ValidatePipeline("dpam_location", "update", PluginStage.PreOperation);
                 ctrl.SetIsMainLocationWhenLocationBecomesInactive();
                 ctrl.ConcatenateName();
+                ctrl.RemoveInactiveLocationLinkedToContact();
             }
             catch (Exception ex)
             {
