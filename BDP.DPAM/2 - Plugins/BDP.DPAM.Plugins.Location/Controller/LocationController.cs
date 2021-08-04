@@ -105,6 +105,7 @@ namespace BDP.DPAM.Plugins.Location
             updatedAccount["address1_postalcode"] = null;
             updatedAccount["address1_city"] = null;
             updatedAccount["address1_postofficebox"] = null;
+            updatedAccount["dpam_s_address1"] = null;
 
             _tracing.Trace("ClearAccountAddress - Update account");
             _service.Update(updatedAccount);
@@ -129,7 +130,8 @@ namespace BDP.DPAM.Plugins.Location
                 { "dpam_s_street3", "address1_line3" },
                 { "dpam_s_postalcode", "address1_postalcode" },
                 { "dpam_s_city", "address1_city" },
-                { "dpam_postofficebox", "address1_postofficebox" }
+                { "dpam_postofficebox", "address1_postofficebox" },
+                { "dpam_s_name", "dpam_s_address1" }
             };
 
             var updatedAccount = new Entity("account");
