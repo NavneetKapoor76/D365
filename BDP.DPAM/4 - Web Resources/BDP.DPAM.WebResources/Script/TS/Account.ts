@@ -11,7 +11,12 @@ namespace BDP.DPAM.WR.Account {
             account: {
                 dpam_lk_country: "dpam_lk_country",
                 dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
-                dpam_s_vatnumber: "dpam_s_vatnumber"
+                dpam_s_vatnumber: "dpam_s_vatnumber",
+                dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
+                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
+            },
+            dpam_settings: {
+                dpam_s_value: "dpam_s_value"
             }
         };
 
@@ -21,7 +26,7 @@ namespace BDP.DPAM.WR.Account {
 
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
-
+            this.setBusinessSegmentationFilter(executionContext);
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
@@ -59,6 +64,58 @@ namespace BDP.DPAM.WR.Account {
                     formContext.getControl<Xrm.Controls.StandardControl>(Static.field.account.dpam_s_vatnumber).setNotification("The country field is empty, no VAT number can be entered.", "countryEmpty")
                 }
             }
+        }
+
+        //function to add a custom filter on the dpam_lk_businesssegmentation field
+        static filterBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
+            const formContext = executionContext.getFormContext();
+
+            let filter = `<filter type="and" >
+                              <condition attribute="dpam_mos_counterpartytype" operator="null" >
+                              </condition>
+                            </filter>`;
+
+            let _dpam_mos_counterpartytype: Xrm.Page.Attribute = formContext.getAttribute(Static.field.account.dpam_mos_counterpartytype);
+            if (_dpam_mos_counterpartytype != null && _dpam_mos_counterpartytype.getValue() != null) {
+                let selectedOptions: Int32Array = _dpam_mos_counterpartytype.getValue();
+                let values = "";
+
+                selectedOptions.forEach(function (item) {
+                    values += `<value>${item}</value>`;
+                });
+
+                filter = `<filter type="and">
+                              <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
+                                ${values}
+                              </condition>
+                            </filter>`;
+            }
+
+            formContext.getControl<Xrm.Page.LookupControl>(Static.field.account.dpam_lk_businesssegmentation).addCustomFilter(filter, "dpam_counterpartybusinesssegmentation");
+        }
+
+        //function to set the filter on the dpam_lk_businesssegmentation field
+        static setBusinessSegmentationFilter(executionContext: Xrm.Events.EventContext) {
+            const formContext = executionContext.getFormContext();
+            let _dpam_lk_businesssegmentation_control: Xrm.Page.LookupControl = formContext.getControl(Static.field.account.dpam_lk_businesssegmentation);
+
+            if (_dpam_lk_businesssegmentation_control != null) {
+                _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
+            }
+        }
+
+        // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
+        static dialogCanvasApp() {
+            let dialogOptions = { height: 815, width: 1350 };
+
+            Xrm.WebApi.retrieveRecord("dpam_settings", "a53657d3-25f4-eb11-94ef-000d3a237027", `?$select=${Static.field.dpam_settings.dpam_s_value}`).then(
+                function success(result) {
+                    Xrm.Navigation.openUrl(result[Static.field.dpam_settings.dpam_s_value], dialogOptions);
+                },
+                function (error) {
+                    console.log(error.message);
+                }
+            );
         }
     }
 }
