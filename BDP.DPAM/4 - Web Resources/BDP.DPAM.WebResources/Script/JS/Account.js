@@ -21,6 +21,9 @@ var BDP;
                                 dpam_s_vatnumber: "dpam_s_vatnumber",
                                 dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
                                 dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
+                            },
+                            dpam_settings: {
+                                dpam_s_value: "dpam_s_value"
                             }
                         };
                     }
@@ -88,6 +91,15 @@ var BDP;
                         if (_dpam_lk_businesssegmentation_control != null) {
                             _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
                         }
+                    }
+                    // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
+                    static dialogCanvasApp() {
+                        let dialogOptions = { height: 815, width: 1350 };
+                        Xrm.WebApi.retrieveRecord("dpam_settings", "a53657d3-25f4-eb11-94ef-000d3a237027", `?$select=${Account.Static.field.dpam_settings.dpam_s_value}`).then(function success(result) {
+                            Xrm.Navigation.openUrl(result[Account.Static.field.dpam_settings.dpam_s_value], dialogOptions);
+                        }, function (error) {
+                            console.log(error.message);
+                        });
                     }
                 }
                 Account.Form = Form;
