@@ -12,11 +12,11 @@ namespace BDP.DPAM.Plugins.Contact
             {
                 ContactController ctrl = new ContactController(serviceProvider);
                 ctrl.ValidatePipeline("contact", "create", PluginStage.PreOperation);
+                ctrl.AddAddressFieldInTargetBasedOnMainLocation("create");
             }
             catch(Exception ex)
             {
                 throw new InvalidPluginExecutionException(ex.Message);
-                //test
             }
 
 		}

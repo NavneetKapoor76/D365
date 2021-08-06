@@ -12,12 +12,18 @@ var BDP;
                         this.field = {
                             dpam_country: {
                                 dpam_s_alpha2code: "dpam_s_alpha2code",
-                                dpam_s_vatformat: "dpam_s_vatformat"
+                                dpam_s_vatformat: "dpam_s_vatformat",
+                                dpam_s_vatformatexample: "dpam_s_vatformatexample"
                             },
                             account: {
                                 dpam_lk_country: "dpam_lk_country",
                                 dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
-                                dpam_s_vatnumber: "dpam_s_vatnumber"
+                                dpam_s_vatnumber: "dpam_s_vatnumber",
+                                dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
+                                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
+                            },
+                            dpam_settings: {
+                                dpam_s_value: "dpam_s_value"
                             }
                         };
                     }
@@ -25,6 +31,7 @@ var BDP;
                 Account.Static = new _Static();
                 class Form {
                     static onLoad(executionContext) {
+                        this.setBusinessSegmentationFilter(executionContext);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -41,10 +48,10 @@ var BDP;
                             let _country_attribute = formContext.getAttribute(Account.Static.field.account.dpam_lk_country);
                             if (_country_attribute.getValue() && _country_attribute.getValue()[0] && _country_attribute.getValue()[0].id) {
                                 let _country_lookupvalue = _country_attribute.getValue()[0];
-                                Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Account.Static.field.dpam_country.dpam_s_vatformat}`).then(function success(result) {
+                                Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Account.Static.field.dpam_country.dpam_s_vatformat}, ${Account.Static.field.dpam_country.dpam_s_vatformatexample}`).then(function success(result) {
                                     let _VATFormatValue = result[Account.Static.field.dpam_country.dpam_s_vatformat];
                                     if (_VATFormatValue != null && !_VATNumberFormatted_attribute.match(_VATFormatValue)) {
-                                        formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).setNotification("The VAT format isn't valid.", "invalidFormat");
+                                        formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).setNotification("The format isn't valid. Please use following format: " + result[Account.Static.field.dpam_country.dpam_s_vatformatexample], "invalidFormat");
                                     }
                                 }, function (error) {
                                     console.log(error.message);
@@ -54,6 +61,45 @@ var BDP;
                                 formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).setNotification("The country field is empty, no VAT number can be entered.", "countryEmpty");
                             }
                         }
+                    }
+                    //function to add a custom filter on the dpam_lk_businesssegmentation field
+                    static filterBusinessSegmentation(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let filter = `<filter type="and" >
+                              <condition attribute="dpam_mos_counterpartytype" operator="null" >
+                              </condition>
+                            </filter>`;
+                        let _dpam_mos_counterpartytype = formContext.getAttribute(Account.Static.field.account.dpam_mos_counterpartytype);
+                        if (_dpam_mos_counterpartytype != null && _dpam_mos_counterpartytype.getValue() != null) {
+                            let selectedOptions = _dpam_mos_counterpartytype.getValue();
+                            let values = "";
+                            selectedOptions.forEach(function (item) {
+                                values += `<value>${item}</value>`;
+                            });
+                            filter = `<filter type="and">
+                              <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
+                                ${values}
+                              </condition>
+                            </filter>`;
+                        }
+                        formContext.getControl(Account.Static.field.account.dpam_lk_businesssegmentation).addCustomFilter(filter, "dpam_counterpartybusinesssegmentation");
+                    }
+                    //function to set the filter on the dpam_lk_businesssegmentation field
+                    static setBusinessSegmentationFilter(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let _dpam_lk_businesssegmentation_control = formContext.getControl(Account.Static.field.account.dpam_lk_businesssegmentation);
+                        if (_dpam_lk_businesssegmentation_control != null) {
+                            _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
+                        }
+                    }
+                    // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
+                    static dialogCanvasApp() {
+                        let dialogOptions = { height: 815, width: 1350 };
+                        Xrm.WebApi.retrieveRecord("dpam_settings", "a53657d3-25f4-eb11-94ef-000d3a237027", `?$select=${Account.Static.field.dpam_settings.dpam_s_value}`).then(function success(result) {
+                            Xrm.Navigation.openUrl(result[Account.Static.field.dpam_settings.dpam_s_value], dialogOptions);
+                        }, function (error) {
+                            console.log(error.message);
+                        });
                     }
                 }
                 Account.Form = Form;

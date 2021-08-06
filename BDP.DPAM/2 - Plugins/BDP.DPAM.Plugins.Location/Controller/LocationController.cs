@@ -105,6 +105,7 @@ namespace BDP.DPAM.Plugins.Location
             updatedAccount["address1_postalcode"] = null;
             updatedAccount["address1_city"] = null;
             updatedAccount["address1_postofficebox"] = null;
+            updatedAccount["dpam_s_address1"] = null;
 
             _tracing.Trace("ClearAccountAddress - Update account");
             _service.Update(updatedAccount);
@@ -129,7 +130,8 @@ namespace BDP.DPAM.Plugins.Location
                 { "dpam_s_street3", "address1_line3" },
                 { "dpam_s_postalcode", "address1_postalcode" },
                 { "dpam_s_city", "address1_city" },
-                { "dpam_postofficebox", "address1_postofficebox" }
+                { "dpam_postofficebox", "address1_postofficebox" },
+                { "dpam_s_name", "dpam_s_address1" }
             };
 
             var updatedAccount = new Entity("account");
@@ -250,6 +252,33 @@ namespace BDP.DPAM.Plugins.Location
                 return result.Entities[0].GetAttributeValue<string>("dpam_s_name");
             else
                 return "";
+        }
+
+        /// <summary>
+        /// Remove the main location linked to Contact
+        /// </summary>
+        internal void RemoveInactiveLocationLinkedToContact()
+        {
+            if (!_target.Contains("statecode") || _target.GetAttributeValue<OptionSetValue>("statecode")?.Value != (int)LocationStateCode.Inactive) return;
+
+            var mainLocationCondition = new ConditionExpression("dpam_lk_mainlocation", ConditionOperator.Equal, _target.Id);
+
+            var query = new QueryExpression("contact")
+            {
+                ColumnSet = new ColumnSet("contactid")
+            };
+            query.Criteria.AddCondition(mainLocationCondition);
+
+            var contactCollection = _service.RetrieveMultiple(query);
+
+            if (contactCollection == null || contactCollection.Entities.Count < 1) return;
+
+            foreach (var contact in contactCollection.Entities)
+            {
+                contact["dpam_lk_mainlocation"] = null;
+                _tracing.Trace($"RemoveInactiveLocationLinkedToContact function - Update contact ({contact.Id})");
+                _service.Update(contact);
+            }
         }
     }
 }
