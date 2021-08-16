@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BDP.DPAM.Shared.Extension_Methods;
+using BDP.DPAM.Shared.Helper;
 using BDP.DPAM.Shared.Manager_Base;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -72,13 +73,19 @@ namespace BDP.DPAM.Plugins.Contact
 
             Entity mergedContact = this._target.MergeEntity(this._preImage);
 
+            EntityReference contactGreetingRef = null;
             OptionSetValue contactLanguage = mergedContact.GetAttributeValue<OptionSetValue>("dpam_os_language");
             OptionSetValue contactGender = mergedContact.GetAttributeValue<OptionSetValue>("gendercode");
 
-            EntityReference contactGreetingRef = null;
-
             if (contactLanguage != null && contactGender != null)
-                contactGreetingRef = this.GetGreetingRefBasedOnLanguageAndGender(contactLanguage.Value, contactGender.Value);
+            {
+                int relatedGenderCode = 
+                    contactGender.Value == Convert.ToInt32(Contact_Gender.Female) ? Convert.ToInt32(Greeting_Gender.Female) : 
+                    contactGender.Value == Convert.ToInt32(Contact_Gender.Male) ? Convert.ToInt32(Greeting_Gender.Male) : 
+                    Convert.ToInt32(Greeting_Gender.NonBinary);
+
+                contactGreetingRef = this.GetGreetingRefBasedOnLanguageAndGender(contactLanguage.Value, relatedGenderCode);
+            }
 
             this._target["dpam_lk_greeting"] = contactGreetingRef;
         }

@@ -34,9 +34,9 @@ namespace BDP.DPAM.Shared.Helper
 
     public enum Contact_Gender
     {
-        Male = 100000000,
-        Female = 100000001,
-        NonBinary = 100000002
+        Male = 1,
+        Female = 2,
+        NonBinary = 100000000
     }
 
     public enum Greeting_Gender
