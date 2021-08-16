@@ -13,6 +13,9 @@ namespace BDP.DPAM.Plugins.Contact
                 ContactController ctrl = new ContactController(serviceProvider);
                 ctrl.ValidatePipeline("contact", "create", PluginStage.PreOperation);
                 ctrl.AddAddressFieldInTargetBasedOnMainLocation("create");
+
+                // SHER-201
+                ctrl.SetContactGreetingBasedOnLanguageAndGender();
             }
             catch(Exception ex)
             {
