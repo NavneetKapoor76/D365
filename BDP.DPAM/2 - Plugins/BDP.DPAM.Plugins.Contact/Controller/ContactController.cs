@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using BDP.DPAM.Shared.Extension_Methods;
+using BDP.DPAM.Shared.Helper;
 using BDP.DPAM.Shared.Manager_Base;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -61,6 +63,68 @@ namespace BDP.DPAM.Plugins.Contact
             }
         }
 
+        /// <summary>
+        /// Set the field dpam_lk_greeting based on the Language and the Gender of the Contact
+        /// </summary>
+        internal void SetContactGreetingBasedOnLanguageAndGender()
+        {
+            if (!this._target.Contains("dpam_os_language") && !this._target.Contains("gendercode"))
+                return;
 
+            this._tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - Start");
+
+            Entity mergedContact = this._target.MergeEntity(this._preImage);
+
+            OptionSetValue contactLanguage = mergedContact.GetAttributeValue<OptionSetValue>("dpam_os_language");
+            OptionSetValue contactGender = mergedContact.GetAttributeValue<OptionSetValue>("gendercode");
+
+            EntityReference contactGreetingRef = null;
+
+            if (contactLanguage != null && contactGender != null)
+            {
+                int relatedGenderCode = 
+                    contactGender.Value == Convert.ToInt32(Contact_Gender.Female) ? Convert.ToInt32(Greeting_Gender.Female) : 
+                    contactGender.Value == Convert.ToInt32(Contact_Gender.Male) ? Convert.ToInt32(Greeting_Gender.Male) : 
+                    Convert.ToInt32(Greeting_Gender.NonBinary);
+
+                contactGreetingRef = this.GetGreetingRefBasedOnLanguageAndGender(contactLanguage.Value, relatedGenderCode);
+            }
+
+            this._target["dpam_lk_greeting"] = contactGreetingRef;
+
+            this._tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - End");
+        }
+
+        /// <summary>
+        /// Retrieve a Reference to a Greeting based on a Language and a Gender
+        /// </summary>
+        /// <param name="languageValue">Language to use</param>
+        /// <param name="genderValue">Gender to use</param>
+        /// <returns>Reference to a Greeting</returns>
+        private EntityReference GetGreetingRefBasedOnLanguageAndGender(int languageValue, int genderValue)
+        {
+            this._tracing.Trace("GetGreetingRefBasedOnLanguageAndGender - Start");
+
+            EntityReference retVal = null;
+
+            ConditionExpression conditionGender = new ConditionExpression("dpam_os_gender", ConditionOperator.Equal, genderValue);
+            ConditionExpression conditionLanguage = new ConditionExpression("dpam_os_language", ConditionOperator.Equal, languageValue);
+
+            QueryExpression query = new QueryExpression("dpam_greeting");
+            query.Criteria.AddCondition(conditionGender);
+            query.Criteria.AddCondition(conditionLanguage);
+
+            EntityCollection result = this._service.RetrieveMultiple(query);
+
+            if(result.Entities.Count > 1)
+                throw new Exception($"Multiple Greetings found for Language {languageValue} and Gender {genderValue}");
+
+            if (result.Entities.Count > 0)
+                retVal = result.Entities[0].ToEntityReference();
+
+            this._tracing.Trace("GetGreetingRefBasedOnLanguageAndGender - End");
+
+            return retVal;
+        }
     }
 }

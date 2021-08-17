@@ -1,4 +1,5 @@
-﻿using BDP.DPAM.Shared.Manager_Base;
+﻿using BDP.DPAM.Shared.Helper;
+using BDP.DPAM.Shared.Manager_Base;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
 using System;
@@ -201,5 +202,293 @@ namespace BDP.DPAM.Plugins.Contact.Test
             Assert.False(contactTarget.Contains("dpam_s_city"));
             Assert.False(contactTarget.Contains("dpam_postofficebox"));
         }
+
+        #region Set Contact Greeting based on Language and Gender
+
+        [Fact]
+        public void SetContactGreeting_CreateContactWithLanguageAndGenderWith1MatchingGreeting_ContactShouldHaveGreeting()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+            IOrganizationService fakedService = fakedContext.GetOrganizationService();
+
+            List<Entity> greetings = new List<Entity>();
+
+            // Matching Greeting
+            Entity matchingGreeting = new Entity("dpam_greeting");
+            matchingGreeting.Id = Guid.NewGuid();
+            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
+            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            matchingGreeting["dpam_s_name"] = "Cher Monsieur";
+            greetings.Add(matchingGreeting);
+
+            // Not Matching Greeting
+            Entity notMatchingGreeting = new Entity("dpam_greeting");
+            notMatchingGreeting.Id = Guid.NewGuid();
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Female));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_s_name"] = "Chère Madame";
+            greetings.Add(notMatchingGreeting);
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["gendercode"] = new OptionSetValue(Convert.ToInt32(Contact_Gender.Male));
+            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Contact_Language.French));
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(greetings);
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreCreateContact>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.Contains("dpam_lk_greeting") && target.GetAttributeValue<EntityReference>("dpam_lk_greeting").Id == matchingGreeting.Id);
+
+            #endregion
+        }
+
+        [Fact]
+        public void SetContactGreeting_CreateContactWithLanguageAndGenderWithNoMatchingGreeting_ContactShouldNotHaveGreeting()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+            IOrganizationService fakedService = fakedContext.GetOrganizationService();
+
+            List<Entity> greetings = new List<Entity>();
+
+            // Not Matching Greeting
+            Entity notMatchingGreeting = new Entity("dpam_greeting");
+            notMatchingGreeting.Id = Guid.NewGuid();
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Female));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_s_name"] = "Cher Madame";
+            greetings.Add(notMatchingGreeting);
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["gendercode"] = new OptionSetValue(Convert.ToInt32(Contact_Gender.Male));
+            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Contact_Language.French));
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(greetings);
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreCreateContact>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.GetAttributeValue<EntityReference>("dpam_lk_greeting") == null);
+
+            #endregion
+        }
+
+        [Fact]
+        public void SetContactGreeting_CreateContactWithoutLanguageWithGenderWith1MatchingGreeting_ContactShouldNotHaveGreeting()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+            IOrganizationService fakedService = fakedContext.GetOrganizationService();
+
+            List<Entity> greetings = new List<Entity>();
+
+            // Matching Greeting
+            Entity matchingGreeting = new Entity("dpam_greeting");
+            matchingGreeting.Id = Guid.NewGuid();
+            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
+            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            matchingGreeting["dpam_s_name"] = "Cher Monsieur";
+            greetings.Add(matchingGreeting);
+
+            // Not Matching Greeting
+            Entity notMatchingGreeting = new Entity("dpam_greeting");
+            notMatchingGreeting.Id = Guid.NewGuid();
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Female));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_s_name"] = "Chère Madame";
+            greetings.Add(notMatchingGreeting);
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["gendercode"] = new OptionSetValue(Convert.ToInt32(Contact_Gender.Male));
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(greetings);
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreCreateContact>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.GetAttributeValue<EntityReference>("dpam_lk_greeting") == null);
+
+            #endregion
+        }
+
+        [Fact]
+        public void SetContactGreeting_CreateContactWithLanguageWithoutGenderWith1MatchingGreeting_ContactShouldNotHaveGreeting()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+            IOrganizationService fakedService = fakedContext.GetOrganizationService();
+
+            List<Entity> greetings = new List<Entity>();
+
+            // Matching Greeting
+            Entity matchingGreeting = new Entity("dpam_greeting");
+            matchingGreeting.Id = Guid.NewGuid();
+            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
+            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            matchingGreeting["dpam_s_name"] = "Cher Monsieur";
+            greetings.Add(matchingGreeting);
+
+            // Not Matching Greeting
+            Entity notMatchingGreeting = new Entity("dpam_greeting");
+            notMatchingGreeting.Id = Guid.NewGuid();
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Female));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_s_name"] = "Chère Madame";
+            greetings.Add(notMatchingGreeting);
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Contact_Language.French));
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(greetings);
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreCreateContact>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.GetAttributeValue<EntityReference>("dpam_lk_greeting") == null);
+
+            #endregion
+        }
+
+        [Fact]
+        public void SetContactGreeting_CreateContactWithLanguageAndGenderWithMultipleMatchingGreeting_ExceptionShouldBeThrow()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+            IOrganizationService fakedService = fakedContext.GetOrganizationService();
+
+            List<Entity> greetings = new List<Entity>();
+
+            // Matching Greeting
+            Entity matchingGreeting = new Entity("dpam_greeting");
+            matchingGreeting.Id = Guid.NewGuid();
+            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
+            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            matchingGreeting["dpam_s_name"] = "Cher Monsieur";
+            greetings.Add(matchingGreeting);
+
+            // Matching Greeting
+            Entity notMatchingGreeting = new Entity("dpam_greeting");
+            notMatchingGreeting.Id = Guid.NewGuid();
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_s_name"] = "Cher Monsieur";
+            greetings.Add(notMatchingGreeting);
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["gendercode"] = new OptionSetValue(Convert.ToInt32(Contact_Gender.Male));
+            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Contact_Language.French));
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(greetings);
+
+            #endregion
+
+            #region Act / Assert
+
+            Assert.Throws<InvalidPluginExecutionException>(() => fakedContext.ExecutePluginWith<PreCreateContact>(fakedPluginExecutionContext));
+
+            #endregion
+        }
+
+        #endregion
     }
 }
