@@ -107,17 +107,13 @@ namespace BDP.DPAM.Plugins.Contact
 
             EntityReference retVal = null;
 
-            string fetch = $@"<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>
-                              <entity name='dpam_greeting'>
-                                <attribute name='dpam_greetingid' />
-                                <filter type='and'>
-                                  <condition attribute='dpam_os_gender' operator='eq' value='{genderValue}' />
-                                  <condition attribute='dpam_os_language' operator='eq' value='{languageValue}' />
-                                </filter>
-                              </entity>
-                            </fetch>";
+            ConditionExpression conditionGender = new ConditionExpression("dpam_os_gender", ConditionOperator.Equal, genderValue);
+            ConditionExpression conditionLanguage = new ConditionExpression("dpam_os_language", ConditionOperator.Equal, languageValue);
 
-            FetchExpression query = new FetchExpression(fetch);
+            QueryExpression query = new QueryExpression("dpam_greeting");
+            query.Criteria.AddCondition(conditionGender);
+            query.Criteria.AddCondition(conditionLanguage);
+
             EntityCollection result = this._service.RetrieveMultiple(query);
 
             if(result.Entities.Count > 1)
