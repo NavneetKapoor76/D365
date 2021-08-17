@@ -71,11 +71,14 @@ namespace BDP.DPAM.Plugins.Contact
             if (!this._target.Contains("dpam_os_language") && !this._target.Contains("gendercode"))
                 return;
 
+            this._tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - Start");
+
             Entity mergedContact = this._target.MergeEntity(this._preImage);
 
-            EntityReference contactGreetingRef = null;
             OptionSetValue contactLanguage = mergedContact.GetAttributeValue<OptionSetValue>("dpam_os_language");
             OptionSetValue contactGender = mergedContact.GetAttributeValue<OptionSetValue>("gendercode");
+
+            EntityReference contactGreetingRef = null;
 
             if (contactLanguage != null && contactGender != null)
             {
@@ -88,6 +91,8 @@ namespace BDP.DPAM.Plugins.Contact
             }
 
             this._target["dpam_lk_greeting"] = contactGreetingRef;
+
+            this._tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - End");
         }
 
         /// <summary>
@@ -98,6 +103,8 @@ namespace BDP.DPAM.Plugins.Contact
         /// <returns>Reference to a Greeting</returns>
         private EntityReference GetGreetingRefBasedOnLanguageAndGender(int languageValue, int genderValue)
         {
+            this._tracing.Trace("GetGreetingRefBasedOnLanguageAndGender - Start");
+
             EntityReference retVal = null;
 
             string fetch = $@"<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>
@@ -118,6 +125,8 @@ namespace BDP.DPAM.Plugins.Contact
 
             if (result.Entities.Count > 0)
                 retVal = result.Entities[0].ToEntityReference();
+
+            this._tracing.Trace("GetGreetingRefBasedOnLanguageAndGender - End");
 
             return retVal;
         }
