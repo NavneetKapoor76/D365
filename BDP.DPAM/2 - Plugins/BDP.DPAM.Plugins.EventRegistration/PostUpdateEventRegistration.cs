@@ -15,6 +15,9 @@ namespace BDP.DPAM.Plugins.EventRegistration
 
                 //SHER-258
                 ctrl.DeactivateRegistrationResponses();
+
+                //SHER-260
+                ctrl.CancelRelatedSessionRegistrations();
             }
             catch (Exception ex)
             {

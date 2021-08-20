@@ -50,5 +50,56 @@ namespace BDP.DPAM.Plugins.EventRegistration
 
             _tracing.Trace("DeactivateRegistrationResponses - End");
         }
+
+        /// <summary>
+        /// Update the related Sessions Registrations as Canceled on Event Registration Deactivation 
+        /// </summary>
+        internal void CancelRelatedSessionRegistrations()
+        {
+            if (!this._target.Contains("statecode") || 
+                this._target.GetAttributeValue<OptionSetValue>("statecode").Value != Convert.ToInt32(EventRegistration_StateCode.Inactive))
+                return;
+
+            this._tracing.Trace("CancelRelatedSessionRegistrationOnRegistrationCancelation - Start");
+
+            EntityCollection relatedActiveSessionRegistrations = this.GetRelatedActiveSessionRegistrations(this._target.Id);
+
+            foreach (Entity sessionRegistration in relatedActiveSessionRegistrations.Entities)
+            {
+                Entity sessionRegistrationToUpdate = new Entity(sessionRegistration.LogicalName);
+                sessionRegistrationToUpdate.Id = sessionRegistration.Id;
+                sessionRegistrationToUpdate["statecode"] = new OptionSetValue(Convert.ToInt32(SessionRegistration_StateCode.Inactive));
+                sessionRegistrationToUpdate["statuscode"] = new OptionSetValue(Convert.ToInt32(SessionRegistration_StatusCode.Canceled));
+
+                this._service.Update(sessionRegistrationToUpdate);
+            }
+
+            this._tracing.Trace("CancelRelatedSessionRegistrationOnRegistrationCancelation - End");
+        }
+
+        /// <summary>
+        /// Retrieve the related Active Session Registration
+        /// </summary>
+        /// <param name="eventRegistrationId"></param>
+        /// <returns>EntityCollection of Session Registration</returns>
+        private EntityCollection GetRelatedActiveSessionRegistrations(Guid eventRegistrationId)
+        {
+            this._tracing.Trace("GetRelatedActiveSessionRegistrations - Start");
+
+            EntityCollection retVal = null;
+
+            ConditionExpression conditionEventRegistrationId = new ConditionExpression("msevtmgt_registrationid", ConditionOperator.Equal, eventRegistrationId);
+            ConditionExpression conditionStateCode = new ConditionExpression("statecode", ConditionOperator.Equal, Convert.ToInt32(SessionRegistration_StateCode.Active));
+
+            QueryExpression query = new QueryExpression("msevtmgt_sessionregistration");
+            query.Criteria.AddCondition(conditionEventRegistrationId);
+            query.Criteria.AddCondition(conditionStateCode);
+
+            retVal = this._service.RetrieveMultiple(query);
+
+            this._tracing.Trace("GetRelatedActiveSessionRegistrations - End");
+
+            return retVal;
+        }
     }
 }
