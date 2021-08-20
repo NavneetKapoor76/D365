@@ -20,9 +20,13 @@ namespace BDP.DPAM.Plugins.Location
         {
             if (!_target.Contains("dpam_b_main") || _target.GetAttributeValue<bool>("dpam_b_main") != true) return;
 
+            _tracing.Trace("SyncAddressAccountWhenLocationIsCreated - Start");
+
             var account = _target.GetAttributeValue<EntityReference>("dpam_lk_account");
             UpdateAccountAddress(account, "Create", false);
             SetOtherMainLocationsToNo(account);
+
+            _tracing.Trace("SyncAddressAccountWhenLocationIsCreated - End");
         }
         
         /// <summary>
@@ -67,6 +71,8 @@ namespace BDP.DPAM.Plugins.Location
         {
             if (_context.Depth > 1) return;
 
+            _tracing.Trace("SyncAddressAccountWhenLocationIsUpdated - Start");
+
             var isMainLocationPreImage = _preImage?.GetAttributeValue<bool?>("dpam_b_main");
             var isMainLocation = _target.Contains("dpam_b_main") ? _target.GetAttributeValue<bool?>("dpam_b_main") : isMainLocationPreImage;
 
@@ -85,6 +91,7 @@ namespace BDP.DPAM.Plugins.Location
                 ClearAccountAddress(account);
             }
 
+            _tracing.Trace("SyncAddressAccountWhenLocationIsUpdated - End");
         }
 
         /// <summary>
@@ -93,6 +100,8 @@ namespace BDP.DPAM.Plugins.Location
         /// <param name="account">EntityReference of the account</param>
         private void ClearAccountAddress(EntityReference account)
         {
+            _tracing.Trace("ClearAccountAddress - Start");
+
             var updatedAccount = new Entity("account")
             {
                 Id = account.Id
@@ -107,8 +116,9 @@ namespace BDP.DPAM.Plugins.Location
             updatedAccount["address1_postofficebox"] = null;
             updatedAccount["dpam_s_address1"] = null;
 
-            _tracing.Trace("ClearAccountAddress - Update account");
             _service.Update(updatedAccount);
+
+            _tracing.Trace("ClearAccountAddress - End");
         }
 
         /// <summary>
@@ -120,6 +130,8 @@ namespace BDP.DPAM.Plugins.Location
         private void UpdateAccountAddress(EntityReference account, string messageName, bool isMainLocationChanged)
         {
             if (account == null) return;
+
+            _tracing.Trace("UpdateAccountAddress - Start");
 
             var attributeCollection = new Dictionary<string, string>
             {
@@ -154,11 +166,16 @@ namespace BDP.DPAM.Plugins.Location
                 
             }
 
-            if (updatedAccount.Attributes.Count < 1) return;
+            if (updatedAccount.Attributes.Count < 1)
+            {
+                _tracing.Trace("UpdateAccountAddress - End");
+                return;
+            }
 
             updatedAccount.Id = account.Id;
-            _tracing.Trace("UpdateAccount - update account");
             _service.Update(updatedAccount);
+
+            _tracing.Trace("UpdateAccountAddress - End");
         }
 
         /// <summary>
@@ -171,6 +188,8 @@ namespace BDP.DPAM.Plugins.Location
         /// <returns></returns>
         private bool ColumnValueIsChanged(string attributeName, string messageName)
         {
+            _tracing.Trace("ColumnValueIsChanged - Start");
+
             switch (messageName)
             {
                 case "Create":
@@ -178,6 +197,8 @@ namespace BDP.DPAM.Plugins.Location
                 case "Update":
                     if (_target.Contains(attributeName))
                     {
+                        _tracing.Trace("ColumnValueIsChanged - End");
+
                         if (_preImage.Contains(attributeName)) return _target[attributeName] != _preImage[attributeName];
 
                         return true;
@@ -185,6 +206,8 @@ namespace BDP.DPAM.Plugins.Location
 
                     break;
             }
+
+            _tracing.Trace("ColumnValueIsChanged - End");
 
             return false;
         }
@@ -197,6 +220,8 @@ namespace BDP.DPAM.Plugins.Location
         {
 
             if (account == null) return;
+
+            _tracing.Trace("SetOtherMainLocationsToNo - Start");
 
             var conditionIsMainLocation = new ConditionExpression("dpam_b_main", ConditionOperator.Equal, true);
             var conditionAccount = new ConditionExpression("dpam_lk_account", ConditionOperator.Equal, account.Id);
@@ -212,7 +237,11 @@ namespace BDP.DPAM.Plugins.Location
 
             var otherLocations = _service.RetrieveMultiple(query);
 
-            if (otherLocations == null || otherLocations.Entities.Count < 1) return;
+            if (otherLocations == null || otherLocations.Entities.Count < 1)
+            {
+                _tracing.Trace("SetOtherMainLocationsToNo - End");
+                return;
+            }
 
             foreach (var location in otherLocations.Entities)
             {
@@ -221,6 +250,7 @@ namespace BDP.DPAM.Plugins.Location
                 _service.Update(location);
             }
 
+            _tracing.Trace("SetOtherMainLocationsToNo - End");
         }
 
         /// <summary>
@@ -228,6 +258,8 @@ namespace BDP.DPAM.Plugins.Location
         /// </summary>
         internal void SetIsMainLocationWhenLocationBecomesInactive()
         {
+            _tracing.Trace("SetIsMainLocationWhenLocationBecomesInactive - Start");
+
             var statusCode = _target.GetAttributeValue<OptionSetValue>("statecode");
             var isMainLocation = _target.Contains("dpam_b_main") ? _target.GetAttributeValue<bool>("dpam_b_main") : _preImage?.GetAttributeValue<bool>("dpam_b_main");
 
@@ -235,6 +267,8 @@ namespace BDP.DPAM.Plugins.Location
             {
                 _target["dpam_b_main"] = false;
             }
+
+            _tracing.Trace("SetIsMainLocationWhenLocationBecomesInactive - End");
         }
 
         /// <summary>
@@ -261,6 +295,8 @@ namespace BDP.DPAM.Plugins.Location
         {
             if (!_target.Contains("statecode") || _target.GetAttributeValue<OptionSetValue>("statecode")?.Value != (int)LocationStateCode.Inactive) return;
 
+            _tracing.Trace("RemoveInactiveLocationLinkedToContact - Start");
+
             var mainLocationCondition = new ConditionExpression("dpam_lk_mainlocation", ConditionOperator.Equal, _target.Id);
 
             var query = new QueryExpression("contact")
@@ -271,7 +307,11 @@ namespace BDP.DPAM.Plugins.Location
 
             var contactCollection = _service.RetrieveMultiple(query);
 
-            if (contactCollection == null || contactCollection.Entities.Count < 1) return;
+            if (contactCollection == null || contactCollection.Entities.Count < 1)
+            {
+                _tracing.Trace("RemoveInactiveLocationLinkedToContact - End");
+                return;
+            }
 
             foreach (var contact in contactCollection.Entities)
             {
@@ -279,6 +319,8 @@ namespace BDP.DPAM.Plugins.Location
                 _tracing.Trace($"RemoveInactiveLocationLinkedToContact function - Update contact ({contact.Id})");
                 _service.Update(contact);
             }
+
+            _tracing.Trace("RemoveInactiveLocationLinkedToContact - End");
         }
     }
 }

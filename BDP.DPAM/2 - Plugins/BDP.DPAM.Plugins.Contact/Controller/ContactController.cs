@@ -18,19 +18,24 @@ namespace BDP.DPAM.Plugins.Contact
         /// Add address field in the Target entity
         /// </summary>
         /// <param name="messageName">string: create or update</param>
-        internal void AddAddressFieldInTargetBasedOnMainLocation(string messageName)
+        internal void AddAddressFieldInTargetBasedOnMainLocation()
         {
             if (!_target.Contains("dpam_lk_mainlocation")) return;
 
+            _tracing.Trace("AddAddressFieldInTargetBasedOnMainLocation - Start");
+
             var mainLocationEntityReference = _target.GetAttributeValue<EntityReference>("dpam_lk_mainlocation");
 
-            if (mainLocationEntityReference == null && messageName == "create") return;
+            if (mainLocationEntityReference == null && _context.MessageName == MessageName.Create)
+            {
+                _tracing.Trace("AddAddressFieldInTargetBasedOnMainLocation - End");
+                return;
+            }
 
             var mainLocationEntity = new Entity("dpam_location");
             if (mainLocationEntityReference != null)
             {
-                var columnSet = new ColumnSet("dpam_lk_country", "dpam_s_street1", "dpam_s_street2", "dpam_s_street3", "dpam_s_postalcode", "dpam_s_city", "dpam_postofficebox");
-                _tracing.Trace($"AddAddressFieldInTargetBasedOnMainLocation function - Retrieve {mainLocationEntityReference.LogicalName}");
+                var columnSet = new ColumnSet("dpam_lk_country", "dpam_s_street1", "dpam_s_street2", "dpam_s_street3", "dpam_s_postalcode", "dpam_s_city", "dpam_postofficebox");               
                 mainLocationEntity = _service.Retrieve(mainLocationEntityReference.LogicalName, mainLocationEntityReference.Id, columnSet);
             }
 
@@ -61,6 +66,8 @@ namespace BDP.DPAM.Plugins.Contact
                     _target["address1_country"] = countryName;
                 }
             }
+
+            _tracing.Trace("AddAddressFieldInTargetBasedOnMainLocation - End");
         }
 
         /// <summary>

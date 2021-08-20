@@ -56,4 +56,22 @@ namespace BDP.DPAM.Shared.Helper
         Female = 100000001,
         NonBinary = 100000002
     }
+
+    public enum EventRegistration_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum RegistrationResponse_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum RegistrationResponse_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
 }
