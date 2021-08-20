@@ -63,6 +63,13 @@ namespace BDP.DPAM.Shared.Helper
         Inactive = 1
     }
 
+    public enum EventRegistration_StatusCode
+    {
+        Active = 1,
+        Inactive = 2,
+        Canceled = 100000000
+    }
+
     public enum RegistrationResponse_StateCode
     {
         Active = 0,
@@ -73,5 +80,17 @@ namespace BDP.DPAM.Shared.Helper
     {
         Active = 1,
         Inactive = 2
+    }
+
+    public enum SessionRegistration_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum SessionRegistration_StatusCode
+    {
+        Attented = 1,
+        Canceled = 2
     }
 }
