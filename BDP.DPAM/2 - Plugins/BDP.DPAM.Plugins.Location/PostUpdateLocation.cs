@@ -16,6 +16,7 @@ namespace BDP.DPAM.Plugins.Location
             {
                 LocationController ctrl = new LocationController(serviceProvider);
                 ctrl.ValidatePipeline("dpam_location", "update", PluginStage.PostOperation);
+                //SHER-145
                 ctrl.SyncAddressAccountWhenLocationIsUpdated();
             }
             catch (Exception ex)

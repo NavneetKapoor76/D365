@@ -12,6 +12,7 @@ namespace BDP.DPAM.Plugins.Location
             {
                 LocationController ctrl = new LocationController(serviceProvider);
                 ctrl.ValidatePipeline("dpam_location", "create", PluginStage.PreOperation);
+                //SHER-148
                 ctrl.ConcatenateName();
             }
             catch (Exception ex)

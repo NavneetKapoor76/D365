@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C5C19EE3-ED6B-47C0-B8BF-4408985FDFB0}</ProjectGuid>
+    <ProjectGuid>{2A63D1FE-E0F2-4336-B358-ED03C790123B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BDP.DPAM.Plugins.Location</RootNamespace>
-    <AssemblyName>BDP.DPAM.Plugins.Location</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>BDP.DPAM.Plugins.EventRegistration</RootNamespace>
+    <AssemblyName>BDP.DPAM.Plugins.EventRegistration</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,7 +34,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>BDP.DPAM.Location.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>BDP.DPAM.EventRegistration.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -62,15 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\LocationController.cs" />
-    <Compile Include="PostCreateLocation.cs" />
-    <Compile Include="PostUpdateLocation.cs" />
-    <Compile Include="PreCreateLocation.cs" />
-    <Compile Include="PreUpdateLocation.cs" />
+    <Compile Include="PostUpdateEventRegistration.cs" />
+    <Compile Include="Controller\EventRegistrationController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BDP.DPAM.Location.snk" />
+    <None Include="BDP.DPAM.EventRegistration.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="..\..\1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems" Label="Shared" />

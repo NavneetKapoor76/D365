@@ -12,7 +12,11 @@ namespace BDP.DPAM.Plugins.Contact
             {
                 ContactController ctrl = new ContactController(serviceProvider);
                 ctrl.ValidatePipeline("contact", "update", PluginStage.PreOperation);
-                ctrl.AddAddressFieldInTargetBasedOnMainLocation("update");
+                //SHER-141
+                ctrl.AddAddressFieldInTargetBasedOnMainLocation();
+
+                // SHER-201
+                ctrl.SetContactGreetingBasedOnLanguageAndGender();
             }
             catch (Exception ex)
             {

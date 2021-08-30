@@ -7,12 +7,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCC391B9-CD65-4DDA-9A98-847217185B66}</ProjectGuid>
+    <ProjectGuid>{B0699E32-B423-4F06-945F-3EEBAB1F5B42}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BDP.DPAM.Plugins.Contact.Test</RootNamespace>
-    <AssemblyName>BDP.DPAM.Plugins.Contact.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>BDP.DPAM.Plugins.EventRegistration.Test</RootNamespace>
+    <AssemblyName>BDP.DPAM.Plugins.EventRegistration.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -111,17 +111,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PreCreateContactTest.cs" />
-    <Compile Include="PreUpdateContactTest.cs" />
+    <Compile Include="PostUpdateEventRegistrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BDP.DPAM.Plugins.Contact\BDP.DPAM.Plugins.Contact.csproj">
-      <Project>{502d8ae1-ba0e-4a6b-9d77-6ff245b45aae}</Project>
-      <Name>BDP.DPAM.Plugins.Contact</Name>
+    <ProjectReference Include="..\BDP.DPAM.Plugins.EventRegistration\BDP.DPAM.Plugins.EventRegistration.csproj">
+      <Project>{2a63d1fe-e0f2-4336-b358-ed03c790123b}</Project>
+      <Name>BDP.DPAM.Plugins.EventRegistration</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
