@@ -36,9 +36,9 @@ namespace BDP.DPAM.Shared.Helper
     {
         Male = 1,
         Female = 2,
-        NonBinary = 100000000
+        NonBinary = 100000000,
+        GeneralAddress = 100000001
     }
-
     public enum Greeting_Language
     {
         English = 100000000,
@@ -54,7 +54,8 @@ namespace BDP.DPAM.Shared.Helper
     {
         Male = 100000000,
         Female = 100000001,
-        NonBinary = 100000002
+        NonBinary = 100000002,
+        GeneralAddress = 100000003
     }
 
     public enum EventRegistration_StateCode

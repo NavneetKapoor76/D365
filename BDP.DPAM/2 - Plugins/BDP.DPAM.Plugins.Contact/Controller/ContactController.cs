@@ -91,7 +91,8 @@ namespace BDP.DPAM.Plugins.Contact
             {
                 int relatedGenderCode = 
                     contactGender.Value == Convert.ToInt32(Contact_Gender.Female) ? Convert.ToInt32(Greeting_Gender.Female) : 
-                    contactGender.Value == Convert.ToInt32(Contact_Gender.Male) ? Convert.ToInt32(Greeting_Gender.Male) : 
+                    contactGender.Value == Convert.ToInt32(Contact_Gender.Male) ? Convert.ToInt32(Greeting_Gender.Male) :
+                    contactGender.Value == Convert.ToInt32(Contact_Gender.GeneralAddress) ? Convert.ToInt32(Greeting_Gender.GeneralAddress) :
                     Convert.ToInt32(Greeting_Gender.NonBinary);
 
                 contactGreetingRef = this.GetGreetingRefBasedOnLanguageAndGender(contactLanguage.Value, relatedGenderCode);
