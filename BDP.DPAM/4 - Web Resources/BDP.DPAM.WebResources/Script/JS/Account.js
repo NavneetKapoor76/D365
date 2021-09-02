@@ -20,7 +20,9 @@ var BDP;
                                 dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
                                 dpam_s_vatnumber: "dpam_s_vatnumber",
                                 dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
-                                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
+                                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation",
+                                dpam_lk_counterpartymifidcategory: "dpam_lk_counterpartymifidcategory",
+                                dpam_lk_compliancesegmentation: "dpam_lk_compliancesegmentation"
                             },
                             dpam_settings: {
                                 dpam_s_value: "dpam_s_value"
@@ -32,6 +34,7 @@ var BDP;
                 class Form {
                     static onLoad(executionContext) {
                         this.setBusinessSegmentationFilter(executionContext);
+                        this.setComplianceSegmentationFilter(executionContext);
                         this.setLocalBusinessSegmentationFilter(executionContext);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
@@ -63,6 +66,23 @@ var BDP;
                             }
                         }
                     }
+                    //function to add a custom filter on the dpam_lk_compliancesegmentation field
+                    static filterComplianceSegmentation(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let filter = `<filter type="and" >
+                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="null" >
+                              </condition>
+                            </filter>`;
+                        let _dpam_lk_counterpartymifidcategory = formContext.getAttribute(Account.Static.field.account.dpam_lk_counterpartymifidcategory);
+                        if (_dpam_lk_counterpartymifidcategory != null && _dpam_lk_counterpartymifidcategory.getValue() != null) {
+                            let id = _dpam_lk_counterpartymifidcategory.getValue()[0].id;
+                            filter = `<filter type="and">
+                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="eq" value=" ${id}" >     
+                              </condition>
+                            </filter>`;
+                        }
+                        formContext.getControl(Account.Static.field.account.dpam_lk_compliancesegmentation).addCustomFilter(filter, "dpam_counterpartycompliancesegmentation");
+                    }
                     //function to add a custom filter on the dpam_lk_businesssegmentation field
                     static filterBusinessSegmentation(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -91,6 +111,14 @@ var BDP;
                         let _dpam_lk_businesssegmentation_control = formContext.getControl(Account.Static.field.account.dpam_lk_businesssegmentation);
                         if (_dpam_lk_businesssegmentation_control != null) {
                             _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
+                        }
+                    }
+                    //function to set the filter on the dpam_lk_compliancesegmentation field
+                    static setComplianceSegmentationFilter(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let _dpam_lk_compliancesegmentation_control = formContext.getControl(Account.Static.field.account.dpam_lk_compliancesegmentation);
+                        if (_dpam_lk_compliancesegmentation_control != null) {
+                            _dpam_lk_compliancesegmentation_control.addPreSearch(this.filterComplianceSegmentation);
                         }
                     }
                     // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.

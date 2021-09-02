@@ -13,7 +13,9 @@ namespace BDP.DPAM.WR.Account {
                 dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
                 dpam_s_vatnumber: "dpam_s_vatnumber",
                 dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
-                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
+                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation",
+                dpam_lk_counterpartymifidcategory: "dpam_lk_counterpartymifidcategory",
+                dpam_lk_compliancesegmentation: "dpam_lk_compliancesegmentation"
             },
             dpam_settings: {
                 dpam_s_value: "dpam_s_value"
@@ -27,6 +29,7 @@ namespace BDP.DPAM.WR.Account {
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
             this.setBusinessSegmentationFilter(executionContext);
+            this.setComplianceSegmentationFilter(executionContext);
             this.setLocalBusinessSegmentationFilter(executionContext);
         }
 
@@ -67,6 +70,28 @@ namespace BDP.DPAM.WR.Account {
             }
         }
 
+        //function to add a custom filter on the dpam_lk_compliancesegmentation field
+        static filterComplianceSegmentation(executionContext: Xrm.Events.EventContext) {
+            const formContext = executionContext.getFormContext();
+
+            let filter = `<filter type="and" >
+                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="null" >
+                              </condition>
+                            </filter>`;
+
+            let _dpam_lk_counterpartymifidcategory: Xrm.Page.LookupAttribute = formContext.getAttribute<Xrm.Page.LookupAttribute>(Static.field.account.dpam_lk_counterpartymifidcategory);
+            if (_dpam_lk_counterpartymifidcategory != null && _dpam_lk_counterpartymifidcategory.getValue() != null) {
+                let id: string = _dpam_lk_counterpartymifidcategory.getValue()[0].id;
+                filter = `<filter type="and">
+                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="eq" value=" ${id}" >     
+                              </condition>
+                            </filter>`;
+            }
+
+            formContext.getControl<Xrm.Page.LookupControl>(Static.field.account.dpam_lk_compliancesegmentation).addCustomFilter(filter, "dpam_counterpartycompliancesegmentation");
+        }
+
+
         //function to add a custom filter on the dpam_lk_businesssegmentation field
         static filterBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
             const formContext = executionContext.getFormContext();
@@ -104,7 +129,15 @@ namespace BDP.DPAM.WR.Account {
                 _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
             }
         }
+        //function to set the filter on the dpam_lk_compliancesegmentation field
+        static setComplianceSegmentationFilter(executionContext: Xrm.Events.EventContext) {
+            const formContext = executionContext.getFormContext();
+            let _dpam_lk_compliancesegmentation_control: Xrm.Page.LookupControl = formContext.getControl(Static.field.account.dpam_lk_compliancesegmentation);
 
+            if (_dpam_lk_compliancesegmentation_control != null) {
+                _dpam_lk_compliancesegmentation_control.addPreSearch(this.filterComplianceSegmentation);
+            }
+        }
         // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
         static dialogCanvasApp() {
             let dialogOptions = { height: 815, width: 1350 };
