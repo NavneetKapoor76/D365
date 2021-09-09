@@ -13,6 +13,13 @@ namespace BDP.DPAM.WR.Contact {
     export let Static = new _Static();
 
     export class Form {
+        public static onLoad(executionContext: Xrm.Events.EventContext): void {
+            var formContext = executionContext.getFormContext();
+
+            //SHER-299
+            this.hideContactFromParentCustomerLookup(formContext);
+        }
+
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
             this.resetPhoneNumber(executionContext, Static.field.contact.mobilephone);
             this.resetPhoneNumber(executionContext, Static.field.contact.telephone1);
@@ -28,6 +35,11 @@ namespace BDP.DPAM.WR.Contact {
                 phoneAttribute.setValue(null);
                 phoneAttribute.setValue(value);
             }       
+        }
+
+        //function to keep only counterparty in the "parentcustomerid" lookup
+        static hideContactFromParentCustomerLookup(formContext: Xrm.FormContext) {
+            formContext.getControl<Xrm.Controls.LookupControl>("parentcustomerid").setEntityTypes(["account"]);
         }
     }
 }

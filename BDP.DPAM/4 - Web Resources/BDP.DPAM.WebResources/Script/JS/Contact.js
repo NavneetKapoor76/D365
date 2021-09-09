@@ -19,6 +19,11 @@ var BDP;
                 }
                 Contact.Static = new _Static();
                 class Form {
+                    static onLoad(executionContext) {
+                        var formContext = executionContext.getFormContext();
+                        //SHER-299
+                        this.hideContactFromParentCustomerLookup(formContext);
+                    }
                     static QuickCreateonLoad(executionContext) {
                         this.resetPhoneNumber(executionContext, Contact.Static.field.contact.mobilephone);
                         this.resetPhoneNumber(executionContext, Contact.Static.field.contact.telephone1);
@@ -31,6 +36,10 @@ var BDP;
                             phoneAttribute.setValue(null);
                             phoneAttribute.setValue(value);
                         }
+                    }
+                    //function to keep only counterparty in the "parentcustomerid" lookup
+                    static hideContactFromParentCustomerLookup(formContext) {
+                        formContext.getControl("parentcustomerid").setEntityTypes(["account"]);
                     }
                 }
                 Contact.Form = Form;
