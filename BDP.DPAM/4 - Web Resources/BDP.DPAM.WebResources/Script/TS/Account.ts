@@ -31,11 +31,18 @@ namespace BDP.DPAM.WR.Account {
             this.setBusinessSegmentationFilter(executionContext);
             this.setComplianceSegmentationFilter(executionContext);
             this.setLocalBusinessSegmentationFilter(executionContext);
+             // SHER-292
+            this.manageBusinessSegmentationVisibility(executionContext);
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
             const formContext = executionContext.getFormContext();
             this.checkValidVATNumber(formContext);
+        }
+
+        // SHER-292
+        public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
+            this.manageBusinessSegmentationVisibility(executionContext);
         }
 
         //function to check if the VAT number in the account is valid based on the VAT format of the country.
@@ -191,5 +198,45 @@ namespace BDP.DPAM.WR.Account {
                 _dpam_lk_localbusinesssegmentation_control.addPreSearch(this.filterLocalBusinessSegmentation);
             }
         }
+
+
+        static manageBusinessSegmentationVisibility(executionContext: Xrm.Events.EventContext) {
+            const formContext = executionContext.getFormContext();
+            //retrieve the country of counterparty.
+            let _dpam_lk_country: Xrm.Page.LookupAttribute = formContext.getAttribute("dpam_lk_country");
+            let _dpam_lk_localbusinesssegmentation_control: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_localbusinesssegmentation");
+            let _dpam_lk_businesssegmentation_control: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_businesssegmentation");
+            _dpam_lk_localbusinesssegmentation_control.setVisible(false);
+            _dpam_lk_businesssegmentation_control.setVisible(false);
+            if (_dpam_lk_country != null && _dpam_lk_country.getValue() != null && _dpam_lk_country.getValue()[0] && _dpam_lk_country.getValue()[0].id) {
+                var fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${_dpam_lk_country.getValue()[0].id}" /></filter></entity></fetch>`;
+                // search at least one occurence of this country in Local segmentation
+                Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(
+                    function success(result) {
+                        
+                        if (result.entities.length > 0) {
+                            // found
+                            // if one found, set visible Local segmentation and hide generic segmentation  (fill generic segmentation)
+                            _dpam_lk_localbusinesssegmentation_control.setVisible(true);
+                            _dpam_lk_businesssegmentation_control.setVisible(false);
+                        } else {
+                            // nothing found
+                            // if not found set visible generic segmentation and hide local segmentation (fill local to null)
+                            _dpam_lk_localbusinesssegmentation_control.setVisible(false);
+                            _dpam_lk_businesssegmentation_control.setVisible(true);
+                        }
+                    },
+                    function (error) {
+                        console.log(error.message);
+                        // handle error conditions
+                    }
+                );
+            } 
+        }
+
+       
+
+       
+
     }
 }

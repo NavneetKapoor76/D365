@@ -6,6 +6,6 @@
         "target": "es6"
     },
     "include": [
-        "Script/TS/**/*", "../../1 - Shared/BDP.DPAM.Shared/Helper/CommonLibrary.cs", "../../1 - Shared/BDP.DPAM.Shared/Helper/Enum.cs"
+        "Script/TS/**/*", "../../1 - Shared/BDP.DPAM.Shared/Helper/CommonLibrary.cs", "../../1 - Shared/BDP.DPAM.Shared/Helper/Enum.cs", "../../BDP.DPAM.Plugins.Account/PreUpdateAccount.cs"
     ]
 }
