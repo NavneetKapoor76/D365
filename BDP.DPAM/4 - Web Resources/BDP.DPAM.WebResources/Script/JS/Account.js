@@ -36,6 +36,7 @@ var BDP;
                         this.setBusinessSegmentationFilter(executionContext);
                         this.setComplianceSegmentationFilter(executionContext);
                         this.setLocalBusinessSegmentationFilter(executionContext);
+                        this.manageBusinessSegmentationVisibility(executionContext);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -161,6 +162,47 @@ var BDP;
                         if (_dpam_lk_localbusinesssegmentation_control != null) {
                             _dpam_lk_localbusinesssegmentation_control.addPreSearch(this.filterLocalBusinessSegmentation);
                         }
+                    }
+                    static manageBusinessSegmentationVisibility(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //retrieve the country of counterparty.
+                        let _dpam_lk_country = formContext.getAttribute("dpam_lk_country");
+                        let _dpam_lk_localbusinesssegmentation_control = formContext.getControl("dpam_lk_localbusinesssegmentation");
+                        let _dpam_lk_businesssegmentation_control = formContext.getControl("dpam_lk_businesssegmentation");
+                        _dpam_lk_localbusinesssegmentation_control.setVisible(false);
+                        _dpam_lk_businesssegmentation_control.setVisible(false);
+                        if (_dpam_lk_country != null && _dpam_lk_country.getValue() != null) {
+                            var fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${_dpam_lk_country.getValue()[0].id}" /></filter></entity></fetch>`;
+                            // search at least one occurence of this country in Local segmentation
+                            Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(function success(result) {
+                                console.log("result" + result);
+                                console.log("result.entities.length " + result.entities.length);
+                                if (result.entities.length > 0) {
+                                    // found
+                                    // if one found, set visible Local segmentation and hide generic segmentation  (fill generic segmentation)
+                                    _dpam_lk_localbusinesssegmentation_control.setVisible(true);
+                                    _dpam_lk_businesssegmentation_control.setVisible(false);
+                                }
+                                else {
+                                    // nothing found
+                                    // if not found set visible generic segmentation and hide local segmentation (fill local to null)
+                                    _dpam_lk_localbusinesssegmentation_control.setVisible(false);
+                                    _dpam_lk_businesssegmentation_control.setVisible(true);
+                                }
+                            }, function (error) {
+                                console.log(error.message);
+                                // handle error conditions
+                            });
+                        }
+                    }
+                    static onChange_dpam_lk_country(executionContext) {
+                        this.manageBusinessSegmentationVisibility(executionContext);
+                    }
+                    static onChange_dpam_lk_localbusinesssegmentation(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let _dpam_lk_localbusinesssegmentation = formContext.getAttribute("dpam_lk_localbusinesssegmentation");
+                        console.log("onChange_dpam_lk_localbusinesssegmentation");
+                        console.log(_dpam_lk_localbusinesssegmentation);
                     }
                 }
                 Account.Form = Form;
