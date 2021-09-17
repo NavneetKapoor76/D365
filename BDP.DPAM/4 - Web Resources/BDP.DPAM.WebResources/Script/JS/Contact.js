@@ -26,6 +26,13 @@ var BDP;
                         //SHER-275
                         this.setContactTitleFilter(formContext);
                     }
+                    static QuickCreateonLoad(executionContext) {
+                        var formContext = executionContext.getFormContext();
+                        this.resetPhoneNumber(formContext, Contact.Static.field.contact.mobilephone);
+                        this.resetPhoneNumber(formContext, Contact.Static.field.contact.telephone1);
+                        //SHER-299
+                        this.hideContactFromParentCustomerLookup(formContext);
+                    }
                     //SHER-275
                     static onChange_dpam_os_gender(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -36,12 +43,7 @@ var BDP;
                         const formContext = executionContext.getFormContext();
                         this.setContactTitleFilter(formContext);
                     }
-                    static QuickCreateonLoad(executionContext) {
-                        this.resetPhoneNumber(executionContext, Contact.Static.field.contact.mobilephone);
-                        this.resetPhoneNumber(executionContext, Contact.Static.field.contact.telephone1);
-                    }
-                    static resetPhoneNumber(executionContext, fieldName) {
-                        const formContext = executionContext.getFormContext();
+                    static resetPhoneNumber(formContext, fieldName) {
                         let phoneAttribute = formContext.getAttribute(fieldName);
                         if (phoneAttribute != null && phoneAttribute.getValue()) {
                             let value = phoneAttribute.getValue();

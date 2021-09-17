@@ -23,6 +23,16 @@ namespace BDP.DPAM.WR.Contact {
             this.setContactTitleFilter(formContext);
         }
 
+        public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
+            var formContext = executionContext.getFormContext();
+
+            this.resetPhoneNumber(formContext, Static.field.contact.mobilephone);
+            this.resetPhoneNumber(formContext, Static.field.contact.telephone1);
+
+            //SHER-299
+            this.hideContactFromParentCustomerLookup(formContext);
+        }
+
         //SHER-275
         public static onChange_dpam_os_gender(executionContext: Xrm.Events.EventContext) {
             const formContext = executionContext.getFormContext();
@@ -35,13 +45,7 @@ namespace BDP.DPAM.WR.Contact {
             this.setContactTitleFilter(formContext);
         }
 
-        public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
-            this.resetPhoneNumber(executionContext, Static.field.contact.mobilephone);
-            this.resetPhoneNumber(executionContext, Static.field.contact.telephone1);
-        }
-
-        static resetPhoneNumber(executionContext: Xrm.Events.EventContext, fieldName: string) {
-            const formContext = executionContext.getFormContext();
+        static resetPhoneNumber(formContext: Xrm.FormContext, fieldName: string) {
             let phoneAttribute: Xrm.Page.Attribute = formContext.getAttribute(fieldName);
 
             if (phoneAttribute != null && phoneAttribute.getValue()) {
