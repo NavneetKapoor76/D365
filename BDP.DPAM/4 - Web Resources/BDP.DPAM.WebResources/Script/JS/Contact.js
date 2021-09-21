@@ -51,9 +51,9 @@ var BDP;
                     }
                     //function to set the filter on the "dpam_lk_contacttitle" field
                     static setContactTitleFilter(formContext) {
-                        let _dpam_os_language = formContext.getAttribute("dpam_os_language");
-                        let _dpam_os_gender = formContext.getAttribute("dpam_os_gender");
-                        if (_dpam_os_language != null && _dpam_os_language.getValue() != null && _dpam_os_gender != null && _dpam_os_gender.getValue() != null) {
+                        let languageAttribute = formContext.getAttribute("dpam_os_language");
+                        let genderAttribute = formContext.getAttribute("dpam_os_gender");
+                        if (languageAttribute != null && languageAttribute.getValue() != null && genderAttribute != null && genderAttribute.getValue() != null) {
                             formContext.getControl("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
                         }
                         else {
