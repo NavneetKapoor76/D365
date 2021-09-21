@@ -4,25 +4,25 @@ namespace BDP.DPAM.WR.Account {
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
             //SHER-174
-            this.setBusinessSegmentationFilter(executionContext);
+            Form.setBusinessSegmentationFilter(executionContext);
             //SHER-244
-            this.setComplianceSegmentationFilter(executionContext);
+            Form.setComplianceSegmentationFilter(executionContext);
             //SHER-268
-            this.setLocalBusinessSegmentationFilter(executionContext);
+            Form.setLocalBusinessSegmentationFilter(executionContext);
              // SHER-292
-            this.manageBusinessSegmentationVisibility(executionContext);
+            Form.manageBusinessSegmentationVisibility(executionContext);
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
             const formContext = executionContext.getFormContext();
             //SHER-92
-            this.checkValidVATNumber(formContext);
+            Form.checkValidVATNumber(formContext);
         }
 
         // SHER-292
         public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
             //SHER-292
-            this.manageBusinessSegmentationVisibility(executionContext);
+            Form.manageBusinessSegmentationVisibility(executionContext);
         }
 
         //function to check if the VAT number in the account is valid based on the VAT format of the country.
@@ -113,7 +113,7 @@ namespace BDP.DPAM.WR.Account {
             let _dpam_lk_businesssegmentation_control: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_businesssegmentation");
 
             if (_dpam_lk_businesssegmentation_control != null) {
-                _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
+                _dpam_lk_businesssegmentation_control.addPreSearch(Form.filterBusinessSegmentation);
             }
         }
         //function to set the filter on the dpam_lk_compliancesegmentation field
@@ -122,7 +122,7 @@ namespace BDP.DPAM.WR.Account {
             let _dpam_lk_compliancesegmentation_control: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_compliancesegmentation");
 
             if (_dpam_lk_compliancesegmentation_control != null) {
-                _dpam_lk_compliancesegmentation_control.addPreSearch(this.filterComplianceSegmentation);
+                _dpam_lk_compliancesegmentation_control.addPreSearch(Form.filterComplianceSegmentation);
             }
         }
         // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
@@ -175,7 +175,7 @@ namespace BDP.DPAM.WR.Account {
             let _dpam_lk_localbusinesssegmentation_control: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_localbusinesssegmentation");
 
             if (_dpam_lk_localbusinesssegmentation_control != null) {
-                _dpam_lk_localbusinesssegmentation_control.addPreSearch(this.filterLocalBusinessSegmentation);
+                _dpam_lk_localbusinesssegmentation_control.addPreSearch(Form.filterLocalBusinessSegmentation);
             }
         }
 
