@@ -61,7 +61,7 @@ var BDP;
                               </condition>
                             </filter>`;
                         let cpMifidCategoryAttribute = formContext.getAttribute("dpam_lk_counterpartymifidcategory");
-                        if (cpMifidCategoryAttribute != null && cpMifidCategoryAttribute.getValue() != null) {
+                        if (cpMifidCategoryAttribute.getValue() != null) {
                             let cpMifidCategoryId = cpMifidCategoryAttribute.getValue()[0].id;
                             filter = `<filter type="and">
                               <condition attribute="dpam_lk_counterpartymifidcategory" operator="eq" value=" ${cpMifidCategoryId}" >     
@@ -78,7 +78,7 @@ var BDP;
                               </condition>
                             </filter>`;
                         let counterpartyTypeAttribute = formContext.getAttribute("dpam_mos_counterpartytype");
-                        if (counterpartyTypeAttribute != null && counterpartyTypeAttribute.getValue() != null) {
+                        if (counterpartyTypeAttribute.getValue() != null) {
                             let selectedOptions = counterpartyTypeAttribute.getValue();
                             let values = "";
                             selectedOptions.forEach(function (item) {
@@ -95,18 +95,12 @@ var BDP;
                     //function to set the filter on the dpam_lk_businesssegmentation field
                     static setBusinessSegmentationFilter(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        let _dpam_lk_businesssegmentation_control = formContext.getControl("dpam_lk_businesssegmentation");
-                        if (_dpam_lk_businesssegmentation_control != null) {
-                            _dpam_lk_businesssegmentation_control.addPreSearch(Form.filterBusinessSegmentation);
-                        }
+                        formContext.getControl("dpam_lk_businesssegmentation").addPreSearch(Form.filterBusinessSegmentation);
                     }
                     //function to set the filter on the dpam_lk_compliancesegmentation field
                     static setComplianceSegmentationFilter(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        let _dpam_lk_compliancesegmentation_control = formContext.getControl("dpam_lk_compliancesegmentation");
-                        if (_dpam_lk_compliancesegmentation_control != null) {
-                            _dpam_lk_compliancesegmentation_control.addPreSearch(Form.filterComplianceSegmentation);
-                        }
+                        formContext.getControl("dpam_lk_compliancesegmentation").addPreSearch(Form.filterComplianceSegmentation);
                     }
                     // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
                     static dialogCanvasApp() {
@@ -126,7 +120,7 @@ var BDP;
                             </filter>`;
                         let counterpartyTypeAttribute = formContext.getAttribute("dpam_mos_counterpartytype");
                         let countryAttribute = formContext.getAttribute("dpam_lk_country");
-                        if (counterpartyTypeAttribute != null && counterpartyTypeAttribute.getValue() != null && countryAttribute != null && countryAttribute.getValue() != null) {
+                        if (counterpartyTypeAttribute.getValue() != null && countryAttribute.getValue() != null) {
                             let selectedOptions = counterpartyTypeAttribute.getValue();
                             let values = "";
                             selectedOptions.forEach(function (item) {
@@ -144,10 +138,7 @@ var BDP;
                     //function to set the filter on the dpam_lk_localbusinesssegmentation field
                     static setLocalBusinessSegmentationFilter(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        let _dpam_lk_localbusinesssegmentation_control = formContext.getControl("dpam_lk_localbusinesssegmentation");
-                        if (_dpam_lk_localbusinesssegmentation_control != null) {
-                            _dpam_lk_localbusinesssegmentation_control.addPreSearch(Form.filterLocalBusinessSegmentation);
-                        }
+                        formContext.getControl("dpam_lk_localbusinesssegmentation").addPreSearch(Form.filterLocalBusinessSegmentation);
                     }
                     //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
                     static manageBusinessSegmentationVisibility(executionContext) {
@@ -158,7 +149,7 @@ var BDP;
                         let businessSegmentationControl = formContext.getControl("dpam_lk_businesssegmentation");
                         localbusinessSegmentationControl.setVisible(false);
                         businessSegmentationControl.setVisible(false);
-                        if (countryAttribute != null && countryAttribute.getValue() != null && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
+                        if (countryAttribute.getValue() != null && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
                             var fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
                             // search at least one occurence of this country in Local segmentation
                             Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(function success(result) {
