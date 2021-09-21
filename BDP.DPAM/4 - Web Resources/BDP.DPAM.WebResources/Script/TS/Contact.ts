@@ -2,37 +2,38 @@
 namespace BDP.DPAM.WR.Contact {
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
-            var formContext = executionContext.getFormContext();
-
+            const formContext = executionContext.getFormContext();
             //SHER-299
-            this.hideContactFromParentCustomerLookup(formContext);
-
+            Form.hideContactFromParentCustomerLookup(formContext);
             //SHER-275
-            this.setContactTitleFilter(formContext);
+            Form.setContactTitleFilter(formContext);
         }
 
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
-            var formContext = executionContext.getFormContext();
-
-            this.resetPhoneNumber(formContext, "mobilephone");
-            this.resetPhoneNumber(formContext, "telephone1");
-
+            const formContext = executionContext.getFormContext();
             //SHER-299
-            this.hideContactFromParentCustomerLookup(formContext);
+            Form.resetPhoneNumber(formContext, "mobilephone");
+            //SHER-299
+            Form.resetPhoneNumber(formContext, "telephone1");
+            //SHER-299
+            Form.hideContactFromParentCustomerLookup(formContext);
         }
 
         //SHER-275
         public static onChange_dpam_os_gender(executionContext: Xrm.Events.EventContext) {
             const formContext = executionContext.getFormContext();
-            this.setContactTitleFilter(formContext);
+            //SHER-275
+            Form.setContactTitleFilter(formContext);
         }
 
         //SHER-275
         public static onChange_dpam_os_language(executionContext: Xrm.Events.EventContext) {
             const formContext = executionContext.getFormContext();
-            this.setContactTitleFilter(formContext);
+            //SHER-275
+            Form.setContactTitleFilter(formContext);
         }
 
+        //function to reset the phone number
         static resetPhoneNumber(formContext: Xrm.FormContext, fieldName: string) {
             let phoneAttribute: Xrm.Page.Attribute = formContext.getAttribute(fieldName);
 
@@ -55,9 +56,9 @@ namespace BDP.DPAM.WR.Contact {
             let _dpam_os_gender: Xrm.Page.OptionSetAttribute = formContext.getAttribute("dpam_os_gender");
 
             if (_dpam_os_language != null && _dpam_os_language.getValue() != null && _dpam_os_gender != null && _dpam_os_gender.getValue() != null) {
-                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").addPreSearch(this.filterContactTitleLookup);
+                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
             } else {
-                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").removePreSearch(this.filterContactTitleLookup);
+                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").removePreSearch(Form.filterContactTitleLookup);
             }
         }
 
@@ -65,7 +66,7 @@ namespace BDP.DPAM.WR.Contact {
         static filterContactTitleLookup(executionContext: Xrm.Events.EventContext) {
             const formContext = executionContext.getFormContext();
 
-            var filter = `<filter type="and">
+            let filter = `<filter type="and">
                              <condition attribute="dpam_os_gender" operator="eq" value="${formContext.getAttribute("dpam_os_gender").getValue()}" />
                              <condition attribute="dpam_os_language" operator="eq" value="${formContext.getAttribute("dpam_os_language").getValue()}" />
                           </filter>`;

@@ -9,29 +9,34 @@ var BDP;
             (function (Contact) {
                 class Form {
                     static onLoad(executionContext) {
-                        var formContext = executionContext.getFormContext();
+                        const formContext = executionContext.getFormContext();
                         //SHER-299
-                        this.hideContactFromParentCustomerLookup(formContext);
+                        Form.hideContactFromParentCustomerLookup(formContext);
                         //SHER-275
-                        this.setContactTitleFilter(formContext);
+                        Form.setContactTitleFilter(formContext);
                     }
                     static QuickCreateonLoad(executionContext) {
-                        var formContext = executionContext.getFormContext();
-                        this.resetPhoneNumber(formContext, "mobilephone");
-                        this.resetPhoneNumber(formContext, "telephone1");
+                        const formContext = executionContext.getFormContext();
                         //SHER-299
-                        this.hideContactFromParentCustomerLookup(formContext);
+                        Form.resetPhoneNumber(formContext, "mobilephone");
+                        //SHER-299
+                        Form.resetPhoneNumber(formContext, "telephone1");
+                        //SHER-299
+                        Form.hideContactFromParentCustomerLookup(formContext);
                     }
                     //SHER-275
                     static onChange_dpam_os_gender(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        this.setContactTitleFilter(formContext);
+                        //SHER-275
+                        Form.setContactTitleFilter(formContext);
                     }
                     //SHER-275
                     static onChange_dpam_os_language(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        this.setContactTitleFilter(formContext);
+                        //SHER-275
+                        Form.setContactTitleFilter(formContext);
                     }
+                    //function to reset the phone number
                     static resetPhoneNumber(formContext, fieldName) {
                         let phoneAttribute = formContext.getAttribute(fieldName);
                         if (phoneAttribute != null && phoneAttribute.getValue()) {
@@ -49,16 +54,16 @@ var BDP;
                         let _dpam_os_language = formContext.getAttribute("dpam_os_language");
                         let _dpam_os_gender = formContext.getAttribute("dpam_os_gender");
                         if (_dpam_os_language != null && _dpam_os_language.getValue() != null && _dpam_os_gender != null && _dpam_os_gender.getValue() != null) {
-                            formContext.getControl("dpam_lk_contacttitle").addPreSearch(this.filterContactTitleLookup);
+                            formContext.getControl("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
                         }
                         else {
-                            formContext.getControl("dpam_lk_contacttitle").removePreSearch(this.filterContactTitleLookup);
+                            formContext.getControl("dpam_lk_contacttitle").removePreSearch(Form.filterContactTitleLookup);
                         }
                     }
                     //function to add a custom filter on the "dpam_lk_contacttitle" field based on Contact language & gender
                     static filterContactTitleLookup(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        var filter = `<filter type="and">
+                        let filter = `<filter type="and">
                              <condition attribute="dpam_os_gender" operator="eq" value="${formContext.getAttribute("dpam_os_gender").getValue()}" />
                              <condition attribute="dpam_os_language" operator="eq" value="${formContext.getAttribute("dpam_os_language").getValue()}" />
                           </filter>`;
