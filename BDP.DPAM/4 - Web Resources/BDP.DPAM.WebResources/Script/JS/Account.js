@@ -20,7 +20,9 @@ var BDP;
                                 dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
                                 dpam_s_vatnumber: "dpam_s_vatnumber",
                                 dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
-                                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
+                                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation",
+                                dpam_lk_counterpartymifidcategory: "dpam_lk_counterpartymifidcategory",
+                                dpam_lk_compliancesegmentation: "dpam_lk_compliancesegmentation"
                             },
                             dpam_settings: {
                                 dpam_s_value: "dpam_s_value"
@@ -32,6 +34,9 @@ var BDP;
                 class Form {
                     static onLoad(executionContext) {
                         this.setBusinessSegmentationFilter(executionContext);
+                        this.setComplianceSegmentationFilter(executionContext);
+                        this.setLocalBusinessSegmentationFilter(executionContext);
+                        this.manageBusinessSegmentationVisibility(executionContext);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -61,6 +66,23 @@ var BDP;
                                 formContext.getControl(Account.Static.field.account.dpam_s_vatnumber).setNotification("The country field is empty, no VAT number can be entered.", "countryEmpty");
                             }
                         }
+                    }
+                    //function to add a custom filter on the dpam_lk_compliancesegmentation field
+                    static filterComplianceSegmentation(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let filter = `<filter type="and" >
+                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="null" >
+                              </condition>
+                            </filter>`;
+                        let _dpam_lk_counterpartymifidcategory = formContext.getAttribute(Account.Static.field.account.dpam_lk_counterpartymifidcategory);
+                        if (_dpam_lk_counterpartymifidcategory != null && _dpam_lk_counterpartymifidcategory.getValue() != null) {
+                            let id = _dpam_lk_counterpartymifidcategory.getValue()[0].id;
+                            filter = `<filter type="and">
+                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="eq" value=" ${id}" >     
+                              </condition>
+                            </filter>`;
+                        }
+                        formContext.getControl(Account.Static.field.account.dpam_lk_compliancesegmentation).addCustomFilter(filter, "dpam_counterpartycompliancesegmentation");
                     }
                     //function to add a custom filter on the dpam_lk_businesssegmentation field
                     static filterBusinessSegmentation(executionContext) {
@@ -92,6 +114,14 @@ var BDP;
                             _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
                         }
                     }
+                    //function to set the filter on the dpam_lk_compliancesegmentation field
+                    static setComplianceSegmentationFilter(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let _dpam_lk_compliancesegmentation_control = formContext.getControl(Account.Static.field.account.dpam_lk_compliancesegmentation);
+                        if (_dpam_lk_compliancesegmentation_control != null) {
+                            _dpam_lk_compliancesegmentation_control.addPreSearch(this.filterComplianceSegmentation);
+                        }
+                    }
                     // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
                     static dialogCanvasApp() {
                         let dialogOptions = { height: 815, width: 1350 };
@@ -100,6 +130,79 @@ var BDP;
                         }, function (error) {
                             console.log(error.message);
                         });
+                    }
+                    //function to add a custom filter on the dpam_lk_localbusinesssegmentation field
+                    static filterLocalBusinessSegmentation(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let filter = `<filter type="and" >
+                              <condition attribute="dpam_mos_counterpartytype" operator="null" >
+                              </condition>
+                            </filter>`;
+                        let _dpam_mos_counterpartytype = formContext.getAttribute("dpam_mos_counterpartytype");
+                        let _dpam_lk_country = formContext.getAttribute("dpam_lk_country");
+                        if (_dpam_mos_counterpartytype != null && _dpam_mos_counterpartytype.getValue() != null && _dpam_lk_country != null && _dpam_lk_country.getValue() != null) {
+                            let selectedOptions = _dpam_mos_counterpartytype.getValue();
+                            let values = "";
+                            selectedOptions.forEach(function (item) {
+                                values += `<value>${item}</value>`;
+                            });
+                            filter = `<filter type="and">
+                              <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
+                                ${values}
+                              </condition>
+                              <condition attribute="dpam_lk_country" operator="eq" uitype="dpam_country" value="${_dpam_lk_country.getValue()[0].id}" />
+                            </filter>`;
+                        }
+                        formContext.getControl("dpam_lk_localbusinesssegmentation").addCustomFilter(filter, "dpam_cplocalbusinesssegmentation");
+                    }
+                    //function to set the filter on the dpam_lk_localbusinesssegmentation field
+                    static setLocalBusinessSegmentationFilter(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let _dpam_lk_localbusinesssegmentation_control = formContext.getControl("dpam_lk_localbusinesssegmentation");
+                        if (_dpam_lk_localbusinesssegmentation_control != null) {
+                            _dpam_lk_localbusinesssegmentation_control.addPreSearch(this.filterLocalBusinessSegmentation);
+                        }
+                    }
+                    static manageBusinessSegmentationVisibility(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //retrieve the country of counterparty.
+                        let _dpam_lk_country = formContext.getAttribute("dpam_lk_country");
+                        let _dpam_lk_localbusinesssegmentation_control = formContext.getControl("dpam_lk_localbusinesssegmentation");
+                        let _dpam_lk_businesssegmentation_control = formContext.getControl("dpam_lk_businesssegmentation");
+                        _dpam_lk_localbusinesssegmentation_control.setVisible(false);
+                        _dpam_lk_businesssegmentation_control.setVisible(false);
+                        if (_dpam_lk_country != null && _dpam_lk_country.getValue() != null) {
+                            var fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${_dpam_lk_country.getValue()[0].id}" /></filter></entity></fetch>`;
+                            // search at least one occurence of this country in Local segmentation
+                            Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(function success(result) {
+                                console.log("result" + result);
+                                console.log("result.entities.length " + result.entities.length);
+                                if (result.entities.length > 0) {
+                                    // found
+                                    // if one found, set visible Local segmentation and hide generic segmentation  (fill generic segmentation)
+                                    _dpam_lk_localbusinesssegmentation_control.setVisible(true);
+                                    _dpam_lk_businesssegmentation_control.setVisible(false);
+                                }
+                                else {
+                                    // nothing found
+                                    // if not found set visible generic segmentation and hide local segmentation (fill local to null)
+                                    _dpam_lk_localbusinesssegmentation_control.setVisible(false);
+                                    _dpam_lk_businesssegmentation_control.setVisible(true);
+                                }
+                            }, function (error) {
+                                console.log(error.message);
+                                // handle error conditions
+                            });
+                        }
+                    }
+                    static onChange_dpam_lk_country(executionContext) {
+                        this.manageBusinessSegmentationVisibility(executionContext);
+                    }
+                    static onChange_dpam_lk_localbusinesssegmentation(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let _dpam_lk_localbusinesssegmentation = formContext.getAttribute("dpam_lk_localbusinesssegmentation");
+                        console.log("onChange_dpam_lk_localbusinesssegmentation");
+                        console.log(_dpam_lk_localbusinesssegmentation);
                     }
                 }
                 Account.Form = Form;
