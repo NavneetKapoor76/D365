@@ -6,10 +6,11 @@ namespace BDP.DPAM.WR.Location {
         }
 
         public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
-            this.initDefaultCountryCode(executionContext);
+            //SHER-163
+            Form.initDefaultCountryCode(executionContext);
         }
 
-              //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
+        //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
         static initDefaultCountryCode(executionContext: Xrm.Events.EventContext) {
 
             let _defaultPhoneCountryValue: string = "BE";

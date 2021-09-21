@@ -11,7 +11,8 @@ var BDP;
                     static onLoad(executionContext) {
                     }
                     static onChange_dpam_lk_country(executionContext) {
-                        this.initDefaultCountryCode(executionContext);
+                        //SHER-163
+                        Form.initDefaultCountryCode(executionContext);
                     }
                     //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
                     static initDefaultCountryCode(executionContext) {
