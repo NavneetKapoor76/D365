@@ -37,7 +37,7 @@ namespace BDP.DPAM.WR.Contact {
         static resetPhoneNumber(formContext: Xrm.FormContext, fieldName: string) {
             let phoneAttribute: Xrm.Page.Attribute = formContext.getAttribute(fieldName);
 
-            if (phoneAttribute != null && phoneAttribute.getValue()) {
+            if (phoneAttribute.getValue()) {
 
                 let value: string = phoneAttribute.getValue();
                 phoneAttribute.setValue(null);
@@ -55,7 +55,7 @@ namespace BDP.DPAM.WR.Contact {
             let languageAttribute: Xrm.Page.OptionSetAttribute = formContext.getAttribute("dpam_os_language");
             let genderAttribute: Xrm.Page.OptionSetAttribute = formContext.getAttribute("dpam_os_gender");
 
-            if (languageAttribute != null && languageAttribute.getValue() != null && genderAttribute != null && genderAttribute.getValue() != null) {
+            if (languageAttribute.getValue() != null && genderAttribute.getValue() != null) {
                 formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
             } else {
                 formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").removePreSearch(Form.filterContactTitleLookup);

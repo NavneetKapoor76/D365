@@ -39,7 +39,7 @@ var BDP;
                     //function to reset the phone number
                     static resetPhoneNumber(formContext, fieldName) {
                         let phoneAttribute = formContext.getAttribute(fieldName);
-                        if (phoneAttribute != null && phoneAttribute.getValue()) {
+                        if (phoneAttribute.getValue()) {
                             let value = phoneAttribute.getValue();
                             phoneAttribute.setValue(null);
                             phoneAttribute.setValue(value);
@@ -53,7 +53,7 @@ var BDP;
                     static setContactTitleFilter(formContext) {
                         let languageAttribute = formContext.getAttribute("dpam_os_language");
                         let genderAttribute = formContext.getAttribute("dpam_os_gender");
-                        if (languageAttribute != null && languageAttribute.getValue() != null && genderAttribute != null && genderAttribute.getValue() != null) {
+                        if (languageAttribute.getValue() != null && genderAttribute.getValue() != null) {
                             formContext.getControl("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
                         }
                         else {
