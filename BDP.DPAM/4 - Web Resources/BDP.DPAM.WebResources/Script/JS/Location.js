@@ -16,16 +16,16 @@ var BDP;
                     }
                     //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
                     static initDefaultCountryCode(executionContext) {
-                        let _defaultPhoneCountryValue = "BE";
-                        let _country_attribute = executionContext.getFormContext().getAttribute("dpam_lk_country");
-                        if (_country_attribute.getValue()
-                            && _country_attribute.getValue()[0]
-                            && _country_attribute.getValue()[0].id) {
-                            let _country_lookupvalue = _country_attribute.getValue()[0];
-                            Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=dpam_s_alpha2code`).then(function (result) {
-                                _defaultPhoneCountryValue = result["dpam_s_alpha2code"];
+                        let defaultPhoneCountryValue = "BE";
+                        let countryAttribute = executionContext.getFormContext().getAttribute("dpam_lk_country");
+                        if (countryAttribute.getValue()
+                            && countryAttribute.getValue()[0]
+                            && countryAttribute.getValue()[0].id) {
+                            let countryLookupValue = countryAttribute.getValue()[0];
+                            Xrm.WebApi.retrieveRecord(countryLookupValue.entityType, countryLookupValue.id, `?$select=dpam_s_alpha2code`).then(function (result) {
+                                defaultPhoneCountryValue = result["dpam_s_alpha2code"];
                             }, function (error) { }).finally(function () {
-                                executionContext.getFormContext().getAttribute("dpam_s_country_alpha2code").setValue(_defaultPhoneCountryValue);
+                                executionContext.getFormContext().getAttribute("dpam_s_country_alpha2code").setValue(defaultPhoneCountryValue);
                             });
                         }
                     }
