@@ -7,17 +7,6 @@ var BDP;
         (function (WR) {
             var Contact;
             (function (Contact) {
-                class _Static {
-                    constructor() {
-                        this.field = {
-                            contact: {
-                                mobilephone: "mobilephone",
-                                telephone1: "telephone1"
-                            }
-                        };
-                    }
-                }
-                Contact.Static = new _Static();
                 class Form {
                     static onLoad(executionContext) {
                         var formContext = executionContext.getFormContext();
@@ -28,8 +17,8 @@ var BDP;
                     }
                     static QuickCreateonLoad(executionContext) {
                         var formContext = executionContext.getFormContext();
-                        this.resetPhoneNumber(formContext, Contact.Static.field.contact.mobilephone);
-                        this.resetPhoneNumber(formContext, Contact.Static.field.contact.telephone1);
+                        this.resetPhoneNumber(formContext, "mobilephone");
+                        this.resetPhoneNumber(formContext, "telephone1");
                         //SHER-299
                         this.hideContactFromParentCustomerLookup(formContext);
                     }

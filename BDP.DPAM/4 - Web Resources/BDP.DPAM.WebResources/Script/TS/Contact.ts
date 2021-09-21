@@ -1,17 +1,5 @@
 ﻿/// <reference path="../../node_modules/@types/xrm/index.d.ts" />
 namespace BDP.DPAM.WR.Contact {
-
-    class _Static {
-        readonly field = {
-            contact: {
-                mobilephone: "mobilephone",
-                telephone1: "telephone1"
-            }
-        };
-
-    }
-    export let Static = new _Static();
-
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
             var formContext = executionContext.getFormContext();
@@ -26,8 +14,8 @@ namespace BDP.DPAM.WR.Contact {
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
             var formContext = executionContext.getFormContext();
 
-            this.resetPhoneNumber(formContext, Static.field.contact.mobilephone);
-            this.resetPhoneNumber(formContext, Static.field.contact.telephone1);
+            this.resetPhoneNumber(formContext, "mobilephone");
+            this.resetPhoneNumber(formContext, "telephone1");
 
             //SHER-299
             this.hideContactFromParentCustomerLookup(formContext);
