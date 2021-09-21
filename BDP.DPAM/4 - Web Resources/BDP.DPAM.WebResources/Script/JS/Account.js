@@ -31,17 +31,17 @@ var BDP;
                     //function to check if the VAT number in the account is valid based on the VAT format of the country.
                     static checkValidVATNumber(formContext) {
                         formContext.getControl("dpam_s_vatnumber").clearNotification();
-                        let _VATNumber_attribute = formContext.getAttribute("dpam_s_vatnumber");
-                        if (_VATNumber_attribute.getValue()) {
+                        let VATNumberAttribute = formContext.getAttribute("dpam_s_vatnumber");
+                        if (VATNumberAttribute.getValue()) {
                             //Remove spaces & non alphanumeric caracters from the VAT
-                            let _VATNumberFormatted_attribute = _VATNumber_attribute.getValue().replace(/[^0-9a-zA-Z]/g, '');
-                            formContext.getAttribute("dpam_s_vatnumber").setValue(_VATNumberFormatted_attribute);
-                            let _country_attribute = formContext.getAttribute("dpam_lk_country");
-                            if (_country_attribute.getValue() && _country_attribute.getValue()[0] && _country_attribute.getValue()[0].id) {
-                                let _country_lookupvalue = _country_attribute.getValue()[0];
-                                Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=dpam_s_vatformat, dpam_s_vatformatexample`).then(function success(result) {
-                                    let _VATFormatValue = result["dpam_s_vatformat"];
-                                    if (_VATFormatValue != null && !_VATNumberFormatted_attribute.match(_VATFormatValue)) {
+                            let VATNumberFormatted = VATNumberAttribute.getValue().replace(/[^0-9a-zA-Z]/g, '');
+                            formContext.getAttribute("dpam_s_vatnumber").setValue(VATNumberFormatted);
+                            let countryAttribute = formContext.getAttribute("dpam_lk_country");
+                            if (countryAttribute.getValue() && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
+                                let countryLookupvalue = countryAttribute.getValue()[0];
+                                Xrm.WebApi.retrieveRecord(countryLookupvalue.entityType, countryLookupvalue.id, `?$select=dpam_s_vatformat, dpam_s_vatformatexample`).then(function success(result) {
+                                    let VATFormatValue = result["dpam_s_vatformat"];
+                                    if (VATFormatValue != null && !VATNumberFormatted.match(VATFormatValue)) {
                                         formContext.getControl("dpam_s_vatnumber").setNotification("The format isn't valid. Please use following format: " + result["dpam_s_vatformatexample"], "invalidFormat");
                                     }
                                 }, function (error) {
@@ -60,11 +60,11 @@ var BDP;
                               <condition attribute="dpam_lk_counterpartymifidcategory" operator="null" >
                               </condition>
                             </filter>`;
-                        let _dpam_lk_counterpartymifidcategory = formContext.getAttribute("dpam_lk_counterpartymifidcategory");
-                        if (_dpam_lk_counterpartymifidcategory != null && _dpam_lk_counterpartymifidcategory.getValue() != null) {
-                            let id = _dpam_lk_counterpartymifidcategory.getValue()[0].id;
+                        let cpMifidCategoryAttribute = formContext.getAttribute("dpam_lk_counterpartymifidcategory");
+                        if (cpMifidCategoryAttribute != null && cpMifidCategoryAttribute.getValue() != null) {
+                            let cpMifidCategoryId = cpMifidCategoryAttribute.getValue()[0].id;
                             filter = `<filter type="and">
-                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="eq" value=" ${id}" >     
+                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="eq" value=" ${cpMifidCategoryId}" >     
                               </condition>
                             </filter>`;
                         }
@@ -77,9 +77,9 @@ var BDP;
                               <condition attribute="dpam_mos_counterpartytype" operator="null" >
                               </condition>
                             </filter>`;
-                        let _dpam_mos_counterpartytype = formContext.getAttribute("dpam_mos_counterpartytype");
-                        if (_dpam_mos_counterpartytype != null && _dpam_mos_counterpartytype.getValue() != null) {
-                            let selectedOptions = _dpam_mos_counterpartytype.getValue();
+                        let counterpartyTypeAttribute = formContext.getAttribute("dpam_mos_counterpartytype");
+                        if (counterpartyTypeAttribute != null && counterpartyTypeAttribute.getValue() != null) {
+                            let selectedOptions = counterpartyTypeAttribute.getValue();
                             let values = "";
                             selectedOptions.forEach(function (item) {
                                 values += `<value>${item}</value>`;
@@ -124,10 +124,10 @@ var BDP;
                               <condition attribute="dpam_mos_counterpartytype" operator="null" >
                               </condition>
                             </filter>`;
-                        let _dpam_mos_counterpartytype = formContext.getAttribute("dpam_mos_counterpartytype");
-                        let _dpam_lk_country = formContext.getAttribute("dpam_lk_country");
-                        if (_dpam_mos_counterpartytype != null && _dpam_mos_counterpartytype.getValue() != null && _dpam_lk_country != null && _dpam_lk_country.getValue() != null) {
-                            let selectedOptions = _dpam_mos_counterpartytype.getValue();
+                        let counterpartyTypeAttribute = formContext.getAttribute("dpam_mos_counterpartytype");
+                        let countryAttribute = formContext.getAttribute("dpam_lk_country");
+                        if (counterpartyTypeAttribute != null && counterpartyTypeAttribute.getValue() != null && countryAttribute != null && countryAttribute.getValue() != null) {
+                            let selectedOptions = counterpartyTypeAttribute.getValue();
                             let values = "";
                             selectedOptions.forEach(function (item) {
                                 values += `<value>${item}</value>`;
@@ -136,7 +136,7 @@ var BDP;
                               <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
                                 ${values}
                               </condition>
-                              <condition attribute="dpam_lk_country" operator="eq" uitype="dpam_country" value="${_dpam_lk_country.getValue()[0].id}" />
+                              <condition attribute="dpam_lk_country" operator="eq" uitype="dpam_country" value="${countryAttribute.getValue()[0].id}" />
                             </filter>`;
                         }
                         formContext.getControl("dpam_lk_localbusinesssegmentation").addCustomFilter(filter, "dpam_cplocalbusinesssegmentation");
@@ -149,29 +149,30 @@ var BDP;
                             _dpam_lk_localbusinesssegmentation_control.addPreSearch(Form.filterLocalBusinessSegmentation);
                         }
                     }
+                    //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
                     static manageBusinessSegmentationVisibility(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //retrieve the country of counterparty.
-                        let _dpam_lk_country = formContext.getAttribute("dpam_lk_country");
-                        let _dpam_lk_localbusinesssegmentation_control = formContext.getControl("dpam_lk_localbusinesssegmentation");
-                        let _dpam_lk_businesssegmentation_control = formContext.getControl("dpam_lk_businesssegmentation");
-                        _dpam_lk_localbusinesssegmentation_control.setVisible(false);
-                        _dpam_lk_businesssegmentation_control.setVisible(false);
-                        if (_dpam_lk_country != null && _dpam_lk_country.getValue() != null && _dpam_lk_country.getValue()[0] && _dpam_lk_country.getValue()[0].id) {
-                            var fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${_dpam_lk_country.getValue()[0].id}" /></filter></entity></fetch>`;
+                        let countryAttribute = formContext.getAttribute("dpam_lk_country");
+                        let localbusinessSegmentationControl = formContext.getControl("dpam_lk_localbusinesssegmentation");
+                        let businessSegmentationControl = formContext.getControl("dpam_lk_businesssegmentation");
+                        localbusinessSegmentationControl.setVisible(false);
+                        businessSegmentationControl.setVisible(false);
+                        if (countryAttribute != null && countryAttribute.getValue() != null && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
+                            var fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
                             // search at least one occurence of this country in Local segmentation
                             Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(function success(result) {
                                 if (result.entities.length > 0) {
                                     // found
                                     // if one found, set visible Local segmentation and hide generic segmentation  (fill generic segmentation)
-                                    _dpam_lk_localbusinesssegmentation_control.setVisible(true);
-                                    _dpam_lk_businesssegmentation_control.setVisible(false);
+                                    localbusinessSegmentationControl.setVisible(true);
+                                    businessSegmentationControl.setVisible(false);
                                 }
                                 else {
                                     // nothing found
                                     // if not found set visible generic segmentation and hide local segmentation (fill local to null)
-                                    _dpam_lk_localbusinesssegmentation_control.setVisible(false);
-                                    _dpam_lk_businesssegmentation_control.setVisible(true);
+                                    localbusinessSegmentationControl.setVisible(false);
+                                    businessSegmentationControl.setVisible(true);
                                 }
                             }, function (error) {
                                 console.log(error.message);
