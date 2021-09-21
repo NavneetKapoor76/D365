@@ -7,21 +7,6 @@ var BDP;
         (function (WR) {
             var Location;
             (function (Location) {
-                class _Static {
-                    constructor() {
-                        this.field = {
-                            dpam_country: {
-                                dpam_s_alpha2code: "dpam_s_alpha2code",
-                                dpam_s_vatformat: "dpam_s_vatformat"
-                            },
-                            dpam_location: {
-                                dpam_lk_country: "dpam_lk_country",
-                                dpam_s_country_alpha2code: "dpam_s_country_alpha2code"
-                            }
-                        };
-                    }
-                }
-                Location.Static = new _Static();
                 class Form {
                     static onLoad(executionContext) {
                     }
@@ -31,15 +16,15 @@ var BDP;
                     //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
                     static initDefaultCountryCode(executionContext) {
                         let _defaultPhoneCountryValue = "BE";
-                        let _country_attribute = executionContext.getFormContext().getAttribute(Location.Static.field.dpam_location.dpam_lk_country);
+                        let _country_attribute = executionContext.getFormContext().getAttribute("dpam_lk_country");
                         if (_country_attribute.getValue()
                             && _country_attribute.getValue()[0]
                             && _country_attribute.getValue()[0].id) {
                             let _country_lookupvalue = _country_attribute.getValue()[0];
-                            Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Location.Static.field.dpam_country.dpam_s_alpha2code}`).then(function (result) {
-                                _defaultPhoneCountryValue = result[Location.Static.field.dpam_country.dpam_s_alpha2code];
+                            Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=dpam_s_alpha2code`).then(function (result) {
+                                _defaultPhoneCountryValue = result["dpam_s_alpha2code"];
                             }, function (error) { }).finally(function () {
-                                executionContext.getFormContext().getAttribute(Location.Static.field.dpam_location.dpam_s_country_alpha2code).setValue(_defaultPhoneCountryValue);
+                                executionContext.getFormContext().getAttribute("dpam_s_country_alpha2code").setValue(_defaultPhoneCountryValue);
                             });
                         }
                     }
