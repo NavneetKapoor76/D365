@@ -47,7 +47,7 @@ namespace BDP.DPAM.Plugins.Location
             street1 = mergedLocation.GetAttributeValue<string>("dpam_s_street1");
             postalCode = mergedLocation.GetAttributeValue<string>("dpam_s_postalcode");
             city = mergedLocation.GetAttributeValue<string>("dpam_s_city");
-            country = GetCountryName(mergedLocation.GetAttributeValue<EntityReference>("dpam_lk_country").Id);
+            country = CommonLibrary.GetRecordName(_service, mergedLocation.GetAttributeValue<EntityReference>("dpam_lk_country"), "dpam_s_name");
 
             _target["dpam_s_name"] = $"{street1}, {postalCode}, {city}, {country}";
 
@@ -149,8 +149,7 @@ namespace BDP.DPAM.Plugins.Location
                     updatedAccount[attributeCollection[key]] = usedEntity[key];
                     if (key == "dpam_lk_country")
                     {
-                        var country = _service.Retrieve("dpam_country", usedEntity.GetAttributeValue<EntityReference>("dpam_lk_country").Id, new ColumnSet("dpam_s_name"));
-                        updatedAccount["address1_country"] = country.GetAttributeValue<string>("dpam_s_name");
+                        updatedAccount["address1_country"] = CommonLibrary.GetRecordName(_service, usedEntity.GetAttributeValue<EntityReference>("dpam_lk_country"),"dpam_s_name");
                     }
                 }
                 
@@ -258,23 +257,6 @@ namespace BDP.DPAM.Plugins.Location
             }
 
             _tracing.Trace("SetIsMainLocationWhenLocationBecomesInactive - End");
-        }
-
-        /// <summary>
-        /// Get name of Country record based on its GUID
-        /// </summary>
-        internal string GetCountryName(Guid countryID)
-        {               
-            QueryExpression query = new QueryExpression("dpam_country");
-            query.ColumnSet.AddColumns("dpam_s_name");
-            query.Criteria.AddCondition("dpam_countryid", ConditionOperator.Equal, countryID);
-
-            EntityCollection result = _service.RetrieveMultiple(query);
-
-            if (result.Entities.Count > 0)
-                return result.Entities[0].GetAttributeValue<string>("dpam_s_name");
-            else
-                return "";
         }
 
         /// <summary>
