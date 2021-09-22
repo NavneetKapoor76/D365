@@ -90,6 +90,8 @@ namespace BDP.DPAM.Plugins.Location
         /// <param name="account">EntityReference of the account</param>
         private void ClearAccountAddress(EntityReference account)
         {
+            if (account == null) return;
+
             _tracing.Trace("ClearAccountAddress - Start");
 
             var updatedAccount = new Entity("account")
@@ -207,7 +209,6 @@ namespace BDP.DPAM.Plugins.Location
         /// <param name="account">EntityReference of the account</param>
         private void SetOtherMainLocationsToNo(EntityReference account)
         {
-
             if (account == null) return;
 
             _tracing.Trace("SetOtherMainLocationsToNo - Start");
