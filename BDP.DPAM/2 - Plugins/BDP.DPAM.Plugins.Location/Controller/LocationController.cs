@@ -4,6 +4,7 @@ using Microsoft.Xrm.Sdk.Query;
 using System;
 using System.Collections.Generic;
 using BDP.DPAM.Shared.Helper;
+using BDP.DPAM.Shared.Extension_Methods;
 
 namespace BDP.DPAM.Plugins.Location
 {
@@ -41,29 +42,14 @@ namespace BDP.DPAM.Plugins.Location
 
             string street1, postalCode, city, country;
 
-            switch (_context.MessageName)
-            {
-                case "Update":
-                    street1 = _target.Contains("dpam_s_street1") ? _target.GetAttributeValue<string>("dpam_s_street1") : _preImage.Contains("dpam_s_street1") ? _preImage.GetAttributeValue<string>("dpam_s_street1") : "";
-                    postalCode = _target.Contains("dpam_s_postalcode") ? _target.GetAttributeValue<string>("dpam_s_postalcode") : _preImage.Contains("dpam_s_postalcode") ? _preImage.GetAttributeValue<string>("dpam_s_postalcode") : "";
-                    city = _target.Contains("dpam_s_city") ? _target.GetAttributeValue<string>("dpam_s_city") : _preImage.Contains("dpam_s_city") ? _preImage.GetAttributeValue<string>("dpam_s_city") : "";
-                    country = _target.Contains("dpam_lk_country") ? GetCountryName(_target.GetAttributeValue<EntityReference>("dpam_lk_country").Id) : _preImage.Contains("dpam_lk_country") ? GetCountryName(_preImage.GetAttributeValue<EntityReference>("dpam_lk_country").Id) : "";
+            Entity mergedLocation = _target.MergeEntity(_preImage);
 
-                    break;
+            street1 = mergedLocation.GetAttributeValue<string>("dpam_s_street1");
+            postalCode = mergedLocation.GetAttributeValue<string>("dpam_s_postalcode");
+            city = mergedLocation.GetAttributeValue<string>("dpam_s_city");
+            country = GetCountryName(mergedLocation.GetAttributeValue<EntityReference>("dpam_lk_country").Id);
 
-                case "Create":
-                    street1 = _target.Contains("dpam_s_street1") ? _target.GetAttributeValue<string>("dpam_s_street1") : "";
-                    postalCode = _target.Contains("dpam_s_postalcode") ? _target.GetAttributeValue<string>("dpam_s_postalcode") : "";
-                    city = _target.Contains("dpam_s_city") ? _target.GetAttributeValue<string>("dpam_s_city") : "";
-                    country = _target.Contains("dpam_lk_country") ? GetCountryName(_target.GetAttributeValue<EntityReference>("dpam_lk_country").Id) : "";
-
-                    break;
-
-                default:
-                    street1 = city = postalCode = country = string.Empty;
-                    break;
-            }
-            _target["dpam_s_name"] = string.Format("{0}, {1}, {2}, {3}", street1, postalCode, city, country);
+            _target["dpam_s_name"] = $"{street1}, {postalCode}, {city}, {country}";
 
             _tracing.Trace("ConcatenateName - End");
         }
