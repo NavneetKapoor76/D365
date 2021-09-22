@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BDP.DPAM.Plugins.Account.Controller;
 using BDP.DPAM.Shared.Manager_Base;
 using Microsoft.Xrm.Sdk;
