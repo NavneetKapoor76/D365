@@ -37,6 +37,8 @@ namespace BDP.DPAM.Plugins.Location
             if (!_target.Contains("dpam_s_street1") && !_target.Contains("dpam_s_postalcode") && !_target.Contains("dpam_s_city") && !_target.Contains("dpam_lk_country"))
                 return;
 
+            _tracing.Trace("ConcatenateName - Start");
+
             string street1, postalCode, city, country;
 
             switch (_context.MessageName)
@@ -62,6 +64,8 @@ namespace BDP.DPAM.Plugins.Location
                     break;
             }
             _target["dpam_s_name"] = string.Format("{0}, {1}, {2}, {3}", street1, postalCode, city, country);
+
+            _tracing.Trace("ConcatenateName - End");
         }
 
         /// <summary>
@@ -246,7 +250,6 @@ namespace BDP.DPAM.Plugins.Location
             foreach (var location in otherLocations.Entities)
             {
                 location["dpam_b_main"] = false;
-                _tracing.Trace("SetOtherLocationsToNo - Update location");
                 _service.Update(location);
             }
 
@@ -316,7 +319,6 @@ namespace BDP.DPAM.Plugins.Location
             foreach (var contact in contactCollection.Entities)
             {
                 contact["dpam_lk_mainlocation"] = null;
-                _tracing.Trace($"RemoveInactiveLocationLinkedToContact function - Update contact ({contact.Id})");
                 _service.Update(contact);
             }
 
