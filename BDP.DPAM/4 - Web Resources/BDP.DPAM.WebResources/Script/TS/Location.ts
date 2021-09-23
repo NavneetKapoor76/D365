@@ -6,15 +6,16 @@ namespace BDP.DPAM.WR.Location {
         }
 
         public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-163
-            Form.initDefaultCountryCode(executionContext);
+            Form.initDefaultCountryCode(formContext);
         }
 
         //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
-        static initDefaultCountryCode(executionContext: Xrm.Events.EventContext) {
+        static initDefaultCountryCode(formContext: Xrm.FormContext) {
 
             let defaultPhoneCountryValue: string = "BE";
-            let countryAttribute: Xrm.Page.LookupAttribute = executionContext.getFormContext().getAttribute<Xrm.Page.LookupAttribute>("dpam_lk_country");
+            let countryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute<Xrm.Page.LookupAttribute>("dpam_lk_country");
 
             if (countryAttribute.getValue()
                 && countryAttribute.getValue()[0]
@@ -30,7 +31,7 @@ namespace BDP.DPAM.WR.Location {
                     function (error) { }
 
                 ).finally(function () {
-                    executionContext.getFormContext().getAttribute("dpam_s_country_alpha2code").setValue(defaultPhoneCountryValue);
+                    formContext.getAttribute("dpam_s_country_alpha2code").setValue(defaultPhoneCountryValue);
                 });
             }
         }

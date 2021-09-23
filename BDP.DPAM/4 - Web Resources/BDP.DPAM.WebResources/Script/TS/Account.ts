@@ -9,7 +9,7 @@ namespace BDP.DPAM.WR.Account {
             Form.setComplianceSegmentationFilter(executionContext);
             //SHER-268
             Form.setLocalBusinessSegmentationFilter(executionContext);
-             // SHER-292
+             //SHER-292
             Form.manageBusinessSegmentationVisibility(executionContext);
         }
 
@@ -19,7 +19,6 @@ namespace BDP.DPAM.WR.Account {
             Form.checkValidVATNumber(formContext);
         }
 
-        // SHER-292
         public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
             //SHER-292
             Form.manageBusinessSegmentationVisibility(executionContext);
@@ -183,7 +182,7 @@ namespace BDP.DPAM.WR.Account {
             businessSegmentationControl.setVisible(false);
 
             if (countryAttribute.getValue() != null && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
-                var fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
+                let fetchXml: string = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
                 // search at least one occurence of this country in Local segmentation
                 Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(
                     function success(result) {

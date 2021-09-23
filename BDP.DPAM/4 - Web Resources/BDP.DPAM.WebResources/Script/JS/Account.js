@@ -15,7 +15,7 @@ var BDP;
                         Form.setComplianceSegmentationFilter(executionContext);
                         //SHER-268
                         Form.setLocalBusinessSegmentationFilter(executionContext);
-                        // SHER-292
+                        //SHER-292
                         Form.manageBusinessSegmentationVisibility(executionContext);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
@@ -23,7 +23,6 @@ var BDP;
                         //SHER-92
                         Form.checkValidVATNumber(formContext);
                     }
-                    // SHER-292
                     static onChange_dpam_lk_country(executionContext) {
                         //SHER-292
                         Form.manageBusinessSegmentationVisibility(executionContext);
@@ -150,7 +149,7 @@ var BDP;
                         localbusinessSegmentationControl.setVisible(false);
                         businessSegmentationControl.setVisible(false);
                         if (countryAttribute.getValue() != null && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
-                            var fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
+                            let fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
                             // search at least one occurence of this country in Local segmentation
                             Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(function success(result) {
                                 if (result.entities.length > 0) {

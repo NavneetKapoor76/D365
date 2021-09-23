@@ -24,13 +24,11 @@ var BDP;
                         //SHER-299
                         Form.hideContactFromParentCustomerLookup(formContext);
                     }
-                    //SHER-275
                     static onChange_dpam_os_gender(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-275
                         Form.setContactTitleFilter(formContext);
                     }
-                    //SHER-275
                     static onChange_dpam_os_language(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-275

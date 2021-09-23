@@ -11,13 +11,14 @@ var BDP;
                     static onLoad(executionContext) {
                     }
                     static onChange_dpam_lk_country(executionContext) {
+                        const formContext = executionContext.getFormContext();
                         //SHER-163
-                        Form.initDefaultCountryCode(executionContext);
+                        Form.initDefaultCountryCode(formContext);
                     }
                     //function to initialize the field dpam_s_alpha2code based on dpam_lk_country
-                    static initDefaultCountryCode(executionContext) {
+                    static initDefaultCountryCode(formContext) {
                         let defaultPhoneCountryValue = "BE";
-                        let countryAttribute = executionContext.getFormContext().getAttribute("dpam_lk_country");
+                        let countryAttribute = formContext.getAttribute("dpam_lk_country");
                         if (countryAttribute.getValue()
                             && countryAttribute.getValue()[0]
                             && countryAttribute.getValue()[0].id) {
@@ -25,7 +26,7 @@ var BDP;
                             Xrm.WebApi.retrieveRecord(countryLookupValue.entityType, countryLookupValue.id, `?$select=dpam_s_alpha2code`).then(function (result) {
                                 defaultPhoneCountryValue = result["dpam_s_alpha2code"];
                             }, function (error) { }).finally(function () {
-                                executionContext.getFormContext().getAttribute("dpam_s_country_alpha2code").setValue(defaultPhoneCountryValue);
+                                formContext.getAttribute("dpam_s_country_alpha2code").setValue(defaultPhoneCountryValue);
                             });
                         }
                     }

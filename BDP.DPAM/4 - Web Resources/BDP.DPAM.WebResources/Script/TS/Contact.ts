@@ -19,14 +19,12 @@ namespace BDP.DPAM.WR.Contact {
             Form.hideContactFromParentCustomerLookup(formContext);
         }
 
-        //SHER-275
         public static onChange_dpam_os_gender(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-275
             Form.setContactTitleFilter(formContext);
         }
 
-        //SHER-275
         public static onChange_dpam_os_language(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-275
