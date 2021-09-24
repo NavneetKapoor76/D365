@@ -54,6 +54,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.Account", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.Account.Test", "2 - Plugins\BDP.DPAM.Plugins.Account.Test\BDP.DPAM.Plugins.Account.Test.csproj", "{E2B3B1D0-3862-4514-AC5B-C93CB9F3B853}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.Department", "2 - Plugins\BDP.DPAM.Plugins.Department\BDP.DPAM.Plugins.Department.csproj", "{C2288E6F-608E-40AE-B144-F88189E12E59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.Department.Test", "2 - Plugins\BDP.DPAM.Plugins.Department.Test\BDP.DPAM.Plugins.Department.Test.csproj", "{E5BA09B5-1213-4750-A161-7C2F352E5930}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{1fbe4876-cded-4304-8a09-bbbcdaacb5e3}*SharedItemsImports = 4
@@ -61,6 +65,7 @@ Global
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{502d8ae1-ba0e-4a6b-9d77-6ff245b45aae}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{50b4bf38-019b-41e7-a855-3f5960ed14f0}*SharedItemsImports = 13
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{bfdfdda5-074c-4854-a269-93813ad53361}*SharedItemsImports = 4
+		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{c2288e6f-608e-40ae-b144-f88189e12e59}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{c5c19ee3-ed6b-47c0-b8bf-4408985fdfb0}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +113,14 @@ Global
 		{E2B3B1D0-3862-4514-AC5B-C93CB9F3B853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2B3B1D0-3862-4514-AC5B-C93CB9F3B853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2B3B1D0-3862-4514-AC5B-C93CB9F3B853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2288E6F-608E-40AE-B144-F88189E12E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2288E6F-608E-40AE-B144-F88189E12E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2288E6F-608E-40AE-B144-F88189E12E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2288E6F-608E-40AE-B144-F88189E12E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BA09B5-1213-4750-A161-7C2F352E5930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BA09B5-1213-4750-A161-7C2F352E5930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BA09B5-1213-4750-A161-7C2F352E5930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BA09B5-1213-4750-A161-7C2F352E5930}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +137,8 @@ Global
 		{B0699E32-B423-4F06-945F-3EEBAB1F5B42} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
 		{BFDFDDA5-074C-4854-A269-93813AD53361} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
 		{E2B3B1D0-3862-4514-AC5B-C93CB9F3B853} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
+		{C2288E6F-608E-40AE-B144-F88189E12E59} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
+		{E5BA09B5-1213-4750-A161-7C2F352E5930} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77E50B7F-1680-4E20-BF5F-166F843FBB22}
