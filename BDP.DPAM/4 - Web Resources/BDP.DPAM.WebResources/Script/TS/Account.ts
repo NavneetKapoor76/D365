@@ -10,8 +10,10 @@ namespace BDP.DPAM.WR.Account {
             Form.setComplianceSegmentationFilter(formContext);
             //SHER-268
             Form.setLocalBusinessSegmentationFilter(formContext);
-             //SHER-292
+            //SHER-292
             Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-313
+            Form.manageCountryVisibility(formContext);
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
@@ -187,9 +189,15 @@ namespace BDP.DPAM.WR.Account {
             } 
         }
 
-       
-
-       
-
+        // On creation of counterparty, country must be mandatory & visible in order to have the "local business segmentation" pre-filtered
+        static manageCountryVisibility(formContext: Xrm.FormContext) {
+            //Check if it is create mode
+            if (formContext.ui.getFormType() == 1) {
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setVisible(true);
+                formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+            } else {
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setVisible(false);
+            }
+        }
     }
 }

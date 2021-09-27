@@ -18,6 +18,8 @@ var BDP;
                         Form.setLocalBusinessSegmentationFilter(formContext);
                         //SHER-292
                         Form.manageBusinessSegmentationVisibility(formContext);
+                        //SHER-313
+                        Form.manageCountryVisibility(formContext);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -154,6 +156,17 @@ var BDP;
                                 console.log(error.message);
                                 // handle error conditions
                             });
+                        }
+                    }
+                    // On creation of counterparty, country must be mandatory & visible in order to have the "local business segmentation" pre-filtered
+                    static manageCountryVisibility(formContext) {
+                        //Check if it is create mode
+                        if (formContext.ui.getFormType() == 1) {
+                            formContext.getControl("dpam_lk_country").setVisible(true);
+                            formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+                        }
+                        else {
+                            formContext.getControl("dpam_lk_country").setVisible(false);
                         }
                     }
                 }
