@@ -9,6 +9,7 @@ var BDP;
             (function (Account) {
                 class Form {
                     static onLoad(executionContext) {
+                        const formContext = executionContext.getFormContext();
                         //SHER-174
                         Form.setBusinessSegmentationFilter(executionContext);
                         //SHER-244
@@ -16,7 +17,9 @@ var BDP;
                         //SHER-268
                         Form.setLocalBusinessSegmentationFilter(executionContext);
                         //SHER-292
-                        Form.manageBusinessSegmentationVisibility(executionContext);
+                        Form.manageBusinessSegmentationVisibility(formContext);
+                        //SHER-313
+                        Form.manageCountryVisibility(formContext);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -24,8 +27,9 @@ var BDP;
                         Form.checkValidVATNumber(formContext);
                     }
                     static onChange_dpam_lk_country(executionContext) {
+                        const formContext = executionContext.getFormContext();
                         //SHER-292
-                        Form.manageBusinessSegmentationVisibility(executionContext);
+                        Form.manageBusinessSegmentationVisibility(formContext);
                     }
                     //function to check if the VAT number in the account is valid based on the VAT format of the country.
                     static checkValidVATNumber(formContext) {
@@ -140,8 +144,7 @@ var BDP;
                         formContext.getControl("dpam_lk_localbusinesssegmentation").addPreSearch(Form.filterLocalBusinessSegmentation);
                     }
                     //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
-                    static manageBusinessSegmentationVisibility(executionContext) {
-                        const formContext = executionContext.getFormContext();
+                    static manageBusinessSegmentationVisibility(formContext) {
                         //retrieve the country of counterparty.
                         let countryAttribute = formContext.getAttribute("dpam_lk_country");
                         let localbusinessSegmentationControl = formContext.getControl("dpam_lk_localbusinesssegmentation");
@@ -168,6 +171,17 @@ var BDP;
                                 console.log(error.message);
                                 // handle error conditions
                             });
+                        }
+                    }
+                    // On creation of counterparty, country must be mandatory & visible in order to have the "local business segmentation" pre-filtered
+                    static manageCountryVisibility(formContext) {
+                        //Check if it is create mode
+                        if (formContext.ui.getFormType() == 1) {
+                            formContext.getControl("dpam_lk_country").setVisible(true);
+                            formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+                        }
+                        else {
+                            formContext.getControl("dpam_lk_country").setVisible(false);
                         }
                     }
                 }

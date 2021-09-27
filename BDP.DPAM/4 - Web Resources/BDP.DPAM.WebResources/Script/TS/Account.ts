@@ -3,6 +3,8 @@ namespace BDP.DPAM.WR.Account {
     
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+
             //SHER-174
             Form.setBusinessSegmentationFilter(executionContext);
             //SHER-244
@@ -10,7 +12,9 @@ namespace BDP.DPAM.WR.Account {
             //SHER-268
             Form.setLocalBusinessSegmentationFilter(executionContext);
              //SHER-292
-            Form.manageBusinessSegmentationVisibility(executionContext);
+            Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-313
+            Form.manageCountryVisibility(formContext);
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
@@ -20,8 +24,9 @@ namespace BDP.DPAM.WR.Account {
         }
 
         public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-292
-            Form.manageBusinessSegmentationVisibility(executionContext);
+            Form.manageBusinessSegmentationVisibility(formContext);
         }
 
         //function to check if the VAT number in the account is valid based on the VAT format of the country.
@@ -171,8 +176,7 @@ namespace BDP.DPAM.WR.Account {
         }
 
         //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
-        static manageBusinessSegmentationVisibility(executionContext: Xrm.Events.EventContext) {
-            const formContext: Xrm.FormContext = executionContext.getFormContext();
+        static manageBusinessSegmentationVisibility(formContext: Xrm.FormContext) {
             //retrieve the country of counterparty.
             let countryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute("dpam_lk_country");
             let localbusinessSegmentationControl: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_localbusinesssegmentation");
@@ -207,9 +211,15 @@ namespace BDP.DPAM.WR.Account {
             } 
         }
 
-       
-
-       
-
+        // On creation of counterparty, country must be mandatory & visible in order to have the "local business segmentation" pre-filtered
+        static manageCountryVisibility(formContext: Xrm.FormContext) {
+            //Check if it is create mode
+            if (formContext.ui.getFormType() == 1) {
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setVisible(true);
+                formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+            } else {
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setVisible(false);
+            }
+        }
     }
 }
