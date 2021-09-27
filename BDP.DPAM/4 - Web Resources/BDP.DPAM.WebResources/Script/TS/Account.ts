@@ -4,17 +4,14 @@ namespace BDP.DPAM.WR.Account {
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-
             //SHER-174
-            Form.setBusinessSegmentationFilter(executionContext);
+            Form.setBusinessSegmentationFilter(formContext);
             //SHER-244
-            Form.setComplianceSegmentationFilter(executionContext);
+            Form.setComplianceSegmentationFilter(formContext);
             //SHER-268
-            Form.setLocalBusinessSegmentationFilter(executionContext);
+            Form.setLocalBusinessSegmentationFilter(formContext);
              //SHER-292
             Form.manageBusinessSegmentationVisibility(formContext);
-            //SHER-313
-            Form.manageCountryVisibility(formContext);
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
@@ -64,34 +61,24 @@ namespace BDP.DPAM.WR.Account {
         //function to add a custom filter on the dpam_lk_compliancesegmentation field
         static filterComplianceSegmentation(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-
-            let filter: string = `<filter type="and" >
-                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="null" >
-                              </condition>
-                            </filter>`;
-
+            
             let cpMifidCategoryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute<Xrm.Page.LookupAttribute>("dpam_lk_counterpartymifidcategory");
             if (cpMifidCategoryAttribute.getValue() != null) {
                 let cpMifidCategoryId: string = cpMifidCategoryAttribute.getValue()[0].id;
-                filter = `<filter type="and">
+                let filter: string = `<filter type="and">
                               <condition attribute="dpam_lk_counterpartymifidcategory" operator="eq" value=" ${cpMifidCategoryId}" >     
                               </condition>
                             </filter>`;
-            }
 
-            formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_compliancesegmentation").addCustomFilter(filter, "dpam_counterpartycompliancesegmentation");
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_compliancesegmentation").addCustomFilter(filter, "dpam_counterpartycompliancesegmentation");
+            }            
         }
 
 
         //function to add a custom filter on the dpam_lk_businesssegmentation field
         static filterBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-
-            let filter: string = `<filter type="and" >
-                              <condition attribute="dpam_mos_counterpartytype" operator="null" >
-                              </condition>
-                            </filter>`;
-
+            
             let counterpartyTypeAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_mos_counterpartytype");
             if (counterpartyTypeAttribute.getValue() != null) {
                 let selectedOptions: Int32Array = counterpartyTypeAttribute.getValue();
@@ -101,26 +88,22 @@ namespace BDP.DPAM.WR.Account {
                     values += `<value>${item}</value>`;
                 });
 
-                filter = `<filter type="and">
+                let filter: string = `<filter type="and">
                               <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
                                 ${values}
                               </condition>
                             </filter>`;
-            }
 
-            formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_businesssegmentation").addCustomFilter(filter, "dpam_counterpartybusinesssegmentation");
+                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_businesssegmentation").addCustomFilter(filter, "dpam_counterpartybusinesssegmentation");
+            }            
         }
 
         //function to set the filter on the dpam_lk_businesssegmentation field
-        static setBusinessSegmentationFilter(executionContext: Xrm.Events.EventContext) {
-            const formContext: Xrm.FormContext = executionContext.getFormContext();
-
+        static setBusinessSegmentationFilter(formContext: Xrm.FormContext) {
             formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_businesssegmentation").addPreSearch(Form.filterBusinessSegmentation);
         }
         //function to set the filter on the dpam_lk_compliancesegmentation field
-        static setComplianceSegmentationFilter(executionContext: Xrm.Events.EventContext) {
-            const formContext: Xrm.FormContext = executionContext.getFormContext();
-
+        static setComplianceSegmentationFilter(formContext: Xrm.FormContext) {
             formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_compliancesegmentation").addPreSearch(Form.filterComplianceSegmentation);
         }
         // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
@@ -140,12 +123,7 @@ namespace BDP.DPAM.WR.Account {
         //function to add a custom filter on the dpam_lk_localbusinesssegmentation field
         static filterLocalBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-
-            let filter: string = `<filter type="and" >
-                              <condition attribute="dpam_mos_counterpartytype" operator="null" >
-                              </condition>
-                            </filter>`;
-
+            
             let counterpartyTypeAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_mos_counterpartytype");
             let countryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute("dpam_lk_country");
 
@@ -157,21 +135,19 @@ namespace BDP.DPAM.WR.Account {
                     values += `<value>${item}</value>`;
                 });
 
-                filter = `<filter type="and">
+                let filter: string = `<filter type="and">
                               <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
                                 ${values}
                               </condition>
                               <condition attribute="dpam_lk_country" operator="eq" uitype="dpam_country" value="${countryAttribute.getValue()[0].id}" />
                             </filter>`;
-            }
 
-            formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_localbusinesssegmentation").addCustomFilter(filter, "dpam_cplocalbusinesssegmentation");
+                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_localbusinesssegmentation").addCustomFilter(filter, "dpam_cplocalbusinesssegmentation");
+            }
         }
 
         //function to set the filter on the dpam_lk_localbusinesssegmentation field
-        static setLocalBusinessSegmentationFilter(executionContext: Xrm.Events.EventContext) {
-            const formContext: Xrm.FormContext = executionContext.getFormContext();
-
+        static setLocalBusinessSegmentationFilter(formContext: Xrm.FormContext) {
             formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_localbusinesssegmentation").addPreSearch(Form.filterLocalBusinessSegmentation);
         }
 
@@ -211,15 +187,9 @@ namespace BDP.DPAM.WR.Account {
             } 
         }
 
-        // On creation of counterparty, country must be mandatory & visible in order to have the "local business segmentation" pre-filtered
-        static manageCountryVisibility(formContext: Xrm.FormContext) {
-            //Check if it is create mode
-            if (formContext.ui.getFormType() == 1) {
-                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setVisible(true);
-                formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
-            } else {
-                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setVisible(false);
-            }
-        }
+       
+
+       
+
     }
 }
