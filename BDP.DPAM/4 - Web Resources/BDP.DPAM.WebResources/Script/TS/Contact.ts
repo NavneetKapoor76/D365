@@ -40,7 +40,7 @@ namespace BDP.DPAM.WR.Contact {
                 let value: string = phoneAttribute.getValue();
                 phoneAttribute.setValue(null);
                 phoneAttribute.setValue(value);
-            }       
+            }
         }
 
         //function to keep only counterparty in the "parentcustomerid" lookup
@@ -50,25 +50,25 @@ namespace BDP.DPAM.WR.Contact {
 
         //function to set the filter on the "dpam_lk_contacttitle" field
         static setContactTitleFilter(formContext: Xrm.FormContext) {
-            let languageAttribute: Xrm.Page.OptionSetAttribute = formContext.getAttribute("dpam_os_language");
-            let genderAttribute: Xrm.Page.OptionSetAttribute = formContext.getAttribute("dpam_os_gender");
-
-            if (languageAttribute.getValue() != null && genderAttribute.getValue() != null) {
-                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
-            } else {
-                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").removePreSearch(Form.filterContactTitleLookup);
-            }
+            formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
         }
 
         //function to add a custom filter on the "dpam_lk_contacttitle" field based on Contact language & gender
         static filterContactTitleLookup(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
 
-            let filter: string = `<filter type="and">
-                             <condition attribute="dpam_os_gender" operator="eq" value="${formContext.getAttribute("dpam_os_gender").getValue()}" />
-                             <condition attribute="dpam_os_language" operator="eq" value="${formContext.getAttribute("dpam_os_language").getValue()}" />
+            let languageAttribute: Xrm.Page.OptionSetAttribute = formContext.getAttribute("dpam_os_language");
+            let genderAttribute: Xrm.Page.OptionSetAttribute = formContext.getAttribute("dpam_os_gender");
+
+            if (languageAttribute.getValue() != null && genderAttribute.getValue() != null) {
+
+                let filter: string = `<filter type="and">
+                             <condition attribute="dpam_os_gender" operator="eq" value="${genderAttribute.getValue()}" />
+                             <condition attribute="dpam_os_language" operator="eq" value="${languageAttribute.getValue()}" />
                           </filter>`;
-            formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").addCustomFilter(filter, "dpam_contacttitle");
+
+                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").addCustomFilter(filter, "dpam_contacttitle");
+            }
         }
     }
 }

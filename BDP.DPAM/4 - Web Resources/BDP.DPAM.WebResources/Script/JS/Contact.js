@@ -49,23 +49,20 @@ var BDP;
                     }
                     //function to set the filter on the "dpam_lk_contacttitle" field
                     static setContactTitleFilter(formContext) {
-                        let languageAttribute = formContext.getAttribute("dpam_os_language");
-                        let genderAttribute = formContext.getAttribute("dpam_os_gender");
-                        if (languageAttribute.getValue() != null && genderAttribute.getValue() != null) {
-                            formContext.getControl("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
-                        }
-                        else {
-                            formContext.getControl("dpam_lk_contacttitle").removePreSearch(Form.filterContactTitleLookup);
-                        }
+                        formContext.getControl("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
                     }
                     //function to add a custom filter on the "dpam_lk_contacttitle" field based on Contact language & gender
                     static filterContactTitleLookup(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        let filter = `<filter type="and">
-                             <condition attribute="dpam_os_gender" operator="eq" value="${formContext.getAttribute("dpam_os_gender").getValue()}" />
-                             <condition attribute="dpam_os_language" operator="eq" value="${formContext.getAttribute("dpam_os_language").getValue()}" />
+                        let languageAttribute = formContext.getAttribute("dpam_os_language");
+                        let genderAttribute = formContext.getAttribute("dpam_os_gender");
+                        if (languageAttribute.getValue() != null && genderAttribute.getValue() != null) {
+                            let filter = `<filter type="and">
+                             <condition attribute="dpam_os_gender" operator="eq" value="${genderAttribute.getValue()}" />
+                             <condition attribute="dpam_os_language" operator="eq" value="${languageAttribute.getValue()}" />
                           </filter>`;
-                        formContext.getControl("dpam_lk_contacttitle").addCustomFilter(filter, "dpam_contacttitle");
+                            formContext.getControl("dpam_lk_contacttitle").addCustomFilter(filter, "dpam_contacttitle");
+                        }
                     }
                 }
                 Contact.Form = Form;
