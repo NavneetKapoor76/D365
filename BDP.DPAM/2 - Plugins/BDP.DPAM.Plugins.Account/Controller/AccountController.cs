@@ -37,5 +37,25 @@ namespace BDP.DPAM.Plugins.Account.Controller
 
             _tracing.Trace("CompleteSegmentation - End");
         }
+
+        /// <summary>
+        /// If the country of the counterparty has changed to a different one, then we need to empty the fields "dpam_lk_localbusinesssegmentation" & "dpam_lk_businesssegmentation".
+        /// </summary>
+        internal void CheckLocalAndBusinessSegmentationCountry()
+        {
+            if (!_target.Contains("dpam_lk_country"))
+                return;
+
+            _tracing.Trace("CheckLocalAndBusinessSegmentationCountry - Start");
+
+            if (_target["dpam_lk_country"] == null || _preImage["dpam_lk_country"] == null || 
+                    (_target.GetAttributeValue<EntityReference>("dpam_lk_country") != _preImage.GetAttributeValue<EntityReference>("dpam_lk_country")))
+            {
+                _target["dpam_lk_localbusinesssegmentation"] = null;
+                _target["dpam_lk_businesssegmentation"] = null;
+            }
+
+            _tracing.Trace("CheckLocalAndBusinessSegmentationCountry - End");
+        }
     }
 }
