@@ -16,6 +16,8 @@ namespace BDP.DPAM.Plugins.Account
                 ctrl.ValidatePipeline("account", "update", PluginStage.PreOperation);
                 //SHER-292
                 ctrl.CompleteSegmentation();
+                //SHER-337
+                ctrl.CheckLocalAndBusinessSegmentationCountry();
             }
             catch (Exception ex)
             {
