@@ -1,29 +1,24 @@
-﻿using System;
-using BDP.DPAM.Shared.Manager_Base;
+﻿using BDP.DPAM.Shared.Manager_Base;
 using Microsoft.Xrm.Sdk;
+using System;
 
 namespace BDP.DPAM.Plugins.Account
 {
-    public class PreUpdateAccount : IPlugin
+    public class PreCreateAccount : IPlugin
     {
-
         public void Execute(IServiceProvider serviceProvider)
         {
             try
             {
                 AccountController ctrl = new AccountController(serviceProvider);
-                ctrl.ValidatePipeline("account", "update", PluginStage.PreOperation);
-                //SHER-292
-                ctrl.CompleteSegmentation();
-                //SHER-337
-                ctrl.CheckLocalAndBusinessSegmentationCountry();
+                ctrl.ValidatePipeline("account", "create", PluginStage.PreOperation);
+                //SHER-334
+                ctrl.AddFieldsInTargetWhenOriginatingLeadExists();
             }
             catch (Exception ex)
             {
                 throw new InvalidPluginExecutionException(ex.Message);
             }
         }
-
     }
 }
-

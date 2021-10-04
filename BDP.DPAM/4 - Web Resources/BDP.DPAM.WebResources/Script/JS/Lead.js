@@ -93,6 +93,29 @@ var BDP;
                     }
                 }
                 Lead.Form = Form;
+                class Ribbon {
+                    static openDisqualifyLeadCustomPage() {
+                        var pageInput = {
+                            pageType: "custom",
+                            name: "dpam_disqualifyleadcustompage_3731d",
+                            entityName: "lead",
+                            recordId: Xrm.Page.data.entity.getId()
+                        };
+                        var navigationOptions = {
+                            target: 2,
+                            width: 530,
+                            height: 350,
+                            title: "Disqualification"
+                        };
+                        Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                            .then(function success() {
+                            Xrm.Page.data.refresh(true);
+                        }, function error() {
+                            console.log(error);
+                        });
+                    }
+                }
+                Lead.Ribbon = Ribbon;
             })(Lead = WR.Lead || (WR.Lead = {}));
         })(WR = DPAM.WR || (DPAM.WR = {}));
     })(DPAM = BDP.DPAM || (BDP.DPAM = {}));

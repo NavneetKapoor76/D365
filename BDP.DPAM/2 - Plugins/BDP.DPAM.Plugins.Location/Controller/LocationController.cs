@@ -19,7 +19,7 @@ namespace BDP.DPAM.Plugins.Location
         /// </summary>
         internal void SyncAddressAccountWhenLocationIsCreated()
         {
-            if (!_target.Contains("dpam_b_main") || _target.GetAttributeValue<bool>("dpam_b_main") != true) return;
+            if (!_target.Contains("dpam_b_main") || _target.GetAttributeValue<bool>("dpam_b_main") != true || _context.Depth > 1) return;
 
             _tracing.Trace("SyncAddressAccountWhenLocationIsCreated - Start");
 

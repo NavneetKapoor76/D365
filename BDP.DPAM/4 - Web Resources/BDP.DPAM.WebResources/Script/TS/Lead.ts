@@ -108,4 +108,31 @@ namespace BDP.DPAM.WR.Lead {
             );
         }
     }
+
+    export class Ribbon {
+        public static openDisqualifyLeadCustomPage() {
+            var pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_disqualifyleadcustompage_3731d",
+                entityName: "lead",
+                recordId: Xrm.Page.data.entity.getId()
+            };
+
+            var navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 530,
+                height: 350,
+                title: "Disqualification"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        Xrm.Page.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
+        }
+    }
 }

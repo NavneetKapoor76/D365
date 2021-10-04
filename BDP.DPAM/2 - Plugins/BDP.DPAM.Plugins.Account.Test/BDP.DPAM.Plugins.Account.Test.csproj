@@ -111,6 +111,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostCreateAccountTest.cs" />
+    <Compile Include="PreCreateAccountTest.cs" />
     <Compile Include="PreUpdateAccountTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
