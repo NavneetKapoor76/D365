@@ -110,15 +110,16 @@ namespace BDP.DPAM.WR.Lead {
     }
 
     export class Ribbon {
+        //function to open the disqualify lead custom page
         public static openDisqualifyLeadCustomPage() {
-            var pageInput: Xrm.Navigation.CustomPage = {
+            let pageInput: Xrm.Navigation.CustomPage = {
                 pageType: "custom",
                 name: "dpam_disqualifyleadcustompage_3731d",
                 entityName: "lead",
                 recordId: Xrm.Page.data.entity.getId()
             };
 
-            var navigationOptions: Xrm.Navigation.NavigationOptions = {
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
                 target: 2,
                 width: 530,
                 height: 350,

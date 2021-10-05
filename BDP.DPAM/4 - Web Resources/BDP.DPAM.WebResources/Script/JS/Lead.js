@@ -94,14 +94,15 @@ var BDP;
                 }
                 Lead.Form = Form;
                 class Ribbon {
+                    //function to open the disqualify lead custom page
                     static openDisqualifyLeadCustomPage() {
-                        var pageInput = {
+                        let pageInput = {
                             pageType: "custom",
                             name: "dpam_disqualifyleadcustompage_3731d",
                             entityName: "lead",
                             recordId: Xrm.Page.data.entity.getId()
                         };
-                        var navigationOptions = {
+                        let navigationOptions = {
                             target: 2,
                             width: 530,
                             height: 350,
