@@ -14,6 +14,8 @@ namespace BDP.DPAM.Plugins.Account
                 ctrl.ValidatePipeline("account", "create", PluginStage.PreOperation);
                 //SHER-334
                 ctrl.AddFieldsInTargetWhenOriginatingLeadExists();
+                //SHER-344
+                ctrl.CompleteSegmentation();
             }
             catch (Exception ex)
             {
