@@ -16,6 +16,25 @@ namespace BDP.DPAM.WR.Account {
             Form.manageCountryVisibility(formContext);
         }
 
+        public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
+            //SHER-344 All same than form load except SHER-313 Country visibility
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-174
+            Form.setBusinessSegmentationFilter(formContext);
+            //SHER-244
+            Form.setComplianceSegmentationFilter(formContext);
+            //SHER-268
+            Form.setLocalBusinessSegmentationFilter(formContext);
+            //SHER-292
+            Form.manageBusinessSegmentationVisibility(formContext);
+
+            formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+        }
+
+       
+
+
+
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-92
@@ -26,6 +45,16 @@ namespace BDP.DPAM.WR.Account {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-292
             Form.manageBusinessSegmentationVisibility(formContext);
+            Form.resetSegmentation(formContext);
+
+        }
+
+        static resetSegmentation(formContext: Xrm.FormContext) {
+            let localBusinessAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_localbusinesssegmentation");
+            let businessAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_businesssegmentation");
+            localBusinessAttribute.setValue(null);
+            businessAttribute.setValue(null);
+               
         }
 
         //function to check if the VAT number in the account is valid based on the VAT format of the country.

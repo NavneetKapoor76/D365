@@ -21,6 +21,19 @@ var BDP;
                         //SHER-313
                         Form.manageCountryVisibility(formContext);
                     }
+                    static QuickCreateonLoad(executionContext) {
+                        //SHER-344 All same than form load except SHER-313 Country visibility
+                        const formContext = executionContext.getFormContext();
+                        //SHER-174
+                        Form.setBusinessSegmentationFilter(formContext);
+                        //SHER-244
+                        Form.setComplianceSegmentationFilter(formContext);
+                        //SHER-268
+                        Form.setLocalBusinessSegmentationFilter(formContext);
+                        //SHER-292
+                        Form.manageBusinessSegmentationVisibility(formContext);
+                        formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+                    }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-92
@@ -30,6 +43,13 @@ var BDP;
                         const formContext = executionContext.getFormContext();
                         //SHER-292
                         Form.manageBusinessSegmentationVisibility(formContext);
+                        Form.resetSegmentation(formContext);
+                    }
+                    static resetSegmentation(formContext) {
+                        let localBusinessAttribute = formContext.getAttribute("dpam_lk_localbusinesssegmentation");
+                        let businessAttribute = formContext.getAttribute("dpam_lk_businesssegmentation");
+                        localBusinessAttribute.setValue(null);
+                        businessAttribute.setValue(null);
                     }
                     //function to check if the VAT number in the account is valid based on the VAT format of the country.
                     static checkValidVATNumber(formContext) {
