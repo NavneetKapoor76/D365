@@ -18,6 +18,22 @@ namespace BDP.DPAM.WR.Lead {
             Form.manageBusinessSegmentationVisibility(formContext);
         }
 
+        public static quickCreateOnLoad(executionContext: Xrm.Events.EventContext): void {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-349
+            Form.setBusinessSegmentationFilter(formContext);
+            //SHER-349
+            Form.setLocalBusinessSegmentationFilter(formContext);
+            //SHER-349
+            Form.manageBusinessSegmentationVisibility(formContext);
+        }
+
+        public static quickCreateOnChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-349
+            Form.manageBusinessSegmentationVisibility(formContext);
+        }
+
         //function to add a custom filter on the dpam_lk_businesssegmentation field
         static filterBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();

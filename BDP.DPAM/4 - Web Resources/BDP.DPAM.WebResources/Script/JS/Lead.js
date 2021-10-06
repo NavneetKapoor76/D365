@@ -22,6 +22,20 @@ var BDP;
                         //SHER-331
                         Form.manageBusinessSegmentationVisibility(formContext);
                     }
+                    static quickCreateOnLoad(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //SHER-349
+                        Form.setBusinessSegmentationFilter(formContext);
+                        //SHER-349
+                        Form.setLocalBusinessSegmentationFilter(formContext);
+                        //SHER-349
+                        Form.manageBusinessSegmentationVisibility(formContext);
+                    }
+                    static quickCreateOnChange_dpam_lk_country(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //SHER-349
+                        Form.manageBusinessSegmentationVisibility(formContext);
+                    }
                     //function to add a custom filter on the dpam_lk_businesssegmentation field
                     static filterBusinessSegmentation(executionContext) {
                         const formContext = executionContext.getFormContext();
