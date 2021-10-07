@@ -6,6 +6,6 @@
         "target": "es6"
     },
     "include": [
-        "Script/TS/**/*", "../../1 - Shared/BDP.DPAM.Shared/Helper/CommonLibrary.cs", "../../1 - Shared/BDP.DPAM.Shared/Helper/Enum.cs", "../../BDP.DPAM.Plugins.Account/PreUpdateAccount.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Account.Test/PreUpdateAccountTest.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Department/PreCreateDepartment.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Department.Test/PreCreateDepartmentTest.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Lead/PreUpdateLead.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Lead.Test/PreCreateLeadTest.cs"
+        "Script/TS/**/*", "../../1 - Shared/BDP.DPAM.Shared/Helper/CommonLibrary.cs", "../../1 - Shared/BDP.DPAM.Shared/Helper/Enum.cs", "../../BDP.DPAM.Plugins.Account/PreUpdateAccount.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Account.Test/PreUpdateAccountTest.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Department/PreCreateDepartment.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Department.Test/PreCreateDepartmentTest.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Lead/PreUpdateLead.cs", "../../2 - Plugins/BDP.DPAM.Plugins.Lead.Test/PreCreateLeadTest.cs", "../../BDP.DPAM.Plugins.Opportunity/PreCreateOpportunity.cs"
     ]
 }

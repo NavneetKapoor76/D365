@@ -49,8 +49,9 @@ namespace BDP.DPAM.Plugins.Account
 
             _tracing.Trace("CheckLocalAndBusinessSegmentationCountry - Start");
 
-            if (_target["dpam_lk_country"] == null || _preImage["dpam_lk_country"] == null || 
-                    (_target.GetAttributeValue<EntityReference>("dpam_lk_country") != _preImage.GetAttributeValue<EntityReference>("dpam_lk_country")))
+            // The _preImage doesn't contain a field which is null, so testing it with "== null" will give you an error.
+            if (_target["dpam_lk_country"] == null || !_preImage.Contains("dpam_lk_country") || 
+                    !_target.GetAttributeValue<EntityReference>("dpam_lk_country").Equals(_preImage.GetAttributeValue<EntityReference>("dpam_lk_country")))
             {
                 _target["dpam_lk_localbusinesssegmentation"] = null;
                 _target["dpam_lk_businesssegmentation"] = null;
