@@ -14,6 +14,8 @@ var BDP;
                         Form.hideContactFromParentCustomerLookup(formContext);
                         //SHER-275
                         Form.setContactTitleFilter(formContext);
+                        //SHER-362
+                        Form.manageContactTitleVisibility(formContext);
                     }
                     static QuickCreateonLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -33,6 +35,8 @@ var BDP;
                         const formContext = executionContext.getFormContext();
                         //SHER-275
                         Form.setContactTitleFilter(formContext);
+                        //SHER-362
+                        Form.manageContactTitleVisibility(formContext);
                     }
                     //function to reset the phone number
                     static resetPhoneNumber(formContext, fieldName) {
@@ -63,6 +67,12 @@ var BDP;
                           </filter>`;
                             formContext.getControl("dpam_lk_contacttitle").addCustomFilter(filter, "dpam_contacttitle");
                         }
+                    }
+                    //Function to hide the "dpam_lk_contacttitle" field when the language is German
+                    static manageContactTitleVisibility(formContext) {
+                        let languageValue = formContext.getAttribute("dpam_os_language").getValue();
+                        let isContactTitleVisible = languageValue == 100000002; //German
+                        formContext.getControl("dpam_lk_contacttitle").setVisible(isContactTitleVisible);
                     }
                 }
                 Contact.Form = Form;

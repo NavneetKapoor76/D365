@@ -7,6 +7,8 @@ namespace BDP.DPAM.WR.Contact {
             Form.hideContactFromParentCustomerLookup(formContext);
             //SHER-275
             Form.setContactTitleFilter(formContext);
+            //SHER-362
+            Form.manageContactTitleVisibility(formContext);
         }
 
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
@@ -29,6 +31,8 @@ namespace BDP.DPAM.WR.Contact {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-275
             Form.setContactTitleFilter(formContext);
+            //SHER-362
+            Form.manageContactTitleVisibility(formContext);
         }
 
         //function to reset the phone number
@@ -69,6 +73,14 @@ namespace BDP.DPAM.WR.Contact {
 
                 formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_contacttitle").addCustomFilter(filter, "dpam_contacttitle");
             }
+        }
+
+        //Function to hide the "dpam_lk_contacttitle" field when the language is German
+        static manageContactTitleVisibility(formContext: Xrm.FormContext) {
+            let languageValue: number = formContext.getAttribute("dpam_os_language").getValue();
+            let isContactTitleVisible = languageValue == 100000002; //German
+
+            formContext.getControl<Xrm.Controls.StandardControl>("dpam_lk_contacttitle").setVisible(isContactTitleVisible);
         }
     }
 }
