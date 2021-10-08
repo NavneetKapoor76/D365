@@ -78,7 +78,7 @@ namespace BDP.DPAM.WR.Contact {
         //Function to hide the "dpam_lk_contacttitle" field when the language is German
         static manageContactTitleVisibility(formContext: Xrm.FormContext) {
             let languageValue: number = formContext.getAttribute("dpam_os_language").getValue();
-            let isContactTitleVisible = languageValue == 100000002; //German
+            let isContactTitleVisible: boolean = languageValue == 100000002; //German
 
             formContext.getControl<Xrm.Controls.StandardControl>("dpam_lk_contacttitle").setVisible(isContactTitleVisible);
         }
