@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BDP.DPAM.Plugins.Account.Controller;
 using BDP.DPAM.Shared.Manager_Base;
 using Microsoft.Xrm.Sdk;
 
@@ -20,6 +15,8 @@ namespace BDP.DPAM.Plugins.Account
                 ctrl.ValidatePipeline("account", "update", PluginStage.PreOperation);
                 //SHER-292
                 ctrl.CompleteSegmentation();
+                //SHER-337
+                ctrl.CheckLocalAndBusinessSegmentationCountry();
             }
             catch (Exception ex)
             {

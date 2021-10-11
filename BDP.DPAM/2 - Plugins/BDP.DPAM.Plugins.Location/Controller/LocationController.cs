@@ -4,6 +4,7 @@ using Microsoft.Xrm.Sdk.Query;
 using System;
 using System.Collections.Generic;
 using BDP.DPAM.Shared.Helper;
+using BDP.DPAM.Shared.Extension_Methods;
 
 namespace BDP.DPAM.Plugins.Location
 {
@@ -18,7 +19,7 @@ namespace BDP.DPAM.Plugins.Location
         /// </summary>
         internal void SyncAddressAccountWhenLocationIsCreated()
         {
-            if (!_target.Contains("dpam_b_main") || _target.GetAttributeValue<bool>("dpam_b_main") != true) return;
+            if (!_target.Contains("dpam_b_main") || _target.GetAttributeValue<bool>("dpam_b_main") != true || _context.Depth > 1) return;
 
             _tracing.Trace("SyncAddressAccountWhenLocationIsCreated - Start");
 
@@ -37,31 +38,20 @@ namespace BDP.DPAM.Plugins.Location
             if (!_target.Contains("dpam_s_street1") && !_target.Contains("dpam_s_postalcode") && !_target.Contains("dpam_s_city") && !_target.Contains("dpam_lk_country"))
                 return;
 
+            _tracing.Trace("ConcatenateName - Start");
+
             string street1, postalCode, city, country;
 
-            switch (_context.MessageName)
-            {
-                case "Update":
-                    street1 = _target.Contains("dpam_s_street1") ? _target.GetAttributeValue<string>("dpam_s_street1") : _preImage.Contains("dpam_s_street1") ? _preImage.GetAttributeValue<string>("dpam_s_street1") : "";
-                    postalCode = _target.Contains("dpam_s_postalcode") ? _target.GetAttributeValue<string>("dpam_s_postalcode") : _preImage.Contains("dpam_s_postalcode") ? _preImage.GetAttributeValue<string>("dpam_s_postalcode") : "";
-                    city = _target.Contains("dpam_s_city") ? _target.GetAttributeValue<string>("dpam_s_city") : _preImage.Contains("dpam_s_city") ? _preImage.GetAttributeValue<string>("dpam_s_city") : "";
-                    country = _target.Contains("dpam_lk_country") ? GetCountryName(_target.GetAttributeValue<EntityReference>("dpam_lk_country").Id) : _preImage.Contains("dpam_lk_country") ? GetCountryName(_preImage.GetAttributeValue<EntityReference>("dpam_lk_country").Id) : "";
+            Entity mergedLocation = _target.MergeEntity(_preImage);
 
-                    break;
+            street1 = mergedLocation.GetAttributeValue<string>("dpam_s_street1");
+            postalCode = mergedLocation.GetAttributeValue<string>("dpam_s_postalcode");
+            city = mergedLocation.GetAttributeValue<string>("dpam_s_city");
+            country = CommonLibrary.GetRecordName(_service, mergedLocation.GetAttributeValue<EntityReference>("dpam_lk_country"), "dpam_s_name");
 
-                case "Create":
-                    street1 = _target.Contains("dpam_s_street1") ? _target.GetAttributeValue<string>("dpam_s_street1") : "";
-                    postalCode = _target.Contains("dpam_s_postalcode") ? _target.GetAttributeValue<string>("dpam_s_postalcode") : "";
-                    city = _target.Contains("dpam_s_city") ? _target.GetAttributeValue<string>("dpam_s_city") : "";
-                    country = _target.Contains("dpam_lk_country") ? GetCountryName(_target.GetAttributeValue<EntityReference>("dpam_lk_country").Id) : "";
+            _target["dpam_s_name"] = $"{street1}, {postalCode}, {city}, {country}";
 
-                    break;
-
-                default:
-                    street1 = city = postalCode = country = string.Empty;
-                    break;
-            }
-            _target["dpam_s_name"] = string.Format("{0}, {1}, {2}, {3}", street1, postalCode, city, country);
+            _tracing.Trace("ConcatenateName - End");
         }
 
         /// <summary>
@@ -100,6 +90,8 @@ namespace BDP.DPAM.Plugins.Location
         /// <param name="account">EntityReference of the account</param>
         private void ClearAccountAddress(EntityReference account)
         {
+            if (account == null) return;
+
             _tracing.Trace("ClearAccountAddress - Start");
 
             var updatedAccount = new Entity("account")
@@ -159,8 +151,7 @@ namespace BDP.DPAM.Plugins.Location
                     updatedAccount[attributeCollection[key]] = usedEntity[key];
                     if (key == "dpam_lk_country")
                     {
-                        var country = _service.Retrieve("dpam_country", usedEntity.GetAttributeValue<EntityReference>("dpam_lk_country").Id, new ColumnSet("dpam_s_name"));
-                        updatedAccount["address1_country"] = country.GetAttributeValue<string>("dpam_s_name");
+                        updatedAccount["address1_country"] = CommonLibrary.GetRecordName(_service, usedEntity.GetAttributeValue<EntityReference>("dpam_lk_country"),"dpam_s_name");
                     }
                 }
                 
@@ -218,7 +209,6 @@ namespace BDP.DPAM.Plugins.Location
         /// <param name="account">EntityReference of the account</param>
         private void SetOtherMainLocationsToNo(EntityReference account)
         {
-
             if (account == null) return;
 
             _tracing.Trace("SetOtherMainLocationsToNo - Start");
@@ -246,7 +236,6 @@ namespace BDP.DPAM.Plugins.Location
             foreach (var location in otherLocations.Entities)
             {
                 location["dpam_b_main"] = false;
-                _tracing.Trace("SetOtherLocationsToNo - Update location");
                 _service.Update(location);
             }
 
@@ -269,23 +258,6 @@ namespace BDP.DPAM.Plugins.Location
             }
 
             _tracing.Trace("SetIsMainLocationWhenLocationBecomesInactive - End");
-        }
-
-        /// <summary>
-        /// Get name of Country record based on its GUID
-        /// </summary>
-        internal string GetCountryName(Guid countryID)
-        {               
-            QueryExpression query = new QueryExpression("dpam_country");
-            query.ColumnSet.AddColumns("dpam_s_name");
-            query.Criteria.AddCondition("dpam_countryid", ConditionOperator.Equal, countryID);
-
-            EntityCollection result = _service.RetrieveMultiple(query);
-
-            if (result.Entities.Count > 0)
-                return result.Entities[0].GetAttributeValue<string>("dpam_s_name");
-            else
-                return "";
         }
 
         /// <summary>
@@ -316,7 +288,6 @@ namespace BDP.DPAM.Plugins.Location
             foreach (var contact in contactCollection.Entities)
             {
                 contact["dpam_lk_mainlocation"] = null;
-                _tracing.Trace($"RemoveInactiveLocationLinkedToContact function - Update contact ({contact.Id})");
                 _service.Update(contact);
             }
 

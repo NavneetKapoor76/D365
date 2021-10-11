@@ -7,45 +7,41 @@ var BDP;
         (function (WR) {
             var Contact;
             (function (Contact) {
-                class _Static {
-                    constructor() {
-                        this.field = {
-                            contact: {
-                                mobilephone: "mobilephone",
-                                telephone1: "telephone1"
-                            }
-                        };
-                    }
-                }
-                Contact.Static = new _Static();
                 class Form {
                     static onLoad(executionContext) {
-                        var formContext = executionContext.getFormContext();
+                        const formContext = executionContext.getFormContext();
                         //SHER-299
-                        this.hideContactFromParentCustomerLookup(formContext);
+                        Form.hideContactFromParentCustomerLookup(formContext);
                         //SHER-275
-                        this.setContactTitleFilter(formContext);
+                        Form.setContactTitleFilter(formContext);
+                        //SHER-362
+                        Form.manageContactTitleVisibility(formContext);
                     }
                     static QuickCreateonLoad(executionContext) {
-                        var formContext = executionContext.getFormContext();
-                        this.resetPhoneNumber(formContext, Contact.Static.field.contact.mobilephone);
-                        this.resetPhoneNumber(formContext, Contact.Static.field.contact.telephone1);
+                        const formContext = executionContext.getFormContext();
                         //SHER-299
-                        this.hideContactFromParentCustomerLookup(formContext);
+                        Form.resetPhoneNumber(formContext, "mobilephone");
+                        //SHER-299
+                        Form.resetPhoneNumber(formContext, "telephone1");
+                        //SHER-299
+                        Form.hideContactFromParentCustomerLookup(formContext);
                     }
-                    //SHER-275
                     static onChange_dpam_os_gender(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        this.setContactTitleFilter(formContext);
+                        //SHER-275
+                        Form.setContactTitleFilter(formContext);
                     }
-                    //SHER-275
                     static onChange_dpam_os_language(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        this.setContactTitleFilter(formContext);
+                        //SHER-275
+                        Form.setContactTitleFilter(formContext);
+                        //SHER-362
+                        Form.manageContactTitleVisibility(formContext);
                     }
+                    //function to reset the phone number
                     static resetPhoneNumber(formContext, fieldName) {
                         let phoneAttribute = formContext.getAttribute(fieldName);
-                        if (phoneAttribute != null && phoneAttribute.getValue()) {
+                        if (phoneAttribute.getValue()) {
                             let value = phoneAttribute.getValue();
                             phoneAttribute.setValue(null);
                             phoneAttribute.setValue(value);
@@ -57,23 +53,26 @@ var BDP;
                     }
                     //function to set the filter on the "dpam_lk_contacttitle" field
                     static setContactTitleFilter(formContext) {
-                        let _dpam_os_language = formContext.getAttribute("dpam_os_language");
-                        let _dpam_os_gender = formContext.getAttribute("dpam_os_gender");
-                        if (_dpam_os_language != null && _dpam_os_language.getValue() != null && _dpam_os_gender != null && _dpam_os_gender.getValue() != null) {
-                            formContext.getControl("dpam_lk_contacttitle").addPreSearch(this.filterContactTitleLookup);
-                        }
-                        else {
-                            formContext.getControl("dpam_lk_contacttitle").removePreSearch(this.filterContactTitleLookup);
-                        }
+                        formContext.getControl("dpam_lk_contacttitle").addPreSearch(Form.filterContactTitleLookup);
                     }
                     //function to add a custom filter on the "dpam_lk_contacttitle" field based on Contact language & gender
                     static filterContactTitleLookup(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        var filter = `<filter type="and">
-                             <condition attribute="dpam_os_gender" operator="eq" value="${formContext.getAttribute("dpam_os_gender").getValue()}" />
-                             <condition attribute="dpam_os_language" operator="eq" value="${formContext.getAttribute("dpam_os_language").getValue()}" />
+                        let languageAttribute = formContext.getAttribute("dpam_os_language");
+                        let genderAttribute = formContext.getAttribute("dpam_os_gender");
+                        if (languageAttribute.getValue() != null && genderAttribute.getValue() != null) {
+                            let filter = `<filter type="and">
+                             <condition attribute="dpam_os_gender" operator="eq" value="${genderAttribute.getValue()}" />
+                             <condition attribute="dpam_os_language" operator="eq" value="${languageAttribute.getValue()}" />
                           </filter>`;
-                        formContext.getControl("dpam_lk_contacttitle").addCustomFilter(filter, "dpam_contacttitle");
+                            formContext.getControl("dpam_lk_contacttitle").addCustomFilter(filter, "dpam_contacttitle");
+                        }
+                    }
+                    //Function to hide the "dpam_lk_contacttitle" field when the language is German
+                    static manageContactTitleVisibility(formContext) {
+                        let languageValue = formContext.getAttribute("dpam_os_language").getValue();
+                        let isContactTitleVisible = languageValue == 100000002; //German
+                        formContext.getControl("dpam_lk_contacttitle").setVisible(isContactTitleVisible);
                     }
                 }
                 Contact.Form = Form;

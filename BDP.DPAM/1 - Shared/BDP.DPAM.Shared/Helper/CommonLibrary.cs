@@ -49,5 +49,21 @@ namespace BDP.DPAM.Shared.Helper
 
 			return toReturn;
 		}
-	}
+
+        /// <summary>
+        /// Get the name of a record
+        /// </summary>
+        /// <param name="service">the IOrganizationService</param>
+        /// <param name="entityReference">the record</param>
+        /// <param name="fieldName">the fieldName that contains the record's name</param>
+        /// <returns></returns>
+        public static string GetRecordName(IOrganizationService service, EntityReference entityReference, string fieldName)
+        {
+            if (entityReference == null) return string.Empty;
+            
+            Entity result = service.Retrieve(entityReference.LogicalName, entityReference.Id, new ColumnSet(fieldName));
+                        
+            return result.GetAttributeValue<string>(fieldName);
+        }
+    }
 }
