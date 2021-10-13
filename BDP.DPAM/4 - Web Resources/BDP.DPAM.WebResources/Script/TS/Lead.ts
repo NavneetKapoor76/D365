@@ -8,14 +8,14 @@ namespace BDP.DPAM.WR.Lead {
             Form.setBusinessSegmentationFilter(formContext);
             //SHER-331
             Form.setLocalBusinessSegmentationFilter(formContext);
-            //SHER-331
-            Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-331 + SHER-391
+            Form.manageBusinessSegmentationVisibilityAndRequirementLevel(formContext);
         }
 
         public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-            //SHER-331
-            Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-331 + SHER-391
+            Form.manageBusinessSegmentationVisibilityAndRequirementLevel(formContext);
         }
 
         public static quickCreateOnLoad(executionContext: Xrm.Events.EventContext): void {
@@ -24,14 +24,14 @@ namespace BDP.DPAM.WR.Lead {
             Form.setBusinessSegmentationFilter(formContext);
             //SHER-349
             Form.setLocalBusinessSegmentationFilter(formContext);
-            //SHER-349
-            Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-349 + SHER-391
+            Form.manageBusinessSegmentationVisibilityAndRequirementLevel(formContext);
         }
 
         public static quickCreateOnChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-            //SHER-349
-            Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-349 + SHER-391
+            Form.manageBusinessSegmentationVisibilityAndRequirementLevel(formContext);
         }
 
         //function to add a custom filter on the dpam_lk_businesssegmentation field
@@ -93,8 +93,8 @@ namespace BDP.DPAM.WR.Lead {
             formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_localbusinesssegmentation").addPreSearch(Form.filterLocalBusinessSegmentation);
         }
 
-        //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
-        static manageBusinessSegmentationVisibility(formContext: Xrm.FormContext) {
+        //function to set the visibility and the requirement level of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
+        static manageBusinessSegmentationVisibilityAndRequirementLevel(formContext: Xrm.FormContext) {
             let countryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute("dpam_lk_country");
 
             if (countryAttribute.getValue() == null) return;
@@ -115,8 +115,15 @@ namespace BDP.DPAM.WR.Lead {
 
                     if (result.entities.length > 0) localBusinessSegmentationIsVisible = true;
 
+                    let localBusinessSegmentationRequirementLevel: Xrm.Attributes.RequirementLevel = localBusinessSegmentationIsVisible ? "required" : "none";
+                    let businessSegmentationRequirementLevel: Xrm.Attributes.RequirementLevel = localBusinessSegmentationIsVisible ? "none" : "required";
+
                     localbusinessSegmentationControl.setVisible(localBusinessSegmentationIsVisible);
+                    localbusinessSegmentationControl.getAttribute().setRequiredLevel(localBusinessSegmentationRequirementLevel);
+
                     businessSegmentationControl.setVisible(!localBusinessSegmentationIsVisible);
+                    businessSegmentationControl.getAttribute().setRequiredLevel(businessSegmentationRequirementLevel);
+
                 },
                 function (error) {
                     console.log(error.message);
