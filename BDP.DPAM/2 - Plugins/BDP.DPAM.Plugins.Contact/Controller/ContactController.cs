@@ -75,7 +75,7 @@ namespace BDP.DPAM.Plugins.Contact
         /// </summary>
         internal void SetContactGreetingBasedOnLanguageAndGender()
         {
-            if (!this._target.Contains("dpam_os_language") && !this._target.Contains("gendercode"))
+            if (!this._target.Contains("dpam_os_language") && !this._target.Contains("dpam_os_gender"))
                 return;
 
             this._tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - Start");
@@ -83,19 +83,12 @@ namespace BDP.DPAM.Plugins.Contact
             Entity mergedContact = this._target.MergeEntity(this._preImage);
 
             OptionSetValue contactLanguage = mergedContact.GetAttributeValue<OptionSetValue>("dpam_os_language");
-            OptionSetValue contactGender = mergedContact.GetAttributeValue<OptionSetValue>("gendercode");
+            OptionSetValue contactGender = mergedContact.GetAttributeValue<OptionSetValue>("dpam_os_gender");
 
             EntityReference contactGreetingRef = null;
 
             if (contactLanguage != null && contactGender != null)
-            {
-                int relatedGenderCode = 
-                    contactGender.Value == Convert.ToInt32(Contact_Gender.Female) ? Convert.ToInt32(Greeting_Gender.Female) : 
-                    contactGender.Value == Convert.ToInt32(Contact_Gender.Male) ? Convert.ToInt32(Greeting_Gender.Male) : 
-                    Convert.ToInt32(Greeting_Gender.NonBinary);
-
-                contactGreetingRef = this.GetGreetingRefBasedOnLanguageAndGender(contactLanguage.Value, relatedGenderCode);
-            }
+                contactGreetingRef = this.GetGreetingRefBasedOnLanguageAndGender(contactLanguage.Value, contactGender.Value);
 
             this._target["dpam_lk_greeting"] = contactGreetingRef;
 
