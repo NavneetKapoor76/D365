@@ -124,5 +124,30 @@ namespace BDP.DPAM.Plugins.Contact
 
             return retVal;
         }
+
+        /// <summary>
+        /// Set the field Direct Line with the value of the field Main Phone of the related CounterParty
+        /// </summary>
+        internal void SetContactDirectLineBasedOnCounterpartyMainPhone()
+        {
+            if (!_target.Contains("parentcustomerid"))
+                return;
+
+            _tracing.Trace("SetContactDirectLineBasedOnCounterpartyMainPhone - Start");
+
+            EntityReference parentCounterPartyRef = _target.GetAttributeValue<EntityReference>("parentcustomerid");
+
+            // Should never be a Contact 
+            //  -> JS has been added on the form to ensure selection of a Counterparty. 
+            //  -> System will throw an Exception in case of error during the retrieve
+            Entity counterParty = _service.Retrieve(parentCounterPartyRef, new string[] { "telephone1" });
+            string counterPartyMainPhone = counterParty.GetAttributeValue<string>("telephone1");
+
+            // !!!! WHAT IF COUNTERPARTY PHONE IS EMPTY ???
+
+            _target["business2"] = counterPartyMainPhone;
+
+            _tracing.Trace("SetContactDirectLineBasedOnCounterpartyMainPhone - End");
+        }
     }
 }

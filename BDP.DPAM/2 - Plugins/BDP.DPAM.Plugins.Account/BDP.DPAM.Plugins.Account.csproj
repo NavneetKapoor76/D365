@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="PostCreateAccount.cs" />
+    <Compile Include="PostUpdateAccount.cs" />
     <Compile Include="PreCreateAccount.cs" />
     <Compile Include="PreUpdateAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
