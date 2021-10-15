@@ -3,7 +3,7 @@ using BDP.DPAM.Shared.Extension_Methods;
 using BDP.DPAM.Shared.Helper;
 using BDP.DPAM.Shared.Manager_Base;
 using Microsoft.Xrm.Sdk;
-
+using Microsoft.Xrm.Sdk.Query;
 
 namespace BDP.DPAM.Plugins.Account
 {
@@ -121,6 +121,39 @@ namespace BDP.DPAM.Plugins.Account
                 city = _target.GetAttributeValue<string>("address1_city");
 
             _target["dpam_s_address1"] = $"{street1}, {postalCode}, {city}, {country}";
+        }
+
+        /// <summary>
+        /// Update the Direct Line of the children Contacts based on the Main Phone of the Counterparty
+        /// </summary>
+        internal void SyncChildrenContactsDirectLineWithCounterpartyMainPhone()
+        {
+            if (!_target.Contains("telephone1"))
+                return;
+
+            _tracing.Trace("SyncChildrenContactsDirectLineWithCounterpartyMainPhone - Start");
+
+            string counterPartyMainPhone = _target.GetAttributeValue<string>("telephone1");
+
+            // !!!! WHAT IF COUNTERPARTY PHONE IS EMPTY ???
+
+            EntityCollection childrenContacts = CommonLibrary.GetCounterpartyChildrenContacts(_service, _tracing, _target.Id, new ColumnSet(new string[] { "business2" }));
+
+            foreach (Entity childrenContact in childrenContacts.Entities)
+            {
+                string childrenContactDirectPhone = childrenContact.GetAttributeValue<string>("business2");
+
+                if (childrenContactDirectPhone != counterPartyMainPhone)
+                {
+                    Entity contactToUpdate = new Entity(childrenContact.LogicalName);
+                    contactToUpdate.Id = childrenContact.Id;
+                    contactToUpdate["business2"] = counterPartyMainPhone;
+
+                    _service.Update(contactToUpdate);
+                }
+            }
+
+            _tracing.Trace("SyncChildrenContactsDirectLineWithCounterpartyMainPhone - End");
         }
     }
 }
