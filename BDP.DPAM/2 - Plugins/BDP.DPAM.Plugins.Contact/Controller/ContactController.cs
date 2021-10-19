@@ -143,9 +143,9 @@ namespace BDP.DPAM.Plugins.Contact
             Entity counterParty = _service.Retrieve(parentCounterPartyRef, new string[] { "telephone1" });
             string counterPartyMainPhone = counterParty.GetAttributeValue<string>("telephone1");
 
-            // !!!! WHAT IF COUNTERPARTY PHONE IS EMPTY ???
-
-            _target["business2"] = counterPartyMainPhone;
+            // Do not sync in case of creation if the Counterparty Main phone is empty
+            if (_context.MessageName.ToLower() != "create" || !string.IsNullOrWhiteSpace(counterPartyMainPhone))
+                _target["business2"] = counterPartyMainPhone;
 
             _tracing.Trace("SetContactDirectLineBasedOnCounterpartyMainPhone - End");
         }

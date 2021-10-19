@@ -135,8 +135,6 @@ namespace BDP.DPAM.Plugins.Account
 
             string counterPartyMainPhone = _target.GetAttributeValue<string>("telephone1");
 
-            // !!!! WHAT IF COUNTERPARTY PHONE IS EMPTY ???
-
             EntityCollection childrenContacts = CommonLibrary.GetCounterpartyChildrenContacts(_service, _tracing, _target.Id, new ColumnSet(new string[] { "business2" }));
 
             foreach (Entity childrenContact in childrenContacts.Entities)
