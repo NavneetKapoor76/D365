@@ -16,8 +16,6 @@ namespace BDP.DPAM.WR.Contact {
             //SHER-299
             Form.resetPhoneNumber(formContext, "mobilephone");
             //SHER-299
-            Form.resetPhoneNumber(formContext, "telephone1");
-            //SHER-299
             Form.hideContactFromParentCustomerLookup(formContext);
         }
 
