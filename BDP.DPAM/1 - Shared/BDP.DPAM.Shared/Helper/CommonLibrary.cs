@@ -65,35 +65,5 @@ namespace BDP.DPAM.Shared.Helper
                         
             return result.GetAttributeValue<string>(fieldName);
         }
-
-        /// <summary>
-        /// Get the children Contacts of a CounterParty with the recieved Columns
-        /// </summary>
-        /// <param name="service">Application Organisation Service</param>
-        /// <param name="tracing">Application Tracing Service</param>
-        /// <param name="counterPartyId">Guid of the Counterparty</param>
-        /// <param name="columns">Columns to retrieve</param>
-        /// <returns></returns>
-        public static EntityCollection GetCounterpartyChildrenContacts(IOrganizationService service, ITracingService tracing, Guid counterPartyId, ColumnSet columns)
-        {
-            tracing.Trace("GetCounterpartyChildrenContacts - Start");
-
-            EntityCollection retVal = new EntityCollection();
-
-            ConditionExpression conditionParentCounterparty = new ConditionExpression("parentcustomerid", ConditionOperator.Equal, counterPartyId);
-
-            QueryExpression query = new QueryExpression("contact");
-            query.Criteria.AddCondition(conditionParentCounterparty);
-            query.ColumnSet = columns;
-
-            EntityCollection result = service.RetrieveMultiple(query);
-
-            if (result.Entities.Count > 0)
-                retVal = result;
-
-            tracing.Trace("GetCounterpartyChildrenContacts - End");
-
-            return retVal;
-        }
     }
 }

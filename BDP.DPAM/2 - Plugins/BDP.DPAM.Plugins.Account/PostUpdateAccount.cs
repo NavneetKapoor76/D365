@@ -16,9 +16,6 @@ namespace BDP.DPAM.Plugins.Account
             {
                 AccountController ctrl = new AccountController(serviceProvider);
                 ctrl.ValidatePipeline("account", "update", PluginStage.PostOperation);
-
-                // SHER-379
-                ctrl.SyncChildrenContactsDirectLineWithCounterpartyMainPhone();
             }
             catch (Exception ex)
             {

@@ -122,36 +122,5 @@ namespace BDP.DPAM.Plugins.Account
 
             _target["dpam_s_address1"] = $"{street1}, {postalCode}, {city}, {country}";
         }
-
-        /// <summary>
-        /// Update the Direct Line of the children Contacts based on the Main Phone of the Counterparty
-        /// </summary>
-        internal void SyncChildrenContactsDirectLineWithCounterpartyMainPhone()
-        {
-            if (!_target.Contains("telephone1"))
-                return;
-
-            _tracing.Trace("SyncChildrenContactsDirectLineWithCounterpartyMainPhone - Start");
-
-            string counterPartyMainPhone = _target.GetAttributeValue<string>("telephone1");
-
-            EntityCollection childrenContacts = CommonLibrary.GetCounterpartyChildrenContacts(_service, _tracing, _target.Id, new ColumnSet(new string[] { "business2" }));
-
-            foreach (Entity childrenContact in childrenContacts.Entities)
-            {
-                string childrenContactDirectPhone = childrenContact.GetAttributeValue<string>("business2");
-
-                if (childrenContactDirectPhone != counterPartyMainPhone)
-                {
-                    Entity contactToUpdate = new Entity(childrenContact.LogicalName);
-                    contactToUpdate.Id = childrenContact.Id;
-                    contactToUpdate["business2"] = counterPartyMainPhone;
-
-                    _service.Update(contactToUpdate);
-                }
-            }
-
-            _tracing.Trace("SyncChildrenContactsDirectLineWithCounterpartyMainPhone - End");
-        }
     }
 }
