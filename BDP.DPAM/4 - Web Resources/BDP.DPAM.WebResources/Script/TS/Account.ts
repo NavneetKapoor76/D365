@@ -31,10 +31,6 @@ namespace BDP.DPAM.WR.Account {
             formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
         }
 
-
-
-
-
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-92
@@ -219,6 +215,60 @@ namespace BDP.DPAM.WR.Account {
             } else {
                 formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setVisible(false);
             }
+        }
+    }
+
+    export class Ribbon {
+
+        //SHER-428 : function to open the "LEI Code Search Page" custom page
+        public static openLEICodeSearchPage() {
+            let pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_leicodesearchpage_1806a",
+                entityName: "account"
+            };
+
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 1365,
+                height: 815,
+                title: "LEI Code Search Engine"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        Xrm.Page.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
+        }
+
+        // SHER-428 : function to open the "LEI Code Search Page" custom page in a record
+        public static openLEICodeSearchPageOnForm() {
+            let pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_leicodesearchpage_1806a",
+                entityName: "account",
+                recordId: Xrm.Page.data.entity.getId()
+            };
+
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 1365,
+                height: 815,
+                title: "LEI Code Search Engine"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        Xrm.Page.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
         }
     }
 }

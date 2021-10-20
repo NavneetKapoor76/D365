@@ -183,6 +183,50 @@ var BDP;
                     }
                 }
                 Account.Form = Form;
+                class Ribbon {
+                    //SHER-428 : function to open the "LEI Code Search Page" custom page
+                    static openLEICodeSearchPage() {
+                        let pageInput = {
+                            pageType: "custom",
+                            name: "dpam_leicodesearchpage_1806a",
+                            entityName: "account"
+                        };
+                        let navigationOptions = {
+                            target: 2,
+                            width: 1365,
+                            height: 815,
+                            title: "LEI Code Search Engine"
+                        };
+                        Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                            .then(function success() {
+                            Xrm.Page.data.refresh(true);
+                        }, function error() {
+                            console.log(error);
+                        });
+                    }
+                    // SHER-428 : function to open the "LEI Code Search Page" custom page in a record
+                    static openLEICodeSearchPageOnForm() {
+                        let pageInput = {
+                            pageType: "custom",
+                            name: "dpam_leicodesearchpage_1806a",
+                            entityName: "account",
+                            recordId: Xrm.Page.data.entity.getId()
+                        };
+                        let navigationOptions = {
+                            target: 2,
+                            width: 1365,
+                            height: 815,
+                            title: "LEI Code Search Engine"
+                        };
+                        Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                            .then(function success() {
+                            Xrm.Page.data.refresh(true);
+                        }, function error() {
+                            console.log(error);
+                        });
+                    }
+                }
+                Account.Ribbon = Ribbon;
             })(Account = WR.Account || (WR.Account = {}));
         })(WR = DPAM.WR || (DPAM.WR = {}));
     })(DPAM = BDP.DPAM || (BDP.DPAM = {}));
