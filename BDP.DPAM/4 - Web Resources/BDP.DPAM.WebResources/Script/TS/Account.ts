@@ -230,8 +230,8 @@ namespace BDP.DPAM.WR.Account {
 
             let navigationOptions: Xrm.Navigation.NavigationOptions = {
                 target: 2,
-                width: 1365,
-                height: 815,
+                width: 1366,
+                height: 821,
                 title: "LEI Code Search Engine"
             };
 
@@ -256,8 +256,8 @@ namespace BDP.DPAM.WR.Account {
 
             let navigationOptions: Xrm.Navigation.NavigationOptions = {
                 target: 2,
-                width: 1365,
-                height: 815,
+                width: 1366,
+                height: 821,
                 title: "LEI Code Search Engine"
             };
 

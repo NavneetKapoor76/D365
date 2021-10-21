@@ -193,8 +193,8 @@ var BDP;
                         };
                         let navigationOptions = {
                             target: 2,
-                            width: 1365,
-                            height: 815,
+                            width: 1366,
+                            height: 821,
                             title: "LEI Code Search Engine"
                         };
                         Xrm.Navigation.navigateTo(pageInput, navigationOptions)
@@ -214,8 +214,8 @@ var BDP;
                         };
                         let navigationOptions = {
                             target: 2,
-                            width: 1365,
-                            height: 815,
+                            width: 1366,
+                            height: 821,
                             title: "LEI Code Search Engine"
                         };
                         Xrm.Navigation.navigateTo(pageInput, navigationOptions)
