@@ -28,7 +28,7 @@ namespace BDP.DPAM.WR.Account {
             //SHER-292 + SHER-426
             Form.manageBusinessSegmentationVisibility(formContext);
             //SHER-466
-            Form.removeDmuValue(formContext);
+            Form.removeDmuValueAndParentCounterpartyValue(formContext);
 
             formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
         }
@@ -220,11 +220,16 @@ namespace BDP.DPAM.WR.Account {
         }
 
         //function to remove the dpam_lk_dmu value
-        static removeDmuValue(formContext: Xrm.FormContext) {
+        static removeDmuValueAndParentCounterpartyValue(formContext: Xrm.FormContext) {
             let dmuAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_dmu");
+            let parentCounterpartyAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("parentaccountid");
 
             if (dmuAttribute.getValue() != null) {
                 dmuAttribute.setValue(null);
+            }
+
+            if (parentCounterpartyAttribute.getValue() != null) {
+                parentCounterpartyAttribute.setValue(null);
             }
         }
     }

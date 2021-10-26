@@ -33,7 +33,7 @@ var BDP;
                         //SHER-292 + SHER-426
                         Form.manageBusinessSegmentationVisibility(formContext);
                         //SHER-466
-                        Form.removeDmuValue(formContext);
+                        Form.removeDmuValueAndParentCounterpartyValue(formContext);
                         formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
@@ -184,10 +184,14 @@ var BDP;
                         }
                     }
                     //function to remove the dpam_lk_dmu value
-                    static removeDmuValue(formContext) {
+                    static removeDmuValueAndParentCounterpartyValue(formContext) {
                         let dmuAttribute = formContext.getAttribute("dpam_lk_dmu");
+                        let parentCounterpartyAttribute = formContext.getAttribute("parentaccountid");
                         if (dmuAttribute.getValue() != null) {
                             dmuAttribute.setValue(null);
+                        }
+                        if (parentCounterpartyAttribute.getValue() != null) {
+                            parentCounterpartyAttribute.setValue(null);
                         }
                     }
                 }
