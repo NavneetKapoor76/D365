@@ -47,7 +47,7 @@ var BDP;
                             isSalesPerson = false;
                             for (let i = 0; i < result.entities.length; i++) {
                                 let roleName = result.entities[i].name;
-                                if (roleName == "DPAM - Sales Manager")
+                                if (roleName == "DPAM - Sales Manager" || roleName == "System Administrator")
                                     isSalesManager = true;
                                 if (roleName == "DPAM - Sales Person")
                                     isSalesPerson = true;
