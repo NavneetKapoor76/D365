@@ -67,5 +67,100 @@ namespace BDP.DPAM.Plugins.Location.Test
 
             Assert.Equal($"{street1}, {postalCode}, {city}, {countryName}", locationTarget.GetAttributeValue<string>("dpam_s_name"));
         }
+
+        #region Location duplication management base on Counterparty, postal code and street
+
+        [Fact]
+        public void LocationDuplicationManagement_CreateLocationThatDoesNotMatchAnExistingOne_LocationShouldBeCreated()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+
+            // Related Counterparty
+            Entity relatedCounterparty = new Entity("account");
+            relatedCounterparty.Id = Guid.NewGuid();
+
+            // Target Location
+            Entity target = new Entity("dpam_location");
+            target["dpam_lk_account"] = relatedCounterparty.ToEntityReference();
+            target["dpam_s_street1"] = "Grande rue";
+            target["dpam_s_postalcode"] = "5000";
+            
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(relatedCounterparty);
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreCreateLocation>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.Id != null);
+
+            #endregion
+        }
+
+        [Fact]
+        public void LocationDuplicationManagement_CreateLocationThatDoesMatchAnExistingOne_ExceptionShouldBeThrown()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+
+            // Related Counterparty
+            Entity relatedCounterparty = new Entity("account");
+            relatedCounterparty.Id = Guid.NewGuid();
+
+            // Already exising Location
+            Entity existingLocation = new Entity("dpam_location");
+            existingLocation.Id = Guid.NewGuid();
+            existingLocation["dpam_lk_account"] = relatedCounterparty.ToEntityReference();
+            existingLocation["dpam_s_street1"] = "Grande rue";
+            existingLocation["dpam_s_postalcode"] = "5000";
+
+            // Target Location
+            Entity target = new Entity("dpam_location");
+            target["dpam_lk_account"] = relatedCounterparty.ToEntityReference();
+            target["dpam_s_street1"] = "Grande rue";
+            target["dpam_s_postalcode"] = "5000";
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(new List<Entity>() { relatedCounterparty, existingLocation });
+
+            #endregion
+
+            #region Act and Assert
+
+            Assert.Throws<InvalidPluginExecutionException>(() => fakedContext.ExecutePluginWith<PreCreateLocation>(fakedPluginExecutionContext));
+
+            #endregion
+        }
+
+        #endregion
     }
 }

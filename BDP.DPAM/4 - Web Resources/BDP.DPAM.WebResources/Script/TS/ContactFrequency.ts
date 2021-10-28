@@ -49,7 +49,7 @@ namespace BDP.DPAM.WR.ContactFrequency {
                     for (let i = 0; i < result.entities.length; i++) {
                         let roleName: string = result.entities[i].name;
 
-                        if (roleName == "DPAM - Sales Manager") isSalesManager = true;
+                        if (roleName == "DPAM - Sales Manager" || roleName == "System Administrator") isSalesManager = true;
                         if (roleName == "DPAM - Sales Person") isSalesPerson = true;    
                     }
 

@@ -27,6 +27,8 @@ namespace BDP.DPAM.WR.Account {
             Form.setLocalBusinessSegmentationFilter(formContext);
             //SHER-292 + SHER-426
             Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-466
+            Form.removeDmuValueAndParentCounterpartyValue(formContext);
 
             formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
         }
@@ -184,7 +186,7 @@ namespace BDP.DPAM.WR.Account {
             let countryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute("dpam_lk_country");
             let localbusinessSegmentationControl: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_localbusinesssegmentation");
             let businessSegmentationControl: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_businesssegmentation");
-            
+
             if (countryAttribute.getValue() != null && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
                 let fetchXml: string = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
                 // search at least one occurence of this country in Local segmentation
@@ -194,7 +196,7 @@ namespace BDP.DPAM.WR.Account {
 
                         // if one found, set visible Local segmentation and disable generic segmentation  (fill generic segmentation)
                         if (result.entities.length > 0) localBusinessSegmentationIsVisible = true;
-                        
+
                         localbusinessSegmentationControl.setVisible(localBusinessSegmentationIsVisible);
                         businessSegmentationControl.setDisabled(localBusinessSegmentationIsVisible);
                     },
@@ -214,6 +216,20 @@ namespace BDP.DPAM.WR.Account {
                 formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
             } else {
                 formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setVisible(false);
+            }
+        }
+
+        //function to remove the dpam_lk_dmu value
+        static removeDmuValueAndParentCounterpartyValue(formContext: Xrm.FormContext) {
+            let dmuAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_dmu");
+            let parentCounterpartyAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("parentaccountid");
+
+            if (dmuAttribute.getValue() != null) {
+                dmuAttribute.setValue(null);
+            }
+
+            if (parentCounterpartyAttribute.getValue() != null) {
+                parentCounterpartyAttribute.setValue(null);
             }
         }
     }
