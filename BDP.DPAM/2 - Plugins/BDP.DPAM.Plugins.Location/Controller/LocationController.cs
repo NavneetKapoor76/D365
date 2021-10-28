@@ -293,5 +293,58 @@ namespace BDP.DPAM.Plugins.Location
 
             _tracing.Trace("RemoveInactiveLocationLinkedToContact - End");
         }
+
+        /// <summary>
+        /// Check if another Location with the same Counterparty, PostalCode and Street already exist and throw an exception if the is the case.
+        /// </summary>
+        internal void PotentialDuplicationManagement()
+        {
+            if (!_target.Contains("dpam_lk_account") && !_target.Contains("dpam_s_postalcode") && !_target.Contains("dpam_s_street1"))
+                return;
+
+            _tracing.Trace("PotentialDuplicationManagement - Start");
+
+            Entity mergedEntity = _target.MergeEntity(_preImage);
+
+            EntityReference locationCounterpartyRef = mergedEntity.GetAttributeValue<EntityReference>("dpam_lk_account");
+            string locationZipPostalCode = mergedEntity.GetAttributeValue<string>("dpam_s_postalcode");
+            string locationStreet = mergedEntity.GetAttributeValue<string>("dpam_s_street1");
+
+            if (CheckLocationAlreadyExisit(locationCounterpartyRef.Id, locationZipPostalCode, locationStreet))
+                throw new Exception("A Location for this Counterparty with the same Zip/Postal Code and the same Street already exist.");
+
+            _tracing.Trace("PotentialDuplicationManagement - End");
+        }
+
+        /// <summary>
+        /// Check if a Location already exist based on a recieved Counterpart, Zip Code and Street
+        /// </summary>
+        /// <param name="counterpartyId">Id of the Counterparty to check</param>
+        /// <param name="postalCode">Postal Code to check</param>
+        /// <param name="street">Street to check</param>
+        /// <returns></returns>
+        private bool CheckLocationAlreadyExisit(Guid counterpartyId, string postalCode, string street)
+        {
+            _tracing.Trace("CheckLocationAlreadyExisit - Start");
+
+            bool retVal = false;
+
+            ConditionExpression conditionCounterparty = new ConditionExpression("dpam_lk_account", ConditionOperator.Equal, counterpartyId);
+            ConditionExpression conditionPostalCode = new ConditionExpression("dpam_s_postalcode", ConditionOperator.Equal, postalCode);
+            ConditionExpression conditionStreet = new ConditionExpression("dpam_s_street1", ConditionOperator.Equal, street);
+
+            QueryExpression query = new QueryExpression("dpam_location");
+            query.Criteria.AddCondition(conditionCounterparty);
+            query.Criteria.AddCondition(conditionPostalCode);
+            query.Criteria.AddCondition(conditionStreet);
+
+            EntityCollection result = _service.RetrieveMultiple(query);
+
+            retVal = result.Entities.Count > 0;
+
+            _tracing.Trace("CheckLocationAlreadyExisit - End");
+
+            return retVal;
+        }
     }
 }
