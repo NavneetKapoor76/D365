@@ -325,6 +325,8 @@ namespace BDP.DPAM.Plugins.Location
         /// <returns></returns>
         private bool CheckLocationAlreadyExisit(Guid counterpartyId, string postalCode, string street)
         {
+            if (string.IsNullOrWhiteSpace(postalCode) || string.IsNullOrWhiteSpace(street)) return false;
+
             _tracing.Trace("CheckLocationAlreadyExisit - Start");
 
             bool retVal = false;
