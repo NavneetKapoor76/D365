@@ -203,7 +203,7 @@ namespace BDP.DPAM.Plugins.Location.Test
                 {
                     {"dpam_lk_account", account.ToEntityReference() },
                     {"dpam_lk_country", new EntityReference("dpam_country"){Id = country.Id, Name = country.GetAttributeValue<string>("dpam_s_name") } },
-                    {"dpam_s_street1", "Street 1 Updated" },
+                    {"dpam_s_street1", "Street 1" },
                     {"dpam_s_street2", "Street 2 Updated" },
                     {"dpam_s_street3", "Street 3 Updated" },
                     {"dpam_s_postalcode", "1000" },
