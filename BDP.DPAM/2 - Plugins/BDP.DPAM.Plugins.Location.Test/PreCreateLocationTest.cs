@@ -45,6 +45,7 @@ namespace BDP.DPAM.Plugins.Location.Test
                     {"dpam_s_city", city },
                     {"dpam_s_street1", street1 },
                     {"dpam_s_postalcode", postalCode },
+                    {"dpam_lk_account", new EntityReference("account") }
                 }
             };
 
