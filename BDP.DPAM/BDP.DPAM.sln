@@ -64,10 +64,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.Lead.Test"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.Opportunity", "2 - Plugins\BDP.DPAM.Plugins.Opportunity\BDP.DPAM.Plugins.Opportunity.csproj", "{1B60A34E-A613-47B1-92B8-6524D5B9AD9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.OpportunityProduct", "2 - Plugins\BDP.DPAM.Plugins.OpportunityProduct\BDP.DPAM.Plugins.OpportunityProduct.csproj", "{2466DDC4-8257-4316-998A-E77AAFF18E7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.OpportunityProduct.Test", "2 - Plugins\BDP.DPAM.Plugins.OpportunityProduct.Test\BDP.DPAM.Plugins.OpportunityProduct.Test.csproj", "{0A2B6235-77C3-4B7D-B2B9-689B6406605F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{1b60a34e-a613-47b1-92b8-6524d5b9ad9e}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{1fbe4876-cded-4304-8a09-bbbcdaacb5e3}*SharedItemsImports = 4
+		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{2466ddc4-8257-4316-998a-e77aaff18e7a}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{2a63d1fe-e0f2-4336-b358-ed03c790123b}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{502d8ae1-ba0e-4a6b-9d77-6ff245b45aae}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{50b4bf38-019b-41e7-a855-3f5960ed14f0}*SharedItemsImports = 13
@@ -141,6 +146,14 @@ Global
 		{1B60A34E-A613-47B1-92B8-6524D5B9AD9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B60A34E-A613-47B1-92B8-6524D5B9AD9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B60A34E-A613-47B1-92B8-6524D5B9AD9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2466DDC4-8257-4316-998A-E77AAFF18E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2466DDC4-8257-4316-998A-E77AAFF18E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2466DDC4-8257-4316-998A-E77AAFF18E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2466DDC4-8257-4316-998A-E77AAFF18E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2B6235-77C3-4B7D-B2B9-689B6406605F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2B6235-77C3-4B7D-B2B9-689B6406605F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2B6235-77C3-4B7D-B2B9-689B6406605F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2B6235-77C3-4B7D-B2B9-689B6406605F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +175,8 @@ Global
 		{DCF40656-BBD0-45AA-A204-5FA5FCF9B103} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
 		{4AD98549-B267-495A-A8B1-FCEC2484A18B} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
 		{1B60A34E-A613-47B1-92B8-6524D5B9AD9E} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
+		{2466DDC4-8257-4316-998A-E77AAFF18E7A} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
+		{0A2B6235-77C3-4B7D-B2B9-689B6406605F} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77E50B7F-1680-4E20-BF5F-166F843FBB22}
