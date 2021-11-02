@@ -1042,5 +1042,93 @@ namespace BDP.DPAM.Plugins.Contact.Test
         }
 
         #endregion
+
+        #region Set Contact Direct Line based on Counterparty Main Phone
+
+        [Fact]
+        public void SetContactDirectLine_UpdateContactWithNewCounterparty_ContactDirectLineShouldBeEqualToCounterpartyMainPhone()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+
+            // Parent Counterparty
+            Entity parentCounterparty = new Entity("account");
+            parentCounterparty.Id = Guid.NewGuid();
+            parentCounterparty["telephone1"] = "+32 470 54 14 58";
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["parentcustomerid"] = parentCounterparty.ToEntityReference();
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Update",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(parentCounterparty);
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreUpdateContact>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.GetAttributeValue<string>("business2") == parentCounterparty.GetAttributeValue<string>("telephone1"));
+
+            #endregion
+        }
+
+        [Fact]
+        public void SetContactDirectLine_UpdateContactWithNewDirectLine_ContactShouldGetNewDirectLine()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+            string newContactDirectLine = "+32 480 02 15 45";
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["business2"] = newContactDirectLine;
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Update",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreUpdateContact>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.GetAttributeValue<string>("business2") == newContactDirectLine);
+
+            #endregion
+        }
+
+        #endregion
     }
 }

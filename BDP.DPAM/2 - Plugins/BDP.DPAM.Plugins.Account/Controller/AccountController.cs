@@ -3,7 +3,7 @@ using BDP.DPAM.Shared.Extension_Methods;
 using BDP.DPAM.Shared.Helper;
 using BDP.DPAM.Shared.Manager_Base;
 using Microsoft.Xrm.Sdk;
-
+using Microsoft.Xrm.Sdk.Query;
 
 namespace BDP.DPAM.Plugins.Account
 {

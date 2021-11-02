@@ -14,13 +14,13 @@ var BDP;
                         Form.setBusinessSegmentationFilter(formContext);
                         //SHER-331
                         Form.setLocalBusinessSegmentationFilter(formContext);
-                        //SHER-331
-                        Form.manageBusinessSegmentationVisibility(formContext);
+                        //SHER-331 + SHER-391 + SHER-427
+                        Form.manageBusinessSegmentationVisibilityAndRequirementLevel(formContext);
                     }
                     static onChange_dpam_lk_country(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        //SHER-331
-                        Form.manageBusinessSegmentationVisibility(formContext);
+                        //SHER-331 + SHER-391 + SHER-427
+                        Form.manageBusinessSegmentationVisibilityAndRequirementLevel(formContext);
                     }
                     static quickCreateOnLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -28,13 +28,13 @@ var BDP;
                         Form.setBusinessSegmentationFilter(formContext);
                         //SHER-349
                         Form.setLocalBusinessSegmentationFilter(formContext);
-                        //SHER-349
-                        Form.manageBusinessSegmentationVisibility(formContext);
+                        //SHER-349 + SHER-391 + SHER-427
+                        Form.manageBusinessSegmentationVisibilityAndRequirementLevel(formContext);
                     }
                     static quickCreateOnChange_dpam_lk_country(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        //SHER-349
-                        Form.manageBusinessSegmentationVisibility(formContext);
+                        //SHER-349 + SHER-391 + SHER-427
+                        Form.manageBusinessSegmentationVisibilityAndRequirementLevel(formContext);
                     }
                     //function to add a custom filter on the dpam_lk_businesssegmentation field
                     static filterBusinessSegmentation(executionContext) {
@@ -82,8 +82,9 @@ var BDP;
                     static setLocalBusinessSegmentationFilter(formContext) {
                         formContext.getControl("dpam_lk_localbusinesssegmentation").addPreSearch(Form.filterLocalBusinessSegmentation);
                     }
-                    //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
-                    static manageBusinessSegmentationVisibility(formContext) {
+                    /*function to set the visibility and the requirement level of the dpam_lk_localbusinesssegmentation field
+                        and enable/disable the dpam_lk_businesssegmentation field*/
+                    static manageBusinessSegmentationVisibilityAndRequirementLevel(formContext) {
                         let countryAttribute = formContext.getAttribute("dpam_lk_country");
                         if (countryAttribute.getValue() == null)
                             return;
@@ -99,8 +100,10 @@ var BDP;
                             let localBusinessSegmentationIsVisible = false;
                             if (result.entities.length > 0)
                                 localBusinessSegmentationIsVisible = true;
+                            let localBusinessSegmentationRequirementLevel = localBusinessSegmentationIsVisible ? "required" : "none";
                             localbusinessSegmentationControl.setVisible(localBusinessSegmentationIsVisible);
-                            businessSegmentationControl.setVisible(!localBusinessSegmentationIsVisible);
+                            localbusinessSegmentationControl.getAttribute().setRequiredLevel(localBusinessSegmentationRequirementLevel);
+                            businessSegmentationControl.setDisabled(localBusinessSegmentationIsVisible);
                         }, function (error) {
                             console.log(error.message);
                         });

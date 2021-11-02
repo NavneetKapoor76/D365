@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PostCreateAccountTest.cs" />
+    <Compile Include="PostUpdateAccountTest.cs" />
     <Compile Include="PreCreateAccountTest.cs" />
     <Compile Include="PreUpdateAccountTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
