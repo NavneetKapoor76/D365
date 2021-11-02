@@ -76,4 +76,22 @@ namespace BDP.DPAM.Shared.Helper
         Attented = 1,
         Canceled = 2
     }
+
+    public enum PhoneCall_StatusCode
+    {
+        Open = 1,
+        Made = 2,
+        Received = 4,
+        Canceled = 3
+    }
+
+    public enum Appointment_StatusCode
+    {
+        Free = 1,
+        Tentative = 2,
+        Completed = 3,
+        Canceled = 4,
+        Busy = 5,
+        OutOfOffice = 6
+    }
 }

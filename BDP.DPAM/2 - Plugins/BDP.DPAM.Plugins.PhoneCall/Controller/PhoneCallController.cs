@@ -1,0 +1,70 @@
+﻿using BDP.DPAM.Shared.Extension_Methods;
+using BDP.DPAM.Shared.Helper;
+using BDP.DPAM.Shared.Manager_Base;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BDP.DPAM.Plugins.PhoneCall
+{
+    internal class PhoneCallController : PluginManagerBase
+    {
+        internal PhoneCallController(IServiceProvider serviceProvider) : base(serviceProvider)
+        {
+        }
+
+        /// <summary>
+        /// Update the "dpam_int_numberofcompletedactivities" field on Contact Frequency when the statuscode is equal to made or received
+        /// </summary>
+        internal void UpdateNumberOfCompletedActivitiesOnContactFrequency()
+        {
+            if (!_target.Contains("statuscode")
+                || (_target.GetAttributeValue<OptionSetValue>("statuscode").Value != (int)PhoneCall_StatusCode.Made
+                    && _target.GetAttributeValue<OptionSetValue>("statuscode").Value != (int)PhoneCall_StatusCode.Received)) return;
+
+            _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - Start");
+
+            var regarding = _postImage.Contains("regardingobjectid") ? _postImage.GetAttributeValue<EntityReference>("regardingobjectid") : null;
+
+            if (regarding == null || regarding.LogicalName != "account")
+            {
+                _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - End");
+                return;
+            }
+
+            var counterpartyCondition = new ConditionExpression("dpam_lk_counterparty", ConditionOperator.Equal, regarding.Id);
+            var startDateCondition = new ConditionExpression("dpam_dt_startdate", ConditionOperator.LessEqual, _postImage.GetAttributeValue<DateTime>("scheduledend"));
+            var endDateCondition = new ConditionExpression("dpam_dt_enddate", ConditionOperator.GreaterEqual, _postImage.GetAttributeValue<DateTime>("scheduledend"));
+
+            var query = new QueryExpression("dpam_contactfrequency")
+            {
+                ColumnSet = new ColumnSet("dpam_int_numberofcompletedactivities")
+            };
+            query.Criteria.AddCondition(counterpartyCondition);
+            query.Criteria.AddCondition(startDateCondition);
+            query.Criteria.AddCondition(endDateCondition);
+
+            var contactFrequencyCollection = _service.RetrieveMultiple(query);
+
+            if (contactFrequencyCollection.Entities.Count < 1)
+            {
+                _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - End");
+                return;
+            }
+
+            foreach (var contactFrequency in contactFrequencyCollection.Entities)
+            {
+                var numberOfCompletedActivities = contactFrequency.GetAttributeValue<int>("dpam_int_numberofcompletedactivities") + 1;
+
+                contactFrequency["dpam_int_numberofcompletedactivities"] = numberOfCompletedActivities;
+                _service.Update(contactFrequency);
+            }
+
+            _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - End");
+        }
+    }
+}

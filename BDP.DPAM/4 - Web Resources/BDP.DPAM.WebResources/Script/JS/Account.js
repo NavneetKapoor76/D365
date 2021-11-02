@@ -16,7 +16,7 @@ var BDP;
                         Form.setComplianceSegmentationFilter(formContext);
                         //SHER-268
                         Form.setLocalBusinessSegmentationFilter(formContext);
-                        //SHER-292
+                        //SHER-292 + SHER-426
                         Form.manageBusinessSegmentationVisibility(formContext);
                         //SHER-313
                         Form.manageCountryVisibility(formContext);
@@ -30,8 +30,10 @@ var BDP;
                         Form.setComplianceSegmentationFilter(formContext);
                         //SHER-268
                         Form.setLocalBusinessSegmentationFilter(formContext);
-                        //SHER-292
+                        //SHER-292 + SHER-426
                         Form.manageBusinessSegmentationVisibility(formContext);
+                        //SHER-466
+                        Form.removeDmuValueAndParentCounterpartyValue(formContext);
                         formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
@@ -41,7 +43,7 @@ var BDP;
                     }
                     static onChange_dpam_lk_country(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        //SHER-292
+                        //SHER-292 + SHER-426
                         Form.manageBusinessSegmentationVisibility(formContext);
                         Form.resetSegmentation(formContext);
                     }
@@ -148,30 +150,22 @@ var BDP;
                     static setLocalBusinessSegmentationFilter(formContext) {
                         formContext.getControl("dpam_lk_localbusinesssegmentation").addPreSearch(Form.filterLocalBusinessSegmentation);
                     }
-                    //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
+                    //function to set the visibility of the dpam_lk_localbusinesssegmentation field and enable/disable the dpam_lk_businesssegmentation field
                     static manageBusinessSegmentationVisibility(formContext) {
                         //retrieve the country of counterparty.
                         let countryAttribute = formContext.getAttribute("dpam_lk_country");
                         let localbusinessSegmentationControl = formContext.getControl("dpam_lk_localbusinesssegmentation");
                         let businessSegmentationControl = formContext.getControl("dpam_lk_businesssegmentation");
-                        localbusinessSegmentationControl.setVisible(false);
-                        businessSegmentationControl.setVisible(false);
                         if (countryAttribute.getValue() != null && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
                             let fetchXml = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
                             // search at least one occurence of this country in Local segmentation
                             Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(function success(result) {
-                                if (result.entities.length > 0) {
-                                    // found
-                                    // if one found, set visible Local segmentation and hide generic segmentation  (fill generic segmentation)
-                                    localbusinessSegmentationControl.setVisible(true);
-                                    businessSegmentationControl.setVisible(false);
-                                }
-                                else {
-                                    // nothing found
-                                    // if not found set visible generic segmentation and hide local segmentation (fill local to null)
-                                    localbusinessSegmentationControl.setVisible(false);
-                                    businessSegmentationControl.setVisible(true);
-                                }
+                                let localBusinessSegmentationIsVisible = false;
+                                // if one found, set visible Local segmentation and disable generic segmentation  (fill generic segmentation)
+                                if (result.entities.length > 0)
+                                    localBusinessSegmentationIsVisible = true;
+                                localbusinessSegmentationControl.setVisible(localBusinessSegmentationIsVisible);
+                                businessSegmentationControl.setDisabled(localBusinessSegmentationIsVisible);
                             }, function (error) {
                                 console.log(error.message);
                                 // handle error conditions
@@ -189,8 +183,63 @@ var BDP;
                             formContext.getControl("dpam_lk_country").setVisible(false);
                         }
                     }
+                    //function to remove the dpam_lk_dmu value
+                    static removeDmuValueAndParentCounterpartyValue(formContext) {
+                        let dmuAttribute = formContext.getAttribute("dpam_lk_dmu");
+                        let parentCounterpartyAttribute = formContext.getAttribute("parentaccountid");
+                        if (dmuAttribute.getValue() != null) {
+                            dmuAttribute.setValue(null);
+                        }
+                        if (parentCounterpartyAttribute.getValue() != null) {
+                            parentCounterpartyAttribute.setValue(null);
+                        }
+                    }
                 }
                 Account.Form = Form;
+                class Ribbon {
+                    //SHER-428 : function to open the "LEI Code Search Page" custom page
+                    static openLEICodeSearchPage() {
+                        let pageInput = {
+                            pageType: "custom",
+                            name: "dpam_leicodesearchpage_1806a",
+                            entityName: "account"
+                        };
+                        let navigationOptions = {
+                            target: 2,
+                            width: 1366,
+                            height: 821,
+                            title: "LEI Code Search Engine"
+                        };
+                        Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                            .then(function success() {
+                            Xrm.Page.data.refresh(true);
+                        }, function error() {
+                            console.log(error);
+                        });
+                    }
+                    // SHER-428 : function to open the "LEI Code Search Page" custom page in a record
+                    static openLEICodeSearchPageOnForm() {
+                        let pageInput = {
+                            pageType: "custom",
+                            name: "dpam_leicodesearchpage_1806a",
+                            entityName: "account",
+                            recordId: Xrm.Page.data.entity.getId()
+                        };
+                        let navigationOptions = {
+                            target: 2,
+                            width: 1366,
+                            height: 821,
+                            title: "LEI Code Search Engine"
+                        };
+                        Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                            .then(function success() {
+                            Xrm.Page.data.refresh(true);
+                        }, function error() {
+                            console.log(error);
+                        });
+                    }
+                }
+                Account.Ribbon = Ribbon;
             })(Account = WR.Account || (WR.Account = {}));
         })(WR = DPAM.WR || (DPAM.WR = {}));
     })(DPAM = BDP.DPAM || (BDP.DPAM = {}));
