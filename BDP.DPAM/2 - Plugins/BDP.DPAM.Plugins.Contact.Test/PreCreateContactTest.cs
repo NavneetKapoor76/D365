@@ -218,24 +218,24 @@ namespace BDP.DPAM.Plugins.Contact.Test
             // Matching Greeting
             Entity matchingGreeting = new Entity("dpam_greeting");
             matchingGreeting.Id = Guid.NewGuid();
-            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
-            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
+            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             matchingGreeting["dpam_s_name"] = "Cher Monsieur";
             greetings.Add(matchingGreeting);
 
             // Not Matching Greeting
             Entity notMatchingGreeting = new Entity("dpam_greeting");
             notMatchingGreeting.Id = Guid.NewGuid();
-            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Female));
-            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Female));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             notMatchingGreeting["dpam_s_name"] = "Chère Madame";
             greetings.Add(notMatchingGreeting);
 
             // Target Contact
             Entity target = new Entity("contact");
             target.Id = Guid.NewGuid();
-            target["gendercode"] = new OptionSetValue(Convert.ToInt32(Contact_Gender.Male));
-            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Contact_Language.French));
+            target["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
+            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
 
             // Plugin Initialization
             XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
@@ -278,16 +278,16 @@ namespace BDP.DPAM.Plugins.Contact.Test
             // Not Matching Greeting
             Entity notMatchingGreeting = new Entity("dpam_greeting");
             notMatchingGreeting.Id = Guid.NewGuid();
-            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Female));
-            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Female));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             notMatchingGreeting["dpam_s_name"] = "Cher Madame";
             greetings.Add(notMatchingGreeting);
 
             // Target Contact
             Entity target = new Entity("contact");
             target.Id = Guid.NewGuid();
-            target["gendercode"] = new OptionSetValue(Convert.ToInt32(Contact_Gender.Male));
-            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Contact_Language.French));
+            target["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
+            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
 
             // Plugin Initialization
             XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
@@ -330,23 +330,23 @@ namespace BDP.DPAM.Plugins.Contact.Test
             // Matching Greeting
             Entity matchingGreeting = new Entity("dpam_greeting");
             matchingGreeting.Id = Guid.NewGuid();
-            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
-            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
+            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             matchingGreeting["dpam_s_name"] = "Cher Monsieur";
             greetings.Add(matchingGreeting);
 
             // Not Matching Greeting
             Entity notMatchingGreeting = new Entity("dpam_greeting");
             notMatchingGreeting.Id = Guid.NewGuid();
-            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Female));
-            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Female));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             notMatchingGreeting["dpam_s_name"] = "Chère Madame";
             greetings.Add(notMatchingGreeting);
 
             // Target Contact
             Entity target = new Entity("contact");
             target.Id = Guid.NewGuid();
-            target["gendercode"] = new OptionSetValue(Convert.ToInt32(Contact_Gender.Male));
+            target["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
 
             // Plugin Initialization
             XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
@@ -389,23 +389,23 @@ namespace BDP.DPAM.Plugins.Contact.Test
             // Matching Greeting
             Entity matchingGreeting = new Entity("dpam_greeting");
             matchingGreeting.Id = Guid.NewGuid();
-            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
-            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
+            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             matchingGreeting["dpam_s_name"] = "Cher Monsieur";
             greetings.Add(matchingGreeting);
 
             // Not Matching Greeting
             Entity notMatchingGreeting = new Entity("dpam_greeting");
             notMatchingGreeting.Id = Guid.NewGuid();
-            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Female));
-            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Female));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             notMatchingGreeting["dpam_s_name"] = "Chère Madame";
             greetings.Add(notMatchingGreeting);
 
             // Target Contact
             Entity target = new Entity("contact");
             target.Id = Guid.NewGuid();
-            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Contact_Language.French));
+            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
 
             // Plugin Initialization
             XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
@@ -448,24 +448,24 @@ namespace BDP.DPAM.Plugins.Contact.Test
             // Matching Greeting
             Entity matchingGreeting = new Entity("dpam_greeting");
             matchingGreeting.Id = Guid.NewGuid();
-            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
-            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            matchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
+            matchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             matchingGreeting["dpam_s_name"] = "Cher Monsieur";
             greetings.Add(matchingGreeting);
 
             // Matching Greeting
             Entity notMatchingGreeting = new Entity("dpam_greeting");
             notMatchingGreeting.Id = Guid.NewGuid();
-            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Greeting_Gender.Male));
-            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Greeting_Language.French));
+            notMatchingGreeting["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
+            notMatchingGreeting["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
             notMatchingGreeting["dpam_s_name"] = "Cher Monsieur";
             greetings.Add(notMatchingGreeting);
 
             // Target Contact
             Entity target = new Entity("contact");
             target.Id = Guid.NewGuid();
-            target["gendercode"] = new OptionSetValue(Convert.ToInt32(Contact_Gender.Male));
-            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Contact_Language.French));
+            target["dpam_os_gender"] = new OptionSetValue(Convert.ToInt32(Gender.Male));
+            target["dpam_os_language"] = new OptionSetValue(Convert.ToInt32(Language.French));
 
             // Plugin Initialization
             XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
@@ -485,6 +485,103 @@ namespace BDP.DPAM.Plugins.Contact.Test
             #region Act / Assert
 
             Assert.Throws<InvalidPluginExecutionException>(() => fakedContext.ExecutePluginWith<PreCreateContact>(fakedPluginExecutionContext));
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Set Contact Direct Line based on Counterparty Main Phone
+
+        [Fact]
+        public void SetContactDirectLine_CreateContactWithCounterpartyThatHaveAMainPhone_ContactDirectLineShouldBeEqualToCounterpartyMainPhone()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+
+            // Parent Counterparty
+            Entity parentCounterparty = new Entity("account");
+            parentCounterparty.Id = Guid.NewGuid();
+            parentCounterparty["telephone1"] = "+32 470 15 25 11";
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["business2"] = "+32 480 02 15 45";
+            target["parentcustomerid"] = parentCounterparty.ToEntityReference();
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(parentCounterparty);
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreCreateContact>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.GetAttributeValue<string>("business2") == parentCounterparty.GetAttributeValue<string>("telephone1"));
+
+            #endregion
+        }
+
+        [Fact]
+        public void SetContactDirectLine_CreateContactWithCounterpartyThatDoesNotHaveAMainPhone_ContactDirectLineShouldNotChange()
+        {
+            #region Arrange
+
+            XrmFakedContext fakedContext = new XrmFakedContext();
+            string originatingContactDirectLine = "+32 470 15 25 11";
+
+            // Parent Counterparty
+            Entity parentCounterparty = new Entity("account");
+            parentCounterparty.Id = Guid.NewGuid();
+            parentCounterparty["telephone1"] = string.Empty;
+
+            // Target Contact
+            Entity target = new Entity("contact");
+            target.Id = Guid.NewGuid();
+            target["business2"] = originatingContactDirectLine;
+            target["parentcustomerid"] = parentCounterparty.ToEntityReference();
+
+            // Plugin Initialization
+            XrmFakedPluginExecutionContext fakedPluginExecutionContext = new XrmFakedPluginExecutionContext
+            {
+                MessageName = "Create",
+                Stage = 20,
+                InputParameters = new ParameterCollection { ["Target"] = target },
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection()
+            };
+
+            fakedContext.Initialize(parentCounterparty);
+
+            #endregion
+
+            #region Act
+
+            IPlugin fakedPlugin = fakedContext.ExecutePluginWith<PreCreateContact>(fakedPluginExecutionContext);
+
+            #endregion
+
+            #region Assert
+
+            Assert.True(target.GetAttributeValue<string>("business2") == originatingContactDirectLine);
 
             #endregion
         }

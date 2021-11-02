@@ -127,6 +127,7 @@
   <ItemGroup>
     <Compile Include="PostCreateLocationTest.cs" />
     <Compile Include="PostUpdateLocationTest.cs" />
+    <Compile Include="PreCreateLocationTest.cs" />
     <Compile Include="PreUpdateLocationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -21,7 +21,7 @@ namespace BDP.DPAM.Shared.Helper
         Inactive = 1
     }
 
-    public enum Contact_Language
+    public enum Language
     {
         English = 100000000,
         French = 100000001,
@@ -32,29 +32,12 @@ namespace BDP.DPAM.Shared.Helper
         Portuguese = 100000006
     }
 
-    public enum Contact_Gender
-    {
-        Male = 1,
-        Female = 2,
-        NonBinary = 100000000
-    }
-
-    public enum Greeting_Language
-    {
-        English = 100000000,
-        French = 100000001,
-        German = 100000002,
-        Spanish = 100000003,
-        Italian = 100000004,
-        Dutch = 100000005,
-        Portuguese = 100000006
-    }
-
-    public enum Greeting_Gender
+    public enum Gender
     {
         Male = 100000000,
         Female = 100000001,
-        NonBinary = 100000002
+        NonBinary = 100000002,
+        GeneralAddress = 100000003
     }
 
     public enum EventRegistration_StateCode
@@ -92,5 +75,23 @@ namespace BDP.DPAM.Shared.Helper
     {
         Attented = 1,
         Canceled = 2
+    }
+
+    public enum PhoneCall_StatusCode
+    {
+        Open = 1,
+        Made = 2,
+        Received = 4,
+        Canceled = 3
+    }
+
+    public enum Appointment_StatusCode
+    {
+        Free = 1,
+        Tentative = 2,
+        Completed = 3,
+        Canceled = 4,
+        Busy = 5,
+        OutOfOffice = 6
     }
 }

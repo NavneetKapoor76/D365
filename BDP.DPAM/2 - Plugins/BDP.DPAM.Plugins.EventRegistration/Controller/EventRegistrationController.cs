@@ -56,13 +56,13 @@ namespace BDP.DPAM.Plugins.EventRegistration
         /// </summary>
         internal void CancelRelatedSessionRegistrations()
         {
-            if (!this._target.Contains("statecode") || 
-                this._target.GetAttributeValue<OptionSetValue>("statecode").Value != Convert.ToInt32(EventRegistration_StateCode.Inactive))
+            if (!_target.Contains("statecode") || 
+                _target.GetAttributeValue<OptionSetValue>("statecode").Value != Convert.ToInt32(EventRegistration_StateCode.Inactive))
                 return;
 
-            this._tracing.Trace("CancelRelatedSessionRegistrationOnRegistrationCancelation - Start");
+            _tracing.Trace("CancelRelatedSessionRegistrationOnRegistrationCancelation - Start");
 
-            EntityCollection relatedActiveSessionRegistrations = this.GetRelatedActiveSessionRegistrations(this._target.Id);
+            EntityCollection relatedActiveSessionRegistrations = GetRelatedActiveSessionRegistrations(_target.Id);
 
             foreach (Entity sessionRegistration in relatedActiveSessionRegistrations.Entities)
             {
@@ -71,10 +71,10 @@ namespace BDP.DPAM.Plugins.EventRegistration
                 sessionRegistrationToUpdate["statecode"] = new OptionSetValue(Convert.ToInt32(SessionRegistration_StateCode.Inactive));
                 sessionRegistrationToUpdate["statuscode"] = new OptionSetValue(Convert.ToInt32(SessionRegistration_StatusCode.Canceled));
 
-                this._service.Update(sessionRegistrationToUpdate);
+                _service.Update(sessionRegistrationToUpdate);
             }
 
-            this._tracing.Trace("CancelRelatedSessionRegistrationOnRegistrationCancelation - End");
+            _tracing.Trace("CancelRelatedSessionRegistrationOnRegistrationCancelation - End");
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace BDP.DPAM.Plugins.EventRegistration
         /// <returns>EntityCollection of Session Registration</returns>
         private EntityCollection GetRelatedActiveSessionRegistrations(Guid eventRegistrationId)
         {
-            this._tracing.Trace("GetRelatedActiveSessionRegistrations - Start");
+            _tracing.Trace("GetRelatedActiveSessionRegistrations - Start");
 
             EntityCollection retVal = null;
 
@@ -95,9 +95,9 @@ namespace BDP.DPAM.Plugins.EventRegistration
             query.Criteria.AddCondition(conditionEventRegistrationId);
             query.Criteria.AddCondition(conditionStateCode);
 
-            retVal = this._service.RetrieveMultiple(query);
+            retVal = _service.RetrieveMultiple(query);
 
-            this._tracing.Trace("GetRelatedActiveSessionRegistrations - End");
+            _tracing.Trace("GetRelatedActiveSessionRegistrations - End");
 
             return retVal;
         }
