@@ -122,5 +122,32 @@ namespace BDP.DPAM.Plugins.Account
 
             _target["dpam_s_address1"] = $"{street1}, {postalCode}, {city}, {country}";
         }
+
+        /// <summary>
+        /// Manage the following fields based on the lifestage: "dpam_b_exclient", "dpam_b_withinvestmentinthepast" 
+        /// </summary>
+        internal void ManageExClientLifestage()
+        {
+            if (!_target.Contains("statuscode")) return;
+
+            _tracing.Trace("ManageExClientLifestage - Start");
+
+            var statuscodePreImage = _preImage.GetAttributeValue<OptionSetValue>("statuscode");
+            var statuscodeTarget = _target.GetAttributeValue<OptionSetValue>("statuscode");
+
+            //Lifestage goes from Active to Prospect
+            if(statuscodePreImage.Value == (int)Account_StatusCode.Active && statuscodeTarget.Value == (int)Account_StatusCode.Prospect)
+            {
+                _target["dpam_b_exclient"] = true;
+                _target["dpam_b_withinvestmentinthepast"] = true;
+            }
+            //Lifestage goes from Prospect to Active
+            else if (statuscodePreImage.Value == (int)Account_StatusCode.Prospect && statuscodeTarget.Value == (int)Account_StatusCode.Active)
+            {
+                _target["dpam_b_exclient"] = false;
+            }
+
+            _tracing.Trace("ManageExClientLifestage - End");
+        }
     }
 }

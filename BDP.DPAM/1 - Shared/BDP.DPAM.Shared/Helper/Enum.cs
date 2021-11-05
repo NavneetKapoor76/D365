@@ -94,4 +94,12 @@ namespace BDP.DPAM.Shared.Helper
         Busy = 5,
         OutOfOffice = 6
     }
+
+    public enum Account_StatusCode
+    {
+        Active = 1,
+        Prospect = 100000000,
+        Inactive = 2,
+        ComplianceReason = 100000001
+    }
 }
