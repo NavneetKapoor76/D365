@@ -8,6 +8,8 @@ namespace BDP.DPAM.WR.Opportunity {
             //Form.setChannelsFilter(formContext);
             //SHER-335
             Form.manageCompetitiveBiddingVisibility(formContext);
+            //SHER-521
+            Form.addOpportunityProductSubgridEventListener(formContext);
         }
 
         public static quickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
@@ -72,6 +74,25 @@ namespace BDP.DPAM.WR.Opportunity {
 
             let competitiveBiddingIsVisible: boolean = opportunityDepartmentValue == 100000001; //Institutional
             formContext.getControl<Xrm.Controls.StandardControl>("dpam_b_competitivebidding").setVisible(competitiveBiddingIsVisible);
+        }
+
+        //add an event on the onload of the opportunity product subgrid
+        static addOpportunityProductSubgridEventListener(formContext: Xrm.FormContext) {
+            let opportunityProductSubgrid: Xrm.Controls.GridControl = formContext.getControl("Subgrid_OpportunityProduct");
+
+            if (opportunityProductSubgrid == null) {
+                setTimeout(function () { Form.addOpportunityProductSubgridEventListener(formContext); }, 500);
+                return;
+            }
+
+            opportunityProductSubgrid.addOnLoad(Form.refreshRibbonOfOpportunityProductSubgrid);
+        }
+
+        //refresh the ribbon of the opportunity product subgrid
+        static refreshRibbonOfOpportunityProductSubgrid(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+
+            formContext.getControl<Xrm.Controls.GridControl>("Subgrid_OpportunityProduct").refreshRibbon();
         }
     }
 }
