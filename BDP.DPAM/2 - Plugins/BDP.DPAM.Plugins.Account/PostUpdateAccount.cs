@@ -16,6 +16,8 @@ namespace BDP.DPAM.Plugins.Account
             {
                 AccountController ctrl = new AccountController(serviceProvider);
                 ctrl.ValidatePipeline("account", "update", PluginStage.PostOperation);
+                //SHER-502
+                ctrl.DeactivateRelatedRecord();
             }
             catch (Exception ex)
             {

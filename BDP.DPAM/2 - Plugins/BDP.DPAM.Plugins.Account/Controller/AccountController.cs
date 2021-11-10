@@ -2,7 +2,9 @@
 using BDP.DPAM.Shared.Extension_Methods;
 using BDP.DPAM.Shared.Helper;
 using BDP.DPAM.Shared.Manager_Base;
+using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace BDP.DPAM.Plugins.Account
@@ -148,6 +150,69 @@ namespace BDP.DPAM.Plugins.Account
             }
 
             _tracing.Trace("ManageExClientLifestage - End");
+        }
+
+        /// <summary>
+        /// When the counterparty is desactivated, the related record entities of the counterparty must be also desactivated
+        /// </summary>
+        internal void DeactivateRelatedRecord()
+        {
+            if (!_target.Contains("statecode")) return;
+
+            _tracing.Trace("DeactivateRelatedRecord - Start");
+
+            if (_target.GetAttributeValue<OptionSetValue>("statecode").Value == (int)Account_StateCode.Inactive)
+            {
+                DeactivateRelatedEntityRecord("dpam_location", "dpam_lk_account", (int)LocationStateCode.Inactive, (int)Location_StatusCode.Inactive);
+                DeactivateRelatedEntityRecord("contact", "parentcustomerid", (int)Contact_StateCode.Inactive, (int)Contact_StatusCode.Inactive);
+                DeactivateRelatedEntityRecord("dpam_departments", "dpam_lk_counterparty", (int)Department_StateCode.Inactive, (int)Department_StatusCode.Inactive);
+                DeactivateRelatedEntityRecord("dpam_contactfrequency", "dpam_lk_counterparty", (int)ContactFrequency_StateCode.Inactive, (int)ContactFrequency_StatusCode.Inactive);
+                DeactivateRelatedEntityRecord("opportunity", "parentaccountid", (int)Opportunity_StateCode.Lost, (int)Opportunity_StatusCode.Canceled);
+            }
+            _tracing.Trace("DeactivateRelatedRecord - End");
+        }
+
+        /// <summary>
+        /// Deactivate all record related to the counterparty
+        /// </summary>
+        private void DeactivateRelatedEntityRecord(String entityName, String CounterpartyLookupField, int stateCode, int statusCode)
+        {
+            _tracing.Trace("DeactivateRelatedEntityRecord - Start");
+            
+            QueryExpression query = new QueryExpression(entityName);
+            query.Criteria.AddCondition(CounterpartyLookupField, ConditionOperator.Equal, _target.Id);
+
+            EntityCollection result = _service.RetrieveMultiple(query);
+
+            foreach (var record in result.Entities)
+            {
+                if (entityName == "opportunity")
+                {
+                    Entity opportunityClose = new Entity("opportunityclose");
+
+                    opportunityClose["opportunityid"] = new EntityReference(entityName, record.Id);
+
+                    LoseOpportunityRequest request = new LoseOpportunityRequest
+                    {
+                        OpportunityClose = opportunityClose,
+                        Status = new OptionSetValue(statusCode)
+                    };
+
+                    _service.Execute(request);
+                }
+                else
+                {
+                    Entity myEntity = _service.Retrieve(entityName, record.Id, new ColumnSet("statecode", "statuscode"));
+                    myEntity["statecode"] = new OptionSetValue(stateCode);
+                    myEntity["statuscode"] = new OptionSetValue(statusCode);
+
+                    UpdateRequest req = new UpdateRequest();
+                    req.Target = myEntity;
+
+                    _service.Execute(req);
+                }
+            }
+            _tracing.Trace("DeactivateRelatedEntityRecord - End");
         }
     }
 }
