@@ -2,6 +2,7 @@
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace BDP.DPAM.Plugins.ContactFrequency.Test
@@ -288,6 +289,86 @@ namespace BDP.DPAM.Plugins.ContactFrequency.Test
             fakeContext.ExecutePluginWith<PreUpdateContactFrequency>(executionFakeContext);
 
             Assert.False(contactFrequencyTarget.Contains("dpam_s_name"));
+        }
+
+        [Theory]
+        [InlineData("01/11/2021", "01/11/2021")]
+        [InlineData("01/11/2021", "05/11/2021")]
+        public void PotentialDuplicationManagement(string existingContactFrequencyDate, string targetDate)
+        {
+            var fakeContext = new XrmFakedContext();
+            var entityList = new List<Entity>();
+
+            var existingContactFrequencyStartDate = DateTime.ParseExact(existingContactFrequencyDate, "dd/MM/yyyy", null);
+            var targetContactFrequencyStartDate = DateTime.ParseExact(targetDate, "dd/MM/yyyy", null);
+
+            var counterparty = new Entity("account")
+            {
+                Id = Guid.NewGuid()
+            };
+            entityList.Add(counterparty);
+
+            var existingContactFrequency = new Entity("dpam_contactfrequency")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"dpam_lk_counterparty", counterparty.ToEntityReference() },
+                    {"dpam_dt_startdate", existingContactFrequencyStartDate },
+                    {"dpam_dt_enddate", new DateTime(2021, 11, 30) },
+                    {"dpam_int_numberoftargetactivities", 20 }
+                }
+            };
+            entityList.Add(existingContactFrequency);
+
+            fakeContext.Initialize(entityList);
+
+            var contactFrequencyTarget = new Entity("dpam_contactfrequency")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"dpam_dt_startdate", targetContactFrequencyStartDate },
+                    {"dpam_int_numberoftargetactivities", 20 }
+                }
+            };
+
+            var contactFrequencyPreImage = new Entity("dpam_contactfrequency")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"dpam_lk_counterparty", counterparty.ToEntityReference() },
+                    {"dpam_dt_startdate", new DateTime(2021, 11, 1) },
+                    {"dpam_dt_enddate", new DateTime(2021, 11, 30) },
+                    {"dpam_int_numberoftargetactivities", 10 }
+                }
+            };
+
+            var executionFakeContext = new XrmFakedPluginExecutionContext()
+            {
+                InputParameters = new ParameterCollection { { "Target", contactFrequencyTarget } },
+                PreEntityImages = new EntityImageCollection { { "PreImage", contactFrequencyPreImage } },
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection(),
+                MessageName = "Update",
+                Stage = (int)PluginStage.PreOperation
+            };
+
+            Exception ex = null;
+
+            try
+            {
+                fakeContext.ExecutePluginWith<PreUpdateContactFrequency>(executionFakeContext);
+            }
+            catch (Exception e)
+            {
+                ex = e;
+            }
+
+            if (existingContactFrequencyDate == targetDate) Assert.NotNull(ex);
+            else Assert.Null(ex);
+
         }
     }
 }
