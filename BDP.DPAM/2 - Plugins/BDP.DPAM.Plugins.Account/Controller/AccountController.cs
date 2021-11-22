@@ -180,6 +180,7 @@ namespace BDP.DPAM.Plugins.Account
             _tracing.Trace("DeactivateRelatedEntityRecord - Start");
             
             QueryExpression query = new QueryExpression(entityName);
+            query.ColumnSet.AddColumns("statecode");
             query.Criteria.AddCondition(CounterpartyLookupField, ConditionOperator.Equal, _target.Id);
 
             EntityCollection result = _service.RetrieveMultiple(query);
@@ -188,17 +189,20 @@ namespace BDP.DPAM.Plugins.Account
             {
                 if (entityName == "opportunity")
                 {
-                    Entity opportunityClose = new Entity("opportunityclose");
-
-                    opportunityClose["opportunityid"] = new EntityReference(entityName, record.Id);
-
-                    LoseOpportunityRequest request = new LoseOpportunityRequest
+                    if (record.GetAttributeValue<OptionSetValue>("statecode").Value == (int)Opportunity_StateCode.Open)
                     {
-                        OpportunityClose = opportunityClose,
-                        Status = new OptionSetValue(statusCode)
-                    };
+                        Entity opportunityClose = new Entity("opportunityclose");
 
-                    _service.Execute(request);
+                        opportunityClose["opportunityid"] = new EntityReference(entityName, record.Id);
+
+                        LoseOpportunityRequest request = new LoseOpportunityRequest
+                        {
+                            OpportunityClose = opportunityClose,
+                            Status = new OptionSetValue(statusCode)
+                        };
+
+                        _service.Execute(request);
+                    }
                 }
                 else
                 {
