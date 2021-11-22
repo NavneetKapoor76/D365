@@ -187,19 +187,22 @@ namespace BDP.DPAM.Plugins.Account
 
             foreach (var record in result.Entities)
             {
-                if (entityName == "opportunity" && record.GetAttributeValue<OptionSetValue>("statecode").Value == (int)Opportunity_StateCode.Open)
+                if (entityName == "opportunity")
                 {
-                    Entity opportunityClose = new Entity("opportunityclose");
-
-                    opportunityClose["opportunityid"] = new EntityReference(entityName, record.Id);
-
-                    LoseOpportunityRequest request = new LoseOpportunityRequest
+                    if (record.GetAttributeValue<OptionSetValue>("statecode").Value == (int)Opportunity_StateCode.Open)
                     {
-                        OpportunityClose = opportunityClose,
-                        Status = new OptionSetValue(statusCode)
-                    };
+                        Entity opportunityClose = new Entity("opportunityclose");
 
-                    _service.Execute(request);
+                        opportunityClose["opportunityid"] = new EntityReference(entityName, record.Id);
+
+                        LoseOpportunityRequest request = new LoseOpportunityRequest
+                        {
+                            OpportunityClose = opportunityClose,
+                            Status = new OptionSetValue(statusCode)
+                        };
+
+                        _service.Execute(request);
+                    }
                 }
                 else
                 {
