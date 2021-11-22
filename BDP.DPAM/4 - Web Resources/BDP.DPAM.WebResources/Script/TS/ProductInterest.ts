@@ -7,7 +7,7 @@ namespace BDP.DPAM.WR.ProductInterest {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-503
-            Form.setInitialProductVisibility(formContext);
+            Form.setInitialProductVisibility(executionContext);
             //SHER-503
             Form.setAssetClassFilter(formContext);
 
@@ -17,7 +17,7 @@ namespace BDP.DPAM.WR.ProductInterest {
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-503
-            Form.setInitialProductVisibility2(formContext);
+            Form.setInitialProductVisibility(executionContext);
             //SHER-503
             Form.setAssetClassFilter(formContext);
 
@@ -35,12 +35,8 @@ namespace BDP.DPAM.WR.ProductInterest {
             }
             formContext.getAttribute("dpam_lk_product").setValue(null);
             formContext.getAttribute("dpam_lk_shareclass").setValue(null);
-
-
-
-
-
         }
+
         public static onChange_dpam_lk_product_assetclass(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             let productAssetClassAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_product_assetclass");
@@ -134,64 +130,16 @@ namespace BDP.DPAM.WR.ProductInterest {
                 formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").addCustomFilter(filter, "product");
             }
         }
-     
-        static setInitialProductVisibility(formContext: Xrm.FormContext) {
-            //Check if it is create mode
-            if (formContext.ui.getFormType() == 1) {
-                let productAssetClassAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_product_assetclass");
-                if (productAssetClassAttribute.getValue() != null && productAssetClassAttribute.getValue()[0] && productAssetClassAttribute.getValue()[0].id) {
-                    Xrm.WebApi.retrieveRecord("product", productAssetClassAttribute.getValue()[0].id).then(
-                        function success(result) {
-                            if (!result._parentproductid_value || result._parentproductid_value == null) {
-                                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_category").setVisible(true);
-                                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(false);
-                                formContext.getAttribute("dpam_lk_product_category").setValue(null);
-                                formContext.getAttribute("dpam_lk_product").setValue(null);
-                                Form.setCategoryFilter(formContext);
-                            } else {
-                                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_assetclass").setVisible(false);
-                                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_category").setVisible(false);
-                                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(false);
-                                formContext.getAttribute("dpam_lk_product_assetclass").setValue(null);
-                                formContext.getAttribute("dpam_lk_product_category").setValue(null);
-                                formContext.getAttribute("dpam_lk_product").setValue(null);
-                                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_assetclass").setVisible(true);
-                            }
-                        },
-                        function (error) {
-                            console.log(error.message);
-                            // handle error conditions
-                        }
-                    );
-                 } else {
-                    // case with all product field empty.
-                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_category").setVisible(false);
-                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(false);
-                 }
-            } else {
-                // case updatemanage visibility and filter
-                let productAssetClassAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_product_assetclass");
-                if (productAssetClassAttribute.getValue() != null) {
-                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_category").setVisible(true);
-                    Form.setCategoryFilter(formContext);
-                    let productCategoryAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_product_category");
-                    if (productCategoryAttribute.getValue() != null) {
-                        formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(true);
-                        Form.setFundNameFilter(formContext)
-                    } else {
-                        formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(false);
-                    }
-                } else {
-                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_category").setVisible(false);
-                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(false);
-                }
-            }
-        }
-        static setInitialProductVisibility2(formContext: Xrm.FormContext) {
-            //Check if it is create mode
-            if (formContext.ui.getFormType() == 1) {
-                let productAssetClassAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_product_assetclass");
 
+
+        static async setInitialProductVisibility(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //Check if it is create mode
+            if (formContext.ui.getFormType() == 1) {
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_assetclass").setVisible(false);
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_category").setVisible(false);
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(false);
+                let productAssetClassAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_product_assetclass");
                 if (productAssetClassAttribute.getValue() != null && productAssetClassAttribute.getValue()[0] && productAssetClassAttribute.getValue()[0].id) {
 
                     let endLoop: boolean = false;
@@ -200,47 +148,25 @@ namespace BDP.DPAM.WR.ProductInterest {
                     let tempLookupValues: Array<LookupValue>;
                     let lookupValues2: Array<LookupValue>;
                     let lookupValues3: Array<LookupValue>;
-                    
-                    
-                    
-
-
-
-
-
-
-
+                    let cpt: number = 1
                     while (!endLoop) {
-                        Xrm.WebApi.retrieveRecord("product", currentProductid).then(
+
+                        await Xrm.WebApi.retrieveRecord("product", currentProductid).then(
                             function success(result) {
                                 if (!result._parentproductid_value || result._parentproductid_value == null) {
-                                    lookupValues1 = new Array();
-                                    lookupValues1[0] = new LookupValue();
-                                    lookupValues1[0].id = result.productid;
-                                    lookupValues1[0].name = result.name;
-                                    lookupValues1[0].entityType = "product";
+                                    lookupValues1 = Form.fillLookup(result);
                                     endLoop = true;
-                                   
+
                                 } else {
                                     if (tempLookupValues != null) {
                                         lookupValues3 = tempLookupValues;
-                                        lookupValues2 = new Array();
-                                        lookupValues2[0] = new LookupValue();
-                                        lookupValues2[0].id = result.productid;
-                                        lookupValues2[0].name = result.name;
-                                        lookupValues2[0].entityType = "product";
+                                        lookupValues2 = Form.fillLookup(result);
                                         currentProductid = result._parentproductid_value;
                                     } else {
-                                        tempLookupValues = new Array();
-                                        tempLookupValues[0] = new LookupValue();
-                                        tempLookupValues[0].id = result.productid;
-                                        tempLookupValues[0].name = result.name;
-                                        tempLookupValues[0].entityType = "product";
+                                        tempLookupValues = Form.fillLookup(result);
                                         currentProductid = result._parentproductid_value;
                                     }
-     
                                 }
-                        
                             },
                             function (error) {
                                 console.log(error.message);
@@ -248,16 +174,19 @@ namespace BDP.DPAM.WR.ProductInterest {
                                 // handle error conditions
                             }
                         );
+
+                        // security guard in case of no end. max level = 3
+                        cpt = cpt + 1
+                        if (cpt > 3) {
+                            endLoop = true;
+                        }
                     }
                     if (lookupValues3 == null) {
-                        if (tempLookupValues == null) { 
+                        if (tempLookupValues != null) {
                             lookupValues2 = tempLookupValues;
                         }
                     }
-                    
-                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_assetclass").setVisible(false);
-                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_category").setVisible(false);
-                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(false);
+
                     formContext.getAttribute("dpam_lk_product_assetclass").setValue(null);
                     formContext.getAttribute("dpam_lk_product_category").setValue(null);
                     formContext.getAttribute("dpam_lk_product").setValue(null);
@@ -275,10 +204,12 @@ namespace BDP.DPAM.WR.ProductInterest {
                     }
                     if (lookupValues3 != null) {
                         formContext.getAttribute("dpam_lk_product").setValue(lookupValues3);
+                        Form.onChange_dpam_lk_product(executionContext);
                     }
-        
+
                 } else {
                     // case with all product field empty.
+                    formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_assetclass").setVisible(true);
                     formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product_category").setVisible(false);
                     formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_product").setVisible(false);
                 }
@@ -301,6 +232,18 @@ namespace BDP.DPAM.WR.ProductInterest {
                 }
             }
         }
+
+        static fillLookup(result: Xrm.Entity): Array<LookupValue> { 
+            let lookupValues: Array<LookupValue> = new Array();
+            lookupValues[0] = new LookupValue();
+            lookupValues[0].id = result.productid;
+            lookupValues[0].name = result.name;
+            lookupValues[0].entityType = "product";
+            return lookupValues;        
+        }
+        
+
+       
     }
     class LookupValue {
         id: string;

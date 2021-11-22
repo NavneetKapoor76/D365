@@ -1,3 +1,11 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 /// <reference path="../../node_modules/@types/xrm/index.d.ts" />
 var BDP;
 (function (BDP) {
@@ -11,14 +19,14 @@ var BDP;
                     static onLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-503
-                        Form.setInitialProductVisibility(formContext);
+                        Form.setInitialProductVisibility(executionContext);
                         //SHER-503
                         Form.setAssetClassFilter(formContext);
                     }
                     static QuickCreateonLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-503
-                        Form.setInitialProductVisibility2(formContext);
+                        Form.setInitialProductVisibility(executionContext);
                         //SHER-503
                         Form.setAssetClassFilter(formContext);
                     }
@@ -116,158 +124,111 @@ var BDP;
                             formContext.getControl("dpam_lk_product").addCustomFilter(filter, "product");
                         }
                     }
-                    static setInitialProductVisibility(formContext) {
-                        //Check if it is create mode
-                        if (formContext.ui.getFormType() == 1) {
-                            let productAssetClassAttribute = formContext.getAttribute("dpam_lk_product_assetclass");
-                            if (productAssetClassAttribute.getValue() != null && productAssetClassAttribute.getValue()[0] && productAssetClassAttribute.getValue()[0].id) {
-                                Xrm.WebApi.retrieveRecord("product", productAssetClassAttribute.getValue()[0].id).then(function success(result) {
-                                    if (!result._parentproductid_value || result._parentproductid_value == null) {
-                                        formContext.getControl("dpam_lk_product_category").setVisible(true);
-                                        formContext.getControl("dpam_lk_product").setVisible(false);
-                                        formContext.getAttribute("dpam_lk_product_category").setValue(null);
-                                        formContext.getAttribute("dpam_lk_product").setValue(null);
-                                        Form.setCategoryFilter(formContext);
-                                    }
-                                    else {
-                                        formContext.getControl("dpam_lk_product_assetclass").setVisible(false);
-                                        formContext.getControl("dpam_lk_product_category").setVisible(false);
-                                        formContext.getControl("dpam_lk_product").setVisible(false);
-                                        formContext.getAttribute("dpam_lk_product_assetclass").setValue(null);
-                                        formContext.getAttribute("dpam_lk_product_category").setValue(null);
-                                        formContext.getAttribute("dpam_lk_product").setValue(null);
-                                        formContext.getControl("dpam_lk_product_assetclass").setVisible(true);
-                                    }
-                                }, function (error) {
-                                    console.log(error.message);
-                                    // handle error conditions
-                                });
-                            }
-                            else {
-                                // case with all product field empty.
-                                formContext.getControl("dpam_lk_product_category").setVisible(false);
-                                formContext.getControl("dpam_lk_product").setVisible(false);
-                            }
-                        }
-                        else {
-                            // case updatemanage visibility and filter
-                            let productAssetClassAttribute = formContext.getAttribute("dpam_lk_product_assetclass");
-                            if (productAssetClassAttribute.getValue() != null) {
-                                formContext.getControl("dpam_lk_product_category").setVisible(true);
-                                Form.setCategoryFilter(formContext);
-                                let productCategoryAttribute = formContext.getAttribute("dpam_lk_product_category");
-                                if (productCategoryAttribute.getValue() != null) {
-                                    formContext.getControl("dpam_lk_product").setVisible(true);
-                                    Form.setFundNameFilter(formContext);
-                                }
-                                else {
-                                    formContext.getControl("dpam_lk_product").setVisible(false);
-                                }
-                            }
-                            else {
-                                formContext.getControl("dpam_lk_product_category").setVisible(false);
-                                formContext.getControl("dpam_lk_product").setVisible(false);
-                            }
-                        }
-                    }
-                    static setInitialProductVisibility2(formContext) {
-                        //Check if it is create mode
-                        if (formContext.ui.getFormType() == 1) {
-                            let productAssetClassAttribute = formContext.getAttribute("dpam_lk_product_assetclass");
-                            if (productAssetClassAttribute.getValue() != null && productAssetClassAttribute.getValue()[0] && productAssetClassAttribute.getValue()[0].id) {
-                                let endLoop = false;
-                                let currentProductid = productAssetClassAttribute.getValue()[0].id;
-                                let lookupValues1;
-                                let tempLookupValues;
-                                let lookupValues2;
-                                let lookupValues3;
-                                while (!endLoop) {
-                                    Xrm.WebApi.retrieveRecord("product", currentProductid).then(function success(result) {
-                                        if (!result._parentproductid_value || result._parentproductid_value == null) {
-                                            lookupValues1 = new Array();
-                                            lookupValues1[0] = new LookupValue();
-                                            lookupValues1[0].id = result.productid;
-                                            lookupValues1[0].name = result.name;
-                                            lookupValues1[0].entityType = "product";
-                                            endLoop = true;
-                                        }
-                                        else {
-                                            if (tempLookupValues != null) {
-                                                lookupValues3 = tempLookupValues;
-                                                lookupValues2 = new Array();
-                                                lookupValues2[0] = new LookupValue();
-                                                lookupValues2[0].id = result.productid;
-                                                lookupValues2[0].name = result.name;
-                                                lookupValues2[0].entityType = "product";
-                                                currentProductid = result._parentproductid_value;
-                                            }
-                                            else {
-                                                tempLookupValues = new Array();
-                                                tempLookupValues[0] = new LookupValue();
-                                                tempLookupValues[0].id = result.productid;
-                                                tempLookupValues[0].name = result.name;
-                                                tempLookupValues[0].entityType = "product";
-                                                currentProductid = result._parentproductid_value;
-                                            }
-                                        }
-                                    }, function (error) {
-                                        console.log(error.message);
-                                        endLoop = true;
-                                        // handle error conditions
-                                    });
-                                }
-                                if (lookupValues3 == null) {
-                                    if (tempLookupValues == null) {
-                                        lookupValues2 = tempLookupValues;
-                                    }
-                                }
+                    static setInitialProductVisibility(executionContext) {
+                        return __awaiter(this, void 0, void 0, function* () {
+                            const formContext = executionContext.getFormContext();
+                            //Check if it is create mode
+                            if (formContext.ui.getFormType() == 1) {
                                 formContext.getControl("dpam_lk_product_assetclass").setVisible(false);
                                 formContext.getControl("dpam_lk_product_category").setVisible(false);
                                 formContext.getControl("dpam_lk_product").setVisible(false);
-                                formContext.getAttribute("dpam_lk_product_assetclass").setValue(null);
-                                formContext.getAttribute("dpam_lk_product_category").setValue(null);
-                                formContext.getAttribute("dpam_lk_product").setValue(null);
-                                formContext.getControl("dpam_lk_product_assetclass").setVisible(true);
-                                if (lookupValues1 != null) {
-                                    formContext.getAttribute("dpam_lk_product_assetclass").setValue(lookupValues1);
-                                    formContext.getControl("dpam_lk_product_category").setVisible(true);
-                                    Form.setCategoryFilter(formContext);
-                                }
-                                if (lookupValues2 != null) {
-                                    formContext.getAttribute("dpam_lk_product_category").setValue(lookupValues2);
-                                    formContext.getControl("dpam_lk_product").setVisible(true);
-                                    Form.setFundNameFilter(formContext);
-                                }
-                                if (lookupValues3 != null) {
-                                    formContext.getAttribute("dpam_lk_product").setValue(lookupValues3);
-                                }
-                            }
-                            else {
-                                // case with all product field empty.
-                                formContext.getControl("dpam_lk_product_category").setVisible(false);
-                                formContext.getControl("dpam_lk_product").setVisible(false);
-                            }
-                        }
-                        else {
-                            // case updatemanage visibility and filter
-                            let productAssetClassAttribute = formContext.getAttribute("dpam_lk_product_assetclass");
-                            if (productAssetClassAttribute.getValue() != null) {
-                                formContext.getControl("dpam_lk_product_category").setVisible(true);
-                                Form.setCategoryFilter(formContext);
-                                let productCategoryAttribute = formContext.getAttribute("dpam_lk_product_category");
-                                if (productCategoryAttribute.getValue() != null) {
-                                    formContext.getControl("dpam_lk_product").setVisible(true);
-                                    Form.setFundNameFilter(formContext);
+                                let productAssetClassAttribute = formContext.getAttribute("dpam_lk_product_assetclass");
+                                if (productAssetClassAttribute.getValue() != null && productAssetClassAttribute.getValue()[0] && productAssetClassAttribute.getValue()[0].id) {
+                                    let endLoop = false;
+                                    let currentProductid = productAssetClassAttribute.getValue()[0].id;
+                                    let lookupValues1;
+                                    let tempLookupValues;
+                                    let lookupValues2;
+                                    let lookupValues3;
+                                    let cpt = 1;
+                                    while (!endLoop) {
+                                        yield Xrm.WebApi.retrieveRecord("product", currentProductid).then(function success(result) {
+                                            if (!result._parentproductid_value || result._parentproductid_value == null) {
+                                                lookupValues1 = Form.fillLookup(result);
+                                                endLoop = true;
+                                            }
+                                            else {
+                                                if (tempLookupValues != null) {
+                                                    lookupValues3 = tempLookupValues;
+                                                    lookupValues2 = Form.fillLookup(result);
+                                                    currentProductid = result._parentproductid_value;
+                                                }
+                                                else {
+                                                    tempLookupValues = Form.fillLookup(result);
+                                                    currentProductid = result._parentproductid_value;
+                                                }
+                                            }
+                                        }, function (error) {
+                                            console.log(error.message);
+                                            endLoop = true;
+                                            // handle error conditions
+                                        });
+                                        // security guard in case of no end. max level = 3
+                                        cpt = cpt + 1;
+                                        if (cpt > 3) {
+                                            endLoop = true;
+                                        }
+                                    }
+                                    if (lookupValues3 == null) {
+                                        if (tempLookupValues != null) {
+                                            lookupValues2 = tempLookupValues;
+                                        }
+                                    }
+                                    formContext.getAttribute("dpam_lk_product_assetclass").setValue(null);
+                                    formContext.getAttribute("dpam_lk_product_category").setValue(null);
+                                    formContext.getAttribute("dpam_lk_product").setValue(null);
+                                    formContext.getControl("dpam_lk_product_assetclass").setVisible(true);
+                                    if (lookupValues1 != null) {
+                                        formContext.getAttribute("dpam_lk_product_assetclass").setValue(lookupValues1);
+                                        formContext.getControl("dpam_lk_product_category").setVisible(true);
+                                        Form.setCategoryFilter(formContext);
+                                    }
+                                    if (lookupValues2 != null) {
+                                        formContext.getAttribute("dpam_lk_product_category").setValue(lookupValues2);
+                                        formContext.getControl("dpam_lk_product").setVisible(true);
+                                        Form.setFundNameFilter(formContext);
+                                    }
+                                    if (lookupValues3 != null) {
+                                        formContext.getAttribute("dpam_lk_product").setValue(lookupValues3);
+                                        Form.onChange_dpam_lk_product(executionContext);
+                                    }
                                 }
                                 else {
+                                    // case with all product field empty.
+                                    formContext.getControl("dpam_lk_product_assetclass").setVisible(true);
+                                    formContext.getControl("dpam_lk_product_category").setVisible(false);
                                     formContext.getControl("dpam_lk_product").setVisible(false);
                                 }
                             }
                             else {
-                                formContext.getControl("dpam_lk_product_category").setVisible(false);
-                                formContext.getControl("dpam_lk_product").setVisible(false);
+                                // case updatemanage visibility and filter
+                                let productAssetClassAttribute = formContext.getAttribute("dpam_lk_product_assetclass");
+                                if (productAssetClassAttribute.getValue() != null) {
+                                    formContext.getControl("dpam_lk_product_category").setVisible(true);
+                                    Form.setCategoryFilter(formContext);
+                                    let productCategoryAttribute = formContext.getAttribute("dpam_lk_product_category");
+                                    if (productCategoryAttribute.getValue() != null) {
+                                        formContext.getControl("dpam_lk_product").setVisible(true);
+                                        Form.setFundNameFilter(formContext);
+                                    }
+                                    else {
+                                        formContext.getControl("dpam_lk_product").setVisible(false);
+                                    }
+                                }
+                                else {
+                                    formContext.getControl("dpam_lk_product_category").setVisible(false);
+                                    formContext.getControl("dpam_lk_product").setVisible(false);
+                                }
                             }
-                        }
+                        });
+                    }
+                    static fillLookup(result) {
+                        let lookupValues = new Array();
+                        lookupValues[0] = new LookupValue();
+                        lookupValues[0].id = result.productid;
+                        lookupValues[0].name = result.name;
+                        lookupValues[0].entityType = "product";
+                        return lookupValues;
                     }
                 }
                 ProductInterest.Form = Form;
