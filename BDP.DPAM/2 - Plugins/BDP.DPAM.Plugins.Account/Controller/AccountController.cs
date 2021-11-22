@@ -180,13 +180,14 @@ namespace BDP.DPAM.Plugins.Account
             _tracing.Trace("DeactivateRelatedEntityRecord - Start");
             
             QueryExpression query = new QueryExpression(entityName);
+            query.ColumnSet.AddColumns("statecode");
             query.Criteria.AddCondition(CounterpartyLookupField, ConditionOperator.Equal, _target.Id);
 
             EntityCollection result = _service.RetrieveMultiple(query);
 
             foreach (var record in result.Entities)
             {
-                if (entityName == "opportunity")
+                if (entityName == "opportunity" && record.GetAttributeValue<OptionSetValue>("statecode").Value == (int)Opportunity_StateCode.Open)
                 {
                     Entity opportunityClose = new Entity("opportunityclose");
 
