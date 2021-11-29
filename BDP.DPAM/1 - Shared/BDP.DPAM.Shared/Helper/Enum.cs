@@ -21,6 +21,48 @@ namespace BDP.DPAM.Shared.Helper
         Inactive = 1
     }
 
+    public enum Location_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
+
+    public enum Contact_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum Contact_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
+
+    public enum Department_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum Department_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
+
+    public enum ContactFrequency_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum ContactFrequency_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
+
     public enum Language
     {
         English = 100000000,
@@ -93,5 +135,35 @@ namespace BDP.DPAM.Shared.Helper
         Canceled = 4,
         Busy = 5,
         OutOfOffice = 6
+    }
+
+    public enum Account_StatusCode
+    {
+        Active = 1,
+        Prospect = 100000000,
+        Inactive = 2,
+        ComplianceReason = 100000001
+    }
+
+    public enum Account_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum Opportunity_StateCode
+    {
+        Open = 0,
+        Won = 1,
+        Lost = 2
+    }
+
+    public enum Opportunity_StatusCode
+    {
+        InProgress = 1,
+        OnHold = 2,
+        Won = 3,
+        Canceled = 4,
+        LostToCompetition = 5
     }
 }

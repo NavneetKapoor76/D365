@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using BDP.DPAM.Shared.Helper;
 using BDP.DPAM.Shared.Manager_Base;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
@@ -136,6 +137,68 @@ namespace BDP.DPAM.Plugins.Account.Test
             fakeContext.ExecutePluginWith<PreUpdateAccount>(executionFakeContext);
 
             Assert.Equal(null, counterpartyTarget.GetAttributeValue<EntityReference>("dpam_lk_businesssegmentation"));
+        }
+
+        [Theory]
+        [InlineData((int)Account_StatusCode.Prospect, (int)Account_StatusCode.Active, true, true, true, true)]
+        [InlineData((int)Account_StatusCode.Active, (int)Account_StatusCode.Prospect, true, false, false, false)]
+        [InlineData((int)Account_StatusCode.ComplianceReason, (int)Account_StatusCode.Prospect, false, false, false, false)]
+        [InlineData((int)Account_StatusCode.Prospect, (int)Account_StatusCode.Inactive, false, false, false, false)]
+        public void ManageExClientLifestage(int statusCodeTarget, int statusCodePreImage, bool containExClientField, bool expectedExClientValue, bool containWithInvestismentField, bool expectedWithInvestimentValue)
+        {
+            var fakeContext = new XrmFakedContext();
+
+            var counterpartyTarget = new Entity("account")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"statuscode", new OptionSetValue(statusCodeTarget) }
+                }
+            };
+
+            var inputParameters = new ParameterCollection
+            {
+                {"Target", counterpartyTarget }
+            };
+
+            var counterpartyPreImage = new Entity("account")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"statuscode", new OptionSetValue(statusCodePreImage) }
+                }
+            };
+
+            var preImageCollection = new EntityImageCollection
+            {
+                {"PreImage", counterpartyPreImage }
+            };
+
+            var executionFakeContext = new XrmFakedPluginExecutionContext()
+            {
+                InputParameters = inputParameters,
+                PreEntityImages = preImageCollection,
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection(),
+                MessageName = "Update",
+                Stage = (int)PluginStage.PreOperation
+            };
+
+            Assert.False(counterpartyTarget.Contains("dpam_b_exclient"));
+            Assert.False(counterpartyTarget.Contains("dpam_b_withinvestmentinthepast"));
+
+            fakeContext.ExecutePluginWith<PreUpdateAccount>(executionFakeContext);
+
+            Assert.Equal(containExClientField, counterpartyTarget.Contains("dpam_b_exclient"));
+            if (containExClientField)
+                Assert.Equal(expectedExClientValue, counterpartyTarget.GetAttributeValue<bool>("dpam_b_exclient"));
+
+            Assert.Equal(containWithInvestismentField, counterpartyTarget.Contains("dpam_b_withinvestmentinthepast"));
+            if (containWithInvestismentField)
+                Assert.Equal(expectedWithInvestimentValue, counterpartyTarget.GetAttributeValue<bool>("dpam_b_withinvestmentinthepast"));
+
         }
     }
 }

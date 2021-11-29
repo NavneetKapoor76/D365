@@ -7,11 +7,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E75C5D5E-A777-4123-9C64-A9985B92BF4A}</ProjectGuid>
+    <ProjectGuid>{C57653B1-D8F3-48E0-910E-8AADC90FAABC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BDP.DPAM.Plugins.ContactFrequency.Test</RootNamespace>
-    <AssemblyName>BDP.DPAM.Plugins.ContactFrequency.Test</AssemblyName>
+    <RootNamespace>BDP.DPAM.Plugins.ProductInterest.Test</RootNamespace>
+    <AssemblyName>BDP.DPAM.Plugins.ProductInterest.Test</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -111,8 +111,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PreCreateContactFrequencyTest.cs" />
-    <Compile Include="PreUpdateContactFrequecyTest.cs" />
+    <Compile Include="PreCreateProductInterestTest.cs" />
+    <Compile Include="PreUpdateProductInterestTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,9 +120,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BDP.DPAM.Plugins.ContactFrequency\BDP.DPAM.Plugins.ContactFrequency.csproj">
-      <Project>{32cfe2d8-b152-491a-93d0-d04ac3dd1d3a}</Project>
-      <Name>BDP.DPAM.Plugins.ContactFrequency</Name>
+    <ProjectReference Include="..\BDP.DPAM.Plugins.ProductInterest\BDP.DPAM.Plugins.ProductInterest.csproj">
+      <Project>{72c4463e-2533-41c1-880f-d2fad2cd6afc}</Project>
+      <Name>BDP.DPAM.Plugins.ProductInterest</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

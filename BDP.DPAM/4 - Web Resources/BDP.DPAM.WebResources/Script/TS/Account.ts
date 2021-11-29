@@ -14,6 +14,8 @@ namespace BDP.DPAM.WR.Account {
             Form.manageBusinessSegmentationVisibility(formContext);
             //SHER-313
             Form.manageCountryVisibility(formContext);
+            //SHER-500
+            Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, true)
         }
 
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
@@ -31,6 +33,8 @@ namespace BDP.DPAM.WR.Account {
             Form.removeDmuValueAndParentCounterpartyValue(formContext);
 
             formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+            //SHER-500
+            Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, false)
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
@@ -45,6 +49,12 @@ namespace BDP.DPAM.WR.Account {
             Form.manageBusinessSegmentationVisibility(formContext);
             Form.resetSegmentation(formContext);
 
+        }
+
+        public static onChange_dpam_mos_counterpartytype(executionContext: Xrm.Events.EventContext, fromMainForm: boolean) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-500
+            Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, fromMainForm)
         }
 
         static resetSegmentation(formContext: Xrm.FormContext) {
@@ -231,6 +241,40 @@ namespace BDP.DPAM.WR.Account {
             if (parentCounterpartyAttribute.getValue() != null) {
                 parentCounterpartyAttribute.setValue(null);
             }
+        }
+
+        /*Manage the required level and the visibility based on the counterparty type for the following fields:
+         * On the main and quick create forms:
+         *      dpam_lk_counterpartymifidcategory
+         *      dpam_lk_compliancesegmentation
+         * Only on the main form:
+         *      dpam_os_amlrating
+         */
+        static manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext: Xrm.FormContext, fromMainForm: boolean) {
+            let counterpartyTypeAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_mos_counterpartytype");
+            let fieldIsVisible: boolean = true;
+            let requiredLevel: Xrm.Attributes.RequirementLevel = "required";
+
+            if (counterpartyTypeAttribute.getValue() != null) {
+                let selectedOptions: Int32Array = counterpartyTypeAttribute.getValue();
+                if (selectedOptions.length == 1 && selectedOptions[0] == 100000005 /*Business Relation*/) {
+                    fieldIsVisible = false;
+                    requiredLevel = "none";
+                }
+            }
+
+            let mifidCategoryControl: Xrm.Controls.LookupControl = formContext.getControl("dpam_lk_counterpartymifidcategory");
+            let complianceSegmentationControl: Xrm.Controls.LookupControl = formContext.getControl("dpam_lk_compliancesegmentation");
+
+            mifidCategoryControl.setVisible(fieldIsVisible);
+            mifidCategoryControl.getAttribute().setRequiredLevel(requiredLevel);
+
+            complianceSegmentationControl.setVisible(fieldIsVisible);
+            complianceSegmentationControl.getAttribute().setRequiredLevel(requiredLevel);
+
+            if (!fromMainForm) return;
+
+            formContext.getControl<Xrm.Controls.StandardControl>("dpam_os_amlrating").setVisible(fieldIsVisible);
         }
     }
 
