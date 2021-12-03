@@ -1,5 +1,5 @@
 ﻿/// <reference path="../../node_modules/@types/xrm/index.d.ts" />
-namespace BDP.DPAM.WR.Segment {   
+namespace BDP.DPAM.WR.MarketingList {   
 
     //Variables used by isContactFrequencyCreatedOnEmpty function
     let isContactFrequencyCreatedOnEmpty: boolean;
@@ -8,28 +8,9 @@ namespace BDP.DPAM.WR.Segment {
     export class Ribbon {
         //function to open the set contact frequencies page on the form
         public static openSetContactFrequenciesPageOnForm(): void {
-            let pageInput: Xrm.Navigation.CustomPage = {
-                pageType: "custom",
-                name: "dpam_setcontactfrequenciespage_ba3d3",
-                entityName: "msdyncrm_segment",
-                recordId: Xrm.Page.data.entity.getId()
-            };
+            let selectedId: string = Xrm.Page.data.entity.getId();
 
-            let navigationOptions: Xrm.Navigation.NavigationOptions = {
-                target: 2,
-                width: 550,
-                height: 460,
-                title: "Set Contact Frequencies"
-            };
-
-            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
-                .then(
-                    function success() {
-                        Xrm.Page.data.refresh(true);
-                    },
-                    function error() {
-                        console.log(error);
-                    });
+            Ribbon.openSetContactFrequenciesPage(selectedId);
         }
 
         //function to open the set contact frequencies page
@@ -38,7 +19,7 @@ namespace BDP.DPAM.WR.Segment {
             let pageInput: Xrm.Navigation.CustomPage = {
                 pageType: "custom",
                 name: "dpam_setcontactfrequenciespage_ba3d3",
-                entityName: "msdyncrm_segment",
+                entityName: "list",
                 recordId: selectedId
             };
 
@@ -81,7 +62,7 @@ namespace BDP.DPAM.WR.Segment {
 
             let recordId: string = selectedId.replace("{", "").replace("}", "");
 
-            Xrm.WebApi.retrieveRecord("msdyncrm_segment", recordId, "?$select=dpam_dt_contactfrequencycreatedon").then(
+            Xrm.WebApi.retrieveRecord("list", recordId, "?$select=dpam_dt_contactfrequencycreatedon").then(
                 function success(result) {
                     isContactFrequencyCreatedOnEmpty = result.dpam_dt_contactfrequencycreatedon == null;
                     primaryControl.refreshRibbon();
