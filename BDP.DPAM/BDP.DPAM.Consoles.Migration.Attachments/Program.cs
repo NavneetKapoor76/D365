@@ -1,14 +1,11 @@
 ﻿using BDP.DPAM.Consoles.Shared;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
-using Microsoft.Xrm.Tooling.Connector;
 using System;
 using System.IO;
 using System.Net;
 using System.ServiceModel;
-using System.ServiceModel.Description;
 using System.Threading;
 
 namespace BDP.DPAM.Consoles.Migration.Attachments

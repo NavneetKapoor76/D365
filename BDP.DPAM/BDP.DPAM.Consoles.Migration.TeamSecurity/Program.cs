@@ -1,7 +1,6 @@
 ﻿using BDP.DPAM.Consoles.Shared;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
-using Microsoft.Xrm.Tooling.Connector;
 using System;
 
 namespace BDP.DPAM.Consoles.Migration.TeamSecurity
