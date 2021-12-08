@@ -82,11 +82,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - PCF", "5 - PCF", "{F91A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - App Consoles", "6 - App Consoles", "{AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration.Attachments", "BDP.DPAM.Consoles.Migration.Attachments\BDP.DPAM.Consoles.Migration.Attachments.csproj", "{9D0FBEE5-BB85-4290-BDA0-B9E48C244B59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration.Attachments", "6 - App Consoles\BDP.DPAM.Consoles.Migration.Attachments\BDP.DPAM.Consoles.Migration.Attachments.csproj", "{9D0FBEE5-BB85-4290-BDA0-B9E48C244B59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration.TeamSecurity", "BDP.DPAM.Consoles.Migration.TeamSecurity\BDP.DPAM.Consoles.Migration.TeamSecurity.csproj", "{DA8F2BE3-B95C-4595-B1A4-DCB73225BC3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration.TeamSecurity", "6 - App Consoles\BDP.DPAM.Consoles.Migration.TeamSecurity\BDP.DPAM.Consoles.Migration.TeamSecurity.csproj", "{DA8F2BE3-B95C-4595-B1A4-DCB73225BC3D}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BDP.DPAM.Consoles.Shared", "BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.shproj", "{AE9BE510-F53F-467F-9A5B-F8CC88FEAD5A}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BDP.DPAM.Consoles.Shared", "6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.shproj", "{AE9BE510-F53F-467F-9A5B-F8CC88FEAD5A}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -99,12 +99,12 @@ Global
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{502d8ae1-ba0e-4a6b-9d77-6ff245b45aae}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{50b4bf38-019b-41e7-a855-3f5960ed14f0}*SharedItemsImports = 13
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{72c4463e-2533-41c1-880f-d2fad2cd6afc}*SharedItemsImports = 4
-		BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{9d0fbee5-bb85-4290-bda0-b9e48c244b59}*SharedItemsImports = 4
-		BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{ae9be510-f53f-467f-9a5b-f8cc88fead5a}*SharedItemsImports = 13
+		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{9d0fbee5-bb85-4290-bda0-b9e48c244b59}*SharedItemsImports = 4
+		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{ae9be510-f53f-467f-9a5b-f8cc88fead5a}*SharedItemsImports = 13
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{bfdfdda5-074c-4854-a269-93813ad53361}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{c2288e6f-608e-40ae-b144-f88189e12e59}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{c5c19ee3-ed6b-47c0-b8bf-4408985fdfb0}*SharedItemsImports = 4
-		BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{da8f2be3-b95c-4595-b1a4-dcb73225bc3d}*SharedItemsImports = 4
+		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{da8f2be3-b95c-4595-b1a4-dcb73225bc3d}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{dcf40656-bbd0-45aa-a204-5fa5fcf9b103}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
