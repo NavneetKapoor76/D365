@@ -24,6 +24,16 @@ var BDP;
                         //SHER-421
                         Form.checkNumberOfTargetActivitiesValue(formContext);
                     }
+                    static onChange_dpam_dt_startdate(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //SHER-626
+                        Form.checkEndtDateGreaterThanStartDate(formContext, true);
+                    }
+                    static onChange_dpam_dt_enddate(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //SHER-626
+                        Form.checkEndtDateGreaterThanStartDate(formContext, false);
+                    }
                     //function to set the disabled property to False when the user has the "DPAM -Sales Manager" or "DPAM - Sales Person" security role
                     static manageAccessToNumberOfTargetActivitiesField(formContext) {
                         let currentUserRoles = Xrm.Page.context.getUserRoles();
@@ -70,6 +80,22 @@ var BDP;
                         if (numberOfTargetActivitiesNewValue < numberOfTargetActivitiesValue) {
                             let message = `The value must be greater than ${numberOfTargetActivitiesValue.toString()}`;
                             formContext.getControl("dpam_int_numberoftargetactivities").setNotification(message, "invalidTarget");
+                        }
+                    }
+                    //function to check if the End Date is greater than the Start Date
+                    static checkEndtDateGreaterThanStartDate(formContext, fromStartDate) {
+                        let startDateValue = formContext.getAttribute("dpam_dt_startdate").getValue();
+                        let endDateValue = formContext.getAttribute("dpam_dt_enddate").getValue();
+                        let startDateControl = formContext.getControl("dpam_dt_startdate");
+                        let endDateControl = formContext.getControl("dpam_dt_enddate");
+                        startDateControl.clearNotification();
+                        endDateControl.clearNotification();
+                        if (startDateValue == null || endDateValue == null)
+                            return;
+                        if (startDateValue >= endDateValue) {
+                            let message = fromStartDate ? `The Start Date must be before the End Date` : `The End Date must be after the Start Date`;
+                            let selectedControl = fromStartDate ? startDateControl : endDateControl;
+                            selectedControl.setNotification(message, "checkDates");
                         }
                     }
                 }
