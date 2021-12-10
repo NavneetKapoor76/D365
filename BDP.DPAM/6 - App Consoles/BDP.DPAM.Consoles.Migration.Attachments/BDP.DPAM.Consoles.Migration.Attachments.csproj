@@ -86,8 +86,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FetchXML\Request.xml" />
-    <Content Include="Paging\paging.txt" />
+    <EmbeddedResource Include="FetchXML\Request.xml" />
+    <EmbeddedResource Include="Paging\paging.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems" Label="Shared" />
