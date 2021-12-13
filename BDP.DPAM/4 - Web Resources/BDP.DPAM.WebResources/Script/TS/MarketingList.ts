@@ -28,8 +28,8 @@ namespace BDP.DPAM.WR.MarketingList {
 
             let navigationOptions: Xrm.Navigation.NavigationOptions = {
                 target: 2,
-                width: 550,
-                height: 460,
+                width: 570,
+                height: 450,
                 title: "Set Contact Frequencies"
             };
 
