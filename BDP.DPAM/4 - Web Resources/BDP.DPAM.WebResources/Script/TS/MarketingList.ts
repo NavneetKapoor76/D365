@@ -4,6 +4,9 @@ namespace BDP.DPAM.WR.MarketingList {
     //Variables used by isContactFrequencyCreatedOnEmpty function
     let isContactFrequencyCreatedOnEmpty: boolean;
     let previousSelectedItemId: string;
+    //Variables used by manageNewMarketingListButtonVisibility function
+    let isNewMarketingListButtonVisible: boolean = false;
+    let isPromiseCompleted: boolean = false;
 
     export class Ribbon {
         //function to open the set contact frequencies page on the form
@@ -72,6 +75,34 @@ namespace BDP.DPAM.WR.MarketingList {
                     });
 
             return isContactFrequencyCreatedOnEmpty;
+        }
+
+        //SHER-628
+        //The "New Marketing List" button is hidden if the model-driven app is Marketing
+        public static manageNewMarketingListButtonVisibility(primaryControl: Xrm.Controls.GridControl | Xrm.FormContext, fromGrid: boolean): boolean {
+            
+            if (isPromiseCompleted) return isNewMarketingListButtonVisible;
+
+            Xrm.Utility.getGlobalContext().getCurrentAppProperties().then(function (appProperties: Xrm.AppProperties) {
+                isPromiseCompleted = true;
+
+                if (appProperties.uniqueName != "msdyncrm_MarketingSMBApp") {
+                    isNewMarketingListButtonVisible = true;
+                    if (fromGrid) {
+                        (primaryControl as Xrm.Controls.GridControl).refreshRibbon();
+                    }
+                    else {
+                        (primaryControl as Xrm.FormContext).ui.refreshRibbon();
+                    }
+                }
+
+            }, function (error) {
+                console.log(error.message);
+                return false;
+            });
+
+            return isNewMarketingListButtonVisible;
+
         }
 
     }
