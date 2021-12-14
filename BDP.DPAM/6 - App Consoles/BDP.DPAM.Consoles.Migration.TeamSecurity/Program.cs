@@ -23,9 +23,9 @@ namespace BDP.DPAM.Consoles.Migration.TeamSecurity
         {
 
             IOrganizationService localConn = CRMConnector.GetOrganizationServiceClientSecret(
-       System.Configuration.ConfigurationManager.AppSettings["TargetUserId"],
-       System.Configuration.ConfigurationManager.AppSettings["TargetSecret"],
-       System.Configuration.ConfigurationManager.AppSettings["TargetURL"]);
+       System.Configuration.ConfigurationManager.AppSettings["OnlineUserId"],
+       System.Configuration.ConfigurationManager.AppSettings["OnlineSecret"],
+       System.Configuration.ConfigurationManager.AppSettings["OnlineURL"]);
 
             QueryExpression qe = new QueryExpression("team");
             qe.ColumnSet.AddColumns("teamid", "businessunitid");

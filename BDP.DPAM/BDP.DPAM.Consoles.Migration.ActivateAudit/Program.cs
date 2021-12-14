@@ -37,9 +37,9 @@ namespace BDP.DPAM.Consoles.Migration.ActivateAudit
 
             };
             IOrganizationService localConn = CRMConnector.GetOrganizationServiceClientSecret(
-System.Configuration.ConfigurationManager.AppSettings["TargetUserId"],
-System.Configuration.ConfigurationManager.AppSettings["TargetSecret"],
-System.Configuration.ConfigurationManager.AppSettings["TargetURL"]);
+System.Configuration.ConfigurationManager.AppSettings["OnlineUserId"],
+System.Configuration.ConfigurationManager.AppSettings["OnlineSecret"],
+System.Configuration.ConfigurationManager.AppSettings["OnlineURL"]);
 
             foreach (string name in list) { 
 

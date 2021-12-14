@@ -32,15 +32,15 @@ namespace BDP.DPAM.Consoles.Shared
         {
             try
             {
-                Uri url = new Uri(System.Configuration.ConfigurationManager.AppSettings["CrmServerUrl"]);
+                Uri url = new Uri(System.Configuration.ConfigurationManager.AppSettings["OnPremiseUrl"]);
                 IServiceConfiguration<IOrganizationService> config = ServiceConfigurationFactory.CreateConfiguration<IOrganizationService>(serviceUri: url);
                 OrganizationServiceProxy org;
-                if (System.Configuration.ConfigurationManager.AppSettings["CrmUserName"] != null)
+                if (System.Configuration.ConfigurationManager.AppSettings["OnPremiseUserName"] != null)
                 {
 
                     ClientCredentials cred = new ClientCredentials();
-                    cred.UserName.UserName = System.Configuration.ConfigurationManager.AppSettings["CrmUserName"];
-                    cred.UserName.Password = System.Configuration.ConfigurationManager.AppSettings["CrmPassword"];
+                    cred.UserName.UserName = System.Configuration.ConfigurationManager.AppSettings["OnPremiseUserName"];
+                    cred.UserName.Password = System.Configuration.ConfigurationManager.AppSettings["OnPremisePassword"];
                     org = new OrganizationServiceProxy(config, cred);
 
                 }
