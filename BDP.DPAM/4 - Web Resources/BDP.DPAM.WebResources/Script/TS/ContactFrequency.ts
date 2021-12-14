@@ -21,6 +21,18 @@ namespace BDP.DPAM.WR.ContactFrequency {
             Form.checkNumberOfTargetActivitiesValue(formContext);
         }
 
+        public static onChange_dpam_dt_startdate(executionContext: Xrm.Events.EventContext): void {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-626
+            Form.checkEndtDateGreaterThanStartDate(formContext, true);
+        }
+
+        public static onChange_dpam_dt_enddate(executionContext: Xrm.Events.EventContext): void {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-626
+            Form.checkEndtDateGreaterThanStartDate(formContext, false);
+        }
+
         //function to set the disabled property to False when the user has the "DPAM -Sales Manager" or "DPAM - Sales Person" security role
         static manageAccessToNumberOfTargetActivitiesField(formContext: Xrm.FormContext): void {
             let currentUserRoles: string[] = Xrm.Page.context.getUserRoles();
@@ -75,6 +87,29 @@ namespace BDP.DPAM.WR.ContactFrequency {
                 let message: string = `The value must be greater than ${numberOfTargetActivitiesValue.toString()}`;
                 formContext.getControl<Xrm.Controls.NumberControl>("dpam_int_numberoftargetactivities").setNotification(message, "invalidTarget");
             }
+        }
+
+        //function to check if the End Date is greater than the Start Date
+        static checkEndtDateGreaterThanStartDate(formContext: Xrm.FormContext, fromStartDate: boolean): void {
+            let startDateValue: Date = formContext.getAttribute("dpam_dt_startdate").getValue();
+            let endDateValue: Date = formContext.getAttribute("dpam_dt_enddate").getValue();
+
+            let startDateControl: Xrm.Controls.StandardControl = formContext.getControl<Xrm.Controls.NumberControl>("dpam_dt_startdate");
+            let endDateControl: Xrm.Controls.StandardControl = formContext.getControl<Xrm.Controls.NumberControl>("dpam_dt_enddate");
+
+            startDateControl.clearNotification();
+            endDateControl.clearNotification();
+
+            if (startDateValue == null || endDateValue == null) return;
+
+            if (startDateValue >= endDateValue) {
+                let message: string = fromStartDate ? `The Start Date must be before the End Date` : `The End Date must be after the Start Date`;
+                let selectedControl: Xrm.Controls.StandardControl = fromStartDate ? startDateControl : endDateControl;
+
+                selectedControl.setNotification(message, "checkDates");
+            }
+
+            
         }
     }
 }
