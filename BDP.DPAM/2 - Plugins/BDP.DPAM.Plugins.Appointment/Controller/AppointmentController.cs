@@ -25,16 +25,39 @@ namespace BDP.DPAM.Plugins.Appointment
                 || _target.GetAttributeValue<OptionSetValue>("statuscode").Value != (int)Appointment_StatusCode.Completed) return;
 
             _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - Start");
-
+            
             var regarding = _postImage.Contains("regardingobjectid") ? _postImage.GetAttributeValue<EntityReference>("regardingobjectid") : null;
 
-            if (regarding == null || regarding.LogicalName != "account")
+            if (regarding == null)
             {
                 _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - End");
                 return;
             }
 
-            var counterpartyCondition = new ConditionExpression("dpam_lk_counterparty", ConditionOperator.Equal, regarding.Id);
+            EntityReference counterparty = null;
+
+            switch(regarding.LogicalName)
+            {
+                case "account":
+                    counterparty = regarding;
+                    break;
+                case "contact":
+                    var contact = _service.Retrieve(regarding.LogicalName, regarding.Id, new ColumnSet("parentcustomerid"));
+                    counterparty = contact.GetAttributeValue<EntityReference>("parentcustomerid");
+                    break;
+                case "opportunity":
+                    var opportunity = _service.Retrieve(regarding.LogicalName, regarding.Id, new ColumnSet("parentaccountid"));
+                    counterparty = opportunity.GetAttributeValue<EntityReference>("parentaccountid");
+                    break;
+            }
+
+            if (counterparty == null)
+            {
+                _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - End");
+                return;
+            }
+
+            var counterpartyCondition = new ConditionExpression("dpam_lk_counterparty", ConditionOperator.Equal, counterparty.Id);
             var startDateCondition = new ConditionExpression("dpam_dt_startdate", ConditionOperator.LessEqual, _postImage.GetAttributeValue<DateTime>("scheduledstart"));
             var endDateCondition = new ConditionExpression("dpam_dt_enddate", ConditionOperator.GreaterEqual, _postImage.GetAttributeValue<DateTime>("scheduledstart"));
 

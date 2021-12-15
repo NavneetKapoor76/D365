@@ -11,9 +11,13 @@ namespace BDP.DPAM.Plugins.PhoneCall.Test
     public class PostUpdatePhoneCallTest
     {
         [Theory]
-        [InlineData((int)PhoneCall_StatusCode.Made)]
-        [InlineData((int)PhoneCall_StatusCode.Received)]
-        public void UpdateNumberOfCompletedActivitiesOnContactFrequency_When_PhoneCall_Is_Completed(int statusCode)
+        [InlineData((int)PhoneCall_StatusCode.Made, "counterparty")]
+        [InlineData((int)PhoneCall_StatusCode.Made, "contact")]
+        [InlineData((int)PhoneCall_StatusCode.Made, "opportunity")]
+        [InlineData((int)PhoneCall_StatusCode.Received, "counterparty")]
+        [InlineData((int)PhoneCall_StatusCode.Received, "contact")]
+        [InlineData((int)PhoneCall_StatusCode.Received, "opportunity")]
+        public void UpdateNumberOfCompletedActivitiesOnContactFrequency_When_PhoneCall_Is_Completed(int statusCode, string entityName)
         {
             var fakeContext = new XrmFakedContext();
             var entityList = new List<Entity>();
@@ -24,6 +28,26 @@ namespace BDP.DPAM.Plugins.PhoneCall.Test
 
             };
             entityList.Add(counterparty);
+
+            var contact = new Entity("contact")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"parentcustomerid", counterparty.ToEntityReference() }
+                }
+            };
+            entityList.Add(contact);
+
+            var opportunity = new Entity("opportunity")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"parentaccountid", counterparty.ToEntityReference() }
+                }
+            };
+            entityList.Add(opportunity);
 
             var contactFrequency = new Entity("dpam_contactfrequency")
             {
@@ -68,13 +92,27 @@ namespace BDP.DPAM.Plugins.PhoneCall.Test
                 {"Target", phoneCallTarget }
             };
 
+            EntityReference regarding = null;
+            switch (entityName)
+            {
+                case "counterparty":
+                    regarding = counterparty.ToEntityReference();
+                    break;
+                case "contact":
+                    regarding = contact.ToEntityReference();
+                    break;
+                case "opportunity":
+                    regarding = opportunity.ToEntityReference();
+                    break;
+            }
+
             var phoneCallPostImage = new Entity("phonecall")
             {
                 Id = phoneCallId,
                 Attributes =
                 {
                     { "statuscode", new OptionSetValue(statusCode) },
-                    {"regardingobjectid", counterparty.ToEntityReference() },
+                    {"regardingobjectid", regarding },
                     {"scheduledend", new DateTime(2021,10,22) }
                 }
             };
@@ -110,8 +148,11 @@ namespace BDP.DPAM.Plugins.PhoneCall.Test
             }
         }
 
-        [Fact]
-        public void UpdateNumberOfCompletedActivitiesOnContactFrequency_When_PhoneCall_Is_Not_Completed()
+        [Theory]
+        [InlineData("counterparty")]
+        [InlineData("contact")]
+        [InlineData("opportunity")]
+        public void UpdateNumberOfCompletedActivitiesOnContactFrequency_When_PhoneCall_Is_Not_Completed(string entityName)
         {
             var fakeContext = new XrmFakedContext();
             var entityList = new List<Entity>();
@@ -122,6 +163,26 @@ namespace BDP.DPAM.Plugins.PhoneCall.Test
 
             };
             entityList.Add(counterparty);
+
+            var contact = new Entity("contact")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"parentcustomerid", counterparty.ToEntityReference() }
+                }
+            };
+            entityList.Add(contact);
+
+            var opportunity = new Entity("opportunity")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"parentaccountid", counterparty.ToEntityReference() }
+                }
+            };
+            entityList.Add(opportunity);
 
             var contactFrequency = new Entity("dpam_contactfrequency")
             {
@@ -166,13 +227,27 @@ namespace BDP.DPAM.Plugins.PhoneCall.Test
                 {"Target", phoneCallTarget }
             };
 
+            EntityReference regarding = null;
+            switch (entityName)
+            {
+                case "counterparty":
+                    regarding = counterparty.ToEntityReference();
+                    break;
+                case "contact":
+                    regarding = contact.ToEntityReference();
+                    break;
+                case "opportunity":
+                    regarding = opportunity.ToEntityReference();
+                    break;
+            }
+
             var phoneCallPostImage = new Entity("phonecall")
             {
                 Id = phoneCallId,
                 Attributes =
                 {
                     { "statuscode", new OptionSetValue((int)PhoneCall_StatusCode.Open) },
-                    {"regardingobjectid", counterparty.ToEntityReference() },
+                    {"regardingobjectid", regarding },
                     {"scheduledend", new DateTime(2021,10,22) }
                 }
             };

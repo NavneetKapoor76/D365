@@ -10,8 +10,11 @@ namespace BDP.DPAM.Plugins.Appointment.Test
 {
     public class PostUpdateAppointmentTest
     {
-        [Fact]
-        public void UpdateNumberOfCompletedActivitiesOnContactFrequency_When_Appointment_Is_Completed()
+        [Theory]
+        [InlineData("counterparty")]
+        [InlineData("contact")]
+        [InlineData("opportunity")]
+        public void UpdateNumberOfCompletedActivitiesOnContactFrequency_When_Appointment_Is_Completed(string entityName)
         {
             var fakeContext = new XrmFakedContext();
             var entityList = new List<Entity>();
@@ -21,6 +24,26 @@ namespace BDP.DPAM.Plugins.Appointment.Test
                 Id = Guid.NewGuid(),
             };
             entityList.Add(counterparty);
+
+            var contact = new Entity("contact")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"parentcustomerid", counterparty.ToEntityReference() }
+                }
+            };
+            entityList.Add(contact);
+
+            var opportunity = new Entity("opportunity")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"parentaccountid", counterparty.ToEntityReference() }
+                }
+            };
+            entityList.Add(opportunity);
 
             var contactFrequency = new Entity("dpam_contactfrequency")
             {
@@ -65,13 +88,27 @@ namespace BDP.DPAM.Plugins.Appointment.Test
                 {"Target", appointmentTarget }
             };
 
+            EntityReference regarding = null;
+            switch (entityName)
+            {
+                case "counterparty":
+                    regarding = counterparty.ToEntityReference();
+                    break;
+                case "contact":
+                    regarding = contact.ToEntityReference();
+                    break;
+                case "opportunity":
+                    regarding = opportunity.ToEntityReference();
+                    break;
+            }
+
             var appointmentPostImage = new Entity("appointment")
             {
                 Id = appointmentId,
                 Attributes =
                 {
                     {"statuscode", new OptionSetValue((int)Appointment_StatusCode.Completed) },
-                    {"regardingobjectid", counterparty.ToEntityReference() },
+                    {"regardingobjectid", regarding },
                     {"scheduledstart", new DateTime(2021,10,22) }
                 }
             };
@@ -107,8 +144,11 @@ namespace BDP.DPAM.Plugins.Appointment.Test
             }
         }
 
-        [Fact]
-        public void UpdateNumberOfCompletedActivitiesOnContactFrequency_When_Appointment_Is_Not_Completed()
+        [Theory]
+        [InlineData("counterparty")]
+        [InlineData("contact")]
+        [InlineData("opportunity")]
+        public void UpdateNumberOfCompletedActivitiesOnContactFrequency_When_Appointment_Is_Not_Completed(string entityName)
         {
             var fakeContext = new XrmFakedContext();
             var entityList = new List<Entity>();
@@ -118,6 +158,26 @@ namespace BDP.DPAM.Plugins.Appointment.Test
                 Id = Guid.NewGuid(),
             };
             entityList.Add(counterparty);
+
+            var contact = new Entity("contact")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"parentcustomerid", counterparty.ToEntityReference() }
+                }
+            };
+            entityList.Add(contact);
+
+            var opportunity = new Entity("opportunity")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"parentaccountid", counterparty.ToEntityReference() }
+                }
+            };
+            entityList.Add(opportunity);
 
             var contactFrequency = new Entity("dpam_contactfrequency")
             {
@@ -162,13 +222,27 @@ namespace BDP.DPAM.Plugins.Appointment.Test
                 {"Target", appointmentTarget }
             };
 
+            EntityReference regarding = null;
+            switch (entityName)
+            {
+                case "counterparty":
+                    regarding = counterparty.ToEntityReference();
+                    break;
+                case "contact":
+                    regarding = contact.ToEntityReference();
+                    break;
+                case "opportunity":
+                    regarding = opportunity.ToEntityReference();
+                    break;
+            }
+
             var appointmentPostImage = new Entity("appointment")
             {
                 Id = appointmentId,
                 Attributes =
                 {
                     {"statuscode", new OptionSetValue((int)Appointment_StatusCode.Completed) },
-                    {"regardingobjectid", counterparty.ToEntityReference() },
+                    {"regardingobjectid", regarding },
                     {"scheduledstart", new DateTime(2021,10,22) }
                 }
             };
