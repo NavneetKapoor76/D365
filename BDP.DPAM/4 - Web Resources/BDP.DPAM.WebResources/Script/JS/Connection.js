@@ -7,11 +7,31 @@ var BDP;
         (function (WR) {
             var Connection;
             (function (Connection) {
+                //SHER-657 - Variable global to save the orginal list of EntityTypes of "record2id"
+                let allConnectedToEntityTypes;
                 class Form {
                     static onLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-627
                         Form.setConnectedToAsThisRoleFilter(formContext);
+                        //SHER-657
+                        allConnectedToEntityTypes = formContext.getControl("record1id").getEntityTypes();
+                        Form.filterConnectedToEntities(formContext);
+                    }
+                    //SHER-657 : function to keep only Counterparty, Contact and User in the "record2id" field if the field "record1id" is a Counterparty.
+                    static onChange_record1id(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        let connectedFromValue = formContext.getAttribute("record1id").getValue();
+                        if (connectedFromValue == null || connectedFromValue[0].entityType != "account") {
+                            formContext.getControl("record2id").setEntityTypes(allConnectedToEntityTypes);
+                        }
+                        else {
+                            formContext.getControl("record2id").setEntityTypes(["account", "contact", "systemuser"]);
+                        }
+                    }
+                    //function to set the filter on the record2roleid field
+                    static setConnectedToAsThisRoleFilter(formContext) {
+                        formContext.getControl("record2roleid").addPreSearch(Form.filterConnectedToAsThisRole);
                     }
                     //function to add a custom filter on the record2roleid field
                     static filterConnectedToAsThisRole(executionContext) {
@@ -39,9 +59,12 @@ var BDP;
                             </filter>`;
                         formContext.getControl("record2roleid").addCustomFilter(filter, "connectionrole");
                     }
-                    //function to set the filter on the record2roleid field
-                    static setConnectedToAsThisRoleFilter(formContext) {
-                        formContext.getControl("record2roleid").addPreSearch(Form.filterConnectedToAsThisRole);
+                    //function to keep only Counterparty, Contact and User in the "record2id" field if the field "record1id" is a Counterparty.
+                    static filterConnectedToEntities(formContext) {
+                        let connectedFromValue = formContext.getAttribute("record1id").getValue();
+                        if (connectedFromValue == null || connectedFromValue[0].entityType != "account")
+                            return;
+                        formContext.getControl("record2id").setEntityTypes(["account", "contact", "systemuser"]);
                     }
                 }
                 Connection.Form = Form;
