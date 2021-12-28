@@ -310,20 +310,21 @@ namespace BDP.DPAM.Plugins.Location
             string locationZipPostalCode = mergedEntity.GetAttributeValue<string>("dpam_s_postalcode");
             string locationStreet = mergedEntity.GetAttributeValue<string>("dpam_s_street1");
 
-            if (CheckLocationAlreadyExisit(locationCounterpartyRef.Id, locationZipPostalCode, locationStreet))
+            if (CheckLocationAlreadyExisit(locationCounterpartyRef.Id, locationZipPostalCode, locationStreet, _target.Id==null?  Guid.Empty : _target.Id))
                 throw new Exception("A Location for this Counterparty with the same Zip/Postal Code and the same Street already exist.");
 
             _tracing.Trace("PotentialDuplicationManagement - End");
         }
 
         /// <summary>
+        /// Was not working if we force the fields to be updated.
         /// Check if a Location already exist based on a recieved Counterpart, Zip Code and Street
         /// </summary>
         /// <param name="counterpartyId">Id of the Counterparty to check</param>
         /// <param name="postalCode">Postal Code to check</param>
         /// <param name="street">Street to check</param>
         /// <returns></returns>
-        private bool CheckLocationAlreadyExisit(Guid counterpartyId, string postalCode, string street)
+        private bool CheckLocationAlreadyExisit(Guid counterpartyId, string postalCode, string street,Guid locationid)
         {
             if (string.IsNullOrWhiteSpace(postalCode) || string.IsNullOrWhiteSpace(street)) return false;
 
@@ -334,11 +335,12 @@ namespace BDP.DPAM.Plugins.Location
             ConditionExpression conditionCounterparty = new ConditionExpression("dpam_lk_account", ConditionOperator.Equal, counterpartyId);
             ConditionExpression conditionPostalCode = new ConditionExpression("dpam_s_postalcode", ConditionOperator.Equal, postalCode);
             ConditionExpression conditionStreet = new ConditionExpression("dpam_s_street1", ConditionOperator.Equal, street);
+            ConditionExpression conditionOtherAddress = new ConditionExpression("dpam_locationid", ConditionOperator.NotEqual, locationid);
 
             QueryExpression query = new QueryExpression("dpam_location");
             query.Criteria.AddCondition(conditionCounterparty);
             query.Criteria.AddCondition(conditionPostalCode);
-            query.Criteria.AddCondition(conditionStreet);
+            query.Criteria.AddCondition(conditionOtherAddress);
 
             EntityCollection result = _service.RetrieveMultiple(query);
 
