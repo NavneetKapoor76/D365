@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Degroof Event Management</title>
+    <base href="/">
+    <meta name="token" content="{{ request.params['__RequestVerificationToken'] }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="eventmanagementapp/styles.css">
+</head>
+<body>
+    <div style="overflow: visible; height:0px;">
+        <img style="height:55px; width:150px;" src="White_logo_DPAM.png" alt="logo" />
+    </div>
+    <app-root>
+    </app-root>
+    <script type="text/javascript" src="eventmanagementapp/runtime.js"></script>
+    <script type="text/javascript" src="eventmanagementapp/polyfills.js"></script>
+    <script type="text/javascript" src="eventmanagementapp/scripts.js"></script>
+    <script type="text/javascript" src="eventmanagementapp/main.js"></script>
+</body>
+<style>
+    nav-menu{
+      display: none !important;
+    }
+
+    {% fetchxml my_query %}
+    <fetch version='1.0' mapping='logical'>
+      <entity name='msevtmgt_event'>
+        <attribute name='msevtmgt_eventid' />
+        <attribute name='msevtmgt_name' />
+        <attribute name='msevtmgt_eventimage' />
+        <order attribute='msevtmgt_name' descending='false' />
+        <filter type='and'>
+        <condition attribute='msevtmgt_readableeventid' operator='eq' value='{{ request.params['id'] | escape }}' />
+        </filter>
+        <link-entity name='msdyncrm_file' from='msdyncrm_fileid' to='msevtmgt_eventimage' visible='false' link-type='outer' alias='a'>
+        <attribute name='msdyncrm_blobcdnuri' />
+        </link-entity>
+      </entity>
+    </fetch>
+  {% endfetchxml %}
+    body{
+      background-color: #cccccc !important;
+      {% for result in my_query.results.entities %}
+          background-image: url( {% if  result['a.msdyncrm_blobcdnuri'] == null %}"default_background_image.png"{% else %}{{ result['a.msdyncrm_blobcdnuri'] }} {% endif %}) !important;
+          background-repeat: no-repeat !important;
+          background-attachment: fixed !important;
+          background-size: 100% 100% !important;
+      {% endfor %}
+    }
+
+    div.container.event-banner{
+      background-image: none !important;
+      background-color: rgba(230, 230, 230, 0.4) !important;
+    }
+    button.btn.btn-primary.btn-lg{
+      background-color: #4FBB84 !important;
+      border: 1px solid #4FBB84 !important;
+    }
+</style>
+</html>
