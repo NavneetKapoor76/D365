@@ -149,5 +149,19 @@ namespace BDP.DPAM.Plugins.Contact
 
             _tracing.Trace("SetContactDirectLineBasedOnCounterpartyMainPhone - End");
         }
+
+        /// <summary>
+        /// The "donotbulkemail" field has the opposite value of the "dpam_b_bulkemailoptinmarketingtechnical" field
+        /// </summary>
+        internal void ManageEmailOptInMarketingBulkEmail()
+        {
+            if (!_target.Contains("dpam_b_bulkemailoptinmarketingtechnical")) return;
+
+            _tracing.Trace("ManageEmailOptInMarketingBulkEmail - Start");
+
+            _target["donotbulkemail"] = !_target.GetAttributeValue<bool>("dpam_b_bulkemailoptinmarketingtechnical");
+
+            _tracing.Trace("ManageEmailOptInMarketingBulkEmail - End");
+        }
     }
 }

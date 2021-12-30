@@ -587,5 +587,38 @@ namespace BDP.DPAM.Plugins.Contact.Test
         }
 
         #endregion
-    }
+
+        [Theory]
+        [InlineData(true, false)]
+        [InlineData(false, true)]
+        public void ManageEmailOptInMarketingBulkEmail(bool bulkEmailTechnicalValue, bool expectedValue)
+        {
+            var fakeContext = new XrmFakedContext();
+
+            var contactTarget = new Entity("contact")
+            {
+                Id = Guid.NewGuid(),
+                Attributes =
+                {
+                    {"dpam_b_bulkemailoptinmarketingtechnical", bulkEmailTechnicalValue}
+                }
+            };
+
+            var executionFakeContext = new XrmFakedPluginExecutionContext()
+            {
+                InputParameters = new ParameterCollection{{"Target", contactTarget }},
+                PreEntityImages = new EntityImageCollection(),
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection(),
+                MessageName = "Create",
+                Stage = (int)PluginStage.PreOperation
+            };
+
+            fakeContext.ExecutePluginWith<PreCreateContact>(executionFakeContext);
+
+            Assert.True(contactTarget.Contains("donotbulkemail"));
+            Assert.Equal(expectedValue, contactTarget.GetAttributeValue<bool>("donotbulkemail"));
+        }
+
+    }   
 }
