@@ -31,7 +31,7 @@
      body {
         font-family: /* @font-family */ roboto-condensed,/* @font-family */ Verdana, /* @font-family */ Arial,
          /* @font-family */ sans-serif /* @font-family */;
-        font-size: /* @body-text-size */ 15px /* @body-text-size */;
+        font-size: /* @body-text-size */ 16px /* @body-text-size */;
         color: /* @body-text-color */ #4FBB84 /* @body-text-color */;
         background-color: #343a40;
         {% for result in my_query.results.entities %}
@@ -43,7 +43,7 @@
         }
     .backgroungGrey{
         background-color: rgba(230, 230, 230, 0.9);
-        padding-top: 50px;
+        padding-top: 6%;
     }
     .image{
         height: 100px;
@@ -71,14 +71,14 @@
     </style>
 </head>
 <body>
-    <div style="min-width: 300px; width: 40%; margin: auto; padding-top: 6%;">
+    <div style="min-width: 300px; width: 60%; margin: auto; padding-top: 6%;">
         <div id="dpamLogo" style="padding-bottom: 10px;">
             <img style="height:80px; width:200px;" src="White_logo_DPAM.png" alt="logo" />
         </div>
         <div id="message" class="backgroungGrey" align="Center" style="padding-bottom: 20px;">
-            <p> <span style="font-size: 22px; letter-spacing: 2px;"><span style="font-weight: bold;">THANK YOU </span> FOR YOUR REGISTRATION </span></p>
+            <p> <span style="font-size: 26px; letter-spacing: 2px;"><span style="font-weight: bold;">THANK YOU </span> FOR YOUR REGISTRATION </span></p>
         </div>
-        <div id="logoContainer" align="Center" class="backgroungGrey" style="padding-bottom: 70px;">
+        <div id="logoContainer" align="Center" class="backgroungGrey" style="padding-bottom: 10%;">
             <div class="display">
                 <img class="image" src="icon_website.png">
                 <a href="https://www.dpamfunds.com">WEBSITE</a>
@@ -89,7 +89,7 @@
             </div>
             <div class="display">
                 <img class="image" src="icon_contact.png">
-                <a href="">CONTACT US</a>
+                <a href="mailto: dpam@degroofpetercam.com">CONTACT US</a>
             </div>
             <div class="display">
                 <img class="image" src="icon_linkedin.png">
@@ -97,10 +97,15 @@
             </div>
             <div class="display">
                 <img class="image" src="icon_podcast.png">
-                <a href="">PODCASTS</a>
+                <a href="https://www.dpampodcast.com/">PODCASTS</a>
             </div>
         </div>
     </div>
+    <footer>
+        <div align="Center" style="color: #aaa; position: fixed; bottom: 0; width: 100%; margin-bottom: 1rem; font-size: 1rem; font-weight: 400;">
+            {{ snippets['Footer'] }}
+        </div>
+    </footer>
 </body>
 
 </html>
