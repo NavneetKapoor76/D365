@@ -49,6 +49,7 @@
           background-image: url( {% if  result['a.msdyncrm_blobcdnuri'] == null %}"default_background_image.png"{% else %}{{ result['a.msdyncrm_blobcdnuri'] }} {% endif %}) !important;
           background-repeat: no-repeat !important;
           background-attachment: fixed !important;
+          background-size: 100% 100% !important;
       {% endfor %}
     }
 
