@@ -155,7 +155,7 @@ namespace BDP.DPAM.Plugins.Contact
         /// </summary>
         internal void ManageEmailOptInMarketingBulkEmail()
         {
-            if (!_target.Contains("dpam_b_bulkemailoptinmarketingtechnical")) return;
+            if (!_target.Contains("dpam_b_bulkemailoptinmarketingtechnical") || !_target.GetAttributeValue<bool>("dpam_b_bulkemailoptinmarketingtechnical")) return;
 
             _tracing.Trace("ManageEmailOptInMarketingBulkEmail - Start");
 

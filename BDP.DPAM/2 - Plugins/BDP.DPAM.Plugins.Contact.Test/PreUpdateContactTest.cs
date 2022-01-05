@@ -1133,7 +1133,7 @@ namespace BDP.DPAM.Plugins.Contact.Test
 
         [Theory]
         [InlineData(true, false)]
-        [InlineData(false, true)]
+        [InlineData(false, false)]
         public void ManageEmailOptInMarketingBulkEmail(bool bulkEmailTechnicalValue, bool expectedValue)
         {
             var fakeContext = new XrmFakedContext();
@@ -1159,8 +1159,11 @@ namespace BDP.DPAM.Plugins.Contact.Test
 
             fakeContext.ExecutePluginWith<PreUpdateContact>(executionFakeContext);
 
-            Assert.True(contactTarget.Contains("donotbulkemail"));
-            Assert.Equal(expectedValue, contactTarget.GetAttributeValue<bool>("donotbulkemail"));
+            Assert.Equal(bulkEmailTechnicalValue, contactTarget.Contains("donotbulkemail"));
+            if (bulkEmailTechnicalValue)
+            {
+                Assert.Equal(expectedValue, contactTarget.GetAttributeValue<bool>("donotbulkemail"));
+            }
         }
 
     }
