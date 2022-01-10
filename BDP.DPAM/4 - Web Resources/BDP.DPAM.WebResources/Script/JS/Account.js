@@ -12,22 +12,24 @@ var BDP;
                         const formContext = executionContext.getFormContext();
                         //SHER-174
                         Form.setBusinessSegmentationFilter(formContext);
-                        //SHER-244
-                        Form.setComplianceSegmentationFilter(formContext);
+                        //SHER-244 + SHER-578 (filter OOB)
+                        //Form.setComplianceSegmentationFilter(formContext);
                         //SHER-268
                         Form.setLocalBusinessSegmentationFilter(formContext);
                         //SHER-292 + SHER-426
                         Form.manageBusinessSegmentationVisibility(formContext);
-                        //SHER-313
+                        //SHER-313 + SHER-578
                         Form.manageCountryVisibility(formContext);
+                        //SHER-500 + SHER-578
+                        Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, true);
                     }
                     static QuickCreateonLoad(executionContext) {
                         //SHER-344 All same than form load except SHER-313 Country visibility
                         const formContext = executionContext.getFormContext();
                         //SHER-174
                         Form.setBusinessSegmentationFilter(formContext);
-                        //SHER-244
-                        Form.setComplianceSegmentationFilter(formContext);
+                        //SHER-244 + SHER-578 (filter OOB)
+                        //Form.setComplianceSegmentationFilter(formContext);
                         //SHER-268
                         Form.setLocalBusinessSegmentationFilter(formContext);
                         //SHER-292 + SHER-426
@@ -35,6 +37,8 @@ var BDP;
                         //SHER-466
                         Form.removeDmuValueAndParentCounterpartyValue(formContext);
                         formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+                        //SHER-500 + SHER-578
+                        Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, false);
                     }
                     static onChange_dpam_lk_vatnumber(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -46,6 +50,11 @@ var BDP;
                         //SHER-292 + SHER-426
                         Form.manageBusinessSegmentationVisibility(formContext);
                         Form.resetSegmentation(formContext);
+                    }
+                    static onChange_dpam_mos_counterpartytype(executionContext, fromMainForm) {
+                        const formContext = executionContext.getFormContext();
+                        //SHER-500 + SHER-578
+                        Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, fromMainForm);
                     }
                     static resetSegmentation(formContext) {
                         let localBusinessAttribute = formContext.getAttribute("dpam_lk_localbusinesssegmentation");
@@ -176,11 +185,11 @@ var BDP;
                     static manageCountryVisibility(formContext) {
                         //Check if it is create mode
                         if (formContext.ui.getFormType() == 1) {
-                            formContext.getControl("dpam_lk_country").setVisible(true);
+                            formContext.getControl("dpam_lk_country").setDisabled(false);
                             formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
                         }
                         else {
-                            formContext.getControl("dpam_lk_country").setVisible(false);
+                            formContext.getControl("dpam_lk_country").setDisabled(true);
                         }
                     }
                     //function to remove the dpam_lk_dmu value
@@ -193,6 +202,42 @@ var BDP;
                         if (parentCounterpartyAttribute.getValue() != null) {
                             parentCounterpartyAttribute.setValue(null);
                         }
+                    }
+                    /*Manage the required level and the visibility based on the counterparty type for the following fields:
+                     * On the main and quick create forms:
+                     *      dpam_lk_counterpartymifidcategory
+                     *      dpam_lk_compliancesegmentation
+                     * Only on the main form:
+                     *      dpam_os_amlrating
+                     */
+                    static manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, fromMainForm) {
+                        let counterpartyTypeAttribute = formContext.getAttribute("dpam_mos_counterpartytype");
+                        let fieldIsVisible = true;
+                        let requiredLevel = "required";
+                        let mifidCategoryRequiredLevel = "none";
+                        if (counterpartyTypeAttribute.getValue() != null) {
+                            let selectedOptions = counterpartyTypeAttribute.getValue();
+                            if (selectedOptions.length == 1) {
+                                switch (selectedOptions[0]) {
+                                    case 100000000: /*Client*/
+                                        mifidCategoryRequiredLevel = "required";
+                                        break;
+                                    case 100000005: /*Business Relation*/
+                                        fieldIsVisible = false;
+                                        requiredLevel = "none";
+                                        break;
+                                }
+                            }
+                        }
+                        let mifidCategoryControl = formContext.getControl("dpam_lk_counterpartymifidcategory");
+                        let complianceSegmentationControl = formContext.getControl("dpam_lk_compliancesegmentation");
+                        mifidCategoryControl.setVisible(fieldIsVisible);
+                        mifidCategoryControl.getAttribute().setRequiredLevel(mifidCategoryRequiredLevel);
+                        complianceSegmentationControl.setVisible(fieldIsVisible);
+                        complianceSegmentationControl.getAttribute().setRequiredLevel(requiredLevel);
+                        if (!fromMainForm)
+                            return;
+                        formContext.getControl("dpam_os_amlrating").setVisible(fieldIsVisible);
                     }
                 }
                 Account.Form = Form;

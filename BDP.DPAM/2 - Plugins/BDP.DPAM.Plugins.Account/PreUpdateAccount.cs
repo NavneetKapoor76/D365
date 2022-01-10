@@ -17,6 +17,8 @@ namespace BDP.DPAM.Plugins.Account
                 ctrl.CompleteSegmentation();
                 //SHER-337
                 ctrl.CheckLocalAndBusinessSegmentationCountry();
+                //SHER-104
+                ctrl.ManageExClientLifestage();
             }
             catch (Exception ex)
             {

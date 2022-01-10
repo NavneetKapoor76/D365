@@ -12,8 +12,12 @@ namespace BDP.DPAM.Plugins.ContactFrequency
             {
                 ContactFrequencyController ctrl = new ContactFrequencyController(serviceProvider);
                 ctrl.ValidatePipeline("dpam_contactfrequency", "update", PluginStage.PreOperation);
+                //SHER-550
+                ctrl.PotentialDuplicationManagement();
                 //SHER-421
                 ctrl.UpdateNumberOfRemainingActivitiesValue();
+                //SHER-478
+                ctrl.SetDefaultName();
             }
             catch (Exception ex)
             {

@@ -89,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PreCreateContactFrequency.cs" />
     <Compile Include="PreUpdateContactFrequency.cs" />
     <Compile Include="Controller\ContactFrequencyController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

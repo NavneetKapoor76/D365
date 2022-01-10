@@ -12,7 +12,7 @@ namespace BDP.DPAM.Plugins.Appointment
             {
                 AppointmentController ctrl = new AppointmentController(serviceProvider);
                 ctrl.ValidatePipeline("appointment", "update", PluginStage.PostOperation);
-                //SHER-421
+                //SHER-421 + SHER-596
                 ctrl.UpdateNumberOfCompletedActivitiesOnContactFrequency();
             }
             catch (Exception ex)

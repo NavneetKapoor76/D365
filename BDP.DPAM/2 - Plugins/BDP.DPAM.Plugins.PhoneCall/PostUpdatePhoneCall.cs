@@ -12,7 +12,7 @@ namespace BDP.DPAM.Plugins.PhoneCall
             {
                 PhoneCallController ctrl = new PhoneCallController(serviceProvider);
                 ctrl.ValidatePipeline("phonecall", "update", PluginStage.PostOperation);
-                //SHER-421
+                //SHER-421 + SHER-596
                 ctrl.UpdateNumberOfCompletedActivitiesOnContactFrequency();
             }
             catch (Exception ex)

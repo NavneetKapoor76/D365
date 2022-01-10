@@ -14,6 +14,8 @@ var BDP;
                         //Form.setChannelsFilter(formContext);
                         //SHER-335
                         Form.manageCompetitiveBiddingVisibility(formContext);
+                        //SHER-521
+                        Form.addOpportunityProductSubgridEventListener(formContext);
                     }
                     static quickCreateonLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -68,6 +70,20 @@ var BDP;
                         let opportunityDepartmentValue = formContext.getAttribute("dpam_os_opportunitydepartment").getValue();
                         let competitiveBiddingIsVisible = opportunityDepartmentValue == 100000001; //Institutional
                         formContext.getControl("dpam_b_competitivebidding").setVisible(competitiveBiddingIsVisible);
+                    }
+                    //add an event on the onload of the opportunity product subgrid
+                    static addOpportunityProductSubgridEventListener(formContext) {
+                        let opportunityProductSubgrid = formContext.getControl("Subgrid_OpportunityProduct");
+                        if (opportunityProductSubgrid == null) {
+                            setTimeout(function () { Form.addOpportunityProductSubgridEventListener(formContext); }, 500);
+                            return;
+                        }
+                        opportunityProductSubgrid.addOnLoad(Form.refreshRibbonOfOpportunityProductSubgrid);
+                    }
+                    //refresh the ribbon of the opportunity product subgrid
+                    static refreshRibbonOfOpportunityProductSubgrid(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        formContext.getControl("Subgrid_OpportunityProduct").refreshRibbon();
                     }
                 }
                 Opportunity.Form = Form;
