@@ -1,0 +1,34 @@
+﻿<fetch count='50' no-lock='true' page='{0}' paging-cookie='{1}' >
+  <entity name='activitymimeattachment' >
+    <attribute name='filename' />
+    <attribute name='attachmentid' />
+    <attribute name='subject' />
+    <attribute name='objectid' />
+    <attribute name='body' />
+    <attribute name='mimetype' />
+    <attribute name='objecttypecode' />
+    <order attribute="activitymimeattachmentid" descending="false" />
+    <filter type='and'>
+      <condition attribute='body' operator="not-null"/>
+      <condition attribute='objectid' operator="not-null"/>
+      <condition attribute='attachmentid' operator="not-null"/>
+
+      <filter type='or'>
+        <condition attribute='filename' operator='like' value='image0%.png'  />
+        <condition attribute='filename' operator='like' value='ATT0%.png'  />
+        <condition attribute='filename' operator='like' value='image0%.txt'  />
+        <condition attribute='filename' operator='like' value='ATT0%.txt'  />
+        <condition attribute='filename' operator='like' value='image0%.gif' />
+        <condition attribute='filename' operator='like' value='ATT0%.gif'  />
+        <condition attribute='filename' operator='like' value='image0%.jpeg'  />
+        <condition attribute='filename' operator='like' value='ATT0%.jpeg'  />
+        <condition attribute='filename' operator='like' value='image0%.jpg'  />
+        <condition attribute='filename' operator='like' value='ATT0%.jpg'  />
+        <condition attribute='filename' operator='like' value='image0%.htm'  />
+        <condition attribute='filename' operator='like' value='image0%.TIG'  />
+        <condition attribute='filename' operator='like' value='ATT0%.htm'  />
+        <condition attribute='filename' operator='like' value='@'  />
+      </filter>
+    </filter>
+  </entity>
+</fetch>

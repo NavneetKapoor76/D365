@@ -17,7 +17,6 @@ namespace BDP.DPAM.Plugins.Contact
         /// <summary>
         /// Add address field in the Target entity
         /// </summary>
-        /// <param name="messageName">string: create or update</param>
         internal void AddAddressFieldInTargetBasedOnMainLocation()
         {
             if (!_target.Contains("dpam_lk_mainlocation")) return;
@@ -59,7 +58,6 @@ namespace BDP.DPAM.Plugins.Contact
                     var countryName = string.Empty;
                     if (mainLocationEntity.Contains(key))
                     {
-                        _tracing.Trace($"AddAddressFieldInTargetBasedOnMainLocation function - Retrieve dpam_country");
                         var country = _service.Retrieve("dpam_country", mainLocationEntity.GetAttributeValue<EntityReference>("dpam_lk_country").Id, new ColumnSet("dpam_s_name"));
                         countryName = country.GetAttributeValue<string>("dpam_s_name");
                     }
@@ -75,31 +73,24 @@ namespace BDP.DPAM.Plugins.Contact
         /// </summary>
         internal void SetContactGreetingBasedOnLanguageAndGender()
         {
-            if (!this._target.Contains("dpam_os_language") && !this._target.Contains("gendercode"))
+            if (!_target.Contains("dpam_os_language") && !_target.Contains("dpam_os_gender"))
                 return;
 
-            this._tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - Start");
+            _tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - Start");
 
-            Entity mergedContact = this._target.MergeEntity(this._preImage);
+            Entity mergedContact = _target.MergeEntity(_preImage);
 
             OptionSetValue contactLanguage = mergedContact.GetAttributeValue<OptionSetValue>("dpam_os_language");
-            OptionSetValue contactGender = mergedContact.GetAttributeValue<OptionSetValue>("gendercode");
+            OptionSetValue contactGender = mergedContact.GetAttributeValue<OptionSetValue>("dpam_os_gender");
 
             EntityReference contactGreetingRef = null;
 
             if (contactLanguage != null && contactGender != null)
-            {
-                int relatedGenderCode = 
-                    contactGender.Value == Convert.ToInt32(Contact_Gender.Female) ? Convert.ToInt32(Greeting_Gender.Female) : 
-                    contactGender.Value == Convert.ToInt32(Contact_Gender.Male) ? Convert.ToInt32(Greeting_Gender.Male) : 
-                    Convert.ToInt32(Greeting_Gender.NonBinary);
+                contactGreetingRef = GetGreetingRefBasedOnLanguageAndGender(contactLanguage.Value, contactGender.Value);
 
-                contactGreetingRef = this.GetGreetingRefBasedOnLanguageAndGender(contactLanguage.Value, relatedGenderCode);
-            }
+            _target["dpam_lk_greeting"] = contactGreetingRef;
 
-            this._target["dpam_lk_greeting"] = contactGreetingRef;
-
-            this._tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - End");
+            _tracing.Trace("SetContactGreetingBasedOnLanguageAndGender - End");
         }
 
         /// <summary>
@@ -110,7 +101,7 @@ namespace BDP.DPAM.Plugins.Contact
         /// <returns>Reference to a Greeting</returns>
         private EntityReference GetGreetingRefBasedOnLanguageAndGender(int languageValue, int genderValue)
         {
-            this._tracing.Trace("GetGreetingRefBasedOnLanguageAndGender - Start");
+            _tracing.Trace("GetGreetingRefBasedOnLanguageAndGender - Start");
 
             EntityReference retVal = null;
 
@@ -121,7 +112,7 @@ namespace BDP.DPAM.Plugins.Contact
             query.Criteria.AddCondition(conditionGender);
             query.Criteria.AddCondition(conditionLanguage);
 
-            EntityCollection result = this._service.RetrieveMultiple(query);
+            EntityCollection result = _service.RetrieveMultiple(query);
 
             if(result.Entities.Count > 1)
                 throw new Exception($"Multiple Greetings found for Language {languageValue} and Gender {genderValue}");
@@ -129,9 +120,48 @@ namespace BDP.DPAM.Plugins.Contact
             if (result.Entities.Count > 0)
                 retVal = result.Entities[0].ToEntityReference();
 
-            this._tracing.Trace("GetGreetingRefBasedOnLanguageAndGender - End");
+            _tracing.Trace("GetGreetingRefBasedOnLanguageAndGender - End");
 
             return retVal;
+        }
+
+        /// <summary>
+        /// Set the field Direct Line with the value of the field Main Phone of the related CounterParty
+        /// </summary>
+        internal void SetContactDirectLineBasedOnCounterpartyMainPhone()
+        {
+            if (!_target.Contains("parentcustomerid"))
+                return;
+
+            _tracing.Trace("SetContactDirectLineBasedOnCounterpartyMainPhone - Start");
+
+            EntityReference parentCounterPartyRef = _target.GetAttributeValue<EntityReference>("parentcustomerid");
+
+            // Should never be a Contact 
+            //  -> JS has been added on the form to ensure selection of a Counterparty. 
+            //  -> System will throw an Exception in case of error during the retrieve
+            Entity counterParty = _service.Retrieve(parentCounterPartyRef, new string[] { "telephone1" });
+            string counterPartyMainPhone = counterParty.GetAttributeValue<string>("telephone1");
+
+            // Do not sync in case of creation if the Counterparty Main phone is empty
+            if (_context.MessageName.ToLower() != "create" || !string.IsNullOrWhiteSpace(counterPartyMainPhone))
+                _target["business2"] = counterPartyMainPhone;
+
+            _tracing.Trace("SetContactDirectLineBasedOnCounterpartyMainPhone - End");
+        }
+
+        /// <summary>
+        /// The "donotbulkemail" field has the opposite value of the "dpam_b_bulkemailoptinmarketingtechnical" field
+        /// </summary>
+        internal void ManageEmailOptInMarketingBulkEmail()
+        {
+            if (!_target.Contains("dpam_b_bulkemailoptinmarketingtechnical") || !_target.GetAttributeValue<bool>("dpam_b_bulkemailoptinmarketingtechnical")) return;
+
+            _tracing.Trace("ManageEmailOptInMarketingBulkEmail - Start");
+
+            _target["donotbulkemail"] = !_target.GetAttributeValue<bool>("dpam_b_bulkemailoptinmarketingtechnical");
+
+            _tracing.Trace("ManageEmailOptInMarketingBulkEmail - End");
         }
     }
 }

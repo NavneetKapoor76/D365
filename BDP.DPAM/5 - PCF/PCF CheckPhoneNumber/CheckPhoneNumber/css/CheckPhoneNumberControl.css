@@ -1,0 +1,9 @@
+/* 
+See CSS files in repos root folder
+globalStyle.css
+iconStyle.css
+*/
+
+.BDP.PCF.CheckPhoneNumberControl div.container #iconElement::before{
+    content: '\E717';
+}
