@@ -20,6 +20,8 @@ namespace BDP.DPAM.Plugins.Contact
 
                 // SHER-379
                 ctrl.SetContactDirectLineBasedOnCounterpartyMainPhone();
+                //SHER-668
+                ctrl.ManageEmailOptInMarketingBulkEmail();
             }
             catch (Exception ex)
             {
