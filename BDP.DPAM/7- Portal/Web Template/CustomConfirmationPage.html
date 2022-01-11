@@ -15,7 +15,6 @@
 </fetch>
   {% endfetchxml %}
 
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -35,15 +34,19 @@
         color: /* @body-text-color */ #4FBB84 /* @body-text-color */;
         background-color: #343a40;
         {% for result in my_query.results.entities %}
-          background-image: url( {% if  result['a.msdyncrm_blobcdnuri'] == null %}"default_background_image.png"{% else %}{{ result['a.msdyncrm_blobcdnuri'] }} {% endif %});
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-size: 100% 100%;
+          background-image: url( {% if  result['a.msdyncrm_blobcdnuri'] == null %}"default_background_image.png"{% else %}{{ result['a.msdyncrm_blobcdnuri'] }} {% endif %}) !important;
+          background-repeat: no-repeat !important;
+          background-position: center center !important;
+          background-color:unset !important;
+          -webkit-background-size: cover !important;
+          -moz-background-size: cover !important;
+          -o-background-size: cover !important;
+          background-size: cover !important;
+          background-attachment:fixed !important;
         {% endfor %}
         }
     .backgroungGrey{
         background-color: rgba(230, 230, 230, 0.9);
-        padding-top: 6%;
     }
     .image{
         height: 100px;
@@ -61,6 +64,7 @@
         font-size: 12px;
         text-decoration: none;
         font-weight: bold;
+        letter-spacing:0.1em;
     }
     .display{
         display: inline-block;
@@ -68,44 +72,53 @@
         padding-right: 2%;
         padding-left: 2%;
     }
+    .footer{
+      position: absolute;
+    }
+    @media only screen and (max-width: 539px) {
+            .footer {
+               position: relative;
+            }
+         }
     </style>
 </head>
 <body>
-    <div style="min-width: 300px; width: 60%; margin: auto; padding-top: 6%;">
-        <div id="dpamLogo" style="padding-bottom: 10px;">
-            <img style="height:80px; width:200px;" src="White_logo_DPAM.png" alt="logo" />
+    <div style="min-width: 300px;max-width:800px; margin: auto; padding-top: 6%;">
+        <div id="dpamLogo" style="padding-bottom: 20px; margin-left: -1.8%;">
+            <img style="height:136px; width:279px;" src="White_logo_DPAM.png" alt="logo" />
         </div>
-        <div id="message" class="backgroungGrey" align="Center" style="padding-bottom: 20px;">
-            <p> <span style="font-size: 26px; letter-spacing: 2px;"><span style="font-weight: bold;">THANK YOU </span> FOR YOUR REGISTRATION </span></p>
-        </div>
-        <div id="logoContainer" align="Center" class="backgroungGrey" style="padding-bottom: 10%;">
-            <div class="display">
-                <img class="image" src="icon_website.png">
-                <a href="https://www.dpamfunds.com">WEBSITE</a>
+        <div class="backgroungGrey" style="padding:30px;">
+            <div id="message" align="Center" style="padding-bottom: 20px; padding-top: 20px;">
+                <p> <span style="font-size: 26px; letter-spacing:0.1em;"><span style="font-weight: bold;">THANK YOU </span> FOR YOUR REGISTRATION </span></p>
             </div>
-            <div class="display">
-                <img class="image" src="icon_blog.png">
-                <a href="https://publications.dpamfunds.com/">BLOG</a>
-            </div>
-            <div class="display">
-                <img class="image" src="icon_contact.png">
-                <a href="mailto: dpam@degroofpetercam.com">CONTACT US</a>
-            </div>
-            <div class="display">
-                <img class="image" src="icon_linkedin.png">
-                <a href="https://www.linkedin.com/showcase/degroof-petercam-am/">LINKEDIN</a>
-            </div>
-            <div class="display">
-                <img class="image" src="icon_podcast.png">
-                <a href="https://www.dpampodcast.com/">PODCASTS</a>
+            <div id="logoContainer" align="Center" style="padding-bottom: 40px;">
+                <div class="display">
+                    <img class="image" src="icon_website.png">
+                    <a href="https://www.dpamfunds.com" target="_blank">WEBSITE</a>
+                </div>
+                <div class="display">
+                    <img class="image" src="icon_blog.png">
+                    <a href="https://publications.dpamfunds.com/" target="_blank">BLOG</a>
+                </div>
+                <div class="display">
+                    <img class="image" src="icon_contact.png">
+                    <a href="mailto: dpam@degroofpetercam.com">CONTACT US</a>
+                </div>
+                <div class="display">
+                    <img class="image" src="icon_linkedin.png">
+                    <a href="https://www.linkedin.com/showcase/degroof-petercam-am/" target="_blank">LINKEDIN</a>
+                </div>
+                <div class="display">
+                    <img class="image" src="icon_podcast.png">
+                    <a href="https://www.dpampodcast.com/" target="_blank">PODCASTS</a>
+                </div>
             </div>
         </div>
     </div>
-    <footer>
-        <div align="Center" style="color: #aaa; position: fixed; bottom: 0; width: 100%; margin-bottom: 1rem; font-size: 1rem; font-weight: 400;">
-            {{ snippets['Footer'] }}
-        </div>
-    </footer>
 </body>
-
+<footer class="footer" style="bottom:0!important; width: 100%; height: 2.5rem; padding: 0.5rem!important;">
+    <div align="Center" style="color: #aaa; font-size: 1rem; font-weight: 400;">
+        {{ snippets['Footer'] }}
+    </div>
+</footer>
 </html>
