@@ -92,6 +92,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration.ActivateAudit", "BDP.DPAM.Consoles.Migration.ActivateAudit\BDP.DPAM.Consoles.Migration.ActivateAudit.csproj", "{81F100A8-F649-4AAC-9081-3FDDCFE81768}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{87217935-FE56-4518-9295-06B56E6EB639}"
+	ProjectSection(SolutionItems) = preProject
+		7 - Portal\Web Template\CustomConfirmationPage.html = 7 - Portal\Web Template\CustomConfirmationPage.html
+		7 - Portal\Web Template\EventManagementApp.html = 7 - Portal\Web Template\EventManagementApp.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{1b60a34e-a613-47b1-92b8-6524d5b9ad9e}*SharedItemsImports = 4
