@@ -1,8 +1,10 @@
-import {IInputs, IOutputs} from "./generated/ManifestTypes";
+import { IInputs, IOutputs } from "./generated/ManifestTypes";
 var PhoneNumber = require('awesome-phonenumber');
 
 declare var Xrm: any;
+
 export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+
     private _notifyOutputChanged: () => void;
     private _context: ComponentFramework.Context<IInputs>;
 
@@ -17,7 +19,18 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
     private _value: string;
     private _displayValue: string;
 
-    private _defaultCC: string;
+   // private _defaultCC: string;
+
+    private getDefaultCC(): string {
+        let value = "BE";
+        if (this._context.parameters.defaultCC.raw != null && this._context.parameters.defaultCC.raw != "" && this._context.parameters.defaultCC.raw.indexOf(',') == -1) {
+            value = this._context.parameters.defaultCC.raw.trim().toUpperCase();
+        }
+        return value;
+
+    }
+
+
     private _allowedCC: string[];
     private _excludedCC: string[];
     private _allowedTypes: string[];
@@ -30,7 +43,6 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
 
     private _outputFormat: string;
     private _displayFormat: string;
-
     // HTML container
     private _container: HTMLDivElement;
     private _inputElement: HTMLInputElement;
@@ -45,6 +57,56 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
     constructor() {
     }
 
+/*    private _defaultCC_lookup_fieldname = "";
+    private _defaultCC_lookup: ComponentFramework.LookupValue;
+    public getCountryCodeName() {
+
+        let searchData = {
+            _entityName: "tbd",
+            _fieldname: "tbd",
+            _name: "tbd",
+            _fieldvalue: "tbd",
+
+        };
+        let fetchXML = "<fetch distinct='false' mapping='logical' aggregate='true'>";
+        fetchXML += `<entity name='${searchData._entityName}'>`;
+        fetchXML += `<attribute name='${searchData._fieldvalue}' />`;
+        fetchXML += "<filter>";
+        fetchXML += `<condition attribute='${searchData._fieldname}' operator='eq' value='${searchData._name}' />`;
+        fetchXML += "</filter>";
+        fetchXML += "</entity>";
+        fetchXML += "</fetch>";
+
+        // Invoke the Web API RetrieveMultipleRecords method to calculate the aggregate value
+        this._context.webAPI.retrieveMultipleRecords(searchData._entityName, `?fetchXml=${fetchXML}`).then(
+            (response: ComponentFramework.WebApi.RetrieveMultipleResponse) => {
+                // Retrieve multiple completed successfully -- retrieve the averageValue 
+                this._defaultCC_lookup_fieldname = response.entities[0][searchData._fieldvalue];
+            },
+            (errorResponse) => { }
+        );
+    }
+    public getCountryCode() {
+
+
+        if (this._context.parameters.defaultCC_lookup.raw != null) {
+           this._defaultCC_lookup   = this._context.parameters.defaultCC_lookup.raw[0];
+         }
+
+
+        if (this._defaultCC_lookup) {
+
+            this._context.webAPI.retrieveRecord(this._defaultCC_lookup.entityType, this._defaultCC_lookup.id, this._defaultCC_lookup_fieldname).then(
+
+                (response: ComponentFramework.WebApi.Entity) => {
+                    if (response[this._defaultCC_lookup_fieldname]) {
+                        this._defaultCC = response[this._defaultCC_lookup_fieldname];
+                    }
+                },
+                (errorResponse) => { }
+            );
+        }
+    }*/
 	/**
 	 * Used to initialize the control instance. Controls can kick off remote server calls and other initialization actions here.
 	 * Data-set values are not initialized here, use updateView.
@@ -57,7 +119,7 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
         this._notifyOutputChanged = notifyOutputChanged;
         this._context = context;
 
-        this._defaultCC = "";
+
         this._allowedCC = [];
         this._excludedCC = [];
         this._allowedTypes = [];
@@ -65,10 +127,8 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
 
         this._outputFormat = context.parameters.outputFormat.raw.toLocaleLowerCase();
         this._displayFormat = context.parameters.displayFormat.raw.toLocaleLowerCase();
-
-        if (context.parameters.defaultCC.raw != null && context.parameters.defaultCC.raw != "" && context.parameters.defaultCC.raw.indexOf(',') == -1) {
-            this._defaultCC = context.parameters.defaultCC.raw.trim().toUpperCase();
-        }
+     
+     
 
         if (context.parameters.allowedCC.raw != null && context.parameters.allowedCC.raw != "") {
             this._allowedCC = context.parameters.allowedCC.raw.split(',');
@@ -167,7 +227,7 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
 	 */
     public updateView(context: ComponentFramework.Context<IInputs>): void {
         this._context = context;
-        this.checkInput(context.parameters.valueField.raw);
+             this.checkInput(context.parameters.valueField.raw);
 
         let readOnly = context.mode.isControlDisabled;
         let masked = false;
@@ -183,7 +243,8 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
             this._container.classList.remove("readOnly");
         }
 
-        if (masked) {       
+        if (masked) {
+            this._value = this._inputElement.value;
             this._displayValue = this._inputElement.value;
             this._inputElement.value = this._maskValue;
         }
@@ -196,7 +257,8 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
     public getOutputs(): IOutputs {
         return {
             valueField: this._value,
-            numberValid: this._numberValidReturnValue
+            numberValid: this._numberValidReturnValue//,
+       //     defaultCC : this._defaultCC
         };
     }
 
@@ -234,8 +296,7 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
         }
         else if (input !== "" && input !== null && this.isCorrectPhoneNumber(input)) {
             this.handleErrorMessage(false);
-
-            var parsedPhoneNumber = (this._defaultCC !== "") ? PhoneNumber(input.replace(/\D/g, ''), this._defaultCC) : PhoneNumber(input.replace(/\D/g, ''));
+            var parsedPhoneNumber = (this.getDefaultCC() !== "") ? PhoneNumber(input, this.getDefaultCC()) : PhoneNumber(input);
 
             if (parsedPhoneNumber === undefined || !parsedPhoneNumber.isValid()) {
                 this._value = input;
@@ -243,6 +304,7 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
                 this._inputElement.value = this._displayValue;
                 this._numberValidReturnValue = false;
             } else {
+
                 this._value = parsedPhoneNumber.getNumber(this._outputFormat);
                 this._displayValue = parsedPhoneNumber.getNumber(this._displayFormat);
                 this._inputElement.value = this._displayValue;
@@ -279,7 +341,7 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
     private isCorrectPhoneNumber(value: string): boolean {
         var isValid = false;
         if (value != null && value != "") {
-            var parsedPhoneNumber = (this._defaultCC !== "") ? PhoneNumber(this._inputElement.value, this._defaultCC) : PhoneNumber(this._inputElement.value);
+            var parsedPhoneNumber = (this.getDefaultCC() !== "") ? PhoneNumber(this._inputElement.value, this.getDefaultCC()) : PhoneNumber(this._inputElement.value);
 
             if (parsedPhoneNumber !== undefined && parsedPhoneNumber.isValid()) {
                 isValid = true;
@@ -326,7 +388,7 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
 
     private handleButtonClick(): void {
         if (this._clickToCall !== "custom" && this._clickToCall !== "none") {
-            window.open(this._clickToCall + ":" + this._displayValue.replace(/\s/g, ""), '_blank');
+            window.open(this._clickToCall + ":" + this._value.replace(/\s/g, ""), '_blank');
         }
 
         this.openQuickCreateForm();
@@ -351,7 +413,8 @@ export class CheckPhoneNumber implements ComponentFramework.StandardControl<IInp
             };
 
             let formParameters = {
-                to: [entityReference]
+                to: [entityReference],
+                phonenumber: this._value.replace(/\s/g, "")
             };
 
             (<any>Xrm).Navigation.openForm(entityOptions, formParameters);

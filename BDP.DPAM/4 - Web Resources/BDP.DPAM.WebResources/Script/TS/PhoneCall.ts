@@ -3,10 +3,16 @@ namespace BDP.DPAM.WR.PhoneCall {
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-            //SHER-660
-            Form.setDueDateToTodayDate(formContext);
-            //SHER-660
-            Form.setDefaultDuration(formContext);
+
+            if (formContext.ui.getFormType() == XrmEnum.FormType.Create
+                ||
+                formContext.ui.getFormType() == XrmEnum.FormType.QuickCreate
+            ) {
+                //SHER-660
+                Form.setDueDateToTodayDate(formContext);
+                //SHER-660
+                Form.setDefaultDuration(formContext);
+            }
         }
 
         public static quickCreateOnLoad(executionContext: Xrm.Events.EventContext): void {

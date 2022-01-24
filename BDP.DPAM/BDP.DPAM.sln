@@ -92,6 +92,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration.ActivateAudit", "BDP.DPAM.Consoles.Migration.ActivateAudit\BDP.DPAM.Consoles.Migration.ActivateAudit.csproj", "{81F100A8-F649-4AAC-9081-3FDDCFE81768}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.DefaultUserSettings", "2 - Plugins\BDP.DPAM.Plugins.DefaultUserSettings\BDP.DPAM.Plugins.DefaultUserSettings.csproj", "{93865378-BEC7-4C99-A6C0-0859CD5C485B}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{1b60a34e-a613-47b1-92b8-6524d5b9ad9e}*SharedItemsImports = 4
@@ -104,6 +106,7 @@ Global
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{50b4bf38-019b-41e7-a855-3f5960ed14f0}*SharedItemsImports = 13
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{72c4463e-2533-41c1-880f-d2fad2cd6afc}*SharedItemsImports = 4
 		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{81f100a8-f649-4aac-9081-3fddcfe81768}*SharedItemsImports = 4
+		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{93865378-bec7-4c99-a6c0-0859cd5c485b}*SharedItemsImports = 4
 		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{9d0fbee5-bb85-4290-bda0-b9e48c244b59}*SharedItemsImports = 4
 		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{a28413a8-44c9-4c48-9d13-b583e6378062}*SharedItemsImports = 4
 		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{ae9be510-f53f-467f-9a5b-f8cc88fead5a}*SharedItemsImports = 13
@@ -226,6 +229,10 @@ Global
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93865378-BEC7-4C99-A6C0-0859CD5C485B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93865378-BEC7-4C99-A6C0-0859CD5C485B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93865378-BEC7-4C99-A6C0-0859CD5C485B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93865378-BEC7-4C99-A6C0-0859CD5C485B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -260,6 +267,7 @@ Global
 		{AE9BE510-F53F-467F-9A5B-F8CC88FEAD5A} = {AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}
 		{A28413A8-44C9-4C48-9D13-B583E6378062} = {AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768} = {AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}
+		{93865378-BEC7-4C99-A6C0-0859CD5C485B} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77E50B7F-1680-4E20-BF5F-166F843FBB22}

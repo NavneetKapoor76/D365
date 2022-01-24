@@ -44,9 +44,9 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="C:\source_pcf\PCF\source_pcf.pcfproj" />
-
-  </ItemGroup>
+    <!--<ProjectReference Include="C:\source_pcf\PCF\source_pcf.pcfproj" />-->
+    
+    <ProjectReference Include="C:\BUEXAL\source_sherlock2\BDP.DPAM\5 - PCF\PCF CheckPhoneNumber\source_pcf.pcfproj" />
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets')" />
