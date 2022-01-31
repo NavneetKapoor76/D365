@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Degroof Event Management</title>
+    <base href="/">
+    <meta name="token" content="{{ request.params['__RequestVerificationToken'] }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="eventmanagementapp/styles.css">
+</head>
+<body>
+    <app-root>
+    </app-root>
+    <script type="text/javascript" src="eventmanagementapp/runtime.js"></script>
+    <script type="text/javascript" src="eventmanagementapp/polyfills.js"></script>
+    <script type="text/javascript" src="eventmanagementapp/scripts.js"></script>
+    <script type="text/javascript" src="eventmanagementapp/main.js"></script>
+    <div align="Center" style="color: #aaa; bottom:0!important; width: 100%; height: 2.5rem; padding: 0.5rem!important; font-size: 1rem; font-weight: 400;">
+        {{ snippets['Footer'] }}
+    </div>
+</body>
+
+<style>
+    nav-menu{
+      display: none !important;
+    }
+
+    {% fetchxml my_query %}
+    <fetch version='1.0' mapping='logical'>
+      <entity name='msevtmgt_event'>
+        <attribute name='msevtmgt_eventid' />
+        <attribute name='msevtmgt_name' />
+        <attribute name='msevtmgt_eventimage' />
+        <order attribute='msevtmgt_name' descending='false' />
+        <filter type='and'>
+        <condition attribute='msevtmgt_readableeventid' operator='eq' value='{{ request.params['id'] | escape }}' />
+        </filter>
+        <link-entity name='msdyncrm_file' from='msdyncrm_fileid' to='msevtmgt_eventimage' visible='false' link-type='outer' alias='a'>
+        <attribute name='msdyncrm_blobcdnuri' />
+        </link-entity>
+      </entity>
+    </fetch>
+  {% endfetchxml %}
+    body{
+      background-color: #cccccc !important;
+      {% for result in my_query.results.entities %}
+          background-image: url( {% if  result['a.msdyncrm_blobcdnuri'] == null %}"default_background_image.png"{% else %}{{ result['a.msdyncrm_blobcdnuri'] }} {% endif %}) !important;
+          background-repeat: no-repeat !important;
+          background-position: center center !important;
+          background-color:unset !important;
+          -webkit-background-size: cover !important;
+          -moz-background-size: cover !important;
+          -o-background-size: cover !important;
+          background-size: cover !important;
+          background-attachment:fixed !important;
+      {% endfor %}
+    }
+
+    div.container.event-banner{
+      background-image: none !important;
+      background-color: rgba(230, 230, 230, 0.4) !important;
+    }
+    button.btn.btn-primary.btn-lg{
+      background-color: #4FBB84 !important;
+      border: 1px solid #4FBB84 !important;
+    }
+    app-confirmation{
+      display: none !important;
+    }
+    footer.page-footer.font-small.bg-dark.p-2{
+      background-color: rgba(230, 230, 230, 0) !important;
+      color: rgba(230, 230, 230, 0) !important;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        // Store the current page URL on load
+        var currentPage = location.href;
+
+        // listen for changes
+        setInterval(function () {
+            if (currentPage != location.href) {
+                if (location.href.indexOf("confirmation") !== -1) {
+                    location.reload();
+                }
+                // page has changed, set new page as 'current'
+                currentPage = location.href;
+            }
+        }, 100);
+    })
+</script>
+</html>
