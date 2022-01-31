@@ -10,10 +10,14 @@ var BDP;
                 class Form {
                     static onLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        //SHER-660
-                        Form.setDueDateToTodayDate(formContext);
-                        //SHER-660
-                        Form.setDefaultDuration(formContext);
+                        if (formContext.ui.getFormType() == XrmEnum.FormType.Create
+                            ||
+                            formContext.ui.getFormType() == XrmEnum.FormType.QuickCreate) {
+                            //SHER-660
+                            Form.setDueDateToTodayDate(formContext);
+                            //SHER-660
+                            Form.setDefaultDuration(formContext);
+                        }
                     }
                     static quickCreateOnLoad(executionContext) {
                         const formContext = executionContext.getFormContext();

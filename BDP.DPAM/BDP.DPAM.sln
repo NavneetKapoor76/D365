@@ -92,6 +92,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Consoles.Migration.ActivateAudit", "BDP.DPAM.Consoles.Migration.ActivateAudit\BDP.DPAM.Consoles.Migration.ActivateAudit.csproj", "{81F100A8-F649-4AAC-9081-3FDDCFE81768}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 - Portal", "7 - Portal", "{FAA55F33-3BBB-446B-B910-E87CAB6296D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web Template", "Web Template", "{0158452C-6498-4AE9-B4BE-04E3659BCF9A}"
+	ProjectSection(SolutionItems) = preProject
+		7 - Portal\Web Template\CustomConfirmationPage.html = 7 - Portal\Web Template\CustomConfirmationPage.html
+		7 - Portal\Web Template\EventManagementApp.html = 7 - Portal\Web Template\EventManagementApp.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{1b60a34e-a613-47b1-92b8-6524d5b9ad9e}*SharedItemsImports = 4
@@ -260,6 +268,7 @@ Global
 		{AE9BE510-F53F-467F-9A5B-F8CC88FEAD5A} = {AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}
 		{A28413A8-44C9-4C48-9D13-B583E6378062} = {AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768} = {AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}
+		{0158452C-6498-4AE9-B4BE-04E3659BCF9A} = {FAA55F33-3BBB-446B-B910-E87CAB6296D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77E50B7F-1680-4E20-BF5F-166F843FBB22}

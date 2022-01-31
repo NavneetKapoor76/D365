@@ -1,0 +1,124 @@
+﻿{% fetchxml my_query %}
+<fetch version='1.0' mapping='logical'>
+    <entity name='msevtmgt_event'>
+        <attribute name='msevtmgt_eventid' />
+        <attribute name='msevtmgt_name' />
+        <attribute name='msevtmgt_eventimage' />
+        <order attribute='msevtmgt_name' descending='false' />
+        <filter type='and'>
+            <condition attribute='msevtmgt_readableeventid' operator='eq' value='{{ request.params['id'] | escape }}' />
+        </filter>
+        <link-entity name='msdyncrm_file' from='msdyncrm_fileid' to='msevtmgt_eventimage' visible='false' link-type='outer' alias='a'>
+            <attribute name='msdyncrm_blobcdnuri' />
+        </link-entity>
+    </entity>
+</fetch>
+  {% endfetchxml %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Degroof Event Management</title>
+    <base href="/">
+    <meta name="token" content="{{ request.params['__RequestVerificationToken'] }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta type="xrm/designer/setting" name="additional-fonts" datatype="font" value="roboto-condensed;acumin-pro-condensed;Heebo;Open Sans">
+    <link rel="stylesheet" href="https://use.typekit.net/gmh6kkg.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&amp;family=Open+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+     body {
+        font-family: /* @font-family */ roboto-condensed,/* @font-family */ Verdana, /* @font-family */ Arial,
+         /* @font-family */ sans-serif /* @font-family */;
+        font-size: /* @body-text-size */ 16px /* @body-text-size */;
+        color: /* @body-text-color */ #4FBB84 /* @body-text-color */;
+        background-color: #343a40;
+        {% for result in my_query.results.entities %}
+          background-image: url( {% if  result['a.msdyncrm_blobcdnuri'] == null %}"default_background_image.png"{% else %}{{ result['a.msdyncrm_blobcdnuri'] }} {% endif %}) !important;
+          background-repeat: no-repeat !important;
+          background-position: center center !important;
+          background-color:unset !important;
+          -webkit-background-size: cover !important;
+          -moz-background-size: cover !important;
+          -o-background-size: cover !important;
+          background-size: cover !important;
+          background-attachment:fixed !important;
+        {% endfor %}
+        }
+    .backgroungGrey{
+        background-color: rgba(230, 230, 230, 0.9);
+    }
+    .image{
+        height: 100px;
+        width: 100px;
+        box-sizing: border-box;
+        margin: 0px;
+        position: relative;
+        display: block;
+        top: 0px;
+        left: 0px;
+        border-radius: 0px;
+    }
+    a {
+        color: #4FBB84;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing:0.1em;
+    }
+    .display{
+        display: inline-block;
+        margin: 0px;
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+    .footer{
+      position: absolute;
+    }
+    @media only screen and (max-width: 539px) {
+            .footer {
+               position: relative;
+            }
+         }
+    </style>
+</head>
+<body>
+    <div style="min-width: 300px;max-width:800px; margin: auto; padding-top: 6%;">
+        <div id="dpamLogo" style="padding-bottom: 20px; margin-left: -1.8%;">
+            <img style="height:136px;" src="White_logo_DPAM.png" alt="logo" />
+        </div>
+        <div class="backgroungGrey" style="padding:30px;">
+            <div id="message" align="Center" style="padding-bottom: 20px; padding-top: 20px;">
+                <p> <span style="font-size: 26px; letter-spacing:0.1em;"><span style="font-weight: bold;">THANK YOU </span> FOR YOUR REGISTRATION </span></p>
+            </div>
+            <div id="logoContainer" align="Center" style="padding-bottom: 40px;">
+                <div class="display">
+                    <img class="image" src="icon_website.png">
+                    <a href="https://www.dpamfunds.com" target="_blank">WEBSITE</a>
+                </div>
+                <div class="display">
+                    <img class="image" src="icon_blog.png">
+                    <a href="https://publications.dpamfunds.com/" target="_blank">BLOG</a>
+                </div>
+                <div class="display">
+                    <img class="image" src="icon_contact.png">
+                    <a href="mailto: dpam@degroofpetercam.com">CONTACT US</a>
+                </div>
+                <div class="display">
+                    <img class="image" src="icon_linkedin.png">
+                    <a href="https://www.linkedin.com/showcase/degroof-petercam-am/" target="_blank">LINKEDIN</a>
+                </div>
+                <div class="display">
+                    <img class="image" src="icon_podcast.png">
+                    <a href="https://www.dpampodcast.com/" target="_blank">PODCASTS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer" style="bottom:0!important; height: 2.5rem; padding: 0.5rem!important;">
+    <div align="Center" style="color: #aaa; font-size: 1rem; font-weight: 400;">
+        {{ snippets['Footer'] }}
+    </div>
+</footer>
+</html>
