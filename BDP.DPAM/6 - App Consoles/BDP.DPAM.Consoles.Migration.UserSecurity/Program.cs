@@ -39,7 +39,7 @@ System.Configuration.ConfigurationManager.AppSettings["OnlineURL"]);
                         d.windowsliveid = values[0];
                         d.businessunit = values[1];
                         d.role = values[2];
-                        d.roles = values[2].Split(',');
+                        d.roles = values[2].Split('|');
                         listA.Add(d);
 
 
@@ -102,8 +102,14 @@ System.Configuration.ConfigurationManager.AppSettings["OnlineURL"]);
                                     }
                                     catch (Exception ex)
                                     {
+                                        if (ex.Message != "Cannot insert duplicate key."){
+
                                         d.result += "|role is not added " + role + " : " + ex.Message;
-                                        Console.WriteLine(ex.Message);
+                                        Console.WriteLine(ex.Message); }else
+                                        {
+
+                                            d.result += "|role was already added " + role;
+                                        }
                                     }
 
 

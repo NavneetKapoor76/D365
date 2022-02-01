@@ -1,83 +1,79 @@
-﻿user;businessUnit;securityrole
-gua@degroofpetercam.com;Marketing;Event Administrator,Marketing Profesionnal Business,Marketing,Business App Access
-vas@degroofpetercam.com;Spain;DPAM - Sales manager
-ija@degroofpetercam.com;Belgium;DPAM - Sales support
-stgkhb@degroofpetercam.com;Spain;DPAM - Sales support
-roa@degroofpetercam.com;Netherlands;DPAM - Sales person
-cbm@degroofpetercam.com;Legal;DPAM - Legal officer
-qc5061@degroofpetercam.com;France;DPAM - Sales person
-cjc@degroofpetercam.com;Belgium;DPAM - Sales person
-ac9814@degroofpetercam.com;Belgium;DPAM - Sales support
-fgc@degroofpetercam.com;Belgium;DPAM - Sales person
-ndr@degroofpetercam.com;Spain;DPAM - Sales person
-jkd@degroofpetercam.com;Legal;DPAM - Legal officer
-dwd@degroofpetercam.com;Belgium;DPAM - Sales person
-spb@degroofpetercam.com;Belgium;DPAM - Sales person
-ptc@degroofpetercam.com;DPAM Group;DPAM - Sales manager
-hbd@degroofpetercam.com;Belgium;DPAM - Sales manager
-bde@degroofpetercam.com;Sales;DPAM - Sales support,DPAM - Power user
-cfs@degroofpetercam.com;Sales;DPAM - Sales support,DPAM - Power user
-vd5408@degroofpetercam.com;Compliance;DPAM - Compliance officer
-sqd@degroofpetercam.com;Sales;DPAM - Sales support,DPAM - Power user
-dzc@degroofpetercam.com;Legal;DPAM - Legal officer
-ie5094@degroofpetercam.com;Compliance;DPAM - Compliance officer
-bf7950@degroofpetercam.com;Compliance;DPAM - Compliance officer
-afo@degroofpetercam.com;Italy;DPAM - Sales manager
-mlf@degroofpetercam.com;Germany;DPAM - Sales person
-gg3074@degroofpetercam.com;Italy;DPAM - Sales support
-aug@degroofpetercam.com;Legal;DPAM - Legal officer
-sg9062@degroofpetercam.com;Germany;DPAM - Sales person
-sh1798@degroofpetercam.com;Compliance;DPAM - Compliance officer
-nmh@degroofpetercam.com;Sales;DPAM - Sales support,DPAM - Power user
-ihu@degroofpetercam.com;Sales;DPAM - Sales person
-bjn@degroofpetercam.com;Belgium;DPAM - Sales manager
-cja@degroofpetercam.com;Marketing;Event Administrator,Marketing Profesionnal Business,Marketing,Business App Access,DPAM - Power user
-ukb@degroofpetercam.com;Switzerland;DPAM - Sales manager
-jk2830@degroofpetercam.com;Germany;DPAM - Sales support
-ml4798@degroofpetercam.com;Switzerland;DPAM - Sales person
-yml@degroofpetercam.com;Belgium;DPAM - Sales person
-lm3936@degroofpetercam.com;Germany;DPAM - Sales support
-tme@degroofpetercam.com;Germany;DPAM - Sales manager
-mm3878@degroofpetercam.com;Belgium;DPAM - Sales support
-omo@degroofpetercam.com;Sales;DPAM - Sales support,DPAM - Power user
-tmu@degroofpetercam.com;DPAM Group;DPAM - Sales manager
-jn0963@degroofpetercam.com;Germany;DPAM - Sales support
-aip@degroofpetercam.com;Italy;DPAM - Sales person
-dp0686@degroofpetercam.com;France;DPAM - Sales person
-spu@degroofpetercam.com;Legal;DPAM - Legal officer
-far@degroofpetercam.com;Belgium;DPAM - Sales support
-kr8630@degroofpetercam.com;Sales;DPAM - Sales support,DPAM - Power user
-aru@degroofpetercam.com;Spain;DPAM - Sales manager
-olt@degroofpetercam.com;Luxembourg;DPAM - Sales manager
-aet@degroofpetercam.com;Italy;DPAM - Sales person
-alt@degroofpetercam.com;France;DPAM - Sales manager
-axu@degroofpetercam.com;Germany;DPAM - Sales person
-vuv@degroofpetercam.com;France;DPAM - Sales manager
-lub@degroofpetercam.com;Legal;DPAM - Compliance officer
-mwv@degroofpetercam.com;Netherlands;DPAM - Sales manager
-av4408@degroofpetercam.com;Belgium;DPAM - Sales person
+﻿domainname;Proposed Primary Team;Custom
+bfo@degroofpetercam.com;Marketing;DPAM - Event Administrator|DPAM - Marketing Professional - Business|Marketing, Business App Access
+gua@degroofpetercam.com;Marketing;DPAM - Event Administrator|DPAM - Marketing Professional - Business|Marketing, Business App Access
+hc0558@degroofpetercam.com;Marketing;DPAM - Event Administrator|DPAM - Marketing Professional - Business|Marketing, Business App Access
+pbm@degroofpetercam.com;Marketing;DPAM - Event Administrator|DPAM - Marketing Professional - Business|Marketing, Business App Access
+cja@degroofpetercam.com;Marketing;DPAM - Event Administrator|DPAM - Marketing Professional - Business|Marketing, Business App Access|DPAM - Power User
+ary@degroofpetercam.com;Compliance;DPAM - Compliance officer
 av7239@degroofpetercam.com;Compliance;DPAM - Compliance officer
-tzv@degroofpetercam.com;Belgium;DPAM - Sales person
-pbm@degroofpetercam.com;Marketing;DPAM - Event Administrator,Marketing Profesionnal Business,Marketing,Business App Access
-bfo@degroofpetercam.com;Marketing;DPAM - Event Administrator,Marketing Profesionnal Business,Marketing,Business App Access
-hc0558@degroofpetercam.com;Marketing;DPAM - Event Administrator,Marketing Profesionnal Business,Marketing,Business App Access
-mg7609@degroofpetercam.com;Spain;DPAM - Sales person
-db2338@degroofpetercam.com;Netherlands;DPAM - Sales person
-mpo@degroofpetercam.com;Compliance;DPAM - Compliance officer
-ctu@degroofpetercam.com;Legal;DPAM - Legal officer
-jkd@degroofpetercam.com;Legal;DPAM - Legal officer
-dzc@degroofpetercam.com;Legal;DPAM - Legal officer
-mm9100@degroofpetercam.com;Legal;DPAM - Legal officer
-sc8787@degroofpetercam.com;Legal;DPAM - Legal officer
-qv9186@degroofpetercam.com;Legal;DPAM - Legal officer
-jnn@degroofpetercam.com;Legal;DPAM - Legal officer
+bf7950@degroofpetercam.com;Compliance;DPAM - Compliance officer
+ie5094@degroofpetercam.com;Compliance;DPAM - Compliance officer
+lub@degroofpetercam.com;Legal;DPAM - Compliance officer
+sh1798@degroofpetercam.com;Compliance;DPAM - Compliance officer
+vd5408@degroofpetercam.com;Compliance;DPAM - Compliance officer
 ay3219@degroofpetercam.com;Legal;DPAM - Legal officer
-sum@degroofpetercam.com;Legal;DPAM - Legal officer
-idb@degroofpetercam.com;Legal;DPAM - Legal officer
+ctu@degroofpetercam.com;Legal;DPAM - Legal officer
+aug@degroofpetercam.com;Legal;DPAM - Legal officer
+cbm@degroofpetercam.com;Legal;DPAM - Legal officer
+dzc@degroofpetercam.com;Legal;DPAM - Legal officer
+jkd@degroofpetercam.com;Legal;DPAM - Legal officer
+spu@degroofpetercam.com;Legal;DPAM - Legal officer
+dj0195@degroofpetercam.com;Legal;DPAM - Legal officer
 fvh@degroofpetercam.com;Legal;DPAM - Legal officer
 gs3605@degroofpetercam.com;Legal;DPAM - Legal officer
-pma@degroofpetercam.com;Legal;DPAM - Legal officer
-djo195@degroofpetercam.com;Legal;DPAM - Legal officer
+idb@degroofpetercam.com;Legal;DPAM - Legal officer
+jnn@degroofpetercam.com;Legal;DPAM - Legal officer
 md4215@degroofpetercam.com;Legal;DPAM - Legal officer
-rig@degroofpetercam.com;Legal;DPAM - Legal officer
 md6767@degroofpetercam.com;Legal;DPAM - Legal officer
+mm9100@degroofpetercam.com;Legal;DPAM - Legal officer
+mpo@degroofpetercam.com;Legal;DPAM - Legal officer
+pma@degroofpetercam.com;Legal;DPAM - Legal officer
+qv9186@degroofpetercam.com;Legal;DPAM - Legal officer
+rig@degroofpetercam.com;Legal;DPAM - Legal officer
+sc8787@degroofpetercam.com;Legal;DPAM - Legal officer
+sum@degroofpetercam.com;Legal;DPAM - Legal officer
+olt@degroofpetercam.com;Luxembourg;DPAM - Sales manager|DPAM - Power User|Dynamics 365 App for Outlook user
+tme@degroofpetercam.com;Germany;DPAM - Sales manager|DPAM - Power User|Dynamics 365 App for Outlook user
+afo@degroofpetercam.com;Italy;DPAM - Sales manager|Dynamics 365 App for Outlook user
+alt@degroofpetercam.com;France;DPAM - Sales manager|Dynamics 365 App for Outlook user
+aru@degroofpetercam.com;Spain;DPAM - Sales manager|Dynamics 365 App for Outlook user
+bjn@degroofpetercam.com;Belgium;DPAM - Sales manager|Dynamics 365 App for Outlook user
+hbd@degroofpetercam.com;Belgium;DPAM - Sales manager|Dynamics 365 App for Outlook user
+mwv@degroofpetercam.com;Netherlands;DPAM - Sales manager|Dynamics 365 App for Outlook user
+ptc@degroofpetercam.com;DPAM Group;DPAM - Sales manager|Dynamics 365 App for Outlook user
+tmu@degroofpetercam.com;DPAM Group;DPAM - Sales manager|Dynamics 365 App for Outlook user
+ukb@degroofpetercam.com;Switzerland;DPAM - Sales manager|Dynamics 365 App for Outlook user
+vas@degroofpetercam.com;Spain;DPAM - Sales manager|Dynamics 365 App for Outlook user
+vnv@degroofpetercam.com;France;DPAM - Sales manager|Dynamics 365 App for Outlook user
+db2338@degroofpetercam.com;Netherlands;DPAM - Sales person|Dynamics 365 App for Outlook user
+aet@degroofpetercam.com;Italy;DPAM - Sales person|Dynamics 365 App for Outlook user
+aip@degroofpetercam.com;Italy;DPAM - Sales person|Dynamics 365 App for Outlook user
+av4408@degroofpetercam.com;Belgium;DPAM - Sales person|Dynamics 365 App for Outlook user
+axu@degroofpetercam.com;Germany;DPAM - Sales person|Dynamics 365 App for Outlook user
+cjc@degroofpetercam.com;Belgium;DPAM - Sales person|Dynamics 365 App for Outlook user
+dp0686@degroofpetercam.com;France;DPAM - Sales person|Dynamics 365 App for Outlook user
+dwd@degroofpetercam.com;Belgium;DPAM - Sales person|Dynamics 365 App for Outlook user
+fgc@degroofpetercam.com;Belgium;DPAM - Sales person|Dynamics 365 App for Outlook user
+ihu@degroofpetercam.com;Sales;DPAM - Sales person|Dynamics 365 App for Outlook user
+ml4798@degroofpetercam.com;Switzerland;DPAM - Sales person|Dynamics 365 App for Outlook user
+mlf@degroofpetercam.com;Germany;DPAM - Sales person|Dynamics 365 App for Outlook user
+ndr@degroofpetercam.com;Spain;DPAM - Sales person|Dynamics 365 App for Outlook user
+qc5061@degroofpetercam.com;France;DPAM - Sales person|Dynamics 365 App for Outlook user
+roa@degroofpetercam.com;Netherlands;DPAM - Sales person|Dynamics 365 App for Outlook user
+sg9062@degroofpetercam.com;Germany;DPAM - Sales person|Dynamics 365 App for Outlook user
+spb@degroofpetercam.com;Belgium;DPAM - Sales person|Dynamics 365 App for Outlook user
+tzv@degroofpetercam.com;Belgium;DPAM - Sales person|Dynamics 365 App for Outlook user
+yml@degroofpetercam.com;Belgium;DPAM - Sales person|Dynamics 365 App for Outlook user
+jk2830@degroofpetercam.com;Germany;DPAM - Sales support|DPAM - Power User|Dynamics 365 App for Outlook user
+stgkhb@degroofpetercam.com;Spain;DPAM - Sales support|DPAM - Power User|Dynamics 365 App for Outlook user
+ac9814@degroofpetercam.com;Belgium;DPAM - Sales support|Dynamics 365 App for Outlook user
+bde@degroofpetercam.com;Sales;DPAM - Sales support|Dynamics 365 App for Outlook user
+cfs@degroofpetercam.com;Sales;DPAM - Sales support|Dynamics 365 App for Outlook user
+far@degroofpetercam.com;Belgium;DPAM - Sales support|Dynamics 365 App for Outlook user
+gg3074@degroofpetercam.com;Italy;DPAM - Sales support|Dynamics 365 App for Outlook user
+ija@degroofpetercam.com;Belgium;DPAM - Sales support|Dynamics 365 App for Outlook user
+kr8630@degroofpetercam.com;Sales;DPAM - Sales support|Dynamics 365 App for Outlook user
+mm3878@degroofpetercam.com;Belgium;DPAM - Sales support|Dynamics 365 App for Outlook user
+nmh@degroofpetercam.com;Sales;DPAM - Sales support|Dynamics 365 App for Outlook user
+omo@degroofpetercam.com;Sales;DPAM - Sales support|Dynamics 365 App for Outlook user
+sqd@degroofpetercam.com;Sales;DPAM - Sales support|Dynamics 365 App for Outlook user
