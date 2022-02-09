@@ -7,7 +7,7 @@ namespace BDP.DPAM.WR.Department {
             //SHER-324
             Form.manageBusinessSegmentationVisibility(formContext);
             //SHER-736
-            Form.manageRequiredLevelBasedOnCounterpartyType(formContext);
+            Form.manageRequiredLevelBasedOnDepartmentType(formContext);
         }
 
         public static quickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
@@ -15,7 +15,7 @@ namespace BDP.DPAM.WR.Department {
             //SHER-324
             Form.manageBusinessSegmentationVisibility(formContext);
             //SHER-736
-            Form.manageRequiredLevelBasedOnCounterpartyType(formContext);
+            Form.manageRequiredLevelBasedOnDepartmentType(formContext);
         }
 
         public static onChange_dpam_lk_counterparty(executionContext: Xrm.Events.EventContext): void {
@@ -27,7 +27,7 @@ namespace BDP.DPAM.WR.Department {
         public static onChange_dpam_mos_departmenttype(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-736
-            Form.manageRequiredLevelBasedOnCounterpartyType(formContext);
+            Form.manageRequiredLevelBasedOnDepartmentType(formContext);
         }
 
         //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
@@ -70,8 +70,8 @@ namespace BDP.DPAM.WR.Department {
                     });
         }
 
-        //Manage the required level based on the counterparty type for dpam_lk_mifidcategory
-        static manageRequiredLevelBasedOnCounterpartyType(formContext: Xrm.FormContext) {
+        //Manage the required level based on the department type for dpam_lk_mifidcategory
+        static manageRequiredLevelBasedOnDepartmentType(formContext: Xrm.FormContext) {
             let departmentTypeAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_mos_departmenttype");
             let mifidCategoryRequiredLevel: Xrm.Attributes.RequirementLevel = "none";
 

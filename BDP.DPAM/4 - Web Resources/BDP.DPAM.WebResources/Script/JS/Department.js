@@ -13,14 +13,14 @@ var BDP;
                         //SHER-324
                         Form.manageBusinessSegmentationVisibility(formContext);
                         //SHER-736
-                        Form.manageRequiredLevelBasedOnCounterpartyType(formContext);
+                        Form.manageRequiredLevelBasedOnDepartmentType(formContext);
                     }
                     static quickCreateonLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-324
                         Form.manageBusinessSegmentationVisibility(formContext);
                         //SHER-736
-                        Form.manageRequiredLevelBasedOnCounterpartyType(formContext);
+                        Form.manageRequiredLevelBasedOnDepartmentType(formContext);
                     }
                     static onChange_dpam_lk_counterparty(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -30,7 +30,7 @@ var BDP;
                     static onChange_dpam_mos_departmenttype(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-736
-                        Form.manageRequiredLevelBasedOnCounterpartyType(formContext);
+                        Form.manageRequiredLevelBasedOnDepartmentType(formContext);
                     }
                     //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
                     static manageBusinessSegmentationVisibility(formContext) {
@@ -64,8 +64,8 @@ var BDP;
                             console.log(error.message);
                         });
                     }
-                    //Manage the required level based on the counterparty type for dpam_lk_mifidcategory
-                    static manageRequiredLevelBasedOnCounterpartyType(formContext) {
+                    //Manage the required level based on the department type for dpam_lk_mifidcategory
+                    static manageRequiredLevelBasedOnDepartmentType(formContext) {
                         let departmentTypeAttribute = formContext.getAttribute("dpam_mos_departmenttype");
                         let mifidCategoryRequiredLevel = "none";
                         if (departmentTypeAttribute.getValue() != null) {
