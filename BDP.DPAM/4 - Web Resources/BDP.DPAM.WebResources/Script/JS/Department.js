@@ -13,14 +13,14 @@ var BDP;
                         //SHER-324
                         Form.manageBusinessSegmentationVisibility(formContext);
                         //SHER-736
-                        Form.manageRequiredLevelBasedOnDepartmentType(formContext);
+                        Form.manageRequiredLevelAndVisibilityBasedOnDepartmentType(formContext);
                     }
                     static quickCreateonLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-324
                         Form.manageBusinessSegmentationVisibility(formContext);
                         //SHER-736
-                        Form.manageRequiredLevelBasedOnDepartmentType(formContext);
+                        Form.manageRequiredLevelAndVisibilityBasedOnDepartmentType(formContext);
                     }
                     static onChange_dpam_lk_counterparty(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -30,7 +30,7 @@ var BDP;
                     static onChange_dpam_mos_departmenttype(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-736
-                        Form.manageRequiredLevelBasedOnDepartmentType(formContext);
+                        Form.manageRequiredLevelAndVisibilityBasedOnDepartmentType(formContext);
                     }
                     //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
                     static manageBusinessSegmentationVisibility(formContext) {
@@ -64,17 +64,33 @@ var BDP;
                             console.log(error.message);
                         });
                     }
-                    //Manage the required level based on the department type for dpam_lk_mifidcategory
-                    static manageRequiredLevelBasedOnDepartmentType(formContext) {
+                    /* Based on the department type, manage:
+                    * - the required level for dpam_lk_mifidcategory and dpam_lk_compliancesegmentation
+                    * - the visibility for dpam_lk_compliancesegmentation
+                    */
+                    static manageRequiredLevelAndVisibilityBasedOnDepartmentType(formContext) {
                         let departmentTypeAttribute = formContext.getAttribute("dpam_mos_departmenttype");
                         let mifidCategoryRequiredLevel = "none";
+                        let complianceSegmentationRequiredLevel = "required";
+                        let complianceSegmentationVisibility = true;
                         if (departmentTypeAttribute.getValue() != null) {
                             let selectedOptions = departmentTypeAttribute.getValue();
-                            if (selectedOptions.length == 1 && selectedOptions[0] == 100000000 /*Client*/) {
-                                mifidCategoryRequiredLevel = "required";
+                            if (selectedOptions.length == 1) {
+                                switch (selectedOptions[0]) {
+                                    case 100000000: /*Client*/
+                                        mifidCategoryRequiredLevel = "required";
+                                        break;
+                                    case 100000005: /*Business Relation*/
+                                        complianceSegmentationVisibility = false;
+                                        complianceSegmentationRequiredLevel = "none";
+                                        break;
+                                }
                             }
                         }
                         formContext.getAttribute("dpam_lk_mifidcategory").setRequiredLevel(mifidCategoryRequiredLevel);
+                        let complianceSegmentationControl = formContext.getControl("dpam_lk_compliancesegmentation");
+                        complianceSegmentationControl.setVisible(complianceSegmentationVisibility);
+                        complianceSegmentationControl.getAttribute().setRequiredLevel(complianceSegmentationRequiredLevel);
                     }
                 }
                 Department.Form = Form;

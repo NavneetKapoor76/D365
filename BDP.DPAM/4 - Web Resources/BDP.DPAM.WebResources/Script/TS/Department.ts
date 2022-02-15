@@ -7,7 +7,7 @@ namespace BDP.DPAM.WR.Department {
             //SHER-324
             Form.manageBusinessSegmentationVisibility(formContext);
             //SHER-736
-            Form.manageRequiredLevelBasedOnDepartmentType(formContext);
+            Form.manageRequiredLevelAndVisibilityBasedOnDepartmentType(formContext);
         }
 
         public static quickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
@@ -15,7 +15,7 @@ namespace BDP.DPAM.WR.Department {
             //SHER-324
             Form.manageBusinessSegmentationVisibility(formContext);
             //SHER-736
-            Form.manageRequiredLevelBasedOnDepartmentType(formContext);
+            Form.manageRequiredLevelAndVisibilityBasedOnDepartmentType(formContext);
         }
 
         public static onChange_dpam_lk_counterparty(executionContext: Xrm.Events.EventContext): void {
@@ -27,7 +27,7 @@ namespace BDP.DPAM.WR.Department {
         public static onChange_dpam_mos_departmenttype(executionContext: Xrm.Events.EventContext) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-736
-            Form.manageRequiredLevelBasedOnDepartmentType(formContext);
+            Form.manageRequiredLevelAndVisibilityBasedOnDepartmentType(formContext);
         }
 
         //function to set the visibility of the following fields: dpam_lk_localbusinesssegmentation, dpam_lk_businesssegmentation
@@ -70,20 +70,38 @@ namespace BDP.DPAM.WR.Department {
                     });
         }
 
-        //Manage the required level based on the department type for dpam_lk_mifidcategory
-        static manageRequiredLevelBasedOnDepartmentType(formContext: Xrm.FormContext) {
+        /* Based on the department type, manage:
+        * - the required level for dpam_lk_mifidcategory and dpam_lk_compliancesegmentation
+        * - the visibility for dpam_lk_compliancesegmentation
+        */
+        static manageRequiredLevelAndVisibilityBasedOnDepartmentType(formContext: Xrm.FormContext) {
             let departmentTypeAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_mos_departmenttype");
             let mifidCategoryRequiredLevel: Xrm.Attributes.RequirementLevel = "none";
+            let complianceSegmentationRequiredLevel: Xrm.Attributes.RequirementLevel = "required";
+            let complianceSegmentationVisibility: boolean = true;
 
             if (departmentTypeAttribute.getValue() != null) {
                 let selectedOptions: Int32Array = departmentTypeAttribute.getValue();
 
-                if (selectedOptions.length == 1 && selectedOptions[0] == 100000000 /*Client*/) {
-                    mifidCategoryRequiredLevel = "required";
+                if (selectedOptions.length == 1) {
+                    switch (selectedOptions[0]) {
+                        case 100000000: /*Client*/
+                            mifidCategoryRequiredLevel = "required";
+                            break;
+                        case 100000005: /*Business Relation*/
+                            complianceSegmentationVisibility = false;
+                            complianceSegmentationRequiredLevel = "none";
+                            break;
+                    }
+
                 }
             }
 
             formContext.getAttribute("dpam_lk_mifidcategory").setRequiredLevel(mifidCategoryRequiredLevel);
+
+            let complianceSegmentationControl: Xrm.Controls.LookupControl = formContext.getControl("dpam_lk_compliancesegmentation");
+            complianceSegmentationControl.setVisible(complianceSegmentationVisibility);
+            complianceSegmentationControl.getAttribute().setRequiredLevel(complianceSegmentationRequiredLevel);
 
         }
 
