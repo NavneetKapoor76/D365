@@ -13,8 +13,6 @@ namespace BDP.DPAM.Plugins.MarketingEmailTemplate.Test
         {
             XrmFakedContext fakeContext = new XrmFakedContext();
 
-
-
             Guid msdyncrm_marketingemailtemplate_Guid = Guid.NewGuid();
             Entity msdyncrm_marketingemailtemplate_Target = new Entity("msdyncrm_marketingemailtemplate")
             {
