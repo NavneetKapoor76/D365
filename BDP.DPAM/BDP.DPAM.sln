@@ -100,6 +100,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web Template", "Web Templat
 		7 - Portal\Web Template\EventManagementApp.html = 7 - Portal\Web Template\EventManagementApp.html
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.MarketingEmailTemplate", "2 - Plugins\BDP.DPAM.Plugins.MarketingEmailTemplate\BDP.DPAM.Plugins.MarketingEmailTemplate.csproj", "{7A5DAB3D-4AD4-4E6B-AC92-76AB31B2B0F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDP.DPAM.Plugins.MarketingEmailTemplate.Test", "2 - Plugins\BDP.DPAM.Plugins.MarketingEmailTemplate.Test\BDP.DPAM.Plugins.MarketingEmailTemplate.Test.csproj", "{0A9E8889-D2E0-4210-BA0E-EF8F383154C0}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{1b60a34e-a613-47b1-92b8-6524d5b9ad9e}*SharedItemsImports = 4
@@ -111,6 +115,7 @@ Global
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{502d8ae1-ba0e-4a6b-9d77-6ff245b45aae}*SharedItemsImports = 4
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{50b4bf38-019b-41e7-a855-3f5960ed14f0}*SharedItemsImports = 13
 		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{72c4463e-2533-41c1-880f-d2fad2cd6afc}*SharedItemsImports = 4
+		1 - Shared\BDP.DPAM.Shared\BDP.DPAM.Shared.projitems*{7a5dab3d-4ad4-4e6b-ac92-76ab31b2b0f1}*SharedItemsImports = 4
 		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{81f100a8-f649-4aac-9081-3fddcfe81768}*SharedItemsImports = 4
 		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{9d0fbee5-bb85-4290-bda0-b9e48c244b59}*SharedItemsImports = 4
 		6 - App Consoles\BDP.DPAM.Consoles.Shared\BDP.DPAM.Consoles.Shared.projitems*{a28413a8-44c9-4c48-9d13-b583e6378062}*SharedItemsImports = 4
@@ -234,6 +239,14 @@ Global
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A5DAB3D-4AD4-4E6B-AC92-76AB31B2B0F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A5DAB3D-4AD4-4E6B-AC92-76AB31B2B0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A5DAB3D-4AD4-4E6B-AC92-76AB31B2B0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A5DAB3D-4AD4-4E6B-AC92-76AB31B2B0F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9E8889-D2E0-4210-BA0E-EF8F383154C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9E8889-D2E0-4210-BA0E-EF8F383154C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9E8889-D2E0-4210-BA0E-EF8F383154C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9E8889-D2E0-4210-BA0E-EF8F383154C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -269,6 +282,8 @@ Global
 		{A28413A8-44C9-4C48-9D13-B583E6378062} = {AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}
 		{81F100A8-F649-4AAC-9081-3FDDCFE81768} = {AEF8602F-C8A0-4419-A16E-CD2BF9B6878E}
 		{0158452C-6498-4AE9-B4BE-04E3659BCF9A} = {FAA55F33-3BBB-446B-B910-E87CAB6296D2}
+		{7A5DAB3D-4AD4-4E6B-AC92-76AB31B2B0F1} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
+		{0A9E8889-D2E0-4210-BA0E-EF8F383154C0} = {01EF27C2-A14F-4F59-92F0-9F0127131056}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77E50B7F-1680-4E20-BF5F-166F843FBB22}
