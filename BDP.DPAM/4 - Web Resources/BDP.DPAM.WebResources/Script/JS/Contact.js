@@ -74,6 +74,32 @@ var BDP;
                     }
                 }
                 Contact.Form = Form;
+                class Ribbon {
+                    /* SHER-970
+                     * function to open the deactivate contact custom page on the form
+                     */
+                    static openDeactivateContactCustomPage(formContext) {
+                        let pageInput = {
+                            pageType: "custom",
+                            name: "dpam_deactivatecontactcustompage_57457",
+                            entityName: "contact",
+                            recordId: formContext.data.entity.getId()
+                        };
+                        let navigationOptions = {
+                            target: 2,
+                            width: 560,
+                            height: 320,
+                            title: "Confirm Deactivation"
+                        };
+                        Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                            .then(function success() {
+                            formContext.data.refresh(true);
+                        }, function error() {
+                            console.log(error);
+                        });
+                    }
+                }
+                Contact.Ribbon = Ribbon;
             })(Contact = WR.Contact || (WR.Contact = {}));
         })(WR = DPAM.WR || (DPAM.WR = {}));
     })(DPAM = BDP.DPAM || (BDP.DPAM = {}));
