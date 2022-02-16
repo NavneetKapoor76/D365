@@ -81,4 +81,34 @@ namespace BDP.DPAM.WR.Contact {
             formContext.getControl<Xrm.Controls.StandardControl>("dpam_lk_contacttitle").setVisible(isContactTitleVisible);
         }
     }
+
+    export class Ribbon {
+        /* SHER-970
+         * function to open the deactivate contact custom page on the form
+         */
+        public static openDeactivateContactCustomPage(formContext: Xrm.FormContext) {
+            let pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_deactivatecontactcustompage_57457",
+                entityName: "contact",
+                recordId: formContext.data.entity.getId()
+            };
+
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 560,
+                height: 320,
+                title: "Confirm Deactivation"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        formContext.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
+        }
+    }
 }
