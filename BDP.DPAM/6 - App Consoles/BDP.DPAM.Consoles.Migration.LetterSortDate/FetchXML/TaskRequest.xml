@@ -1,0 +1,8 @@
+﻿<fetch count='500' no-lock='true' page='{0}' paging-cookie='{1}' >
+  <entity name='task' >
+    <attribute name='activityid' />
+    <attribute name='scheduledstart' />
+    <attribute name='createdon' />
+    <order attribute="activityid" />
+  </entity>
+</fetch>
