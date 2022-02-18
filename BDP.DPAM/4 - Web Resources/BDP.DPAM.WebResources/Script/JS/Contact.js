@@ -100,6 +100,7 @@ var BDP;
                                     isDisabledField = false;
                             }
                             formContext.getControl("donotbulkemail").setDisabled(isDisabledField);
+                            formContext.getControl("donotbulkemail1").setDisabled(isDisabledField);
                         }, function (error) {
                             console.log(error.message);
                         });

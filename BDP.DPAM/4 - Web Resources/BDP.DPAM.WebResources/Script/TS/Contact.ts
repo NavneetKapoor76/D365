@@ -114,6 +114,7 @@ namespace BDP.DPAM.WR.Contact {
                     }
 
                     formContext.getControl<Xrm.Controls.StandardControl>("donotbulkemail").setDisabled(isDisabledField);
+                    formContext.getControl<Xrm.Controls.StandardControl>("donotbulkemail1").setDisabled(isDisabledField);
                     
                 },
                 function (error) {
