@@ -7,11 +7,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1CD3C5FF-B1B8-4401-B138-FA4AC9F154D2}</ProjectGuid>
+    <ProjectGuid>{3909810A-E929-40C7-99E5-0A33FC6A5F99}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BDP.DPAM.Plugins.PhoneCall.Test</RootNamespace>
-    <AssemblyName>BDP.DPAM.Plugins.PhoneCall.Test</AssemblyName>
+    <RootNamespace>BDP.DPAM.Plugins.CampaignActivity.Test</RootNamespace>
+    <AssemblyName>BDP.DPAM.Plugins.CampaignActivity.Test</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -111,18 +111,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PostUpdatePhoneCallTest.cs" />
-    <Compile Include="PreCreatePhoneCallTest.cs" />
-    <Compile Include="PreUpdatePhoneCallTest.cs" />
+    <Compile Include="PreCreateCampaignActivityTest.cs" />
+    <Compile Include="PreUpdateCampaignActivityTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BDP.DPAM.Plugins.PhoneCall\BDP.DPAM.Plugins.PhoneCall.csproj">
-      <Project>{4abc958e-bceb-4e4b-ac0a-d97859e43115}</Project>
-      <Name>BDP.DPAM.Plugins.PhoneCall</Name>
+    <ProjectReference Include="..\BDP.DPAM.Plugins.CampaignActivity\BDP.DPAM.Plugins.CampaignActivity.csproj">
+      <Project>{461e452f-22a6-43f9-97c0-53d45c73117a}</Project>
+      <Name>BDP.DPAM.Plugins.CampaignActivity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

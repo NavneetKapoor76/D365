@@ -89,5 +89,17 @@ namespace BDP.DPAM.Plugins.PhoneCall
 
             _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - End");
         }
+
+        /// <summary>
+        /// Manage the Sort Date Column
+        /// </summary>
+        internal void ManageSortDateColumn()
+        {
+            _tracing.Trace("ManageSortDateColumn - Start");
+
+            CommonLibrary.ManageSortDateColumnOnActivity(_target, "scheduledend");
+
+            _tracing.Trace("ManageSortDateColumn - End");
+        }
     }
 }

@@ -7,11 +7,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1CD3C5FF-B1B8-4401-B138-FA4AC9F154D2}</ProjectGuid>
+    <ProjectGuid>{3C2B51C7-7CAF-4B8D-9D17-40007118602E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BDP.DPAM.Plugins.PhoneCall.Test</RootNamespace>
-    <AssemblyName>BDP.DPAM.Plugins.PhoneCall.Test</AssemblyName>
+    <RootNamespace>BDP.DPAM.Plugins.Letter.Test</RootNamespace>
+    <AssemblyName>BDP.DPAM.Plugins.Letter.Test</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -111,18 +111,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PostUpdatePhoneCallTest.cs" />
-    <Compile Include="PreCreatePhoneCallTest.cs" />
-    <Compile Include="PreUpdatePhoneCallTest.cs" />
+    <Compile Include="PreCreateLetterTest.cs" />
+    <Compile Include="PreUpdateLetterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BDP.DPAM.Plugins.PhoneCall\BDP.DPAM.Plugins.PhoneCall.csproj">
-      <Project>{4abc958e-bceb-4e4b-ac0a-d97859e43115}</Project>
-      <Name>BDP.DPAM.Plugins.PhoneCall</Name>
+    <ProjectReference Include="..\BDP.DPAM.Plugins.Letter\BDP.DPAM.Plugins.Letter.csproj">
+      <Project>{02f537b1-6faa-4dc8-9812-c93a579df31b}</Project>
+      <Name>BDP.DPAM.Plugins.Letter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
