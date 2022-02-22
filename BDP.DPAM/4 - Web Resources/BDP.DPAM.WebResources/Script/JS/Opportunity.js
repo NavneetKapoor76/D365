@@ -23,6 +23,8 @@ var BDP;
                         const formContext = executionContext.getFormContext();
                         //SHER-335 to add filter & SHER-368 to remove the filter so keep it as commented in case of.
                         //Form.setChannelsFilter(formContext);
+                        //SHER-868
+                        Form.manageRequiredLevelBasedOnCounterparty(formContext);
                     }
                     static onChange_dpam_os_opportunitydepartment(executionContext) {
                         const formContext = executionContext.getFormContext();

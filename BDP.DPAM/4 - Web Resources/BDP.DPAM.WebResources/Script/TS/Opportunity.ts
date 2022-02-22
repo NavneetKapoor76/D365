@@ -19,6 +19,8 @@ namespace BDP.DPAM.WR.Opportunity {
 
             //SHER-335 to add filter & SHER-368 to remove the filter so keep it as commented in case of.
             //Form.setChannelsFilter(formContext);
+            //SHER-868
+            Form.manageRequiredLevelBasedOnCounterparty(formContext);
         }
 
         public static onChange_dpam_os_opportunitydepartment(executionContext: Xrm.Events.EventContext) {
