@@ -28,4 +28,49 @@ namespace BDP.DPAM.WR.PhoneCall {
             formContext.getAttribute("actualdurationminutes").setValue(15);
         }
     }
+    export class Ribbon {
+        /* SHER-990
+        * function to reopen the closed phonecall
+         */
+        public static reOpenPhoneCall(formContext: Xrm.FormContext) {
+
+            let data = {
+                "statecode": Enum.Phonecall_StateCode.Active,
+                "statuscode": Enum.Phonecall_StatusCode.Open
+            };
+
+
+            const confirmStrings: Xrm.Navigation.ConfirmStrings = {
+                confirmButtonLabel: "Reopen", text: `Do you want to reopen this Phone Call ? You can't undo this action.`, title: "Confirm Reactivation"
+            };
+            const confirmOptions: Xrm.Navigation.DialogSizeOptions = { height: 200, width: 450 };
+
+            Xrm.Navigation.openConfirmDialog(confirmStrings, confirmOptions).then(
+                function (success) {
+                    if (success.confirmed) {
+
+
+                        Xrm.WebApi.updateRecord(
+                            formContext.data.entity.getEntityName(),
+                            formContext.data.entity.getId(),
+                            data
+
+                        ).then(
+                            function success(result) {
+                                console.log("Activity updated");
+                                formContext.data.refresh(true);
+                                // perform operations on record update
+                            },
+                            function (error) {
+                                console.log(error.message);
+                                // handle error conditions
+                            }
+                        );
+                    }
+                });
+
+
+
+        }
+    }
 }

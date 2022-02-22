@@ -33,6 +33,34 @@ var BDP;
                     }
                 }
                 PhoneCall.Form = Form;
+                class Ribbon {
+                    /* SHER-990
+                    * function to reopen the closed phonecall
+                     */
+                    static reOpenPhoneCall(formContext) {
+                        let data = {
+                            "statecode": 0 /* Active */,
+                            "statuscode": 1 /* Open */
+                        };
+                        const confirmStrings = {
+                            confirmButtonLabel: "Reopen", text: `Do you want to reopen this Phone Call ? You can't undo this action.`, title: "Confirm Reactivation"
+                        };
+                        const confirmOptions = { height: 200, width: 450 };
+                        Xrm.Navigation.openConfirmDialog(confirmStrings, confirmOptions).then(function (success) {
+                            if (success.confirmed) {
+                                Xrm.WebApi.updateRecord(formContext.data.entity.getEntityName(), formContext.data.entity.getId(), data).then(function success(result) {
+                                    console.log("Activity updated");
+                                    formContext.data.refresh(true);
+                                    // perform operations on record update
+                                }, function (error) {
+                                    console.log(error.message);
+                                    // handle error conditions
+                                });
+                            }
+                        });
+                    }
+                }
+                PhoneCall.Ribbon = Ribbon;
             })(PhoneCall = WR.PhoneCall || (WR.PhoneCall = {}));
         })(WR = DPAM.WR || (DPAM.WR = {}));
     })(DPAM = BDP.DPAM || (BDP.DPAM = {}));
