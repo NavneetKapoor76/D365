@@ -9,6 +9,8 @@ namespace BDP.DPAM.WR.Contact {
             Form.setContactTitleFilter(formContext);
             //SHER-362
             Form.manageContactTitleVisibility(formContext);
+            //SHER-767
+            Form.manageAccessTodonotbulkemailField(formContext);
         }
 
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
@@ -79,6 +81,75 @@ namespace BDP.DPAM.WR.Contact {
             let isContactTitleVisible: boolean = languageValue == 100000002; //German
 
             formContext.getControl<Xrm.Controls.StandardControl>("dpam_lk_contacttitle").setVisible(isContactTitleVisible);
+        }
+
+        //function to manage the donotbulkemail field when the user has the "DPAM - Event Administrator" or "DPAM - Marketing Professional - Business" security role
+        static manageAccessTodonotbulkemailField(formContext: Xrm.FormContext): void {
+            let currentUserRoles: string[] = Xrm.Utility.getGlobalContext().getUserRoles();
+            let roleCondition: string = "";
+
+            currentUserRoles.forEach(function (role: string) {
+                roleCondition += `<condition attribute="roleid" operator="eq" value="{${role}}" />`
+            })
+
+            let fetchXml: string = `?fetchXml=<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+                                  <entity name="role">
+                                    <attribute name="name" />
+                                    <order attribute="name" descending="false" />
+                                    <filter type="and">
+                                      <filter type="or">
+                                        ${roleCondition}
+                                      </filter>
+                                    </filter>
+                                  </entity>
+                                </fetch>`;
+
+            Xrm.WebApi.retrieveMultipleRecords("role", fetchXml).then(
+                function success(result) {
+                    let isDisabledField = true;
+                    for (let i = 0; i < result.entities.length; i++) {
+                        let roleName: string = result.entities[i].name;
+
+                        if (roleName == "DPAM - Event Administrator" || roleName == "DPAM - Marketing Professional - Business") isDisabledField = false;
+                    }
+
+                    formContext.getControl<Xrm.Controls.StandardControl>("donotbulkemail").setDisabled(isDisabledField);
+                    formContext.getControl<Xrm.Controls.StandardControl>("donotbulkemail1").setDisabled(isDisabledField);
+                    
+                },
+                function (error) {
+                    console.log(error.message);
+                });
+        }
+    }
+
+    export class Ribbon {
+        /* SHER-970
+         * function to open the deactivate contact custom page on the form
+         */
+        public static openDeactivateContactCustomPage(formContext: Xrm.FormContext) {
+            let pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_deactivatecontactcustompage_57457",
+                entityName: "contact",
+                recordId: formContext.data.entity.getId()
+            };
+
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 560,
+                height: 320,
+                title: "Confirm Deactivation"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        formContext.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
         }
     }
 }

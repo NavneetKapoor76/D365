@@ -339,5 +339,33 @@ namespace BDP.DPAM.WR.Account {
                         console.log(error);
                     });
         }
+
+        /* SHER-980
+        * function to open the deactivate counterparty custom page on the form
+        */
+        public static openDeactivateCounterpartyCustomPage(formContext: Xrm.FormContext) {
+            let pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_deactivatecounterpartycustompage_ae22b",
+                entityName: "account",
+                recordId: formContext.data.entity.getId()
+            };
+
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 560,
+                height: 320,
+                title: "Confirm Deactivation"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        formContext.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
+        }
     }
 }

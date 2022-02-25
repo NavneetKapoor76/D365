@@ -87,5 +87,17 @@ namespace BDP.DPAM.Plugins.Appointment
 
             _tracing.Trace("UpdateNumberOfCompletedActivitiesOnContactFrequency - End");
         }
+
+        /// <summary>
+        /// Manage the Sort Date Column
+        /// </summary>
+        internal void ManageSortDateColumn()
+        {
+            _tracing.Trace("ManageSortDateColumn - Start");
+
+            CommonLibrary.ManageSortDateColumnOnActivity(_target, "scheduledstart");
+
+            _tracing.Trace("ManageSortDateColumn - End");
+        }
     }
 }

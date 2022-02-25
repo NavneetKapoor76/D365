@@ -91,6 +91,8 @@
   <ItemGroup>
     <Compile Include="Controller\PhoneCallController.cs" />
     <Compile Include="PostUpdatePhoneCall.cs" />
+    <Compile Include="PreCreatePhoneCall.cs" />
+    <Compile Include="PreUpdatePhoneCall.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

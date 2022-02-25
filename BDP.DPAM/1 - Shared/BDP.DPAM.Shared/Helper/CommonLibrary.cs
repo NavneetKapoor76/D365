@@ -65,5 +65,17 @@ namespace BDP.DPAM.Shared.Helper
                         
             return result.GetAttributeValue<string>(fieldName);
         }
+
+        /// <summary>
+        /// Manage the Sort Date column on the Activity table
+        /// </summary>
+        /// <param name="target">Target</param>
+        /// <param name="columnName">the columnName used to fill in the Sort Date field</param>
+        public static void ManageSortDateColumnOnActivity(Entity target, string columnName)
+        {
+            if (!target.Contains(columnName) || target.Contains("sortdate")) return;
+
+            target["sortdate"] = target.GetAttributeValue<DateTime>(columnName);
+        }
     }
 }
