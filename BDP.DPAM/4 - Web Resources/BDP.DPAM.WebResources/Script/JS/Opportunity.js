@@ -16,11 +16,15 @@ var BDP;
                         Form.manageCompetitiveBiddingVisibility(formContext);
                         //SHER-521
                         Form.addOpportunityProductSubgridEventListener(formContext);
+                        //SHER-868
+                        Form.manageRequiredLevelBasedOnCounterparty(formContext);
                     }
                     static quickCreateonLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
                         //SHER-335 to add filter & SHER-368 to remove the filter so keep it as commented in case of.
                         //Form.setChannelsFilter(formContext);
+                        //SHER-868
+                        Form.manageRequiredLevelBasedOnCounterparty(formContext);
                     }
                     static onChange_dpam_os_opportunitydepartment(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -33,6 +37,11 @@ var BDP;
                         const formContext = executionContext.getFormContext();
                         //SHER-368
                         Form.setRating(formContext);
+                    }
+                    static onChange_parentaccountid(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //SHER-868
+                        Form.manageRequiredLevelBasedOnCounterparty(formContext);
                     }
                     //set the Rating based on the Probability
                     static setRating(formContext) {
@@ -84,6 +93,31 @@ var BDP;
                     static refreshRibbonOfOpportunityProductSubgrid(executionContext) {
                         const formContext = executionContext.getFormContext();
                         formContext.getControl("Subgrid_OpportunityProduct").refreshRibbon();
+                    }
+                    //manage the required level of dpam_lk_department field based on counterparty
+                    static manageRequiredLevelBasedOnCounterparty(formContext) {
+                        let counterpartyAttribute = formContext.getAttribute("parentaccountid");
+                        let departmentRequiredLevel = "none";
+                        if (counterpartyAttribute.getValue() != null && counterpartyAttribute.getValue()[0] && counterpartyAttribute.getValue()[0].id) {
+                            let fetchXml = `?fetchXml=<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+                                          <entity name="dpam_departments">
+                                            <attribute name="dpam_departmentsid" />
+                                            <filter type="and">
+                                              <condition attribute="dpam_lk_counterparty" operator="eq" value="${counterpartyAttribute.getValue()[0].id}" />
+                                            </filter>
+                                          </entity>
+                                        </fetch>`;
+                            Xrm.WebApi.retrieveMultipleRecords("dpam_departments", fetchXml).then(function success(result) {
+                                if (result.entities.length > 0)
+                                    departmentRequiredLevel = "recommended";
+                                formContext.getAttribute("dpam_lk_department").setRequiredLevel(departmentRequiredLevel);
+                            }, function (error) {
+                                console.log(error.message);
+                            });
+                        }
+                        else {
+                            formContext.getAttribute("dpam_lk_department").setRequiredLevel(departmentRequiredLevel);
+                        }
                     }
                 }
                 Opportunity.Form = Form;

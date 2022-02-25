@@ -91,6 +91,8 @@
   <ItemGroup>
     <Compile Include="PostUpdateAppointment.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
+    <Compile Include="PreCreateAppointment.cs" />
+    <Compile Include="PreUpdateAppointment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

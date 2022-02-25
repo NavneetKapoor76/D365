@@ -112,6 +112,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PostUpdatePhoneCallTest.cs" />
+    <Compile Include="PreCreatePhoneCallTest.cs" />
+    <Compile Include="PreUpdatePhoneCallTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

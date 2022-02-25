@@ -283,6 +283,29 @@ var BDP;
                             console.log(error);
                         });
                     }
+                    /* SHER-980
+                    * function to open the deactivate counterparty custom page on the form
+                    */
+                    static openDeactivateCounterpartyCustomPage(formContext) {
+                        let pageInput = {
+                            pageType: "custom",
+                            name: "dpam_deactivatecounterpartycustompage_ae22b",
+                            entityName: "account",
+                            recordId: formContext.data.entity.getId()
+                        };
+                        let navigationOptions = {
+                            target: 2,
+                            width: 560,
+                            height: 320,
+                            title: "Confirm Deactivation"
+                        };
+                        Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                            .then(function success() {
+                            formContext.data.refresh(true);
+                        }, function error() {
+                            console.log(error);
+                        });
+                    }
                 }
                 Account.Ribbon = Ribbon;
             })(Account = WR.Account || (WR.Account = {}));
