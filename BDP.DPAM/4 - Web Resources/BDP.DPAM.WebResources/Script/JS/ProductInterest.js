@@ -15,6 +15,8 @@ var BDP;
         (function (WR) {
             var ProductInterest;
             (function (ProductInterest) {
+                //Variable global to know if the quick create form is used from product form
+                let fromProductForm = false;
                 class Form {
                     static onLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -29,6 +31,8 @@ var BDP;
                         Form.setInitialProductVisibility(executionContext);
                         //SHER-503
                         Form.setAssetClassFilter(formContext);
+                        //SHER-746
+                        Form.manageRequiredLevelOnQuickCreateLoading(formContext);
                     }
                     static onChange_dpam_lk_product_category(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -81,6 +85,16 @@ var BDP;
                                 // handle error conditions
                             });
                         }
+                    }
+                    static onChange_dpam_lk_contact(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //SHER-746
+                        Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext);
+                    }
+                    static onChange_dpam_lk_counterparty(executionContext) {
+                        const formContext = executionContext.getFormContext();
+                        //SHER-746
+                        Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext);
                     }
                     static setAssetClassFilter(formContext) {
                         formContext.getControl("dpam_lk_product_assetclass").addPreSearch(Form.filterAssetClassFilter);
@@ -229,6 +243,49 @@ var BDP;
                         lookupValues[0].name = result.name;
                         lookupValues[0].entityType = "product";
                         return lookupValues;
+                    }
+                    /* SHER-746
+                     * Manage the required level of the following fields when the quick create form is used from Counterparty/Department/Product form:
+                     * - dpam_lk_counterparty
+                     * - dpam_lk_department
+                     * - dpam_lk_contact
+                     */
+                    static manageRequiredLevelOnQuickCreateLoading(formContext) {
+                        let counterpartyAttribute = formContext.getAttribute("dpam_lk_counterparty");
+                        if (counterpartyAttribute.getValue() != null) {
+                            counterpartyAttribute.setRequiredLevel("required");
+                        }
+                        let departmentAttribute = formContext.getAttribute("dpam_lk_department");
+                        if (departmentAttribute.getValue() != null) {
+                            departmentAttribute.setRequiredLevel("required");
+                        }
+                        let assetClassAttribute = formContext.getAttribute("dpam_lk_product_assetclass");
+                        if (assetClassAttribute.getValue() != null) {
+                            formContext.getAttribute("dpam_lk_counterparty").setRequiredLevel("required");
+                            formContext.getAttribute("dpam_lk_contact").setRequiredLevel("required");
+                            fromProductForm = true;
+                        }
+                    }
+                    /* SHER-746
+                     * Manage the required level of the following fields when the quick create form is used from product form:
+                     * - dpam_lk_counterparty
+                     * - dpam_lk_contact
+                     */
+                    static manageRequiredLevelWhenQuickCreateFromProductForm(formContext) {
+                        if (!fromProductForm)
+                            return;
+                        let counterpartyAttribute = formContext.getAttribute("dpam_lk_counterparty");
+                        let contactAttribute = formContext.getAttribute("dpam_lk_contact");
+                        let counterpartyRequiredLevel = "required";
+                        let contactRequiredLevel = "required";
+                        if (counterpartyAttribute.getValue() == null && contactAttribute.getValue() != null) {
+                            counterpartyRequiredLevel = "none";
+                        }
+                        else if (counterpartyAttribute.getValue() != null && contactAttribute.getValue() == null) {
+                            contactRequiredLevel = "none";
+                        }
+                        counterpartyAttribute.setRequiredLevel(counterpartyRequiredLevel);
+                        contactAttribute.setRequiredLevel(contactRequiredLevel);
                     }
                 }
                 ProductInterest.Form = Form;

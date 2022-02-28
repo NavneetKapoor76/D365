@@ -1,8 +1,10 @@
 ﻿/// <reference path="../../node_modules/@types/xrm/index.d.ts" />
 namespace BDP.DPAM.WR.ProductInterest {
 
-    export class Form {
+    //Variable global to know if the quick create form is used from product form
+    let fromProductForm: boolean = false;
 
+    export class Form {
 
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
@@ -13,14 +15,14 @@ namespace BDP.DPAM.WR.ProductInterest {
 
         }
 
-
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-503
             Form.setInitialProductVisibility(executionContext);
             //SHER-503
             Form.setAssetClassFilter(formContext);
-
+            //SHER-746
+            Form.manageRequiredLevelOnQuickCreateLoading(formContext);
 
         }
 
@@ -79,6 +81,18 @@ namespace BDP.DPAM.WR.ProductInterest {
                     }
                 );
             }
+        }
+
+        public static onChange_dpam_lk_contact(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-746
+            Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext);
+        }
+
+        public static onChange_dpam_lk_counterparty(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-746
+            Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext);
         }
 
         static setAssetClassFilter(formContext: Xrm.FormContext) {
@@ -233,17 +247,64 @@ namespace BDP.DPAM.WR.ProductInterest {
             }
         }
 
-        static fillLookup(result: Xrm.Entity): Array<LookupValue> { 
+        static fillLookup(result: Xrm.Entity): Array<LookupValue> {
             let lookupValues: Array<LookupValue> = new Array();
             lookupValues[0] = new LookupValue();
             lookupValues[0].id = result.productid;
             lookupValues[0].name = result.name;
             lookupValues[0].entityType = "product";
-            return lookupValues;        
+            return lookupValues;
         }
-        
 
-       
+        /* SHER-746
+         * Manage the required level of the following fields when the quick create form is used from Counterparty/Department/Product form:
+         * - dpam_lk_counterparty
+         * - dpam_lk_department
+         * - dpam_lk_contact
+         */
+        static manageRequiredLevelOnQuickCreateLoading(formContext: Xrm.FormContext) {
+            let counterpartyAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_counterparty");
+            if (counterpartyAttribute.getValue() != null) {
+                counterpartyAttribute.setRequiredLevel("required");
+            }
+
+            let departmentAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_department");
+            if (departmentAttribute.getValue() != null) {
+                departmentAttribute.setRequiredLevel("required");
+            }
+
+            let assetClassAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_product_assetclass");
+            if (assetClassAttribute.getValue() != null) {
+                formContext.getAttribute("dpam_lk_counterparty").setRequiredLevel("required");
+                formContext.getAttribute("dpam_lk_contact").setRequiredLevel("required");
+                fromProductForm = true;
+            }
+        }
+
+        /* SHER-746
+         * Manage the required level of the following fields when the quick create form is used from product form:
+         * - dpam_lk_counterparty
+         * - dpam_lk_contact
+         */
+        static manageRequiredLevelWhenQuickCreateFromProductForm(formContext: Xrm.FormContext) {
+            if (!fromProductForm) return;
+
+            let counterpartyAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_counterparty");
+            let contactAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_contact");
+            let counterpartyRequiredLevel: Xrm.Attributes.RequirementLevel = "required";
+            let contactRequiredLevel: Xrm.Attributes.RequirementLevel = "required";
+
+            if (counterpartyAttribute.getValue() == null && contactAttribute.getValue() != null) {
+                counterpartyRequiredLevel = "none";
+            }
+            else if (counterpartyAttribute.getValue() != null && contactAttribute.getValue() == null) {
+                contactRequiredLevel = "none";
+            }
+
+            counterpartyAttribute.setRequiredLevel(counterpartyRequiredLevel);
+            contactAttribute.setRequiredLevel(contactRequiredLevel);
+        }
+
     }
     class LookupValue {
         id: string;
