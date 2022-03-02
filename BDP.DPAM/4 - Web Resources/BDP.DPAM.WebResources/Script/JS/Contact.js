@@ -18,6 +18,8 @@ var BDP;
                         Form.manageContactTitleVisibility(formContext);
                         //SHER-767
                         Form.manageAccessTodonotbulkemailField(formContext);
+                        //SHER-1047
+                        Form.manageAccessToCounterpartyField(formContext);
                     }
                     static QuickCreateonLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -25,6 +27,8 @@ var BDP;
                         Form.resetPhoneNumber(formContext, "mobilephone");
                         //SHER-299
                         Form.hideContactFromParentCustomerLookup(formContext);
+                        //SHER-1047
+                        Form.manageAccessToCounterpartyField(formContext);
                     }
                     static onChange_dpam_os_gender(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -104,6 +108,15 @@ var BDP;
                         }, function (error) {
                             console.log(error.message);
                         });
+                    }
+                    /* SHER-1047
+                     * Manage the access to Counterparty (parentcustomerid) field
+                     */
+                    static manageAccessToCounterpartyField(formContext) {
+                        let counterpartyAttribute = formContext.getAttribute("parentcustomerid");
+                        if (counterpartyAttribute.getValue() == null)
+                            return;
+                        formContext.getControl("parentcustomerid").setDisabled(true);
                     }
                 }
                 Contact.Form = Form;

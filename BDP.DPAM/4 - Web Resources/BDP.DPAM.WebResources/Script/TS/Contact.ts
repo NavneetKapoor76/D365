@@ -11,6 +11,8 @@ namespace BDP.DPAM.WR.Contact {
             Form.manageContactTitleVisibility(formContext);
             //SHER-767
             Form.manageAccessTodonotbulkemailField(formContext);
+            //SHER-1047
+            Form.manageAccessToCounterpartyField(formContext);
         }
 
         public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
@@ -19,6 +21,8 @@ namespace BDP.DPAM.WR.Contact {
             Form.resetPhoneNumber(formContext, "mobilephone");
             //SHER-299
             Form.hideContactFromParentCustomerLookup(formContext);
+            //SHER-1047
+            Form.manageAccessToCounterpartyField(formContext);
         }
 
         public static onChange_dpam_os_gender(executionContext: Xrm.Events.EventContext) {
@@ -121,6 +125,18 @@ namespace BDP.DPAM.WR.Contact {
                     console.log(error.message);
                 });
         }
+
+        /* SHER-1047
+         * Manage the access to Counterparty (parentcustomerid) field
+         */
+        static manageAccessToCounterpartyField(formContext: Xrm.FormContext) {
+            let counterpartyAttribute: Xrm.Page.Attribute = formContext.getAttribute("parentcustomerid");
+
+            if (counterpartyAttribute.getValue() == null) return;
+
+            formContext.getControl<Xrm.Controls.StandardControl>("parentcustomerid").setDisabled(true);
+        }
+
     }
 
     export class Ribbon {
