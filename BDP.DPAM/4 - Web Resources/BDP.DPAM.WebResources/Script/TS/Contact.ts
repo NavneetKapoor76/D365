@@ -167,5 +167,14 @@ namespace BDP.DPAM.WR.Contact {
                         console.log(error);
                     });
         }
+
+        /* SHER-792
+         * Manage the behavior of the "Request Opt-in" button
+         */
+        public static requestOptinButton(formContext: Xrm.FormContext) {
+            formContext.getAttribute("dpam_os_bulkemailoptinrequest").setValue(100000000);//Processing
+            formContext.getAttribute("dpam_dt_datestatusrequestoptinmarketing").setValue(new Date());
+            formContext.data.save();            
+        }
     }
 }

@@ -163,5 +163,19 @@ namespace BDP.DPAM.Plugins.Contact
 
             _tracing.Trace("ManageEmailOptInMarketingBulkEmail - End");
         }
+
+        /// <summary>
+        /// Set the "dpam_os_bulkemailoptinrequest" column to "Handled" when target contains "donotbulkemail" and the "dpam_os_bulkemailoptinrequest" column is equal to "Processing" in the preImage
+        /// </summary>
+        internal void ManageStatusRequestEmailOptinMarketing()
+        {
+            if (!_target.Contains("donotbulkemail") || !_preImage.Contains("dpam_os_bulkemailoptinrequest") || _preImage.GetAttributeValue<OptionSetValue>("dpam_os_bulkemailoptinrequest").Value != (int)MarketingOptinRequest.Processing) return;
+
+            _tracing.Trace("ManageStatusRequestEmailOptinMarketing - Start");
+
+            _target["dpam_os_bulkemailoptinrequest"] = new OptionSetValue((int)MarketingOptinRequest.Handled);
+
+            _tracing.Trace("ManageStatusRequestEmailOptinMarketing - End");
+        }
     }
 }

@@ -1147,10 +1147,15 @@ namespace BDP.DPAM.Plugins.Contact.Test
                 }
             };
 
+            var contactPreImage = new Entity("contact")
+            {
+                Id = Guid.NewGuid()
+            };
+
             var executionFakeContext = new XrmFakedPluginExecutionContext()
             {
                 InputParameters = new ParameterCollection { { "Target", contactTarget } },
-                PreEntityImages = new EntityImageCollection(),
+                PreEntityImages = new EntityImageCollection { { "PreImage", contactPreImage } },
                 PostEntityImages = new EntityImageCollection(),
                 SharedVariables = new ParameterCollection(),
                 MessageName = "Update",
@@ -1166,5 +1171,50 @@ namespace BDP.DPAM.Plugins.Contact.Test
             }
         }
 
+        [Theory]
+        [InlineData(true, (int)MarketingOptinRequest.Processing, true, (int)MarketingOptinRequest.Handled)]
+        [InlineData(true, (int)MarketingOptinRequest.Handled, true, 0)]
+        [InlineData(true, (int)MarketingOptinRequest.NoReaction, true,0)]
+        [InlineData(false, -1, true, 0)]
+        [InlineData(true, (int)MarketingOptinRequest.Processing, false, 0)]
+        public void ManageStatusRequestEmailOptinMarketing(bool inPreImage, int marketingOptinRequestPreImage, bool inTarget, int expectedResult)
+        {
+            var fakeContext = new XrmFakedContext();
+
+            var contactPreImage = new Entity("contact")
+            {
+                Id = Guid.NewGuid()
+            };
+            if(inPreImage)
+                contactPreImage.Attributes.Add("dpam_os_bulkemailoptinrequest", new OptionSetValue(marketingOptinRequestPreImage));
+
+            var contactTarget = new Entity("contact")
+            {
+                Id = Guid.NewGuid()
+            };
+            if (inTarget)
+                contactTarget.Attributes.Add("donotbulkemail", true);
+
+            var executionFakeContext = new XrmFakedPluginExecutionContext()
+            {
+                InputParameters = new ParameterCollection { { "Target", contactTarget } },
+                PreEntityImages = new EntityImageCollection { { "PreImage", contactPreImage } },
+                PostEntityImages = new EntityImageCollection(),
+                SharedVariables = new ParameterCollection(),
+                MessageName = "Update",
+                Stage = (int)PluginStage.PreOperation
+            };
+
+            fakeContext.ExecutePluginWith<PreUpdateContact>(executionFakeContext);
+
+            if (expectedResult == 0)
+            {
+                Assert.True(!contactTarget.Contains("dpam_os_bulkemailoptinrequest"));
+            }
+            else
+            {
+                Assert.Equal(expectedResult, contactTarget.GetAttributeValue<OptionSetValue>("dpam_os_bulkemailoptinrequest").Value);
+            }
+        }
     }
 }

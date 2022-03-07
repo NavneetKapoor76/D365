@@ -144,6 +144,14 @@ var BDP;
                             console.log(error);
                         });
                     }
+                    /* SHER-792
+                     * Manage the behavior of the "Request Opt-in" button
+                     */
+                    static requestOptinButton(formContext) {
+                        formContext.getAttribute("dpam_os_bulkemailoptinrequest").setValue(100000000); //Processing
+                        formContext.getAttribute("dpam_dt_datestatusrequestoptinmarketing").setValue(new Date());
+                        formContext.data.save();
+                    }
                 }
                 Contact.Ribbon = Ribbon;
             })(Contact = WR.Contact || (WR.Contact = {}));

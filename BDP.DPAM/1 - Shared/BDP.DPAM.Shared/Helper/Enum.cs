@@ -166,4 +166,11 @@ namespace BDP.DPAM.Shared.Helper
         Canceled = 4,
         LostToCompetition = 5
     }
+
+    public enum MarketingOptinRequest
+    {
+        Processing = 100000000,
+        Handled	= 100000001,
+        NoReaction = 100000002
+    }
 }
