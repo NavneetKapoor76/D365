@@ -10,22 +10,25 @@ var BDP;
                 class Form {
                     static onLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        //SHER-660
+                        //SHER-660 + SHER-1073
                         Form.setDueDateToTodayDate(formContext);
                         //SHER-660
                         Form.setDefaultDuration(formContext);
                     }
                     static quickCreateOnLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
-                        //SHER-660
+                        //SHER-660 + SHER-1073
                         Form.setDueDateToTodayDate(formContext);
                         //SHER-660
                         Form.setDefaultDuration(formContext);
                     }
                     //Set "scheduldend" (Due Date) field to today's date by default at creation.
                     static setDueDateToTodayDate(formContext) {
-                        var currentDate = new Date();
-                        formContext.getAttribute("scheduledend").setValue(currentDate);
+                        let currentDate = new Date();
+                        let dueDateAttribute = formContext.getAttribute("scheduledend");
+                        if (dueDateAttribute.getValue() != null)
+                            return;
+                        dueDateAttribute.setValue(currentDate);
                     }
                     //Set "actualdurationminutes" (Duration) field to 15 minutes by default at creation.
                     static setDefaultDuration(formContext) {

@@ -3,7 +3,7 @@ namespace BDP.DPAM.WR.PhoneCall {
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-            //SHER-660
+            //SHER-660 + SHER-1073
             Form.setDueDateToTodayDate(formContext);
             //SHER-660
             Form.setDefaultDuration(formContext);
@@ -11,7 +11,7 @@ namespace BDP.DPAM.WR.PhoneCall {
 
         public static quickCreateOnLoad(executionContext: Xrm.Events.EventContext): void {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
-            //SHER-660
+            //SHER-660 + SHER-1073
             Form.setDueDateToTodayDate(formContext);
             //SHER-660
             Form.setDefaultDuration(formContext);
@@ -19,8 +19,12 @@ namespace BDP.DPAM.WR.PhoneCall {
 
         //Set "scheduldend" (Due Date) field to today's date by default at creation.
         static setDueDateToTodayDate(formContext: Xrm.FormContext) {
-            var currentDate = new Date();
-            formContext.getAttribute("scheduledend").setValue(currentDate);
+            let currentDate: Date = new Date();
+            let dueDateAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("scheduledend");
+
+            if (dueDateAttribute.getValue() != null) return;
+
+            dueDateAttribute.setValue(currentDate);
         }
 
         //Set "actualdurationminutes" (Duration) field to 15 minutes by default at creation.
