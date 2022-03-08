@@ -263,22 +263,34 @@ namespace BDP.DPAM.WR.ProductInterest {
          * - dpam_lk_contact
          */
         static manageRequiredLevelOnQuickCreateLoading(formContext: Xrm.FormContext) {
+            let contactRequiredLevel: Xrm.Attributes.RequirementLevel = "required";
+            let contactIsVisible: boolean = true;
+            let counterpartytRequiredLevel: Xrm.Attributes.RequirementLevel = "none";
+
             let counterpartyAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_counterparty");
-            if (counterpartyAttribute.getValue() != null) {
-                counterpartyAttribute.setRequiredLevel("required");
+            if (counterpartyAttribute.getValue() != null) {                
+                contactRequiredLevel = "none";
+                contactIsVisible = false;
+                counterpartytRequiredLevel = "required";
             }
 
             let departmentAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_department");
             if (departmentAttribute.getValue() != null) {
                 departmentAttribute.setRequiredLevel("required");
+                contactRequiredLevel = "none";
+                contactIsVisible = false;
+                counterpartytRequiredLevel = "required";
             }
 
             let assetClassAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_product_assetclass");
             if (assetClassAttribute.getValue() != null) {
-                formContext.getAttribute("dpam_lk_counterparty").setRequiredLevel("required");
-                formContext.getAttribute("dpam_lk_contact").setRequiredLevel("required");
+                counterpartytRequiredLevel = "required";
                 fromProductForm = true;
             }
+
+            formContext.getAttribute("dpam_lk_contact").setRequiredLevel(contactRequiredLevel);
+            formContext.getControl<Xrm.Controls.StandardControl>("dpam_lk_contact").setVisible(contactIsVisible);
+            counterpartyAttribute.setRequiredLevel(counterpartytRequiredLevel);
         }
 
         /* SHER-746

@@ -251,20 +251,30 @@ var BDP;
                      * - dpam_lk_contact
                      */
                     static manageRequiredLevelOnQuickCreateLoading(formContext) {
+                        let contactRequiredLevel = "required";
+                        let contactIsVisible = true;
+                        let counterpartytRequiredLevel = "none";
                         let counterpartyAttribute = formContext.getAttribute("dpam_lk_counterparty");
                         if (counterpartyAttribute.getValue() != null) {
-                            counterpartyAttribute.setRequiredLevel("required");
+                            contactRequiredLevel = "none";
+                            contactIsVisible = false;
+                            counterpartytRequiredLevel = "required";
                         }
                         let departmentAttribute = formContext.getAttribute("dpam_lk_department");
                         if (departmentAttribute.getValue() != null) {
                             departmentAttribute.setRequiredLevel("required");
+                            contactRequiredLevel = "none";
+                            contactIsVisible = false;
+                            counterpartytRequiredLevel = "required";
                         }
                         let assetClassAttribute = formContext.getAttribute("dpam_lk_product_assetclass");
                         if (assetClassAttribute.getValue() != null) {
-                            formContext.getAttribute("dpam_lk_counterparty").setRequiredLevel("required");
-                            formContext.getAttribute("dpam_lk_contact").setRequiredLevel("required");
+                            counterpartytRequiredLevel = "required";
                             fromProductForm = true;
                         }
+                        formContext.getAttribute("dpam_lk_contact").setRequiredLevel(contactRequiredLevel);
+                        formContext.getControl("dpam_lk_contact").setVisible(contactIsVisible);
+                        counterpartyAttribute.setRequiredLevel(counterpartytRequiredLevel);
                     }
                     /* SHER-746
                      * Manage the required level of the following fields when the quick create form is used from product form:
