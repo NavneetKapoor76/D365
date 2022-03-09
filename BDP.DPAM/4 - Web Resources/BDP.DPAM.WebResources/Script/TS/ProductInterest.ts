@@ -12,6 +12,8 @@ namespace BDP.DPAM.WR.ProductInterest {
             Form.setInitialProductVisibility(executionContext);
             //SHER-503
             Form.setAssetClassFilter(formContext);
+            //SHER-746
+            Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext, false);
 
         }
 
@@ -83,16 +85,16 @@ namespace BDP.DPAM.WR.ProductInterest {
             }
         }
 
-        public static onChange_dpam_lk_contact(executionContext: Xrm.Events.EventContext) {
+        public static onChange_dpam_lk_contact(executionContext: Xrm.Events.EventContext, fromQuickCreate: boolean) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-746
-            Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext);
+            Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext, fromQuickCreate);
         }
 
-        public static onChange_dpam_lk_counterparty(executionContext: Xrm.Events.EventContext) {
+        public static onChange_dpam_lk_counterparty(executionContext: Xrm.Events.EventContext, fromQuickCreate: boolean) {
             const formContext: Xrm.FormContext = executionContext.getFormContext();
             //SHER-746
-            Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext);
+            Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext, fromQuickCreate);
         }
 
         static setAssetClassFilter(formContext: Xrm.FormContext) {
@@ -298,8 +300,8 @@ namespace BDP.DPAM.WR.ProductInterest {
          * - dpam_lk_counterparty
          * - dpam_lk_contact
          */
-        static manageRequiredLevelWhenQuickCreateFromProductForm(formContext: Xrm.FormContext) {
-            if (!fromProductForm) return;
+        static manageRequiredLevelWhenQuickCreateFromProductForm(formContext: Xrm.FormContext, fromQuickCreate: boolean) {
+            if (!fromProductForm && fromQuickCreate) return;
 
             let counterpartyAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_counterparty");
             let contactAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_contact");

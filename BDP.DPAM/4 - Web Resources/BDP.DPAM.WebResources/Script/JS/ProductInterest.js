@@ -24,6 +24,8 @@ var BDP;
                         Form.setInitialProductVisibility(executionContext);
                         //SHER-503
                         Form.setAssetClassFilter(formContext);
+                        //SHER-746
+                        Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext, false);
                     }
                     static QuickCreateonLoad(executionContext) {
                         const formContext = executionContext.getFormContext();
@@ -86,15 +88,15 @@ var BDP;
                             });
                         }
                     }
-                    static onChange_dpam_lk_contact(executionContext) {
+                    static onChange_dpam_lk_contact(executionContext, fromQuickCreate) {
                         const formContext = executionContext.getFormContext();
                         //SHER-746
-                        Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext);
+                        Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext, fromQuickCreate);
                     }
-                    static onChange_dpam_lk_counterparty(executionContext) {
+                    static onChange_dpam_lk_counterparty(executionContext, fromQuickCreate) {
                         const formContext = executionContext.getFormContext();
                         //SHER-746
-                        Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext);
+                        Form.manageRequiredLevelWhenQuickCreateFromProductForm(formContext, fromQuickCreate);
                     }
                     static setAssetClassFilter(formContext) {
                         formContext.getControl("dpam_lk_product_assetclass").addPreSearch(Form.filterAssetClassFilter);
@@ -281,8 +283,8 @@ var BDP;
                      * - dpam_lk_counterparty
                      * - dpam_lk_contact
                      */
-                    static manageRequiredLevelWhenQuickCreateFromProductForm(formContext) {
-                        if (!fromProductForm)
+                    static manageRequiredLevelWhenQuickCreateFromProductForm(formContext, fromQuickCreate) {
+                        if (!fromProductForm && fromQuickCreate)
                             return;
                         let counterpartyAttribute = formContext.getAttribute("dpam_lk_counterparty");
                         let contactAttribute = formContext.getAttribute("dpam_lk_contact");
