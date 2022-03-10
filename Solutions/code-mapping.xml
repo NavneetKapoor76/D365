@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping>
-  <Folder map="WebResources\dpam_\Script" to="..\..\..\WebResources" />
-  <Folder map="WebResources\DPAM_\Script" to="..\..\..\WebResources" />
+  <FileToPath map="WebResources\**\Script\*.js" to="..\..\..\WebResources" />
   <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsAccount.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Account.dll" />
   <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsAppointment.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Appointment.dll" />
   <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsCampaignActivity.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.CampaignActivity.dll" />
