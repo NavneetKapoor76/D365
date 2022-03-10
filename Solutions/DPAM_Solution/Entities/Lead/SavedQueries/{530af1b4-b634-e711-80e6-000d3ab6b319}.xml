@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery unmodified="1">
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{530af1b4-b634-e711-80e6-000d3ab6b319}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" preview="1" icon="1">
+        <row name="result" id="leadid">
+          <cell name="fullname" width="150" />
+          <cell name="ownerid" width="100" />
+          <cell name="statecode" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="lead">
+          <attribute name="fullname" />
+          <order attribute="fullname" descending="false" />
+          <attribute name="statecode" />
+          <attribute name="ownerid" />
+          <attribute name="leadid" />
+          <filter type="and">
+            <condition attribute="msdyncrm_customerjourneyid" operator="not-null" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Customer journey leads" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

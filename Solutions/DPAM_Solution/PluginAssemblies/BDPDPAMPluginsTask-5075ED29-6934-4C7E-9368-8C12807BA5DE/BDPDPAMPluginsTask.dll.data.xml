@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.Task, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f6310abb46e28c6b" PluginAssemblyId="5075ed29-6934-4c7e-9368-8c12807ba5de" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsTask-5075ED29-6934-4C7E-9368-8C12807BA5DE/BDPDPAMPluginsTask.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Task.PreCreateTask, BDP.DPAM.Plugins.Task, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f6310abb46e28c6b" PluginTypeId="11501e34-ce57-4254-b0d2-128601dcd4b8" Name="BDP.DPAM.Plugins.Task.PreCreateTask">
+      <FriendlyName>c1567ad8-2155-453c-ad48-c19e32cdf72b</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Task.PreUpdateTask, BDP.DPAM.Plugins.Task, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f6310abb46e28c6b" PluginTypeId="d11544ed-c2b2-481d-8045-db958f15020b" Name="BDP.DPAM.Plugins.Task.PreUpdateTask">
+      <FriendlyName>6b4cab6b-aa2a-4ab8-8f39-bafab358e550</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{661157fe-2fc9-4eaa-835f-5bfa2f7b64f7}</formid>
+    <IntroducedVersion>6.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form maxWidth="1900">
+      <tabs>
+        <tab id="{ee019344-2ac2-4ade-b2b8-630ff38801b1}" name="tab_1" showlabel="false" IsUserDefined="0" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section id="{be7e5181-f67d-4fac-9420-ed9e2ac588fd}" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" locklevel="0" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{cc42934a-7770-eace-a535-ca3c4d3e4ca5}" showlabel="false" visible="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Business Card" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{64cb3028-1866-28da-8268-c5487ce86317}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section id="{b5f2a6a1-d1e1-439d-ab76-fbb48f1381d4}" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" locklevel="0" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{192e5ab2-2129-ee55-cd56-2846649cbe47}" showlabel="true" locklevel="0" ordinalvalue="10001">
+                        <control id="mobilephone" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="mobilephone" disabled="false" uniqueid="{39e47e42-374b-4ab9-7ad1-7e2315c7b33a}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d5a423e7-3536-2052-4e49-5d4b3ce1c0ae}" showlabel="true" locklevel="0" ordinalvalue="10002" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{abb75da6-8727-e2a0-dccb-9ce591c107b7}" showlabel="true" locklevel="0" rowspan="1" ordinalvalue="10002" solutionaction="Modified" />
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section id="{4e35e9f6-ac81-44cf-b8d6-91149b679634}" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" locklevel="0" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" visible="false" ordinalvalue="0" solutionaction="Modified" />
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onload" application="true" active="true">
+          <Handlers solutionaction="Added">
+            <Handler functionName="BDP.DPAM.WR.Contact.Form.QuickCreateonLoad" libraryName="DPAM_/Script/Contact.js" handlerUniqueId="{62587565-d81c-2c9a-dc51-a341c0923012}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+          </Handlers>
+        </event>
+      </events>
+      <controlDescriptions>
+        <controlDescription forControl="{39e47e42-374b-4ab9-7ad1-7e2315c7b33a}" solutionaction="Added">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>mobilephone</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>mobilephone</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">No</showButton>
+              <clickToCallType static="true" type="Enum">None</clickToCallType>
+              <openQuickCreate static="true" type="Enum">No</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>mobilephone</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">No</showButton>
+              <clickToCallType static="true" type="Enum">None</clickToCallType>
+              <openQuickCreate static="true" type="Enum">No</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>mobilephone</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">No</showButton>
+              <clickToCallType static="true" type="Enum">None</clickToCallType>
+              <openQuickCreate static="true" type="Enum">No</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <formLibraries solutionaction="Added">
+        <Library name="DPAM_/Script/Contact.js" libraryUniqueId="{bac68d9e-2924-2797-dc51-e3136c5ebb85}" />
+      </formLibraries>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Contact Quick Create" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated quick create form for Contact" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

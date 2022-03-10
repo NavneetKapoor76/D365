@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dpam_os_taskreason" localizedName="Task Reason" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.5.14.1</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Task Reason" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="100000000">
+      <labels>
+        <label description="Client" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000001">
+      <labels>
+        <label description="Compliance" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000002">
+      <labels>
+        <label description="Corporate Action - Notice" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000003">
+      <labels>
+        <label description="Follow up" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000004">
+      <labels>
+        <label description="ESG Investing" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000005">
+      <labels>
+        <label description="Introduction new Commercial Manager" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000006">
+      <labels>
+        <label description="Meeting" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000007">
+      <labels>
+        <label description="MiFID Profiling" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000008">
+      <labels>
+        <label description="Other" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000009">
+      <labels>
+        <label description="Portfolio Review" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000010">
+      <labels>
+        <label description="Proposition - New product" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000011">
+      <labels>
+        <label description="Prospection" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000012">
+      <labels>
+        <label description="Repapering" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000013">
+      <labels>
+        <label description="Roadshow" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000014">
+      <labels>
+        <label description="Tax issue" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

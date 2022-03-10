@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{c6f6fc1b-1b3e-e711-80e1-00155d871bb4}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" preview="1" icon="1">
+        <row name="result" id="opportunityid">
+          <cell name="customerid" width="250" />
+          <cell name="parentcontactid" width="150" />
+          <cell name="name" width="150" />
+          <cell name="estimatedvalue" width="100" />
+          <cell name="estimatedclosedate" width="135" />
+          <cell name="dpam_os_probability" width="100" />
+          <cell name="dpam_os_opportunitytype" width="135" />
+          <cell name="dpam_os_channels" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="opportunity">
+          <attribute name="name" />
+          <attribute name="customerid" />
+          <attribute name="estimatedvalue" />
+          <attribute name="estimatedclosedate" />
+          <attribute name="opportunityid" />
+          <attribute name="parentcontactid" />
+          <attribute name="dpam_os_opportunitytype" />
+          <attribute name="dpam_os_channels" />
+          <order attribute="estimatedclosedate" descending="false" />
+          <attribute name="dpam_os_probability" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="All Opportunities" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Shows all the opportunities" languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

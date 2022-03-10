@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a640be62-63f6-4027-90d7-48c014a7c6f3}</formid>
+    <IntroducedVersion>6.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab name="product_details" verticallayout="true" id="{176BD68C-CE4F-42A3-8793-42400D385DC0}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="50%" id="0">
+              <sections>
+                <section name="product information" showlabel="false" showbar="false" id="{47e8791d-5260-4e72-ae16-9f4f3cd91480}" IsUserDefined="0" columns="11" locklevel="0" celllabelalignment="Left" celllabelposition="Left" height="auto" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{81b1c9d3-1239-48d6-bd68-596d6d2c6897}" locklevel="0" colspan="2" ordinalvalue="10000">
+                        <labels>
+                          <label description="Name" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{222978d1-d56a-42a1-8be4-7d723e91a39f}" locklevel="0" colspan="2" ordinalvalue="10001">
+                        <labels>
+                          <label description="Product ID" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{faaa2942-4737-4721-9a19-7dcbf4eb2911}" showlabel="true" locklevel="0" colspan="2" ordinalvalue="10002">
+                        <labels>
+                          <label description="Parent" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5b273f27-d568-4114-9843-198041ff81f7}" showlabel="true" locklevel="0" colspan="2" ordinalvalue="10003">
+                        <labels>
+                          <label description="Parent" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{143cd0c6-e343-4ba8-8322-396b644dfb79}" locklevel="0" colspan="2" ordinalvalue="10004">
+                        <labels>
+                          <label description="Valid From" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f625f521-13a2-44b0-91ab-ea187a765ddb}" locklevel="0" colspan="2" ordinalvalue="10005">
+                        <labels>
+                          <label description="Valid To" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell rowspan="2" auto="true" id="{9d410f9c-530e-4355-8fde-f9804fadc363}" locklevel="0" colspan="2" ordinalvalue="10006">
+                        <labels>
+                          <label description="Description" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%" id="1">
+              <sections>
+                <section name="costs" showlabel="false" showbar="false" id="{f0129f52-d4cb-43b2-b88e-309824ce85e5}" IsUserDefined="0" labelwidth="125" columns="11" locklevel="0" celllabelalignment="Left" celllabelposition="Left" height="auto" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{afc4479a-50fa-4fb4-9c48-55245524b84d}" colspan="1" showlabel="false" ordinalvalue="10000" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{a83b2393-2a31-44a3-ab42-4d6f60b4baf4}" locklevel="0" colspan="2" ordinalvalue="10002" solutionaction="Modified">
+                        <labels>
+                          <label description="Unit Group" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{59a2a77b-99d3-4475-9256-6de420b20c66}" locklevel="0" colspan="2" ordinalvalue="10003" solutionaction="Modified">
+                        <labels>
+                          <label description="Default Unit" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bf5f0ca9-35a6-45a2-9da5-44ef480af8d4}" locklevel="0" colspan="2" ordinalvalue="10004" solutionaction="Modified">
+                        <labels>
+                          <label description="Default Price List" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row height="auto">
+                      <cell auto="true" id="{4b98e3b0-b619-4743-a00a-58578082f0bf}" locklevel="0" colspan="2" ordinalvalue="10005" solutionaction="Modified">
+                        <labels>
+                          <label description="Decimals Supported" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{46149e09-a345-4a95-ba38-11254afc82cf}" locklevel="0" colspan="2" ordinalvalue="10006" solutionaction="Modified">
+                        <labels>
+                          <label description="Subject" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1e426e80-67ac-418d-86a6-e02990094f3b}" showlabel="false" ordinalvalue="20001" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="product_dynamic_properties" id="{6223E6F7-BC9A-4B9E-B61F-725218D62D57}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" visible="true" ordinalvalue="2">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="product_dynamic_properties_section" showlabel="false" showbar="false" locklevel="0" id="{165abcc9-2792-4d2a-9623-c21d6cc10ff8}" IsUserDefined="0" columns="11" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" visible="true" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{1a7e38b5-986d-45ff-9f7d-352b121f927e}" showlabel="false" auto="false" rowspan="7" colspan="2" visible="true" ordinalvalue="10000">
+                        <control id="product_dynamic_properties" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters />
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2a7e38b5-986d-45ff-9f7d-352b121f927e}" showlabel="false" auto="false" rowspan="7" colspan="2" visible="false" ordinalvalue="10001">
+                        <control id="product_dynamic_properties_offline" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{9C9B234E-930E-4FEA-9B33-09F2742DAD47}">
+                          <parameters />
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="price_list_items" id="{2F0F5E7B-A6F7-478F-803F-20F71275A27E}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" visible="false" ordinalvalue="3">
+          <columns>
+            <column width="50%" id="0">
+              <sections>
+                <section name="msdynsales_pricing_information" showlabel="true" showbar="false" id="{8162fa18-931e-4475-88c4-69fa7ff7335e}" IsUserDefined="0" columns="11" locklevel="0" celllabelalignment="Left" celllabelposition="Left" visible="false" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{7ce5335e-7c56-4818-b0f5-bd0495acc811}" colspan="2" ordinalvalue="10000">
+                        <labels>
+                          <label description="Current Cost" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9e93d979-71d8-4500-be8d-b91d3c0611f0}" colspan="2" ordinalvalue="10001">
+                        <labels>
+                          <label description="Standard Cost" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{decff7b9-b96f-4815-b187-6569543ea33f}" colspan="2" ordinalvalue="10002">
+                        <labels>
+                          <label description="List Price" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="price" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="price" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_share_classes" id="b1fd7647-1a0a-475d-9bb7-3eece8216950" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="5" solutionaction="Added">
+          <labels>
+            <label description="Share Classes" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_7_section_1" id="cc4b537d-e3c1-4035-8b82-8d716a70e736" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{e30451a3-d18f-4745-b49c-895d4bfacbb8}" rowspan="7" colspan="1" showlabel="true" auto="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Share Classes" languagecode="1033" />
+                        </labels>
+                        <control id="subgrid_share_classes" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{e1211813-b1e1-3c00-3e33-cbcd65163907}">
+                          <parameters>
+                            <TargetEntityType>dpam_shareclass</TargetEntityType>
+                            <ViewId>{0DD3A46D-C36B-49AA-A30B-C22D49DC0905}</ViewId>
+                            <ViewIds>{0DD3A46D-C36B-49AA-A30B-C22D49DC0905}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <RelationshipName>dpam_shareclass_Product_Product</RelationshipName>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <IsUserView>false</IsUserView>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RelationshipRoleOrdinal>1</RelationshipRoleOrdinal>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="PRODUCT_INTERESTS_TAB" id="a97b4e77-cbf8-45a2-8e1b-064ab030c6e2" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="6" solutionaction="Added">
+          <labels>
+            <label description="Product Interests" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_6_section_1" id="9241aa6e-12af-4c78-bd35-4d22dee2da5e" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" height="auto" ordinalvalue="0">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{81f14acb-3ef3-4384-b0e1-f08f45c9e019}" rowspan="5" colspan="1" showlabel="false" auto="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Product Interests" languagecode="1033" />
+                        </labels>
+                        <control id="subgrid_product_interests" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{6921d38b-bec9-dd44-6430-5e0d0a2c56cd}">
+                          <parameters>
+                            <TargetEntityType>dpam_productinterest</TargetEntityType>
+                            <ViewId>{28158EDA-C784-4362-9C9E-B4A946D5F0C2}</ViewId>
+                            <ViewIds>{28158EDA-C784-4362-9C9E-B4A946D5F0C2}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <RelationshipName>dpam_ProductInterest_lk_product_Product</RelationshipName>
+                            <AutoExpand>Auto</AutoExpand>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <IsUserView>false</IsUserView>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row height="auto" />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{1bab7584-c9f7-4542-842f-f061caee103b}" celllabelposition="Top" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{7fe0d486-f4f5-47af-81b1-e695dd2439c9}" showlabel="true" ordinalvalue="10000">
+              <labels>
+                <label description="Status" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{4541064d-6750-47b4-92a5-96a74f00b613}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows>
+          <row>
+            <cell id="{c2cbf319-bf92-49ab-b123-c96fd72f1e5e}" showlabel="false" ordinalvalue="10000">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{5ee8c4e9-cadd-4312-b6f3-baea20bf108b}" showlabel="false" ordinalvalue="20001">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{1cd1c5ff-4752-40ac-b28a-b10934efea07}" showlabel="false" ordinalvalue="30002">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Product" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this refreshed entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

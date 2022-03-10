@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{592a82bd-821b-ec11-b6e6-6045bd8d255d}</WebResourceId>
+  <Name>dpam_/Images/ContactTitle16.png</Name>
+  <DisplayName>dpam_/Images/ContactTitle16.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ImagesContactTitle16png592A82BD-821B-EC11-B6E6-6045BD8D255D</FileName>
+</WebResource>

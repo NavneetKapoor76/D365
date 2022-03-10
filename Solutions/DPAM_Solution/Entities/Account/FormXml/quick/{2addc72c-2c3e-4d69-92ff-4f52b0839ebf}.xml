@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2addc72c-2c3e-4d69-92ff-4f52b0839ebf}</formid>
+    <IntroducedVersion>1.1.2.7</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form maxWidth="400">
+      <tabs>
+        <tab name="hierarchy" verticallayout="true" id="{ee701130-9f7e-4c91-b842-ac167874416d}" IsUserDefined="0" labelid="{e55ebbad-1b4e-4092-a46e-dcc52a1e74e9}">
+          <labels>
+            <label description="Hierarchy" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="account tile" id="{7d0de66d-72fd-4e03-8a38-941bc343a644}" labelid="{0e5c18e8-ae2c-4611-907c-22ff9daab374}">
+                  <labels>
+                    <label description="Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ff9e88e2-59c6-4f01-9f9f-e1c25524ffa0}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Counterparty Type" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_mos_counterpartytype" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="dpam_mos_counterpartytype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{26002310-ea74-4fe2-9e04-8dbee20d2c55}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Business Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_businesssegmentation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_businesssegmentation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{19ae10e8-fff6-410b-a07b-125f583f82a6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Address" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_address1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_address1" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e8c083c1-0277-428d-90d6-43c4b8e3876a}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Counterparty Name" languagecode="1033" />
+                        </labels>
+                        <control id="name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7dbb897d-ae3b-4f49-b03c-b51042b70931}" labelid="{34904dd9-2cc3-41c0-b75d-ed48399867cb}" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="ownerid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f5e30bee-6a1a-42bc-a2f1-e288b44e1456}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Primary Contact" languagecode="1033" />
+                        </labels>
+                        <control id="primarycontactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="primarycontactid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="4" FallbackForm="false">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Counterparty Hierarchy Tile Form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="This is the counterparty hierarchy definition." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{4129e27c-d0ce-e811-8158-000d3afd9907}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" preview="1" icon="1">
+        <row name="result" id="contactid">
+          <cell name="fullname" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="emailaddress1" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="parentcustomerid" width="235" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="dpam_os_language" width="100" />
+          <cell name="dpam_mos_jobfunction" width="148" />
+          <cell name="donotbulkemail" width="246" />
+          <cell name="ownerid" width="100" />
+          <cell name="owningbusinessunit" width="170" />
+          <cell name="modifiedon" width="129" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="contact">
+          <attribute name="fullname" />
+          <order attribute="fullname" descending="false" />
+          <attribute name="emailaddress1" />
+          <attribute name="parentcustomerid" />
+          <attribute name="contactid" />
+          <attribute name="dpam_os_language" />
+          <attribute name="dpam_mos_jobfunction" />
+          <attribute name="donotbulkemail" />
+          <attribute name="ownerid" />
+          <attribute name="owningbusinessunit" />
+          <attribute name="modifiedon" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.38.5.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Segment members" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

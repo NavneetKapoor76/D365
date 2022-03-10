@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.ProductInterest.PreUpdateProductInterest: Update of dpam_productinterest" SdkMessageProcessingStepId="{ff1ab78b-453d-ec11-8c63-6045bd8ed4ad}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.ProductInterest.PreUpdateProductInterest, BDP.DPAM.Plugins.ProductInterest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=af50131d7198f66a</PluginTypeName>
+  <PluginTypeId>c9ed530a-71ab-466d-9d78-c59b4dccbef3</PluginTypeId>
+  <PrimaryEntity>dpam_productinterest</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>dpam_lk_contact,dpam_lk_product,dpam_lk_shareclass</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages>
+    <SdkMessageProcessingStepImage Name="PreImage">
+      <SdkMessageProcessingStepImageId>{6aebb3a4-453d-ec11-8c63-6045bd8ed4ad}</SdkMessageProcessingStepImageId>
+      <Attributes>dpam_lk_contact,dpam_lk_product,dpam_lk_shareclass</Attributes>
+      <EntityAlias>PreImage</EntityAlias>
+      <ImageType>0</ImageType>
+      <MessagePropertyName>Target</MessagePropertyName>
+      <IsCustomizable>1</IsCustomizable>
+    </SdkMessageProcessingStepImage>
+  </SdkMessageProcessingStepImages>
+</SdkMessageProcessingStep>

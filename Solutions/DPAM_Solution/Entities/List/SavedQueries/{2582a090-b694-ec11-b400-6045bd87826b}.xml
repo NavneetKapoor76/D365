@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{2582a090-b694-ec11-b400-6045bd87826b}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="listname" select="1" preview="1" icon="1">
+        <row name="result" id="listid">
+          <cell name="listname" width="150" />
+          <cell name="purpose" width="100" />
+          <cell name="ownerid" width="100" />
+          <cell name="modifiedon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="list">
+          <attribute name="listname" />
+          <order attribute="listname" descending="false" />
+          <attribute name="purpose" />
+          <attribute name="ownerid" />
+          <attribute name="modifiedon" />
+          <attribute name="listid" />
+          <filter type="and">
+            <condition attribute="listname" operator="like" value="Legacy%" />
+            <condition attribute="createdbyname" operator="like" value="%scribe%" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.14.37.3</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="15 Legacy Marketing Lists" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

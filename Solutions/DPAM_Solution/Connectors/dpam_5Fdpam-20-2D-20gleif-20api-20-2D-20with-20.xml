@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>4802ddea-c835-411c-bde9-2e7691b7e0cd</connectorid>
+  <description></description>
+  <displayname>DPAM - GLEIF API - With Params</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20_iconblob.Png</iconblob>
+</Connector>

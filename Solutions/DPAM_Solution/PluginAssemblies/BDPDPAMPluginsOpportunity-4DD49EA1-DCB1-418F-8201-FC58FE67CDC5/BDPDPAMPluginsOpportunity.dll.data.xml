@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.Opportunity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=02a9ccca878456a9" PluginAssemblyId="4dd49ea1-dcb1-418f-8201-fc58fe67cdc5" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsOpportunity-4DD49EA1-DCB1-418F-8201-FC58FE67CDC5/BDPDPAMPluginsOpportunity.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Opportunity.PreCreateOpportunity, BDP.DPAM.Plugins.Opportunity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=02a9ccca878456a9" PluginTypeId="03ee3dca-a060-4cdb-a6eb-6b66290bd297" Name="BDP.DPAM.Plugins.Opportunity.PreCreateOpportunity">
+      <FriendlyName>e7a65463-d448-4928-8699-63825491d8e4</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

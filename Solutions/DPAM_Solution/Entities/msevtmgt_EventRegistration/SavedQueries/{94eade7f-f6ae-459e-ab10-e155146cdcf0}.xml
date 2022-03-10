@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{94eade7f-f6ae-459e-ab10-e155146cdcf0}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" icon="1" preview="1">
+        <row name="result" id="msevtmgt_eventregistrationid">
+          <cell name="msevtmgt_name" width="125" />
+          <cell name="msevtmgt_contactid" width="150" />
+          <cell name="msevtmgt_primaryrole" width="125" />
+          <cell name="a_9ec82656817ae61180d700155d4b260b.dpam_s_counterpartymarketingonly" width="285" />
+          <cell name="a_9ec82656817ae61180d700155d4b260b.parentcustomerid" width="200" disableSorting="1" />
+          <cell name="a_9ec82656817ae61180d700155d4b260b.dpam_s_countrymarketingonly" width="244" />
+          <cell name="a_9ec82656817ae61180d700155d4b260b.dpam_s_businessphonemarketingonly" width="300" />
+          <cell name="msevtmgt_eventid" width="300" />
+          <cell name="msevtmgt_industry" width="150" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="msevtmgt_eventregistration">
+          <attribute name="msevtmgt_name" />
+          <attribute name="createdon" />
+          <order attribute="msevtmgt_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="msevtmgt_primaryrole" />
+          <attribute name="msevtmgt_contactid" />
+          <link-entity alias="a_9ec82656817ae61180d700155d4b260b" name="contact" from="contactid" to="msevtmgt_contactid" link-type="outer" visible="false">
+            <attribute name="parentcustomerid" />
+            <attribute name="dpam_s_counterpartymarketingonly" />
+            <attribute name="dpam_s_countrymarketingonly" />
+            <attribute name="dpam_s_businessphonemarketingonly" />
+          </link-entity>
+          <attribute name="msevtmgt_industry" />
+          <attribute name="msevtmgt_eventid" />
+          <attribute name="msevtmgt_eventregistrationid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive event registrations" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

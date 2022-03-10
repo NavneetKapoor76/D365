@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.Contact.PreUpdateContact: Update of contact" SdkMessageProcessingStepId="{4bbb10d1-6def-eb11-bacb-000d3abb41be}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.Contact.PreUpdateContact, BDP.DPAM.Plugins.Contact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7c2a4be9b04cc921</PluginTypeName>
+  <PluginTypeId>3f9359bc-b678-4a89-b47f-268f40e0a10d</PluginTypeId>
+  <PrimaryEntity>contact</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>donotbulkemail,dpam_b_bulkemailoptinmarketingtechnical,dpam_lk_mainlocation,dpam_os_gender,dpam_os_language,parentcustomerid</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages>
+    <SdkMessageProcessingStepImage Name="PreImage">
+      <SdkMessageProcessingStepImageId>{f34537c7-8cfe-eb11-94ef-00224880edcf}</SdkMessageProcessingStepImageId>
+      <Attributes>dpam_os_bulkemailoptinrequest,dpam_os_gender,dpam_os_language</Attributes>
+      <EntityAlias>PreImage</EntityAlias>
+      <ImageType>0</ImageType>
+      <MessagePropertyName>Target</MessagePropertyName>
+      <IsCustomizable>1</IsCustomizable>
+    </SdkMessageProcessingStepImage>
+  </SdkMessageProcessingStepImages>
+</SdkMessageProcessingStep>

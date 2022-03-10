@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{bfb12b48-ad93-ec11-b400-6045bd878fef}</WebResourceId>
+  <Name>dpam_/Images/ReopenActivities32.png</Name>
+  <DisplayName>dpam_/Images/ReopenActivities32.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ImagesReopenActivities32pngBFB12B48-AD93-EC11-B400-6045BD878FEF</FileName>
+</WebResource>

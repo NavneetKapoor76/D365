@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{00000000-0000-0000-00aa-000010001002}</savedqueryid>
+    <queryapi></queryapi>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" icon="1" preview="1">
+        <row name="result" id="accountid">
+          <cell name="name" width="300" />
+          <cell name="dpam_os_prioritygroup" width="42" />
+          <cell name="dpam_lk_businesssegmentation" width="139" />
+          <cell name="telephone1" width="100" />
+          <cell name="address1_city" width="100" />
+          <cell name="a_c5832fce3cc946eb9d320454ff203219.dpam_s_name" width="100" />
+          <cell name="primarycontactid" width="150" />
+          <cell name="accountprimarycontactidcontactcontactid.emailaddress1" width="150" disableSorting="1" />
+          <cell name="ownerid" width="100" />
+          <cell name="a_4fd990f9c8444cf89d94a886bce9907d.name" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="account">
+          <attribute name="name" />
+          <attribute name="address1_city" />
+          <order attribute="name" descending="false" />
+          <attribute name="primarycontactid" />
+          <attribute name="telephone1" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity alias="accountprimarycontactidcontactcontactid" name="contact" from="contactid" to="primarycontactid" link-type="outer" visible="false">
+            <attribute name="emailaddress1" />
+          </link-entity>
+          <attribute name="accountid" />
+          <attribute name="ownerid" />
+          <link-entity alias="a_c5832fce3cc946eb9d320454ff203219" name="dpam_country" to="dpam_lk_country" from="dpam_countryid" link-type="outer" visible="false">
+            <attribute name="dpam_s_name" />
+          </link-entity>
+          <link-entity alias="a_4fd990f9c8444cf89d94a886bce9907d" name="businessunit" to="owningbusinessunit" from="businessunitid" link-type="outer" visible="false">
+            <attribute name="name" />
+          </link-entity>
+          <attribute name="dpam_lk_businesssegmentation" />
+          <attribute name="dpam_os_prioritygroup" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Counterparties" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a837e4a7-01b8-4f82-a475-be9abd67e667}</formid>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab name="Summary" verticallayout="true" id="{b6a005fd-5964-4427-b39b-6750e1a5fa6f}" IsUserDefined="0" expanded="true" locklevel="0" showlabel="true" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="opportunity_information" showlabel="false" showbar="false" id="{5d1cf874-b807-4158-b230-1a13c1db73ad}" columns="1" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell colspan="1" id="{439e0732-3f3a-409d-98ba-83d3251cb64b}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Opportunity Name" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{181e7f45-3819-40c3-bdf3-1c892d53f35d}" showlabel="true" locklevel="0" ordinalvalue="10005" solutionaction="Modified">
+                        <labels>
+                          <label description="Contact" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="parentcontactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="parentcontactid" uniqueid="{d118d59c-eea0-5e81-5194-ca9ce2176e57}" disabled="false" solutionaction="Modified">
+                          <parameters solutionaction="Added">
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>true</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{A2D479C5-53E3-4C69-ADDD-802327E67A0D}</DefaultViewId>
+                            <FilterRelationshipName>contact_customer_accounts</FilterRelationshipName>
+                            <DependentAttributeName>opportunity.parentaccountid</DependentAttributeName>
+                            <DependentAttributeType>account</DependentAttributeType>
+                            <AllowFilterOff>true</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b060498e-5853-4382-8ea2-26ba7883f4da}" colspan="1" rowspan="1" ordinalvalue="10003" solutionaction="Modified">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7f5a51a0-115c-4f72-a2f3-7d963e7fa664}" ordinalvalue="10003" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{4c69d917-e84e-4c9d-ba14-f7bb5bc0a51f}" visible="false" ordinalvalue="10009" solutionaction="Modified">
+                        <labels>
+                          <label description="Currency" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b0e21400-f671-46d7-a9c3-1a6c61e4ef1c}" ordinalvalue="10005" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{f9bdae13-ecd5-4eb7-b71f-f14b9619f7c5}" ordinalvalue="10006" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{c664bce8-b574-9c22-35db-cb4d1a5dcaa2}" showlabel="true" locklevel="0" visible="true" ordinalvalue="10007" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{2cee855d-be6b-786d-e781-8ccbd1858cb5}" showlabel="true" locklevel="0" rowspan="5" ordinalvalue="10008" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{1928ff71-eb68-4011-bb07-8a044e4e2036}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10001" solutionaction="Added">
+                        <labels>
+                          <label description="Long Name" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_cs_longname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_cs_longname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{348ed11b-e8f1-496e-aecc-e6e90595efe5}" locklevel="0" colspan="1" rowspan="1" visible="false" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="Competitive Bidding" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_competitivebidding" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_competitivebidding" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1bb471eb-7d7d-443b-9251-5285b9db908f}" locklevel="0" colspan="1" rowspan="1" showlabel="true" ordinalvalue="10004" solutionaction="Added">
+                        <labels>
+                          <label description="Department" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_department" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_department" disabled="false" uniqueid="{cc77edee-ca48-ad7a-bc8b-a4a39a936d40}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>true</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{A04C3C79-5366-484C-9D96-EF9C6CBC7668}</DefaultViewId>
+                            <FilterRelationshipName>dpam_departments_lk_counterparty_Account</FilterRelationshipName>
+                            <DependentAttributeName>opportunity.parentaccountid</DependentAttributeName>
+                            <DependentAttributeType>account</DependentAttributeType>
+                            <AllowFilterOff>false</AllowFilterOff>
+                            <AvailableViewIds>{A04C3C79-5366-484C-9D96-EF9C6CBC7668}</AvailableViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{83e025bd-9550-46f1-b550-38d66ed20e2a}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10006" solutionaction="Added">
+                        <labels>
+                          <label description="Opportunity Channel" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_opportunitydepartment" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_opportunitydepartment" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{322e28c2-2f7e-4299-9d98-56faf2de8e78}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10007" solutionaction="Added">
+                        <labels>
+                          <label description="Opportunity Flow" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_opportunitytype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_opportunitytype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{90a30407-28da-4910-b0ce-be4d2708ebfe}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10008" solutionaction="Added">
+                        <labels>
+                          <label description="Opportunity Source" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_channels" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_channels" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Opportunity_details" showlabel="false" showbar="false" id="{f961b0a9-2637-4fd3-a4d7-8e55b5246727}" layout="varwidth" columns="1" celllabelposition="Top" IsUserDefined="0" ordinalvalue="3" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{1bc21bed-1e7d-49b7-8223-72ba1cda8019}" showlabel="false" userspacer="true" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{74794dae-95cf-413e-9472-699e76e1e1a0}" rowspan="3" ordinalvalue="10001" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{ee5d4aa4-e0b5-4822-ba14-49c1c8430a86}" rowspan="1" colspan="1" ordinalvalue="10001" solutionaction="Modified">
+                        <labels>
+                          <label description="Customer Need" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6862197e-b146-47ce-afc2-3f02b06ca0c4}" rowspan="1" colspan="1" ordinalvalue="10000" solutionaction="Modified">
+                        <labels>
+                          <label description="Proposed Solution" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{09a94f7e-7cc2-4a20-b489-2db72ba6317f}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="Folder Location" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_folderlocation" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_folderlocation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{55c63551-4174-4f1b-a766-7552fdb64bad}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="Source Campaign" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_sourcecampaign" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_sourcecampaign" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Summary_section_9" id="699a1174-892a-4256-a0b9-66c9f7df39e0" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="1" solutionaction="Added">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{46e90c60-609c-4676-b5a2-76fd28b1ada6}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description="Target AUM" languagecode="1033" />
+                        </labels>
+                        <control id="estimatedvalue" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="estimatedvalue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bb601b7b-b4bd-4940-873f-d90a70ecd585}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10001">
+                        <labels>
+                          <label description="Target Revenue" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_cu_targetrevenue" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="dpam_cu_targetrevenue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ef205917-4d31-459e-bdc1-bec21e0972a1}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002">
+                        <labels>
+                          <label description="Proposed Management Fees" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_proposedmanagementfees" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_proposedmanagementfees" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0dc2e66e-406e-433c-a66b-27d56ced6295}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10003">
+                        <labels>
+                          <label description="Discount Details" languagecode="1033" />
+                        </labels>
+                        <control id="bdp_discountdetails" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="bdp_discountdetails" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Summary_section_10" id="4c8b60f8-8eb8-4856-a49f-41a837b6b2a7" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="2" solutionaction="Added">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2ef8d548-2e07-4123-9bbc-980472f01631}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description="Est. Close Date" languagecode="1033" />
+                        </labels>
+                        <control id="estimatedclosedate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="estimatedclosedate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7f5a51a0-115c-4f72-a2f3-7d963e7fa664}" colspan="1" rowspan="1" ordinalvalue="10001">
+                        <labels>
+                          <label description="Investment Timeframe" languagecode="1033" />
+                        </labels>
+                        <control id="purchasetimeframe" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="purchasetimeframe" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d0e2d1fc-65b9-4012-9008-9ed4b3fcefa0}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002">
+                        <labels>
+                          <label description="Probability" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_probability" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_probability" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a9725c57-04be-45ba-ad5a-82ba8bd9d6b6}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10003">
+                        <labels>
+                          <label description="Rating" languagecode="1033" />
+                        </labels>
+                        <control id="opportunityratingcode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="opportunityratingcode" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="42%" id="1">
+              <sections>
+                <section name="Summary_CadenceWidget" showlabel="false" showbar="false" locklevel="0" id="{90647cab-2b12-415a-b909-ae9c23ec13b2}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" labelid="{2288eb08-e061-4511-93e6-49740ac03fd7}" ordinalvalue="2" solutionaction="Modified" />
+                <section name="Notes_pane" showlabel="false" showbar="false" id="{cbe1fe44-90c3-40f3-9307-2e72bdefe443}" layout="varwidth" columns="11" celllabelposition="Top" locklevel="0" labelwidth="115" IsUserDefined="0" ordinalvalue="3" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell colspan="2" showlabel="false" rowspan="20" auto="false" id="{17a95e0e-476c-43cf-b6e9-c112fa6c25ec}" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Notes Properties" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="notescontrol" classid="{06375649-C143-495E-A496-C962E5B4488E}" disabled="false" uniqueid="{4b2a2512-e15c-3766-2163-3370cba9e07d}" solutionaction="Modified">
+                          <parameters solutionaction="Added">
+                            <UClientSortActivitiesByValue>sortdate</UClientSortActivitiesByValue>
+                            <UClientNotesConfigurationJSON>{"sortNotesByValue":"createdon"}</UClientNotesConfigurationJSON>
+                            <UClientUniqueName>Timeline</UClientUniqueName>
+                            <UClientModules>Activities,Notes,Posts</UClientModules>
+                            <UClientDefaultModuleForCreateExperience>Notes</UClientDefaultModuleForCreateExperience>
+                            <UClientShowFilterPane>true</UClientShowFilterPane>
+                            <UClientExpandFilterPane>false</UClientExpandFilterPane>
+                            <UClientOrderBy>descending</UClientOrderBy>
+                            <UClientRecordPerPage>25</UClientRecordPerPage>
+                            <UClientEnableWhatsNewFilter>false</UClientEnableWhatsNewFilter>
+                            <UClientDisplayActivityHeaderUsing>defaultformat</UClientDisplayActivityHeaderUsing>
+                            <UClientCreateActivityUsing>mainformdialog</UClientCreateActivityUsing>
+                            <UClientDisplayActivityUsing>cardform</UClientDisplayActivityUsing>
+                            <UClientActivityCardMap>appointment:4201:,campaignactivity:4402:,campaignresponse:4401:,incidentresolution:4206:,email:4202:e5538bb9-77ec-4d24-bc5f-8cb2d825f664,fax:4204:,letter:4207:,opportunityclose:4208:,phonecall:4210:983dc188-2a05-4cfe-b907-4fbfae8c21f7,task:4212:5e9725e4-5449-4363-8c1c-5ae71767af34,msfp_alert:10238:,msfp_surveyinvite:10248:,msfp_surveyresponse:10250:,</UClientActivityCardMap>
+                            <DefaultTabId>ActivitiesTab</DefaultTabId>
+                            <OrderByActivityWall>descending</OrderByActivityWall>
+                            <SortActivityWall>modifiedon</SortActivityWall>
+                            <EmailConversationView>true</EmailConversationView>
+                            <ShowArticleTab>false</ShowArticleTab>
+                            <SelectDefaultLanguage>00000000-0000-0000-0000-000000000000</SelectDefaultLanguage>
+                            <UClientActivities>appointment,campaignactivity,email,fax,letter,opportunityclose,phonecall,recurringappointmentmaster,task</UClientActivities>
+                            <UClientActivitiesConfigurationJSON>{"email":{"showStatus":true,"canCreate":true,"fieldsConfig":{"labelOverride":true,"header":{"labelOption":"Show","displayOption":"AlwaysShow"},"body":[{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"ShowOnExpand"},{"labelOption":"Hide","displayOption":"Hide"}],"footer":{"labelOption":"Hide","displayOption":"AlwaysShow"}},"createUsing":"default","openUsing":"default"},"incidentresolution":{"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"orderclose":{"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"phonecall":{"showStatus":true,"canCreate":true,"fieldsConfig":{"labelOverride":true,"header":{"labelOption":"Show","displayOption":"AlwaysShow"},"body":[{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"ShowOnExpand"},{"labelOption":"Hide","displayOption":"Hide"}],"footer":{"labelOption":"Hide","displayOption":"AlwaysShow"}},"createUsing":"default","openUsing":"default"},"quoteclose":{"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"socialactivity":{"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"task":{"showStatus":true,"canCreate":true,"fieldsConfig":{"labelOverride":true,"header":{"labelOption":"Show","displayOption":"AlwaysShow"},"body":[{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"ShowOnExpand"},{"labelOption":"Hide","displayOption":"Hide"}],"footer":{"labelOption":"Hide","displayOption":"AlwaysShow"}},"createUsing":"default","openUsing":"default"},"msfp_alert":{"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"msfp_surveyinvite":{"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"msfp_surveyresponse":{"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"}}</UClientActivitiesConfigurationJSON>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Summary_section_8" id="db38a253-bf32-47c8-b03c-eba562d1b62d" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0" solutionaction="Added">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{6c4d9410-082c-4bc2-94a7-51abed63f6f9}" rowspan="6" colspan="1" showlabel="false" auto="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Opportunity Products" languagecode="1033" />
+                        </labels>
+                        <control id="Subgrid_OpportunityProduct" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true" uniqueid="{e2c68d83-9246-6b41-1740-0bb03c37c967}">
+                          <parameters>
+                            <TargetEntityType>opportunityproduct</TargetEntityType>
+                            <ViewId>{F0F9F893-4D27-EC11-B6E5-6045BD8B0918}</ViewId>
+                            <ViewIds>{01010DE7-749E-4FE6-8037-ACA560A4FCBE},{F0F9F893-4D27-EC11-B6E5-6045BD8B0918}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <RelationshipName>product_opportunities</RelationshipName>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <IsUserView>false</IsUserView>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="Summary_section_7" id="91a6146c-f6ed-410a-aa1b-86e9c8295722" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" visible="false" ordinalvalue="1" solutionaction="Added">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{D96BA356-1581-46E0-937C-49033D55E3A2}" colspan="1" rowspan="1" visible="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Total Amount" languagecode="1033" />
+                        </labels>
+                        <control id="totalamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="totalamount" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ba131dc7-aa7c-4d8b-9c94-421ed8a7ddaf}" colspan="1" rowspan="1" visible="false" ordinalvalue="10001">
+                        <labels>
+                          <label description="Price List" languagecode="1033" />
+                        </labels>
+                        <events>
+                          <event name="setAdditionalParams" application="true" active="true">
+                            <InternalHandlers>
+                              <Handler functionName="Mscrm.pricelevelid_setadditionalparams" libraryName="Sales/Opportunity/Opportunity_main_system_library.js" handlerUniqueId="1191cc10-3daa-4368-9615-e3fb183f2189" enabled="true" passExecutionContext="true">
+                                <dependencies>
+                                  <dependency id="transactioncurrencyid" />
+                                </dependencies>
+                              </Handler>
+                            </InternalHandlers>
+                          </event>
+                        </events>
+                        <control id="pricelevelid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pricelevelid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="25%" id="2">
+              <sections>
+                <section name="Social_pane" showlabel="false" showbar="false" locklevel="0" id="{c03918d8-d714-7b95-3083-443db3e303c8}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{798de0be-acfe-4480-b3f7-69312505588a}" colspan="1" auto="false" rowspan="6" showlabel="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Stakeholders (Contacts)" languagecode="1033" solutionaction="Modified" />
+                        </labels>
+                        <control id="Stakeholders" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{36D5BB4F-04A4-4885-86A7-2E60EBCC03F2}">
+                          <parameters>
+                            <ViewId solutionaction="Modified">{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23}</ViewId>
+                            <ViewIds solutionaction="Modified">{7C0E0725-CCD9-4525-9313-665FD075652F},{32B187E5-CC84-EC11-8D21-000D3A4C0E23},{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23},{FE4BC089-8901-466C-A41B-1C1090F204D4},{4E3600FA-B9C8-49F4-B69A-51EBA06D9BDF},{BA3387BF-382D-4376-A538-5B02467925D3},{CF3AA82E-635B-E611-810B-00155DBD6A1D},{3BAC2341-185C-EC11-8F8F-000D3AAD6726},{41275278-1458-EC11-8F8F-000D3AC2177C},{DDB43BE7-F7DA-4D90-845F-06552A446DA0},{23FB1036-E41D-4D75-8AA7-27569B5B6512},{4C0E2477-FEC0-47B4-BE3E-E5FFAFFCB651}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{09519ff9-e8b9-4f1b-949a-fe6a1c0b0ddc}" showlabel="false" userspacer="true" colspan="1" rowspan="1" ordinalvalue="10001" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{92822c63-42c0-4b31-8cb5-8ce123553796}" colspan="1" auto="false" rowspan="6" showlabel="true" ordinalvalue="10003" solutionaction="Modified">
+                        <control id="Pursuit_Team" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{74D56A28-6093-4345-8F1D-B1BCE70AA0A0}">
+                          <parameters>
+                            <ViewId solutionaction="Modified">{32B187E5-CC84-EC11-8D21-000D3A4C0E23}</ViewId>
+                            <ViewIds solutionaction="Modified">{7C0E0725-CCD9-4525-9313-665FD075652F},{32B187E5-CC84-EC11-8D21-000D3A4C0E23},{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23},{FE4BC089-8901-466C-A41B-1C1090F204D4},{4E3600FA-B9C8-49F4-B69A-51EBA06D9BDF},{BA3387BF-382D-4376-A538-5B02467925D3},{CF3AA82E-635B-E611-810B-00155DBD6A1D},{3BAC2341-185C-EC11-8F8F-000D3AAD6726},{41275278-1458-EC11-8F8F-000D3AC2177C},{DDB43BE7-F7DA-4D90-845F-06552A446DA0},{23FB1036-E41D-4D75-8AA7-27569B5B6512},{4C0E2477-FEC0-47B4-BE3E-E5FFAFFCB651}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9a29c680-0d68-409e-9657-ea87cfca3b85}" showlabel="false" userspacer="true" ordinalvalue="10004" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{05a38f4d-1649-4741-84b6-d6de2db78048}" colspan="1" auto="false" rowspan="9" showlabel="true" ordinalvalue="10005" solutionaction="Modified">
+                        <control id="Competitors" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{32c4685b-96c7-37b5-4bca-c069eb38aab6}" indicationOfSubgrid="true" solutionaction="Modified">
+                          <parameters>
+                            <ViewIds solutionaction="Modified">{00000000-0000-0000-00AA-000010001110},{57BCA9AC-87A0-4C28-ADC8-2D0A4645F29E}</ViewIds>
+                            <HeaderColorCode solutionaction="Added">#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{dfc96b92-8aa2-4b3c-9fcb-7beec554f95a}" rowspan="1" colspan="1" showlabel="true" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="Stakeholders (Counterparties)" languagecode="1033" />
+                        </labels>
+                        <control id="Subgrid_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>connection</TargetEntityType>
+                            <ViewId>{3BAC2341-185C-EC11-8F8F-000D3AAD6726}</ViewId>
+                            <ViewIds>{7C0E0725-CCD9-4525-9313-665FD075652F},{41275278-1458-EC11-8F8F-000D3AC2177C},{3BAC2341-185C-EC11-8F8F-000D3AAD6726}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <RelationshipName>opportunity_connections1</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="Product_Line_Items" verticallayout="true" id="{79548060-31f7-4646-8c08-0296ecd4113b}" visible="false" expanded="true" IsUserDefined="0" showlabel="true" ordinalvalue="1" solutionaction="Modified">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="opportunityproducts" showlabel="false" showbar="false" id="{2b1ed7f7-3ebb-42f3-809f-94eba9f94fb2}" height="auto" IsUserDefined="0" layout="varheight" columns="11" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{ba131dc7-aa7c-4d8b-9c94-421ed8a7ddaf}" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{0B8DF861-AE32-4C79-9C4E-2ECAA9F74712}" ordinalvalue="10000" solutionaction="Modified">
+                        <labels>
+                          <label description="Revenue" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell id="{9B6E1519-AB19-4AD6-976E-8A0D5754AE0C}" showlabel="false" ordinalvalue="20003" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell colspan="2" rowspan="4" showlabel="false" auto="true" id="{22177595-7784-43da-9af2-50e9115b956e}" ordinalvalue="10004" solutionaction="Removed" />
+                    </row>
+                  </rows>
+                </section>
+                <section name="totals" showlabel="false" showbar="false" locklevel="0" id="{736e5dc8-6758-42ee-8e28-812ec6f75abd}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="3">
+                  <rows>
+                    <row>
+                      <cell id="{91C4D5D8-FDBC-4F1A-8A91-753A1AE4E376}" locklevel="0" ordinalvalue="10000" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{EFE4D5AB-D23D-4C88-A906-4646F3B28B45}" locklevel="0" ordinalvalue="10001" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{D96BA356-1581-46E0-937C-49033D55E3A2}" ordinalvalue="10006" solutionaction="Removed" />
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="QUOTES" verticallayout="true" id="{af8380da-5492-4a69-8a36-b1beff121e95}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="2" solutionaction="Removed" />
+        <tab name="documents_sharepoint" id="{2A23BF76-D291-43BA-980B-738D39C68770}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="2" solutionaction="Modified" />
+      </tabs>
+      <header id="{ee909091-5a89-403e-bf82-f34512080f08}" celllabelposition="Top" columns="1111" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{e8813fe3-3ad9-4afd-94c2-52e8d1627a59}" ordinalvalue="10000" solutionaction="Removed" />
+            <cell id="{4343680f-7e56-4968-90fe-814e52f6e2a7}" ordinalvalue="20001" solutionaction="Removed" />
+            <cell id="{cb71ebc2-bee9-740e-2b29-09278aaad258}" showlabel="true" locklevel="0" ordinalvalue="30002" solutionaction="Removed" />
+            <cell id="{d9002ebe-3d57-445d-8fb7-459cfb40f437}" colspan="1" rowspan="1" ordinalvalue="10004" solutionaction="Modified">
+              <labels>
+                <label description="Owner" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+          </row>
+          <row>
+            <cell id="{9e8bbaab-556c-42c7-8644-6cc171dc1345}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000" solutionaction="Added">
+              <labels>
+                <label description="Status" languagecode="1033" />
+              </labels>
+              <control id="header_statecode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="true" />
+            </cell>
+            <cell id="{cc606359-1955-4542-ae26-87e025815c80}" locklevel="0" colspan="1" rowspan="1" showlabel="true" ordinalvalue="20001" solutionaction="Added">
+              <labels>
+                <label description="Status Reason" languagecode="1033" />
+              </labels>
+              <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" uniqueid="{288a8c0b-6de7-5e44-eea9-329a86d0b000}" />
+            </cell>
+            <cell id="{a6fc77eb-9cbf-4b5a-8680-c4a8b4737660}" showlabel="false" ordinalvalue="30002" solutionaction="Added">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{b8667d1b-613c-4ed3-b447-9a3c1018f3a4}" showlabel="false" ordinalvalue="40003" solutionaction="Added">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+          <row>
+            <cell id="{ace84faf-53b2-4610-a3aa-c669e550121e}" showlabel="false" ordinalvalue="20005" solutionaction="Added">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3b8bc426-da8b-440e-bca2-7d9d59aa3bd5}" showlabel="false" ordinalvalue="30006" solutionaction="Added">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{54e291cd-cbbe-47c0-9b36-f90a4bcd0a21}" showlabel="false" ordinalvalue="40007" solutionaction="Added">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <events>
+        <event name="onload" application="true" active="true">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Opportunity.Form.onLoad" libraryName="dpam_/Script/Opportunity.js" handlerUniqueId="{f1c89ce9-9513-4dee-9c9f-6e59375abea7}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="1" solutionaction="Added" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_os_opportunitydepartment" solutionaction="Added">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Opportunity.Form.onChange_dpam_os_opportunitydepartment" libraryName="dpam_/Script/Opportunity.js" handlerUniqueId="{c7ad1a30-fa4c-467c-b9d7-c82c37bbf309}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_os_probability" solutionaction="Added">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Opportunity.Form.onChange_dpam_os_probability" libraryName="dpam_/Script/Opportunity.js" handlerUniqueId="{f37ecc2b-b380-405a-9506-dcc1f4364096}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="parentaccountid" solutionaction="Added">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Opportunity.Form.onChange_parentaccountid" libraryName="dpam_/Script/Opportunity.js" handlerUniqueId="{4f6ebad5-7f33-419f-848c-01a05a971fcb}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+          </Handlers>
+        </event>
+      </events>
+      <controlDescriptions>
+        <controlDescription forControl="{393b71b2-4997-7135-242b-b0ac80dd1194}" solutionaction="Removed" />
+        <controlDescription forControl="{36D5BB4F-04A4-4885-86A7-2E60EBCC03F2}" solutionaction="Modified">
+          <customControl formFactor="0" name="MscrmControls.Grid.ReadOnlyGrid">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23}</ViewId>
+                <IsUserView>false</IsUserView>
+                <RelationshipName>opportunity_connections1</RelationshipName>
+                <TargetEntityType>connection</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+              </data-set>
+              <EnableEditing static="true" type="Enum">no</EnableEditing>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Grid.ReadOnlyGrid">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23}</ViewId>
+                <IsUserView>false</IsUserView>
+                <RelationshipName>opportunity_connections1</RelationshipName>
+                <TargetEntityType>connection</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+              </data-set>
+              <EnableEditing static="true" type="Enum">no</EnableEditing>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Grid.ReadOnlyGrid">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23}</ViewId>
+                <IsUserView>false</IsUserView>
+                <RelationshipName>opportunity_connections1</RelationshipName>
+                <TargetEntityType>connection</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+              </data-set>
+              <EnableEditing static="true" type="Enum">no</EnableEditing>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{74D56A28-6093-4345-8F1D-B1BCE70AA0A0}" solutionaction="Modified">
+          <customControl formFactor="0" name="MscrmControls.Grid.ReadOnlyGrid">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{32B187E5-CC84-EC11-8D21-000D3A4C0E23}</ViewId>
+                <IsUserView>false</IsUserView>
+                <RelationshipName>opportunity_connections1</RelationshipName>
+                <TargetEntityType>connection</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+              </data-set>
+              <EnableEditing static="true" type="Enum">no</EnableEditing>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Grid.ReadOnlyGrid">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{32B187E5-CC84-EC11-8D21-000D3A4C0E23}</ViewId>
+                <IsUserView>false</IsUserView>
+                <RelationshipName>opportunity_connections1</RelationshipName>
+                <TargetEntityType>connection</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+              </data-set>
+              <EnableEditing static="true" type="Enum">no</EnableEditing>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Grid.ReadOnlyGrid">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{32B187E5-CC84-EC11-8D21-000D3A4C0E23}</ViewId>
+                <IsUserView>false</IsUserView>
+                <RelationshipName>opportunity_connections1</RelationshipName>
+                <TargetEntityType>connection</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+              </data-set>
+              <EnableEditing static="true" type="Enum">no</EnableEditing>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{e2c68d83-9246-6b41-1740-0bb03c37c967}" solutionaction="Added">
+          <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" formFactor="0">
+            <parameters>
+              <TargetEntityType>opportunityproduct</TargetEntityType>
+              <ViewId>{F0F9F893-4D27-EC11-B6E5-6045BD8B0918}</ViewId>
+              <ViewIds>{01010DE7-749E-4FE6-8037-ACA560A4FCBE},{F0F9F893-4D27-EC11-B6E5-6045BD8B0918}</ViewIds>
+              <EnableViewPicker>false</EnableViewPicker>
+              <RelationshipName>product_opportunities</RelationshipName>
+              <RecordsPerPage>4</RecordsPerPage>
+              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+              <IsUserView>false</IsUserView>
+              <EnableQuickFind>false</EnableQuickFind>
+              <EnableJumpBar>false</EnableJumpBar>
+              <AutoExpand>Fixed</AutoExpand>
+              <ChartGridMode>Grid</ChartGridMode>
+              <VisualizationId />
+              <IsUserChart>false</IsUserChart>
+              <EnableChartPicker>false</EnableChartPicker>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{F0F9F893-4D27-EC11-B6E5-6045BD8B0918}</ViewId>
+                <columnsDefaultView />
+                <IsUserView>false</IsUserView>
+                <RelationshipName>product_opportunities</RelationshipName>
+                <TargetEntityType>opportunityproduct</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+                <FilteredViewIds>{01010DE7-749E-4FE6-8037-ACA560A4FCBE},{F0F9F893-4D27-EC11-B6E5-6045BD8B0918}</FilteredViewIds>
+              </data-set>
+              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
+              <EnableEditing static="true" type="Enum">yes</EnableEditing>
+              <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
+              <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse static="true" type="Enum">false</EnableSubGridAutoCollapse>
+              <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+              <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+              <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{F0F9F893-4D27-EC11-B6E5-6045BD8B0918}</ViewId>
+                <columnsDefaultView />
+                <IsUserView>false</IsUserView>
+                <RelationshipName>product_opportunities</RelationshipName>
+                <TargetEntityType>opportunityproduct</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+                <FilteredViewIds>{01010DE7-749E-4FE6-8037-ACA560A4FCBE},{F0F9F893-4D27-EC11-B6E5-6045BD8B0918}</FilteredViewIds>
+              </data-set>
+              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
+              <EnableEditing static="true" type="Enum">yes</EnableEditing>
+              <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
+              <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse static="true" type="Enum">false</EnableSubGridAutoCollapse>
+              <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+              <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+              <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <formLibraries>
+        <Library name="dpam_/Script/Opportunity.js" libraryUniqueId="{c741961b-8660-4382-b576-08f436d1bb18}" solutionaction="Added" />
+      </formLibraries>
+      <footer id="{eef6bd94-65c3-4458-a806-005bed555c8f}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows />
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Opportunity" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated default Opportunity form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

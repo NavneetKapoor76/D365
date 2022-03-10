@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{00000000-0000-0000-00aa-000010001009}</savedqueryid>
+    <queryapi></queryapi>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" icon="1" preview="1">
+        <row name="result" id="leadid">
+          <cell name="companyname" width="200" />
+          <cell name="dpam_mos_counterpartytype" width="144" />
+          <cell name="dpam_lk_businesssegmentation" width="173" />
+          <cell name="fullname" width="180" />
+          <cell name="subject" width="200" />
+          <cell name="ownerid" width="100" />
+          <cell name="statuscode" width="118" />
+          <cell name="createdon" width="125" />
+          <cell name="companyname" ishidden="1" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="lead">
+          <attribute name="fullname" />
+          <filter type="and">
+            <filter type="or">
+              <condition attribute="statecode" operator="eq" value="2" />
+              <condition attribute="statecode" operator="eq" value="1" />
+            </filter>
+          </filter>
+          <attribute name="createdon" />
+          <attribute name="subject" />
+          <attribute name="ownerid" />
+          <attribute name="statuscode" />
+          <attribute name="leadid" />
+          <attribute name="companyname" />
+          <attribute name="dpam_mos_counterpartytype" />
+          <attribute name="dpam_lk_businesssegmentation" />
+          <order attribute="createdon" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Closed Leads" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

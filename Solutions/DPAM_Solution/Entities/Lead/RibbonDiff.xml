@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <CustomAction Id="dpam.lead.Disqualify.Button.CustomAction" Location="Mscrm.Form.lead.MainTab.Actions.Controls._children" Sequence="11">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.lead.Disqualify.Button.Alt" Command="dpam.lead.DisqualifyLeadCustomPage.Command" Id="dpam.lead.Disqualify.Button" Image32by32="$webresource:MarketingSales/_imgs/ribbon/DisqualifyLead_32.png" Image16by16="$webresource:MarketingSales/_imgs/ribbon/DisqualifyLead_16.png" LabelText="$LocLabels:dpam.lead.Disqualify.Button.LabelText" Sequence="11" TemplateAlias="o1" ToolTipTitle="$LocLabels:dpam.lead.Disqualify.Button.ToolTipTitle" ToolTipDescription="$LocLabels:dpam.lead.Disqualify.Button.ToolTipDescription" ModernImage="Disqualify" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <HideCustomAction HideActionId="dpam.Mscrm.Form.lead.DisqualifyLeadAs.UCI.Hide" Location="Mscrm.Form.lead.DisqualifyLeadAs.UCI" />
+    <HideCustomAction HideActionId="dpam.Mscrm.HomepageGrid.lead.DisqualifyLeadAs.UCI.Hide" Location="Mscrm.HomepageGrid.lead.DisqualifyLeadAs.UCI" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="dpam.lead.DisqualifyLeadCustomPage.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.lead.EnableDisqualifyButton.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Lead.Ribbon.openDisqualifyLeadCustomPage" Library="$webresource:dpam_/Script/Lead.js" />
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules>
+      <EnableRule Id="dpam.lead.EnableDisqualifyButton.EnableRule">
+        <FormStateRule State="Existing" Default="true" InvertResult="false" />
+        <ValueRule Field="statecode" Value="0" Default="true" InvertResult="false" />
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="dpam.lead.Disqualify.Button.Alt">
+      <Titles>
+        <Title description="Disqualify" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.lead.Disqualify.Button.LabelText">
+      <Titles>
+        <Title description="Disqualify" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.lead.Disqualify.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Disqualify" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.lead.Disqualify.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Disqualify" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

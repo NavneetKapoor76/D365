@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{1fc696c9-b3f9-eb11-94ef-000d3a44e770}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_response" select="1" icon="1" preview="1">
+        <row name="result" id="msevtmgt_registrationresponseid">
+          <cell name="msevtmgt_customregistrationfield" width="195" />
+          <cell name="msevtmgt_response" width="200" />
+          <cell name="a_2f4813491310413ba7ca057c8ef62471.msevtmgt_eventid" width="196" />
+          <cell name="a_2f4813491310413ba7ca057c8ef62471.msevtmgt_contactid" width="199" />
+          <cell name="msevtmgt_eventregistration" width="230" />
+          <cell name="statecode" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="msevtmgt_registrationresponse">
+          <attribute name="msevtmgt_response" />
+          <attribute name="msevtmgt_registrationresponseid" />
+          <link-entity alias="a_2f4813491310413ba7ca057c8ef62471" name="msevtmgt_eventregistration" to="msevtmgt_eventregistration" from="msevtmgt_eventregistrationid" link-type="outer" visible="false">
+            <attribute name="msevtmgt_contactid" />
+            <attribute name="msevtmgt_eventid" />
+          </link-entity>
+          <attribute name="msevtmgt_customregistrationfield" />
+          <attribute name="msevtmgt_eventregistration" />
+          <attribute name="statecode" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.2.4.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="All registration responses" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

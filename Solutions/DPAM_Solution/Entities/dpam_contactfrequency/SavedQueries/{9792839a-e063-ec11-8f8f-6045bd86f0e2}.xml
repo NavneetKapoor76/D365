@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{9792839a-e063-ec11-8f8f-6045bd86f0e2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_s_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_contactfrequencyid">
+          <cell name="dpam_lk_counterparty" width="300" />
+          <cell name="a_dcef69e8e1b04df7be9bdad3956d889f.dpam_lk_businesssegmentation" width="202" />
+          <cell name="a_dcef69e8e1b04df7be9bdad3956d889f.dpam_os_prioritygroup" width="122" />
+          <cell name="dpam_dt_startdate" width="100" />
+          <cell name="dpam_dt_enddate" width="100" />
+          <cell name="dpam_int_numberoftargetactivities" width="161" />
+          <cell name="dpam_int_numberofcompletedactivities" width="189" />
+          <cell name="dpam_int_numberofremaingactivities" width="184" />
+          <cell name="createdon" width="100" />
+          <cell name="a_9a7c84e832524b058d7668c89c391eda.ownerid" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" distinct="true">
+        <entity name="dpam_contactfrequency">
+          <attribute name="dpam_contactfrequencyid" />
+          <attribute name="dpam_lk_counterparty" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity alias="a_dcef69e8e1b04df7be9bdad3956d889f" name="account" to="dpam_lk_counterparty" from="accountid" link-type="inner">
+            <attribute name="dpam_lk_businesssegmentation" />
+            <attribute name="dpam_os_prioritygroup" />
+            <filter type="and">
+              <condition attribute="owningbusinessunit" operator="eq-businessid" />
+            </filter>
+          </link-entity>
+          <attribute name="dpam_dt_startdate" />
+          <attribute name="dpam_dt_enddate" />
+          <attribute name="dpam_int_numberoftargetactivities" />
+          <attribute name="dpam_int_numberofcompletedactivities" />
+          <attribute name="dpam_int_numberofremaingactivities" />
+          <attribute name="createdon" />
+          <link-entity alias="a_9a7c84e832524b058d7668c89c391eda" name="account" to="dpam_lk_counterparty" from="accountid" link-type="outer" visible="false">
+            <attribute name="ownerid" />
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.9.1.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="My Team Active Contact Frequencies" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

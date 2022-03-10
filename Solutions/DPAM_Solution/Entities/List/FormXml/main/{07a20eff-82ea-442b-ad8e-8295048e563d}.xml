@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{07a20eff-82ea-442b-ad8e-8295048e563d}</formid>
+    <IntroducedVersion>9.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1920">
+      <tabs>
+        <tab name="Summary" verticallayout="true" id="{21237741-C962-40B0-B21E-75481E08BB8B}" IsUserDefined="0" expanded="true" locklevel="0" showlabel="true" labelid="{486506b9-a550-4206-8b7a-7b484b960390}" ordinalvalue="0">
+          <columns>
+            <column width="28%" id="0">
+              <sections>
+                <section name="information" showlabel="true" showbar="false" id="{EE912301-B8EB-40CE-A125-0A32DE75A477}" columns="1" IsUserDefined="0" layout="varwidth" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" labelid="{8f061ad7-1c0e-4f00-bc23-358af55f76f6}" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{2E8E2A4A-23AC-4DA4-96B4-C578D21BF9F4}" showlabel="true" locklevel="0" labelid="{3db3b926-b38e-4c16-802f-ad45545053a5}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Name" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{90FFBCDC-C5AF-4191-B2B3-ABF9E90BCD22}" showlabel="true" locklevel="0" labelid="{d9d3aaa3-b3d4-47fb-bc30-530155e0d8de}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Purpose" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4BB8ED69-04A7-47B6-B953-043D352C54D3}" showlabel="true" locklevel="0" labelid="{e745e51a-c7f4-4b2f-add2-d1d6bd78c090}" ordinalvalue="10004">
+                        <labels>
+                          <label description="Source" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{D90C24BE-5F36-4701-B675-B77F58EA99C7}" showlabel="true" locklevel="0" labelid="{6ead3a2e-d96b-4d8e-92e7-ffde6f839974}" ordinalvalue="10005">
+                        <labels>
+                          <label description="Currency" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{E5BD7189-0130-4DB6-B969-CD340C3FFE68}" showlabel="true" locklevel="0" labelid="{4f6b1d1d-c8c0-45bd-9cab-bab7e9617557}" ordinalvalue="10006">
+                        <labels>
+                          <label description="Modified On" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1283039E-273D-463A-864A-2A3429C22540}" showlabel="true" locklevel="0" labelid="{8355389c-9080-4c19-ac5a-d2d824a0608b}" ordinalvalue="10007">
+                        <labels>
+                          <label description="Cost" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7065A33C-A1C6-40EC-BD26-C14187AAC74C}" showlabel="true" locklevel="0" labelid="{5a7f8129-ff5c-4fc5-b24c-1dddc2c9d5e7}" ordinalvalue="10008">
+                        <labels>
+                          <label description="Last Used On" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0BBBFF81-37AE-421D-9372-A68CC956B540}" showlabel="true" locklevel="0" labelid="{f8ca0d2e-3609-4bef-8917-761ac5472ec3}" ordinalvalue="10009">
+                        <labels>
+                          <label description="Locked" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{A4D58C00-8F09-48C6-A825-CC2C8C857404}" showlabel="true" locklevel="0" labelid="{337d1173-74b1-494c-94ca-d4e6c1df7656}" ordinalvalue="10010">
+                        <labels>
+                          <label description="Owner" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3A0D482F-B84B-4702-A59F-17E66C8235F0}" rowspan="1" showlabel="true" labelid="{eb5a7395-6c92-4984-9812-c34b1ce91a09}" locklevel="0" ordinalvalue="10011">
+                        <labels>
+                          <label description="Description" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4be1814c-4c72-807a-bab1-0dd526cb9534}" showlabel="true" locklevel="1" visible="false" labelid="{31e4b5f1-7873-48c7-af24-977c86a8b3e8}" ordinalvalue="10012">
+                        <labels>
+                          <label description="Status" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{A79487F6-BDB9-4154-A3DC-34925E81DA07}" rowspan="1" showlabel="true" visible="false" labelid="{50be91b8-2052-4684-aef3-e8578151033d}" locklevel="0" ordinalvalue="10013">
+                        <labels>
+                          <label description="Query" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{AF206A45-4563-4347-89A3-537D11B3588B}" showlabel="true" locklevel="0" visible="false" labelid="{02f36a21-fca6-4a9a-af33-91eb63222650}" ordinalvalue="10014">
+                        <labels>
+                          <label description="Member Type" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{6BFCD664-85F5-4225-8909-DC37FD9DEA86}" celllabelposition="Top" columns="1111" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{35552749-8BFF-4E53-A37A-C17B063D8D87}" labelid="{02d5782a-1470-438b-a490-40e64eec0984}" ordinalvalue="10000">
+              <labels>
+                <label description="Locked" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+            <cell id="{F289A040-6ABD-4BE6-800D-D6A157795CBA}" labelid="{78fff4c7-6eb4-4321-adba-d5f7f542d938}" ordinalvalue="30002">
+              <labels>
+                <label description="Owner" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Marketing List Light" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated classic Marketing List form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

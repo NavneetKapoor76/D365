@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{9e556f9b-7f44-40a1-9b15-f33064cc74e1}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_s_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_contactfrequencyid">
+          <cell name="dpam_lk_counterparty" width="300" />
+          <cell name="a_61a8c068cf0a4508aecb43210cbbd9f1.dpam_lk_businesssegmentation" width="202" />
+          <cell name="a_61a8c068cf0a4508aecb43210cbbd9f1.dpam_os_prioritygroup" width="127" />
+          <cell name="dpam_dt_startdate" width="100" />
+          <cell name="dpam_dt_enddate" width="100" />
+          <cell name="dpam_int_numberoftargetactivities" width="166" />
+          <cell name="dpam_int_numberofcompletedactivities" width="192" />
+          <cell name="dpam_int_numberofremaingactivities" width="179" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_contactfrequency">
+          <attribute name="dpam_contactfrequencyid" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="dpam_s_name" operator="like" value="{0}" />
+          </filter>
+          <attribute name="dpam_lk_counterparty" />
+          <link-entity alias="a_61a8c068cf0a4508aecb43210cbbd9f1" name="account" to="dpam_lk_counterparty" from="accountid" link-type="outer" visible="false">
+            <attribute name="dpam_lk_businesssegmentation" />
+            <attribute name="dpam_os_prioritygroup" />
+          </link-entity>
+          <attribute name="dpam_dt_startdate" />
+          <attribute name="dpam_dt_enddate" />
+          <attribute name="dpam_int_numberoftargetactivities" />
+          <attribute name="dpam_int_numberofcompletedactivities" />
+          <attribute name="dpam_int_numberofremaingactivities" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Quick Find Active Contact Frequencies" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

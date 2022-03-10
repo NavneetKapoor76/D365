@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.CampaignActivity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1ab64672573c3c75" PluginAssemblyId="5d1b21d2-2a55-4e69-90d1-6c02e80e2a14" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsCampaignActivity-5D1B21D2-2A55-4E69-90D1-6C02E80E2A14/BDPDPAMPluginsCampaignActivity.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.CampaignActivity.PreCreateCampaignActivity, BDP.DPAM.Plugins.CampaignActivity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1ab64672573c3c75" PluginTypeId="419b958b-f008-435b-a473-1447f1a8399e" Name="BDP.DPAM.Plugins.CampaignActivity.PreCreateCampaignActivity">
+      <FriendlyName>13e8206f-84cd-4a0d-99eb-2b50500007fc</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.CampaignActivity.PreUpdateCampaignActivity, BDP.DPAM.Plugins.CampaignActivity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1ab64672573c3c75" PluginTypeId="3545c1f6-e94f-458d-8f5b-d0a4f4e3d406" Name="BDP.DPAM.Plugins.CampaignActivity.PreUpdateCampaignActivity">
+      <FriendlyName>9f30ba08-e103-48fd-94fc-cfb6f730684e</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

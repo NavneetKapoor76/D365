@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{76b81f10-2a08-4f1a-9454-ee38bea94eb5}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form maxWidth="400">
+      <DisplayConditions Order="15" solutionaction="Modified" />
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="App for Outlook Account Quick View" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="App for Outlook Account Quick View" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

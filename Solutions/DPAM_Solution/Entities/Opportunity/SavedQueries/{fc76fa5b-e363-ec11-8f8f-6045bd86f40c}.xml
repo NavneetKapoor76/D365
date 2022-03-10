@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{fc76fa5b-e363-ec11-8f8f-6045bd86f40c}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" icon="1" preview="1">
+        <row name="result" id="opportunityid">
+          <cell name="customerid" width="250" />
+          <cell name="parentcontactid" width="150" />
+          <cell name="ownerid" width="100" />
+          <cell name="name" width="150" />
+          <cell name="estimatedvalue" width="100" />
+          <cell name="estimatedclosedate" width="135" />
+          <cell name="dpam_os_probability" width="100" />
+          <cell name="dpam_os_opportunitytype" width="135" />
+          <cell name="dpam_os_channels" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="opportunity">
+          <attribute name="name" />
+          <attribute name="estimatedvalue" />
+          <attribute name="estimatedclosedate" />
+          <attribute name="parentcontactid" />
+          <attribute name="customerid" />
+          <attribute name="opportunityid" />
+          <attribute name="dpam_os_opportunitytype" />
+          <attribute name="dpam_os_channels" />
+          <attribute name="dpam_os_probability" />
+          <order attribute="estimatedclosedate" descending="false" />
+          <attribute name="ownerid" />
+          <filter type="and">
+            <condition attribute="owningbusinessunit" operator="eq-businessid" />
+            <condition attribute="statecode" operator="eq" value="2" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.9.1.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="My Team Lost Opportunities" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

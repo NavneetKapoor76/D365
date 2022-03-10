@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.Letter.PreUpdateLetter: Update of letter" SdkMessageProcessingStepId="{abdf883b-dd92-ec11-b400-6045bd878fef}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.Letter.PreUpdateLetter, BDP.DPAM.Plugins.Letter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a20441f72635952e</PluginTypeName>
+  <PluginTypeId>80563ab4-2628-4954-a1eb-2552e73568b5</PluginTypeId>
+  <PrimaryEntity>letter</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>scheduledstart</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

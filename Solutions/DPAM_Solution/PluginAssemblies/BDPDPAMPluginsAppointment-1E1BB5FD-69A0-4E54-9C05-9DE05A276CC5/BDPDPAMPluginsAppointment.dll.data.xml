@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.Appointment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=63743d52f4e4cd40" PluginAssemblyId="1e1bb5fd-69a0-4e54-9c05-9de05a276cc5" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsAppointment-1E1BB5FD-69A0-4E54-9C05-9DE05A276CC5/BDPDPAMPluginsAppointment.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Appointment.PostUpdateAppointment, BDP.DPAM.Plugins.Appointment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=63743d52f4e4cd40" PluginTypeId="ef3476d1-5398-4e53-a6db-8d3bd82df95b" Name="BDP.DPAM.Plugins.Appointment.PostUpdateAppointment">
+      <FriendlyName>3a834123-f7f4-4f64-ab6b-a9bb84e05c40</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Appointment.PreCreateAppointment, BDP.DPAM.Plugins.Appointment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=63743d52f4e4cd40" PluginTypeId="2955bcfe-1c7c-4816-82f0-f3734be3a913" Name="BDP.DPAM.Plugins.Appointment.PreCreateAppointment">
+      <FriendlyName>8bab086b-eac9-4d6a-bf3f-cd3cfafa5439</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Appointment.PreUpdateAppointment, BDP.DPAM.Plugins.Appointment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=63743d52f4e4cd40" PluginTypeId="88d3f4d4-e3ca-4514-a533-cb55fdaab909" Name="BDP.DPAM.Plugins.Appointment.PreUpdateAppointment">
+      <FriendlyName>00275780-8419-48d8-b749-e064986aef45</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.PhoneCall.PreCreatePhoneCall: Create of phonecall" SdkMessageProcessingStepId="{c0a319d3-b790-ec11-b400-000d3abd5b5a}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.PhoneCall.PreCreatePhoneCall, BDP.DPAM.Plugins.PhoneCall, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc875fb4f2f9374c</PluginTypeName>
+  <PluginTypeId>5502b6b6-254d-457e-bc52-c2fafa5b87c6</PluginTypeId>
+  <PrimaryEntity>phonecall</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

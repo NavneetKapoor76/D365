@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.MarketingEmailTemplate.PreCreateMarketingEmailTemplate: Create of msdyncrm_marketingemailtemplate" SdkMessageProcessingStepId="{6882170b-738e-ec11-b400-000d3aafdcbf}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.MarketingEmailTemplate.PreCreateMarketingEmailTemplate, BDP.DPAM.Plugins.MarketingEmailTemplate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=da566767c5694a5f</PluginTypeName>
+  <PluginTypeId>36e8cd78-b04a-4300-96c5-6b92e92059ab</PluginTypeId>
+  <PrimaryEntity>msdyncrm_marketingemailtemplate</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{775b6d1d-165d-4c61-a8f5-8eced8600aa2}</formid>
+    <IntroducedVersion>1.1.2.7</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form maxWidth="400">
+      <tabs>
+        <tab id="{b531f0b3-544b-405c-8660-00e29317d21c}" name="tab_1" showlabel="false" labelid="{560d0cf1-8cd5-46ad-8b15-3e222fbd073c}">
+          <labels>
+            <label description="Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="{2c6711b7-62c9-4ffc-a0a0-215a44e76d39}" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelid="{57b64f75-b7b1-4882-9514-c8440cc68134}">
+                  <labels>
+                    <label description="section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{460c6749-cccc-67b9-4e20-65493788502c}" showlabel="true" locklevel="0" labelid="{b120dbed-1638-418b-858f-57a1d5220c2b}">
+                        <labels>
+                          <label description="Primary Contact" languagecode="1033" />
+                        </labels>
+                        <control id="primarycontactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="primarycontactid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7454abd3-7e63-8e4a-ad11-ad70441aa64d}" showlabel="true" locklevel="0" labelid="{fabcc238-c1f7-45e3-9325-738de79add17}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="emailaddress1" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0ed810ce-8e26-5093-4bc5-4d78dcb10270}" showlabel="true" locklevel="0" labelid="{a17a8930-20d1-47e8-9d33-06d127b714e9}">
+                        <labels>
+                          <label description="Primary Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone1" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="telephone1" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="2">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="App for Outlook Counterparty Card" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="App for Outlook Counterparty Card" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

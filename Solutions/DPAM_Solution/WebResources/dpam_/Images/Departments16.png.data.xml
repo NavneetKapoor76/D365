@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{b4664c9d-5c8a-ec11-93b0-000d3a4caf9d}</WebResourceId>
+  <Name>dpam_/Images/Departments16.png</Name>
+  <DisplayName>dpam_/Images/Departments16.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ImagesDepartments16pngB4664C9D-5C8A-EC11-93B0-000D3A4CAF9D</FileName>
+</WebResource>

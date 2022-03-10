@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.Email, Version=1.0.0.0, Culture=neutral, PublicKeyToken=174f47938367910e" PluginAssemblyId="a6a98af1-b968-474c-8e99-58cb46859941" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsEmail-A6A98AF1-B968-474C-8E99-58CB46859941/BDPDPAMPluginsEmail.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Email.PreCreateEmail, BDP.DPAM.Plugins.Email, Version=1.0.0.0, Culture=neutral, PublicKeyToken=174f47938367910e" PluginTypeId="d3bcd2f6-1498-4982-8ec4-4a14baffd8d1" Name="BDP.DPAM.Plugins.Email.PreCreateEmail">
+      <FriendlyName>ea71bb01-11ea-4027-9fb1-685487aeda0d</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Email.PreUpdateEmail, BDP.DPAM.Plugins.Email, Version=1.0.0.0, Culture=neutral, PublicKeyToken=174f47938367910e" PluginTypeId="1ea146ee-50ea-4a46-9ec9-3580046a05d7" Name="BDP.DPAM.Plugins.Email.PreUpdateEmail">
+      <FriendlyName>073a7bfa-3333-4df4-bb96-be282af07e66</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

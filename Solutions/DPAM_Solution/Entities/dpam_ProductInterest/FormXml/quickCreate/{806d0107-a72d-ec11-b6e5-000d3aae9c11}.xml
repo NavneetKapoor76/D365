@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{806d0107-a72d-ec11-b6e5-000d3aae9c11}</formid>
+    <IntroducedVersion>1.5.11.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{d6f7992f-b897-4bd4-b9fd-fed8cca94fd5}">
+          <labels>
+            <label description="New Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{2149c8ce-e139-4f95-aecc-596abcd9bebe}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1b08464e-ea36-4387-bb35-f8277e2e5468}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_counterparty" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_counterparty" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d983b372-8e07-4153-82ae-1899794a0833}" locklevel="0" colspan="1" rowspan="1" showlabel="true">
+                        <labels>
+                          <label description="Department" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_department" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_department" disabled="false" uniqueid="{217b8ae6-cb98-157a-9389-a82582c70291}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>true</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{A04C3C79-5366-484C-9D96-EF9C6CBC7668}</DefaultViewId>
+                            <FilterRelationshipName>dpam_departments_lk_counterparty_Account</FilterRelationshipName>
+                            <DependentAttributeName>dpam_productinterest.dpam_lk_counterparty</DependentAttributeName>
+                            <DependentAttributeType>account</DependentAttributeType>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{83b9f7b6-bf06-4db8-a1af-110398e0c8e1}" locklevel="0" colspan="1" rowspan="1" labelid="{d9f18526-814f-4233-83c4-9571e524966e}">
+                        <labels>
+                          <label description="Contact" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_contact" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_contact" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cc9f0228-2cb4-490d-9d1c-0827c8206f87}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Asset Class" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_product_assetclass" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_product_assetclass" disabled="false">
+                          <parameters>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{D8A570D1-3142-EC11-8C62-6045BD899859}</DefaultViewId>
+                            <AvailableViewIds>{06377234-F167-47E7-BD5E-F7CC61B82F99},{58AFC3C5-8ADD-4552-98CB-473BC8F75619},{A066D18A-8A4A-44EE-B78E-9A870DC799DD},{EAB4CDED-A39F-4B21-B06A-49A45BFA47FD},{44AEB57E-840F-4026-B898-24B261493C3C},{DD35464E-BB9D-4575-9270-BA09DB4244C1},{89A80F99-F388-412A-ADD2-D75C6ACD930F},{FC9C9AA7-16D8-4EF7-A540-2604464EFAC1},{A6C39BA9-EE07-4587-98A7-C23CB1EF496E},{18B841EB-8738-4BCB-9A59-AF7F906E73B4},{19D7F2E0-E427-40FB-85E8-53E7CEF2B166},{D8A570D1-3142-EC11-8C62-6045BD899859},{8BA625B2-6A2A-4735-BAB2-0C74AE8442A4},{6ABCA607-018D-4042-A8A7-56A6A1190483},{2F13D083-C17F-46DC-B40E-8A4603C0711C},{04E73647-B32A-406B-8F81-3017311DAC20}</AvailableViewIds>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{85285f4e-3b92-4ff9-86d9-8c53fbdeaf38}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Category" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_product_category" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_product_category" disabled="false">
+                          <parameters>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{D8A570D1-3142-EC11-8C62-6045BD899859}</DefaultViewId>
+                            <AvailableViewIds>{06377234-F167-47E7-BD5E-F7CC61B82F99},{58AFC3C5-8ADD-4552-98CB-473BC8F75619},{A066D18A-8A4A-44EE-B78E-9A870DC799DD},{EAB4CDED-A39F-4B21-B06A-49A45BFA47FD},{44AEB57E-840F-4026-B898-24B261493C3C},{DD35464E-BB9D-4575-9270-BA09DB4244C1},{89A80F99-F388-412A-ADD2-D75C6ACD930F},{FC9C9AA7-16D8-4EF7-A540-2604464EFAC1},{A6C39BA9-EE07-4587-98A7-C23CB1EF496E},{18B841EB-8738-4BCB-9A59-AF7F906E73B4},{19D7F2E0-E427-40FB-85E8-53E7CEF2B166},{D8A570D1-3142-EC11-8C62-6045BD899859},{8BA625B2-6A2A-4735-BAB2-0C74AE8442A4},{6ABCA607-018D-4042-A8A7-56A6A1190483},{2F13D083-C17F-46DC-B40E-8A4603C0711C},{04E73647-B32A-406B-8F81-3017311DAC20}</AvailableViewIds>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{56a38a00-fecf-426a-9c86-7c6daae0a5af}" locklevel="0" colspan="1" rowspan="1" labelid="{380cc404-a8c1-440f-9099-309f2ff28d4c}">
+                        <labels>
+                          <label description="Fund Name" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_product" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_product" disabled="false">
+                          <parameters>
+                            <DefaultViewId>{D8A570D1-3142-EC11-8C62-6045BD899859}</DefaultViewId>
+                            <AvailableViewIds>{06377234-F167-47E7-BD5E-F7CC61B82F99},{58AFC3C5-8ADD-4552-98CB-473BC8F75619},{A066D18A-8A4A-44EE-B78E-9A870DC799DD},{EAB4CDED-A39F-4B21-B06A-49A45BFA47FD},{44AEB57E-840F-4026-B898-24B261493C3C},{DD35464E-BB9D-4575-9270-BA09DB4244C1},{89A80F99-F388-412A-ADD2-D75C6ACD930F},{FC9C9AA7-16D8-4EF7-A540-2604464EFAC1},{A6C39BA9-EE07-4587-98A7-C23CB1EF496E},{18B841EB-8738-4BCB-9A59-AF7F906E73B4},{19D7F2E0-E427-40FB-85E8-53E7CEF2B166},{8BA625B2-6A2A-4735-BAB2-0C74AE8442A4},{6ABCA607-018D-4042-A8A7-56A6A1190483},{2F13D083-C17F-46DC-B40E-8A4603C0711C},{04E73647-B32A-406B-8F81-3017311DAC20},{D8A570D1-3142-EC11-8C62-6045BD899859}</AvailableViewIds>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d9df5e8d-d8c6-4e10-b1d3-112b987becf4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Market" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_market" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_market" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6e28dca3-03f9-4d23-9bbc-f8b3e97eb671}" locklevel="0" colspan="1" rowspan="1" showlabel="true">
+                        <labels>
+                          <label description="Share Class" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_shareclass" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_shareclass" disabled="false" uniqueid="{c1bed45a-54bc-7555-4859-10118159ac7c}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>true</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{4905B538-B846-EC11-8C62-6045BD8DB221}</DefaultViewId>
+                            <FilterRelationshipName>dpam_shareclass_Product_Product</FilterRelationshipName>
+                            <DependentAttributeName>dpam_productinterest.dpam_lk_product</DependentAttributeName>
+                            <DependentAttributeType>product</DependentAttributeType>
+                            <AllowFilterOff>true</AllowFilterOff>
+                            <AvailableViewIds>{0DD3A46D-C36B-49AA-A30B-C22D49DC0905},{84AEF74F-84CA-4634-AA7E-410F1C0D5EAA},{4905B538-B846-EC11-8C62-6045BD8DB221},{87EEB094-08AA-4D0A-A7F7-2DC2779702F1}</AvailableViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c7c47e3c-a3b4-4987-995d-b8db0d00a0d1}" locklevel="0" colspan="1" rowspan="1" showlabel="true">
+                        <labels>
+                          <label description="Fact Sheet" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_factsheet" classid="{B0C6723A-8503-4fd7-BB28-C8A06AC933C2}" datafieldname="dpam_b_factsheet" disabled="false" uniqueid="{57c9bea3-a1be-7c3a-45c3-8a97240b6142}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{00abe056-431b-4109-93e9-49cee5d6d85d}" locklevel="0" colspan="1" rowspan="1" showlabel="true">
+                        <labels>
+                          <label description="Fund Manager Comments" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_fundmanagercomments" classid="{B0C6723A-8503-4fd7-BB28-C8A06AC933C2}" datafieldname="dpam_b_fundmanagercomments" disabled="false" uniqueid="{9b8c87e8-5c5e-656e-a2cc-2daa3b5928d3}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cd8d5599-4a3a-4b10-b46c-1ab5cb655706}" locklevel="0" colspan="1" rowspan="1" showlabel="true">
+                        <labels>
+                          <label description="ESG Fact Sheet" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_esgfactsheet" classid="{B0C6723A-8503-4fd7-BB28-C8A06AC933C2}" datafieldname="dpam_b_esgfactsheet" disabled="false" uniqueid="{6e4499e6-d9b4-8033-88d1-8318cc74e216}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b9b0bd08-c9a4-47e0-aaa4-12035e76889a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Marketing Material" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_mos_marketingmaterial" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="dpam_mos_marketingmaterial" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a530a082-0a97-4c8f-80c7-9ccf34bef9bd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Language" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_mos_language" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="dpam_mos_language" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{ce8320ce-7d42-4297-a81e-09fdb4d6429e}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{d7ce25b2-5813-4efd-9357-39d9a412d9a2}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{fa3dd6ba-2cee-424e-8e88-1a4abddab756}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{c48353f4-9e29-4512-be42-1b93fd9431ef}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <controlDescriptions />
+      <formLibraries>
+        <Library name="dpam_/Script/ProductInterest.js" libraryUniqueId="{27bbaba3-dd2f-4527-803e-a7240c9111f8}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="true" active="true">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ProductInterest.Form.QuickCreateonLoad" libraryName="dpam_/Script/ProductInterest.js" handlerUniqueId="{9039f17c-9ebd-441a-98be-faa566bebcd2}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_lk_product_assetclass">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ProductInterest.Form.onChange_dpam_lk_product_assetclass" libraryName="dpam_/Script/ProductInterest.js" handlerUniqueId="{ed07f839-3ce3-4565-8868-6ca6274d0d0b}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_lk_product_category">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ProductInterest.Form.onChange_dpam_lk_product_category" libraryName="dpam_/Script/ProductInterest.js" handlerUniqueId="{20e26944-ce64-4ee6-8859-df7a3cf3266f}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_lk_product">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ProductInterest.Form.onChange_dpam_lk_product" libraryName="dpam_/Script/ProductInterest.js" handlerUniqueId="{ab547c5c-e79b-4c27-9d9f-e65bed6bb61a}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_lk_contact">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ProductInterest.Form.onChange_dpam_lk_contact" libraryName="dpam_/Script/ProductInterest.js" handlerUniqueId="{c602be22-5bdc-4a9a-a1f6-74d9f6753143}" enabled="true" parameters="true" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_lk_counterparty">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ProductInterest.Form.onChange_dpam_lk_counterparty" libraryName="dpam_/Script/ProductInterest.js" handlerUniqueId="{61b4584e-f140-44b6-9b08-3903aa4e58f0}" enabled="true" parameters="true" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{bf51087a-a1f8-4120-9038-1cb348a1246d}" />
+        <Role Id="{c9b0232f-2014-4d10-91a8-34be6121eabd}" />
+        <Role Id="{9279e494-efe9-4465-9a0d-3baf6adac6e7}" />
+        <Role Id="{d03f7688-5c27-4f6e-907f-3f60c38f9961}" />
+        <Role Id="{a01b1f68-90c9-4375-b247-461fac844a3e}" />
+        <Role Id="{02d3bec6-efe6-4d63-a285-670389290d61}" />
+        <Role Id="{32a27bfa-0059-4d58-a0c7-70581ada5fb4}" />
+        <Role Id="{4567ffa8-9f90-4796-863f-72bd28768625}" />
+        <Role Id="{fd998c22-5618-423a-9c05-74ab483e5e4b}" />
+        <Role Id="{37c62b12-2ae7-44e9-b7b8-87feb0bb3636}" />
+        <Role Id="{7f3f276d-4ff6-4993-8237-93471fac1693}" />
+        <Role Id="{3aea951d-8a9d-48a9-bdb0-95ea31fbcc1f}" />
+        <Role Id="{eba14b9a-b018-4176-81d5-984a1cf73333}" />
+        <Role Id="{17c54990-7a4e-4752-821e-985ef0a6142a}" />
+        <Role Id="{166f4860-17c9-40a0-aef4-9a12f93b2a91}" />
+        <Role Id="{dce40038-fd03-4bf7-87e1-c1597c3953cc}" />
+        <Role Id="{d257c72c-23cc-4003-b11d-c22d06b389f0}" />
+        <Role Id="{9d3da75d-0295-48bc-8495-ce85cb048bb0}" />
+        <Role Id="{d1499f84-6dbd-4e51-a03c-d34c6b84e593}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Product Interest quick create form" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

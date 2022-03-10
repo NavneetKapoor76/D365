@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.Location.PostUpdateLocation: Update of dpam_location" SdkMessageProcessingStepId="{3c8b4bdf-e5de-eb11-bacb-00224884d601}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.Location.PostUpdateLocation, BDP.DPAM.Plugins.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=95b50df59898083b</PluginTypeName>
+  <PluginTypeId>8132ad73-5ae6-4016-b5e6-31da2a88da90</PluginTypeId>
+  <PrimaryEntity>dpam_location</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>dpam_b_main,dpam_lk_account,dpam_lk_country,dpam_postofficebox,dpam_s_city,dpam_s_name,dpam_s_postalcode,dpam_s_street1,dpam_s_street2,dpam_s_street3,statecode</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages>
+    <SdkMessageProcessingStepImage Name="PreImage">
+      <SdkMessageProcessingStepImageId>{5ccafcf9-e5de-eb11-bacb-00224884d601}</SdkMessageProcessingStepImageId>
+      <Attributes>dpam_b_main,dpam_lk_account,dpam_lk_country,dpam_postofficebox,dpam_s_city,dpam_s_name,dpam_s_postalcode,dpam_s_street1,dpam_s_street2,dpam_s_street3</Attributes>
+      <EntityAlias>PreImage</EntityAlias>
+      <ImageType>0</ImageType>
+      <MessagePropertyName>Target</MessagePropertyName>
+      <IsCustomizable>1</IsCustomizable>
+    </SdkMessageProcessingStepImage>
+  </SdkMessageProcessingStepImages>
+</SdkMessageProcessingStep>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.MarketingEmailTemplate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=da566767c5694a5f" PluginAssemblyId="c2133fb1-23ca-4736-926e-07ebe1add667" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsMarketingEmailTemplate-C2133FB1-23CA-4736-926E-07EBE1ADD667/BDPDPAMPluginsMarketingEmailTemplate.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.MarketingEmailTemplate.PreCreateMarketingEmailTemplate, BDP.DPAM.Plugins.MarketingEmailTemplate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=da566767c5694a5f" PluginTypeId="36e8cd78-b04a-4300-96c5-6b92e92059ab" Name="BDP.DPAM.Plugins.MarketingEmailTemplate.PreCreateMarketingEmailTemplate">
+      <FriendlyName>3c1aa2e9-5170-400e-82e8-0b267de3a0ce</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

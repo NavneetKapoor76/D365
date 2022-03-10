@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="account_parent_account" />
+  <EntityRelationship Name="Account_Tasks" unmodified="1" />
+  <EntityRelationship Name="bookableresourcebooking_Tasks" unmodified="1" />
+  <EntityRelationship Name="bookableresourcebookingheader_Tasks" unmodified="1" />
+  <EntityRelationship Name="bulkoperation_Tasks" unmodified="1" />
+  <EntityRelationship Name="business_unit_dpam_agreement" />
+  <EntityRelationship Name="business_unit_dpam_agreementtype" />
+  <EntityRelationship Name="business_unit_dpam_contactfrequency" />
+  <EntityRelationship Name="business_unit_dpam_contacttitle" />
+  <EntityRelationship Name="business_unit_dpam_counterpartybusinesssegmentation" />
+  <EntityRelationship Name="business_unit_dpam_counterpartycompliancesegmentation" />
+  <EntityRelationship Name="business_unit_dpam_counterpartylegalform" />
+  <EntityRelationship Name="business_unit_dpam_counterpartymifidcategory" />
+  <EntityRelationship Name="business_unit_dpam_country" />
+  <EntityRelationship Name="business_unit_dpam_cplocalbusinesssegmentation" />
+  <EntityRelationship Name="business_unit_dpam_departments" />
+  <EntityRelationship Name="business_unit_dpam_greeting" />
+  <EntityRelationship Name="business_unit_dpam_jobfunction" />
+  <EntityRelationship Name="business_unit_dpam_leadsource" />
+  <EntityRelationship Name="business_unit_dpam_location" />
+  <EntityRelationship Name="business_unit_dpam_productinterest" />
+  <EntityRelationship Name="business_unit_dpam_settings" />
+  <EntityRelationship Name="business_unit_dpam_shareclass" />
+  <EntityRelationship Name="business_unit_parent_business_unit" unmodified="1" />
+  <EntityRelationship Name="Campaign_Tasks" unmodified="1" />
+  <EntityRelationship Name="CampaignActivity_Tasks" unmodified="1" />
+  <EntityRelationship Name="Contact_dpam_lk_principalnationality_dpam" />
+  <EntityRelationship Name="contact_parent_contact" />
+  <EntityRelationship Name="Contact_Tasks" unmodified="1" />
+  <EntityRelationship Name="Contract_Tasks" unmodified="1" />
+  <EntityRelationship Name="dpam_Account_dpam_lk_counterpartymifidcategory" />
+  <EntityRelationship Name="dpam_Account_lk_backupmanager_SystemUser" />
+  <EntityRelationship Name="dpam_Account_lk_businesssegmentation_dpam_coun" />
+  <EntityRelationship Name="dpam_Account_lk_compliancesegmentation_dpam_co" />
+  <EntityRelationship Name="dpam_Account_lk_country_dpam_country" />
+  <EntityRelationship Name="dpam_Account_lk_dmu_Account" />
+  <EntityRelationship Name="dpam_Account_lk_legalform_dpam_counterpartyleg" />
+  <EntityRelationship Name="dpam_Account_lk_localbusinesssegmentation_dpam" />
+  <EntityRelationship Name="dpam_agreement_lk_agreementtype" />
+  <EntityRelationship Name="dpam_agreement_lk_counterparty_Account" />
+  <EntityRelationship Name="dpam_BusinessUnit_lk_country_dpam_country" />
+  <EntityRelationship Name="dpam_Contact_lk_contacttitle_dpam_contacttitle" />
+  <EntityRelationship Name="dpam_Contact_lk_country_dpam_country" />
+  <EntityRelationship Name="dpam_Contact_lk_mainlocation_dpam_location" />
+  <EntityRelationship Name="dpam_contactfrequency_lk_counterparty_Acc" />
+  <EntityRelationship Name="dpam_counterpartycompliancesegmentation_l" />
+  <EntityRelationship Name="dpam_counterpartylegalform_lk_country_dpa" />
+  <EntityRelationship Name="dpam_cpcomplianceseg_lk_cpbusinessseg" />
+  <EntityRelationship Name="dpam_cplocalbusinesssegmentation_lk_busin" />
+  <EntityRelationship Name="dpam_cplocalbusinesssegmentation_lk_count" />
+  <EntityRelationship Name="dpam_departments_backupmanager_SystUser" />
+  <EntityRelationship Name="dpam_departments_Contact_Contact" />
+  <EntityRelationship Name="dpam_departments_lk_businesssegmentation_" />
+  <EntityRelationship Name="dpam_departments_lk_compliancesegmentatio" />
+  <EntityRelationship Name="dpam_departments_lk_counterparty_Account" />
+  <EntityRelationship Name="dpam_departments_lk_localbusinesssegmenta" />
+  <EntityRelationship Name="dpam_departments_lk_location_dpam_locatio" />
+  <EntityRelationship Name="dpam_departments_lk_mifidcategory_dpam_Co" />
+  <EntityRelationship Name="dpam_dpam_greeting_contact_lk_greeting" />
+  <EntityRelationship Name="dpam_Lead_lk_businesssegmentation_dpam_counter" />
+  <EntityRelationship Name="dpam_Lead_lk_country_dpam_country" />
+  <EntityRelationship Name="dpam_Lead_lk_leadsource_dpam_leadsource" />
+  <EntityRelationship Name="dpam_Lead_lk_localbusinesssegmentation_dpam_cp" />
+  <EntityRelationship Name="dpam_location_lk_account_Account" />
+  <EntityRelationship Name="dpam_location_lk_country_dpam_country" />
+  <EntityRelationship Name="dpam_location_lk_primarycontact_Contact" />
+  <EntityRelationship Name="dpam_Opportunity_lk_department" />
+  <EntityRelationship Name="dpam_Opportunity_lk_sourcecampaign_msdyncrm_cu" />
+  <EntityRelationship Name="dpam_ProductInterest_counterparty_Account" />
+  <EntityRelationship Name="dpam_ProductInterest_department_department" />
+  <EntityRelationship Name="dpam_ProductInterest_lk_contact_Contact" />
+  <EntityRelationship Name="dpam_ProductInterest_lk_product_assetclas" />
+  <EntityRelationship Name="dpam_ProductInterest_lk_product_category_" />
+  <EntityRelationship Name="dpam_ProductInterest_lk_product_Product" />
+  <EntityRelationship Name="dpam_ProductInterest_lk_shareclass_dpam_s" />
+  <EntityRelationship Name="dpam_shareclass_Product_Product" />
+  <EntityRelationship Name="entitlement_Tasks" unmodified="1" />
+  <EntityRelationship Name="entitlementtemplate_Tasks" unmodified="1" />
+  <EntityRelationship Name="Incident_Tasks" unmodified="1" />
+  <EntityRelationship Name="Invoice_Tasks" unmodified="1" />
+  <EntityRelationship Name="KnowledgeArticle_Tasks" unmodified="1" />
+  <EntityRelationship Name="KnowledgeBaseRecord_Tasks" unmodified="1" />
+  <EntityRelationship Name="Lead_Tasks" unmodified="1" />
+  <EntityRelationship Name="lk_dpam_agreement_createdby" />
+  <EntityRelationship Name="lk_dpam_agreement_modifiedby" />
+  <EntityRelationship Name="lk_dpam_agreementtype_createdby" />
+  <EntityRelationship Name="lk_dpam_agreementtype_modifiedby" />
+  <EntityRelationship Name="lk_dpam_contactfrequency_createdby" />
+  <EntityRelationship Name="lk_dpam_contactfrequency_modifiedby" />
+  <EntityRelationship Name="lk_dpam_contacttitle_createdby" />
+  <EntityRelationship Name="lk_dpam_contacttitle_modifiedby" />
+  <EntityRelationship Name="lk_dpam_counterpartybusinesssegmentation_createdby" />
+  <EntityRelationship Name="lk_dpam_counterpartybusinesssegmentation_modifiedby" />
+  <EntityRelationship Name="lk_dpam_counterpartycompliancesegmentation_createdby" />
+  <EntityRelationship Name="lk_dpam_counterpartycompliancesegmentation_modifiedby" />
+  <EntityRelationship Name="lk_dpam_counterpartylegalform_createdby" />
+  <EntityRelationship Name="lk_dpam_counterpartylegalform_modifiedby" />
+  <EntityRelationship Name="lk_dpam_counterpartymifidcategory_createdby" />
+  <EntityRelationship Name="lk_dpam_counterpartymifidcategory_modifiedby" />
+  <EntityRelationship Name="lk_dpam_country_createdby" />
+  <EntityRelationship Name="lk_dpam_country_modifiedby" />
+  <EntityRelationship Name="lk_dpam_cplocalbusinesssegmentation_createdby" />
+  <EntityRelationship Name="lk_dpam_cplocalbusinesssegmentation_modifiedby" />
+  <EntityRelationship Name="lk_dpam_departments_createdby" />
+  <EntityRelationship Name="lk_dpam_departments_modifiedby" />
+  <EntityRelationship Name="lk_dpam_greeting_createdby" />
+  <EntityRelationship Name="lk_dpam_greeting_modifiedby" />
+  <EntityRelationship Name="lk_dpam_jobfunction_createdby" />
+  <EntityRelationship Name="lk_dpam_jobfunction_modifiedby" />
+  <EntityRelationship Name="lk_dpam_leadsource_createdby" />
+  <EntityRelationship Name="lk_dpam_leadsource_modifiedby" />
+  <EntityRelationship Name="lk_dpam_location_createdby" />
+  <EntityRelationship Name="lk_dpam_location_modifiedby" />
+  <EntityRelationship Name="lk_dpam_productinterest_createdby" />
+  <EntityRelationship Name="lk_dpam_productinterest_modifiedby" />
+  <EntityRelationship Name="lk_dpam_settings_createdby" />
+  <EntityRelationship Name="lk_dpam_settings_modifiedby" />
+  <EntityRelationship Name="lk_dpam_shareclass_createdby" />
+  <EntityRelationship Name="lk_dpam_shareclass_modifiedby" />
+  <EntityRelationship Name="lk_task_createdby" unmodified="1" />
+  <EntityRelationship Name="msdyn_customerasset_Tasks" />
+  <EntityRelationship Name="msdyn_msdyn_functionallocation_account" />
+  <EntityRelationship Name="msdyn_playbookinstance_Tasks" />
+  <EntityRelationship Name="msdyn_postalbum_Tasks" />
+  <EntityRelationship Name="msdyncrm_contentsettings_Tasks" />
+  <EntityRelationship Name="msdyncrm_customerjourney_Tasks" />
+  <EntityRelationship Name="msdyncrm_leadscoremodel_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinaccount_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinactivity_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinfieldmapping_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinform_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinformanswer_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinformquestion_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinformsubmission_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinleadmatchingstrategy_Tasks" />
+  <EntityRelationship Name="msdyncrm_linkedinuserprofile_Tasks" />
+  <EntityRelationship Name="msdyncrm_list_msdyncrm_listform" />
+  <EntityRelationship Name="msdyncrm_marketingdynamiccontentmetadata_Tasks" />
+  <EntityRelationship Name="msdyncrm_marketingemaildynamiccontentmetadata_Tasks" />
+  <EntityRelationship Name="msdyncrm_marketingemailtestsend_Tasks" />
+  <EntityRelationship Name="msdyncrm_migration_Tasks" />
+  <EntityRelationship Name="msdyncrm_msdyncrm_customerjourney_contact_customerjourneyid" />
+  <EntityRelationship Name="msdyncrm_msdyncrm_marketingemail_contact_emailid" />
+  <EntityRelationship Name="msdyncrm_msdyncrm_marketingform_contact_marketingformid" />
+  <EntityRelationship Name="msdyncrm_msdyncrm_marketingpage_contact_marketingpageid" />
+  <EntityRelationship Name="msdyncrm_msdyncrm_segment_contact" />
+  <EntityRelationship Name="msdyncrm_quicksendemail_contact" />
+  <EntityRelationship Name="msdyncrm_uicconfig_Tasks" />
+  <EntityRelationship Name="msevtmgt_checkin_contact" />
+  <EntityRelationship Name="msevtmgt_checkin_Tasks" />
+  <EntityRelationship Name="msevtmgt_event_Tasks" />
+  <EntityRelationship Name="msevtmgt_eventpurchase_Tasks" />
+  <EntityRelationship Name="msevtmgt_eventpurchaseattendee_Tasks" />
+  <EntityRelationship Name="msevtmgt_eventpurchasepass_Tasks" />
+  <EntityRelationship Name="msevtmgt_eventregistration_Tasks" />
+  <EntityRelationship Name="msevtmgt_hotel_Tasks" />
+  <EntityRelationship Name="msevtmgt_hotelroomallocation_Tasks" />
+  <EntityRelationship Name="msevtmgt_hotelroomreservation_Tasks" />
+  <EntityRelationship Name="msevtmgt_layout_Tasks" />
+  <EntityRelationship Name="msevtmgt_msevtmgt_event_contact_originatingeventid" />
+  <EntityRelationship Name="msevtmgt_room_Tasks" />
+  <EntityRelationship Name="msevtmgt_session_Tasks" />
+  <EntityRelationship Name="msevtmgt_sessionregistration_Tasks" />
+  <EntityRelationship Name="msevtmgt_sessiontrack_Tasks" />
+  <EntityRelationship Name="msevtmgt_speaker_Tasks" />
+  <EntityRelationship Name="msevtmgt_speakerengagement_Tasks" />
+  <EntityRelationship Name="msevtmgt_sponsorablearticle_Tasks" />
+  <EntityRelationship Name="msevtmgt_sponsorship_Tasks" />
+  <EntityRelationship Name="msevtmgt_venue_Tasks" />
+  <EntityRelationship Name="msevtmgt_webinarconfiguration_Tasks" />
+  <EntityRelationship Name="msevtmgt_webinarprovider_Tasks" />
+  <EntityRelationship Name="msgdpr_contact_msgdpr_gdprparent" />
+  <EntityRelationship Name="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" />
+  <EntityRelationship Name="opportunity_parent_account" unmodified="1" />
+  <EntityRelationship Name="opportunity_parent_contact" unmodified="1" />
+  <EntityRelationship Name="Opportunity_Tasks" unmodified="1" />
+  <EntityRelationship Name="owner_dpam_agreement" />
+  <EntityRelationship Name="owner_dpam_agreementtype" />
+  <EntityRelationship Name="owner_dpam_contactfrequency" />
+  <EntityRelationship Name="owner_dpam_contacttitle" />
+  <EntityRelationship Name="owner_dpam_counterpartybusinesssegmentation" />
+  <EntityRelationship Name="owner_dpam_counterpartycompliancesegmentation" />
+  <EntityRelationship Name="owner_dpam_counterpartylegalform" />
+  <EntityRelationship Name="owner_dpam_counterpartymifidcategory" />
+  <EntityRelationship Name="owner_dpam_country" />
+  <EntityRelationship Name="owner_dpam_cplocalbusinesssegmentation" />
+  <EntityRelationship Name="owner_dpam_departments" />
+  <EntityRelationship Name="owner_dpam_greeting" />
+  <EntityRelationship Name="owner_dpam_jobfunction" />
+  <EntityRelationship Name="owner_dpam_leadsource" />
+  <EntityRelationship Name="owner_dpam_location" />
+  <EntityRelationship Name="owner_dpam_productinterest" />
+  <EntityRelationship Name="owner_dpam_settings" />
+  <EntityRelationship Name="owner_dpam_shareclass" />
+  <EntityRelationship Name="Quote_Tasks" unmodified="1" />
+  <EntityRelationship Name="SalesOrder_Tasks" unmodified="1" />
+  <EntityRelationship Name="site_Tasks" unmodified="1" />
+  <EntityRelationship Name="team_dpam_agreement" />
+  <EntityRelationship Name="team_dpam_agreementtype" />
+  <EntityRelationship Name="team_dpam_contactfrequency" />
+  <EntityRelationship Name="team_dpam_contacttitle" />
+  <EntityRelationship Name="team_dpam_counterpartybusinesssegmentation" />
+  <EntityRelationship Name="team_dpam_counterpartycompliancesegmentation" />
+  <EntityRelationship Name="team_dpam_counterpartylegalform" />
+  <EntityRelationship Name="team_dpam_counterpartymifidcategory" />
+  <EntityRelationship Name="team_dpam_country" />
+  <EntityRelationship Name="team_dpam_cplocalbusinesssegmentation" />
+  <EntityRelationship Name="team_dpam_departments" />
+  <EntityRelationship Name="team_dpam_greeting" />
+  <EntityRelationship Name="team_dpam_jobfunction" />
+  <EntityRelationship Name="team_dpam_leadsource" />
+  <EntityRelationship Name="team_dpam_location" />
+  <EntityRelationship Name="team_dpam_productinterest" />
+  <EntityRelationship Name="team_dpam_settings" />
+  <EntityRelationship Name="team_dpam_shareclass" />
+  <EntityRelationship Name="user_dpam_agreement" />
+  <EntityRelationship Name="user_dpam_agreementtype" />
+  <EntityRelationship Name="user_dpam_contactfrequency" />
+  <EntityRelationship Name="user_dpam_contacttitle" />
+  <EntityRelationship Name="user_dpam_counterpartybusinesssegmentation" />
+  <EntityRelationship Name="user_dpam_counterpartycompliancesegmentation" />
+  <EntityRelationship Name="user_dpam_counterpartylegalform" />
+  <EntityRelationship Name="user_dpam_counterpartymifidcategory" />
+  <EntityRelationship Name="user_dpam_country" />
+  <EntityRelationship Name="user_dpam_cplocalbusinesssegmentation" />
+  <EntityRelationship Name="user_dpam_departments" />
+  <EntityRelationship Name="user_dpam_greeting" />
+  <EntityRelationship Name="user_dpam_jobfunction" />
+  <EntityRelationship Name="user_dpam_leadsource" />
+  <EntityRelationship Name="user_dpam_location" />
+  <EntityRelationship Name="user_dpam_productinterest" />
+  <EntityRelationship Name="user_dpam_settings" />
+  <EntityRelationship Name="user_dpam_shareclass" />
+</EntityRelationships>
