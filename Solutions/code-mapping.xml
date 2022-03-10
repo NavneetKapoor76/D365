@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <Folder map="WebResources\DPAM_\Script"   to="..\..\..\WebResources" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsContact.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Contact.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsEventRegistration.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.EventRegistration.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsLocation.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Location.dll" />
+</Mapping>
