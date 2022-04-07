@@ -15,7 +15,7 @@ parameters:
 
 pool:
   name: Azure Pipelines
-  demands: powershell
+  #demands: powershell
   vmImage: windows-latest
 
 variables:
