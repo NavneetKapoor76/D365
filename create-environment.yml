@@ -25,7 +25,7 @@ steps:
   displayName: 'Power Platform Create Environment '
   inputs:
     authenticationType: PowerPlatformSPN
-    PowerPlatformSPN: ${{variables.EnvironmentUrl}}
+    PowerPlatformSPN: $(EnvironmentUrl)
     DisplayName: '$(EnvironmentDisplayName)'
     AppsTemplate: 'D365_CustomerService,D365_Sales'
     LocationName: europe
@@ -36,6 +36,6 @@ steps:
   displayName: 'Power Platform Copy Environment '
   inputs:
     authenticationType: PowerPlatformSPN
-    PowerPlatformSPN: ${{variables.EnvironmentUrl}}
+    PowerPlatformSPN: $(EnvironmentUrl)
     TargetEnvironmentUrl: '$(EnvironmentName)'
   enabled: false
