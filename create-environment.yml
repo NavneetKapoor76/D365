@@ -13,7 +13,7 @@ variables:
 
 resources:
   repositories:
-  - repository: dpam
+  - repository: self
     type: git
     ref: refs/heads/DEV
 
