@@ -5,9 +5,6 @@
 
 name: "Copy components to main solution (YAML)"
 
-trigger:
-- master
-
 parameters:
 - name: fromSolutionName
   displayName: From Solution Name
