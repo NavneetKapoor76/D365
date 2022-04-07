@@ -1,0 +1,31 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+pool:
+  name: Azure Pipelines
+  vmImage: windows-latest
+
+steps:
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
+  displayName: 'Power Platform Tool Installer '
+
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.create-environment.PowerPlatformCreateEnvironment@0
+  displayName: 'Power Platform Create Environment '
+  inputs:
+    authenticationType: PowerPlatformSPN
+    PowerPlatformSPN: '$[variables.EnvironmentUrl]'
+    DisplayName: '$(EnvironmentDisplayName)'
+    AppsTemplate: 'D365_CustomerService,D365_Sales'
+    LocationName: europe
+    CurrencyName: EUR
+    DomainName: '$(EnvironmentName)'
+
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.copy-environment.PowerPlatformCopyEnvironment@0
+  displayName: 'Power Platform Copy Environment '
+  inputs:
+    authenticationType: PowerPlatformSPN
+    PowerPlatformSPN: '$[variables.EnvironmentUrl]'
+    TargetEnvironmentUrl: '$(EnvironmentName)'
+  enabled: false
