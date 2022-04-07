@@ -15,6 +15,10 @@ pool:
   name: Azure Pipelines
   demands: powershell
 
+variables:
+- group: "dev-scope"
+- group: "project-scope"
+
 #Your build pipeline references an undefined variable named ‘EnvironmentUrl’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 #Your build pipeline references an undefined variable named ‘AppId’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 #Your build pipeline references an undefined variable named ‘ClientSecret’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
