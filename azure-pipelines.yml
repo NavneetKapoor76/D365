@@ -10,7 +10,6 @@ parameters:
 - name: fromSolutionName
   displayName: From Solution Name
   type: string
-  default: "TEST"
 
 pool:
   name: Azure Pipelines
