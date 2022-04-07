@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+parameters:
+- name: fromSolutionName
+  displayName: From Solution Name
+  type: string
+  default: "TEST"
+
+pool:
+  name: Azure Pipelines
+  demands: powershell
+
+#Your build pipeline references an undefined variable named ‘EnvironmentUrl’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘AppId’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘ClientSecret’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘Parameters.fromSolutionName’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘SolutionName’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+
+steps:
+- task: WaelHamze.xrm-ci-framework-build-tasks.MSCRMToolInstaller.MSCRMToolInstaller@12
+  displayName: 'Power DevOps Tool Installer'
+
+- task: WaelHamze.xrm-ci-framework-build-tasks.MSCRMCopySolutionComponents.MSCRMCopySolutionComponents@12
+  displayName: 'Add components from : TEST to $(SolutionName)'
+  inputs:
+    crmConnectionString: 'AuthType=ClientSecret; url=$(EnvironmentUrl); ClientId=$(AppId); ClientSecret=$(ClientSecret)'
+    fromSolutionName: '$(Parameters.fromSolutionName)'
+    toSolutionName: '$(SolutionName)'
+
