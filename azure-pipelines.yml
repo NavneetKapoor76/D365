@@ -15,13 +15,21 @@ parameters:
 
 pool:
   name: Azure Pipelines
-  #demands: powershell
+  demands: powershell
+  vmImage: windows-latest
 
 variables:
 - group: "dev-scope"
 - group: "project-scope"
 
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/DEV
+
 steps:
+- checkout: self
 - task: WaelHamze.xrm-ci-framework-build-tasks.MSCRMToolInstaller.MSCRMToolInstaller@12
   displayName: 'Power DevOps Tool Installer'
 
