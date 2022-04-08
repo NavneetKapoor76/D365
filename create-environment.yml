@@ -34,16 +34,19 @@ steps:
   inputs:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: $(EnvironmentUrl)
-    DisplayName: $(parameters.EnvironmentDisplayName)
+    DisplayName: ${{parameters.EnvironmentDisplayName}}
     AppsTemplate: 'D365_CustomerService,D365_Sales'
     LocationName: europe
     CurrencyName: EUR
-    DomainName: $(parameters.EnvironmentName)
+    DomainName: ${{parameters.EnvironmentName}}
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.copy-environment.PowerPlatformCopyEnvironment@0
   displayName: 'Power Platform Copy Environment '
   inputs:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: $(EnvironmentUrl)
-    TargetEnvironmentUrl: $(parameters.EnvironmentName)
+    TargetEnvironmentUrl: ${{parameters.EnvironmentName}}
+    CopyType: 'MinimalCopy'
+    OverrideFriendlyName: true
+    FriendlyName: ${{parameters.EnvironmentDisplayName}}
   enabled: false
