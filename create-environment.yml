@@ -13,6 +13,15 @@ parameters:
 - name: EnvironmentName
   displayName: Environment Name
   type: string
+- name: EnvironmentType
+  displayName: Environment Copy Method
+  type: string
+  default: New + Solution
+  values:
+  - New + Solution
+  - New + Solution + Data
+  - MinimalCopy
+  - FullCopy
 
 pool:
   name: Azure Pipelines
@@ -32,24 +41,25 @@ steps:
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Power Platform Tool Installer '
 
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.create-environment.PowerPlatformCreateEnvironment@0
-  displayName: 'Power Platform Create Environment '
-  inputs:
-    authenticationType: PowerPlatformSPN
-    PowerPlatformSPN: $(EnvironmentUrl)
-    DisplayName: ${{parameters.EnvironmentDisplayName}}
-    AppsTemplate: 'D365_CustomerService,D365_Sales'
-    LocationName: europe
-    CurrencyName: EUR
-    DomainName: ${{parameters.EnvironmentName}}
+- ${{ if eq(parameters.EnvironmentType, 'New + Solution') }}:
+  - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.create-environment.PowerPlatformCreateEnvironment@0
+    displayName: 'Power Platform Create Environment '
+    inputs:
+      authenticationType: PowerPlatformSPN
+      PowerPlatformSPN: $(EnvironmentUrl)
+      DisplayName: ${{parameters.EnvironmentDisplayName}}
+      AppsTemplate: 'D365_CustomerService,D365_Sales'
+      LocationName: europe
+      CurrencyName: EUR
+      DomainName: ${{parameters.EnvironmentName}}
 
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.copy-environment.PowerPlatformCopyEnvironment@0
-  displayName: 'Power Platform Copy Environment '
-  inputs:
-    authenticationType: PowerPlatformSPN
-    PowerPlatformSPN: $(EnvironmentUrl)
-    TargetEnvironmentUrl: ${{parameters.EnvironmentName}}
-    CopyType: 'MinimalCopy'
-    OverrideFriendlyName: true
-    FriendlyName: ${{parameters.EnvironmentDisplayName}}
-  enabled: false
+- ${{ else }}:
+  - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.copy-environment.PowerPlatformCopyEnvironment@0
+    displayName: 'Power Platform Copy Environment '
+    inputs:
+      authenticationType: PowerPlatformSPN
+      PowerPlatformSPN: $(EnvironmentUrl)
+      TargetEnvironmentUrl: ${{parameters.EnvironmentName}}
+      CopyType: ${{parameters.EnvironmentType}}
+      OverrideFriendlyName: true
+      FriendlyName: ${{parameters.EnvironmentDisplayName}}
