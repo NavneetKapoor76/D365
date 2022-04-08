@@ -34,6 +34,6 @@ steps:
   displayName: 'Add components from : TEST to $(SolutionName)'
   inputs:
     crmConnectionString: 'AuthType=ClientSecret; url=$(EnvironmentUrl); ClientId=$(AppId); ClientSecret=$(ClientSecret)'
-    fromSolutionName: '$(Parameters.fromSolutionName)'
-    toSolutionName: '$(SolutionName)'
+    fromSolutionName: $(Parameters.fromSolutionName)
+    toSolutionName: $(SolutionName)
 
