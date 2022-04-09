@@ -22,6 +22,9 @@ parameters:
   - New + Solution + Data
   - MinimalCopy
   - FullCopy
+- name: NewBranchName
+  displayName: New Branch Name
+  type: string
 
 pool:
   name: Azure Pipelines
@@ -38,6 +41,11 @@ resources:
     ref: refs/heads/DEV
 
 steps:
+- script: |
+   git checkout -b ${{parameters.NewBranchName}} sprint
+  displayName: 'Create New Git Branch: ${{parameters.NewBranchName}}'
+  workingDirectory: $(Build.SourcesDirectory)\${{parameters.repo}}
+  condition: and(succeeded(), ne(parameters.NewBranchName, ''))
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Power Platform Tool Installer '
 
