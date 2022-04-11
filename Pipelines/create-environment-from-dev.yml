@@ -38,7 +38,6 @@ resources:
   repositories:
   - repository: self
     type: git
-    ref: refs/heads/DEV
 
 steps:
 - script: |
