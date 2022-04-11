@@ -1,0 +1,39 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+name: "Copy components to main solution (YAML)"
+
+parameters:
+- name: fromSolutionName
+  displayName: From Solution Name
+  type: string
+
+pool:
+  name: Azure Pipelines
+  #demands: powershell
+  vmImage: windows-latest
+
+variables:
+- group: "dev-scope"
+- group: "project-scope"
+
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/DEV
+
+steps:
+- checkout: self
+- task: WaelHamze.xrm-ci-framework-build-tasks.MSCRMToolInstaller.MSCRMToolInstaller@12
+  displayName: 'Power DevOps Tool Installer'
+
+- task: WaelHamze.xrm-ci-framework-build-tasks.MSCRMCopySolutionComponents.MSCRMCopySolutionComponents@12
+  displayName: 'Add components from : TEST to $(SolutionName)'
+  inputs:
+    crmConnectionString: 'AuthType=ClientSecret; url=$(EnvironmentUrl); ClientId=$(AppId); ClientSecret=$(ClientSecret)'
+    fromSolutionName: $(Parameters.fromSolutionName)
+    toSolutionName: $(SolutionName)
+
