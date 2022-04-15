@@ -35,7 +35,7 @@ steps:
 
         # Set pipeline variable to be used in subsequent tasks when importing module
         $modulePath = Join-Path ([IO.Path]::GetDirectoryName($($fixedModulePath))) $ModuleName
-        Write-Host "##vso[task.setvariable variable=CoETools_$($ModuleName.Replace('.','_'))]$modulePath"
+        Write-Host "##vso[task.setvariable variable=$($ModuleName.Replace('.','_'))]$modulePath"
       }
 
       New-Item $(powerPlatformToolsPath) -ItemType Directory -Force | Out-Null
