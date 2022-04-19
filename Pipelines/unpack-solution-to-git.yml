@@ -48,7 +48,7 @@ stages:
         project: $(Project)
         repo: $(Repo)
         branch: $(Build.SourceBranchName)
-        commitMessage: $(CommitComment)
+        commitMessage: ${{parameters.CommitComment}}
         email: $(CommitUserEmail)
         serviceConnection: $(EnvironmentUrl)
         solutionName: $(SolutionName)
