@@ -19,9 +19,6 @@ pr: none
 name: export-$(SolutionName)-to-git-branch
 
 parameters:
-- name: Branch
-  displayName: Branch
-  type: string
 - name: CommitComment
   displayName: Commit Comment
   type: string
@@ -42,7 +39,7 @@ stages:
     steps:
 
     # Checkout our Branch
-    - checkout: git://$(Project)/$(Repo)@$(Branch)
+    - checkout: git://$(Project)/$(Repo)@$(Build.SourceBranch)
       displayName: 'Checkout Source Branch'
 
     # Other tasks, which use the PowerApps PowerShell cmdlets, need the environment guid.  Setting it for future use.
@@ -50,7 +47,7 @@ stages:
       parameters:
         project: $(Project)
         repo: $(Repo)
-        branch: $(Branch)
+        branch: $(Build.SourceBranch)
         commitMessage: $(CommitComment)
         email: $(Email)
         serviceConnection: $(ServiceConnection)
