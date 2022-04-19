@@ -37,7 +37,6 @@ stages:
       vmImage: 'windows-latest'
 
     steps:
-
     # Checkout our Branch
     - checkout: git://$(Project)/$(Repo)@$(Build.SourceBranch)
       displayName: 'Checkout Source Branch'
