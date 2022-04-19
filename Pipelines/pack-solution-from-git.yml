@@ -17,6 +17,15 @@ variables:
 - group: project-scope
 - group: dev-scope
 
+parameters:
+- name: buildType
+  type: string
+  default: 'Both'
+  values:
+  - Both
+  - Managed
+  - Unmanaged
+
 stages:
 - stage: build
   displayName: Build
@@ -26,3 +35,5 @@ stages:
       vmImage: 'windows-latest'
     steps:
     - template: Templates\build-solution.yml
+      parameters:
+        buildType: ${{parameters.buildType}}
