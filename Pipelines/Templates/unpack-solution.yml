@@ -6,6 +6,7 @@
 # .serviceConnection: The name of the service connection to Power Platform from which we'll be pulling the solution.
 # SolutionName: The name of the solution being exported (i.e. Not the Display Name).
 # UserName: The Display name of the user performing the commit.
+parameters:
 - name: project
   type: string
   default: ''
@@ -30,8 +31,8 @@
 - name: userName
   type: string
   default: ''
-steps:
 
+steps:
 # Set pipeline vars for tools paths.
 - template: set-tools-paths.yml
 
