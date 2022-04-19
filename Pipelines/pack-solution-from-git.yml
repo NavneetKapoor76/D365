@@ -20,7 +20,7 @@ variables:
 parameters:
 - name: SolutionName
   type: string
-  default: $(SolutionName)
+  default: ${{variables.SolutionName}}
 
 stages:
 - stage: build
