@@ -30,9 +30,6 @@
 - name: userName
   type: string
   default: ''
-- name: configurationData
-  type: string
-  default: ''
 steps:
 
 # Set pipeline vars for tools paths.
