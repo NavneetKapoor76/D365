@@ -17,11 +17,6 @@ variables:
 - group: project-scope
 - group: dev-scope
 
-parameters:
-- name: SolutionName
-  type: string
-  default: ${{variables.SolutionName}}
-
 stages:
 - stage: build
   displayName: Build
