@@ -12,15 +12,15 @@ trigger:
     
 name: 1.0.$(Date:yyyyMMdd)$(Rev:.r)
 
-parameters:
-- name: SolutionName
-  type: string
-  default: $(SolutionName)
-
 # NOTE: If you want to use different values for these variables, you can remove the variable group and attach them directly to this pipeline. The group specified below is a variable group defined in the Library for the Pipelines
 variables:
 - group: project-scope
 - group: dev-scope
+
+parameters:
+- name: SolutionName
+  type: string
+  default: $(SolutionName)
 
 stages:
 - stage: build
