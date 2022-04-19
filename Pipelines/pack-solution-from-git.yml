@@ -10,6 +10,7 @@ variables:
 
 parameters:
 - name: buildType
+  displayName: Build Type
   type: string
   default: 'Both'
   values:
