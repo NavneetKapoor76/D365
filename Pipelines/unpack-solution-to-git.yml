@@ -18,15 +18,17 @@ pr: none
 
 name: export-$(SolutionName)-to-git-branch
 
+parameters:
+- name: Branch
+  displayName: Branch
+  type: string
+- name: CommitComment
+  displayName: Commit Comment
+  type: string
+
 variables:
 - group: project-scope
 - group: dev-scope
-- name: Branch
-    displayName: Branch
-    type: string
-- name: CommitComment
-    displayName: Commit Comment
-    type: string
 
 stages:
 - stage: export_solution_to_git
