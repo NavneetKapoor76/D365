@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{940c7b69-3a65-46c5-b6e9-cb66d95c93d9}</formid>
+    <IntroducedVersion>6.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab name="COMPETITOR" verticallayout="true" id="{A778C7FF-A9BD-49A5-BED4-9C846259CF42}" IsUserDefined="0" labelid="{56ae96da-9611-4d78-aa60-7407f643c701}" expanded="true" showlabel="true" ordinalvalue="0">
+          <columns>
+            <column width="28%" id="0">
+              <sections>
+                <section name="Competitor Information" showlabel="false" showbar="false" id="{0651AB53-11DE-4628-A568-E2DD834A7946}" IsUserDefined="0" labelid="{b30d1e5e-0ee8-4f18-84a5-41d59519dc98}" locklevel="0" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{DC1B5A20-4B0D-406F-9D1A-436C251A4AB0}" showlabel="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Name" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0E2F4404-CC5D-41C9-8478-D94577A90B45}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Website" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{B6B47D0D-7177-4450-905E-CC4DF0A1FCCA}" visible="false" ordinalvalue="10004" solutionaction="Modified">
+                        <labels>
+                          <label description="Currency" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{93c3cce3-5044-2b20-779e-a0dc14ca1058}" labelid="{81E44AAC-3F05-472E-9ABD-DECE590AEDA3}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10005" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{6ba021c0-ad06-86c3-4dce-1203289dcaa5}" showlabel="true" rowspan="4" colspan="1" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="STRENGTH" languagecode="1033" />
+                        </labels>
+                        <control id="strengths" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="strengths" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eca4b763-a633-0243-3d4e-9abb0bd9ee3b}" showlabel="true" rowspan="4" colspan="1" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="WEAKNESS" languagecode="1033" />
+                        </labels>
+                        <control id="weaknesses" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="weaknesses" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="44%" id="1">
+              <sections>
+                <section id="{224330c1-49de-42a8-bee4-9bcfd5f96646}" name="notes" showlabel="false" showbar="false" celllabelalignment="Left" celllabelposition="Top" height="auto" IsUserDefined="0" visible="false" ordinalvalue="0" solutionaction="Modified" />
+              </sections>
+            </column>
+            <column width="28%" id="2">
+              <sections>
+                <section id="{4c468edf-ea70-4ffe-8423-fed3b1cc6e08}" name="analysis" showlabel="false" showbar="false" IsUserDefined="0" locklevel="0" celllabelalignment="Left" celllabelposition="Top" visible="false" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{6ba021c0-ad06-86c3-4dce-1203289dcaa5}" showlabel="true" rowspan="4" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{eca4b763-a633-0243-3d4e-9abb0bd9ee3b}" showlabel="true" rowspan="4" ordinalvalue="10001" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell showlabel="false" locklevel="0" id="{0407e642-02c1-4cf0-8109-c66dc8c2ba0b}" ordinalvalue="10000" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{d4013632-f3e5-4618-96f5-2732322277a3}">
+        <rows>
+          <row>
+            <cell id="{1c876a65-cd2c-14a9-010a-d93338cb107c}" showlabel="true" visible="false" ordinalvalue="20001" solutionaction="Modified">
+              <labels>
+                <label description="Ticker Symbol" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+            <cell id="{a778356a-60d3-8040-2d5a-116da22c0407}" showlabel="true" visible="false" ordinalvalue="30002" solutionaction="Modified">
+              <labels>
+                <label description="Reported Revenue" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{858a7553-2e67-485f-b585-1693232a7ffe}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows>
+          <row>
+            <cell id="{8d064227-0ce4-444f-8b99-37b2b41762bf}" showlabel="false" ordinalvalue="10000">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{2d5a7edd-e3d9-42f3-b2ea-7c8d9cfe8ea0}" showlabel="false" ordinalvalue="20001">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d48929c8-cd93-492e-9b17-f21f319b49ee}" showlabel="false" ordinalvalue="30002">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Competitor" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated default Competitor form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

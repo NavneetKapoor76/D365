@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{0afdb5ff-7ca3-ec11-983f-000d3a4cbc25}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_productinterestid">
+          <cell name="dpam_lk_counterparty" width="116" />
+          <cell name="dpam_lk_department" width="100" />
+          <cell name="dpam_lk_contact" width="138" />
+          <cell name="dpam_lk_product" width="174" />
+          <cell name="dpam_os_market" width="100" />
+          <cell name="dpam_lk_shareclass" width="100" />
+          <cell name="dpam_b_factsheet" width="100" />
+          <cell name="dpam_b_fundmanagercomments" width="195" />
+          <cell name="dpam_b_esgfactsheet" width="129" />
+          <cell name="dpam_mos_marketingmaterial" width="149" />
+          <cell name="dpam_mos_language" width="100" />
+          <cell name="ownerid" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" distinct="true">
+        <entity name="dpam_productinterest">
+          <attribute name="dpam_productinterestid" />
+          <attribute name="dpam_mos_language" />
+          <attribute name="dpam_mos_marketingmaterial" />
+          <attribute name="dpam_b_esgfactsheet" />
+          <attribute name="dpam_b_fundmanagercomments" />
+          <attribute name="dpam_b_factsheet" />
+          <attribute name="dpam_os_market" />
+          <attribute name="dpam_lk_product" />
+          <attribute name="dpam_lk_contact" />
+          <attribute name="dpam_lk_shareclass" />
+          <attribute name="dpam_lk_counterparty" />
+          <attribute name="dpam_lk_department" />
+          <attribute name="ownerid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <link-entity name="systemuser" alias="ac" link-type="inner" from="systemuserid" to="owninguser">
+            <filter type="and">
+              <condition attribute="businessunitid" operator="eq-businessid" />
+            </filter>
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="My Team Inactive Product Interests" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

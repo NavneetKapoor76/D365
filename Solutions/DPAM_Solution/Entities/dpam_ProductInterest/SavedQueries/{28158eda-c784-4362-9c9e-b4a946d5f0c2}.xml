@@ -5,7 +5,7 @@
     <CanBeDeleted>0</CanBeDeleted>
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
-    <isdefault>1</isdefault>
+    <isdefault>0</isdefault>
     <savedqueryid>{28158eda-c784-4362-9c9e-b4a946d5f0c2}</savedqueryid>
     <layoutxml>
       <grid name="resultset" jump="dpam_name" select="1" icon="1" preview="1">

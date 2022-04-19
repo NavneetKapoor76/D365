@@ -19,6 +19,7 @@
     <RolePrivilege name="prvAppendLanguageLocale" level="Global" />
     <RolePrivilege name="prvAppendLead" level="Global" />
     <RolePrivilege name="prvAppendLeadToOpportunitySalesProcess" level="Global" />
+    <RolePrivilege name="prvAppendlistoperation" level="Deep" />
     <RolePrivilege name="prvAppendMailbox" level="Basic" />
     <RolePrivilege name="prvAppendMailboxTrackingFolder" level="Basic" />
     <RolePrivilege name="prvAppendMailMergeTemplate" level="Basic" />
@@ -58,6 +59,7 @@
     <RolePrivilege name="prvAppendToLanguageLocale" level="Global" />
     <RolePrivilege name="prvAppendToLead" level="Global" />
     <RolePrivilege name="prvAppendToLeadToOpportunitySalesProcess" level="Global" />
+    <RolePrivilege name="prvAppendTolistoperation" level="Deep" />
     <RolePrivilege name="prvAppendToMailMergeTemplate" level="Basic" />
     <RolePrivilege name="prvAppendTomsdyn_actioncardregarding" level="Global" />
     <RolePrivilege name="prvAppendTomsdyn_actioncardrolesetting" level="Global" />
@@ -102,6 +104,7 @@
     <RolePrivilege name="prvAssignEmailSignature" level="Local" />
     <RolePrivilege name="prvAssignEmailTemplate" level="Local" />
     <RolePrivilege name="prvAssignLead" level="Global" />
+    <RolePrivilege name="prvAssignlistoperation" level="Basic" />
     <RolePrivilege name="prvAssignMailMergeTemplate" level="Basic" />
     <RolePrivilege name="prvAssignmsdyn_duplicateleadmapping" level="Global" />
     <RolePrivilege name="prvAssignmsdyn_recording" level="Basic" />
@@ -134,6 +137,7 @@
     <RolePrivilege name="prvCreateExchangeSyncIdMapping" level="Basic" />
     <RolePrivilege name="prvCreateLead" level="Global" />
     <RolePrivilege name="prvCreateLeadToOpportunitySalesProcess" level="Global" />
+    <RolePrivilege name="prvCreatelistoperation" level="Basic" />
     <RolePrivilege name="prvCreateMailboxTrackingFolder" level="Basic" />
     <RolePrivilege name="prvCreateMailMergeTemplate" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_actioncardregarding" level="Basic" />
@@ -172,6 +176,7 @@
     <RolePrivilege name="prvDeleteEmailTemplate" level="Basic" />
     <RolePrivilege name="prvDeleteExchangeSyncIdMapping" level="Basic" />
     <RolePrivilege name="prvDeleteLeadToOpportunitySalesProcess" level="Global" />
+    <RolePrivilege name="prvDeletelistoperation" level="Basic" />
     <RolePrivilege name="prvDeleteMailboxTrackingFolder" level="Basic" />
     <RolePrivilege name="prvDeleteMailMergeTemplate" level="Basic" />
     <RolePrivilege name="prvDeletemsdyn_duplicateleadmapping" level="Global" />
@@ -240,6 +245,7 @@
     <RolePrivilege name="prvReadLead" level="Global" />
     <RolePrivilege name="prvReadLeadToOpportunitySalesProcess" level="Global" />
     <RolePrivilege name="prvReadLicense" level="Global" />
+    <RolePrivilege name="prvReadlistoperation" level="Global" />
     <RolePrivilege name="prvReadMailbox" level="Basic" />
     <RolePrivilege name="prvReadMailboxTrackingFolder" level="Basic" />
     <RolePrivilege name="prvReadMailMergeTemplate" level="Basic" />
@@ -259,6 +265,7 @@
     <RolePrivilege name="prvReadmsdyn_recording" level="Global" />
     <RolePrivilege name="prvReadmsdyn_sikeyvalueconfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_teamsdialeradminsettings" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_timespent" level="Global" />
     <RolePrivilege name="prvReadmsdyn_wallsavedquery" level="Global" />
     <RolePrivilege name="prvReadmsdyn_wallsavedqueryusersettings" level="Basic" />
     <RolePrivilege name="prvReadNewsArticle" level="Global" />
@@ -315,6 +322,7 @@
     <RolePrivilege name="prvReadWorkflowSession" level="Global" />
     <RolePrivilege name="prvShareCallbackRegistration" level="Basic" />
     <RolePrivilege name="prvShareCustomerRelationship" level="Basic" />
+    <RolePrivilege name="prvSharelistoperation" level="Deep" />
     <RolePrivilege name="prvSharemsdyn_duplicateleadmapping" level="Global" />
     <RolePrivilege name="prvSharemsdyn_recording" level="Global" />
     <RolePrivilege name="prvShareNote" level="Global" />
@@ -339,6 +347,7 @@
     <RolePrivilege name="prvWriteExchangeSyncIdMapping" level="Basic" />
     <RolePrivilege name="prvWriteLead" level="Global" />
     <RolePrivilege name="prvWriteLeadToOpportunitySalesProcess" level="Global" />
+    <RolePrivilege name="prvWritelistoperation" level="Deep" />
     <RolePrivilege name="prvWriteMailbox" level="Basic" />
     <RolePrivilege name="prvWriteMailboxTrackingFolder" level="Basic" />
     <RolePrivilege name="prvWriteMailMergeTemplate" level="Basic" />

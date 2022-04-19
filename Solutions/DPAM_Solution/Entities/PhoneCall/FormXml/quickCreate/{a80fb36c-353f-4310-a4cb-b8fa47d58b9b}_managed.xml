@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a80fb36c-353f-4310-a4cb-b8fa47d58b9b}</formid>
+    <IntroducedVersion>9.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="PhoneCall_Tab_1" id="{ddbec6c0-c9d7-49b0-b066-37452cc224d0}" showlabel="false" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="PhoneCall_Description" id="{d31b733c-2d1b-020b-4335-ea510c673378}" columns="1" showlabel="true" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{b721cae8-b39c-4bb9-989f-3fd40130a2c0}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Owner" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="PhoneCall_Description_2" id="{d31b733c-2d1b-020b-4335-ea510c673377}" columns="1" showlabel="true" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{7474f28a-c24c-44a6-bd4e-b648d5d1acab}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Duration" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section name="PhoneCall_Description_3" id="{d31b733c-2d1b-020b-4335-ea510c673376}" columns="1" showlabel="true" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{850991fd-30c2-4098-a369-aa6ec7cee7cb}" ordinalvalue="10001">
+                        <control id="prioritycode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="prioritycode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{196075AD-03CE-4F20-A982-02C8DB06769B}" ordinalvalue="10002">
+                        <control id="regardingobjectid" classid="{F3015350-44A2-4aa0-97B5-00166532B5E9}" datafieldname="regardingobjectid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onload" application="true" active="true">
+          <Handlers solutionaction="Added">
+            <Handler functionName="BDP.DPAM.WR.PhoneCall.Form.quickCreateOnLoad" libraryName="dpam_/Script/PhoneCall.js" handlerUniqueId="{ec8031c9-ee62-41e4-8628-00416d81673e}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+          </Handlers>
+        </event>
+      </events>
+      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries solutionaction="Added">
+        <Library name="dpam_/Script/PhoneCall.js" libraryUniqueId="{a13c77a3-37f2-4d46-bd71-a20a99c31f00}" />
+      </formLibraries>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Phone call quick create form." languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Phone call quick create form." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

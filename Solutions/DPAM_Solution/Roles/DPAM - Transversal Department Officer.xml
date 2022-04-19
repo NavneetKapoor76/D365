@@ -181,6 +181,7 @@
     <RolePrivilege name="prvCreateAccount" level="Global" />
     <RolePrivilege name="prvCreateActivity" level="Global" />
     <RolePrivilege name="prvCreateContact" level="Global" />
+    <RolePrivilege name="prvCreatedpam_counterpartylegalform" level="Global" />
     <RolePrivilege name="prvCreatedpam_location" level="Global" />
     <RolePrivilege name="prvCreateExchangeSyncIdMapping" level="Basic" />
     <RolePrivilege name="prvCreateOrgEmailTemplates" level="Global" />

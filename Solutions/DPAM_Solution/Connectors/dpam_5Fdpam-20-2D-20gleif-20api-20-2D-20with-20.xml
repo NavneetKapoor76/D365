@@ -5,7 +5,7 @@
   <displayname>DPAM - GLEIF API - With Params</displayname>
   <iconbrandcolor>#007ee5</iconbrandcolor>
   <name>dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20</name>
-  <connectortype>1</connectortype>
+  <connectortype>0</connectortype>
   <openapidefinition>/Connector/dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20_openapidefinition.json</openapidefinition>
   <connectionparameters>/Connector/dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20_connectionparameters.json</connectionparameters>
   <policytemplateinstances>/Connector/dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20_policytemplateinstances.json</policytemplateinstances>

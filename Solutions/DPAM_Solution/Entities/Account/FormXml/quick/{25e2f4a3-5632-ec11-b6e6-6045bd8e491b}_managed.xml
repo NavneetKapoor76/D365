@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{25e2f4a3-5632-ec11-b6e6-6045bd8e491b}</formid>
+    <IntroducedVersion>1.5.24.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{149c205f-d8f8-4187-80f4-2ed813e05f44}">
+          <labels>
+            <label description="New Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{05e58549-b7ab-4494-88ab-4de6c17cf1e7}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{98099dc1-983b-4465-8631-5b00c4b83d45}" locklevel="0" colspan="1" rowspan="1" labelid="{6e667b0f-4f99-4a35-9007-7fb65422502a}">
+                        <labels>
+                          <label description="Business Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_businesssegmentation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_businesssegmentation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eea7ad3e-64e8-470f-b8d2-1ebee3a21ec1}" locklevel="0" colspan="1" rowspan="1" labelid="{86ea99a1-8978-4d87-a59a-f355285221c6}">
+                        <labels>
+                          <label description="Local Business Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_localbusinesssegmentation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_localbusinesssegmentation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1867a91f-0bc0-4ed3-bfe2-b3575b6c3cce}" locklevel="0" colspan="1" rowspan="1" labelid="{c803da79-5ec9-4e5b-b357-787ce4489b91}">
+                        <labels>
+                          <label description="Priority Group" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_prioritygroup" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_prioritygroup" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="17" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Contact Frequency quick view form" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

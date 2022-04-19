@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ff49442f-8c60-4877-bdae-8fe51e6f4636}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>0</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="true" showImage="false" maxWidth="1920" solutionaction="Modified">
+      <tabs>
+        <tab name="SUMMARY_TAB" id="{3fbb0e51-c6a6-42a1-8113-3b19558132f2}" IsUserDefined="0" showlabel="false" expanded="true" locklevel="0" labelid="{2f560d24-d34e-4924-bea4-0a8b7a4795f1}" ordinalvalue="1" solutionaction="Modified">
+          <columns>
+            <column width="24%" id="0">
+              <sections>
+                <section name="ACCOUNT_INFORMATION" showlabel="true" showbar="false" id="{0ec2e053-634c-4955-8f61-bfc599ce53c1}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Left" labelid="{f0d590d9-4b1e-4e00-bd19-22bdd88e2b4d}" ordinalvalue="0">
+                  <labels>
+                    <label description="COUNTERPARTY INFORMATION" languagecode="1033" solutionaction="Modified" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a8c64b24-9fec-493b-bfd4-49637c243132}" showlabel="true" labelid="{80d9a2c7-3aab-4bab-8adb-82174e47e2aa}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Counterparty Name" languagecode="1033" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b5e71955-f9cf-48d4-8f2f-c5f847a0667d}" labelid="{23c50cec-4886-4892-afeb-5bedc7b6a4ec}" ordinalvalue="10006">
+                        <labels>
+                          <label description="Parent Counterparty" languagecode="1033" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="DETAILS_TAB" id="{d76404cc-4248-474a-bc6a-8fb250ef6268}" IsUserDefined="0" showlabel="true" expanded="true" labelid="{0e36d881-8032-4ac0-b8c0-1eefd8165f88}" ordinalvalue="2" solutionaction="Modified" />
+        <tab name="tab_recordwall" id="{e94e6ac4-12db-bc8c-ec81-8b20c5987655}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="false" labelid="{890b2890-9993-4355-a37a-0ff7b244434c}" ordinalvalue="0" solutionaction="Added">
+          <labels>
+            <label description="What's New" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_recordwall_section_1" showlabel="false" showbar="false" locklevel="0" id="{ac0addcc-a626-6c98-40ee-b11edac36204}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" labelid="{57007c80-a358-405c-89f4-cce0c2ba4e59}" ordinalvalue="0">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{be13b312-b6ac-83d7-34e1-e90dc1ecbec7}" showlabel="false" colspan="1" auto="false" rowspan="15" labelid="{9429b7f8-3b28-4b01-997e-a20c5cd532a7}" ordinalvalue="10000">
+                        <labels>
+                          <label description="RecordWall" languagecode="1033" />
+                        </labels>
+                        <control id="WebResource_RecordWall" classid="{9FDF5F91-88B1-47f4-AD53-C11EFC01A01D}">
+                          <parameters>
+                            <Url>msdyn_/RecordWall.htm</Url>
+                            <PassParameters>true</PassParameters>
+                            <Security>false</Security>
+                            <Scrolling>auto</Scrolling>
+                            <Border>false</Border>
+                          </parameters>
+                        </control>
+                        <events>
+                          <event name="onload" application="0">
+                            <dependencies />
+                          </event>
+                        </events>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+          <events>
+            <event name="tabstatechange" application="false" active="false">
+              <Handlers>
+                <Handler functionName="ActivityFeeds.Form.CustomizationUtils.updateRecordWallRenderingState" libraryName="msdyn_/ActivityFeeds.Form.js" handlerUniqueId="{9beb6ce6-2666-8033-a406-3d68d44b9592}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+              </Handlers>
+            </event>
+          </events>
+        </tab>
+      </tabs>
+      <DisplayConditions FallbackForm="true" Order="17" solutionaction="Modified" />
+      <formLibraries solutionaction="Added">
+        <Library name="msdyn_/ActivityFeeds.Form.js" libraryUniqueId="{4181da4c-6d13-ba3c-c859-be404e4ee2e3}" />
+      </formLibraries>
+      <footer id="{16e10bde-2de4-4a7a-9b58-180e05278847}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows>
+          <row>
+            <cell id="{befeb1cb-0674-4baf-be3b-d9246f73ecc2}" showlabel="false" ordinalvalue="10000">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{6d571fb7-33bd-433e-8a75-b3561815c979}" showlabel="false" ordinalvalue="20001">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{056420d1-9563-4dfd-9346-20e9ab471b57}" showlabel="false" ordinalvalue="30002">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Account for Multisession experience" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Default Multisession experience Account form." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

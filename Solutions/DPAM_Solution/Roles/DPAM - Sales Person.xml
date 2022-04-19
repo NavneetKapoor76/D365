@@ -202,6 +202,7 @@
     <RolePrivilege name="prvCreateCustomerRelationship" level="Basic" />
     <RolePrivilege name="prvCreatedpam_agreement" level="Global" />
     <RolePrivilege name="prvCreatedpam_agreementtype" level="Global" />
+    <RolePrivilege name="prvCreatedpam_counterpartylegalform" level="Global" />
     <RolePrivilege name="prvCreatedpam_departments" level="Global" />
     <RolePrivilege name="prvCreatedpam_location" level="Global" />
     <RolePrivilege name="prvCreatedpam_ProductInterest" level="Global" />
@@ -450,6 +451,7 @@
     <RolePrivilege name="prvSharemsdyncrm_segment" level="Global" />
     <RolePrivilege name="prvShareOpportunity" level="Global" />
     <RolePrivilege name="prvSyncToOutlook" level="Global" />
+    <RolePrivilege name="prvUseTabletApp" level="Global" />
     <RolePrivilege name="prvWriteAccount" level="Global" />
     <RolePrivilege name="prvWriteActionCard" level="Basic" />
     <RolePrivilege name="prvWriteActionCardUserSettings" level="Basic" />

@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{87a4935f-f07c-4937-b9f9-09a8979d41c7}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{462eda6d-4b0b-48a3-a1db-84d28ef877f2}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{1517f45a-3b8e-48cc-ae48-1fa052f806e3}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bb1d6aee-328e-420e-a30b-88f7925603d7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Location" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_name" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{93286d86-12be-494b-8eb4-cd07685a991a}" locklevel="0">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_account" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_account" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2eb904f1-9076-4e5d-8c21-cbfd0f344da6}" locklevel="0" showlabel="true">
+                        <labels>
+                          <label description="Street" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_street1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_street1" disabled="false" uniqueid="{b66d98e5-6709-9503-ea23-061d896e7890}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3bd3f754-db64-4fc7-bb73-428bf5ff4691}" locklevel="0" showlabel="true">
+                        <labels>
+                          <label description="Floor/Building" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_street2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_street2" disabled="false" uniqueid="{9c848b57-88ea-e939-3c3c-3474da273d9c}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3769a4eb-049b-58d6-d926-65380dc46805}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="PO Box" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_postofficebox" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_postofficebox" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{84cfaab6-da41-4e86-a2d3-43bba7ae975a}" locklevel="0">
+                        <labels>
+                          <label description="ZIP/Postal Code" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_postalcode" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_postalcode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f8d858cb-1605-4168-9d1c-0ada919e281b}" locklevel="0">
+                        <labels>
+                          <label description="City" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_city" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_city" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8735127a-984e-4cf4-98d7-07d683679fa6}" locklevel="0" showlabel="true">
+                        <labels>
+                          <label description="Country" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_country" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_country" disabled="false" uniqueid="{29e8603a-c354-ed35-1304-5e87e924d890}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{7843D2E1-6A8F-45DF-AA70-BC0A7EB710D8}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                            <AvailableViewIds>{7843D2E1-6A8F-45DF-AA70-BC0A7EB710D8},{F55A17EF-C446-402C-8A3B-37E196E5CAD8},{44D57D72-333F-4FEE-8B51-A50EA3A95275}</AvailableViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d1ad9653-9698-26e5-a9ee-a432d44bc977}" showlabel="true" locklevel="1" visible="false">
+                        <labels>
+                          <label description="Country Alpha2 Code" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_country_alpha2code" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_country_alpha2code" disabled="false" uniqueid="{82ac20a5-0401-b3d2-75b0-5935d6d9b486}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{faf4b425-e957-446b-9b90-beec97ff6862}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="_section_407" id="d0ad2bfa-41e4-49bd-9183-59bae9291213" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e93d7c3e-9707-4a1e-9bbb-199ff9e54b90}" locklevel="0">
+                        <labels>
+                          <label description="Main" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_main" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_main" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{317563e8-d31b-4203-8663-0fb8d463e44c}" locklevel="0">
+                        <labels>
+                          <label description="Business" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_business" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_business" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_4" id="a5e53a36-638c-433d-aa93-ecbca45bc2ab" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{800f9617-d48b-43c6-bf98-438d3c21a626}" locklevel="0" showlabel="true">
+                        <labels>
+                          <label description="Primary Contact" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_primarycontact" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_primarycontact" disabled="false" uniqueid="{531c859d-c386-36d3-0c79-aa142266367b}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>true</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{A2D479C5-53E3-4C69-ADDD-802327E67A0D}</DefaultViewId>
+                            <FilterRelationshipName>contact_customer_accounts</FilterRelationshipName>
+                            <DependentAttributeName>dpam_location.dpam_lk_account</DependentAttributeName>
+                            <DependentAttributeType>account</DependentAttributeType>
+                            <AllowFilterOff>true</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a5f75d12-d3ec-40ca-816a-3b61551e04f2}" locklevel="0" showlabel="true">
+                        <labels>
+                          <label description="Phone Number" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_phonenumber" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="dpam_s_phonenumber" disabled="false" uniqueid="{d4509341-c5dd-9d32-bc02-579107e10bba}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_5" id="ed0ed886-2b85-44e3-863a-e4b804779ec6" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f300b4fc-9e7f-4ed3-9eaf-06011c5192f0}" locklevel="0" rowspan="6">
+                        <labels>
+                          <label description="Extra Information" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_ms_extrainformation" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="dpam_ms_extrainformation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{4591afe3-8332-4037-ae7f-af34114a647c}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_contacts" id="969cea14-c007-495a-be6a-c6a4fb59a141" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Contacts" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="ebd37229-cd68-4f85-b66a-d6fcdd2ce0fd" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell showlabel="false" locklevel="0" id="{d27de31d-fe88-4804-88c2-c1d98050cd37}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{687ab483-a248-488a-aa44-087b48363b8e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{a6cdd44c-ae7b-4064-9fdc-0bf583802a3b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{55d1431f-e39d-4769-b3dc-2555b9a033a0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3a90fe3e-4864-499d-a549-35a852f52fab}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{f9a838be-3c96-49c7-a8ba-e2cc10e92637}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3bf7fdc6-5cec-4114-9299-88c04040715d}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{67b7d095-54da-468c-b5a0-5123b2f9fa11}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{cbdd3cec-b39e-4f0a-9569-14124deadb12}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <Navigation>
+        <NavBar />
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{d4509341-c5dd-9d32-bc02-579107e10bba}">
+          <customControl id="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>dpam_s_phonenumber</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>dpam_s_phonenumber</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>dpam_s_phonenumber</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>dpam_s_phonenumber</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <formLibraries>
+        <Library name="DPAM_/Script/Location.js" libraryUniqueId="{4c93e121-87ed-85b4-ae6c-2b345ab74706}" />
+      </formLibraries>
+      <events>
+        <event name="onchange" application="false" active="false" attribute="dpam_lk_country">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Location.Form.onChange_dpam_lk_country" libraryName="DPAM_/Script/Location.js" handlerUniqueId="{973e8d8c-d28d-159a-27e3-6357691da5d3}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

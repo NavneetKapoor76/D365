@@ -2,9 +2,14 @@
 <EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityRelationship Name="account_parent_account" />
   <EntityRelationship Name="Account_Tasks" unmodified="1" />
+  <EntityRelationship Name="bdp_LegalDocument_bdp_DocumentLatestVersi" />
+  <EntityRelationship Name="bdp_LegalDocument_Contact_Contact" />
   <EntityRelationship Name="bookableresourcebooking_Tasks" unmodified="1" />
   <EntityRelationship Name="bookableresourcebookingheader_Tasks" unmodified="1" />
   <EntityRelationship Name="bulkoperation_Tasks" unmodified="1" />
+  <EntityRelationship Name="business_unit_bdp_legaldocument" />
+  <EntityRelationship Name="business_unit_bdp_question" />
+  <EntityRelationship Name="business_unit_bdp_questionnaireresult" />
   <EntityRelationship Name="business_unit_dpam_agreement" />
   <EntityRelationship Name="business_unit_dpam_agreementtype" />
   <EntityRelationship Name="business_unit_dpam_contactfrequency" />
@@ -78,11 +83,19 @@
   <EntityRelationship Name="dpam_shareclass_Product_Product" />
   <EntityRelationship Name="entitlement_Tasks" unmodified="1" />
   <EntityRelationship Name="entitlementtemplate_Tasks" unmodified="1" />
+  <EntityRelationship Name="FileAttachment_bdp_LegalDocument_bdp_File" />
+  <EntityRelationship Name="FileAttachment_bdp_Question_bdp_Testfile" />
   <EntityRelationship Name="Incident_Tasks" unmodified="1" />
   <EntityRelationship Name="Invoice_Tasks" unmodified="1" />
   <EntityRelationship Name="KnowledgeArticle_Tasks" unmodified="1" />
   <EntityRelationship Name="KnowledgeBaseRecord_Tasks" unmodified="1" />
   <EntityRelationship Name="Lead_Tasks" unmodified="1" />
+  <EntityRelationship Name="lk_bdp_legaldocument_createdby" />
+  <EntityRelationship Name="lk_bdp_legaldocument_modifiedby" />
+  <EntityRelationship Name="lk_bdp_question_createdby" />
+  <EntityRelationship Name="lk_bdp_question_modifiedby" />
+  <EntityRelationship Name="lk_bdp_questionnaireresult_createdby" />
+  <EntityRelationship Name="lk_bdp_questionnaireresult_modifiedby" />
   <EntityRelationship Name="lk_dpam_agreement_createdby" />
   <EntityRelationship Name="lk_dpam_agreement_modifiedby" />
   <EntityRelationship Name="lk_dpam_agreementtype_createdby" />
@@ -122,6 +135,8 @@
   <EntityRelationship Name="lk_task_createdby" unmodified="1" />
   <EntityRelationship Name="msdyn_customerasset_Tasks" />
   <EntityRelationship Name="msdyn_msdyn_functionallocation_account" />
+  <EntityRelationship Name="msdyn_msdyn_segment_account" />
+  <EntityRelationship Name="msdyn_msdyn_segment_contact" />
   <EntityRelationship Name="msdyn_playbookinstance_Tasks" />
   <EntityRelationship Name="msdyn_postalbum_Tasks" />
   <EntityRelationship Name="msdyncrm_contentsettings_Tasks" />
@@ -176,6 +191,9 @@
   <EntityRelationship Name="opportunity_parent_account" unmodified="1" />
   <EntityRelationship Name="opportunity_parent_contact" unmodified="1" />
   <EntityRelationship Name="Opportunity_Tasks" unmodified="1" />
+  <EntityRelationship Name="owner_bdp_legaldocument" />
+  <EntityRelationship Name="owner_bdp_question" />
+  <EntityRelationship Name="owner_bdp_questionnaireresult" />
   <EntityRelationship Name="owner_dpam_agreement" />
   <EntityRelationship Name="owner_dpam_agreementtype" />
   <EntityRelationship Name="owner_dpam_contactfrequency" />
@@ -197,6 +215,9 @@
   <EntityRelationship Name="Quote_Tasks" unmodified="1" />
   <EntityRelationship Name="SalesOrder_Tasks" unmodified="1" />
   <EntityRelationship Name="site_Tasks" unmodified="1" />
+  <EntityRelationship Name="team_bdp_legaldocument" />
+  <EntityRelationship Name="team_bdp_question" />
+  <EntityRelationship Name="team_bdp_questionnaireresult" />
   <EntityRelationship Name="team_dpam_agreement" />
   <EntityRelationship Name="team_dpam_agreementtype" />
   <EntityRelationship Name="team_dpam_contactfrequency" />
@@ -215,6 +236,9 @@
   <EntityRelationship Name="team_dpam_productinterest" />
   <EntityRelationship Name="team_dpam_settings" />
   <EntityRelationship Name="team_dpam_shareclass" />
+  <EntityRelationship Name="user_bdp_legaldocument" />
+  <EntityRelationship Name="user_bdp_question" />
+  <EntityRelationship Name="user_bdp_questionnaireresult" />
   <EntityRelationship Name="user_dpam_agreement" />
   <EntityRelationship Name="user_dpam_agreementtype" />
   <EntityRelationship Name="user_dpam_contactfrequency" />

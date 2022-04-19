@@ -1,1 +1,108 @@
-{"properties":{"connectionReferences":{"shared_commondataserviceforapps":{"runtimeSource":"embedded","connection":{"connectionReferenceLogicalName":"dpam_sharedcommondataserviceforapps_32790"},"api":{"name":"shared_commondataserviceforapps"}}},"definition":{"$schema":"https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#","contentVersion":"1.0.0.0","parameters":{"$connections":{"defaultValue":{},"type":"Object"},"$authentication":{"defaultValue":{},"type":"SecureObject"}},"triggers":{"Recurrence":{"recurrence":{"frequency":"Week","interval":1,"startTime":"2022-03-03T21:00:00Z","schedule":{"weekDays":["Saturday"]}},"metadata":{"operationMetadataId":"754199a7-01b3-4c06-aaf0-ac1e0f8b7438"},"type":"Recurrence"}},"actions":{"List_of_contacts":{"runAfter":{},"metadata":{"operationMetadataId":"5d6758e9-dcc0-441b-9285-3bd36e10633c"},"type":"OpenApiConnection","inputs":{"host":{"connectionName":"shared_commondataserviceforapps","operationId":"ListRecords","apiId":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"},"parameters":{"entityName":"contacts","fetchXml":"<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n  <entity name=\"contact\">\n    <attribute name=\"contactid\" />\n    <filter type=\"and\">\n      <condition attribute=\"dpam_dt_datestatusrequestoptinmarketing\" operator=\"olderthan-x-days\" value=\"21\" />\n      <condition attribute=\"dpam_os_bulkemailoptinrequest\" operator=\"eq\" value=\"100000000\" />\n    </filter>\n  </entity>\n</fetch>"},"authentication":"@parameters('$authentication')"}},"Apply_to_each_contact":{"foreach":"@outputs('List_of_contacts')?['body/value']","actions":{"Update_Contact:_Status_request_Opt-in_Marketing_=_No_Reaction":{"runAfter":{},"metadata":{"operationMetadataId":"f32d464e-ec97-484f-b5f0-1c32d1f111a0"},"type":"OpenApiConnection","inputs":{"host":{"connectionName":"shared_commondataserviceforapps","operationId":"UpdateRecord","apiId":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"},"parameters":{"entityName":"contacts","recordId":"@items('Apply_to_each_contact')?['contactid']","item/dpam_os_bulkemailoptinrequest":100000002},"authentication":"@parameters('$authentication')"}}},"runAfter":{"List_of_contacts":["Succeeded"]},"metadata":{"operationMetadataId":"344fcf7c-5a27-4dc0-bbd7-7b74d224ce35"},"type":"Foreach","runtimeConfiguration":{"concurrency":{"repetitions":50}}}}}},"schemaVersion":"1.0.0.0"}
+﻿{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "dpam_sharedcommondataserviceforapps_32790"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "actions": {
+        "Apply_to_each_contact": {
+          "actions": {
+            "Update_Contact:_Status_request_Opt-in_Marketing_=_No_Reaction": {
+              "inputs": {
+                "authentication": "@parameters('$authentication')",
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord"
+                },
+                "parameters": {
+                  "entityName": "contacts",
+                  "item/dpam_os_bulkemailoptinrequest": 100000002,
+                  "recordId": "@items('Apply_to_each_contact')?['contactid']"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "f32d464e-ec97-484f-b5f0-1c32d1f111a0"
+              },
+              "runAfter": {},
+              "type": "OpenApiConnection"
+            }
+          },
+          "foreach": "@outputs('List_of_contacts')?['body/value']",
+          "metadata": {
+            "operationMetadataId": "344fcf7c-5a27-4dc0-bbd7-7b74d224ce35"
+          },
+          "runAfter": {
+            "List_of_contacts": [
+              "Succeeded"
+            ]
+          },
+          "runtimeConfiguration": {
+            "concurrency": {
+              "repetitions": 50
+            }
+          },
+          "type": "Foreach"
+        },
+        "List_of_contacts": {
+          "inputs": {
+            "authentication": "@parameters('$authentication')",
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords"
+            },
+            "parameters": {
+              "entityName": "contacts",
+              "fetchXml": "<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n  <entity name=\"contact\">\n    <attribute name=\"contactid\" />\n    <filter type=\"and\">\n      <condition attribute=\"dpam_dt_datestatusrequestoptinmarketing\" operator=\"olderthan-x-days\" value=\"21\" />\n      <condition attribute=\"dpam_os_bulkemailoptinrequest\" operator=\"eq\" value=\"100000000\" />\n    </filter>\n  </entity>\n</fetch>"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "5d6758e9-dcc0-441b-9285-3bd36e10633c"
+          },
+          "runAfter": {},
+          "type": "OpenApiConnection"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "metadata": {
+            "operationMetadataId": "754199a7-01b3-4c06-aaf0-ac1e0f8b7438"
+          },
+          "recurrence": {
+            "frequency": "Week",
+            "interval": 1,
+            "schedule": {
+              "weekDays": [
+                "Saturday"
+              ]
+            },
+            "startTime": "2022-03-03T21:00:00Z"
+          },
+          "type": "Recurrence"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

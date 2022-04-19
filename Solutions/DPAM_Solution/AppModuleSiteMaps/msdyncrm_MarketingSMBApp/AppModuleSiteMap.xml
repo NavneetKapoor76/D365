@@ -1840,51 +1840,51 @@
       <Group Id="CustomerEngagementGroup" ResourceId="SitemapDesigner.CustomerEngagementGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
           <Title LCID="1033" Title="Engagement" />
-          <Title LCID="1025" Title="مشاركة العملاء" />
-          <Title LCID="1026" Title="Ангажираност на клиент" />
-          <Title LCID="1027" Title="Interacció amb els clients" />
-          <Title LCID="1029" Title="Zapojení zákazníků" />
-          <Title LCID="1030" Title="Kundeengagement" />
-          <Title LCID="1031" Title="Kundenbindung" />
-          <Title LCID="1032" Title="Δέσμευση πελατών" />
-          <Title LCID="3081" Title="Customer engagement" />
-          <Title LCID="4105" Title="Customer engagement" />
-          <Title LCID="2057" Title="Customer engagement" />
-          <Title LCID="3082" Title="Interacción con el cliente" />
-          <Title LCID="1061" Title="Kliendisuhtlus" />
-          <Title LCID="1069" Title="Bezeroen parte-hartzea" />
-          <Title LCID="1035" Title="Asiakasvuorovaikutus" />
-          <Title LCID="3084" Title="Engagement client" />
-          <Title LCID="1036" Title="Engagement client" />
-          <Title LCID="1110" Title="Interacción co cliente" />
-          <Title LCID="1037" Title="מעורבות לקוח" />
-          <Title LCID="1050" Title="Angažman klijenata" />
-          <Title LCID="1038" Title="Ügyfélkapcsolatok" />
-          <Title LCID="1057" Title="Keterlibatan pelanggan" />
-          <Title LCID="1040" Title="Interazione con il cliente" />
-          <Title LCID="1041" Title="顧客エンゲージメント" />
-          <Title LCID="1042" Title="고객 참여" />
-          <Title LCID="1063" Title="Kliento įtraukimas" />
-          <Title LCID="1062" Title="Klientu iesaiste" />
-          <Title LCID="1044" Title="Kundeengasjement" />
-          <Title LCID="1043" Title="Klantbetrokkenheid" />
-          <Title LCID="1045" Title="Interakcja z klientem" />
-          <Title LCID="1046" Title="Participação do cliente" />
-          <Title LCID="2070" Title="Interação com os clientes" />
-          <Title LCID="1048" Title="Implicarea clienților" />
-          <Title LCID="1049" Title="Вовлеченность клиентов" />
-          <Title LCID="1051" Title="Interakcia so zákazníkmi" />
-          <Title LCID="1060" Title="Udeležba strank" />
-          <Title LCID="3098" Title="Ангажовање клијента" />
-          <Title LCID="2074" Title="Angažovanje klijenta" />
-          <Title LCID="1053" Title="Kundkommunikation" />
-          <Title LCID="1054" Title="การมีส่วนร่วมของลูกค้า" />
-          <Title LCID="1055" Title="Müşteri etkileşimi" />
-          <Title LCID="1058" Title="Взаємодія з клієнтами" />
-          <Title LCID="1066" Title="Mức độ tương tác của khách hàng" />
-          <Title LCID="2052" Title="客户互动" />
-          <Title LCID="3076" Title="客戶參與" />
-          <Title LCID="1028" Title="客戶參與" />
+          <Title LCID="1025" Title="مشاركة" />
+          <Title LCID="1026" Title="Ангажираност" />
+          <Title LCID="1027" Title="Interacció" />
+          <Title LCID="1029" Title="Zapojení" />
+          <Title LCID="1030" Title="Engagement" />
+          <Title LCID="1031" Title="Interaktionen" />
+          <Title LCID="1032" Title="Δέσμευση" />
+          <Title LCID="3081" Title="Engagement" />
+          <Title LCID="4105" Title="Engagement" />
+          <Title LCID="2057" Title="Engagement" />
+          <Title LCID="3082" Title="Interacción" />
+          <Title LCID="1061" Title="Kaasamine" />
+          <Title LCID="1069" Title="Parte-hartzea" />
+          <Title LCID="1035" Title="Vuorovaikutus" />
+          <Title LCID="3084" Title="Engagement" />
+          <Title LCID="1036" Title="Engagement" />
+          <Title LCID="1110" Title="Interacción" />
+          <Title LCID="1037" Title="מעורבות" />
+          <Title LCID="1050" Title="Angažman" />
+          <Title LCID="1038" Title="Elkötelezettség" />
+          <Title LCID="1057" Title="Keterlibatan" />
+          <Title LCID="1040" Title="Interazione" />
+          <Title LCID="1041" Title="エンゲージメント" />
+          <Title LCID="1042" Title="참여" />
+          <Title LCID="1063" Title="Įtraukimas" />
+          <Title LCID="1062" Title="Piesaiste" />
+          <Title LCID="1044" Title="Engasjement" />
+          <Title LCID="1043" Title="Betrokkenheid" />
+          <Title LCID="1045" Title="Interakcja" />
+          <Title LCID="1046" Title="Participação" />
+          <Title LCID="2070" Title="Interação" />
+          <Title LCID="1048" Title="Angajament" />
+          <Title LCID="1049" Title="Взаимодействие" />
+          <Title LCID="1051" Title="Interakcie" />
+          <Title LCID="1060" Title="Interakcija" />
+          <Title LCID="3098" Title="Ангажовање" />
+          <Title LCID="2074" Title="Angažovanje" />
+          <Title LCID="1053" Title="Engagemang" />
+          <Title LCID="1054" Title="การมีส่วนร่วม" />
+          <Title LCID="1055" Title="Etkileşim" />
+          <Title LCID="1058" Title="Взаємодія" />
+          <Title LCID="1066" Title="Tương tác" />
+          <Title LCID="2052" Title="参与量" />
+          <Title LCID="3076" Title="參與" />
+          <Title LCID="1028" Title="參與" />
         </Titles>
         <SubArea Id="GetStartedSubArea" VectorIcon="/WebResources/icon/msdynmkt_GetStartedSubArea.svg" Url="/main.aspx?pagetype=control&amp;controlName=RealTimeJourneyGetStartedControl.RealTimeJourneyGetStartedControl&amp;appshellmode=advanced" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
@@ -1986,54 +1986,104 @@
             <Title LCID="1028" Title="旅程" />
           </Titles>
         </SubArea>
+        <SubArea Id="CXPReportsSubArea" Icon="$webresource:msdyn_/Analytics/imgs/MarketingReportIcon.svg" VectorIcon="$webresource:msdyn_/Analytics/imgs/MarketingReportIcon.svg" Entity="msdyn_dataanalyticsreport_mkt" Client="Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Analytics" />
+            <Title LCID="1025" Title="التحليلات" />
+            <Title LCID="1026" Title="Анализ" />
+            <Title LCID="1027" Title="Anàlisis" />
+            <Title LCID="1029" Title="Analýza" />
+            <Title LCID="1030" Title="Analytics" />
+            <Title LCID="1031" Title="Analysen" />
+            <Title LCID="1032" Title="Αναλύσεις" />
+            <Title LCID="3082" Title="Análisis" />
+            <Title LCID="1061" Title="Analüütika" />
+            <Title LCID="1069" Title="Analisiak" />
+            <Title LCID="1035" Title="Analysointi" />
+            <Title LCID="1036" Title="Analyse" />
+            <Title LCID="1110" Title="Análises" />
+            <Title LCID="1037" Title="ניתוח" />
+            <Title LCID="1081" Title="विश्लेषण" />
+            <Title LCID="1050" Title="Analitika" />
+            <Title LCID="1038" Title="Analitika" />
+            <Title LCID="1057" Title="Analitik" />
+            <Title LCID="1040" Title="Analisi" />
+            <Title LCID="1041" Title="分析" />
+            <Title LCID="1087" Title="Талдау" />
+            <Title LCID="1042" Title="분석" />
+            <Title LCID="1063" Title="Analizė" />
+            <Title LCID="1062" Title="Analīze" />
+            <Title LCID="1086" Title="Analitis" />
+            <Title LCID="1044" Title="Analyse" />
+            <Title LCID="1043" Title="Analytics" />
+            <Title LCID="1045" Title="Analizy" />
+            <Title LCID="1046" Title="Análise" />
+            <Title LCID="2070" Title="Análise" />
+            <Title LCID="1048" Title="Analize" />
+            <Title LCID="1049" Title="Аналитика" />
+            <Title LCID="1051" Title="Analýzy" />
+            <Title LCID="1060" Title="Analitika" />
+            <Title LCID="3098" Title="Аналитика" />
+            <Title LCID="2074" Title="Analitika" />
+            <Title LCID="1053" Title="Analyser" />
+            <Title LCID="1054" Title="การวิเคราะห์" />
+            <Title LCID="1055" Title="Analizler" />
+            <Title LCID="1058" Title="Аналітика" />
+            <Title LCID="1066" Title="Phân tích" />
+            <Title LCID="2052" Title="分析" />
+            <Title LCID="3076" Title="分析" />
+            <Title LCID="1028" Title="分析" />
+          </Titles>
+          <Privilege Entity="msdyn_dataanalyticsreport_mkt" Privilege="Read" />
+        </SubArea>
         <SubArea Id="EventsSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdynmkt_eventmetadata" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
-            <Title LCID="1033" Title="Event triggers" />
-            <Title LCID="1025" Title="مشغلات الأحداث" />
-            <Title LCID="1026" Title="Активатори на събития" />
-            <Title LCID="1027" Title="Disparador d'esdeveniments" />
-            <Title LCID="1029" Title="Spouštěče událostí" />
-            <Title LCID="1030" Title="Hændelsesudløsere" />
-            <Title LCID="1031" Title="Ereignisauslöser" />
-            <Title LCID="1032" Title="Εναύσματα συμβάντων" />
-            <Title LCID="3081" Title="Event triggers" />
-            <Title LCID="4105" Title="Event triggers" />
-            <Title LCID="2057" Title="Event triggers" />
-            <Title LCID="3082" Title="Desencadenadores de eventos" />
-            <Title LCID="1061" Title="Sündmuse päästikud" />
-            <Title LCID="1069" Title="Gertaera-abiarazleak" />
-            <Title LCID="1035" Title="Tapahtuman herättimet" />
-            <Title LCID="3084" Title="Déclencheurs d’événements" />
-            <Title LCID="1036" Title="Déclencheurs d’événements" />
-            <Title LCID="1110" Title="Desencadeadores de eventos" />
-            <Title LCID="1037" Title="גורמים מפעילים של אירוע" />
-            <Title LCID="1050" Title="Okidači događaja" />
+            <Title LCID="1033" Title="Triggers" />
+            <Title LCID="1025" Title="المشغلات " />
+            <Title LCID="1026" Title="Активатори" />
+            <Title LCID="1027" Title="Disparadors" />
+            <Title LCID="1029" Title="Aktivační události" />
+            <Title LCID="1030" Title="Udløsere" />
+            <Title LCID="1031" Title="Auslöser" />
+            <Title LCID="1032" Title="Ενεργοποιεί" />
+            <Title LCID="3081" Title="Triggers" />
+            <Title LCID="4105" Title="Triggers" />
+            <Title LCID="2057" Title="Triggers" />
+            <Title LCID="3082" Title="Desencadenadores" />
+            <Title LCID="1061" Title="Päästikud" />
+            <Title LCID="1069" Title="Abiarazleak" />
+            <Title LCID="1035" Title="Herättimet" />
+            <Title LCID="3084" Title="Déclencheurs" />
+            <Title LCID="1036" Title="Déclencheurs" />
+            <Title LCID="1110" Title="Desencadeadores" />
+            <Title LCID="1037" Title="גורמים מפעילים" />
+            <Title LCID="1050" Title="Okidači" />
             <Title LCID="1038" Title="Eseményindítók" />
-            <Title LCID="1057" Title="Pemicu aktivitas" />
-            <Title LCID="1040" Title="Trigger di evento" />
-            <Title LCID="1041" Title="イベント トリガー" />
-            <Title LCID="1042" Title="이벤트 트리거" />
-            <Title LCID="1063" Title="Įvykio paleidikliai" />
-            <Title LCID="1062" Title="Notikuma trigeri" />
-            <Title LCID="1044" Title="Hendelsesutløsere" />
-            <Title LCID="1043" Title="Gebeurtenistriggers" />
-            <Title LCID="1045" Title="Wyzwalacze zdarzeń" />
-            <Title LCID="1046" Title="Gatilhos de eventos" />
-            <Title LCID="2070" Title="Acionadores de eventos" />
-            <Title LCID="1048" Title="Triggere de eveniment" />
-            <Title LCID="1049" Title="Триггеры событий" />
-            <Title LCID="1051" Title="Spúšťače udalostí" />
-            <Title LCID="1060" Title="Sprožilci dogodkov" />
-            <Title LCID="3098" Title="Окидачи догађаја" />
-            <Title LCID="2074" Title="Okidači događaja" />
-            <Title LCID="1053" Title="Händelseutlösare" />
-            <Title LCID="1054" Title="ทริกเกอร์เหตุการณ์" />
-            <Title LCID="1055" Title="Olay tetikleyicileri" />
-            <Title LCID="1058" Title="Тригери подій" />
-            <Title LCID="1066" Title="Trình kích hoạt sự kiện" />
-            <Title LCID="2052" Title="事件触发器" />
-            <Title LCID="3076" Title="事件觸發程序" />
-            <Title LCID="1028" Title="事件觸發程序" />
+            <Title LCID="1057" Title="Pemicu" />
+            <Title LCID="1040" Title="Trigger" />
+            <Title LCID="1041" Title="トリガー" />
+            <Title LCID="1042" Title="트리거" />
+            <Title LCID="1063" Title="Paleidikliai" />
+            <Title LCID="1062" Title="Aktivizē" />
+            <Title LCID="1044" Title="Utløsere" />
+            <Title LCID="1043" Title="Triggers" />
+            <Title LCID="1045" Title="Wyzwalacze" />
+            <Title LCID="1046" Title="Gatilhos" />
+            <Title LCID="2070" Title="Acionadores" />
+            <Title LCID="1048" Title="Declanșatoare" />
+            <Title LCID="1049" Title="Триггеры" />
+            <Title LCID="1051" Title="Spúšťače" />
+            <Title LCID="1060" Title="Sprožilci" />
+            <Title LCID="3098" Title="Окидачи" />
+            <Title LCID="2074" Title="Okidači" />
+            <Title LCID="1053" Title="Utlösare" />
+            <Title LCID="1054" Title="ทริกเกอร์" />
+            <Title LCID="1055" Title="Tetikleyiciler" />
+            <Title LCID="1058" Title="Тригери" />
+            <Title LCID="1066" Title="Trình kích hoạt" />
+            <Title LCID="2052" Title="触发器" />
+            <Title LCID="3076" Title="觸發程序" />
+            <Title LCID="1028" Title="觸發程序" />
           </Titles>
         </SubArea>
       </Group>
@@ -2086,6 +2136,17 @@
           <Title LCID="3076" Title="對象" />
           <Title LCID="1028" Title="對象" />
         </Titles>
+        <!--Temporarily removing Contact and Lead tabs for March release, to be added again for April release-->
+        <!--<SubArea Id="ContactSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="contact" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Contacts" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="LeadSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="lead" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Leads" />
+          </Titles>
+        </SubArea>-->
         <SubArea Id="SegmentSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdynmkt_virtualsegment" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Segments" />
@@ -2436,7 +2497,7 @@
           <Title LCID="3076" Title="資產" />
           <Title LCID="1028" Title="資產" />
         </Titles>
-        <SubArea Id="AssetLibrary" VectorIcon="/WebResources/icon/msdynmkt_cxpasset.svg" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="/main.aspx?pagetype=control&amp;controlName=CxpControls.AssetLibraryHostControl.AssetLibraryHostControl" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="false" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+        <SubArea Id="AssetLibrary" Icon="/_imgs/imagestrips/transparent_spacer.gif" VectorIcon="/WebResources/icon/msdynmkt_cxpasset.svg" Url="/main.aspx?pagetype=control&amp;controlName=CxpControls.AssetLibraryHostControl.AssetLibraryHostControl" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="false" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Library" />
             <Title LCID="1025" Title="المكتبة" />
@@ -2589,7 +2650,7 @@
       </Group>
     </Area>
     <Area Id="Settings" ResourceId="Area_Settings" DescriptionResourceId="Settings_Area_Description" Icon="/_imgs/settings_24x24.gif" ShowGroups="true" IntroducedVersion="7.0.0.0">
-      <Group Id="Overview_Group" Icon="" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="Overview_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="">
         <Titles>
           <Title LCID="1033" Title="Overview" />
           <Title LCID="1025" Title="نظرة عامة " />
@@ -2839,7 +2900,7 @@
           </Titles>
         </SubArea>
       </Group>
-      <Group Id="EmailMarketing_Group" Icon="" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="EmailMarketing_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="">
         <Titles>
           <Title LCID="1033" Title="Email marketing" />
           <Title LCID="1025" Title="التسويق عبر البريد الإلكتروني " />
@@ -2893,7 +2954,7 @@
         <SubArea Id="msdyncrm_designerfeatureavailability_Area" Entity="msdyncrm_designerfeatureavailability" AvailableOffline="true" PassParams="false" />
         <SubArea Id="msdyncrm_defaultmarketingsetting_Area" Entity="msdyncrm_defaultmarketingsetting" AvailableOffline="true" PassParams="false" />
       </Group>
-      <Group Id="CustomerEngagement_Group" Icon="" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="CustomerEngagement_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="">
         <Titles>
           <Title LCID="1033" Title="Customer engagement" />
           <Title LCID="1025" Title="مشاركة العملاء " />
@@ -3194,7 +3255,7 @@
           </Titles>
         </SubArea>
       </Group>
-      <Group Id="Collaboration_Group" Icon="" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="Collaboration_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="">
         <Titles>
           <Title LCID="1033" Title="Collaboration" />
           <Title LCID="1025" Title="Collaboration" />
@@ -3294,7 +3355,7 @@
           </Titles>
         </SubArea>
       </Group>
-      <Group Id="Eventadministration_Group" Icon="" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="Eventadministration_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="">
         <Titles>
           <Title LCID="1033" Title="Event management" />
           <Title LCID="1025" Title="إدارة الأحداث " />
@@ -3349,7 +3410,7 @@
         <SubArea Id="msevtmgt_eventadministration_Area" Entity="msevtmgt_eventadministration" AvailableOffline="true" PassParams="false" />
         <SubArea Id="msevtmgt_websiteentityconfiguration_Area" Entity="msevtmgt_websiteentityconfiguration" AvailableOffline="true" PassParams="false" />
       </Group>
-      <Group Id="LeadManagement_Group" Icon="" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="LeadManagement_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="">
         <Titles>
           <Title LCID="1033" Title="Lead management" />
           <Title LCID="1025" Title="إدارة العملاء المتوقعين " />
@@ -3550,7 +3611,7 @@
           </Titles>
         </SubArea>
       </Group>
-      <Group Id="DataManagement_Group" Icon="" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="DataManagement_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="">
         <Titles>
           <Title LCID="1033" Title="Data management" />
           <Title LCID="1025" Title="إدارة البيانات " />
@@ -3750,7 +3811,7 @@
           </Titles>
         </SubArea>
       </Group>
-      <Group Id="Other_Group" Icon="" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+      <Group Id="Other_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="">
         <Titles>
           <Title LCID="1033" Title="Other settings" />
           <Title LCID="1025" Title="الإعدادات الأخرى " />
@@ -3851,7 +3912,7 @@
         </SubArea>
       </Group>
     </Area>
-    <Area Id="HLP" ResourceId="Area_Help" DescriptionResourceId="Help_Area_Description" Icon="/_imgs/icn_help16.png" ShowGroups="true" IntroducedVersion="7.0.0.0">
+    <Area Id="HLP" ResourceId="Area_Help" ShowGroups="true" Icon="/_imgs/icn_help16.png" DescriptionResourceId="Help_Area_Description" IntroducedVersion="7.0.0.0">
       <Group Id="HLP_GRP" ResourceId="Group_Help" DescriptionResourceId="Help_Description" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="Help_ToolTip">
         <SubArea Id="Help_Resource_Center" Url="https://go.microsoft.com/fwlink/p/?linkid=848642" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false">
           <Titles>
@@ -4307,6 +4368,6 @@
     </Area>
   </SiteMap>
   <LocalizedNames>
-    <LocalizedName description="MarketingSMBApp" languagecode="1033" />
+    <LocalizedName description="Analytics and Insights for Customer Engagement" languagecode="1033" />
   </LocalizedNames>
 </AppModuleSiteMap>

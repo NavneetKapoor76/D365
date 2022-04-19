@@ -237,37 +237,6 @@
             <Description description="Choose the record that the task relates to." languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="ScheduledEnd" unmodified="1">
-          <Type>datetime</Type>
-          <Name>scheduledend</Name>
-          <LogicalName>scheduledend</LogicalName>
-          <RequiredLevel>none</RequiredLevel>
-          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-          <ImeMode>inactive</ImeMode>
-          <ValidForUpdateApi>1</ValidForUpdateApi>
-          <ValidForReadApi>1</ValidForReadApi>
-          <ValidForCreateApi>1</ValidForCreateApi>
-          <IsCustomField>0</IsCustomField>
-          <IsAuditEnabled>1</IsAuditEnabled>
-          <IsSecured>0</IsSecured>
-          <IntroducedVersion>5.0.0.0</IntroducedVersion>
-          <SourceType>0</SourceType>
-          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
-          <IsSortableEnabled>0</IsSortableEnabled>
-          <IsDataSourceSecret>0</IsDataSourceSecret>
-          <AutoNumberFormat></AutoNumberFormat>
-          <IsSearchable>0</IsSearchable>
-          <IsFilterable>0</IsFilterable>
-          <IsRetrievable>1</IsRetrievable>
-          <IsLocalizable>0</IsLocalizable>
-          <Format>datetime</Format>
-          <displaynames>
-            <displayname description="Due Date" languagecode="1033" />
-          </displaynames>
-          <Descriptions>
-            <Description description="Enter the expected due date and time." languagecode="1033" />
-          </Descriptions>
-        </attribute>
         <attribute PhysicalName="StateCode">
           <Type>state</Type>
           <Name>statecode</Name>

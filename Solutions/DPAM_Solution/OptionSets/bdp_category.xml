@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="bdp_category" localizedName="Category" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Category" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="749560000" ExternalValue="">
+      <labels>
+        <label description="Id card" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="749560001" ExternalValue="">
+      <labels>
+        <label description="Passport" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="749560002" ExternalValue="">
+      <labels>
+        <label description="Annual report" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="749560003" ExternalValue="">
+      <labels>
+        <label description="Proof of lack of prosecution" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="749560004" ExternalValue="">
+      <labels>
+        <label description="Extract of national register" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="749560005" ExternalValue="">
+      <labels>
+        <label description="Approval by supervisory authority" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="749560006" ExternalValue="">
+      <labels>
+        <label description="Governance structure" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="749560007" ExternalValue="">
+      <labels>
+        <label description="Authorized signatures" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="749560008" ExternalValue="">
+      <labels>
+        <label description="Status of the company" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

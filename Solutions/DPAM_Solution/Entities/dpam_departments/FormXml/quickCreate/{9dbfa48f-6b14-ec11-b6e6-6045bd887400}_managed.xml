@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{9dbfa48f-6b14-ec11-b6e6-6045bd887400}</formid>
+    <IntroducedVersion>1.3.23.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{a428034d-4c82-4c7b-a4ad-3b44ecb8ea3f}">
+          <labels>
+            <label description="New Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{4cb6dd2b-8249-44e6-bf7a-2329ac5f39bc}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2608ef69-30e5-4a8b-90d6-fe3cde32e002}" locklevel="0" colspan="1" rowspan="1" labelid="{2520150c-ec1e-4acd-985f-f609500d553d}">
+                        <labels>
+                          <label description="Department Name" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a77c22bd-b48b-4161-ab67-c8ba83e39af9}" locklevel="0" colspan="1" rowspan="1" labelid="{e573f069-4a7e-418c-9fca-195b74197e2a}">
+                        <labels>
+                          <label description="Autonumber" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_autonumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_autonumber" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{04627a9e-7f9b-4f62-a064-6fe3f1c13db0}" locklevel="0" colspan="1" rowspan="1" labelid="{d713446f-a238-4fdc-9c9d-953a392ac8a8}" showlabel="true">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_counterparty" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_counterparty" disabled="true" uniqueid="{6b4c0396-3d0e-8e01-1ad3-734982d345e8}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{A9AF0AB8-861D-4CFA-92A5-C6281FED7FAB}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{523a91f3-24a0-4d45-aa1d-64ef74ca5e37}" locklevel="0" colspan="1" rowspan="1" labelid="{b529c66a-2a36-48a9-b266-b3fd6622b54b}">
+                        <labels>
+                          <label description="Email address" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_emailaddress" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="dpam_s_emailaddress" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a9dd8434-2df9-4723-88b1-cb1f207f0f3d}" locklevel="0" colspan="1" rowspan="1" labelid="{2544a7d5-dee3-454c-a6c9-15a886081087}">
+                        <labels>
+                          <label description="Priority Group" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_prioritygroup" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_prioritygroup" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5c6cde86-59b0-4879-80dd-2cb35db6f717}" locklevel="0" colspan="1" rowspan="1" labelid="{688e688e-4f24-4f43-9c74-73191f90d2aa}" showlabel="true">
+                        <labels>
+                          <label description="Location" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_location" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_location" disabled="false" uniqueid="{5db3d065-4d6d-2192-0558-9ab179a7dcea}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{41AB0A06-6814-EC11-B6E6-6045BD88739F}</DefaultViewId>
+                            <FilterRelationshipName>dpam_location_lk_account_Account</FilterRelationshipName>
+                            <DependentAttributeName>dpam_departments.dpam_lk_counterparty</DependentAttributeName>
+                            <DependentAttributeType>account</DependentAttributeType>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{76b24ee2-df66-4815-9052-abfa6b756ddf}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Department Type" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_mos_departmenttype" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="dpam_mos_departmenttype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b9a316f2-b52b-47d0-8a90-86cac1042244}" locklevel="0" colspan="1" rowspan="1" labelid="{d3d5c932-e2e7-408a-a22d-cf7e12eb04ca}" visible="false">
+                        <labels>
+                          <label description="Business Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_businesssegmentation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_businesssegmentation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{be23990c-663c-455a-aa73-f2db762115ae}" locklevel="0" colspan="1" rowspan="1" labelid="{dab88d20-f8de-45df-b447-17c68092e703}" visible="false">
+                        <labels>
+                          <label description="Local Business Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_localbusinesssegmentation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_localbusinesssegmentation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9e17c00d-e541-4003-a596-ef288a893749}" locklevel="0" colspan="1" rowspan="1" labelid="{a741882f-58c7-432d-8e4d-59edc7f43e36}" showlabel="true">
+                        <labels>
+                          <label description="Compliance Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_compliancesegmentation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_compliancesegmentation" disabled="false" uniqueid="{e871b68c-6d57-79e8-6de3-dd6a957d4e89}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{86EB952D-B355-4219-927B-6771A71B8C5F}</DefaultViewId>
+                            <FilterRelationshipName>dpam_cpcomplianceseg_lk_cpbusinessseg</FilterRelationshipName>
+                            <DependentAttributeName>dpam_departments.dpam_lk_businesssegmentation</DependentAttributeName>
+                            <DependentAttributeType>dpam_counterpartybusinesssegmentation</DependentAttributeType>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{46afe0e2-a0f4-44bd-b84b-14a033dfd3f1}" locklevel="0" colspan="1" rowspan="1" labelid="{c4e732f6-86cd-41a9-8741-00fbc13cee35}">
+                        <labels>
+                          <label description="Mifid Category" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_mifidcategory" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_mifidcategory" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{e98fecec-df3b-4d18-8997-41d505834ceb}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{3b151491-a84e-4778-aa7d-2483a91e8b20}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{98c3467f-5a23-48c1-a185-14cc2def2ecd}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{26b25b69-b778-4099-9169-34c341033910}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <controlDescriptions />
+      <formLibraries>
+        <Library name="dpam_/Script/Department.js" libraryUniqueId="{5bc44a0c-d066-4e3c-89f4-d53ad91a6a30}" />
+      </formLibraries>
+      <events>
+        <event name="onchange" application="true" active="true" attribute="dpam_lk_counterparty">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Department.Form.onChange_dpam_lk_counterparty" libraryName="dpam_/Script/Department.js" handlerUniqueId="{397922f8-f514-48bd-8c8e-3c02c76fd847}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onload" application="true" active="true">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Department.Form.quickCreateonLoad" libraryName="dpam_/Script/Department.js" handlerUniqueId="{2a3ccd5b-47cf-4320-a1ec-040335c41114}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_mos_departmenttype">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Department.Form.onChange_dpam_mos_departmenttype" libraryName="dpam_/Script/Department.js" handlerUniqueId="{a7301646-d05c-47ff-b209-d3b8963bdd84}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Departments quick create form" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

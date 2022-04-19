@@ -223,68 +223,6 @@
             <Description description="Type the location where the appointment will take place, such as a conference room or customer office." languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="ScheduledEnd" unmodified="1">
-          <Type>datetime</Type>
-          <Name>scheduledend</Name>
-          <LogicalName>scheduledend</LogicalName>
-          <RequiredLevel>required</RequiredLevel>
-          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
-          <ImeMode>inactive</ImeMode>
-          <ValidForUpdateApi>1</ValidForUpdateApi>
-          <ValidForReadApi>1</ValidForReadApi>
-          <ValidForCreateApi>1</ValidForCreateApi>
-          <IsCustomField>0</IsCustomField>
-          <IsAuditEnabled>1</IsAuditEnabled>
-          <IsSecured>0</IsSecured>
-          <IntroducedVersion>5.0.0.0</IntroducedVersion>
-          <SourceType>0</SourceType>
-          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
-          <IsSortableEnabled>0</IsSortableEnabled>
-          <IsDataSourceSecret>0</IsDataSourceSecret>
-          <AutoNumberFormat></AutoNumberFormat>
-          <IsSearchable>0</IsSearchable>
-          <IsFilterable>0</IsFilterable>
-          <IsRetrievable>1</IsRetrievable>
-          <IsLocalizable>0</IsLocalizable>
-          <Format>datetime</Format>
-          <displaynames>
-            <displayname description="End Time" languagecode="1033" />
-          </displaynames>
-          <Descriptions>
-            <Description description="Enter the expected due date and time for the activity to be completed to provide details about the timing of the appointment." languagecode="1033" />
-          </Descriptions>
-        </attribute>
-        <attribute PhysicalName="ScheduledStart" unmodified="1">
-          <Type>datetime</Type>
-          <Name>scheduledstart</Name>
-          <LogicalName>scheduledstart</LogicalName>
-          <RequiredLevel>required</RequiredLevel>
-          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
-          <ImeMode>inactive</ImeMode>
-          <ValidForUpdateApi>1</ValidForUpdateApi>
-          <ValidForReadApi>1</ValidForReadApi>
-          <ValidForCreateApi>1</ValidForCreateApi>
-          <IsCustomField>0</IsCustomField>
-          <IsAuditEnabled>1</IsAuditEnabled>
-          <IsSecured>0</IsSecured>
-          <IntroducedVersion>5.0.0.0</IntroducedVersion>
-          <SourceType>0</SourceType>
-          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
-          <IsSortableEnabled>0</IsSortableEnabled>
-          <IsDataSourceSecret>0</IsDataSourceSecret>
-          <AutoNumberFormat></AutoNumberFormat>
-          <IsSearchable>0</IsSearchable>
-          <IsFilterable>0</IsFilterable>
-          <IsRetrievable>1</IsRetrievable>
-          <IsLocalizable>0</IsLocalizable>
-          <Format>datetime</Format>
-          <displaynames>
-            <displayname description="Start Time" languagecode="1033" />
-          </displaynames>
-          <Descriptions>
-            <Description description="Enter the expected start date and time for the activity to provide details about the timing of the appointment." languagecode="1033" />
-          </Descriptions>
-        </attribute>
         <attribute PhysicalName="Subject">
           <Type>nvarchar</Type>
           <Name>subject</Name>

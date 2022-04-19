@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0cf1d324-09aa-4779-950a-614a51a5a8b7}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{ea6a2ed0-68dc-436a-8203-7244ee4a838d}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{b3f74e16-5462-40f6-b6d0-55f9b92a0513}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e2d2f6b7-89ac-4f9e-b72e-9eaf3eb47742}">
+                        <labels>
+                          <label description="Contact Title" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{edb2e26f-2b59-46fb-b821-dc9934e57a57}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Gender" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_gender" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_gender" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{27e8d832-f78e-40b4-ae5e-7b6218ad3ff7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Language" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_language" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_language" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f0f47191-0b74-43a9-a131-c8e11b0af7d2}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{3e6491d2-1541-410b-ad16-f094ec838589}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{4deb1632-dcd1-4b58-8298-f1602db3bdc3}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{9eaf65de-9751-4a8d-88f4-3f0f2a42619f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{b8909d9d-373c-41a7-9c07-97e9f719a194}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{11e2b983-ca7f-408c-97f1-fb527626d426}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{b27a379d-9ff0-4260-a147-479dd3682453}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{5e956836-d012-4f30-a01b-04abed860a87}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ddd50a50-b604-48cb-b73e-ed4331163c88}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

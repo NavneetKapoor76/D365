@@ -194,6 +194,7 @@
     <RolePrivilege name="prvCreateContact" level="Global" />
     <RolePrivilege name="prvCreateCustomerOpportunityRole" level="Basic" />
     <RolePrivilege name="prvCreateCustomerRelationship" level="Basic" />
+    <RolePrivilege name="prvCreatedpam_counterpartylegalform" level="Global" />
     <RolePrivilege name="prvCreatedpam_departments" level="Global" />
     <RolePrivilege name="prvCreatedpam_location" level="Global" />
     <RolePrivilege name="prvCreatedpam_ProductInterest" level="Global" />
