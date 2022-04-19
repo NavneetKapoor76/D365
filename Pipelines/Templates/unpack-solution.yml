@@ -31,6 +31,13 @@ parameters:
 - name: userName
   type: string
   default: ''
+- name: buildType
+  type: string
+  default: 'Both'
+  values:
+  - Both
+  - Managed
+  - Unmanaged
 
 steps:
 # Set pipeline vars for tools paths.
@@ -73,6 +80,7 @@ steps:
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
     SolutionName: '${{parameters.solutionName}}'
     SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\${{parameters.solutionName}}.zip'
+  condition: or(eq(parameters.buildType, 'Both'), eq(parameters.buildType, 'Unmanaged'))
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.export-solution.PowerPlatformExportSolution@0
   displayName: 'Export Managed Solution'
@@ -82,6 +90,7 @@ steps:
     SolutionName: '${{parameters.solutionName}}'
     SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\${{parameters.solutionName}}_managed.zip'
     Managed: true
+  condition: or(eq(parameters.buildType, 'Both'), eq(parameters.buildType, 'Managed'))
 
 # Unpack contents of solution to make the contents source control friendly 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.unpack-solution.PowerPlatformUnpackSolution@0
@@ -89,7 +98,7 @@ steps:
   inputs:
     SolutionInputFile: '$(Build.ArtifactStagingDirectory)\${{parameters.solutionName}}.zip'
     SolutionTargetFolder: '$(Build.SourcesDirectory)\Solutions\${{parameters.solutionName}}'
-    SolutionType: Both
+    SolutionType: '${{parameters.buildType}}'
 
 # TEMPORARY until SolutionPackager supports formatting json files on unpack we
 # update all the json files to be pretty-print / formatted so they are easier to read in source control.
