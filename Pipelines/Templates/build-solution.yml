@@ -14,6 +14,15 @@ steps:
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Install Power Platform Build Tools'
 
+#Pack the solution based on the build type parameter (Managed)
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
+  displayName: 'Pack Solutions (Managed)'
+  inputs:
+    SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
+    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber)_managed.zip'
+    SolutionType: ${{parameters.buildType}}
+  condition: and(succeeded(), eq(parameters.buildType, 'Managed'))
+
 #Pack the solution based on the build type parameter (Unmanaged, Managed or Both)
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
   displayName: 'Pack Solutions (Unmanaged and/or Managed)'
@@ -21,6 +30,7 @@ steps:
     SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
     SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber).zip'
     SolutionType: ${{parameters.buildType}}
+  condition: and(succeeded(), ne(parameters.buildType, 'Managed'))
 
 # We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
 - powershell: |
