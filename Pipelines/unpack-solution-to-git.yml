@@ -22,6 +22,7 @@ parameters:
 - name: CommitComment
   displayName: Commit Comment
   type: string
+  default: ''
 
 variables:
 - group: project-scope
