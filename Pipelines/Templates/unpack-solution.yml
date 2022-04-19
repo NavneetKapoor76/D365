@@ -132,4 +132,4 @@ steps:
    git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin ${{parameters.branch}}
   workingDirectory: $(Build.SourcesDirectory)\Solutions
   displayName: 'Push to $(Branch) Remote Branch'
-  condition: and(succeeded())
+  condition: succeeded()
