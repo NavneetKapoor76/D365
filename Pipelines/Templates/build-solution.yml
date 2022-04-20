@@ -50,7 +50,7 @@ steps:
    $coreToolsFolder = Get-ChildItem ./ | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
    move .\$coreToolsFolder\content\bin\coretools\*.* .\
    Remove-Item .\$coreToolsFolder -Force -Recurse
-   .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel "Warning" /map $(BuildMappingFile)
+   .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
 
   failOnStderr: true
   showWarnings: true
