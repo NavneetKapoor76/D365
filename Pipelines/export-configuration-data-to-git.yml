@@ -39,15 +39,15 @@ stages:
 
     # Configure email/name and checkout git branch
     - script: |
-    git config user.email "${{parameters.email}}"
-    git config user.name "${{parameters.userName}}"
-    git checkout origin/${{parameters.branch}} --track
+        git config user.email "${{parameters.email}}"
+        git config user.name "${{parameters.userName}}"
+        git checkout origin/${{parameters.branch}} --track
     workingDirectory: $(Build.SourcesDirectory)
     displayName: 'Initialize Git'
 
-    - template: install-powershell-modules.yml
+    - template: Templates/install-powershell-modules.yml
 
-    - template: export-configuration-data.yml
+    - template: Templates/iexport-configuration-data.yml
     parameters:
         serviceConnection: $(EnvironmentUrl)
 
