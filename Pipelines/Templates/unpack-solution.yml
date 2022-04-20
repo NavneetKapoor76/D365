@@ -57,7 +57,7 @@ steps:
    git config user.email "${{parameters.email}}"
    git config user.name "${{parameters.userName}}"
    git checkout origin/${{parameters.branch}} --track
-  workingDirectory: $(Build.SourcesDirectory)\Solutions
+  workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Initialize Git'
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
@@ -118,9 +118,26 @@ steps:
   displayName: 'Format JSON files'
   enabled: true
 
+- template: Templates\export-configuration-data.yml
+  parameters:
+    serviceConnection: $(EnvironmentUrl)
+
+# We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
+- powershell: |
+    $path = "$(ConfigurationMigrationFilePath)"
+    if(Test-Path $path) {
+        $extract = @{
+            Path = $path
+            DestinationPath = '$(Build.SourcesDirectory)/Data'
+        }
+        Compress-Archive @extract
+    }
+  displayName: 'Archive Configuration Migration Data'
+  enabled: true
+
 - powershell: |
     git add --all
-  workingDirectory: $(Build.SourcesDirectory)\Solutions
+  workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Add Changes to Git Branch'
 
 # Commit all changes to Git branch. If there are no changes we want to warn the user that there was nothing to commit. As this could mean there was a user error involved.
@@ -133,12 +150,12 @@ steps:
         Write-Host "##vso[task.logissue type=warning]There is nothing to commit. No changes have been made since the previous commit. If this is unexpected make sure your changes have been published before committing again."
         exit 1;
     }
-  workingDirectory: $(Build.SourcesDirectory)\Solutions
+  workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Commit Changes to Git Branch'
   continueOnError: true
   
 - script: |
    git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin ${{parameters.branch}}
-  workingDirectory: $(Build.SourcesDirectory)\Solutions
+  workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Push to $(Branch) Remote Branch'
   condition: succeeded()
