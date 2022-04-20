@@ -37,7 +37,7 @@ stages:
         project: '43046151-1fa5-4629-bb00-d9c0e1accf08'
         definition: '7'
         buildVersionToDownload: 'latestFromBranch'
-        branchName: $(Build.SourceBranchName)
+        branchName: 'refs/heads/$(Build.SourceBranchName)'
         artifactName: 'drop'
         targetPath: '$(Pipeline.Workspace)'
     - template: Templates\build-solution.yml
