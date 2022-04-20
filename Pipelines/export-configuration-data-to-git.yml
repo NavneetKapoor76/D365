@@ -11,80 +11,75 @@ parameters:
   type: string
   default: ''
 
-stages:
-- stage: export_config_data_to_git
-  displayName: 'Export configuration data to git' 
-  jobs:
-  - job: export_config_data_to_git
+pool:
+  name: Azure Pipelines
+  vmImage: windows-latest
 
-    pool:
-      vmImage: 'windows-latest'
+steps:
+# Checkout our Branch
+- checkout: git://$(Project)/$(Repo)@$(Build.SourceBranchName)
+  displayName: 'Checkout Source Branch'
 
-    steps:
-    # Checkout our Branch
-    - checkout: git://$(Project)/$(Repo)@$(Build.SourceBranchName)
-      displayName: 'Checkout Source Branch'
+# Set pipeline vars for tools paths.
+- template: Templates\set-tools-paths.yml
 
-    # Set pipeline vars for tools paths.
-    - template: set-tools-paths.yml
+# Restore PowerShell Module dependencies if available in cache
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops
+- task: Cache@2
+  displayName: Cache Powershell Modules
+  inputs:
+    key:  restoremodules | "$(powerPlatformToolsSubPath)" | $(Build.SourcesDirectory)/Pipelines/Templates/install-powershell-modules.yml
+    path: $(powerPlatformToolsPath)
+    cacheHitVar: powerPlatformToolsPath_IsCached
 
-    # Restore PowerShell Module dependencies if available in cache
-    # https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops
-    - task: Cache@2
-    displayName: Cache Powershell Modules
-    inputs:
-        key:  restoremodules | "$(powerPlatformToolsSubPath)" | $(Build.SourcesDirectory)/Pipelines/Templates/install-powershell-modules.yml
-        path: $(powerPlatformToolsPath)
-        cacheHitVar: powerPlatformToolsPath_IsCached
+# Configure email/name and checkout git branch
+- script: |
+    git config user.email $(Build.RequestedForEmail)
+    git config user.name $(Build.RequestedFor)
+    git checkout origin/$(Build.SourceBranchName) --track
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Initialize Git'
 
-    # Configure email/name and checkout git branch
-    - script: |
-        git config user.email "${{parameters.email}}"
-        git config user.name "${{parameters.userName}}"
-        git checkout origin/${{parameters.branch}} --track
-    workingDirectory: $(Build.SourcesDirectory)
-    displayName: 'Initialize Git'
+- template: Templates\install-powershell-modules.yml
 
-    - template: Templates/install-powershell-modules.yml
+- template: Templates\export-configuration-data.yml
+  parameters:
+    serviceConnection: $(EnvironmentUrl)
 
-    - template: Templates/iexport-configuration-data.yml
-    parameters:
-        serviceConnection: $(EnvironmentUrl)
-
-    # We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
-    - powershell: |
-        $path = "$(ConfigurationMigrationFilePath)"
-        if(Test-Path $path) {
-            $extract = @{
-                Path = $path
-                DestinationPath = '$(Build.SourcesDirectory)/Data'
-            }
-            Compress-Archive @extract
+# We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
+- powershell: |
+    $path = "$(ConfigurationMigrationFilePath)"
+    if(Test-Path $path) {
+        $extract = @{
+            Path = $path
+            DestinationPath = '$(Build.SourcesDirectory)/Data'
         }
-    displayName: 'Archive Configuration Migration Data'
-    enabled: true
+        Compress-Archive @extract
+    }
+  displayName: 'Archive Configuration Migration Data'
+  enabled: true
 
-    - powershell: |
-        git add --all
-    workingDirectory: $(Build.SourcesDirectory)
-    displayName: 'Add Changes to Git Branch'
+- powershell: |
+    git add --all
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Add Changes to Git Branch'
 
-    # Commit all changes to Git branch. If there are no changes we want to warn the user that there was nothing to commit. As this could mean there was a user error involved.
-    - powershell: |
-        $gitStatus = iex "git status --porcelain"
-        if ($gitStatus) {
-            git commit -m "${{parameters.commitMessage}}"
-        }
-        else {
-            Write-Host "##vso[task.logissue type=warning]There is nothing to commit. No changes have been made since the previous commit. If this is unexpected make sure your changes have been published before committing again."
-            exit 1;
-        }
-    workingDirectory: $(Build.SourcesDirectory)
-    displayName: 'Commit Changes to Git Branch'
-    continueOnError: true
-    
-    - script: |
-    git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin ${{parameters.branch}}
-    workingDirectory: $(Build.SourcesDirectory)
-    displayName: 'Push to $(Branch) Remote Branch'
-    condition: succeeded()
+# Commit all changes to Git branch. If there are no changes we want to warn the user that there was nothing to commit. As this could mean there was a user error involved.
+- powershell: |
+    $gitStatus = iex "git status --porcelain"
+    if ($gitStatus) {
+        git commit -m "${{parameters.CommitComment}}"
+    }
+    else {
+        Write-Host "##vso[task.logissue type=warning]There is nothing to commit. No changes have been made since the previous commit. If this is unexpected make sure your changes have been published before committing again."
+        exit 1;
+    }
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Commit Changes to Git Branch'
+  continueOnError: true
+
+- script: |
+    git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin $(Build.SourceBranchName)
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Push to $(Branch) Remote Branch'
+  condition: succeeded()
