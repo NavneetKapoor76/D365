@@ -80,7 +80,7 @@ steps:
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
     SolutionName: '${{parameters.solutionName}}'
     SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\${{parameters.solutionName}}.zip'
-  condition: or(eq(parameters.buildType, 'Both'), eq(parameters.buildType, 'Unmanaged'))
+  condition: or(eq('${{parameters.buildType}}', 'Both'), eq('${{parameters.buildType}}', 'Unmanaged'))
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.export-solution.PowerPlatformExportSolution@0
   displayName: 'Export Managed Solution'
@@ -90,7 +90,7 @@ steps:
     SolutionName: '${{parameters.solutionName}}'
     SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\${{parameters.solutionName}}_managed.zip'
     Managed: true
-  condition: or(eq(parameters.buildType, 'Both'), eq(parameters.buildType, 'Managed'))
+  condition: or(eq('${{parameters.buildType}}', 'Both'), eq('${{parameters.buildType}}', 'Managed'))
 
 # Unpack contents of solution to make the contents source control friendly 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.unpack-solution.PowerPlatformUnpackSolution@0
