@@ -1493,22 +1493,6 @@
   </ConnectionRoles>
   <ConnectionRoleAssociations>
     <ConnectionRoleAssociation>
-      <connectionroleid>{cffe4a59-ce11-4fca-b132-5985d3917d26}</connectionroleid>
-      <associatedconnectionroleid>{5a18dfc8-0b8b-40c7-9381-cce1c485822d}</associatedconnectionroleid>
-    </ConnectionRoleAssociation>
-    <ConnectionRoleAssociation>
-      <connectionroleid>{df0bf69f-333c-4e9b-86e7-4ff737bc9343}</connectionroleid>
-      <associatedconnectionroleid>{eda69fc6-0b5f-44fb-b584-7dfeb8a925af}</associatedconnectionroleid>
-    </ConnectionRoleAssociation>
-    <ConnectionRoleAssociation>
-      <connectionroleid>{81bb2655-f19b-42b2-9c4b-d45b84c3f61c}</connectionroleid>
-      <associatedconnectionroleid>{131f5d06-9f36-4b59-b8b7-a1f7d6c5c5ef}</associatedconnectionroleid>
-    </ConnectionRoleAssociation>
-    <ConnectionRoleAssociation>
-      <connectionroleid>{90aba153-635b-44df-9742-f02feaff9a95}</connectionroleid>
-      <associatedconnectionroleid>{55316c77-54aa-4d80-8534-f8b5d9aadfc1}</associatedconnectionroleid>
-    </ConnectionRoleAssociation>
-    <ConnectionRoleAssociation>
       <connectionroleid>{56d3a59c-c33c-ec11-b6e5-6045bd884903}</connectionroleid>
       <associatedconnectionroleid>{90dcde1d-4452-47e4-992f-5dc12a053eee}</associatedconnectionroleid>
     </ConnectionRoleAssociation>
@@ -1587,6 +1571,22 @@
     <ConnectionRoleAssociation>
       <connectionroleid>{51bb453e-c73c-ec11-b6e5-6045bd884903}</connectionroleid>
       <associatedconnectionroleid>{51bb453e-c73c-ec11-b6e5-6045bd884903}</associatedconnectionroleid>
+    </ConnectionRoleAssociation>
+    <ConnectionRoleAssociation>
+      <connectionroleid>{55316c77-54aa-4d80-8534-f8b5d9aadfc1}</connectionroleid>
+      <associatedconnectionroleid>{90aba153-635b-44df-9742-f02feaff9a95}</associatedconnectionroleid>
+    </ConnectionRoleAssociation>
+    <ConnectionRoleAssociation>
+      <connectionroleid>{eda69fc6-0b5f-44fb-b584-7dfeb8a925af}</connectionroleid>
+      <associatedconnectionroleid>{df0bf69f-333c-4e9b-86e7-4ff737bc9343}</associatedconnectionroleid>
+    </ConnectionRoleAssociation>
+    <ConnectionRoleAssociation>
+      <connectionroleid>{5a18dfc8-0b8b-40c7-9381-cce1c485822d}</connectionroleid>
+      <associatedconnectionroleid>{cffe4a59-ce11-4fca-b132-5985d3917d26}</associatedconnectionroleid>
+    </ConnectionRoleAssociation>
+    <ConnectionRoleAssociation>
+      <connectionroleid>{131f5d06-9f36-4b59-b8b7-a1f7d6c5c5ef}</connectionroleid>
+      <associatedconnectionroleid>{81bb2655-f19b-42b2-9c4b-d45b84c3f61c}</associatedconnectionroleid>
     </ConnectionRoleAssociation>
   </ConnectionRoleAssociations>
 </ConnectionRoles>
