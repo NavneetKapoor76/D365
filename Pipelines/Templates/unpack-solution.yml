@@ -118,7 +118,7 @@ steps:
   displayName: 'Format JSON files'
   enabled: true
 
-- template: Templates\export-configuration-data.yml
+- template: export-configuration-data.yml
   parameters:
     serviceConnection: $(EnvironmentUrl)
 
