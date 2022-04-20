@@ -33,3 +33,4 @@ stages:
     - template: Templates\build-solution.yml
       parameters:
         buildType: ${{parameters.buildType}}
+        mapCodeComponents: ${{parameters.mapCodeComponents}}
