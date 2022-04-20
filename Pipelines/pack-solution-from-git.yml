@@ -36,7 +36,6 @@ stages:
         buildType: 'specific'
         project: '43046151-1fa5-4629-bb00-d9c0e1accf08'
         definition: '7'
-        specificBuildWithTriggering: true
         buildVersionToDownload: 'latestFromBranch'
         branchName: $(Build.SourceBranchName)
         artifactName: 'drop'
