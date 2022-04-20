@@ -25,8 +25,8 @@ parameters:
   default: ''
 
 variables:
-- group: project-scope
 - group: dev-scope
+- group: project-scope
 
 stages:
 - stage: export_solution_to_git
