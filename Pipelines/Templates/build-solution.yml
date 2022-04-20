@@ -53,7 +53,6 @@ steps:
    .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
 
   failOnStderr: true
-  showWarnings: true
   displayName: 'Pack Solution (solution packager)'
   condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, true))
 
