@@ -130,7 +130,7 @@ steps:
             Path = $path
             DestinationPath = '$(Build.SourcesDirectory)/Data'
         }
-        Compress-Archive @extract
+        Expand-Archive @extract
     }
   displayName: 'Archive Configuration Migration Data'
   enabled: true
