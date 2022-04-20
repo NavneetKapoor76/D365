@@ -7,7 +7,7 @@ parameters:
   - Both
   - Managed
   - Unmanaged
--name: mapCodeComponents
+- name: mapCodeComponents
   displayName: Map Code Based Components from Git
   type: boolean
   default: true
