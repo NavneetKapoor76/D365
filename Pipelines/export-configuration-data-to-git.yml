@@ -4,6 +4,8 @@ pr: none
 variables:
 - group: dev-scope
 - group: project-scope
+- name: EnvironmentName
+  value: dpam-dev
 
 parameters:
 - name: CommitComment
