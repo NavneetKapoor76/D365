@@ -128,7 +128,7 @@ steps:
     if(Test-Path $path) {
         $extract = @{
             Path = $path
-            DestinationPath = '$(Build.SourcesDirectory)/Data'
+            DestinationPath = '$(Build.SourcesDirectory)/Config/Data'
         }
         Expand-Archive @extract
     }
