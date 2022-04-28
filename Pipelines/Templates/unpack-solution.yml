@@ -120,7 +120,8 @@ steps:
 
 - template: export-configuration-data.yml
   parameters:
-    serviceConnection: $(EnvironmentUrl)
+    environmentUrl: $(EnvironmentUrl)
+    environmentName: $(EnvironmentName)
 
 # We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
 - powershell: |
