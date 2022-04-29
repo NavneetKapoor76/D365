@@ -6,6 +6,7 @@ parameters:
 
 steps:
 - powershell: |
+    echo $(CdsBaseConnectionString)
     $path = "$(Pipeline.Workspace)/ConfigurationMigrationData-${{parameters.environmentName}}.zip"
     echo $path
     $envUrl = "$https://${{parameters.environmentName}}.crm4.dynamics.com/"
