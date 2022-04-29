@@ -1,0 +1,75 @@
+trigger: none
+pr: none
+
+variables:
+- group: dev-scope
+- group: project-scope
+
+parameters:
+- name: CommitComment
+  displayName: Commit Comment
+  type: string
+  default: ''
+
+pool:
+  name: Azure Pipelines
+  vmImage: windows-latest
+
+steps:
+# Checkout our Branch
+- checkout: git://$(Project)/$(Repo)@$(Build.SourceBranchName)
+  displayName: 'Checkout Source Branch'
+
+# Configure email/name and checkout git branch
+- script: |
+    git config user.email $(Build.RequestedForEmail)
+    git config user.name $(Build.RequestedFor)
+    git checkout origin/$(Build.SourceBranchName) --track
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Initialize Git'
+
+- template: Templates\install-powershell-modules.yml
+
+- template: Templates\install-pac.yml
+
+# Export both unmanaged and managed to put into source control
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.export-solution.PowerPlatformExportSolution@0
+  displayName: 'Export Unmanaged Solution'
+  inputs:
+    authenticationType: PowerPlatformSPN
+    PowerPlatformSPN: '$(EnvironmentUrl)'
+    SolutionName: '$(SolutionName)'
+    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName).zip'
+  condition: succeeded()
+
+- powershell: |
+    $env:PATH = $env:PATH + ";" + "$(pacPath)"
+    pac solution create-settings --solution-zip '$(Build.ArtifactStagingDirectory)\$(SolutionName).zip' --settings-file $(Build.SourcesDirectory)\Config\deployment-settings.json
+  failOnStderr: true
+  displayName: 'Create Deployment Settings File'
+  condition: succeeded()
+
+- powershell: |
+    git add --all
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Add Changes to Git Branch'
+
+# Commit all changes to Git branch. If there are no changes we want to warn the user that there was nothing to commit. As this could mean there was a user error involved.
+- powershell: |
+    $gitStatus = iex "git status --porcelain"
+    if ($gitStatus) {
+        git commit -m "${{parameters.CommitComment}}"
+    }
+    else {
+        Write-Host "##vso[task.logissue type=warning]There is nothing to commit. No changes have been made since the previous commit. If this is unexpected make sure your changes have been published before committing again."
+        exit 1;
+    }
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Commit Changes to Git Branch'
+  continueOnError: true
+
+- script: |
+    git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin $(Build.SourceBranchName)
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Push to $(Branch) Remote Branch'
+  condition: succeeded()
