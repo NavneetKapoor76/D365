@@ -30,7 +30,7 @@ steps:
             $moduleItems | Move-Item -Destination $fixedModulePath -Force
             Remove-Item -Path ([IO.Path]::GetDirectoryName($($savedModulePath))) -Recurse -Force | Out-Null
         } else {
-            Write-Verbose "Found module already installed, nothing to do."
+            Write-Host "Found module already installed, nothing to do."
         }
 
         # Set pipeline variable to be used in subsequent tasks when importing module
