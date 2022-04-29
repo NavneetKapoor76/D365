@@ -27,9 +27,7 @@ steps:
     git checkout origin/$(Build.SourceBranchName) --track
   workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Initialize Git'
-
-- template: Templates\install-powershell-modules.yml
-
+  
 - template: Templates\install-pac.yml
 
 # Export both unmanaged and managed to put into source control
