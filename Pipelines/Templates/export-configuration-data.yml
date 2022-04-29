@@ -7,6 +7,7 @@ parameters:
 steps:
 - powershell: |
     $path = "$(Pipeline.Workspace)/ConfigurationMigrationData-${{parameters.environmentName}}.zip"
+    echo $path
     $connString = "$(CdsBaseConnectionString)https://${{parameters.environmentName}}.crm4.dynamics.com/"
     echo $connString
     Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
