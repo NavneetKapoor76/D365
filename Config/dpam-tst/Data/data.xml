@@ -1,0 +1,38 @@
+
+<entities xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" timestamp="2022-04-29T11:10:24.1477454Z">
+  <entity name="dpam_settings" displayname="Settings">
+    <records>
+      <record id="9abef1e7-24f4-eb11-94ef-000d3a237027">
+        <field name="createdby" value="b03c185e-74bf-eb11-bacc-000d3a3a837b" lookupentity="systemuser" lookupentityname="Robert Cavas" />
+        <field name="createdon" value="2021-08-04T07:14:18.0000000Z" />
+        <field name="dpam_ms_description" value="Used in the &amp;quot;LEI Code Search&amp;quot; Canvas app in order to open in a new window the newly created Counterparty." />
+        <field name="modifiedby" value="b03c185e-74bf-eb11-bacc-000d3a3a837b" lookupentity="systemuser" lookupentityname="Robert Cavas" />
+        <field name="modifiedon" value="2021-10-18T10:23:44.0000000Z" />
+        <field name="dpam_name" value="Sales Hub Counterparty Record URL" />
+        <field name="ownerid" value="b03c185e-74bf-eb11-bacc-000d3a3a837b" lookupentity="systemuser" lookupentityname="Robert Cavas" />
+        <field name="owningbusinessunit" value="7c95a2ec-67bc-eb11-8235-000d3abbcaf5" lookupentity="businessunit" lookupentityname="DPAM Group" />
+        <field name="owninguser" value="b03c185e-74bf-eb11-bacc-000d3a3a837b" lookupentity="systemuser" />
+        <field name="dpam_settingsid" value="9abef1e7-24f4-eb11-94ef-000d3a237027" />
+        <field name="statecode" value="0" />
+        <field name="statuscode" value="1" />
+        <field name="dpam_s_value" value="https://dpam-tst.crm4.dynamics.com/main.aspx?appid=ca1fcbed-e5d7-eb11-bacb-000d3a2c3eff&amp;amp;pagetype=entityrecord&amp;amp;etn=account&amp;amp;id=" />
+      </record>
+      <record id="a53657d3-25f4-eb11-94ef-000d3a237027">
+        <field name="createdby" value="b03c185e-74bf-eb11-bacc-000d3a3a837b" lookupentity="systemuser" lookupentityname="Robert Cavas" />
+        <field name="createdon" value="2021-08-04T07:14:18.0000000Z" />
+        <field name="dpam_ms_description" value="Used in Account.js to open de Canvas App as a dialog when pushing the button &amp;quot;New From LEI&amp;quot;." />
+        <field name="modifiedby" value="b03c185e-74bf-eb11-bacc-000d3a3a837b" lookupentity="systemuser" lookupentityname="Robert Cavas" />
+        <field name="modifiedon" value="2021-10-14T15:12:02.0000000Z" />
+        <field name="dpam_name" value="LEI Code Search Canvas App" />
+        <field name="ownerid" value="b03c185e-74bf-eb11-bacc-000d3a3a837b" lookupentity="systemuser" lookupentityname="Robert Cavas" />
+        <field name="owningbusinessunit" value="7c95a2ec-67bc-eb11-8235-000d3abbcaf5" lookupentity="businessunit" lookupentityname="DPAM Group" />
+        <field name="owninguser" value="b03c185e-74bf-eb11-bacc-000d3a3a837b" lookupentity="systemuser" />
+        <field name="dpam_settingsid" value="a53657d3-25f4-eb11-94ef-000d3a237027" />
+        <field name="statecode" value="0" />
+        <field name="statuscode" value="1" />
+        <field name="dpam_s_value" value="https://apps.powerapps.com/play/65999195-5a34-41f9-bde6-52d7d8fffe05?tenantId=c26c2a32-78d1-474e-8d40-ba7bf5ad2172&amp;amp;hideNavBar=true&amp;amp;skipAppMetadata=true" />
+      </record>
+    </records>
+    <m2mrelationships />
+  </entity>
+</entities>
