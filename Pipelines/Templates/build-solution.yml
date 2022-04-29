@@ -24,20 +24,18 @@ steps:
   displayName: 'Pack Solutions (Managed)'
   inputs:
     SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
-    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber)_managed.zip'
+    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion)_managed.zip'
     SolutionType: ${{parameters.buildType}}
   condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, false), eq('${{parameters.buildType}}', 'Managed'))
-  enabled: false
 
 #Pack the solution based on the build type parameter (Unmanaged, Managed or Both)
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
   displayName: 'Pack Solutions (Unmanaged and/or Managed)'
   inputs:
     SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
-    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber).zip'
+    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip'
     SolutionType: ${{parameters.buildType}}
   condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, false), ne('${{parameters.buildType}}', 'Managed'))
-  enabled: false
 
 - powershell: |
    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -50,7 +48,7 @@ steps:
    $coreToolsFolder = Get-ChildItem ./ | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
    move .\$coreToolsFolder\content\bin\coretools\*.* .\
    Remove-Item .\$coreToolsFolder -Force -Recurse
-   .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
+   .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
 
   failOnStderr: true
   displayName: 'Pack Solution (solution packager)'
@@ -112,6 +110,6 @@ steps:
   inputs:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: '$(EnvironmentUrl)'
-    FilesToAnalyze: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(Build.BuildNumber).zip'
+    FilesToAnalyze: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip'
     RuleSet: '0ad12346-e108-40b8-a956-9a8f95ea18c9'
   condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
