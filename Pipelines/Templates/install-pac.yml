@@ -1,0 +1,19 @@
+steps:
+# TEMPORARY WORKAROUND: Power Apps CLI functionality will eventually be surfaced in Azure DevOps tasks.
+# However, to use functionality ahead of the tasks, we install the CLI.  Once the task is available, we move to using the task.
+- powershell: |
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+    $targetNugetExe = ".\nuget.exe"
+    Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
+    Set-Alias nuget $targetNugetExe -Scope Global -Verbose
+    
+    $nugetPackage = "Microsoft.PowerApps.CLI"
+    $outFolder = "pac"
+
+    ./nuget install  $nugetPackage -O $outFolder
+    $pacNugetFolder = Get-ChildItem $outFolder | Where-Object {$_.Name -match $nugetPackage + "."}
+    $pacPath = $pacNugetFolder.FullName + "\tools"
+    echo "##vso[task.setvariable variable=pacPath]$pacPath"
+  displayName: 'Install pac cli'
+
