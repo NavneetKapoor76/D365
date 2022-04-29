@@ -30,6 +30,9 @@ steps:
   
 - template: Templates\install-pac.yml
 
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
+  displayName: 'Install Power Platform Build Tools'
+  
 # Export both unmanaged and managed to put into source control
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.export-solution.PowerPlatformExportSolution@0
   displayName: 'Export Unmanaged Solution'
