@@ -2,7 +2,6 @@ trigger: none
 pr: none
 
 variables:
-- group: dev-scope
 - group: project-scope
 
 parameters:
@@ -10,6 +9,9 @@ parameters:
   displayName: Commit Comment
   type: string
   default: ''
+- name: EnvironmentName
+  displayName: Environment Name
+  type: string
 
 pool:
   name: Azure Pipelines
@@ -44,7 +46,7 @@ steps:
 
 - template: Templates\export-configuration-data.yml
   parameters:
-    environmentUrl: $(EnvironmentUrl)
+    configDataSchemaFile: $(Build.SourcesDirectory)\Config\$(EnvironmentName)\configuration-data-schema.xml
     environmentName: $(EnvironmentName)
 
 # We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
@@ -53,7 +55,7 @@ steps:
     if(Test-Path $path) {
         $extract = @{
             Path = $path
-            DestinationPath = '$(Build.SourcesDirectory)/Config/Data'
+            DestinationPath = '$(Build.SourcesDirectory)/Config/$(EnvironmentName)/Data'
         }
         Expand-Archive @extract
     }
