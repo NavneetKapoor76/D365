@@ -1,7 +1,7 @@
 parameters:
-- name: environmentUrl
-  type: string
 - name: environmentName
+  type: string
+- name: configDataSchemaFile
   type: string
 
 steps:
@@ -10,5 +10,5 @@ steps:
     Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
     $microsoftConfigurationMigrationPowerShellModule = '$(Microsoft_Xrm_Tooling_ConfigurationMigration)'
     Import-Module $microsoftConfigurationMigrationPowerShellModule -RequiredVersion $(configurationMigrationPowerShellVersion) -Force
-    Export-CrmDataFile -SchemaFile "$(Build.SourcesDirectory)\Config\configuration-data-schema.xml" -DataFile $path -CrmConnection "$(CdsBaseConnectionString)${{parameters.environmentUrl}}" -Verbose
+    Export-CrmDataFile -SchemaFile "${{parameters.configDataSchemaFile}}" -DataFile $path -CrmConnection "$(CdsBaseConnectionString)https://${{parameters.environmentName}}.crm4.dynamics.com/" -Verbose
   displayName: 'Export Configuration Data'
