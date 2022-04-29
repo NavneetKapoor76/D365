@@ -56,42 +56,28 @@ steps:
 
 # We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
 - powershell: |
-    $path = "$(Build.SourcesDirectory)\Solutions\$(SolutionName)\config\ConfigurationMigrationData"
+    $path = "$(Build.SourcesDirectory)\Config\Data"
     if(Test-Path $path) {
         $compress = @{
             Path = $path + '\*.*'
             CompressionLevel = 'Fastest'
-            DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigurationMigrationData.zip'
+            DestinationPath = '$(Build.ArtifactStagingDirectory)/ProductConfigData.zip'
         }
         Compress-Archive @compress
     }
-    $settingFiles = @("deploymentSettings","customDeploymentSettings")
-
-    foreach ($settingFile in $settingFiles) {
-        $path = "$(Build.SourcesDirectory)\Solutions\$(SolutionName)\config\$settingFile.json"
-        if(Test-Path $path) {
-            Copy-Item $path "$(Build.ArtifactStagingDirectory)/$settingFile.json"
-        }
-    }
-
-    if(Test-Path "$(Build.SourcesDirectory)\Solutions\$(SolutionName)\config") {
-        Get-ChildItem -Path "$(Build.SourcesDirectory)\Solutions\$(SolutionName)\config" | 
+    
+    if(Test-Path "$(Build.SourcesDirectory)\Config") {
+        Get-ChildItem -Path "$(Build.SourcesDirectory)\Config" | 
         ForEach-Object {
             $environment = $_.Name
-            $path = "$(Build.SourcesDirectory)\Solutions\$(SolutionName)\config\$environment\ConfigurationMigrationData"
+            $path = "$(Build.SourcesDirectory)\Config\$environment\Data"
             if(Test-Path $path) {
                 $compress = @{
                     Path = $path + '\*.*'
                     CompressionLevel = 'Fastest'
-                    DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigurationMigrationData-' + $environment + '.zip'
+                    DestinationPath = '$(Build.ArtifactStagingDirectory)/PostProcessConfigData-' + $environment + '.zip'
                 }
                 Compress-Archive @compress
-            }
-            foreach ($settingFile in $settingFiles) {
-                $path = "$(Build.SourcesDirectory)\Solutions\$(SolutionName)\config\$environment\$settingFile.json"
-                if(Test-Path $path) {
-                    Copy-Item $path "$(Build.ArtifactStagingDirectory)/$settingFile-$environment.json"
-                }
             }
         }
     }
