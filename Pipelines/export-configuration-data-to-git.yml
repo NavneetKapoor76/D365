@@ -58,7 +58,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
     artifact: 'logs'
     publishLocation: 'pipeline'
   condition: failed()
