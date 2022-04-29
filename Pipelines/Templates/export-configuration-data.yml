@@ -10,7 +10,7 @@ steps:
     echo $path
     $envUrl = "$https://${{parameters.environmentName}}.crm4.dynamics.com/"
     echo $envUrl
-    $connString = "$(CdsBaseConnectionString)$envUrl"
+    $connString = "$(CdsBaseConnectionString)" + $envUrl
     echo $connString
     Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
     $microsoftConfigurationMigrationPowerShellModule = '$(Microsoft_Xrm_Tooling_ConfigurationMigration)'
