@@ -6,13 +6,13 @@ parameters:
 
 steps:
 - powershell: |
-    echo $(CdsBaseConnectionString)
+    echo "$(CdsBaseConnectionString)"
     $path = "$(Pipeline.Workspace)/ConfigurationMigrationData-${{parameters.environmentName}}.zip"
-    echo $path
+    echo "$path"
     $envUrl = "https://${{parameters.environmentName}}.crm4.dynamics.com/"
-    echo $envUrl
+    echo "$envUrl"
     $connString = "$(CdsBaseConnectionString)" + "$envUrl"
-    echo $connString
+    echo "$connString"
     Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
     $microsoftConfigurationMigrationPowerShellModule = '$(Microsoft_Xrm_Tooling_ConfigurationMigration)'
     Import-Module $microsoftConfigurationMigrationPowerShellModule -RequiredVersion $(configurationMigrationPowerShellVersion) -Force
