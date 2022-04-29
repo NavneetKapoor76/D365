@@ -49,6 +49,20 @@ steps:
     configDataSchemaFile: $(Build.SourcesDirectory)\Config\environment-data-schema.xml
     environmentName: '${{parameters.EnvironmentName}}'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Pipeline.Workspace)'
+    Contents: '**\*.log'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  condition: failed()
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'logs'
+    publishLocation: 'pipeline'
+  condition: failed()
+
 # We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
 - powershell: |
     $path = "$(ConfigurationMigrationFilePath)"
