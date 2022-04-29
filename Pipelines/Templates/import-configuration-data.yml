@@ -1,32 +1,14 @@
-parameters:
-- name: serviceConnection
+  parameters:
+- name: environmentName
+  type: string
+- name: configDataFile
   type: string
 
 steps:
 - powershell: |
-   $path = "$(Pipeline.Workspace)/drop/ConfigurationMigrationData-$(EnvironmentName).zip"
-   if(Test-Path $path)
-   {
-        Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
-   }
-   else
-   {
-        $path = "$(Pipeline.Workspace)/drop/ConfigurationMigrationData.zip"
-        if(Test-Path $path)
-        {
-            Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
-        }
-        else
-        {
-            Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]"
-        }
-   }
-  displayName: 'Check if Configuration Migration Data exists'
-
-- powershell: |
+    $path = ${{parameters.configDataFile}}
+    Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
     $microsoftConfigurationMigrationPowerShellModule = '$(Microsoft_Xrm_Tooling_ConfigurationMigration)'
     Import-Module $microsoftConfigurationMigrationPowerShellModule -RequiredVersion $(configurationMigrationPowerShellVersion) -Force
-    Import-CrmDataFile -CrmConnection "$(CdsBaseConnectionString)${{parameters.serviceConnection}}" -Datafile "$(ConfigurationMigrationFilePath)" -Verbose
-  displayName: 'Import Configuration Migration Data'
-  condition: and(succeeded(), ne(variables['ConfigurationMigrationFilePath'], ''))
-  #skip task if there is no ConfigurationMigrationData in the downloaded artifact
+    Import-CrmDataFile -Datafile $path -CrmConnection "$(CdsBaseConnectionString)https://${{parameters.environmentName}}.crm4.dynamics.com/" -LogWriteDirectory "$(Pipeline.Workspace)" -Verbose
+  displayName: 'Export Configuration Data'
