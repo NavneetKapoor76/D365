@@ -82,7 +82,7 @@ steps:
         }
     }
   displayName: 'Archive Configuration Migration Data'
-  enabled: false
+  enabled: true
 
 - task: PublishPipelineArtifact@1
   displayName: 'Publish Artifacts'
