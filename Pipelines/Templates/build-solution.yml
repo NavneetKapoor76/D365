@@ -54,7 +54,6 @@ steps:
   displayName: 'Pack Solution (solution packager)'
   condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, true))
 
-# We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
 - powershell: |
     if(Test-Path "$(Build.SourcesDirectory)\Configuration") {
         Get-ChildItem -Path "$(Build.SourcesDirectory)\Configuration" | 
