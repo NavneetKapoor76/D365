@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{65c57794-18c0-4669-a05e-cb22aa859a33}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{12e55a2b-a19c-4487-aa29-5c17cab9abee}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{ea16d854-ec1a-473c-ba6c-2edf3728d8d9}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ad3803c9-c029-476f-9ee9-db2b093732fa}" visible="false">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e5e99512-d162-4ba1-bbea-c18f6415abef}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_counterparty" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_counterparty" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{e4c23441-cf51-4777-8846-807b90544732}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1634810903145" languagecode="1033" />
+                        </labels>
+                        <control id="QuickviewControl1634810903145" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="dpam_lk_counterparty" disabled="false">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="account"&gt;25e2f4a3-5632-ec11-b6e6-6045bd8e491b&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{52dc66e2-1332-4a6e-974e-95f35228255c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Start Date" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_dt_startdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="dpam_dt_startdate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fd4348a8-23d0-416d-ad1c-0d8a8ce0b899}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="End Date" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_dt_enddate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="dpam_dt_enddate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7b8bc573-0453-429d-af87-8465da788046}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="N° of Target Activities" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_int_numberoftargetactivities" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="dpam_int_numberoftargetactivities" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9556d016-713b-4803-82af-088c6ee34467}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="N° of Completed Activities" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_int_numberofcompletedactivities" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="dpam_int_numberofcompletedactivities" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8c3576d-a88e-4028-986f-ad499275de62}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="N° of Remaing Activities" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_int_numberofremaingactivities" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="dpam_int_numberofremaingactivities" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5581c6a7-49e5-49b5-a3df-27e3ae96d3f9}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{a0a2df19-f0cd-4d38-a014-6fbc9eeea43e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{58c8b154-2807-4487-9fbd-cfa81db7a7a6}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{9fbf7465-d601-4f4d-9b76-d7aac67af150}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{7cd1b35d-be25-4512-b843-6a7e39c02663}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{b63cfa6d-ed1c-40c7-a154-a7977e606ff6}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{deea4124-74bd-438c-b7fb-a5e22e28c130}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{0010c224-9c91-485c-b0c0-4031f9b3526a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{6f91decc-5401-455e-ae97-d1383b0f9b78}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="dpam_/Script/ContactFrequency.js" libraryUniqueId="{800323ed-1f70-448d-a92d-31758601e6a9}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="true" active="true">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ContactFrequency.Form.onLoad" libraryName="dpam_/Script/ContactFrequency.js" handlerUniqueId="{7c5a2a2f-2712-4e3b-aa8e-31ef11189e0c}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_int_numberoftargetactivities">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ContactFrequency.Form.onChange_dpam_int_numberoftargetactivities" libraryName="dpam_/Script/ContactFrequency.js" handlerUniqueId="{acc4e85b-bb5c-4913-b63c-c3b738bfac75}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_dt_startdate">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ContactFrequency.Form.onChange_dpam_dt_startdate" libraryName="dpam_/Script/ContactFrequency.js" handlerUniqueId="{5536086c-f08e-4cf6-8157-5cea9b4dd0e9}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_dt_enddate">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.ContactFrequency.Form.onChange_dpam_dt_enddate" libraryName="dpam_/Script/ContactFrequency.js" handlerUniqueId="{16d39a25-7016-4b48-b337-9e7becd065f2}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Contact Frequency" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

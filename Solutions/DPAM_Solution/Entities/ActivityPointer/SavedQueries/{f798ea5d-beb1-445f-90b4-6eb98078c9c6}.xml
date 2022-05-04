@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery unmodified="1">
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{f798ea5d-beb1-445f-90b4-6eb98078c9c6}</savedqueryid>
+    <queryapi></queryapi>
+    <layoutxml>
+      <grid name="resultset" jump="subject" select="1" icon="1" preview="1">
+        <row name="result" id="activityid" multiobjectidfield="activitytypecode">
+          <cell name="activitytypecode" width="100" />
+          <cell name="regardingobjectid" width="100" />
+          <cell name="prioritycode" width="100" />
+          <cell name="scheduledstart" width="140" />
+          <cell name="scheduledend" width="140" />
+          <cell name="instancetypecode" width="100" ishidden="1" />
+          <cell name="community" width="100" ishidden="1" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1024</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="activitypointer">
+          <attribute name="activityid" />
+          <attribute name="scheduledstart" />
+          <attribute name="regardingobjectid" />
+          <attribute name="prioritycode" />
+          <attribute name="scheduledend" />
+          <attribute name="activitytypecode" />
+          <attribute name="instancetypecode" />
+          <attribute name="community" />
+          <order attribute="scheduledend" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="in">
+              <value>0</value>
+              <value>3</value>
+            </condition>
+            <condition attribute="isregularactivity" operator="eq" value="1" />
+          </filter>
+          <link-entity name="activityparty" from="activityid" to="activityid" alias="aa">
+            <filter type="and">
+              <condition attribute="partyid" operator="eq-userid" />
+            </filter>
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="My Activities" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="My Activities (to be used asynchronously)." languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

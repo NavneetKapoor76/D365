@@ -17,6 +17,13 @@ namespace BDP.DPAM.Plugins.Contact
 
                 // SHER-201
                 ctrl.SetContactGreetingBasedOnLanguageAndGender();
+
+                // SHER-379
+                ctrl.SetContactDirectLineBasedOnCounterpartyMainPhone();
+                //SHER-668
+                ctrl.ManageEmailOptInMarketingBulkEmail();
+                //SHER-792
+                ctrl.ManageStatusRequestEmailOptinMarketing();
             }
             catch (Exception ex)
             {

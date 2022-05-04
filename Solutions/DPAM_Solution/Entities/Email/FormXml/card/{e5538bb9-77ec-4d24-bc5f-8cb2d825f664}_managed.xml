@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e5538bb9-77ec-4d24-bc5f-8cb2d825f664}</formid>
+    <IntroducedVersion>8.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab IsUserDefined="0" id="{013335d7-3299-4f51-aa0b-db2f478db59e}" ordinalvalue="0">
+          <columns>
+            <column width="25%" id="0">
+              <sections>
+                <section name="ColorStrip" showlabel="false" showbar="false" IsUserDefined="0" columns="1" id="{5bfd4475-53a9-4460-9857-037becd0ef10}" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{873bdc35-c562-c865-592c-6c2c8ac844c2}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Status Reason" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="75%" id="1">
+              <sections>
+                <section name="CardHeader" showlabel="false" showbar="false" IsUserDefined="0" columns="111" id="{76946f41-9534-4a92-8a77-4169f68de5ad}" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{260c4876-5eba-7dcc-91eb-dd6a7e058716}" showlabel="true" locklevel="0" ordinalvalue="10000" solutionaction="Removed" />
+                      <cell id="{6940a069-a54a-0b10-b57b-cbe5195a19e9}" showlabel="true" locklevel="0" ordinalvalue="10006" solutionaction="Modified">
+                        <labels>
+                          <label description="To" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell id="{d4079218-1ab5-0046-51ce-017b86e6862c}" showlabel="true" locklevel="0" ordinalvalue="30002" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{6469497a-797a-1289-636e-3ac67aa65de4}" showlabel="true" locklevel="0" ordinalvalue="10000" solutionaction="Added">
+                        <labels>
+                          <label description="From" languagecode="1033" />
+                        </labels>
+                        <control id="from" classid="{CBFB742C-14E7-4a17-96BB-1A13F7F64AA2}" datafieldname="from" disabled="false" />
+                      </cell>
+                      <cell id="{32358403-79c2-2cc4-4cb1-b42334634174}" showlabel="false" ordinalvalue="20001" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{e66bb185-74b1-6971-ecd7-31781d339a68}" showlabel="false" ordinalvalue="30002" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ced7544a-e800-7cc6-2229-e28e706331ba}" showlabel="true" locklevel="0" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="Actual End" languagecode="1033" />
+                        </labels>
+                        <control id="actualend" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="actualend" disabled="false" />
+                      </cell>
+                      <cell id="{1bc458a3-d59b-b95d-b605-dd937134cd0a}" showlabel="false" ordinalvalue="20004" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{c918bc2b-63dd-9661-0e55-b4232b6c1647}" showlabel="false" ordinalvalue="30005" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8593225-dc04-480b-a36a-0656eb60ed04}" showlabel="false" ordinalvalue="20007" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{c11b4196-bc6e-6676-5860-d527cb166401}" showlabel="false" ordinalvalue="30008" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{645bbd3a-2e14-8aa0-a236-b1901c441a26}" showlabel="true" locklevel="0" ordinalvalue="10009" solutionaction="Added">
+                        <labels>
+                          <label description="Date Sent" languagecode="1033" />
+                        </labels>
+                        <control id="senton" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="senton" disabled="false" />
+                      </cell>
+                      <cell id="{ec8cab9a-5358-0a8e-368d-61660756e7a4}" showlabel="false" ordinalvalue="20010" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{ace5d6a6-6512-14b5-cac1-a6a563129b3e}" showlabel="false" ordinalvalue="30011" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="CardDetails" showlabel="false" showbar="false" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" id="{51dcf0ea-de51-4444-b6d5-36be6b49eb92}" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{cda6d1a3-6274-94d4-344b-132269369a29}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Subject" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{78d595db-4b1e-1cb2-600b-18684e71640a}" showlabel="true" locklevel="0" ordinalvalue="10001">
+                        <labels>
+                          <label description="Description" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d065ac83-11ad-cb6e-658c-a63d20c19692}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Regarding" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="CardFooter" showlabel="false" showbar="false" IsUserDefined="0" columns="1111" id="{f16578d9-1084-426c-95a6-f656f7dd03e9}" ordinalvalue="2">
+                  <rows>
+                    <row>
+                      <cell id="{33387630-8e67-0398-6321-9404c9353324}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Owner" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell id="{a2c3bb2b-db18-4ec1-9647-6be45f4c9774}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Created On" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell id="{c88bf2c2-c93d-4796-a1e5-e338412bd843}" showlabel="false" ordinalvalue="30002" solutionaction="Modified" />
+                      <cell id="{fae96c3e-0c29-4594-a6d8-d12c30a70a7e}" showlabel="false" ordinalvalue="40003" solutionaction="Modified" />
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Email Card form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Default Email card form." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

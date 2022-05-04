@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{de3e1422-1144-4cf2-bf9a-3c23cc82db59}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{902f2d34-8315-4246-a50d-f767adaf2f6f}" IsUserDefined="1" name="General">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{ed3082dd-c4d6-4113-8ba3-9543ef9f1dbf}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f1b37d89-dbe9-43b2-8694-ee9a362179f4}">
+                        <labels>
+                          <label description="Country" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{83e746ad-fc49-40d9-81ec-0ad9724133bd}" locklevel="0">
+                        <labels>
+                          <label description="VAT Format" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_vatformat" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_vatformat" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f85e151b-a944-4604-8e78-74e472ba2c6e}" locklevel="0">
+                        <labels>
+                          <label description="VAT Format Example" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_vatformatexample" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_vatformatexample" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1ebea54b-6b23-4261-b259-63caed52393e}" locklevel="0">
+                        <labels>
+                          <label description="Alpha-2 Code" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_alpha2code" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_alpha2code" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6d8b6ad4-316e-4986-af2b-e1ce319f3d48}" locklevel="0">
+                        <labels>
+                          <label description="Order" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_int_order" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="dpam_int_order" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{10001732-f912-4d3c-be5f-f6f34f2ff62d}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{48c682e9-006a-428d-a216-326d2c586dfa}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{4faedb89-eaaf-4258-89e8-3830ebadc2c8}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{74a0558b-5edf-44a5-8a5b-87ae20995f8f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{e29bbb22-f641-4e5a-a083-51d40e9242af}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{605df570-b5bc-4a43-896c-a9b2e8f6f2bc}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{7ce77a46-d381-4045-a625-c15f6ee871c1}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{dd4af220-2136-4079-8dc3-205827c83407}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3fc7faca-dfdc-401d-898c-62081aa4c81b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

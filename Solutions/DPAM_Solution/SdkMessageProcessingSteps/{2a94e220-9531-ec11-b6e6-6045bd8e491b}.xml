@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.ContactFrequency.PreUpdateContactFrequency: Update of dpam_contactfrequency" SdkMessageProcessingStepId="{2a94e220-9531-ec11-b6e6-6045bd8e491b}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.ContactFrequency.PreUpdateContactFrequency, BDP.DPAM.Plugins.ContactFrequency, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6608922ed3f77354</PluginTypeName>
+  <PluginTypeId>618fb13f-f66d-4cd1-b4ab-17d949505f3a</PluginTypeId>
+  <PrimaryEntity>dpam_contactfrequency</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>dpam_dt_enddate,dpam_dt_startdate,dpam_int_numberofcompletedactivities,dpam_int_numberoftargetactivities,dpam_lk_counterparty</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages>
+    <SdkMessageProcessingStepImage Name="PreImage">
+      <SdkMessageProcessingStepImageId>{2440302d-9531-ec11-b6e6-6045bd8e491b}</SdkMessageProcessingStepImageId>
+      <Attributes>dpam_dt_enddate,dpam_dt_startdate,dpam_int_numberofcompletedactivities,dpam_int_numberoftargetactivities,dpam_lk_counterparty</Attributes>
+      <EntityAlias>PreImage</EntityAlias>
+      <ImageType>0</ImageType>
+      <MessagePropertyName>Target</MessagePropertyName>
+      <IsCustomizable>1</IsCustomizable>
+    </SdkMessageProcessingStepImage>
+  </SdkMessageProcessingStepImages>
+</SdkMessageProcessingStep>

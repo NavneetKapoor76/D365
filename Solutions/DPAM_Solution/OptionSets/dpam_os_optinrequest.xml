@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dpam_os_optinrequest" localizedName="Marketing Optin Request" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.14.36.2</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Marketing Optin Request" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="100000000" ExternalValue="">
+      <labels>
+        <label description="Processing" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000001" ExternalValue="">
+      <labels>
+        <label description="Handled" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000002">
+      <labels>
+        <label description="No reaction" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

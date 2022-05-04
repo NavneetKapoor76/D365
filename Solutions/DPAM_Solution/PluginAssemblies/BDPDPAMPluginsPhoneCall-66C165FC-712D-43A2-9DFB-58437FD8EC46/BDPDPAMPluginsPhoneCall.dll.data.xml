@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.PhoneCall, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc875fb4f2f9374c" PluginAssemblyId="66c165fc-712d-43a2-9dfb-58437fd8ec46" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsPhoneCall-66C165FC-712D-43A2-9DFB-58437FD8EC46/BDPDPAMPluginsPhoneCall.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.PhoneCall.PostUpdatePhoneCall, BDP.DPAM.Plugins.PhoneCall, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc875fb4f2f9374c" PluginTypeId="19abd689-3aa6-49e7-aea7-bc13f141f186" Name="BDP.DPAM.Plugins.PhoneCall.PostUpdatePhoneCall">
+      <FriendlyName>5a8743bd-0cf3-4d3c-854a-1ac6eddf6fc6</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.PhoneCall.PreCreatePhoneCall, BDP.DPAM.Plugins.PhoneCall, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc875fb4f2f9374c" PluginTypeId="5502b6b6-254d-457e-bc52-c2fafa5b87c6" Name="BDP.DPAM.Plugins.PhoneCall.PreCreatePhoneCall">
+      <FriendlyName>b9490557-b789-42cb-bc34-40d7b3593f10</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.PhoneCall.PreUpdatePhoneCall, BDP.DPAM.Plugins.PhoneCall, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc875fb4f2f9374c" PluginTypeId="01353b4f-1685-4bf8-a6d5-df0e4ec74c1f" Name="BDP.DPAM.Plugins.PhoneCall.PreUpdatePhoneCall">
+      <FriendlyName>30ff4830-75d2-4c8c-b4f6-03af14e9b960</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

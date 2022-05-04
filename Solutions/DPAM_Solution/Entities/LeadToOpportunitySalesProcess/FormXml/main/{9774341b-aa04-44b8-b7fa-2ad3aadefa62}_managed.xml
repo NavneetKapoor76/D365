@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{9774341b-aa04-44b8-b7fa-2ad3aadefa62}</formid>
+    <IntroducedVersion>8.2.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <hiddencontrols solutionaction="Removed" />
+      <tabs>
+        <tab name="general" id="{9575be08-8ebb-7761-ccdc-7e9d414c5874}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="0" solutionaction="Removed" />
+        <tab verticallayout="true" id="{f99b4d48-7aad-456e-864a-8e7d543f7495}" name="StageStep4" locklevel="0" expanded="true" visible="false" labelid="{f334d2ba-c7c8-45d8-80f4-bb71a87bbef1}" ordinalvalue="0" solutionaction="Added">
+          <labels>
+            <label description="Qualify" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showbar="false" columns="1" id="{1c7586b1-7e38-7c90-6de5-ecacbd4b5a72}" name="StageStep4_section1" labelid="{a0eecb7a-a127-4a68-8ad3-ff846cc2c645}" ordinalvalue="0">
+                  <labels>
+                    <label description="Qualify" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{6e4338c8-272e-4790-9b26-19b658093449}" showlabel="true" visible="true" labelid="{faf2e806-a456-4a4c-a3c2-41d13b1e96cc}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Topic" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_leadid:subject" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="subject" disabled="false" relationship="lk_leadtoopportunitysalesprocess_leadid" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{399b53f3-eaf6-4cd7-b5ca-6e5ffd4d29b7}" showlabel="true" visible="true" labelid="{aa4c04a6-d10a-4d0c-ac6f-8daf46f57c15}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Last Name" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_leadid:lastname" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="lastname" disabled="false" relationship="lk_leadtoopportunitysalesprocess_leadid" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{739abb53-7ce5-4408-865f-ad8b7efc4e80}" showlabel="true" visible="true" labelid="{ff43e857-5beb-4123-b9dd-363530249abc}" ordinalvalue="10002">
+                        <labels>
+                          <label description="First Name" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_leadid:firstname" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="firstname" disabled="false" relationship="lk_leadtoopportunitysalesprocess_leadid" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{96051138-4391-4f70-b23a-4333e49715bf}" showlabel="true" visible="true" labelid="{d5658ac0-e822-4943-9091-700213631f23}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Existing Contact?" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_leadid:parentcontactid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="parentcontactid" disabled="false" relationship="lk_leadtoopportunitysalesprocess_leadid" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{646c0de4-de2d-4470-96fa-8f5a2d7cc1f7}" showlabel="true" visible="true" labelid="{da485bc7-130f-4567-860d-97954e2cd488}" ordinalvalue="10004">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_leadid:companyname" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="companyname" disabled="false" relationship="lk_leadtoopportunitysalesprocess_leadid" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{25c95401-3b27-4569-900e-72bfcb990c04}" showlabel="true" visible="true" labelid="{ab7b1266-3b5a-4918-abe2-10a865abe3dd}" ordinalvalue="10005">
+                        <labels>
+                          <label description="Existing Counterparty?" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_leadid:parentaccountid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="parentaccountid" disabled="false" relationship="lk_leadtoopportunitysalesprocess_leadid" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{bfc9108c-8389-406b-9166-2c3298a2e41f}" name="StageStep18" locklevel="0" expanded="true" visible="false" labelid="{6f49f0ab-bba7-4d11-aebb-cdc77a830930}" ordinalvalue="1" solutionaction="Added">
+          <labels>
+            <label description="Develop" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showbar="false" columns="1" id="{87897719-1b3a-c16c-ba85-87c41a8131b8}" name="StageStep18_section1" labelid="{ef19aa53-c28e-445c-93e0-0444a78c348f}" ordinalvalue="0">
+                  <labels>
+                    <label description="Develop" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3ebe544a-d29e-4fe4-a18f-98d461b54676}" showlabel="true" visible="true" labelid="{f41f4df9-f610-4234-aed3-0118fcc3a136}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Target AUM" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:estimatedvalue" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="estimatedvalue" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fdb48dad-a52e-4b1d-95c9-23b58f63ebbe}" showlabel="true" visible="true" labelid="{5af0b8bd-2662-40dc-a697-6eaf73f5c119}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Probability" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:dpam_os_probability" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="dpam_os_probability" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e964896e-0fe4-4cab-a798-f12d43187775}" showlabel="true" visible="true" labelid="{24430b03-2a71-4a34-9245-278e0142b06f}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Est. Close Date" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:estimatedclosedate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="estimatedclosedate" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{3a275c22-fc45-4e89-97fc-41e5ec578743}" name="StageStep26" locklevel="0" expanded="true" visible="false" labelid="{325e3c4a-38d8-4f1d-af48-3f4a8786f28f}" ordinalvalue="2" solutionaction="Added">
+          <labels>
+            <label description="Propose" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showbar="false" columns="1" id="{17793b16-367c-baf7-e594-c4cc5889c725}" name="StageStep26_section1" labelid="{c1fff1cd-ca56-49f5-a826-5d5fdb2d62e6}" ordinalvalue="0">
+                  <labels>
+                    <label description="Propose" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c66f1e5e-5f4e-4b65-b012-421cc19d9d18}" showlabel="true" visible="true" labelid="{97b40b64-f082-4284-8708-0502aa7a6ff0}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Target AUM" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:estimatedvalue" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="estimatedvalue" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8a2e7308-83ff-4dc1-9228-351755dcd32f}" showlabel="true" visible="true" labelid="{e3061376-8eec-4244-b396-54914773f4fa}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Probability" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:dpam_os_probability" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="dpam_os_probability" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{db8aff44-7c25-46c7-8556-8f3597e50cd8}" showlabel="true" visible="true" labelid="{6d100e0b-9834-432d-af25-896b7d94c9e4}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Est. Close Date" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:estimatedclosedate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="estimatedclosedate" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{7f5247fe-cfc3-42bc-aa77-b1d836d9b7c0}" name="StageStep34" locklevel="0" expanded="true" visible="false" labelid="{6a2663f6-28ed-480a-a14a-f7f7ea13228f}" ordinalvalue="3" solutionaction="Added">
+          <labels>
+            <label description="Close" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showbar="false" columns="1" id="{8df4206d-c9af-931b-9b24-5959ccde3d66}" name="StageStep34_section1" labelid="{a8390451-b6a3-455a-9188-26d2134eec80}" ordinalvalue="0">
+                  <labels>
+                    <label description="Close" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{61c7b2be-5d0d-454a-aa8a-00f46467066a}" showlabel="true" visible="true" labelid="{ea41d477-73b7-41cf-a800-12733f361914}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Target AUM" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:estimatedvalue" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="estimatedvalue" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{98f90967-ed0b-41f8-855a-1ae1f26b824c}" showlabel="true" visible="true" labelid="{674111ef-1fd7-48b8-96cd-61b1d3ee627a}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Probability" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:dpam_os_probability" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="dpam_os_probability" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{62c1c2d0-eb99-4962-b69e-d6c2f67b188a}" showlabel="true" visible="true" labelid="{88b01b7e-9348-45e2-93a5-ddf5e040bd19}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Est. Close Date" languagecode="1033" />
+                        </labels>
+                        <control id="lk_leadtoopportunitysalesprocess_opportunityid:estimatedclosedate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="estimatedclosedate" disabled="false" relationship="lk_leadtoopportunitysalesprocess_opportunityid" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <footer id="{734bf81d-1a48-4ba9-a4c3-5f9685717765}" columns="1" celllabelposition="Left" celllabelalignment="Left" labelwidth="115" solutionaction="Removed" />
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="LeadToOpportunitySalesProcesses" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

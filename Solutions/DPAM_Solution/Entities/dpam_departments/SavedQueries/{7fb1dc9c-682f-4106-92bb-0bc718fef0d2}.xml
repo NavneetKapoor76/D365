@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{7fb1dc9c-682f-4106-92bb-0bc718fef0d2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_s_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_departmentsid">
+          <cell name="dpam_s_name" width="300" />
+          <cell name="dpam_s_autonumber" width="100" />
+          <cell name="dpam_lk_counterparty" width="100" />
+          <cell name="dpam_s_emailaddress" width="100" />
+          <cell name="dpam_os_prioritygroup" width="100" />
+          <cell name="dpam_lk_location" width="100" />
+          <cell name="dpam_lk_businesssegmentation" width="100" />
+          <cell name="dpam_lk_localbusinesssegmentation" width="100" />
+          <cell name="dpam_lk_compliancesegmentation" width="100" />
+          <cell name="dpam_lk_mifidcategory" width="100" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_departments">
+          <attribute name="dpam_departmentsid" />
+          <attribute name="dpam_s_name" />
+          <attribute name="createdon" />
+          <order attribute="dpam_s_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="dpam_s_autonumber" />
+          <attribute name="dpam_lk_counterparty" />
+          <attribute name="dpam_s_emailaddress" />
+          <attribute name="dpam_os_prioritygroup" />
+          <attribute name="dpam_lk_location" />
+          <attribute name="dpam_lk_businesssegmentation" />
+          <attribute name="dpam_lk_localbusinesssegmentation" />
+          <attribute name="dpam_lk_compliancesegmentation" />
+          <attribute name="dpam_lk_mifidcategory" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.3.23.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Departments" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

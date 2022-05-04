@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.EventRegistration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35eddef1c7e72115" PluginAssemblyId="1a3d1f05-f931-4c7b-afbb-c62936e01fc0" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsEventRegistration-1A3D1F05-F931-4C7B-AFBB-C62936E01FC0/BDPDPAMPluginsEventRegistration.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.EventRegistration.PostUpdateEventRegistration, BDP.DPAM.Plugins.EventRegistration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35eddef1c7e72115" PluginTypeId="f94bf9c2-61e7-430a-92ec-40ad77af9418" Name="BDP.DPAM.Plugins.EventRegistration.PostUpdateEventRegistration">
+      <FriendlyName>13f321fa-9e89-444b-a1af-31ee3dc39d66</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0330c27b-60ff-487c-bd06-aac13ce3c996}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{7928239a-ebc6-47e2-92ad-59d4edc5beca}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{ab904bb2-2a20-40cf-b0cc-e01a9242dae3}" name="General">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{093cc77e-e101-4f0f-a16e-cc49c3bff393}">
+                        <labels>
+                          <label description="Local Business Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c07dd98e-d177-4edc-9a1c-a28665e3eae5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Counterparty Type" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_mos_counterpartytype" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="dpam_mos_counterpartytype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f2856f49-60b7-4cef-bd43-1eb16f063502}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Country" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_country" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_country" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{30d0c546-5fb3-41c9-b9e4-feb5006fcb78}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Business Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_businesssegmentation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_businesssegmentation" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{84780f62-8a3c-4176-8b4f-cd8a7d104e70}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3177a84b-b4b0-4fb0-ab62-cd8b52aaae51}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{8fbf9cfa-c2c7-4f24-aa0e-b89493c148a1}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{1f6130c5-ee8e-442e-9677-e773443951ad}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{9635141b-4d4a-4b63-815c-80dcc6a2ed22}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{c6586d14-e07d-40a6-ab49-3de4faa77b85}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{a6926782-a5c4-4c98-9b66-fb0cb9fd457b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a03a6b4b-5cce-4ff3-9cb3-645c2e661e94}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{e86cceca-bf9a-4c2d-b6dc-6095f8ee103f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

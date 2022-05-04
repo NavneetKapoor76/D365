@@ -1,59 +1,90 @@
 ﻿/// <reference path="../../node_modules/@types/xrm/index.d.ts" />
 namespace BDP.DPAM.WR.Account {
 
-    class _Static {
-        readonly field = {
-            dpam_country: {
-                dpam_s_alpha2code: "dpam_s_alpha2code",
-                dpam_s_vatformat: "dpam_s_vatformat",
-                dpam_s_vatformatexample: "dpam_s_vatformatexample"
-            },
-            account: {
-                dpam_lk_country: "dpam_lk_country",
-                dpam_s_country_alpha2code: "dpam_s_country_alpha2code",
-                dpam_s_vatnumber: "dpam_s_vatnumber",
-                dpam_mos_counterpartytype: "dpam_mos_counterpartytype",
-                dpam_lk_businesssegmentation: "dpam_lk_businesssegmentation"
-            },
-            dpam_settings: {
-                dpam_s_value: "dpam_s_value"
-            }
-        };
-
-    }
-    export let Static = new _Static();
-
-
     export class Form {
         public static onLoad(executionContext: Xrm.Events.EventContext): void {
-            this.setBusinessSegmentationFilter(executionContext);
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-174
+            Form.setBusinessSegmentationFilter(formContext);
+            //SHER-244 + SHER-578 (filter OOB)
+            //Form.setComplianceSegmentationFilter(formContext);
+            //SHER-268
+            Form.setLocalBusinessSegmentationFilter(formContext);
+            //SHER-292 + SHER-426
+            Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-313 + SHER-578
+            Form.manageCountryVisibility(formContext);
+            //SHER-500 + SHER-578
+            Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, true)
+        }
+
+        public static QuickCreateonLoad(executionContext: Xrm.Events.EventContext): void {
+            //SHER-344 All same than form load except SHER-313 Country visibility
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-174
+            Form.setBusinessSegmentationFilter(formContext);
+            //SHER-244 + SHER-578 (filter OOB)
+            //Form.setComplianceSegmentationFilter(formContext);
+            //SHER-268
+            Form.setLocalBusinessSegmentationFilter(formContext);
+            //SHER-292 + SHER-426
+            Form.manageBusinessSegmentationVisibility(formContext);
+            //SHER-466
+            Form.removeDmuValueAndParentCounterpartyValue(formContext);
+
+            formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+            //SHER-500 + SHER-578
+            Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, false)
         }
 
         public static onChange_dpam_lk_vatnumber(executionContext: Xrm.Events.EventContext) {
-            const formContext = executionContext.getFormContext();
-            this.checkValidVATNumber(formContext);
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-92
+            Form.checkValidVATNumber(formContext);
+        }
+
+        public static onChange_dpam_lk_country(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-292 + SHER-426
+            Form.manageBusinessSegmentationVisibility(formContext);
+            Form.resetSegmentation(formContext);
+
+        }
+
+        public static onChange_dpam_mos_counterpartytype(executionContext: Xrm.Events.EventContext, fromMainForm: boolean) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+            //SHER-500 + SHER-578
+            Form.manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext, fromMainForm)
+        }
+
+        static resetSegmentation(formContext: Xrm.FormContext) {
+            let localBusinessAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_localbusinesssegmentation");
+            let businessAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_lk_businesssegmentation");
+            localBusinessAttribute.setValue(null);
+            businessAttribute.setValue(null);
+
         }
 
         //function to check if the VAT number in the account is valid based on the VAT format of the country.
         static checkValidVATNumber(formContext: Xrm.FormContext) {
-            formContext.getControl<Xrm.Controls.StandardControl>(Static.field.account.dpam_s_vatnumber).clearNotification();
+            formContext.getControl<Xrm.Controls.StandardControl>("dpam_s_vatnumber").clearNotification();
 
-            let _VATNumber_attribute: Xrm.Page.StringAttribute = formContext.getAttribute<Xrm.Page.StringAttribute>(Static.field.account.dpam_s_vatnumber);
+            let VATNumberAttribute: Xrm.Page.StringAttribute = formContext.getAttribute<Xrm.Page.StringAttribute>("dpam_s_vatnumber");
 
-            if (_VATNumber_attribute.getValue()) {
+            if (VATNumberAttribute.getValue()) {
                 //Remove spaces & non alphanumeric caracters from the VAT
-                let _VATNumberFormatted_attribute = _VATNumber_attribute.getValue().replace(/[^0-9a-zA-Z]/g, '');
-                formContext.getAttribute(Static.field.account.dpam_s_vatnumber).setValue(_VATNumberFormatted_attribute);
+                let VATNumberFormatted: string = VATNumberAttribute.getValue().replace(/[^0-9a-zA-Z]/g, '');
+                formContext.getAttribute("dpam_s_vatnumber").setValue(VATNumberFormatted);
 
-                let _country_attribute: Xrm.Page.LookupAttribute = formContext.getAttribute<Xrm.Page.LookupAttribute>(Static.field.account.dpam_lk_country);
+                let countryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute<Xrm.Page.LookupAttribute>("dpam_lk_country");
 
-                if (_country_attribute.getValue() && _country_attribute.getValue()[0] && _country_attribute.getValue()[0].id) {
-                    let _country_lookupvalue = _country_attribute.getValue()[0];
-                    Xrm.WebApi.retrieveRecord(_country_lookupvalue.entityType, _country_lookupvalue.id, `?$select=${Static.field.dpam_country.dpam_s_vatformat}, ${Static.field.dpam_country.dpam_s_vatformatexample}`).then(
+                if (countryAttribute.getValue() && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
+                    let countryLookupvalue: Xrm.LookupValue = countryAttribute.getValue()[0];
+                    Xrm.WebApi.retrieveRecord(countryLookupvalue.entityType, countryLookupvalue.id, `?$select=dpam_s_vatformat, dpam_s_vatformatexample`).then(
                         function success(result) {
-                            let _VATFormatValue = result[Static.field.dpam_country.dpam_s_vatformat];
-                            if (_VATFormatValue != null && !_VATNumberFormatted_attribute.match(_VATFormatValue)) {
-                                formContext.getControl<Xrm.Controls.StandardControl>(Static.field.account.dpam_s_vatnumber).setNotification("The format isn't valid. Please use following format: " + result[Static.field.dpam_country.dpam_s_vatformatexample], "invalidFormat")
+                            let VATFormatValue = result["dpam_s_vatformat"];
+                            if (VATFormatValue != null && !VATNumberFormatted.match(VATFormatValue)) {
+                                formContext.getControl<Xrm.Controls.StandardControl>("dpam_s_vatnumber").setNotification("The format isn't valid. Please use following format: " + result["dpam_s_vatformatexample"], "invalidFormat")
                             }
                         },
                         function (error) {
@@ -61,61 +92,280 @@ namespace BDP.DPAM.WR.Account {
                         }
                     );
                 } else {
-                    formContext.getControl<Xrm.Controls.StandardControl>(Static.field.account.dpam_s_vatnumber).setNotification("The country field is empty, no VAT number can be entered.", "countryEmpty")
+                    formContext.getControl<Xrm.Controls.StandardControl>("dpam_s_vatnumber").setNotification("The country field is empty, no VAT number can be entered.", "countryEmpty")
                 }
             }
         }
 
-        //function to add a custom filter on the dpam_lk_businesssegmentation field
-        static filterBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
-            const formContext = executionContext.getFormContext();
+        //function to add a custom filter on the dpam_lk_compliancesegmentation field
+        static filterComplianceSegmentation(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
 
-            let filter = `<filter type="and" >
-                              <condition attribute="dpam_mos_counterpartytype" operator="null" >
+            let cpMifidCategoryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute<Xrm.Page.LookupAttribute>("dpam_lk_counterpartymifidcategory");
+            if (cpMifidCategoryAttribute.getValue() != null) {
+                let cpMifidCategoryId: string = cpMifidCategoryAttribute.getValue()[0].id;
+                let filter: string = `<filter type="and">
+                              <condition attribute="dpam_lk_counterpartymifidcategory" operator="eq" value=" ${cpMifidCategoryId}" >     
                               </condition>
                             </filter>`;
 
-            let _dpam_mos_counterpartytype: Xrm.Page.Attribute = formContext.getAttribute(Static.field.account.dpam_mos_counterpartytype);
-            if (_dpam_mos_counterpartytype != null && _dpam_mos_counterpartytype.getValue() != null) {
-                let selectedOptions: Int32Array = _dpam_mos_counterpartytype.getValue();
-                let values = "";
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_compliancesegmentation").addCustomFilter(filter, "dpam_counterpartycompliancesegmentation");
+            }
+        }
+
+
+        //function to add a custom filter on the dpam_lk_businesssegmentation field
+        static filterBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+
+            let counterpartyTypeAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_mos_counterpartytype");
+            if (counterpartyTypeAttribute.getValue() != null) {
+                let selectedOptions: Int32Array = counterpartyTypeAttribute.getValue();
+                let values: string = "";
 
                 selectedOptions.forEach(function (item) {
                     values += `<value>${item}</value>`;
                 });
 
-                filter = `<filter type="and">
+                let filter: string = `<filter type="and">
                               <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
                                 ${values}
                               </condition>
                             </filter>`;
-            }
 
-            formContext.getControl<Xrm.Page.LookupControl>(Static.field.account.dpam_lk_businesssegmentation).addCustomFilter(filter, "dpam_counterpartybusinesssegmentation");
+                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_businesssegmentation").addCustomFilter(filter, "dpam_counterpartybusinesssegmentation");
+            }
         }
 
         //function to set the filter on the dpam_lk_businesssegmentation field
-        static setBusinessSegmentationFilter(executionContext: Xrm.Events.EventContext) {
-            const formContext = executionContext.getFormContext();
-            let _dpam_lk_businesssegmentation_control: Xrm.Page.LookupControl = formContext.getControl(Static.field.account.dpam_lk_businesssegmentation);
-
-            if (_dpam_lk_businesssegmentation_control != null) {
-                _dpam_lk_businesssegmentation_control.addPreSearch(this.filterBusinessSegmentation);
-            }
+        static setBusinessSegmentationFilter(formContext: Xrm.FormContext) {
+            formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_businesssegmentation").addPreSearch(Form.filterBusinessSegmentation);
         }
-
+        //function to set the filter on the dpam_lk_compliancesegmentation field
+        static setComplianceSegmentationFilter(formContext: Xrm.FormContext) {
+            formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_compliancesegmentation").addPreSearch(Form.filterComplianceSegmentation);
+        }
         // Opens the "Lei Code Search" Canvas app in a dialog based on the URL retrieved from the settings entity.
         static dialogCanvasApp() {
             let dialogOptions = { height: 815, width: 1350 };
 
-            Xrm.WebApi.retrieveRecord("dpam_settings", "a53657d3-25f4-eb11-94ef-000d3a237027", `?$select=${Static.field.dpam_settings.dpam_s_value}`).then(
+            Xrm.WebApi.retrieveRecord("dpam_settings", "a53657d3-25f4-eb11-94ef-000d3a237027", `?$select=dpam_s_value`).then(
                 function success(result) {
-                    Xrm.Navigation.openUrl(result[Static.field.dpam_settings.dpam_s_value], dialogOptions);
+                    Xrm.Navigation.openUrl(result["dpam_s_value"], dialogOptions);
                 },
                 function (error) {
                     console.log(error.message);
                 }
             );
+        }
+
+        //function to add a custom filter on the dpam_lk_localbusinesssegmentation field
+        static filterLocalBusinessSegmentation(executionContext: Xrm.Events.EventContext) {
+            const formContext: Xrm.FormContext = executionContext.getFormContext();
+
+            let counterpartyTypeAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_mos_counterpartytype");
+            let countryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute("dpam_lk_country");
+
+            if (counterpartyTypeAttribute.getValue() != null && countryAttribute.getValue() != null) {
+                let selectedOptions: Int32Array = counterpartyTypeAttribute.getValue();
+                let values: string = "";
+
+                selectedOptions.forEach(function (item) {
+                    values += `<value>${item}</value>`;
+                });
+
+                let filter: string = `<filter type="and">
+                              <condition attribute="dpam_mos_counterpartytype" operator="contain-values">
+                                ${values}
+                              </condition>
+                              <condition attribute="dpam_lk_country" operator="eq" uitype="dpam_country" value="${countryAttribute.getValue()[0].id}" />
+                            </filter>`;
+
+                formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_localbusinesssegmentation").addCustomFilter(filter, "dpam_cplocalbusinesssegmentation");
+            }
+        }
+
+        //function to set the filter on the dpam_lk_localbusinesssegmentation field
+        static setLocalBusinessSegmentationFilter(formContext: Xrm.FormContext) {
+            formContext.getControl<Xrm.Controls.LookupControl>("dpam_lk_localbusinesssegmentation").addPreSearch(Form.filterLocalBusinessSegmentation);
+        }
+
+        //function to set the visibility of the dpam_lk_localbusinesssegmentation field and enable/disable the dpam_lk_businesssegmentation field
+        static manageBusinessSegmentationVisibility(formContext: Xrm.FormContext) {
+            //retrieve the country of counterparty.
+            let countryAttribute: Xrm.Page.LookupAttribute = formContext.getAttribute("dpam_lk_country");
+            let localbusinessSegmentationControl: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_localbusinesssegmentation");
+            let businessSegmentationControl: Xrm.Page.LookupControl = formContext.getControl("dpam_lk_businesssegmentation");
+
+            if (countryAttribute.getValue() != null && countryAttribute.getValue()[0] && countryAttribute.getValue()[0].id) {
+                let fetchXml: string = `?fetchXml=<fetch top="1"><entity name="dpam_cplocalbusinesssegmentation" ><attribute name="dpam_cplocalbusinesssegmentationid" /><filter><condition attribute="dpam_lk_country" operator="eq" value="${countryAttribute.getValue()[0].id}" /></filter></entity></fetch>`;
+                // search at least one occurence of this country in Local segmentation
+                Xrm.WebApi.retrieveMultipleRecords("dpam_cplocalbusinesssegmentation", fetchXml).then(
+                    function success(result) {
+                        let localBusinessSegmentationIsVisible: boolean = false;
+
+                        // if one found, set visible Local segmentation and disable generic segmentation  (fill generic segmentation)
+                        if (result.entities.length > 0) localBusinessSegmentationIsVisible = true;
+
+                        localbusinessSegmentationControl.setVisible(localBusinessSegmentationIsVisible);
+                        businessSegmentationControl.setDisabled(localBusinessSegmentationIsVisible);
+                    },
+                    function (error) {
+                        console.log(error.message);
+                        // handle error conditions
+                    }
+                );
+            }
+        }
+
+        // On creation of counterparty, country must be mandatory & visible in order to have the "local business segmentation" pre-filtered
+        static manageCountryVisibility(formContext: Xrm.FormContext) {
+            //Check if it is create mode
+            if (formContext.ui.getFormType() == 1) {
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setDisabled(false);
+                formContext.getAttribute("dpam_lk_country").setRequiredLevel("required");
+            } else {
+                formContext.getControl<Xrm.Page.LookupControl>("dpam_lk_country").setDisabled(true);
+            }
+        }
+
+        //function to remove the dpam_lk_dmu value
+        static removeDmuValueAndParentCounterpartyValue(formContext: Xrm.FormContext) {
+            let dmuAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("dpam_lk_dmu");
+            let parentCounterpartyAttribute: Xrm.Attributes.Attribute = formContext.getAttribute("parentaccountid");
+
+            if (dmuAttribute.getValue() != null) {
+                dmuAttribute.setValue(null);
+            }
+
+            if (parentCounterpartyAttribute.getValue() != null) {
+                parentCounterpartyAttribute.setValue(null);
+            }
+        }
+
+        /*Manage the required level and the visibility based on the counterparty type for the following fields:
+         * On the main and quick create forms:
+         *      dpam_lk_counterpartymifidcategory
+         *      dpam_lk_compliancesegmentation
+         * Only on the main form:
+         *      dpam_os_amlrating
+         */
+        static manageRequiredLevelAndVisibilityBasedOnCounterpartyType(formContext: Xrm.FormContext, fromMainForm: boolean) {
+            let counterpartyTypeAttribute: Xrm.Page.Attribute = formContext.getAttribute("dpam_mos_counterpartytype");
+            let fieldIsVisible: boolean = true;
+            let requiredLevel: Xrm.Attributes.RequirementLevel = "required";
+            let mifidCategoryRequiredLevel: Xrm.Attributes.RequirementLevel = "none";
+
+            if (counterpartyTypeAttribute.getValue() != null) {
+                let selectedOptions: Int32Array = counterpartyTypeAttribute.getValue();
+                if (selectedOptions.length == 1) {
+                    switch (selectedOptions[0]) {
+                        case 100000000: /*Client*/
+                            mifidCategoryRequiredLevel = "required";
+                            break;
+                        case 100000005: /*Business Relation*/
+                            fieldIsVisible = false;
+                            requiredLevel = "none";
+                            break;
+                    }
+                    
+                }
+            }
+
+            let mifidCategoryControl: Xrm.Controls.LookupControl = formContext.getControl("dpam_lk_counterpartymifidcategory");
+            let complianceSegmentationControl: Xrm.Controls.LookupControl = formContext.getControl("dpam_lk_compliancesegmentation");
+
+            mifidCategoryControl.setVisible(fieldIsVisible);
+            mifidCategoryControl.getAttribute().setRequiredLevel(mifidCategoryRequiredLevel);
+
+            complianceSegmentationControl.setVisible(fieldIsVisible);
+            complianceSegmentationControl.getAttribute().setRequiredLevel(requiredLevel);
+
+            if (!fromMainForm) return;
+
+            formContext.getControl<Xrm.Controls.StandardControl>("dpam_os_amlrating").setVisible(fieldIsVisible);
+        }
+    }
+
+    export class Ribbon {
+
+        //SHER-428 : function to open the "LEI Code Search Page" custom page
+        public static openLEICodeSearchPage() {
+            let pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_leicodesearchpage_1806a",
+                entityName: "account"
+            };
+
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 1366,
+                height: 821,
+                title: "LEI Code Search Engine"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        Xrm.Page.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
+        }
+
+        // SHER-428 : function to open the "LEI Code Search Page" custom page in a record
+        public static openLEICodeSearchPageOnForm() {
+            let pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_leicodesearchpage_1806a",
+                entityName: "account",
+                recordId: Xrm.Page.data.entity.getId()
+            };
+
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 1366,
+                height: 821,
+                title: "LEI Code Search Engine"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        Xrm.Page.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
+        }
+
+        /* SHER-980
+        * function to open the deactivate counterparty custom page on the form
+        */
+        public static openDeactivateCounterpartyCustomPage(formContext: Xrm.FormContext) {
+            let pageInput: Xrm.Navigation.CustomPage = {
+                pageType: "custom",
+                name: "dpam_deactivatecounterpartycustompage_ae22b",
+                entityName: "account",
+                recordId: formContext.data.entity.getId()
+            };
+
+            let navigationOptions: Xrm.Navigation.NavigationOptions = {
+                target: 2,
+                width: 560,
+                height: 320,
+                title: "Confirm Deactivation"
+            };
+
+            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                .then(
+                    function success() {
+                        formContext.data.refresh(true);
+                    },
+                    function error() {
+                        console.log(error);
+                    });
         }
     }
 }

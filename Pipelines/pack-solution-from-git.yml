@@ -1,0 +1,46 @@
+trigger: none
+pr: none
+    
+name: 1.0.$(Date:yyyyMMdd)$(Rev:.r)
+
+# NOTE: If you want to use different values for these variables, you can remove the variable group and attach them directly to this pipeline. The group specified below is a variable group defined in the Library for the Pipelines
+variables:
+- group: dev-scope
+- group: project-scope
+
+parameters:
+- name: buildType
+  displayName: Build Type
+  type: string
+  default: 'Both'
+  values:
+  - Both
+  - Managed
+  - Unmanaged
+- name: mapCodeComponents
+  displayName: Map Code Based Components from Git
+  type: boolean
+  default: true
+
+stages:
+- stage: build
+  displayName: Build
+  jobs:
+  - job: buildjob
+    pool: 
+      vmImage: 'windows-latest'
+    steps:
+    - task: DownloadPipelineArtifact@2
+      displayName: 'Download Pipeline Artifact'
+      inputs:
+        buildType: 'specific'
+        project: '43046151-1fa5-4629-bb00-d9c0e1accf08'
+        definition: '7'
+        buildVersionToDownload: 'latestFromBranch'
+        branchName: 'refs/heads/$(Build.SourceBranchName)'
+        artifactName: 'drop'
+        targetPath: '$(Pipeline.Workspace)'
+    - template: Templates\build-solution.yml
+      parameters:
+        buildType: ${{parameters.buildType}}
+        mapCodeComponents: ${{parameters.mapCodeComponents}}

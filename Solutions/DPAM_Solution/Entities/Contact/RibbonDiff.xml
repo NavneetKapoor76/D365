@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <CustomAction Id="dpam.contact.Deactivate.Button.CustomAction" Location="Mscrm.Form.contact.MainTab.Save.Controls._children" Sequence="55">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.contact.Deactivate.Button.Alt" Command="dpam.contact.Deactivate.Command" Id="dpam.contact.Deactivate.Button" Image32by32="/_imgs/ribbon/Deactivate_32.png" Image16by16="/_imgs/ribbon/Deactivate_16.png" LabelText="$LocLabels:dpam.contact.Deactivate.Button.LabelText" Sequence="55" TemplateAlias="o2" ToolTipTitle="$LocLabels:dpam.contact.Deactivate.Button.ToolTipTitle" ToolTipDescription="$LocLabels:dpam.contact.Deactivate.Button.ToolTipDescription" ModernImage="DeActivate" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dpam.contact.RequestOptin.Button.CustomAction" Location="Mscrm.Form.contact.MainTab.Save.Controls._children" Sequence="60">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.contact.RequestOptin.Button.Alt" Command="dpam.contact.RequestOptin.Command" Id="dpam.contact.RequestOptin.Button" LabelText="$LocLabels:dpam.contact.RequestOptin.Button.LabelText" Sequence="60" TemplateAlias="o2" ToolTipTitle="$LocLabels:dpam.contact.RequestOptin.Button.ToolTipTitle" ToolTipDescription="$LocLabels:dpam.contact.RequestOptin.Button.ToolTipDescription" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <HideCustomAction HideActionId="dpam.Mscrm.Form.contact.Deactivate.Hide" Location="Mscrm.Form.contact.Deactivate" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="dpam.contact.Deactivate.Command">
+      <EnableRules />
+      <DisplayRules>
+        <DisplayRule Id="dpam.contact.DisplayWhenContactIsActiveAndCreated.DisplayRule" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Contact.Ribbon.openDeactivateContactCustomPage" Library="$webresource:DPAM_/Script/Contact.js">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="dpam.contact.RequestOptin.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.contact.HideIfStatusRequestIsProcessing.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Contact.Ribbon.requestOptinButton" Library="$webresource:DPAM_/Script/Contact.js">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules>
+      <DisplayRule Id="dpam.contact.DisplayWhenContactIsActiveAndCreated.DisplayRule">
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+        <ValueRule Field="statecode" Value="0" Default="false" InvertResult="false" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="dpam.contact.HideIfStatusRequestIsProcessing.EnableRule">
+        <ValueRule Field="dpam_os_bulkemailoptinrequest" Value="100000000" Default="false" InvertResult="true" />
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="dpam.contact.Deactivate.Button.Alt">
+      <Titles>
+        <Title description="Deactivate" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.contact.Deactivate.Button.LabelText">
+      <Titles>
+        <Title description="Deactivate" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.contact.Deactivate.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Deactivate this contact. &lt;br&gt;&lt;br&gt;You can reactivate it from the Inactive View." languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.contact.Deactivate.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Deactivate" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.contact.RequestOptin.Button.Alt">
+      <Titles>
+        <Title description="Request Opt-in" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.contact.RequestOptin.Button.LabelText">
+      <Titles>
+        <Title description="Request Opt-in" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.contact.RequestOptin.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Email will be sent for Opt-in marketing request" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.contact.RequestOptin.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Request Opt-in" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.Department, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a068b2b7bd3ce14d" PluginAssemblyId="47a532f4-1aa9-46c8-982f-7fadc1ce79b5" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsDepartment-47A532F4-1AA9-46C8-982F-7FADC1CE79B5/BDPDPAMPluginsDepartment.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Department.PreCreateDepartment, BDP.DPAM.Plugins.Department, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a068b2b7bd3ce14d" PluginTypeId="7543d9b7-2964-4462-80ca-fe72c9a26109" Name="BDP.DPAM.Plugins.Department.PreCreateDepartment">
+      <FriendlyName>7dbaf4c6-9f86-40d2-8699-df57de20bfe0</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

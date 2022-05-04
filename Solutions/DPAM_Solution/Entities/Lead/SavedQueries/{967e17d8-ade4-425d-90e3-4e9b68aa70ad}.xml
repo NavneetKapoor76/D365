@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery unmodified="1">
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{967e17d8-ade4-425d-90e3-4e9b68aa70ad}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" icon="1" preview="1">
+        <row name="result" id="leadid">
+          <cell name="fullname" width="300" />
+          <cell name="subject" width="200" />
+          <cell name="ownerid" width="100" />
+          <cell name="statuscode" width="100" />
+          <cell name="createdon" width="125" />
+          <cell name="statecode" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="lead">
+          <attribute name="fullname" />
+          <attribute name="statuscode" />
+          <attribute name="createdon" />
+          <attribute name="subject" />
+          <attribute name="statecode" />
+          <attribute name="ownerid" />
+          <order attribute="createdon" descending="true" />
+          <link-entity name="postfollow" from="regardingobjectid" to="leadid" alias="aa">
+            <filter type="and">
+              <condition attribute="ownerid" operator="eq-userid" />
+            </filter>
+          </link-entity>
+          <attribute name="leadid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.35.1026.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Leads I follow (dashboard)" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

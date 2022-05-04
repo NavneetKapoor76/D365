@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{5fd01781-8ac6-433b-b6cd-ae22ab77cf1a}</savedqueryid>
+    <layoutxml>
+      <grid name="dpam_shareclasses" jump="dpam_s_shareclass" select="1" icon="1" preview="1">
+        <row name="dpam_shareclass" id="dpam_shareclassid">
+          <cell name="dpam_s_shareclass" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_shareclass">
+          <attribute name="dpam_shareclassid" />
+          <attribute name="dpam_s_shareclass" />
+          <attribute name="createdon" />
+          <order attribute="dpam_s_shareclass" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Share Class Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

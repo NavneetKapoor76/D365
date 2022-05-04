@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1885aec5-9005-417a-a15c-cee2d4ca5752}</formid>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>0</FormActivationState>
+    <form showImage="true" shownavigationbar="true" maxWidth="1900">
+      <tabs>
+        <tab name="insights" id="{8f811cb1-4c9f-46f6-8524-1af5eec40efa}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="insights_section" showlabel="false" showbar="false" locklevel="0" id="{084d2a5e-367d-4195-bf33-e1afc05207b9}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{ac7f1467-aa2c-40b2-90cb-b9101cfe4fac}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Insights" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions FallbackForm="true" Order="7" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Insights" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

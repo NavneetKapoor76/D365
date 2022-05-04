@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.Contact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7c2a4be9b04cc921" PluginAssemblyId="b0c94f77-ac7a-4297-9195-307c59448991" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsContact-B0C94F77-AC7A-4297-9195-307C59448991/BDPDPAMPluginsContact.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Contact.PreCreateContact, BDP.DPAM.Plugins.Contact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7c2a4be9b04cc921" PluginTypeId="ca353b6f-4803-48ce-9d70-39db477b2301" Name="BDP.DPAM.Plugins.Contact.PreCreateContact">
+      <FriendlyName>6d3475c6-2f48-4fec-956a-3a79eb98f415</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Contact.PreUpdateContact, BDP.DPAM.Plugins.Contact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7c2a4be9b04cc921" PluginTypeId="3f9359bc-b678-4a89-b47f-268f40e0a10d" Name="BDP.DPAM.Plugins.Contact.PreUpdateContact">
+      <FriendlyName>90af9580-2bac-4a39-ad73-fcfac14a8798</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

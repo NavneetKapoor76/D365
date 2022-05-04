@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.Department.PreCreateDepartment: Create of dpam_departments" SdkMessageProcessingStepId="{b9e800b1-fe1c-ec11-b6e6-6045bd8d2d22}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.Department.PreCreateDepartment, BDP.DPAM.Plugins.Department, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a068b2b7bd3ce14d</PluginTypeName>
+  <PluginTypeId>7543d9b7-2964-4462-80ca-fe72c9a26109</PluginTypeId>
+  <PrimaryEntity>dpam_departments</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

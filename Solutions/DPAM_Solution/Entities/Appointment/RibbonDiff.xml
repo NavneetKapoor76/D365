@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <CustomAction Id="bdp.dpam.appointment.Button.ReOpen.CustomAction" Location="Mscrm.Form.appointment.MainTab.Actions.Controls._children" Sequence="17">
+      <CommandUIDefinition>
+        <Button Command="dpam.appointment.Command.ReOpen" Id="dpam.appointment.Button.ReOpen" Image32by32="$webresource:dpam_/Images/ReopenActivities32.png" Image16by16="$webresource:dpam_/Images/ReopenActivities16.png" LabelText="$LocLabels:dpam.appointment.Button.ReOpen.LabelText" Sequence="17" TemplateAlias="o1" ModernImage="Activate" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="dpam.appointment.Command.ReOpen">
+      <EnableRules>
+        <EnableRule Id="dpam.appointment.EnableRule.ReOpenActivity" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="dpam.appointment.DisplayRule.ReOpenActivity" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Appointment.Ribbon.reOpenAppointment" Library="$webresource:dpam_/Script/Appointment.js">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules>
+      <DisplayRule Id="dpam.appointment.DisplayRule.ReOpenActivity">
+        <EntityPropertyRule AppliesTo="PrimaryEntity" PropertyName="IsActivity" PropertyValue="true" />
+        <EntityPrivilegeRule PrivilegeType="Write" PrivilegeDepth="Basic" AppliesTo="PrimaryEntity" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="dpam.appointment.EnableRule.ReOpenActivity">
+        <EntityRule AppliesTo="PrimaryEntity" Context="Form" Default="false" />
+        <RecordPrivilegeRule PrivilegeType="Write" AppliesTo="PrimaryEntity" />
+        <FormStateRule State="Disabled" />
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="dpam.appointment.Button.ReOpen.LabelText">
+      <Titles>
+        <Title description="Reopen" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{c9f47971-17d9-4dfb-94f3-830b470693ba}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_response" select="1" icon="1" preview="1">
+        <row name="result" id="msevtmgt_registrationresponseid">
+          <cell name="msevtmgt_customregistrationfield" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="msevtmgt_response" width="300" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="a_d7ea25487c5344a9a500d3b53556297a.msevtmgt_eventid" width="187" />
+          <cell name="a_d7ea25487c5344a9a500d3b53556297a.msevtmgt_contactid" width="201" />
+          <cell name="msevtmgt_eventregistration" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="createdon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="msevtmgt_registrationresponse">
+          <attribute name="msevtmgt_response" />
+          <order attribute="msevtmgt_customregistrationfield" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="msevtmgt_customregistrationfield" />
+          <attribute name="msevtmgt_eventregistration" />
+          <attribute name="createdon" />
+          <attribute name="msevtmgt_registrationresponseid" />
+          <link-entity alias="a_d7ea25487c5344a9a500d3b53556297a" name="msevtmgt_eventregistration" to="msevtmgt_eventregistration" from="msevtmgt_eventregistrationid" link-type="outer" visible="false">
+            <attribute name="msevtmgt_contactid" />
+            <attribute name="msevtmgt_eventid" />
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active registration responses" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

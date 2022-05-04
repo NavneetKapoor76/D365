@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a91390a5-99bb-4d10-9eee-3a5c87f841f1}</formid>
+    <IntroducedVersion>6.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" solutionaction="Modified">
+      <events>
+        <event name="onload" application="true" active="true">
+          <Handlers>
+            <Handler functionName="onActivityFormLoad" libraryName="msdyn_ci_activity_form" handlerUniqueId="{a5a2bd05-8a60-0578-2dc2-7bb0632a387c}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="1" solutionaction="Modified" />
+            <Handler functionName="BDP.DPAM.WR.PhoneCall.Form.onLoad" libraryName="dpam_/Script/PhoneCall.js" handlerUniqueId="{f0f46c2d-8090-4509-ba4a-21eba5674b9f}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" solutionaction="Added" />
+          </Handlers>
+        </event>
+      </events>
+      <formLibraries>
+        <Library name="dpam_/Script/PhoneCall.js" libraryUniqueId="{b628fef3-0729-41bb-bc57-11bf27a9f159}" solutionaction="Added" />
+      </formLibraries>
+      <footer id="{66abe21e-05f6-462f-b81d-1dbb4695c9c2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Phone Call" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated Default Phone Call Form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

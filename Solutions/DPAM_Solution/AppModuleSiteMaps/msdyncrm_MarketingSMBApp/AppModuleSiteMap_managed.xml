@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>msdyncrm_MarketingSMBApp</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="undefined" solutionaction="Modified">
+    <Area Id="MA" ResourceId="Area_Marketing" DescriptionResourceId="Marketing_Description" Icon="/_imgs/marketing_24x24.gif" ShowGroups="true" IntroducedVersion="7.0.0.0" ordinalvalue="0">
+      <Group Id="Customers" ResourceId="Group_Customers" DescriptionResourceId="Customers_Description" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="Customers_ToolTip" ordinalvalue="1">
+        <SubArea Id="msdyncrm_segment" Entity="msdyncrm_segment" ordinalvalue="2" solutionaction="Removed" />
+        <SubArea IntroducedVersion="7.0.0.0" Icon="/_imgs/imagestrips/transparent_spacer.gif" DescriptionResourceId="MarketingList_SubArea_Description" Id="nav_lists" PassParams="false" AvailableOffline="false" Entity="list" GetStartedPanePathOutlook="Marketing-Lists_Outlook_User_Visor.html" GetStartedPanePathAdminOutlook="Marketing-Lists_Outlook_Admin_Visor.html" GetStartedPanePathAdmin="Marketing-Lists_Web_Admin_Visor.html" GetStartedPanePath="Marketing-Lists_Web_User_Visor.html" ordinalvalue="3" solutionaction="Removed" />
+      </Group>
+      <Group Id="SMBMAMarketingExecution" ResourceId="Group_SMBMA_MarketingExecution" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="2">
+        <Titles>
+          <Title LCID="1033" Title="Marketing campaigns" solutionaction="Modified" />
+        </Titles>
+        <SubArea Id="msdyncrm_customerjourney" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_customerjourney" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_marketingemail" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_marketingemail" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_socialpost" Entity="msdyncrm_socialpost" ordinalvalue="2" solutionaction="Removed" />
+        <SubArea Id="msdyncrm_segment" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_segment" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Added" />
+        <SubArea Id="nav_lists" DescriptionResourceId="MarketingList_SubArea_Description" Icon="/_imgs/imagestrips/transparent_spacer.gif" IntroducedVersion="7.0.0.0" GetStartedPanePath="Marketing-Lists_Web_User_Visor.html" GetStartedPanePathAdmin="Marketing-Lists_Web_Admin_Visor.html" GetStartedPanePathAdminOutlook="Marketing-Lists_Outlook_Admin_Visor.html" GetStartedPanePathOutlook="Marketing-Lists_Outlook_User_Visor.html" Entity="list" AvailableOffline="false" PassParams="false" ordinalvalue="3" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Subscription lists" ordinalvalue="0" />
+            <Title LCID="1025" Title="قوائم الاشتراكات" ordinalvalue="1" />
+            <Title LCID="1026" Title="Абонаментни списъци" ordinalvalue="2" />
+            <Title LCID="1027" Title="Llistes de subscripció" ordinalvalue="3" />
+            <Title LCID="1029" Title="Seznamy odběrů" ordinalvalue="4" />
+            <Title LCID="1030" Title="Abonnementslister" ordinalvalue="5" />
+            <Title LCID="1031" Title="Abonnementlisten" ordinalvalue="6" />
+            <Title LCID="1032" Title="Λίστες συνδρομής" ordinalvalue="7" />
+            <Title LCID="3081" Title="Subscription lists" ordinalvalue="8" />
+            <Title LCID="4105" Title="Subscription lists" ordinalvalue="9" />
+            <Title LCID="2057" Title="Subscription lists" ordinalvalue="10" />
+            <Title LCID="3082" Title="Listas de suscripción" ordinalvalue="11" />
+            <Title LCID="1061" Title="Kordustellimuste loendid" ordinalvalue="12" />
+            <Title LCID="1069" Title="Harpidetza-zerrendak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Tilausluettelot" ordinalvalue="14" />
+            <Title LCID="3084" Title="Listes d’abonnement" ordinalvalue="15" />
+            <Title LCID="1036" Title="Listes d’abonnement" ordinalvalue="16" />
+            <Title LCID="1110" Title="Listas de subscrición" ordinalvalue="17" />
+            <Title LCID="1037" Title="רשימות מנויים" ordinalvalue="18" />
+            <Title LCID="1050" Title="Popisi pretplatnika" ordinalvalue="19" />
+            <Title LCID="1038" Title="Feliratkozási listák" ordinalvalue="20" />
+            <Title LCID="1057" Title="Daftar langganan" ordinalvalue="21" />
+            <Title LCID="1040" Title="Elenchi sottoscrizioni" ordinalvalue="22" />
+            <Title LCID="1041" Title="サブスクリプション リスト" ordinalvalue="23" />
+            <Title LCID="1042" Title="구독 목록" ordinalvalue="24" />
+            <Title LCID="1063" Title="Prenumeratų sąrašai" ordinalvalue="25" />
+            <Title LCID="1062" Title="Abonementu saraksti" ordinalvalue="26" />
+            <Title LCID="1044" Title="Abonnementslister" ordinalvalue="27" />
+            <Title LCID="1043" Title="Abonnementslijsten" ordinalvalue="28" />
+            <Title LCID="1045" Title="Listy subskrypcji" ordinalvalue="29" />
+            <Title LCID="1046" Title="Listas de assinaturas" ordinalvalue="30" />
+            <Title LCID="2070" Title="Listas de subscrições" ordinalvalue="31" />
+            <Title LCID="1048" Title="Liste de abonamente" ordinalvalue="32" />
+            <Title LCID="1049" Title="Списки подписок" ordinalvalue="33" />
+            <Title LCID="1051" Title="Zoznamy odberov" ordinalvalue="34" />
+            <Title LCID="1060" Title="Seznami naročnin" ordinalvalue="35" />
+            <Title LCID="3098" Title="Листе претплата" ordinalvalue="36" />
+            <Title LCID="2074" Title="Liste pretplata" ordinalvalue="37" />
+            <Title LCID="1053" Title="Prenumerationslistor" ordinalvalue="38" />
+            <Title LCID="1054" Title="รายการสมัครใช้งาน" ordinalvalue="39" />
+            <Title LCID="1055" Title="Abonelik listeleri" ordinalvalue="40" />
+            <Title LCID="1058" Title="Списки підписок" ordinalvalue="41" />
+            <Title LCID="1066" Title="Danh sách đăng ký" ordinalvalue="42" />
+            <Title LCID="3076" Title="訂閱清單" ordinalvalue="43" />
+            <Title LCID="1028" Title="訂閱清單" ordinalvalue="44" />
+            <Title LCID="2052" Title="订阅列表" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="SMBMAEventManagement" ResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="3">
+        <SubArea Id="msevtmgt_event" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msevtmgt_event" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_eventregistration" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msevtmgt_eventregistration" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+      </Group>
+      <Group Id="SMBMALeadManagement" ResourceId="Group_SMBMA_LeadManagement" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="6" solutionaction="Modified">
+        <SubArea Id="msdyncrm_leadscoremodel" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_leadscoremodel" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+      </Group>
+      <Group Id="SMBMAInternetMarketing" ResourceId="Group_SMBMA_InternetMarketing" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="4" solutionaction="Modified">
+        <SubArea Id="msdyncrm_marketingpage" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_marketingpage" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_marketingform" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_marketingform" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_website" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_website" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_redirecturl" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_redirecturl" AvailableOffline="true" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_socialpost" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_socialpost" AvailableOffline="true" PassParams="false" ordinalvalue="4" solutionaction="Added" />
+      </Group>
+      <Group Id="SMBMAMarketingContent" ResourceId="Group_SMBMA_MarketingContent" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="5" solutionaction="Modified">
+        <SubArea Id="msdyncrm_file" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_file" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_keyword" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_keyword" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_contentblock" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_contentblock" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_video" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_video" AvailableOffline="true" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_personalizedpage" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_personalizedpage" AvailableOffline="true" PassParams="false" ordinalvalue="4" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_customerjourneytemplate" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_customerjourneytemplate" AvailableOffline="true" PassParams="false" ordinalvalue="5" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Journey templates" ordinalvalue="0" />
+            <Title LCID="1025" Title="قوالب الرحلة" ordinalvalue="1" />
+            <Title LCID="1026" Title="Шаблони за пътешествия" ordinalvalue="2" />
+            <Title LCID="1027" Title="Plantilles de recorregut" ordinalvalue="3" />
+            <Title LCID="1029" Title="Šablony cest" ordinalvalue="4" />
+            <Title LCID="1030" Title="Skabeloner til kampagneforløb" ordinalvalue="5" />
+            <Title LCID="1031" Title="Kontaktverlaufvorlagen" ordinalvalue="6" />
+            <Title LCID="1032" Title="Πρότυπα διαδρομής" ordinalvalue="7" />
+            <Title LCID="3081" Title="Journey templates" ordinalvalue="8" />
+            <Title LCID="4105" Title="Journey templates" ordinalvalue="9" />
+            <Title LCID="2057" Title="Journey templates" ordinalvalue="10" />
+            <Title LCID="3082" Title="Plantillas de recorrido" ordinalvalue="11" />
+            <Title LCID="1061" Title="Teekonnamallid" ordinalvalue="12" />
+            <Title LCID="1069" Title="Bidaia-txantiloiak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Siirtymämallit" ordinalvalue="14" />
+            <Title LCID="3084" Title="Modèles de parcours" ordinalvalue="15" />
+            <Title LCID="1036" Title="Modèles de parcours" ordinalvalue="16" />
+            <Title LCID="1110" Title="Modelos de viaxe" ordinalvalue="17" />
+            <Title LCID="1037" Title="תבניות של מסע לקוח" ordinalvalue="18" />
+            <Title LCID="1050" Title="Predlošci puta" ordinalvalue="19" />
+            <Title LCID="1038" Title="Ügyfélútsablonok" ordinalvalue="20" />
+            <Title LCID="1057" Title="Template perjalanan" ordinalvalue="21" />
+            <Title LCID="1040" Title="Modelli di percorso" ordinalvalue="22" />
+            <Title LCID="1041" Title="体験テンプレート" ordinalvalue="23" />
+            <Title LCID="1042" Title="여정 템플릿" ordinalvalue="24" />
+            <Title LCID="1063" Title="Veiklos ciklų šablonai" ordinalvalue="25" />
+            <Title LCID="1062" Title="Automatizēto kampaņu veidnes" ordinalvalue="26" />
+            <Title LCID="1044" Title="Reisemaler" ordinalvalue="27" />
+            <Title LCID="1043" Title="Reissjablonen" ordinalvalue="28" />
+            <Title LCID="1045" Title="Szablony podróży" ordinalvalue="29" />
+            <Title LCID="1046" Title="Modelos de jornada" ordinalvalue="30" />
+            <Title LCID="2070" Title="Modelos de percurso" ordinalvalue="31" />
+            <Title LCID="1048" Title="Șabloane de călătorie" ordinalvalue="32" />
+            <Title LCID="1049" Title="Шаблоны циклов взаимодействия с клиентом" ordinalvalue="33" />
+            <Title LCID="1051" Title="Šablóny činností" ordinalvalue="34" />
+            <Title LCID="1060" Title="Predloge za dejavnosti" ordinalvalue="35" />
+            <Title LCID="3098" Title="Предлошци пута" ordinalvalue="36" />
+            <Title LCID="2074" Title="Predlošci puta" ordinalvalue="37" />
+            <Title LCID="1053" Title="Färdmallar" ordinalvalue="38" />
+            <Title LCID="1054" Title="เทมเพลตการเดินทาง" ordinalvalue="39" />
+            <Title LCID="1055" Title="Yolculuk şablonları" ordinalvalue="40" />
+            <Title LCID="1058" Title="Шаблони шляхів" ordinalvalue="41" />
+            <Title LCID="1066" Title="Mẫu hành trình" ordinalvalue="42" />
+            <Title LCID="2052" Title="旅程模板" ordinalvalue="43" />
+            <Title LCID="3076" Title="旅程範本" ordinalvalue="44" />
+            <Title LCID="1028" Title="旅程範本" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="msdyncrm_marketingemailtemplate" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_marketingemailtemplate" AvailableOffline="true" PassParams="false" ordinalvalue="6" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Email templates" ordinalvalue="0" />
+            <Title LCID="1025" Title="قوالب البريد الإلكتروني" ordinalvalue="1" />
+            <Title LCID="1026" Title="Шаблони за имейл" ordinalvalue="2" />
+            <Title LCID="1027" Title="Plantilles de correu" ordinalvalue="3" />
+            <Title LCID="1029" Title="Šablony e-mailů" ordinalvalue="4" />
+            <Title LCID="1030" Title="Mailskabeloner" ordinalvalue="5" />
+            <Title LCID="1031" Title="E-Mail-Vorlagen" ordinalvalue="6" />
+            <Title LCID="1032" Title="Πρότυπα email" ordinalvalue="7" />
+            <Title LCID="3081" Title="Email templates" ordinalvalue="8" />
+            <Title LCID="4105" Title="Email templates" ordinalvalue="9" />
+            <Title LCID="2057" Title="Email templates" ordinalvalue="10" />
+            <Title LCID="3082" Title="Plantillas de correo electrónico" ordinalvalue="11" />
+            <Title LCID="1061" Title="Meilisõnumimallid" ordinalvalue="12" />
+            <Title LCID="1069" Title="Mezu elektronikoen txantiloiak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Sähköpostimallit" ordinalvalue="14" />
+            <Title LCID="3084" Title="Modèles de courr. électr." ordinalvalue="15" />
+            <Title LCID="1036" Title="Modèles de courr. électr." ordinalvalue="16" />
+            <Title LCID="1110" Title="Modelos de correo" ordinalvalue="17" />
+            <Title LCID="1037" Title="תבניות דואר אלקטרוני" ordinalvalue="18" />
+            <Title LCID="1050" Title="Predlošci e-pošte" ordinalvalue="19" />
+            <Title LCID="1038" Title="E-mail-sablonok" ordinalvalue="20" />
+            <Title LCID="1057" Title="Template email" ordinalvalue="21" />
+            <Title LCID="1040" Title="Modelli di messaggio e-mail" ordinalvalue="22" />
+            <Title LCID="1041" Title="電子メール テンプレート" ordinalvalue="23" />
+            <Title LCID="1042" Title="전자 메일 템플릿" ordinalvalue="24" />
+            <Title LCID="1063" Title="El. laiškų šablonai" ordinalvalue="25" />
+            <Title LCID="1062" Title="E-pasta ziņojumu veidnes" ordinalvalue="26" />
+            <Title LCID="1044" Title="E-postmaler" ordinalvalue="27" />
+            <Title LCID="1043" Title="E-mailsjablonen" ordinalvalue="28" />
+            <Title LCID="1045" Title="Szablony wiadomości e-mail" ordinalvalue="29" />
+            <Title LCID="1046" Title="Modelos de email" ordinalvalue="30" />
+            <Title LCID="2070" Title="Modelos de e-mail" ordinalvalue="31" />
+            <Title LCID="1048" Title="Șabloane de e-mail" ordinalvalue="32" />
+            <Title LCID="1049" Title="Шаблоны писем" ordinalvalue="33" />
+            <Title LCID="1051" Title="Šablóny e-mailov" ordinalvalue="34" />
+            <Title LCID="1060" Title="Predloge e-pošte" ordinalvalue="35" />
+            <Title LCID="3098" Title="Предлошци е-поште" ordinalvalue="36" />
+            <Title LCID="2074" Title="Predlošci e-pošte" ordinalvalue="37" />
+            <Title LCID="1053" Title="E-postmallar" ordinalvalue="38" />
+            <Title LCID="1054" Title="เทมเพลตอีเมล" ordinalvalue="39" />
+            <Title LCID="1055" Title="E-posta şablonları" ordinalvalue="40" />
+            <Title LCID="1058" Title="Шаблони повідомлень електронної пошти" ordinalvalue="41" />
+            <Title LCID="1066" Title="Mẫu email" ordinalvalue="42" />
+            <Title LCID="2052" Title="电子邮件模板" ordinalvalue="43" />
+            <Title LCID="3076" Title="電子郵件範本" ordinalvalue="44" />
+            <Title LCID="1028" Title="電子郵件範本" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="msdyncrm_marketingpagetemplate" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_marketingpagetemplate" AvailableOffline="true" PassParams="false" ordinalvalue="7" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Page templates" ordinalvalue="0" />
+            <Title LCID="1025" Title="قوالب الصفحات" ordinalvalue="1" />
+            <Title LCID="1026" Title="Шаблони за страници" ordinalvalue="2" />
+            <Title LCID="1027" Title="Plantilles de pàgina" ordinalvalue="3" />
+            <Title LCID="1029" Title="Šablony stránek" ordinalvalue="4" />
+            <Title LCID="1030" Title="Sideskabeloner" ordinalvalue="5" />
+            <Title LCID="1031" Title="Seitenvorlagen" ordinalvalue="6" />
+            <Title LCID="1032" Title="Πρότυπα σελίδας" ordinalvalue="7" />
+            <Title LCID="3081" Title="Page templates" ordinalvalue="8" />
+            <Title LCID="4105" Title="Page templates" ordinalvalue="9" />
+            <Title LCID="2057" Title="Page templates" ordinalvalue="10" />
+            <Title LCID="3082" Title="Plantillas de página" ordinalvalue="11" />
+            <Title LCID="1061" Title="Lehemallid" ordinalvalue="12" />
+            <Title LCID="1069" Title="Orri-txantiloiak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Sivumallit" ordinalvalue="14" />
+            <Title LCID="3084" Title="Modèles de page" ordinalvalue="15" />
+            <Title LCID="1036" Title="Modèles de page" ordinalvalue="16" />
+            <Title LCID="1110" Title="Modelos de páxina" ordinalvalue="17" />
+            <Title LCID="1037" Title="תבניות דף" ordinalvalue="18" />
+            <Title LCID="1050" Title="Predlošci stranice" ordinalvalue="19" />
+            <Title LCID="1038" Title="Oldalsablonok" ordinalvalue="20" />
+            <Title LCID="1057" Title="Template halaman" ordinalvalue="21" />
+            <Title LCID="1040" Title="Modelli di pagina" ordinalvalue="22" />
+            <Title LCID="1041" Title="ページ テンプレート" ordinalvalue="23" />
+            <Title LCID="1042" Title="페이지 템플릿" ordinalvalue="24" />
+            <Title LCID="1063" Title="Puslapių šablonai" ordinalvalue="25" />
+            <Title LCID="1062" Title="Lapu veidnes" ordinalvalue="26" />
+            <Title LCID="1044" Title="Sidemaler" ordinalvalue="27" />
+            <Title LCID="1043" Title="Paginasjablonen" ordinalvalue="28" />
+            <Title LCID="1045" Title="Szablony stron" ordinalvalue="29" />
+            <Title LCID="1046" Title="Modelos de página" ordinalvalue="30" />
+            <Title LCID="2070" Title="Modelos de página" ordinalvalue="31" />
+            <Title LCID="1048" Title="Șabloane de pagină" ordinalvalue="32" />
+            <Title LCID="1049" Title="Шаблоны страниц" ordinalvalue="33" />
+            <Title LCID="1051" Title="Šablóny stránok" ordinalvalue="34" />
+            <Title LCID="1060" Title="Predloge strani" ordinalvalue="35" />
+            <Title LCID="3098" Title="Предлошци странице" ordinalvalue="36" />
+            <Title LCID="2074" Title="Predlošci stranice" ordinalvalue="37" />
+            <Title LCID="1053" Title="Sidmallar" ordinalvalue="38" />
+            <Title LCID="1054" Title="เทมเพลตเพจ" ordinalvalue="39" />
+            <Title LCID="1055" Title="Sayfa şablonları" ordinalvalue="40" />
+            <Title LCID="1058" Title="Шаблони сторінок" ordinalvalue="41" />
+            <Title LCID="1066" Title="Mẫu trang" ordinalvalue="42" />
+            <Title LCID="2052" Title="页面模板" ordinalvalue="43" />
+            <Title LCID="3076" Title="頁面範本" ordinalvalue="44" />
+            <Title LCID="1028" Title="頁面範本" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="msdyncrm_segmenttemplate" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_segmenttemplate" AvailableOffline="true" PassParams="false" ordinalvalue="8" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Segment Templates" ordinalvalue="0" />
+            <Title LCID="1025" Title="قوالب الشرائح" ordinalvalue="1" />
+            <Title LCID="1026" Title="Шаблони на сегмент" ordinalvalue="2" />
+            <Title LCID="1027" Title="Plantilles de segment" ordinalvalue="3" />
+            <Title LCID="1029" Title="Šablony segmentu" ordinalvalue="4" />
+            <Title LCID="1030" Title="Segmentskabeloner" ordinalvalue="5" />
+            <Title LCID="1031" Title="Segmentvorlagen" ordinalvalue="6" />
+            <Title LCID="1032" Title="Πρότυπα τμήματος" ordinalvalue="7" />
+            <Title LCID="3081" Title="Segment Templates" ordinalvalue="8" />
+            <Title LCID="4105" Title="Segment Templates" ordinalvalue="9" />
+            <Title LCID="2057" Title="Segment Templates" ordinalvalue="10" />
+            <Title LCID="3082" Title="Plantillas de segmentos" ordinalvalue="11" />
+            <Title LCID="1061" Title="Segmendimallid" ordinalvalue="12" />
+            <Title LCID="1069" Title="Segmentu-txantiloiak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Segmenttimallit" ordinalvalue="14" />
+            <Title LCID="3084" Title="Modèles de segment" ordinalvalue="15" />
+            <Title LCID="1036" Title="Modèles de segment" ordinalvalue="16" />
+            <Title LCID="1110" Title="Modelos de segmento" ordinalvalue="17" />
+            <Title LCID="1037" Title="תבניות פלח" ordinalvalue="18" />
+            <Title LCID="1050" Title="Predlošci segmenta" ordinalvalue="19" />
+            <Title LCID="1038" Title="Szegmenssablonok" ordinalvalue="20" />
+            <Title LCID="1057" Title="Template Segmen" ordinalvalue="21" />
+            <Title LCID="1040" Title="Modelli di segmento" ordinalvalue="22" />
+            <Title LCID="1041" Title="セグメント テンプレート" ordinalvalue="23" />
+            <Title LCID="1042" Title="세그먼트 템플릿" ordinalvalue="24" />
+            <Title LCID="1063" Title="Segmento šablonai" ordinalvalue="25" />
+            <Title LCID="1062" Title="Segmenta veidnes" ordinalvalue="26" />
+            <Title LCID="1044" Title="Segmentmaler" ordinalvalue="27" />
+            <Title LCID="1043" Title="Segmentsjablonen" ordinalvalue="28" />
+            <Title LCID="1045" Title="Szablony segmentu" ordinalvalue="29" />
+            <Title LCID="1046" Title="Modelos de Segmento" ordinalvalue="30" />
+            <Title LCID="2070" Title="Modelos de Segmento" ordinalvalue="31" />
+            <Title LCID="1048" Title="Șabloane de segment" ordinalvalue="32" />
+            <Title LCID="1049" Title="Шаблоны сегментов" ordinalvalue="33" />
+            <Title LCID="1051" Title="Šablóny segmentov" ordinalvalue="34" />
+            <Title LCID="1060" Title="Predloge segmenta" ordinalvalue="35" />
+            <Title LCID="3098" Title="Предлошци сегмената" ordinalvalue="36" />
+            <Title LCID="2074" Title="Predlošci segmenata" ordinalvalue="37" />
+            <Title LCID="1053" Title="Segmentmallar" ordinalvalue="38" />
+            <Title LCID="1054" Title="เทมเพลตเซ็กเมนต์" ordinalvalue="39" />
+            <Title LCID="1055" Title="Segment Şablonları" ordinalvalue="40" />
+            <Title LCID="1058" Title="Шаблони сегментів" ordinalvalue="41" />
+            <Title LCID="1066" Title="Mẫu phân đoạn" ordinalvalue="42" />
+            <Title LCID="2052" Title="段模板" ordinalvalue="43" />
+            <Title LCID="3076" Title="區段範本" ordinalvalue="44" />
+            <Title LCID="1028" Title="區段範本" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="msdyncrm_marketingformfield" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_marketingformfield" AvailableOffline="true" PassParams="false" ordinalvalue="9" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Form fields" ordinalvalue="0" />
+            <Title LCID="1025" Title="حقول النموذج" ordinalvalue="1" />
+            <Title LCID="1026" Title="Полето във формуляр" ordinalvalue="2" />
+            <Title LCID="1027" Title="Camps de formulari" ordinalvalue="3" />
+            <Title LCID="1029" Title="Pole formuláře" ordinalvalue="4" />
+            <Title LCID="1030" Title="Formularfelter" ordinalvalue="5" />
+            <Title LCID="1031" Title="Formularfelder" ordinalvalue="6" />
+            <Title LCID="1032" Title="Πεδία φόρμας" ordinalvalue="7" />
+            <Title LCID="3081" Title="Form fields" ordinalvalue="8" />
+            <Title LCID="4105" Title="Form fields" ordinalvalue="9" />
+            <Title LCID="2057" Title="Form fields" ordinalvalue="10" />
+            <Title LCID="3082" Title="Campos de formulario" ordinalvalue="11" />
+            <Title LCID="1061" Title="Vormiväljad" ordinalvalue="12" />
+            <Title LCID="1069" Title="Inprimakiaren eremuak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Lomakekentät" ordinalvalue="14" />
+            <Title LCID="3084" Title="Champs de formulaire" ordinalvalue="15" />
+            <Title LCID="1036" Title="Champs de formulaire" ordinalvalue="16" />
+            <Title LCID="1110" Title="Campos de formulario" ordinalvalue="17" />
+            <Title LCID="1037" Title="שדות בטופס" ordinalvalue="18" />
+            <Title LCID="1050" Title="Polja obrasca" ordinalvalue="19" />
+            <Title LCID="1038" Title="Űrlapmezők" ordinalvalue="20" />
+            <Title LCID="1057" Title="Bidang formulir" ordinalvalue="21" />
+            <Title LCID="1040" Title="Campo modulo" ordinalvalue="22" />
+            <Title LCID="1041" Title="フォーム フィールド" ordinalvalue="23" />
+            <Title LCID="1042" Title="양식 필드" ordinalvalue="24" />
+            <Title LCID="1063" Title="Formos laukai" ordinalvalue="25" />
+            <Title LCID="1062" Title="Veidlapas lauki" ordinalvalue="26" />
+            <Title LCID="1044" Title="Skjemafelt" ordinalvalue="27" />
+            <Title LCID="1043" Title="Formuliervelden" ordinalvalue="28" />
+            <Title LCID="1045" Title="Pola formularza" ordinalvalue="29" />
+            <Title LCID="1046" Title="Campos de formulário" ordinalvalue="30" />
+            <Title LCID="2070" Title="Campos de formulário" ordinalvalue="31" />
+            <Title LCID="1048" Title="Câmpuri de formular" ordinalvalue="32" />
+            <Title LCID="1049" Title="Поля формы" ordinalvalue="33" />
+            <Title LCID="1051" Title="Polia formulárov" ordinalvalue="34" />
+            <Title LCID="1060" Title="Polja obrazca" ordinalvalue="35" />
+            <Title LCID="3098" Title="Поља обрасца" ordinalvalue="36" />
+            <Title LCID="2074" Title="Polja obrasca" ordinalvalue="37" />
+            <Title LCID="1053" Title="Formulärfält" ordinalvalue="38" />
+            <Title LCID="1054" Title="ฟิลด์ฟอร์ม" ordinalvalue="39" />
+            <Title LCID="1055" Title="Form alanları" ordinalvalue="40" />
+            <Title LCID="1058" Title="Поля форм" ordinalvalue="41" />
+            <Title LCID="1066" Title="Trường biểu mẫu" ordinalvalue="42" />
+            <Title LCID="2052" Title="窗体字段" ordinalvalue="43" />
+            <Title LCID="3076" Title="表單欄位" ordinalvalue="44" />
+            <Title LCID="1028" Title="表單欄位" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="msdyncrm_contentsettings" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_contentsettings" AvailableOffline="true" PassParams="false" ordinalvalue="10" solutionaction="Added" />
+        <SubArea Id="msdyncrm_phonecallactivitymarketingtemplate" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_phonecallactivitymarketingtemplate" AvailableOffline="true" PassParams="false" ordinalvalue="11" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Call templates" ordinalvalue="0" />
+            <Title LCID="1025" Title="قوالب المكالمات" ordinalvalue="1" />
+            <Title LCID="1026" Title="Извикване на шаблони" ordinalvalue="2" />
+            <Title LCID="1027" Title="Plantilles de trucada" ordinalvalue="3" />
+            <Title LCID="1029" Title="Šablony hovorů" ordinalvalue="4" />
+            <Title LCID="1030" Title="Opkaldsskabeloner" ordinalvalue="5" />
+            <Title LCID="1031" Title="Anrufvorlagen" ordinalvalue="6" />
+            <Title LCID="1032" Title="Πρότυπα κλήσης" ordinalvalue="7" />
+            <Title LCID="3081" Title="Call templates" ordinalvalue="8" />
+            <Title LCID="4105" Title="Call templates" ordinalvalue="9" />
+            <Title LCID="2057" Title="Call templates" ordinalvalue="10" />
+            <Title LCID="3082" Title="Plantillas de llamada" ordinalvalue="11" />
+            <Title LCID="1061" Title="Teenindusjuhtumimallid" ordinalvalue="12" />
+            <Title LCID="1069" Title="Dei-txantiloiak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Puhelumallit" ordinalvalue="14" />
+            <Title LCID="3084" Title="Modèles d’appel" ordinalvalue="15" />
+            <Title LCID="1036" Title="Modèles d’appel" ordinalvalue="16" />
+            <Title LCID="1110" Title="Modelos de chamada" ordinalvalue="17" />
+            <Title LCID="1037" Title="תבניות של שיחות" ordinalvalue="18" />
+            <Title LCID="1050" Title="Predlošci poziva" ordinalvalue="19" />
+            <Title LCID="1038" Title="Hívási sablonok" ordinalvalue="20" />
+            <Title LCID="1057" Title="Template panggilan" ordinalvalue="21" />
+            <Title LCID="1040" Title="Modelli di chiamata" ordinalvalue="22" />
+            <Title LCID="1041" Title="通話テンプレート" ordinalvalue="23" />
+            <Title LCID="1042" Title="통화 템플릿" ordinalvalue="24" />
+            <Title LCID="1063" Title="Skambučių šablonai" ordinalvalue="25" />
+            <Title LCID="1062" Title="Zvanu veidnes" ordinalvalue="26" />
+            <Title LCID="1044" Title="Anropsmaler" ordinalvalue="27" />
+            <Title LCID="1043" Title="Oproepsjablonen" ordinalvalue="28" />
+            <Title LCID="1045" Title="Szablony wywołań" ordinalvalue="29" />
+            <Title LCID="1046" Title="Modelos de chamada" ordinalvalue="30" />
+            <Title LCID="2070" Title="Modelos de chamada" ordinalvalue="31" />
+            <Title LCID="1048" Title="Șabloane de apel" ordinalvalue="32" />
+            <Title LCID="1049" Title="Шаблоны звонков" ordinalvalue="33" />
+            <Title LCID="1051" Title="Šablóny hovorov" ordinalvalue="34" />
+            <Title LCID="1060" Title="Predloge klicev" ordinalvalue="35" />
+            <Title LCID="3098" Title="Предлошци позива" ordinalvalue="36" />
+            <Title LCID="2074" Title="Predlošci poziva" ordinalvalue="37" />
+            <Title LCID="1053" Title="Samtalsmallar" ordinalvalue="38" />
+            <Title LCID="1054" Title="เทมเพลตกรณีและปัญหา" ordinalvalue="39" />
+            <Title LCID="1055" Title="Arama şablonları" ordinalvalue="40" />
+            <Title LCID="1058" Title="Шаблони викликів" ordinalvalue="41" />
+            <Title LCID="1066" Title="Mẫu cuộc gọi" ordinalvalue="42" />
+            <Title LCID="2052" Title="通话模板" ordinalvalue="43" />
+            <Title LCID="3076" Title="通話範本" ordinalvalue="44" />
+            <Title LCID="1028" Title="通話範本" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="msdyncrm_taskactivitymarketingtemplate" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_taskactivitymarketingtemplate" AvailableOffline="true" PassParams="false" ordinalvalue="12" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Task templates" ordinalvalue="0" />
+            <Title LCID="1025" Title="قوالب المهام" ordinalvalue="1" />
+            <Title LCID="1026" Title="Шаблони на задача" ordinalvalue="2" />
+            <Title LCID="1027" Title="Plantilles de tasca" ordinalvalue="3" />
+            <Title LCID="1029" Title="Šablony úloh" ordinalvalue="4" />
+            <Title LCID="1030" Title="Opgaveskabeloner" ordinalvalue="5" />
+            <Title LCID="1031" Title="Aufgabenvorlagen" ordinalvalue="6" />
+            <Title LCID="1032" Title="Πρότυπα εργασίας" ordinalvalue="7" />
+            <Title LCID="3081" Title="Task templates" ordinalvalue="8" />
+            <Title LCID="4105" Title="Task templates" ordinalvalue="9" />
+            <Title LCID="2057" Title="Task templates" ordinalvalue="10" />
+            <Title LCID="3082" Title="Plantillas de tarea" ordinalvalue="11" />
+            <Title LCID="1061" Title="Töömallid" ordinalvalue="12" />
+            <Title LCID="1069" Title="Zeregin-txantiloiak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Tehtävämallit" ordinalvalue="14" />
+            <Title LCID="3084" Title="Modèles de tâche" ordinalvalue="15" />
+            <Title LCID="1036" Title="Modèles de tâche" ordinalvalue="16" />
+            <Title LCID="1110" Title="Modelos de tarefa" ordinalvalue="17" />
+            <Title LCID="1037" Title="תבניות של משימות" ordinalvalue="18" />
+            <Title LCID="1050" Title="Predlošci zadatka" ordinalvalue="19" />
+            <Title LCID="1038" Title="Feladatsablonok" ordinalvalue="20" />
+            <Title LCID="1057" Title="Template tugas" ordinalvalue="21" />
+            <Title LCID="1040" Title="Modelli di attività" ordinalvalue="22" />
+            <Title LCID="1041" Title="タスク テンプレート" ordinalvalue="23" />
+            <Title LCID="1042" Title="작업 템플릿" ordinalvalue="24" />
+            <Title LCID="1063" Title="Užduočių šablonai" ordinalvalue="25" />
+            <Title LCID="1062" Title="Uzdevumu veidnes" ordinalvalue="26" />
+            <Title LCID="1044" Title="Oppgavemaler" ordinalvalue="27" />
+            <Title LCID="1043" Title="Taaksjablonen" ordinalvalue="28" />
+            <Title LCID="1045" Title="Szablony zadań" ordinalvalue="29" />
+            <Title LCID="1046" Title="Modelos de tarefa" ordinalvalue="30" />
+            <Title LCID="2070" Title="Modelos de tarefa" ordinalvalue="31" />
+            <Title LCID="1048" Title="Șabloane de activitate" ordinalvalue="32" />
+            <Title LCID="1049" Title="Шаблоны задач" ordinalvalue="33" />
+            <Title LCID="1051" Title="Šablóny úloh" ordinalvalue="34" />
+            <Title LCID="1060" Title="Predloge opravil" ordinalvalue="35" />
+            <Title LCID="3098" Title="Предлошци задатака" ordinalvalue="36" />
+            <Title LCID="2074" Title="Predlošci zadataka" ordinalvalue="37" />
+            <Title LCID="1053" Title="Uppgiftsmallar" ordinalvalue="38" />
+            <Title LCID="1054" Title="เทมเพลตงาน" ordinalvalue="39" />
+            <Title LCID="1055" Title="Görev şablonları" ordinalvalue="40" />
+            <Title LCID="1058" Title="Шаблони завдань" ordinalvalue="41" />
+            <Title LCID="1066" Title="Mẫu công việc" ordinalvalue="42" />
+            <Title LCID="2052" Title="任务模板" ordinalvalue="43" />
+            <Title LCID="3076" Title="工作範本" ordinalvalue="44" />
+            <Title LCID="1028" Title="工作範本" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="msdyncrm_appointmentactivitymarketingtemplate" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdyncrm_appointmentactivitymarketingtemplate" AvailableOffline="true" PassParams="false" ordinalvalue="13" solutionaction="Added">
+          <Titles>
+            <Title LCID="1033" Title="Appt. templates" ordinalvalue="0" />
+            <Title LCID="1025" Title="قوالب التطبيق" ordinalvalue="1" />
+            <Title LCID="1026" Title="Шаблони за среща" ordinalvalue="2" />
+            <Title LCID="1027" Title="Plantilles de cita" ordinalvalue="3" />
+            <Title LCID="1029" Title="Šablony schůzek" ordinalvalue="4" />
+            <Title LCID="1030" Title="Arr. skabeloner" ordinalvalue="5" />
+            <Title LCID="1031" Title="Terminvorlagen" ordinalvalue="6" />
+            <Title LCID="1032" Title="Πρότυπα συναντήσεων" ordinalvalue="7" />
+            <Title LCID="3081" Title="Appt. templates" ordinalvalue="8" />
+            <Title LCID="4105" Title="Appt. templates" ordinalvalue="9" />
+            <Title LCID="2057" Title="Appt. templates" ordinalvalue="10" />
+            <Title LCID="3082" Title="Plantillas de cita" ordinalvalue="11" />
+            <Title LCID="1061" Title="Kohtumismallid" ordinalvalue="12" />
+            <Title LCID="1069" Title="Hitzordu-txantiloiak" ordinalvalue="13" />
+            <Title LCID="1035" Title="Tapaamismallit" ordinalvalue="14" />
+            <Title LCID="3084" Title="Modèles de rendez-vous" ordinalvalue="15" />
+            <Title LCID="1036" Title="Modèles de rendez-vous" ordinalvalue="16" />
+            <Title LCID="1110" Title="Modelos de compromiso" ordinalvalue="17" />
+            <Title LCID="1037" Title="תבניות של פגישות" ordinalvalue="18" />
+            <Title LCID="1050" Title="Predlošci obaveza" ordinalvalue="19" />
+            <Title LCID="1038" Title="Találkozósablonok" ordinalvalue="20" />
+            <Title LCID="1057" Title="Template janji temu" ordinalvalue="21" />
+            <Title LCID="1040" Title="Modelli di appuntamento" ordinalvalue="22" />
+            <Title LCID="1041" Title="Appt. テンプレート" ordinalvalue="23" />
+            <Title LCID="1042" Title="약속 템플릿" ordinalvalue="24" />
+            <Title LCID="1063" Title="Susitikimų šablonai" ordinalvalue="25" />
+            <Title LCID="1062" Title="Tikšanos veidnes" ordinalvalue="26" />
+            <Title LCID="1044" Title="Avtalemaler" ordinalvalue="27" />
+            <Title LCID="1043" Title="Afspraaksjablonen" ordinalvalue="28" />
+            <Title LCID="1045" Title="Szablony planowania spotkań" ordinalvalue="29" />
+            <Title LCID="1046" Title="Modelos de compromisso" ordinalvalue="30" />
+            <Title LCID="2070" Title="Modelos de compromisso" ordinalvalue="31" />
+            <Title LCID="1048" Title="Șabloane rez." ordinalvalue="32" />
+            <Title LCID="1049" Title="Шаблоны встреч" ordinalvalue="33" />
+            <Title LCID="1051" Title="Šablóny aplikácií" ordinalvalue="34" />
+            <Title LCID="1060" Title="Predloge za sestanke" ordinalvalue="35" />
+            <Title LCID="3098" Title="Предлошци заказане обавезе" ordinalvalue="36" />
+            <Title LCID="2074" Title="Predlošci zakazane obaveze" ordinalvalue="37" />
+            <Title LCID="1053" Title="Mallar f Avt. tid" ordinalvalue="38" />
+            <Title LCID="1054" Title="เทมเพลตการนัดหมาย" ordinalvalue="39" />
+            <Title LCID="1055" Title="Randevu şablonları" ordinalvalue="40" />
+            <Title LCID="1058" Title="Шаблони зустрічей" ordinalvalue="41" />
+            <Title LCID="1066" Title="Mẫu cuộc hẹn" ordinalvalue="42" />
+            <Title LCID="2052" Title="Appt. 模板" ordinalvalue="43" />
+            <Title LCID="3076" Title="約會範本" ordinalvalue="44" />
+            <Title LCID="1028" Title="約會範本" ordinalvalue="45" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="SMBMATemplates" ResourceId="Group_SMBMA_Templates" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="7" solutionaction="Removed" />
+      <Group Id="msdyncrm_linkedinleadgen_sales" IsProfile="false" Title="LinkedIn Lead Gen" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="7" solutionaction="Modified">
+        <SubArea Id="msdyncrm_linkedinleadgen_sales_syncstatus" ResourceId="Homepage_Dashboards" DescriptionResourceId="Dashboards_Description" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="/workplace/home_dashboards.aspx" DefaultDashboard="c97736b7-71e5-e711-80ed-00155d952b03" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" ordinalvalue="0" solutionaction="Modified" />
+      </Group>
+    </Area>
+    <Area Id="RealTimeJourneys" ResourceId="SitemapDesigner.RealTimeJourneysArea" ShowGroups="false" ordinalvalue="2" solutionaction="Modified" />
+    <Area Id="EM" VectorIcon="$webresource:msevtmgt_/Images/Events" Icon="/WebResources/msevtmgt_/Images/EventManagement" ShowGroups="true" ordinalvalue="1" solutionaction="Modified">
+      <Group Id="nav_Events" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="0">
+        <SubArea Id="msevtmgt_event" Entity="msevtmgt_event" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_eventregistration" Entity="msevtmgt_eventregistration" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_eventteammember" Entity="msevtmgt_eventteammember" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_customregistrationfield" Entity="msevtmgt_customregistrationfield" AvailableOffline="true" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+        <SubArea Id="NewSubArea_0290be97" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msevtmgt_registrationresponse" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" ordinalvalue="4" solutionaction="Added" />
+      </Group>
+      <Group Id="nav_Participants" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="1">
+        <SubArea Id="msevtmgt_speaker" Entity="msevtmgt_speaker" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_checkin" Entity="msevtmgt_checkin" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+      </Group>
+      <Group Id="nav_VenueManagement" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="2">
+        <SubArea Id="msevtmgt_building" Entity="msevtmgt_building" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_room" Entity="msevtmgt_room" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_layout" Entity="msevtmgt_layout" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+      </Group>
+      <Group Id="nav_Logistics" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="3">
+        <SubArea Id="msevtmgt_eventvendor" Entity="msevtmgt_eventvendor" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_hotel" Entity="msevtmgt_hotel" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_hotelroomallocation" Entity="msevtmgt_hotelroomallocation" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_hotelroomreservation" Entity="msevtmgt_hotelroomreservation" AvailableOffline="true" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+      </Group>
+      <Group Id="nav_SponsorshipManagement" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="4">
+        <SubArea Id="msevtmgt_sponsorship" Entity="msevtmgt_sponsorship" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_sponsorablearticle" Entity="msevtmgt_sponsorablearticle" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+      </Group>
+      <Group Id="nav_PostEvent" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" ordinalvalue="5" solutionaction="Modified">
+        <SubArea Id="lead" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="lead" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+      </Group>
+    </Area>
+    <Area Id="Settings" ResourceId="Area_Settings" DescriptionResourceId="Settings_Area_Description" Icon="/_imgs/settings_24x24.gif" ShowGroups="true" IntroducedVersion="7.0.0.0" ordinalvalue="3" solutionaction="Modified">
+      <Group Id="EmailMarketing_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="" ordinalvalue="1">
+        <SubArea Id="msdyncrm_setupdomain_Area" Entity="msdyncrm_setupdomain" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_marketingpageconfiguration_Area" Entity="msdyncrm_marketingpageconfiguration" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_designerfeatureavailability_Area" Entity="msdyncrm_designerfeatureavailability" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_defaultmarketingsetting_Area" Entity="msdyncrm_defaultmarketingsetting" AvailableOffline="true" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+      </Group>
+      <Group Id="CustomerEngagement_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="" ordinalvalue="2">
+        <SubArea Id="ComplianceSubArea" VectorIcon="/WebResources/icon/msdynmkt_compliancesettings.svg" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="/main.aspx?pagetype=entityrecord&amp;etn=msdynmkt_compliancesettings&amp;id=7f4a6355-1811-4cde-bde3-fee8c85f56b1&amp;formid=c4665b49-b72e-47a5-82b1-87b99315e69a" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="AudienceConfigurationSubArea" VectorIcon="/WebResources/icon/msdynmkt_contactpointsettings.svg" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdynmkt_contactpointsettings" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="MobileAppsSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdynmkt_mobileapplication" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" ordinalvalue="3" solutionaction="Modified" />
+        <SubArea Id="ExternalSmsProviders_Area" VectorIcon="/WebResources/icon/msdynmkt_ExternalSMSProviersSubArea.svg" Url="/main.aspx?pagetype=control&amp;controlName=MscrmControls.ModernAdmin.OCAsyncChannelSetupControl&amp;data={&quot;consumer&quot;:&quot;marketing&quot;}" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="false" PassParams="false" Sku="All,OnPremise,Live,SPLA" ordinalvalue="4" solutionaction="Modified" />
+        <SubArea Id="TextMessageSendersSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdynmkt_smsphonenumber" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" ordinalvalue="5" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_socialpostingconfiguration_Area" Entity="msdyncrm_socialpostingconfiguration" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+      </Group>
+      <Group Id="Eventadministration_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="" ordinalvalue="4">
+        <SubArea Id="msevtmgt_webapplication_Area" Entity="msevtmgt_webapplication" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_webinarprovider_Area" Entity="msevtmgt_webinarprovider" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_webinarconfiguration_Area" Entity="msevtmgt_webinarconfiguration" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_eventadministration_Area" Entity="msevtmgt_eventadministration" AvailableOffline="true" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+        <SubArea Id="msevtmgt_websiteentityconfiguration_Area" Entity="msevtmgt_websiteentityconfiguration" AvailableOffline="true" PassParams="false" ordinalvalue="4" solutionaction="Modified" />
+      </Group>
+      <Group Id="LeadManagement_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="" ordinalvalue="5">
+        <SubArea Id="msdyncrm_leadscoringconfiguration_Area" Entity="msdyncrm_leadscoringconfiguration" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_matchingstrategy_Area" Entity="msdyncrm_matchingstrategy" AvailableOffline="true" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_linkedinleadmatchingstrategy_Area" Entity="msdyncrm_linkedinleadmatchingstrategy" AvailableOffline="true" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_linkedinfieldmapping_Area" Entity="msdyncrm_linkedinfieldmapping" AvailableOffline="true" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+      </Group>
+      <Group Id="DataManagement_Group" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown" Icon="" ordinalvalue="6">
+        <SubArea Id="CustomerInsightsConnector_Area" VectorIcon="/WebResources/icon/CustomerInsightsConnector_SubArea.svg" Url="/main.aspx?pagetype=control&amp;controlName=DynamicsCXPCiConnector.Loader" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="false" PassParams="false" Sku="All,OnPremise,Live,SPLA" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="msdyncrm_cdsaconnectorconfiguration_Area" Entity="msdyncrm_cdsaconnectorconfiguration" AvailableOffline="true" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+      </Group>
+    </Area>
+    <Area Id="HLP" ResourceId="Area_Help" ShowGroups="true" Icon="/_imgs/icn_help16.png" DescriptionResourceId="Help_Area_Description" IntroducedVersion="7.0.0.0" ordinalvalue="4">
+      <Group Id="HLP_GRP" ResourceId="Group_Help" DescriptionResourceId="Help_Description" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="Help_ToolTip" ordinalvalue="0" solutionaction="Modified">
+        <SubArea Id="Help_Resource_Center" Url="https://go.microsoft.com/fwlink/p/?linkid=848642" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="0" solutionaction="Modified" />
+        <SubArea Id="How_To_Resource" Url="https://go.microsoft.com/fwlink/p/?linkid=2006132" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="1" solutionaction="Modified" />
+        <SubArea Id="Find_your_way_around" Url="https://go.microsoft.com/fwlink/p/?linkid=863076" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+        <SubArea Id="Basic_tutorials" Url="https://go.microsoft.com/fwlink/p/?linkid=863068" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+        <SubArea Id="Advanced_tutorials" Url="https://go.microsoft.com/fwlink/p/?linkid=863064" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="4" solutionaction="Modified" />
+        <SubArea Id="Manage_customer_information" Url="https://go.microsoft.com/fwlink/p/?linkid=2009035" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="5" solutionaction="Modified" />
+        <SubArea Id="Event_management" Url="https://go.microsoft.com/fwlink/p/?linkid=863114" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="6" solutionaction="Modified" />
+        <SubArea Id="Analyze_results_to_gain_insights" Url="https://go.microsoft.com/fwlink/p/?linkid=2009118" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="7" solutionaction="Modified" />
+        <SubArea Id="Admin_setup_FAQ" Url="https://go.microsoft.com/fwlink/p/?linkid=2008977" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="8" solutionaction="Modified" />
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="Analytics and Insights for Customer Engagement" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

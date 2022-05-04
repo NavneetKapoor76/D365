@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3ddde8bd-d71c-4e59-bd1e-453f190e4766}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab verticallayout="true" id="{65a9c7f2-83f0-4388-8364-6f3ba63b773a}" IsUserDefined="1" name="general_tab" ordinalvalue="2">
+          <columns>
+            <column width="50%" id="0">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{ced9d8a1-d2f0-4a02-945c-c6f1b591c54a}" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{067d8a28-98e7-d330-c1e9-33397941e542}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10002">
+                        <labels>
+                          <label description="Modified on" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{cfbdfc4c-1605-48db-a393-41ac1b06bfb6}" IsUserDefined="1" visible="false" name="insights_plana_tab" ordinalvalue="4">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="{ae2af4dc-e077-4a23-8bfa-5d35648d178c}_section_4" showlabel="false" showbar="false" locklevel="0" id="{9c41865d-50f2-4359-8285-b1556dfda278}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="0">
+                  <rows />
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <footer id="{cf9529db-be29-40a6-be06-fa48bc8e04b7}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

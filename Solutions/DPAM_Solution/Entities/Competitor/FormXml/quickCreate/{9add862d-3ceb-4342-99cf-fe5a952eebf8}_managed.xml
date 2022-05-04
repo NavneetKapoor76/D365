@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{9add862d-3ceb-4342-99cf-fe5a952eebf8}</formid>
+    <IntroducedVersion>6.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{6a6938a4-b74c-42b3-8a2c-8286180c111b}" name="newCompetitor" showlabel="false" labelid="{028249CF-966D-4CF2-8478-F74D35DD9C14}" IsUserDefined="0" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section id="{7007f422-947e-4879-acfc-a3775d6c7946}" name="quickCompetitor_column1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{3015c568-cc12-51c3-e415-a2d96e46517e}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Name" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ba08d0d6-9d40-68eb-d589-9a35b3a30842}" showlabel="true" locklevel="0" ordinalvalue="10001">
+                        <labels>
+                          <label description="Website" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section id="{2dc92e57-e546-4398-9474-b898766aa0ee}" name="quickCompetitor_column2" columns="1" showlabel="true" showbar="false" IsUserDefined="0" visible="false" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{e37b110b-9333-0883-be61-212392c061e2}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Ticker Symbol" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{adaa50b5-380b-a546-9151-c5c7451530e6}" showlabel="true" locklevel="0" ordinalvalue="10001">
+                        <labels>
+                          <label description="Reported Revenue" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="34%" id="2">
+              <sections>
+                <section id="{3860104a-8722-4a95-9f6e-b95d5671df56}" name="quickCompetitor_column3" columns="1" showlabel="true" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{a37b6c89-d772-edd6-8283-c1424b760a63}" showlabel="true" locklevel="0" rowspan="2" ordinalvalue="10000">
+                        <labels>
+                          <label description="Strength" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{30cdc814-2487-50d8-d94c-a0ec46d639a2}" showlabel="true" locklevel="0" rowspan="2" ordinalvalue="10001">
+                        <labels>
+                          <label description="Weakness" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Competitor" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Default quick create form for Competitor" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

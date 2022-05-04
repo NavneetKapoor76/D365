@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{cdd52980-2fe6-eb11-bacb-000d3a4af96f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_s_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_locationid">
+          <cell name="dpam_s_street1" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="dpam_s_street2" width="100" />
+          <cell name="dpam_postofficebox" width="100" />
+          <cell name="dpam_s_postalcode" width="100" />
+          <cell name="dpam_s_city" width="100" />
+          <cell name="dpam_lk_country" width="100" />
+          <cell name="dpam_b_main" width="80" />
+          <cell name="dpam_b_business" width="80" />
+          <cell name="dpam_lk_primarycontact" width="150" />
+          <cell name="dpam_s_phonenumber" width="125" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_location">
+          <attribute name="createdon" />
+          <order attribute="dpam_b_main" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="dpam_b_main" />
+          <attribute name="dpam_b_business" />
+          <attribute name="dpam_lk_primarycontact" />
+          <attribute name="dpam_s_phonenumber" />
+          <attribute name="dpam_s_street2" />
+          <attribute name="dpam_s_street1" />
+          <attribute name="dpam_s_postalcode" />
+          <attribute name="dpam_lk_country" />
+          <attribute name="dpam_s_city" />
+          <attribute name="dpam_postofficebox" />
+          <attribute name="dpam_locationid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Related Locations" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

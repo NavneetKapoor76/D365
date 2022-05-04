@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.OpportunityClose, Version=1.0.0.0, Culture=neutral, PublicKeyToken=80b185f96446b420" PluginAssemblyId="26b0a9ed-bd32-482b-ad95-953f97d0867d" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsOpportunityClose-26B0A9ED-BD32-482B-AD95-953F97D0867D/BDPDPAMPluginsOpportunityClose.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.OpportunityClose.PreCreateOpportunityClose, BDP.DPAM.Plugins.OpportunityClose, Version=1.0.0.0, Culture=neutral, PublicKeyToken=80b185f96446b420" PluginTypeId="a0ad15a5-54d8-4947-9645-82af4a020579" Name="BDP.DPAM.Plugins.OpportunityClose.PreCreateOpportunityClose">
+      <FriendlyName>88d173e0-3e47-460f-b8ab-ee8f4c53a612</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.OpportunityClose.PreUpdateOpportunityClose, BDP.DPAM.Plugins.OpportunityClose, Version=1.0.0.0, Culture=neutral, PublicKeyToken=80b185f96446b420" PluginTypeId="d00b606d-a0f2-4b32-beec-6afa344f1562" Name="BDP.DPAM.Plugins.OpportunityClose.PreUpdateOpportunityClose">
+      <FriendlyName>35f79f8a-4b48-416e-bebb-5954b10d5ecd</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

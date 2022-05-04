@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=95b50df59898083b" PluginAssemblyId="f64f37c1-5eb1-4334-b4c2-9553148bdec3" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsLocation-F64F37C1-5EB1-4334-B4C2-9553148BDEC3/BDPDPAMPluginsLocation.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Location.PostCreateLocation, BDP.DPAM.Plugins.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=95b50df59898083b" PluginTypeId="95d43ac5-478e-46dc-bae0-65b20ad16b95" Name="BDP.DPAM.Plugins.Location.PostCreateLocation">
+      <FriendlyName>d917ea75-064a-4a9f-ad5f-5342bf7f8bdc</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Location.PostUpdateLocation, BDP.DPAM.Plugins.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=95b50df59898083b" PluginTypeId="8132ad73-5ae6-4016-b5e6-31da2a88da90" Name="BDP.DPAM.Plugins.Location.PostUpdateLocation">
+      <FriendlyName>9de5a66f-aa91-44ed-94ed-a7196684001a</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Location.PreCreateLocation, BDP.DPAM.Plugins.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=95b50df59898083b" PluginTypeId="c20ea3f0-5428-4ae6-884e-6fa628ad2e6e" Name="BDP.DPAM.Plugins.Location.PreCreateLocation">
+      <FriendlyName>9ad6c14e-4a1f-4dbf-a946-0ecb1b37ea1b</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Location.PreUpdateLocation, BDP.DPAM.Plugins.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=95b50df59898083b" PluginTypeId="4f31ba72-0300-40b7-b788-3511fe4a87fd" Name="BDP.DPAM.Plugins.Location.PreUpdateLocation">
+      <FriendlyName>44234cad-4b3b-4792-85af-a4df0a75cef8</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{bbc0779a-e0a4-46f9-9af9-a89fac57d14a}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_s_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_agreementid">
+          <cell name="dpam_s_name" width="166" />
+          <cell name="dpam_lk_agreementtype" width="123" />
+          <cell name="dpam_lk_counterparty" width="103" />
+          <cell name="dpam_dt_dateofsignature" width="132" />
+          <cell name="dpam_s_filelocationofthepdfonaserver" width="252" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_agreement">
+          <attribute name="dpam_agreementid" />
+          <attribute name="dpam_s_name" />
+          <attribute name="createdon" />
+          <order attribute="dpam_s_name" descending="false" />
+          <attribute name="dpam_lk_agreementtype" />
+          <attribute name="dpam_lk_counterparty" />
+          <attribute name="dpam_dt_dateofsignature" />
+          <attribute name="dpam_s_filelocationofthepdfonaserver" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Agreement Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

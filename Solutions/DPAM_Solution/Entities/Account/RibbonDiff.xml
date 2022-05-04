@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <CustomAction Id="dpam.account.button.newfromleipage.CustomAction" Location="Mscrm.HomepageGrid.account.MainTab.Management.Controls._children" Sequence="18">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.account.button.newfromleipage.Alt" Command="dpam.account.command.newfromleipage" Id="dpam.account.button.newfromleipage" Image32by32="/_imgs/ribbon/newrecord32.png" Image16by16="/_imgs/ribbon/NewRecord_16.png" LabelText="$LocLabels:dpam.account.button.newfromleipage.LabelText" Sequence="18" TemplateAlias="o1" ToolTipTitle="$LocLabels:dpam.account.button.newfromleipage.ToolTipTitle" ModernImage="New" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dpam.account.button.newfromleipageform.CustomAction" Location="Mscrm.Form.account.MainTab.Save.Controls._children" Sequence="49">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.account.button.newfromleipageform.Alt" Command="dpam.account.command.newfromleipage" Id="dpam.account.button.newfromleipageform" Image32by32="/_imgs/ribbon/newrecord32.png" Image16by16="/_imgs/ribbon/NewRecord_16.png" LabelText="$LocLabels:dpam.account.button.newfromleipageform.LabelText" Sequence="49" TemplateAlias="o1" ToolTipTitle="$LocLabels:dpam.account.button.newfromleipageform.ToolTipTitle" ModernImage="New" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dpam.account.Button4..updatefromleipageform.CustomAction" Location="Mscrm.Form.account.MainTab.Save.Controls._children" Sequence="51">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.account.Button4..updatefromleipageform.Alt" Command="dpam.account.command.updatefromleipageform" Id="dpam.account.Button4..updatefromleipageform" Image32by32="/_imgs/ribbon/newrecord32.png" Image16by16="/_imgs/ribbon/NewRecord_16.png" LabelText="$LocLabels:dpam.account.Button4..updatefromleipageform.LabelText" Sequence="51" TemplateAlias="o1" ToolTipTitle="$LocLabels:dpam.account.Button4..updatefromleipageform.ToolTipTitle" ModernImage="New" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dpam.account.Deactivate.Button.CustomAction" Location="Mscrm.Form.account.MainTab.Save.Controls._children" Sequence="55">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.account.Deactivate.Button.Alt" Command="dpam.account.Deactivate.Command" Id="dpam.account.Deactivate.Button" Image32by32="/_imgs/ribbon/Deactivate_32.png" Image16by16="/_imgs/ribbon/Deactivate_16.png" LabelText="$LocLabels:dpam.account.Deactivate.Button.LabelText" Sequence="55" TemplateAlias="o2" ToolTipTitle="$LocLabels:dpam.account.Deactivate.Button.ToolTipTitle" ToolTipDescription="$LocLabels:dpam.account.Deactivate.Button.ToolTipDescription" ModernImage="DeActivate" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <HideCustomAction HideActionId="dpam.Mscrm.Form.account.Deactivate.Hide" Location="Mscrm.Form.account.Deactivate" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="dpam.account.command.newfromleipage">
+      <EnableRules />
+      <DisplayRules>
+        <DisplayRule Id="dpam.account.CannotCreateCounterparty.DisplayRule" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Account.Ribbon.openLEICodeSearchPage" Library="$webresource:DPAM_/Script/Account.js" />
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="dpam.account.command.updatefromleipageform">
+      <EnableRules />
+      <DisplayRules>
+        <DisplayRule Id="dpam.account.CannotUpdateCounterparty.DisplayRule" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Account.Ribbon.openLEICodeSearchPageOnForm" Library="$webresource:DPAM_/Script/Account.js" />
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="dpam.account.Deactivate.Command">
+      <EnableRules />
+      <DisplayRules>
+        <DisplayRule Id="dpam.account.DisplayWhenCounterpartyIsActiveAndCreated.DisplayRule" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Account.Ribbon.openDeactivateCounterpartyCustomPage" Library="$webresource:DPAM_/Script/Account.js">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules>
+      <DisplayRule Id="dpam.account.CannotCreateCounterparty.DisplayRule">
+        <EntityPrivilegeRule PrivilegeType="Create" PrivilegeDepth="None" EntityName="account" InvertResult="false" />
+      </DisplayRule>
+      <DisplayRule Id="dpam.account.CannotUpdateCounterparty.DisplayRule">
+        <EntityPrivilegeRule PrivilegeType="Write" PrivilegeDepth="None" EntityName="account" InvertResult="false" />
+      </DisplayRule>
+      <DisplayRule Id="dpam.account.DisplayWhenCounterpartyIsActiveAndCreated.DisplayRule">
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+        <ValueRule Field="statecode" Value="0" Default="false" InvertResult="false" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="dpam.account.button.newfromleipage.Alt">
+      <Titles>
+        <Title description="New from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.button.newfromleipage.LabelText">
+      <Titles>
+        <Title description="New from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.button.newfromleipage.ToolTipTitle">
+      <Titles>
+        <Title description="New from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.button.newfromleipageform.Alt">
+      <Titles>
+        <Title description="New from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.button.newfromleipageform.LabelText">
+      <Titles>
+        <Title description="New from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.button.newfromleipageform.ToolTipTitle">
+      <Titles>
+        <Title description="New from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.Button4..updatefromleipageform.Alt">
+      <Titles>
+        <Title description="Update from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.Button4..updatefromleipageform.LabelText">
+      <Titles>
+        <Title description="Update from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.Button4..updatefromleipageform.ToolTipTitle">
+      <Titles>
+        <Title description="Update from LEI" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.Deactivate.Button.Alt">
+      <Titles>
+        <Title description="Deactivate" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.Deactivate.Button.LabelText">
+      <Titles>
+        <Title description="Deactivate" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.Deactivate.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Deactivate this counterparty. &lt;br&gt;&lt;br&gt;You can reactivate it from the Inactive View." languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.Deactivate.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Deactivate" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="Mscrm.Form.account.ViewOrgChart.ToolTipDesc">
+      <Titles>
+        <Title description="View and edit the relationship hierarchy for this counterparty" languagecode="1033" />
+        <Title description="عرض وتحرير التدرج الهرمي للعلاقة لهذا العميل" languagecode="1025" />
+        <Title description="Преглед и редактиране на йерархия на релация за този клиент" languagecode="1026" />
+        <Title description="Visualitza i edita la jerarquia de les relacions d'aquest compte" languagecode="1027" />
+        <Title description="Umožňuje zobrazit a upravit hierarchii vztahů tohoto obchodního vztahu." languagecode="1029" />
+        <Title description="Få vist og rediger relationshierarkiet for dette firma" languagecode="1030" />
+        <Title description="Zeigen Sie die Beziehungshierarchie für diese Firma an, und bearbeiten Sie diese" languagecode="1031" />
+        <Title description="Προβολή και επεξεργασία της ιεραρχίας σχέσεων για αυτόν τον λογαριασμό" languagecode="1032" />
+        <Title description="Ver y editar la jerarquía de relaciones de esta cuenta" languagecode="3082" />
+        <Title description="Saate vaadata ja redigeerida selle ettevõtte seoste hierarhiat" languagecode="1061" />
+        <Title description="Ikusi eta editatu kontu honen erlazioaren hierarkia" languagecode="1069" />
+        <Title description="Tarkastele ja muokkaa tämän tilin suhdehierarkiaa" languagecode="1035" />
+        <Title description="Afficher et modifier la hiérarchie des relations pour ce compte" languagecode="1036" />
+        <Title description="Ver e editar a xerarquía de relacións para esta conta" languagecode="1110" />
+        <Title description="הצג וערוך את הירארכיית הקשרים עבור תיק לקוח זה" languagecode="1037" />
+        <Title description="इस खाते के लिए संबंध पदानुक्रम देखें और संपादित करें" languagecode="1081" />
+        <Title description="Prikaz i uređivanje hijerarhije odnosa za ovaj račun" languagecode="1050" />
+        <Title description="Megtekintheti és módosíthatja a partner kapcsolati hierarchiáját" languagecode="1038" />
+        <Title description="Melihat dan mengedit relasi hierarki untuk akun ini" languagecode="1057" />
+        <Title description="Visualizza e modifica la gerarchia di relazione per questo account" languagecode="1040" />
+        <Title description="この取引先企業の関係階層を表示および編集します" languagecode="1041" />
+        <Title description="Осы тіркелгі үшін қарым-қатынас иерархиясын көру және өңдеу" languagecode="1087" />
+        <Title description="이 계정의 관계 계층을 보고 편집합니다." languagecode="1042" />
+        <Title description="Peržiūrėkite ir redaguokite šios paskyros ryšių hierarchiją" languagecode="1063" />
+        <Title description="Skatīt un rediģēt šī uzņēmuma attiecību hierarhiju" languagecode="1062" />
+        <Title description="Lihat dan edit hierarki perhubungan untuk akaun ini" languagecode="1086" />
+        <Title description="Vis og rediger relasjonshierarkiet for denne forretningsforbindelsen" languagecode="1044" />
+        <Title description="De hiërarchie van de relatie voor dit account weergeven en bewerken" languagecode="1043" />
+        <Title description="Wyświetl i edytuj hierarchię relacji dla tego klienta" languagecode="1045" />
+        <Title description="Exibir e editar a hierarquia de relacionamentos para esta conta" languagecode="1046" />
+        <Title description="Ver e editar a hierarquia de relações para esta conta" languagecode="2070" />
+        <Title description="Vizualizați și editați ierarhia de relații pentru acest cont" languagecode="1048" />
+        <Title description="Просмотр и изменение иерархии отношений для этой организации" languagecode="1049" />
+        <Title description="Zobraziť a upraviť hierarchiu vzťahov pre tento obchodný vzťah" languagecode="1051" />
+        <Title description="Omogoča ogled in urejanje hierarhije odnosov za ta račun" languagecode="1060" />
+        <Title description="Приказујте и уређујте хијерархију односа за овај пословни контакт" languagecode="3098" />
+        <Title description="Prikazujte i uređujte hijerarhiju odnosa za ovaj poslovni kontakt" languagecode="2074" />
+        <Title description="Visa och redigera relationshierarkin för det här kontot" languagecode="1053" />
+        <Title description="ดูและแก้ไขลำดับชั้นความสัมพันธ์สำหรับบัญชีนี้" languagecode="1054" />
+        <Title description="Bu firma için ilişki hiyerşisini görüntüle ve düzenle" languagecode="1055" />
+        <Title description="Переглянути та відредагувати ієрархічні зв’язки для цього бізнес-партнера" languagecode="1058" />
+        <Title description="Xem và sửa hệ thống cấp bậc mối quan hệ cho khách hàng này" languagecode="1066" />
+        <Title description="查看和编辑此帐户的关系层次结构" languagecode="2052" />
+        <Title description="檢視和編輯此客戶的關聯階層" languagecode="3076" />
+        <Title description="檢視和編輯此客戶的關聯階層" languagecode="1028" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="Mscrm_Form_account_Related_Relationship_Relationship_Customer_ToolTipDescription">
+      <Titles>
+        <Title description="Create a new relationship between this counterparty and another counterparty or contact. &lt;br&gt;&lt;br&gt;Use this to track a parent or child counterparty of this counterparty, or contacts that work at this counterparty." languagecode="1033" />
+        <Title description="إنشاء علاقة جديدة بين هذا الحساب وحساب آخر أو جهة اتصال أخرى. &lt;br&gt;&lt;br&gt;استخدم هذه العلاقة لتعقب حساب أصل أو تابع لهذا الحساب، أو جهات اتصال تعمل في هذا الحساب." languagecode="1025" />
+        <Title description="Създаване на нова релация между този партньор и друг партньор или контакт. &lt;br&gt;&lt;br&gt;Тази опция служи за проследяване на родителски или дъщерен акаунт на този акаунт или контакти, работещи с този акаунт." languagecode="1026" />
+        <Title description="Crea una nova relació entre aquest compte i un altre compte o contacte. &lt;br&gt;&lt;br&gt;Es pot utilitzar per fer el seguiment d'un compte principal o secundari d'aquest compte o dels contactes que treballen en aquest compte." languagecode="1027" />
+        <Title description="Vytvoří nový vztah mezi tímto obchodním vztahem a jiným obchodním vztahem či kontaktem. &lt;br&gt;&lt;br&gt;To lze použít ke sledování obchodního vztahu, který je nadřazený či podřízený tomuto obchodnímu vztahu, nebo kontaktů pracujících u tohoto obchodního vztahu." languagecode="1029" />
+        <Title description="Opret en ny relation mellem denne konto og en anden konto eller kontakt. &lt;br&gt;&lt;br&gt;Den bruges til at spore en overordnet eller underordnet konto til denne konto eller kontakter, der arbejder på denne konto." languagecode="1030" />
+        <Title description="Dient zum Erstellen einer neuen Beziehung zwischen dieser Firma und einer anderen Firma oder einem anderen Kontakt. &lt;br&gt;&lt;br&gt;Mit dieser Option können Sie eine über- oder untergeordnete Firma dieser Firma oder Kontakte, die für diese Firma arbeiten, nachverfolgen." languagecode="1031" />
+        <Title description="Δημιουργήστε μια νέα σχέση μεταξύ αυτού του λογαριασμού και ενός άλλου λογαριασμού ή επαφής. &lt;br&gt;&lt;br&gt;Χρησιμοποιήστε την για την παρακολούθηση ενός γονικού ή θυγατρικού λογαριασμού αυτού του λογαριασμού ή επαφών που λειτουργούν σε αυτόν το λογαριασμό." languagecode="1032" />
+        <Title description="Crea una relación nueva entre la cuenta y otra cuenta o contacto. &lt;br&gt;&lt;br&gt;Esto permite realizar un seguimiento de una cuenta primaria o secundaria de esta cuenta o de contactos que trabajan en ella." languagecode="3082" />
+        <Title description="Saate luua selle ettevõtte ja mõne muu ettevõtte või kontakti vahel uue seose. &lt;br&gt;&lt;br&gt;Selle abil saate jälgida selle ettevõtte peamist või alluvat ettevõtet või selles ettevõttes töötavaid kontakte." languagecode="1061" />
+        <Title description="Sortu kontu honen eta beste kontu edo kontaktu baten arteko erlazio berriak. &lt;br&gt;&lt;br&gt;Erabili hau kontu honen kontu nagusia edo bigarren mailako konturen bat, edo kontu honetan lanean diharduten kontaktuak jarraitzeko." languagecode="1069" />
+        <Title description="Luo uusi suhde tämän asiakkaan ja toisen asiakkaan tai yhteyshenkilön välille. &lt;br&gt;&lt;br&gt;Tämän toiminnon avulla voit seurata tämän asiakkaan pää- tai aliasiakasta tai asiakkaan luona työskenteleviä yhteyshenkilöitä." languagecode="1035" />
+        <Title description="Créer une relation entre ce compte et un autre compte ou un contact. &lt;br&gt;&lt;br&gt;Utilisez cette option pour effectuer le suivi d’un compte parent ou enfant de ce compte ou des contacts en relation avec ce compte." languagecode="1036" />
+        <Title description="Crear unha nova relación entre esta conta e outra conta ou contacto. &lt;br&gt;&lt;br&gt;Isto é útil para rastrexar contas principais ou secundarias desta conta ou os contactos que se inclúen nela." languagecode="1110" />
+        <Title description="צור קשר גומלין חדש בין תיק לקוח זה לבין תיק לקוח או איש קשר אחר. &lt;br&gt;&lt;br&gt;השתמש בו כדי לעקוב אחר תיק לקוח אב או צאצא של תיק לקוח זה, או אחר אנשי קשר העובדים בתיק לקוח זה." languagecode="1037" />
+        <Title description="इस खाते और अन्य खाते या संपर्क के बीच एक नया संबंध बनाएँ. &lt;br&gt;&lt;br&gt;इसका उपयोग खाते के पैरेंट खाते या चाइल्ड खाते को या इस खाते पर काम करने वाले संपर्कों को ट्रैक करने के लिए करें." languagecode="1081" />
+        <Title description="Stvorite novi odnos između tog računa i nekog drugog računa ili kontakta. &lt;br&gt;&lt;br&gt;Tu mogućnost koristite za praćenje računa nadređenog ili podređenog tom računu, odnosno kontakata koji rade za taj račun." languagecode="1050" />
+        <Title description="Új kapcsolat létrehozása a partner és egy másik partner vagy kapcsolattartó között. &lt;br&gt;&lt;br&gt;Ezzel a lehetőséggel a partner fölé- vagy alárendelt partnere, illetve a partnernél dolgozó kapcsolattartók követhetők nyomon." languagecode="1038" />
+        <Title description="Buat relasi baru antara akun ini dan akun atau kontak lain. &lt;br&gt;&lt;br&gt;Gunakan ini untuk melacak akun induk atau anak dari akun ini, atau kontak yang menangani akun ini." languagecode="1057" />
+        <Title description="Consente di creare una nuova relazione tra questo account e un altro account o contatto. &lt;br&gt;&lt;br&gt;Ciò consente di registrare un account padre o figlio di questo account oppure contatti che lavorano per questo account." languagecode="1040" />
+        <Title description="この取引先企業と別の取引先企業または取引先担当者との新しい関係を作成します。&lt;br&gt;&lt;br&gt;この取引先企業の親会社や子会社、またはこの取引企業で働く担当者を追跡するのに使用します。" languagecode="1041" />
+        <Title description="Осы тіркелгі және басқа тіркелгі немесе контакт арасында жаңа қатынас жасау. &lt;br&gt;&lt;br&gt;Осы тіркелгінің бас немесе еншілес тіркелгісін немесе осы тіркелгіде жұмыс істейтін контактілерді бақылау үшін осыны пайдаланыңыз." languagecode="1087" />
+        <Title description="이 거래처와 다른 거래처 또는 연락처 간의 새 관계를 만듭니다. &lt;br&gt;&lt;br&gt;이 거래처의 상위 또는 하위 거래처를 추적하거나 이 거래처에 사용되는 연락처를 추적하는 데 사용됩니다." languagecode="1042" />
+        <Title description="Kurti naują šio kliento ir kito kliento arba kontakto ryšį. &lt;br&gt;&lt;br&gt;Naudokite tai, norėdami sekti pirminį arba antrinį šio kliento klientą arba kontaktus, veikiančius šiame kliente." languagecode="1063" />
+        <Title description="Izveidot jaunas attiecības starp šo uzņēmumu un citu uzņēmumu vai kontaktpersonu. &lt;br&gt;&lt;br&gt;To var izmantot, lai izsekotu šī uzņēmuma primārajam vai pakārtotajam uzņēmumam vai kontaktpersonām, kas strādā šajā uzņēmumā." languagecode="1062" />
+        <Title description="Cipta perhubungan baharu antara akaun ini dengan akaun atau kenalan lain. &lt;br&gt;&lt;br&gt;Gunakan ciri ini untuk menjejak akaun induk atau anak akaun ini atau kenalan yang mengusahakan akaun ini." languagecode="1086" />
+        <Title description="Opprett ny relasjon mellom denne forretningsforbindelsen og en annen forretningsforbindelse eller kontakt. &lt;br&gt;&lt;br&gt;Bruk denne for å spore en overordnet eller underordnet forretningsforbindelse for denne forretningsforbindelsen, eller kontakter som arbeider med denne forretningsforbindelsen." languagecode="1044" />
+        <Title description="Een nieuwe relatie maken tussen dit account en een ander account of een andere contactpersoon. &lt;br&gt;&lt;br&gt;Gebruik dit om een bovenliggend of onderliggend account van dit account of contactpersonen die met dit account werken, bij te houden." languagecode="1043" />
+        <Title description="Utwórz nową relację między tym klientem a innym klientem lub kontaktem. &lt;br&gt;&lt;br&gt;Korzystając z tej funkcji, można śledzić nadrzędnego lub podrzędnego klienta bądź kontaktów pracujących dla tego klienta." languagecode="1045" />
+        <Title description="Criar um novo relacionamento entre esta conta e outra conta ou contato. &lt;br&gt;&lt;br&gt;Use essa opção para controlar uma conta primária ou secundária da conta ou os contatos que trabalham com a conta." languagecode="1046" />
+        <Title description="Criar uma relação nova entre esta conta e outra conta ou contacto. &lt;br&gt;&lt;br&gt;Utilize esta opção para monitorizar uma conta principal ou subordinada desta conta ou contactos que trabalhem nesta conta." languagecode="2070" />
+        <Title description="Creați o nouă relație între acest cont și alt cont sau altă persoană de contact. &lt;br&gt;&lt;br&gt;Folosiți-o pentru a urmări un cont principal sau secundar al acestui cont sau persoanele de contact care lucrează la acest cont." languagecode="1048" />
+        <Title description="Создание нового отношения между данной организацией и другой организацией или другим контактом. &lt;br&gt;&lt;br&gt;Используйте этот элемент для отслеживания родительской или дочерней организации данной организации или контактов, работающих в этой организации." languagecode="1049" />
+        <Title description="Vytvorí nový vzťah medzi týmto obchodným vzťahom a iným obchodným vzťahom alebo kontaktom. &lt;br&gt;&lt;br&gt;Túto položku použite na sledovanie nadradeného alebo podradeného obchodného vzťahu tohto obchodného vzťahu alebo na sledovanie kontaktov pracujúcich u tohto obchodného vzťahu." languagecode="1051" />
+        <Title description="Ustvarite nov odnos med tem kupcem in drugim kupcem ali stikom.&lt;br&gt;&lt;br&gt;Tako sledite nadrejenemu ali podrejenemu računu tega kupca ali stike, ki delujejo na tem računu." languagecode="1060" />
+        <Title description="Креирајте нову релацију између овог пословног контакта и другог пословног контакта или контакта. &lt;br&gt;&lt;br&gt;Користите ово за праћење надређеног или подређеног пословног контакта овог пословног контакта или контаката који раде код овог пословног контакта." languagecode="10266" />
+        <Title description="Kreirajte novu relaciju između ovog poslovnog kontakta i drugog poslovnog kontakta ili kontakta. &lt;br&gt;&lt;br&gt;Koristite ovo za praćenje nadređenog ili podređenog poslovnog kontakta ovog poslovnog kontakta ili kontakata koji rade kod ovog poslovnog kontakta." languagecode="9242" />
+        <Title description="Skapa en ny relation mellan det här kontot och ett annat konto eller en kontakt. &lt;br&gt;&lt;br&gt;Du kan göra detta om du vill spåra ett överordnat eller ett underordnat konto för det här kontot eller spåra kontakter som arbetar på kontot." languagecode="1053" />
+        <Title description="สร้างความสัมพันธ์ใหม่ระหว่างลูกค้าองค์กรนี้และลูกค้าองค์กรอื่นหรือผู้ติดต่อ &lt;br&gt;&lt;br&gt;ใช้สิ่งนี้ติดตามลูกค้าองค์กรหลักหรือลูกค้าองค์กรรองของลูกค้าองค์กรนี้ หรือติดตามผู้ติดต่อที่ทำงานที่ลูกค้าองค์กรนี้" languagecode="1054" />
+        <Title description="Bu firma ile başka bir firma veya ilgili kişi arasında yeni bir ilişki oluşturun. &lt;br&gt;&lt;br&gt;Bu firmanın bir ana veya alt firmasını ya da bu firmada çalışan ilgili kişileri izlemek için bunu kullanın." languagecode="1055" />
+        <Title description="Створення нового зв’язку між цим бізнес-партнером та іншим бізнес-партнером або контактною особою. &lt;br&gt;&lt;br&gt;Це використовується для відстеження первинного партнера чи дочірнього бізнес-партнера цього бізнес-партнера або контактних осіб, які працюють з цим бізнес-партнером." languagecode="1058" />
+        <Title description="Tạo mối quan hệ mới giữa khách hàng này và khách hàng hoặc người liên hệ khác. &lt;br&gt;&lt;br&gt;Dùng mục này để theo dõi khách hàng cấp trên hoặc khách hàng cấp dưới của khách hàng này, hoặc những người liên hệ làm việc cho khách hàng này." languagecode="1066" />
+        <Title description="在此客户和其他客户或联系人之间创建新关系。&lt;br&gt;&lt;br&gt;使用该项跟踪此客户的上级单位或下级单位，或者在此客户处工作的联系人。" languagecode="2052" />
+        <Title description="在此客戶與其他客戶或連絡人之間建立新關係。&lt;br&gt;&lt;br&gt;請使用此關係來追蹤此客戶的上層或下層客戶，或是在此客戶工作的連絡人。" languagecode="3076" />
+        <Title description="在此客戶與其他客戶或連絡人之間建立新關係。&lt;br&gt;&lt;br&gt;請使用此關係來追蹤此客戶的上層或下層客戶，或是在此客戶工作的連絡人。" languagecode="1028" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="Mscrm_Form_account_Related_Relationship_Relationship_Opportunity_ToolTipDescription">
+      <Titles>
+        <Title description="Create a new opportunity for this counterparty." languagecode="1033" />
+        <Title description="إنشاء فرصة مبيعات محتملة جديدة لهذا الحساب." languagecode="1025" />
+        <Title description="Създаване на нова възможност за този акаунт." languagecode="1026" />
+        <Title description="Crea una oportunitat nova per a aquest compte." languagecode="1027" />
+        <Title description="Vytvoří novou příležitost pro tento obchodní vztah." languagecode="1029" />
+        <Title description="Opret en ny salgsmulighed for denne konto." languagecode="1030" />
+        <Title description="Dient zum Erstellen einer neuen Verkaufschance für diese Firma." languagecode="1031" />
+        <Title description="Δημιουργήστε μια νέα ευκαιρία για αυτόν το λογαριασμό." languagecode="1032" />
+        <Title description="Crea una oportunidad nueva para la cuenta." languagecode="3082" />
+        <Title description="Saate luua selle ettevõtte jaoks uue müügivõimaluse." languagecode="1061" />
+        <Title description="Sortu abagune berriak kontu honentzat." languagecode="1069" />
+        <Title description="Luo tälle asiakkaalle uusi mahdollisuus." languagecode="1035" />
+        <Title description="Créer une opportunité pour ce compte." languagecode="1036" />
+        <Title description="Crear unha nova oportunidade para esta conta." languagecode="1110" />
+        <Title description="צור הזדמנות חדשה עבור תיק לקוח זה." languagecode="1037" />
+        <Title description="इस खाते के लिए एक नया अवसर बनाएँ." languagecode="1081" />
+        <Title description="Stvorite novu priliku za taj račun." languagecode="1050" />
+        <Title description="Új lehetőség létrehozása a partnerre vonatkozóan." languagecode="1038" />
+        <Title description="Buat peluang baru untuk akun ini." languagecode="1057" />
+        <Title description="Consente di creare una nuova opportunità per questo account." languagecode="1040" />
+        <Title description="この取引先企業の新しい営業案件を作成します。" languagecode="1041" />
+        <Title description="Осы тіркелгі үшін жаңа мүмкіндік жасау." languagecode="1087" />
+        <Title description="이 거래처의 새 영업 기회를 만듭니다." languagecode="1042" />
+        <Title description="Kurti naują šio kliento galimybę." languagecode="1063" />
+        <Title description="Izveidot jaunu iespēju šim uzņēmumam." languagecode="1062" />
+        <Title description="Cipta peluang baharu untuk akaun ini." languagecode="1086" />
+        <Title description="Opprett en ny salgsmulighet for denne forretningsforbindelsen." languagecode="1044" />
+        <Title description="Een nieuwe verkoopkans voor dit account maken." languagecode="1043" />
+        <Title description="Utwórz nową szansę sprzedaży dla tego klienta." languagecode="1045" />
+        <Title description="Criar uma nova oportunidade para esta conta." languagecode="1046" />
+        <Title description="Criar uma oportunidade nova para esta conta." languagecode="2070" />
+        <Title description="Creați o oportunitate nouă pentru acest cont." languagecode="1048" />
+        <Title description="Создание новой возможной сделки для данной организации." languagecode="1049" />
+        <Title description="Vytvorí novú príležitosť pre tento obchodný vzťah." languagecode="1051" />
+        <Title description="Ustvarite novo priložnost za tega kupca." languagecode="1060" />
+        <Title description="Креирајте нову могућност за пословање за овај пословни контакт." languagecode="10266" />
+        <Title description="Kreirajte novu mogućnost za poslovanje za ovaj poslovni kontakt." languagecode="9242" />
+        <Title description="Skapa en ny affärsmöjlighet för det här kontot." languagecode="1053" />
+        <Title description="สร้างโอกาสทางการขายใหม่สำหรับลูกค้าองค์กรนี้" languagecode="1054" />
+        <Title description="Bu firma için yeni bir fırsat oluşturun." languagecode="1055" />
+        <Title description="Створення нової потенційної угоди для цього бізнес-партнера." languagecode="1058" />
+        <Title description="Tạo cơ hội mới cho khách hàng này." languagecode="1066" />
+        <Title description="为此客户创建新商机。" languagecode="2052" />
+        <Title description="為此客戶建立新商機。" languagecode="3076" />
+        <Title description="為此客戶建立新商機。" languagecode="1028" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="Mscrm_HomepageGrid_account_Related_Relationship_Relationship_Customer_ToolTipDescription">
+      <Titles>
+        <Title description="Create a new relationship between this counterparty and another counterparty or contact. &lt;br&gt;&lt;br&gt;Use this to track a parent or child counterparty of this counterparty, or contacts that work at this counterparty." languagecode="1033" />
+        <Title description="إنشاء علاقة جديدة بين هذا الحساب وحساب آخر أو جهة اتصال أخرى. &lt;br&gt;&lt;br&gt;استخدم هذه العلاقة لتعقب حساب أصل أو تابع لهذا الحساب، أو جهات اتصال تعمل في هذا الحساب." languagecode="1025" />
+        <Title description="Създаване на нова релация между този партньор и друг партньор или контакт. &lt;br&gt;&lt;br&gt;Тази опция служи за проследяване на родителски или дъщерен акаунт на този акаунт или контакти, работещи с този акаунт." languagecode="1026" />
+        <Title description="Crea una nova relació entre aquest compte i un altre compte o contacte. &lt;br&gt;&lt;br&gt;Es pot utilitzar per fer el seguiment d'un compte principal o secundari d'aquest compte o dels contactes que treballen en aquest compte." languagecode="1027" />
+        <Title description="Vytvoří nový vztah mezi tímto obchodním vztahem a jiným obchodním vztahem či kontaktem. &lt;br&gt;&lt;br&gt;To lze použít ke sledování obchodního vztahu, který je nadřazený či podřízený tomuto obchodnímu vztahu, nebo kontaktů pracujících u tohoto obchodního vztahu." languagecode="1029" />
+        <Title description="Opret en ny relation mellem denne konto og en anden konto eller kontakt. &lt;br&gt;&lt;br&gt;Den bruges til at spore en overordnet eller underordnet konto til denne konto eller kontakter, der arbejder på denne konto." languagecode="1030" />
+        <Title description="Dient zum Erstellen einer neuen Beziehung zwischen dieser Firma und einer anderen Firma oder einem anderen Kontakt. &lt;br&gt;&lt;br&gt;Mit dieser Option können Sie eine über- oder untergeordnete Firma dieser Firma oder Kontakte, die für diese Firma arbeiten, nachverfolgen." languagecode="1031" />
+        <Title description="Δημιουργήστε μια νέα σχέση μεταξύ αυτού του λογαριασμού και ενός άλλου λογαριασμού ή επαφής. &lt;br&gt;&lt;br&gt;Χρησιμοποιήστε την για την παρακολούθηση ενός γονικού ή θυγατρικού λογαριασμού αυτού του λογαριασμού ή επαφών που λειτουργούν σε αυτόν το λογαριασμό." languagecode="1032" />
+        <Title description="Crea una relación nueva entre la cuenta y otra cuenta o contacto. &lt;br&gt;&lt;br&gt;Esto permite realizar un seguimiento de una cuenta primaria o secundaria de esta cuenta o de contactos que trabajan en ella." languagecode="3082" />
+        <Title description="Saate luua selle ettevõtte ja mõne muu ettevõtte või kontakti vahel uue seose. &lt;br&gt;&lt;br&gt;Selle abil saate jälgida selle ettevõtte peamist või alluvat ettevõtet või selles ettevõttes töötavaid kontakte." languagecode="1061" />
+        <Title description="Sortu kontu honen eta beste kontu edo kontaktu baten arteko erlazio berriak. &lt;br&gt;&lt;br&gt;Erabili hau kontu honen kontu nagusia edo bigarren mailako konturen bat, edo kontu honetan lanean diharduten kontaktuak jarraitzeko." languagecode="1069" />
+        <Title description="Luo uusi suhde tämän asiakkaan ja toisen asiakkaan tai yhteyshenkilön välille. &lt;br&gt;&lt;br&gt;Tämän toiminnon avulla voit seurata tämän asiakkaan pää- tai aliasiakasta tai asiakkaan luona työskenteleviä yhteyshenkilöitä." languagecode="1035" />
+        <Title description="Créer une relation entre ce compte et un autre compte ou un contact. &lt;br&gt;&lt;br&gt;Utilisez cette option pour effectuer le suivi d’un compte parent ou enfant de ce compte ou des contacts en relation avec ce compte." languagecode="1036" />
+        <Title description="Crear unha nova relación entre esta conta e outra conta ou contacto. &lt;br&gt;&lt;br&gt;Isto é útil para rastrexar contas principais ou secundarias desta conta ou os contactos que se inclúen nela." languagecode="1110" />
+        <Title description="צור קשר גומלין חדש בין תיק לקוח זה לבין תיק לקוח או איש קשר אחר. &lt;br&gt;&lt;br&gt;השתמש בו כדי לעקוב אחר תיק לקוח אב או צאצא של תיק לקוח זה, או אחר אנשי קשר העובדים בתיק לקוח זה." languagecode="1037" />
+        <Title description="इस खाते और अन्य खाते या संपर्क के बीच एक नया संबंध बनाएँ. &lt;br&gt;&lt;br&gt;इसका उपयोग खाते के पैरेंट खाते या चाइल्ड खाते को या इस खाते पर काम करने वाले संपर्कों को ट्रैक करने के लिए करें." languagecode="1081" />
+        <Title description="Stvorite novi odnos između tog računa i nekog drugog računa ili kontakta. &lt;br&gt;&lt;br&gt;Tu mogućnost koristite za praćenje računa nadređenog ili podređenog tom računu, odnosno kontakata koji rade za taj račun." languagecode="1050" />
+        <Title description="Új kapcsolat létrehozása a partner és egy másik partner vagy kapcsolattartó között. &lt;br&gt;&lt;br&gt;Ezzel a lehetőséggel a partner fölé- vagy alárendelt partnere, illetve a partnernél dolgozó kapcsolattartók követhetők nyomon." languagecode="1038" />
+        <Title description="Buat relasi baru antara akun ini dan akun atau kontak lain. &lt;br&gt;&lt;br&gt;Gunakan ini untuk melacak akun induk atau anak dari akun ini, atau kontak yang menangani akun ini." languagecode="1057" />
+        <Title description="Consente di creare una nuova relazione tra questo account e un altro account o contatto. &lt;br&gt;&lt;br&gt;Ciò consente di registrare un account padre o figlio di questo account oppure contatti che lavorano per questo account." languagecode="1040" />
+        <Title description="この取引先企業と別の取引先企業または取引先担当者との新しい関係を作成します。&lt;br&gt;&lt;br&gt;この取引先企業の親会社や子会社、またはこの取引企業で働く担当者を追跡するのに使用します。" languagecode="1041" />
+        <Title description="Осы тіркелгі және басқа тіркелгі немесе контакт арасында жаңа қатынас жасау. &lt;br&gt;&lt;br&gt;Осы тіркелгінің бас немесе еншілес тіркелгісін немесе осы тіркелгіде жұмыс істейтін контактілерді бақылау үшін осыны пайдаланыңыз." languagecode="1087" />
+        <Title description="이 거래처와 다른 거래처 또는 연락처 간의 새 관계를 만듭니다. &lt;br&gt;&lt;br&gt;이 거래처의 상위 또는 하위 거래처를 추적하거나 이 거래처에 사용되는 연락처를 추적하는 데 사용됩니다." languagecode="1042" />
+        <Title description="Kurti naują šio kliento ir kito kliento arba kontakto ryšį. &lt;br&gt;&lt;br&gt;Naudokite tai, norėdami sekti pirminį arba antrinį šio kliento klientą arba kontaktus, veikiančius šiame kliente." languagecode="1063" />
+        <Title description="Izveidot jaunas attiecības starp šo uzņēmumu un citu uzņēmumu vai kontaktpersonu. &lt;br&gt;&lt;br&gt;To var izmantot, lai izsekotu šī uzņēmuma primārajam vai pakārtotajam uzņēmumam vai kontaktpersonām, kas strādā šajā uzņēmumā." languagecode="1062" />
+        <Title description="Cipta perhubungan baharu antara akaun ini dengan akaun atau kenalan lain. &lt;br&gt;&lt;br&gt;Gunakan ciri ini untuk menjejak akaun induk atau anak akaun ini atau kenalan yang mengusahakan akaun ini." languagecode="1086" />
+        <Title description="Opprett ny relasjon mellom denne forretningsforbindelsen og en annen forretningsforbindelse eller kontakt. &lt;br&gt;&lt;br&gt;Bruk denne for å spore en overordnet eller underordnet forretningsforbindelse for denne forretningsforbindelsen, eller kontakter som arbeider med denne forretningsforbindelsen." languagecode="1044" />
+        <Title description="Een nieuwe relatie maken tussen dit account en een ander account of een andere contactpersoon. &lt;br&gt;&lt;br&gt;Gebruik dit om een bovenliggend of onderliggend account van dit account of contactpersonen die met dit account werken, bij te houden." languagecode="1043" />
+        <Title description="Utwórz nową relację między tym klientem a innym klientem lub kontaktem. &lt;br&gt;&lt;br&gt;Korzystając z tej funkcji, można śledzić nadrzędnego lub podrzędnego klienta bądź kontaktów pracujących dla tego klienta." languagecode="1045" />
+        <Title description="Criar um novo relacionamento entre esta conta e outra conta ou contato. &lt;br&gt;&lt;br&gt;Use essa opção para controlar uma conta primária ou secundária da conta ou os contatos que trabalham com a conta." languagecode="1046" />
+        <Title description="Criar uma relação nova entre esta conta e outra conta ou contacto. &lt;br&gt;&lt;br&gt;Utilize esta opção para monitorizar uma conta principal ou subordinada desta conta ou contactos que trabalhem nesta conta." languagecode="2070" />
+        <Title description="Creați o nouă relație între acest cont și alt cont sau altă persoană de contact. &lt;br&gt;&lt;br&gt;Folosiți-o pentru a urmări un cont principal sau secundar al acestui cont sau persoanele de contact care lucrează la acest cont." languagecode="1048" />
+        <Title description="Создание нового отношения между данной организацией и другой организацией или другим контактом. &lt;br&gt;&lt;br&gt;Используйте этот элемент для отслеживания родительской или дочерней организации данной организации или контактов, работающих в этой организации." languagecode="1049" />
+        <Title description="Vytvorí nový vzťah medzi týmto obchodným vzťahom a iným obchodným vzťahom alebo kontaktom. &lt;br&gt;&lt;br&gt;Túto položku použite na sledovanie nadradeného alebo podradeného obchodného vzťahu tohto obchodného vzťahu alebo na sledovanie kontaktov pracujúcich u tohto obchodného vzťahu." languagecode="1051" />
+        <Title description="Ustvarite nov odnos med tem kupcem in drugim kupcem ali stikom.&lt;br&gt;&lt;br&gt;Tako sledite nadrejenemu ali podrejenemu računu tega kupca ali stike, ki delujejo na tem računu." languagecode="1060" />
+        <Title description="Креирајте нову релацију између овог пословног контакта и другог пословног контакта или контакта. &lt;br&gt;&lt;br&gt;Користите ово за праћење надређеног или подређеног пословног контакта овог пословног контакта или контаката који раде код овог пословног контакта." languagecode="10266" />
+        <Title description="Kreirajte novu relaciju između ovog poslovnog kontakta i drugog poslovnog kontakta ili kontakta. &lt;br&gt;&lt;br&gt;Koristite ovo za praćenje nadređenog ili podređenog poslovnog kontakta ovog poslovnog kontakta ili kontakata koji rade kod ovog poslovnog kontakta." languagecode="9242" />
+        <Title description="Skapa en ny relation mellan det här kontot och ett annat konto eller en kontakt. &lt;br&gt;&lt;br&gt;Du kan göra detta om du vill spåra ett överordnat eller ett underordnat konto för det här kontot eller spåra kontakter som arbetar på kontot." languagecode="1053" />
+        <Title description="สร้างความสัมพันธ์ใหม่ระหว่างลูกค้าองค์กรนี้และลูกค้าองค์กรอื่นหรือผู้ติดต่อ &lt;br&gt;&lt;br&gt;ใช้สิ่งนี้ติดตามลูกค้าองค์กรหลักหรือลูกค้าองค์กรรองของลูกค้าองค์กรนี้ หรือติดตามผู้ติดต่อที่ทำงานที่ลูกค้าองค์กรนี้" languagecode="1054" />
+        <Title description="Bu firma ile başka bir firma veya ilgili kişi arasında yeni bir ilişki oluşturun. &lt;br&gt;&lt;br&gt;Bu firmanın bir ana veya alt firmasını ya da bu firmada çalışan ilgili kişileri izlemek için bunu kullanın." languagecode="1055" />
+        <Title description="Створення нового зв’язку між цим бізнес-партнером та іншим бізнес-партнером або контактною особою. &lt;br&gt;&lt;br&gt;Це використовується для відстеження первинного партнера чи дочірнього бізнес-партнера цього бізнес-партнера або контактних осіб, які працюють з цим бізнес-партнером." languagecode="1058" />
+        <Title description="Tạo mối quan hệ mới giữa khách hàng này và khách hàng hoặc người liên hệ khác. &lt;br&gt;&lt;br&gt;Dùng mục này để theo dõi khách hàng cấp trên hoặc khách hàng cấp dưới của khách hàng này, hoặc những người liên hệ làm việc cho khách hàng này." languagecode="1066" />
+        <Title description="在此客户和其他客户或联系人之间创建新关系。&lt;br&gt;&lt;br&gt;使用该项跟踪此客户的上级单位或下级单位，或者在此客户处工作的联系人。" languagecode="2052" />
+        <Title description="在此客戶與其他客戶或連絡人之間建立新關係。&lt;br&gt;&lt;br&gt;請使用此關係來追蹤此客戶的上層或下層客戶，或是在此客戶工作的連絡人。" languagecode="3076" />
+        <Title description="在此客戶與其他客戶或連絡人之間建立新關係。&lt;br&gt;&lt;br&gt;請使用此關係來追蹤此客戶的上層或下層客戶，或是在此客戶工作的連絡人。" languagecode="1028" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="Mscrm_HomepageGrid_account_Related_Relationship_Relationship_Opportunity_ToolTipDescription">
+      <Titles>
+        <Title description="Create a new opportunity for this counterparty." languagecode="1033" />
+        <Title description="إنشاء فرصة مبيعات محتملة جديدة لهذا الحساب." languagecode="1025" />
+        <Title description="Създаване на нова възможност за този акаунт." languagecode="1026" />
+        <Title description="Crea una oportunitat nova per a aquest compte." languagecode="1027" />
+        <Title description="Vytvoří novou příležitost pro tento obchodní vztah." languagecode="1029" />
+        <Title description="Opret en ny salgsmulighed for denne konto." languagecode="1030" />
+        <Title description="Dient zum Erstellen einer neuen Verkaufschance für diese Firma." languagecode="1031" />
+        <Title description="Δημιουργήστε μια νέα ευκαιρία για αυτόν το λογαριασμό." languagecode="1032" />
+        <Title description="Crea una oportunidad nueva para la cuenta." languagecode="3082" />
+        <Title description="Saate luua selle ettevõtte jaoks uue müügivõimaluse." languagecode="1061" />
+        <Title description="Sortu abagune berriak kontu honentzat." languagecode="1069" />
+        <Title description="Luo tälle asiakkaalle uusi mahdollisuus." languagecode="1035" />
+        <Title description="Créer une opportunité pour ce compte." languagecode="1036" />
+        <Title description="Crear unha nova oportunidade para esta conta." languagecode="1110" />
+        <Title description="צור הזדמנות חדשה עבור תיק לקוח זה." languagecode="1037" />
+        <Title description="इस खाते के लिए एक नया अवसर बनाएँ." languagecode="1081" />
+        <Title description="Stvorite novu priliku za taj račun." languagecode="1050" />
+        <Title description="Új lehetőség létrehozása a partnerre vonatkozóan." languagecode="1038" />
+        <Title description="Buat peluang baru untuk akun ini." languagecode="1057" />
+        <Title description="Consente di creare una nuova opportunità per questo account." languagecode="1040" />
+        <Title description="この取引先企業の新しい営業案件を作成します。" languagecode="1041" />
+        <Title description="Осы тіркелгі үшін жаңа мүмкіндік жасау." languagecode="1087" />
+        <Title description="이 거래처의 새 영업 기회를 만듭니다." languagecode="1042" />
+        <Title description="Kurti naują šio kliento galimybę." languagecode="1063" />
+        <Title description="Izveidot jaunu iespēju šim uzņēmumam." languagecode="1062" />
+        <Title description="Cipta peluang baharu untuk akaun ini." languagecode="1086" />
+        <Title description="Opprett en ny salgsmulighet for denne forretningsforbindelsen." languagecode="1044" />
+        <Title description="Een nieuwe verkoopkans voor dit account maken." languagecode="1043" />
+        <Title description="Utwórz nową szansę sprzedaży dla tego klienta." languagecode="1045" />
+        <Title description="Criar uma nova oportunidade para esta conta." languagecode="1046" />
+        <Title description="Criar uma oportunidade nova para esta conta." languagecode="2070" />
+        <Title description="Creați o oportunitate nouă pentru acest cont." languagecode="1048" />
+        <Title description="Создание новой возможной сделки для данной организации." languagecode="1049" />
+        <Title description="Vytvorí novú príležitosť pre tento obchodný vzťah." languagecode="1051" />
+        <Title description="Ustvarite novo priložnost za tega kupca." languagecode="1060" />
+        <Title description="Креирајте нову могућност за пословање за овај пословни контакт." languagecode="10266" />
+        <Title description="Kreirajte novu mogućnost za poslovanje za ovaj poslovni kontakt." languagecode="9242" />
+        <Title description="Skapa en ny affärsmöjlighet för det här kontot." languagecode="1053" />
+        <Title description="สร้างโอกาสทางการขายใหม่สำหรับลูกค้าองค์กรนี้" languagecode="1054" />
+        <Title description="Bu firma için yeni bir fırsat oluşturun." languagecode="1055" />
+        <Title description="Створення нової потенційної угоди для цього бізнес-партнера." languagecode="1058" />
+        <Title description="Tạo cơ hội mới cho khách hàng này." languagecode="1066" />
+        <Title description="为此客户创建新商机。" languagecode="2052" />
+        <Title description="為此客戶建立新商機。" languagecode="3076" />
+        <Title description="為此客戶建立新商機。" languagecode="1028" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="Ribbon.Tooltip.AddRelationship">
+      <Titles>
+        <Title description="Create a relationship between this {0} and an opportunity, counterpartyt, or contact. &lt;br&gt;&lt;br&gt;Associating this {0} with another record makes it easier to keep related information connected, such as which counterparties currently have opportunities." languagecode="1033" />
+        <Title description="إنشاء علاقة بين هذا {0} وفرصة أو حساب أو جهة اتصال. &lt;br&gt;&lt;br&gt;يؤدي إقران هذا {0} بسجل آخر إلى تسهيل استمرار اتصال المعلومات ذات الصلة، مثل الحسابات التي تحتوي على فرص حاليًا." languagecode="1025" />
+        <Title description="Създаване на релация между този {0} и възможност, клиент или контакт. &lt;br&gt;&lt;br&gt;Чрез свързване на този {0} с друг запис се улеснява запазването на свързаността на сродната информация, като например кои партньори понастоящем разполагат с възможности." languagecode="1026" />
+        <Title description="Crea una relació entre aquesta entitat {0} i una oportunitat, un compte o un contacte. &lt;br&gt;&lt;br&gt;L'associació d'aquesta entitat {0} amb un altre registre fa que sigui més senzill mantenir la informació relacionada connectada, com ara quins comptes tenen oportunitats actualment." languagecode="1027" />
+        <Title description="Vytvoří vztah mezi tímto záznamem typu {0} a jinou příležitostí, obchodním vztahem či kontaktem. &lt;br&gt;&lt;br&gt;Přidružení tohoto záznamu typu {0} k jinému záznamu usnadňuje propojení souvisejících informací, například u kterých obchodních vztahů jsou aktuálně otevřeny příležitosti." languagecode="1029" />
+        <Title description="Opret en relation mellem denne {0} og en salgsmulighed, et firma eller en kontakt. &lt;br&gt;&lt;br&gt;Tilknytning af dette {0} med en anden post gør det lettere at holde relaterede oplysninger forbundne, f.eks. hvilke firmaer, der i øjeblikket har salgsmuligheder." languagecode="1030" />
+        <Title description="Erstellt eine Beziehung zwischen diesem Element vom Typ &quot;{0}&quot; und einer Verkaufschance, einer Firma oder einem Kontakt. &lt;br&gt;&lt;br&gt;Das Zuordnen dieses Elements vom Typ &quot;{0}&quot; zu einem anderen Datensatz vereinfacht das Verbinden verwandter Informationen, z.B. welche Firmen aktuell über Verkaufschancen verfügen." languagecode="1031" />
+        <Title description="Δημιουργήστε μια σχέση μεταξύ αυτού του στοιχείου {0} και μιας ευκαιρίας, λογαριασμού ή επαφής. &lt;br&gt;&lt;br&gt;Η συσχέτιση αυτού του στοιχείου {0} με άλλη καρτέλα βοηθά να διατηρηθούν συνδεδεμένες οι σχετικές πληροφορίες, όπως ποιοι λογαριασμοί έχουν αυτήν τη στιγμή ευκαιρίες." languagecode="1032" />
+        <Title description="Cree una relación entre este {0} y una oportunidad, cuenta o contacto. &lt;br&gt;&lt;br&gt;Al asociar este {0} con otro registro facilita mantener conectada la información relacionada, como las cuentas que actualmente tienen oportunidades." languagecode="3082" />
+        <Title description="Saate luua seose selle olemi ({0}) ja müügivõimaluse, ettevõtte või kontakti vahel. &lt;br&gt;&lt;br&gt;Kui seostada see {0} mõne muu kirjega, on hõlpsam omavahel seotud teavet (nt seda, milliste ettevõtetega on praegu seotud müügivõimalusi) koos hoida." languagecode="1061" />
+        <Title description="Sortu erlazio bat {0} honen eta abagune, kontu edo kontaktu baten artean. &lt;br&gt;&lt;br&gt;{0} hau beste erregistro batekin erlazionatzen baduzu, errazago mantenduko duzu erlazionatuta dagoen informazioa konektatuta; adibidez, zer kontuk dituen unean abaguneak. " languagecode="1069" />
+        <Title description="Luo suhde kohteen {0} ja mahdollisuuden, asiakkaan tai yhteyshenkilön välille. &lt;br&gt;&lt;br&gt;Kohteen {0} liittäminen toiseen tietueeseen helpottaa toisiinsa liittyvien tietojen hallintaa, kuten sitä, mihin asiakkaisiin liittyy ajankohtaisia mahdollisuuksia." languagecode="1035" />
+        <Title description="Créez une relation entre cette entité {0} et une opportunité, un compte ou un contact. &lt;br&gt;&lt;br&gt;L’association de cette entité {0} à un autre enregistrement permet de garder les informations liées connectées plus facilement, par exemple quels comptes ont actuellement des opportunités." languagecode="1036" />
+        <Title description="Crear unha relación entre esta entidade {0} e unha oportunidade, conta ou contacto. &lt;br&gt;&lt;br&gt;Asociando {0} con outro rexistro facilita a conexión entre informacións relacionadas como, por exemplo, que contas teñen actualmente oportunidades." languagecode="1110" />
+        <Title description="צור קשר בין פריט {0} זה לבין הזדמנות, תיק לקוח או איש קשר. &lt;br&gt;&lt;br&gt;שיוך פריט {0} זה לרשומה אחרת מקל עליך לשמור ביחד את המידע המקושר, כגון אילו תיקי לקוחות כוללים כרגע הזדמנויות." languagecode="1037" />
+        <Title description="इस {0} और कोई अवसर, खाता या संपर्क के बीच एक संबंध बनाएँ. &lt;br&gt;&lt;br&gt;इस {0} को एक अन्य रिकॉर्ड के साथ जोड़ना संबंधित जानकारी को जोड़े रखने में मदद करता है, जैसे किन खातों में अभी अवसर हैं." languagecode="1081" />
+        <Title description="Stvorite odnos između {0} i prilike, kupca ili kontakta. &lt;br&gt;&lt;br&gt;Pridruživanje {0} drugom zapisu olakšava povezanost podataka npr. o kupcima s trenutnim prilikama." languagecode="1050" />
+        <Title description="Kapcsolat létrehozása ezen {0} és egy lehetőség, partner vagy kapcsolattartó között. &lt;br&gt;&lt;br&gt;A(z) {0} másik rekordhoz való társítása lehetőséget ad az egymáshoz kapcsolódó információk együtt tartására, például hogy jelenleg mely partnereknél van lehetőség." languagecode="1038" />
+        <Title description="Membuat relasi antara {0} ini dan peluang, akun, atau kontak. &lt;br&gt;&lt;br&gt;Mengaitkan {0} ini dengan data lain akan memudahkan Anda mempertahankan hubungan informasi terkait, seperti akun mana yang saat ini memiliki peluang." languagecode="1057" />
+        <Title description="Consente di creare una relazione tra questa entità {0} e un'opportunità, un account o un contatto. &lt;br&gt;&lt;br&gt;L'associazione di questa entità {0} a un altro record semplifica il mantenimento della connessione tra le informazioni correlate, ad esempio gli account per cui esistono attualmente opportunità." languagecode="1040" />
+        <Title description="この {0} と営業案件、取引先企業、または取引先担当者との関係を作成します。&lt;br&gt;&lt;br&gt;この {0} を他のレコードに関連付けることで、営業案件に現在対応している取引先企業など、関連情報を簡単に結び付けることができます。" languagecode="1041" />
+        <Title description="Осы {0} және мүмкіндік, тіркелгі немесе контакт арасында қарым-қатынас орнатыңыз. &lt;br&gt;&lt;br&gt;Бұл {0} басқа жазбамен байланыстыру тіркелгілердің қазір мүмкіндіктері болатын сияқты қатысты ақпаратты қосып ұстауды жеңілдетеді." languagecode="1087" />
+        <Title description="이 {0}과(와) 영업 기회, 거래처, 연락처 간에 관계를 만듭니다. &lt;br&gt;&lt;br&gt;이 {0}과(와) 다른 레코드를 연결하면 어떤 거래처가 현재 영업 기회를 보유하고 있는지와 같이 관련 정보를 쉽게 연결할 수 있습니다." languagecode="1042" />
+        <Title description="Kurkite {0} ir galimybės, kliento ar kontakto ryšį. &lt;br&gt;&lt;br&gt;{0} susiejus su kitu įrašu lengviau išlaikyti susietą informaciją, pvz., kurie klientai šiuo metu turi galimybių." languagecode="1063" />
+        <Title description="Pievienot relāciju starp šo entītiju {0} un iespēju, uzņēmumu vai kontaktpersonu.&lt;br&gt;&lt;br&gt;Šīs entītijas {0} saistīšana ar citu ierakstu atvieglos saistītās informācijas aktualitātes uzturēšanu, piemēram, nodrošinās informāciju par uzņēmumiem, kuriem pašlaik ir iespējas." languagecode="1062" />
+        <Title description="Cipta perhubungan antara {0} ini dan suatu peluang, akaun, atau kenalan. &lt;br&gt;&lt;br&gt;Mengaitkan {0} ini dengan rekod lain akan membuatnya lebih mudah mempertahankan keterhubungan maklumat yang berkaitan, seperti akaun mana yang semasa mempunyai peluang." languagecode="1086" />
+        <Title description="Opprett en relasjon mellom {0} og en salgsmulighet, forretningsforbindelse eller kontakt. &lt;br&gt;&lt;br&gt;Hvis du knytter {0} til en annen oppføring, blir det lettere å ha relatert informasjon tilknyttet, for eksempel hvilke forretningsforbindelser som i øyeblikket har salgsmuligheter." languagecode="1044" />
+        <Title description="Hiermee maakt u een relatie tussen deze {0} en een verkoopkans, account of contactpersoon. &lt;br&gt;&lt;br&gt;Als u deze {0} koppelt aan een andere record, is het gemakkelijker om gerelateerde gegevens te verbinden, zoals welke accounts momenteel verkoopkansen hebben." languagecode="1043" />
+        <Title description="Dodaj relację między rekordem typu {0} a szansą sprzedaży, klientem lub kontaktem. &lt;br&gt;&lt;br&gt;. Skojarzenie rekordu typu {0} z innym rekordem ułatwia łączenie powiązanych informacji, takich jak np. o klientach mających aktualnie szanse sprzedaży." languagecode="1045" />
+        <Title description="Crie uma relação entre {0} e uma oportunidade, uma conta ou um contato. &lt;br&gt;&lt;br&gt;A associação de {0} a outro registro torna fácil manter as informações relacionadas conectadas, por exemplo, quais contas têm oportunidades no momento." languagecode="1046" />
+        <Title description="Criar uma relação entre esta entidade ({0}) e uma oportunidade, conta ou contacto. &lt;br&gt;&lt;br&gt;A associação desta entidade ({0}) a outro registo simplifica a manutenção das informações relacionadas em conjunto, tais como as contas que têm oportunidades atualmente." languagecode="2070" />
+        <Title description="Creați o relație între acest/această {0} și o oportunitate, un cont sau o persoană de contact. &lt;br&gt;&lt;br&gt;Asocierea acestui/acestei {0} cu altă înregistrare ajută ca informațiile corelate să rămână conectate, de exemplu care dintre conturi au în prezent oportunități." languagecode="1048" />
+        <Title description="Создать отношение между {0} и возможной сделкой, организацией или контактом. &lt;br&gt;&lt;br&gt;Сопоставление {0} c другой записью облегчает объединение связанных сведений, например о том, у каких организаций в настоящее время есть возможные сделки." languagecode="1049" />
+        <Title description="Vytvorí vzťah medzi touto entitou typu {0} a príležitosťou, obchodným vzťahom alebo kontaktom. &lt;br&gt;&lt;br&gt;Priradenie tejto entity typu {0} k inému záznamu uľahčuje prepojenie súvisiacich informácií, takže môžete napríklad zistiť, ktoré obchodné vzťahy majú príležitosti." languagecode="1051" />
+        <Title description="Ustvarite odnos med to entiteto {0} in priložnostjo, kupcem ali stikom. &lt;br&gt;&lt;br&gt;Če to entiteto {0} povežete z drugim zapisom, lahko preprosto povežete sorodne informacije, na primer, kateri kupci imajo trenutno priložnosti." languagecode="1060" />
+        <Title description="Креирајте релацију између овог ентитета типа {0} и могућности за пословање, пословног контакта или контакта. &lt;br&gt;&lt;br&gt;Повезивање овог ентитета типа {0} са другим записом олакшава одржавање повезаности сродних информација, на пример који пословни контакти тренутно имају могућности за пословање." languagecode="10266" />
+        <Title description="Kreirajte relaciju između ovog entiteta tipa {0} i mogućnosti za poslovanje, poslovnog kontakta ili kontakta. &lt;br&gt;&lt;br&gt;Povezivanje ovog entiteta tipa {0} sa drugim zapisom olakšava održavanje povezanosti srodnih informacija, na primer koji poslovni kontakti trenutno imaju mogućnosti za poslovanje." languagecode="9242" />
+        <Title description="Lägg till en relation mellan denna/detta {0} och en affärsmöjlighet, ett konto eller en kontakt. &lt;br&gt;&lt;br&gt;Om du associerar denna/detta {0} till en annan post är det enklare att koppla ihop relaterad information, till exempel vilka konton som för närvarande har affärsmöjligheter." languagecode="1053" />
+        <Title description="สร้างความสัมพันธ์ระหว่าง{0}นี้กับโอกาสทางการขาย ลูกค้าองค์กร หรือผู้ติดต่อ &lt;br&gt;&lt;br&gt;การกำหนดความสัมพันธ์{0}นี้กับอีกเรกคอร์ดหนึ่งจะทำให้การเก็บข้อมูลที่เชื่อมต่อกันซึ่งสัมพันธ์กันง่ายมากขึ้น เช่น ลูกค้าองค์กรใดที่มีโอกาสทางการขายอยู่ในตอนนี้ " languagecode="1054" />
+        <Title description="Bu {0} ile bir fırsat, firma veya ilgili kişi arasında bir ilişki oluşturun. &lt;br&gt;&lt;br&gt;Bu {0} öğesinin başka bir kayıtla ilişkilendirilmesi, hangi firmaların geçerli olarak fırsata sahip olduğu gibi ilgili bilgiler arasında bağlantı kurulmasını kolaylaştırır." languagecode="1055" />
+        <Title description="Створення зв’язку між сутністю &quot;{0}&quot; та потенційною угодою, бізнес-партнером або контактною особою. &lt;br&gt;&lt;br&gt;Зв’язування &quot;{0}&quot; з іншим записом спрощує поєднання пов’язаних відомостей (наприклад, відомостей про бізнес-партнерів, які наразі мають потенційні угоди)." languagecode="1058" />
+        <Title description="Tạo mối quan hệ giữa {0} này và một cơ hội, khách hàng hoặc người liên hệ. &lt;br&gt;&lt;br&gt;Liên kết {0} này với bản ghi khác giúp dễ giữ kết nối thông tin liên quan hơn, ví dụ như khách hàng này có cơ hội." languagecode="1066" />
+        <Title description="在此{0}和某个商机、客户或联系人之间创建关系。&lt;br&gt;&lt;br&gt;将此{0}与其他记录相关联可以更轻松地保持相关信息之间的联系，例如目前哪些客户具有商机。" languagecode="2052" />
+        <Title description="建立此{0}與商機、客戶或連絡人之間的關係。&lt;br&gt;&lt;br&gt;將此{0}與其他記錄關聯可協助您連結相關資訊，例如哪些客戶目前有商機。" languagecode="3076" />
+        <Title description="建立此{0}與商機、客戶或連絡人之間的關係。&lt;br&gt;&lt;br&gt;將此{0}與其他記錄關聯可協助您連結相關資訊，例如哪些客戶目前有商機。" languagecode="1028" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

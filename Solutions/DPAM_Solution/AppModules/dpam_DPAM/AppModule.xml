@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>dpam_DPAM</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="62" schemaName="dpam_DPAM" />
+    <AppModuleComponent type="29" id="{919e14d1-6489-4852-abd0-a63a6ecaac5d}" />
+    <AppModuleComponent type="29" id="{3e8ebee6-a2bc-4451-9c5f-b146b085413a}" />
+    <AppModuleComponent type="29" id="{0ffbcde4-61c1-4355-aa89-aa1d7b2b8792}" />
+    <AppModuleComponent type="60" id="{a9ae972b-4462-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="60" id="{8e39483e-915e-ec11-8f8f-000d3aad6726}" />
+    <AppModuleComponent type="60" id="{584e89ae-5c95-ec11-b400-6045bd878fef}" />
+    <AppModuleComponent type="60" id="{e93b8ac8-cf63-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="60" id="{866e4795-d263-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="60" id="{bb9f7fcb-4d5e-ec11-8f8f-000d3aad6726}" />
+    <AppModuleComponent type="60" id="{6fa06076-835e-ec11-8f8f-000d3aad6726}" />
+    <AppModuleComponent type="60" id="{870de426-a85d-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="60" id="{92e4adc0-df63-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="1" schemaName="actioncard" />
+    <AppModuleComponent type="26" id="{92afd454-0f2e-4397-a1c8-05e37c6ad699}" />
+    <AppModuleComponent type="1" schemaName="activitypointer" />
+    <AppModuleComponent type="26" id="{ed1f0041-4f6b-4171-8757-4ac44c2fcafa}" />
+    <AppModuleComponent type="26" id="{fca5b454-8c5e-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001899}" />
+    <AppModuleComponent type="26" id="{43742134-0b79-ec11-8d21-6045bd906501}" />
+    <AppModuleComponent type="26" id="{6e7ab44b-0b79-ec11-8d21-6045bd906892}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001900}" />
+    <AppModuleComponent type="26" id="{1795e537-6270-4c62-8175-77cf045315f3}" />
+    <AppModuleComponent type="59" id="{edf35649-5293-de11-97d4-00155da3b01e}" />
+    <AppModuleComponent type="1" schemaName="adminsettingsentity" />
+    <AppModuleComponent type="1" schemaName="appointment" />
+    <AppModuleComponent type="1" schemaName="campaign" />
+    <AppModuleComponent type="1" schemaName="incident" />
+    <AppModuleComponent type="1" schemaName="incidentresolution" />
+    <AppModuleComponent type="1" schemaName="category" />
+    <AppModuleComponent type="1" schemaName="competitor" />
+    <AppModuleComponent type="1" schemaName="connection" />
+    <AppModuleComponent type="1" schemaName="connectionrole" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001004}" />
+    <AppModuleComponent type="26" id="{b1328427-6d62-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{ab7547e5-1772-ec11-8943-000d3a2d692f}" />
+    <AppModuleComponent type="26" id="{e51fdf2d-8fa3-ec11-983f-000d3a4cbca6}" />
+    <AppModuleComponent type="26" id="{73196907-6d62-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{3a282da1-5d90-e011-95ae-00155d9cfa03}" />
+    <AppModuleComponent type="26" id="{3a282da1-5d90-e011-95ae-00155d9cfa02}" />
+    <AppModuleComponent type="26" id="{927e6cd8-b3ed-4c20-a154-b8bd8a86d172}" />
+    <AppModuleComponent type="26" id="{69103b65-f27e-45ce-a69c-eb1a7c805a45}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001003}" />
+    <AppModuleComponent type="26" id="{1c2994b1-95a3-ec11-983f-000d3a4cbc25}" />
+    <AppModuleComponent type="26" id="{74a6d7ac-1772-ec11-8943-000d3a2d6db7}" />
+    <AppModuleComponent type="26" id="{ab582fb0-a846-453e-ad88-77f75ce91264}" />
+    <AppModuleComponent type="26" id="{519c8018-5c62-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{83b3f739-3762-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{5bfb37d7-8ea3-ec11-983f-000d3a4bd58d}" />
+    <AppModuleComponent type="26" id="{099de0cc-1772-ec11-8943-000d3a2d692f}" />
+    <AppModuleComponent type="26" id="{e0086df5-6c62-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{4129e27c-d0ce-e811-8158-000d3afd9907}" />
+    <AppModuleComponent type="26" id="{38962192-31ff-46fc-9ac3-2db0a7d9dc7c}" />
+    <AppModuleComponent type="1" schemaName="dpam_contactfrequency" />
+    <AppModuleComponent type="26" id="{4c960ccb-e063-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{9bca0846-e163-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{564fc07f-2f6c-4b1f-a353-b9019d414bc7}" />
+    <AppModuleComponent type="26" id="{d6b002e9-e063-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{9792839a-e063-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{f4df660d-e163-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="1" schemaName="dpam_contacttitle" />
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001002}" />
+    <AppModuleComponent type="26" id="{bf52ce22-3f63-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{8c9d03a9-5b62-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{a1f5f0bc-5b62-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{61273827-328e-e011-95ae-00155d9cfa03}" />
+    <AppModuleComponent type="26" id="{61273827-328e-e011-95ae-00155d9cfa02}" />
+    <AppModuleComponent type="26" id="{cfbcd7af-aee5-4e45-8ecc-c040d4020581}" />
+    <AppModuleComponent type="26" id="{c147f1f7-1d78-4d10-85bf-7e03b79f74fa}" />
+    <AppModuleComponent type="26" id="{49fb9771-09e1-4e70-b193-198752493577}" />
+    <AppModuleComponent type="26" id="{7de498c2-508f-49a4-b2e8-d550d5b1b9ee}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001001}" />
+    <AppModuleComponent type="26" id="{d234426e-1f37-4944-9255-50e19b541c4c}" />
+    <AppModuleComponent type="26" id="{227b8b7d-3a54-ec11-8c62-00224881148a}" />
+    <AppModuleComponent type="26" id="{2a16310d-5b62-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{4749d4be-9961-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{3eee1237-5b62-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{d15e48f6-e8fe-e811-8165-000d3af92c6e}" />
+    <AppModuleComponent type="1" schemaName="dpam_country" />
+    <AppModuleComponent type="26" id="{f55a17ef-c446-402c-8a3b-37e196e5cad8}" />
+    <AppModuleComponent type="1" schemaName="dpam_counterpartybusinesssegmentation" />
+    <AppModuleComponent type="1" schemaName="dpam_counterpartycompliancesegmentation" />
+    <AppModuleComponent type="1" schemaName="dpam_counterpartylegalform" />
+    <AppModuleComponent type="1" schemaName="dpam_cplocalbusinesssegmentation" />
+    <AppModuleComponent type="1" schemaName="dpam_counterpartymifidcategory" />
+    <AppModuleComponent type="1" schemaName="transactioncurrency" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_customerjourney" />
+    <AppModuleComponent type="1" schemaName="dpam_departments" />
+    <AppModuleComponent type="60" id="{9dbfa48f-6b14-ec11-b6e6-6045bd887400}" />
+    <AppModuleComponent type="60" id="{8df12b35-1b05-40d8-bdae-8928382e1d8b}" />
+    <AppModuleComponent type="60" id="{d7bfeed8-e180-4c8a-a4ed-cd1c71ed360e}" />
+    <AppModuleComponent type="26" id="{bb1dc2ce-5ea3-ec11-983f-000d3a4cbb90}" />
+    <AppModuleComponent type="26" id="{1476b7b1-5fa3-ec11-983f-000d3a4cbb90}" />
+    <AppModuleComponent type="26" id="{ca7c66e9-afb0-4c00-9619-0f54b5cdd9a8}" />
+    <AppModuleComponent type="26" id="{94a60b1a-f7d7-445c-8182-9c209b3e5473}" />
+    <AppModuleComponent type="26" id="{a04c3c79-5366-484c-9d96-ef9c6cbc7668}" />
+    <AppModuleComponent type="26" id="{00b5d348-5ea3-ec11-983f-000d3a4cbc25}" />
+    <AppModuleComponent type="26" id="{79f7ce42-5fa3-ec11-983f-000d3a4cbca6}" />
+    <AppModuleComponent type="26" id="{006d2d8e-5ea3-ec11-983f-000d3a4bd58d}" />
+    <AppModuleComponent type="26" id="{2b86f66c-5fa3-ec11-983f-000d3a4cb17e}" />
+    <AppModuleComponent type="1" schemaName="discounttype" />
+    <AppModuleComponent type="1" schemaName="email" />
+    <AppModuleComponent type="1" schemaName="emailsignature" />
+    <AppModuleComponent type="1" schemaName="template" />
+    <AppModuleComponent type="1" schemaName="entitlement" />
+    <AppModuleComponent type="1" schemaName="msevtmgt_event" />
+    <AppModuleComponent type="1" schemaName="msdyn_forecastinstance" />
+    <AppModuleComponent type="1" schemaName="msdyn_forecastconfiguration" />
+    <AppModuleComponent type="1" schemaName="msdyn_forecastdefinition" />
+    <AppModuleComponent type="1" schemaName="msdyn_forecastrecurrence" />
+    <AppModuleComponent type="1" schemaName="goal" />
+    <AppModuleComponent type="26" id="{0e24f0d5-c2e1-4b3d-9f43-e9c817c811df}" />
+    <AppModuleComponent type="26" id="{61f1b589-3daf-45e1-96bf-9bf7b12af252}" />
+    <AppModuleComponent type="59" id="{aec6d51c-ea67-df11-ae90-00155d2e3002}" />
+    <AppModuleComponent type="59" id="{9dc7adf6-b76f-df11-986c-00155d2e3002}" />
+    <AppModuleComponent type="1" schemaName="metric" />
+    <AppModuleComponent type="1" schemaName="dpam_greeting" />
+    <AppModuleComponent type="1" schemaName="invoice" />
+    <AppModuleComponent type="1" schemaName="invoicedetail" />
+    <AppModuleComponent type="1" schemaName="knowledgearticle" />
+    <AppModuleComponent type="1" schemaName="lead" />
+    <AppModuleComponent type="26" id="{cf0f528f-7862-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{679aa09b-7262-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000000666700}" />
+    <AppModuleComponent type="26" id="{ecbac1a3-f8d8-4423-8f7e-10b11119739a}" />
+    <AppModuleComponent type="26" id="{94f485c8-7262-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001005}" />
+    <AppModuleComponent type="26" id="{51f73b21-7362-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{0cfebb83-885e-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001006}" />
+    <AppModuleComponent type="59" id="{eec61ec1-3a5f-df11-ae90-00155d2e3002}" />
+    <AppModuleComponent type="59" id="{33c444f6-9416-404f-b261-6850651513dc}" />
+    <AppModuleComponent type="59" id="{ad936200-375f-df11-ae90-00155d2e3002}" />
+    <AppModuleComponent type="59" id="{b92a5119-193a-e711-80e3-00155d42a416}" />
+    <AppModuleComponent type="59" id="{f5976c58-5693-de11-97d4-00155da3b01e}" />
+    <AppModuleComponent type="59" id="{ee3c733d-5693-de11-97d4-00155da3b01e}" />
+    <AppModuleComponent type="59" id="{d311600c-163a-e711-80e3-00155d42a416}" />
+    <AppModuleComponent type="59" id="{3ed18b7c-5693-de11-97d4-00155da3b01e}" />
+    <AppModuleComponent type="1" schemaName="dpam_leadsource" />
+    <AppModuleComponent type="1" schemaName="leadtoopportunitysalesprocess" />
+    <AppModuleComponent type="1" schemaName="dpam_location" />
+    <AppModuleComponent type="60" id="{a0c22f59-ecdf-eb11-bacb-00224884dc3d}" />
+    <AppModuleComponent type="60" id="{87a4935f-f07c-4937-b9f9-09a8979d41c7}" />
+    <AppModuleComponent type="60" id="{7e953491-6ab6-494c-8f35-487fad47116e}" />
+    <AppModuleComponent type="26" id="{bcc85b1e-47d9-419a-b9bd-a7bb9739dc62}" />
+    <AppModuleComponent type="26" id="{41ab0a06-6814-ec11-b6e6-6045bd88739f}" />
+    <AppModuleComponent type="26" id="{1629a154-4cc7-45d6-8d21-76650534e45f}" />
+    <AppModuleComponent type="26" id="{b411b2b3-7316-4883-9cbb-2b25fdac7caf}" />
+    <AppModuleComponent type="26" id="{3795b531-1ad3-4073-803b-048cfad74d3b}" />
+    <AppModuleComponent type="26" id="{b5b52d63-3e29-47cf-9110-05512d75e81c}" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_marketingemail" />
+    <AppModuleComponent type="1" schemaName="opportunity" />
+    <AppModuleComponent type="26" id="{8410174a-e263-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{341c8528-e263-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{c900ee64-7e62-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{f98d4def-c663-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{99d6a0a8-e263-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{efaff73d-c763-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{23ffb5ee-8062-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{1d22451c-aa5d-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="26" id="{efd64c16-aa5d-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="26" id="{fc76fa5b-e363-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{a2b400e1-a95d-ec11-8f8f-000d3aad6726}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010003000}" />
+    <AppModuleComponent type="26" id="{eb38683f-df63-ec11-8f8f-6045bd86f40c}" />
+    <AppModuleComponent type="26" id="{02109042-e363-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{b82b3a81-e263-ec11-8f8f-6045bd86f0e2}" />
+    <AppModuleComponent type="26" id="{0fa11297-a5db-446b-89ee-7b0771d1d590}" />
+    <AppModuleComponent type="59" id="{c1cb81b1-575f-df11-ae90-00155d2e3002}" />
+    <AppModuleComponent type="59" id="{166785b0-073a-e711-80e3-00155d42a416}" />
+    <AppModuleComponent type="59" id="{e91f96d7-1d3e-e711-80e1-00155d871bb4}" />
+    <AppModuleComponent type="59" id="{18a6e702-ad5d-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="59" id="{0e21b4de-ac5d-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="59" id="{fa841229-2482-de11-9ff3-00155da3b012}" />
+    <AppModuleComponent type="59" id="{87293554-2482-de11-9ff3-00155da3b012}" />
+    <AppModuleComponent type="59" id="{6693c150-ad5d-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="59" id="{3358de68-ad5d-ec11-8f8f-000d3aad69ba}" />
+    <AppModuleComponent type="59" id="{8bc5fb18-48f2-4782-9e16-3d452fa4ddce}" />
+    <AppModuleComponent type="59" id="{ebbe5dd1-8397-4be4-aa79-7b29a3af9743}" />
+    <AppModuleComponent type="1" schemaName="opportunityclose" />
+    <AppModuleComponent type="1" schemaName="opportunityproduct" />
+    <AppModuleComponent type="1" schemaName="opportunitysalesprocess" />
+    <AppModuleComponent type="1" schemaName="salesorder" />
+    <AppModuleComponent type="1" schemaName="salesorderdetail" />
+    <AppModuleComponent type="1" schemaName="phonecall" />
+    <AppModuleComponent type="1" schemaName="phonetocaseprocess" />
+    <AppModuleComponent type="1" schemaName="msdyn_playbookinstance" />
+    <AppModuleComponent type="1" schemaName="msdyn_playbookactivity" />
+    <AppModuleComponent type="1" schemaName="msdyn_playbookactivityattribute" />
+    <AppModuleComponent type="1" schemaName="msdyn_callablecontext" />
+    <AppModuleComponent type="1" schemaName="msdyn_playbookcategory" />
+    <AppModuleComponent type="1" schemaName="msdyn_playbooktemplate" />
+    <AppModuleComponent type="1" schemaName="pricelevel" />
+    <AppModuleComponent type="1" schemaName="productpricelevel" />
+    <AppModuleComponent type="1" schemaName="product" />
+    <AppModuleComponent type="1" schemaName="dpam_productinterest" />
+    <AppModuleComponent type="26" id="{1c81044c-7ca3-ec11-983f-000d3a4cb161}" />
+    <AppModuleComponent type="26" id="{39f20568-80a3-ec11-983f-000d3a4cb161}" />
+    <AppModuleComponent type="26" id="{ccb7c4b9-7ca3-ec11-983f-000d3a4cbca6}" />
+    <AppModuleComponent type="26" id="{989d9504-70a3-ec11-983f-000d3a4cbca6}" />
+    <AppModuleComponent type="26" id="{4418335a-75a3-ec11-983f-000d3a4cbc25}" />
+    <AppModuleComponent type="26" id="{0afdb5ff-7ca3-ec11-983f-000d3a4cbc25}" />
+    <AppModuleComponent type="26" id="{521ae5bd-677f-49ed-b567-62e4965511b9}" />
+    <AppModuleComponent type="26" id="{a5420954-ac2e-4e16-a199-7e4a5fb49fcb}" />
+    <AppModuleComponent type="26" id="{03a2126d-17e3-49ec-86d7-23a9b0958ae1}" />
+    <AppModuleComponent type="1" schemaName="productsubstitute" />
+    <AppModuleComponent type="1" schemaName="dynamicproperty" />
+    <AppModuleComponent type="1" schemaName="queueitem" />
+    <AppModuleComponent type="1" schemaName="bulkoperation" />
+    <AppModuleComponent type="1" schemaName="quote" />
+    <AppModuleComponent type="1" schemaName="quotedetail" />
+    <AppModuleComponent type="1" schemaName="goalrollupquery" />
+    <AppModuleComponent type="1" schemaName="msdyn_segment" />
+    <AppModuleComponent type="1" schemaName="dpam_settings" />
+    <AppModuleComponent type="1" schemaName="socialprofile" />
+    <AppModuleComponent type="1" schemaName="msdyn_suggestedactivity" />
+    <AppModuleComponent type="1" schemaName="msdyn_suggestedcontact" />
+    <AppModuleComponent type="1" schemaName="task" />
+    <AppModuleComponent type="1" schemaName="team" />
+    <AppModuleComponent type="1" schemaName="territory" />
+    <AppModuleComponent type="1" schemaName="uom" />
+    <AppModuleComponent type="1" schemaName="uomschedule" />
+    <AppModuleComponent type="1" schemaName="systemuser" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{46d76373-d937-ec11-8c64-000d3a223bf5}" />
+    <Role id="{8a6c01d0-d537-ec11-8c64-000d3a223bf5}" />
+    <Role id="{d85319e3-4d20-ec11-b6e6-000d3aaf3bd5}" />
+    <Role id="{02d79819-d837-ec11-8c64-000d3a223bf5}" />
+    <Role id="{87a1b72d-d937-ec11-8c64-000d3a223bf5}" />
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+    <Role id="{6c3acc3d-d837-ec11-8c64-000d3a223bf5}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Sales" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="DPAM Sales" languagecode="1033" />
+  </Descriptions>
+  <appelements>
+    <appelement uniquename="dpam_dpam_DPAM_canvasappid_dpam_deactivatecontactcustompage_57457">
+      <canvasappid>
+        <name>dpam_deactivatecontactcustompage_57457</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>dpam_dpam_DPAM_canvasappid_dpam_deactivatecontactcustompage_57457</name>
+    </appelement>
+    <appelement uniquename="dpam_dpam_DPAM_canvasappid_dpam_deactivatecounterpartycustompage_ae22b">
+      <canvasappid>
+        <name>dpam_deactivatecounterpartycustompage_ae22b</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>dpam_dpam_DPAM_canvasappid_dpam_deactivatecounterpartycustompage_ae22b</name>
+    </appelement>
+    <appelement uniquename="dpam_dpam_DPAM_canvasappid_dpam_disqualifyleadcustompage_3731d">
+      <canvasappid>
+        <name>dpam_disqualifyleadcustompage_3731d</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>dpam_dpam_DPAM_canvasappid_dpam_disqualifyleadcustompage_3731d</name>
+    </appelement>
+    <appelement uniquename="dpam_dpam_DPAM_canvasappid_dpam_dpamdefaultcommandlibrary_f7e1d">
+      <canvasappid>
+        <name>dpam_dpamdefaultcommandlibrary_f7e1d</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>dpam_dpam_DPAM_canvasappid_dpam_dpamdefaultcommandlibrary_f7e1d</name>
+    </appelement>
+    <appelement uniquename="dpam_dpam_DPAM_canvasappid_dpam_leicodesearchpage_1806a">
+      <canvasappid>
+        <name>dpam_leicodesearchpage_1806a</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>dpam_dpam_DPAM_canvasappid_dpam_leicodesearchpage_1806a</name>
+    </appelement>
+    <appelement uniquename="dpam_dpam_DPAM_canvasappid_dpam_setcontactfrequenciespage_ba3d3">
+      <canvasappid>
+        <name>dpam_setcontactfrequenciespage_ba3d3</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>dpam_dpam_DPAM_canvasappid_dpam_setcontactfrequenciespage_ba3d3</name>
+    </appelement>
+  </appelements>
+</AppModule>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{5f4cf20d-8c25-496b-958a-12882befb497}</formid>
+    <IntroducedVersion>1.1.2.7</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form maxWidth="400">
+      <tabs>
+        <tab IsUserDefined="0" id="{461c16a2-270f-4796-beb0-b2010e91af81}" labelid="{7f58b761-30d4-4c27-bb0b-cfc924fcb867}">
+          <labels>
+            <label description="Account Card" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="25%">
+              <sections>
+                <section name="ColorStrip" showlabel="false" showbar="false" IsUserDefined="0" columns="1" id="{9c901e32-89a9-4e92-a27e-2c570cb2c2bd}" labelid="{f2962294-3532-4823-aadd-e2fc2fa1e4db}">
+                  <labels>
+                    <label description="ColorStrip" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{0066eef9-8cbb-4405-9b22-09b450ba7e0b}" showlabel="false" labelid="{061ac32c-4e3e-4fff-87c6-1a128e30209a}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="75%">
+              <sections>
+                <section name="CardHeader" showlabel="false" showbar="false" IsUserDefined="0" columns="111" id="{4b1d5836-9b34-4e67-9fb3-9dd8b64c528d}" labelid="{dca86043-a431-43f0-a962-32359f10719c}">
+                  <labels>
+                    <label description="Header" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7eb82c02-3a08-b568-ae0e-5a18beaacb6d}" showlabel="true" locklevel="0" labelid="{fb3daab2-6301-430b-a88c-70161b99c135}">
+                        <labels>
+                          <label description="Primary Contact" languagecode="1033" />
+                        </labels>
+                        <control id="primarycontactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="primarycontactid" disabled="false" />
+                      </cell>
+                      <cell id="{ca6dec6b-1e59-561c-de50-17ddc52d86a7}" showlabel="true" locklevel="0" labelid="{891c0e3e-b386-4d9a-b69f-9a5c39a37c38}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+                      </cell>
+                      <cell id="{8c71e452-9f88-4429-a64d-4a8c832c4ddb}" showlabel="false" labelid="{05325030-152f-472c-83d3-3883fab8ddf9}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="CardDetails" showlabel="false" showbar="false" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" id="{a1a466b4-32c7-421e-aabf-d180c9d08be1}" labelid="{951dc47e-159d-4d1b-ab14-afb201a41214}">
+                  <labels>
+                    <label description="Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1bac4da3-8a12-3d6c-30b6-1b5437ddde73}" showlabel="true" locklevel="0" labelid="{09cfd0dd-f957-4912-a60f-58e277420ede}">
+                        <labels>
+                          <label description="Account Name" languagecode="1033" />
+                        </labels>
+                        <control id="name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{159be95e-19e4-aad6-7b11-71d37ee1ec12}" showlabel="true" locklevel="0" labelid="{a67c3c5d-196a-4f59-a066-5b3fb2bee16c}">
+                        <labels>
+                          <label description="Address 1: City" languagecode="1033" />
+                        </labels>
+                        <control id="address1_city" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="address1_city" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="CardFooter" showlabel="false" showbar="false" IsUserDefined="0" columns="1111" id="{40f8cd91-612d-41e8-b2f6-d89a6ad40747}" labelid="{80320282-657c-4dfd-bdfe-fef98627f570}">
+                  <labels>
+                    <label description="Footer" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b3a95849-7227-1613-6b6a-439a17575779}" showlabel="true" locklevel="0" labelid="{167d0dcd-67b8-4b50-8f93-ecdfb9b21918}">
+                        <labels>
+                          <label description="Main Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone1" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="telephone1" disabled="false" />
+                      </cell>
+                      <cell id="{a45da234-5c15-1b3b-c4b7-de419c05ce59}" showlabel="true" locklevel="0" labelid="{d45d673b-a993-42bc-9875-97d28bacc8fe}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="emailaddress1" disabled="false" />
+                      </cell>
+                      <cell id="{13b43144-88d2-4af8-a8ae-fbddc71b70bb}" showlabel="false" labelid="{8d9fe360-32ac-4394-bf2b-4d7c11bd5b91}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{693f1343-d841-42d2-84b1-d5714f56914c}" showlabel="false" labelid="{74b1634f-37fa-4572-bbb9-8cb83c5efcfa}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="1">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Counterparty Card form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Default Counterparty card form." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

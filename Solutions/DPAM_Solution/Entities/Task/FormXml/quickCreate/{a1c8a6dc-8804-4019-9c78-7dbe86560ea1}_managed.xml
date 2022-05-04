@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a1c8a6dc-8804-4019-9c78-7dbe86560ea1}</formid>
+    <IntroducedVersion>9.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="false" hasmargin="false">
+      <tabs>
+        <tab name="createtask" verticallayout="true" id="{C0134778-AB51-40B0-BE85-CD3F1163DC66}" IsUserDefined="0" locklevel="0" expanded="true" showlabel="false" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="task" showlabel="false" showbar="false" locklevel="0" id="{9F244862-47BB-4FD7-8740-FFABA14E607A}" IsUserDefined="0" layout="varheight" labelwidth="115" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{f3d6698a-924b-45ca-8304-ae0247b3c3f9}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Owner" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{F6078AC5-21F9-44C2-A8EF-BC6F173AB541}" showlabel="true" locklevel="4" ordinalvalue="10003" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{1a5b80bb-694d-4044-a545-066966469335}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="Task Reason" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_mos_taskreason" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="dpam_mos_taskreason" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Task quick create form." languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Task quick create form." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{e136b807-0463-ec11-8f8f-6045bd86f0e2}</WebResourceId>
+  <Name>dpam_/Script/PhoneCall.js</Name>
+  <DisplayName>DPAM_/Script/PhoneCall.js</DisplayName>
+  <LanguageCode>0</LanguageCode>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.9.7.2</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ScriptPhoneCalljsE136B807-0463-EC11-8F8F-6045BD86F0E2</FileName>
+</WebResource>

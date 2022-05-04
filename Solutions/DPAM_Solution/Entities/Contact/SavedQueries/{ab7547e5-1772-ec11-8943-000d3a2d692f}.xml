@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{ab7547e5-1772-ec11-8943-000d3a2d692f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" icon="1" preview="1">
+        <row name="result" id="contactid">
+          <cell name="fullname" width="174" />
+          <cell name="parentcustomerid" width="150" />
+          <cell name="address1_composite" width="290" />
+          <cell name="emailaddress1" width="150" />
+          <cell name="business2" width="100" />
+          <cell name="dpam_mos_jobfunction" width="100" />
+          <cell name="dpam_os_language" width="100" />
+          <cell name="donotemail" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="contact">
+          <attribute name="fullname" />
+          <order attribute="fullname" descending="false" />
+          <attribute name="parentcustomerid" />
+          <attribute name="emailaddress1" />
+          <attribute name="contactid" />
+          <attribute name="address1_composite" />
+          <attribute name="business2" />
+          <attribute name="dpam_mos_jobfunction" />
+          <attribute name="dpam_os_language" />
+          <attribute name="donotemail" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+            <condition attribute="parentcustomerid" operator="null" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.11.3.3</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="All DPAM Active Contacts without counterparty" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

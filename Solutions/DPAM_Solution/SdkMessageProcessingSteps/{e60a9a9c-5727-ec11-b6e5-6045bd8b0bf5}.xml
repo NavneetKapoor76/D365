@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.Opportunity.PreCreateOpportunity: Create of opportunity" SdkMessageProcessingStepId="{e60a9a9c-5727-ec11-b6e5-6045bd8b0bf5}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.Opportunity.PreCreateOpportunity, BDP.DPAM.Plugins.Opportunity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=02a9ccca878456a9</PluginTypeName>
+  <PluginTypeId>03ee3dca-a060-4cdb-a6eb-6b66290bd297</PluginTypeId>
+  <PrimaryEntity>opportunity</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

@@ -1,0 +1,982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form showImage="true" shownavigationbar="true" maxWidth="1900" headerdensity="HighWithControls">
+      <tabs>
+        <tab name="SUMMARY_TAB" id="{15bb2d4b-71da-74ea-3c5b-e497d78a55a2}" IsUserDefined="0" showlabel="true" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="CONTACT_INFORMATION" showlabel="true" showbar="false" id="{9d943649-0387-1882-caa1-36de40d5a86c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{542e581d-cca1-5e40-e6d9-d67a9d1468b4}" showlabel="true" locklevel="0" ordinalvalue="10001" solutionaction="Modified">
+                        <labels>
+                          <label description="Full Name" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="fullname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fullname" disabled="false" uniqueid="{51d5d3c4-9506-5d62-89b4-10536901e253}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{07326cde-7529-ddc0-e421-c0bcddd07b8a}" showlabel="true" ordinalvalue="10004" solutionaction="Modified">
+                        <labels>
+                          <label description="Job Title" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a54c19c9-4722-ce25-60c5-2bb9452680d2}" showlabel="true" locklevel="0" ordinalvalue="10000" solutionaction="Modified">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7d538a97-98eb-b438-72de-57a808b9a308}" showlabel="true" locklevel="0" ordinalvalue="10010" solutionaction="Modified">
+                        <labels>
+                          <label description="Email" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="emailaddress1" disabled="false" uniqueid="{04a6e439-30bd-6d49-135d-62528b2b9437}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{215da2d0-2b64-3481-8d2d-16107d4d7e5b}" showlabel="true" ordinalvalue="10004" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{290b48ba-c0cc-7746-6dda-93e240e4cc78}" showlabel="true" ordinalvalue="10005" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{1b54cdb3-1582-c29e-cc9e-9d4bc2a5700b}" showlabel="true" ordinalvalue="10006" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{408dda0b-48a7-c05c-e29a-56a93eb97172}" showlabel="true" ordinalvalue="10007" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{133d09d6-c374-954a-315b-435e1eeb722c}" showlabel="true" locklevel="0" ordinalvalue="10008" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{43523dc8-e917-4887-9482-a67d4caf9128}" locklevel="0" colspan="1" rowspan="1" visible="true" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="Contact ID" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_contactid" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_contactid" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eccfa736-6b46-4b0f-98f8-50b4eec5873d}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="Job Function" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_mos_jobfunction" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="dpam_mos_jobfunction" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{39f59df4-c459-47c1-bc1a-cc4585a6bf95}" locklevel="0" colspan="1" rowspan="1" showlabel="true" ordinalvalue="10005" solutionaction="Added">
+                        <labels>
+                          <label description="Gender" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_gender" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_gender" disabled="false" uniqueid="{6a19a529-c0d9-02b0-e3c2-8231b93e056c}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{04b57000-6681-9490-bd46-15d2e687004e}" showlabel="true" locklevel="0" ordinalvalue="10006" solutionaction="Added">
+                        <labels>
+                          <label description="Language" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_language" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="dpam_os_language" disabled="false" uniqueid="{3bb58829-a840-923a-5ab1-d896ab648677}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5a1b29d0-d10e-923b-7b6d-d84d855c9628}" showlabel="true" locklevel="0" ordinalvalue="10007" solutionaction="Added">
+                        <labels>
+                          <label description="Greeting" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_greeting" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_greeting" disabled="true" uniqueid="{7be49407-7c30-cb91-d1ae-591b0adbb337}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{02878C22-7F50-4952-9F1B-5BBF959030F3}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1cef87f2-f158-4e48-9a57-1089a5b23cf2}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10008" solutionaction="Added">
+                        <labels>
+                          <label description="Contact Title" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_contacttitle" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_contacttitle" disabled="false">
+                          <parameters>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{F79EA053-E142-496E-A638-7504028E5B64}</DefaultViewId>
+                            <AvailableViewIds>{F79EA053-E142-496E-A638-7504028E5B64},{193803DE-CA73-4371-A438-67E515B79AE5},{A0566D98-F991-4230-BE61-F714153FB950}</AvailableViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ab586d05-753a-4add-aa5c-3cdf3ddf6417}" locklevel="0" ordinalvalue="10009" solutionaction="Added">
+                        <labels>
+                          <label description="Priority Group" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_prioritygroup" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_prioritygroup" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ffac1256-b4be-4efa-a922-d72128eeefac}" locklevel="0" colspan="1" rowspan="1" visible="false" ordinalvalue="10011" solutionaction="Added">
+                        <labels>
+                          <label description="Email Opt-in" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_emailoptin" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_emailoptin" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{086fc53f-103a-4a57-b9ec-1cc8e6fe329d}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10012" solutionaction="Added">
+                        <labels>
+                          <label description="Email Opt-in Marketing (Bulk Email)" languagecode="1033" />
+                        </labels>
+                        <control id="donotbulkemail" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="donotbulkemail" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8f83e77f-0f92-431b-b5df-92685b7a5722}" locklevel="0" colspan="1" rowspan="1" visible="false" ordinalvalue="10013" solutionaction="Added">
+                        <labels>
+                          <label description="Email Opt-in Marketing Bulk Email(technical field)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_bulkemailoptinmarketingtechnical" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_bulkemailoptinmarketingtechnical" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{efa421df-7e9a-4f3c-b0c4-84466e4120c0}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10014" solutionaction="Added">
+                        <labels>
+                          <label description="Status request Email Opt-in Marketing (Bulk Email)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_bulkemailoptinrequest" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_bulkemailoptinrequest" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bb1140ec-ba0a-475a-bc1c-d1b64957367c}" locklevel="0" colspan="1" rowspan="1" visible="false" ordinalvalue="10015" solutionaction="Added">
+                        <labels>
+                          <label description="Date Status Request Opt-in Marketing" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_dt_datestatusrequestoptinmarketing" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="dpam_dt_datestatusrequestoptinmarketing" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7827945e-63af-4c69-88b7-e4b84c66c54b}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10016" solutionaction="Added">
+                        <labels>
+                          <label description="Email Opt-in 1-1 (Email)" languagecode="1033" />
+                        </labels>
+                        <control id="donotemail" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="donotemail" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8fca7c6a-eaee-4c33-bc72-4d3a66b2033c}" locklevel="0" showlabel="true" ordinalvalue="10017" solutionaction="Added">
+                        <labels>
+                          <label description="Main Location" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_mainlocation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_mainlocation" disabled="false" uniqueid="{512913cd-7be6-24ec-599c-c281673251eb}">
+                          <parameters>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{B5B52D63-3E29-47CF-9110-05512D75E81C}</DefaultViewId>
+                            <AvailableViewIds>{B5B52D63-3E29-47CF-9110-05512D75E81C}</AvailableViewIds>
+                            <AutoResolve>false</AutoResolve>
+                            <DisableMru>true</DisableMru>
+                            <DisableQuickFind>true</DisableQuickFind>
+                            <FilterRelationshipName>dpam_location_lk_account_Account</FilterRelationshipName>
+                            <DependentAttributeName>contact.parentcustomerid</DependentAttributeName>
+                            <DependentAttributeType>account</DependentAttributeType>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="BusinessCard" showlabel="true" locklevel="0" id="{d6928560-988d-56e4-55b6-99aa3c898561}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" visible="false" ordinalvalue="2">
+                  <rows>
+                    <row>
+                      <cell id="{4acc2393-dcac-6588-9258-3d228b26430a}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Business Card" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="42%" id="1">
+              <sections>
+                <section name="SOCIAL_PANE_TAB" showlabel="false" showbar="false" id="{bea579b8-8901-77b0-1128-351760e68bd4}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Top" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{db701364-1d99-369c-c409-11d17878e513}" showlabel="false" rowspan="23" auto="false" colspan="1" locklevel="0" ordinalvalue="10000" solutionaction="Modified">
+                        <labels>
+                          <label description="Notes Properties" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="notescontrol" classid="{06375649-C143-495E-A496-C962E5B4488E}" disabled="false" uniqueid="{901acabd-5ad4-6b24-e279-b8b665aa9593}" solutionaction="Modified">
+                          <parameters>
+                            <UClientSortActivitiesByValue solutionaction="Added">sortdate</UClientSortActivitiesByValue>
+                            <UClientNotesConfigurationJSON solutionaction="Added">{"sortNotesByValue":"createdon"}</UClientNotesConfigurationJSON>
+                            <UClientUniqueName solutionaction="Added">Timeline</UClientUniqueName>
+                            <UClientModules solutionaction="Added">Activities,Notes,Posts</UClientModules>
+                            <UClientDefaultModuleForCreateExperience solutionaction="Added">Notes</UClientDefaultModuleForCreateExperience>
+                            <UClientShowFilterPane solutionaction="Added">true</UClientShowFilterPane>
+                            <UClientExpandFilterPane solutionaction="Added">false</UClientExpandFilterPane>
+                            <UClientOrderBy solutionaction="Added">descending</UClientOrderBy>
+                            <UClientRecordPerPage solutionaction="Added">25</UClientRecordPerPage>
+                            <UClientEnableWhatsNewFilter solutionaction="Added">false</UClientEnableWhatsNewFilter>
+                            <UClientDisplayActivityHeaderUsing solutionaction="Added">defaultformat</UClientDisplayActivityHeaderUsing>
+                            <UClientCreateActivityUsing solutionaction="Added">mainformdialog</UClientCreateActivityUsing>
+                            <UClientDisplayActivityUsing solutionaction="Added">cardform</UClientDisplayActivityUsing>
+                            <UClientActivityCardMap solutionaction="Added">appointment:4201:,campaignactivity:4402:,campaignresponse:4401:,incidentresolution:4206:,email:4202:e5538bb9-77ec-4d24-bc5f-8cb2d825f664,fax:4204:,letter:4207:,opportunityclose:4208:,phonecall:4210:983dc188-2a05-4cfe-b907-4fbfae8c21f7,task:4212:5e9725e4-5449-4363-8c1c-5ae71767af34,msfp_alert:10238:,msfp_surveyinvite:10248:,msfp_surveyresponse:10250:,</UClientActivityCardMap>
+                            <DefaultTabId solutionaction="Added">ActivitiesTab</DefaultTabId>
+                            <OrderByActivityWall solutionaction="Added">descending</OrderByActivityWall>
+                            <SortActivityWall solutionaction="Added">modifiedon</SortActivityWall>
+                            <EmailConversationView solutionaction="Added">true</EmailConversationView>
+                            <ShowArticleTab solutionaction="Added">false</ShowArticleTab>
+                            <SelectDefaultLanguage solutionaction="Added">00000000-0000-0000-0000-000000000000</SelectDefaultLanguage>
+                            <UClientActivities solutionaction="Added">appointment,campaignactivity,email,fax,letter,opportunityclose,phonecall,recurringappointmentmaster,task</UClientActivities>
+                            <UClientActivitiesConfigurationJSON solutionaction="Added">{"incidentresolution":{"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"email":{"showStatus":true,"canCreate":true,"fieldsConfig":{"labelOverride":true,"header":{"labelOption":"Show","displayOption":"AlwaysShow"},"body":[{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"ShowOnExpand"},{"labelOption":"Hide","displayOption":"Hide"}],"footer":{"labelOption":"Hide","displayOption":"AlwaysShow"}},"createUsing":"default","openUsing":"default"},"orderclose":{"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"phonecall":{"showStatus":true,"canCreate":true,"fieldsConfig":{"labelOverride":true,"header":{"labelOption":"Show","displayOption":"AlwaysShow"},"body":[{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"ShowOnExpand"},{"labelOption":"Hide","displayOption":"Hide"}],"footer":{"labelOption":"Hide","displayOption":"AlwaysShow"}},"createUsing":"default","openUsing":"default"},"quoteclose":{"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"socialactivity":{"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"task":{"showStatus":true,"canCreate":true,"fieldsConfig":{"labelOverride":true,"header":{"labelOption":"Show","displayOption":"AlwaysShow"},"body":[{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"AlwaysShow"},{"labelOption":"Hide","displayOption":"ShowOnExpand"},{"labelOption":"Hide","displayOption":"Hide"}],"footer":{"labelOption":"Hide","displayOption":"AlwaysShow"}},"createUsing":"default","openUsing":"default"},"msfp_alert":{"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"msfp_surveyinvite":{"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"msfp_surveyresponse":{"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"}}</UClientActivitiesConfigurationJSON>
+                            <UClientOpenActivityUsing solutionaction="Added">mainform</UClientOpenActivityUsing>
+                            <UClientActivityRollupType solutionaction="Added">2</UClientActivityRollupType>
+                            <UClientPostsConfigurationJSON solutionaction="Added">{"sortPostsByValue":"createdon"}</UClientPostsConfigurationJSON>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="25%" id="2">
+              <sections>
+                <section name="TalkingPoints_section" showlabel="false" showbar="false" locklevel="0" id="{493e163e-b936-e24d-83e0-e52dcecc5da9}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Top" visible="false" ordinalvalue="1" solutionaction="Modified" />
+                <section name="Summary_section_6" showlabel="false" showbar="false" locklevel="0" id="{ea3bb0a6-b9dc-1b0e-5e7d-74a380ee79a3}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="2" solutionaction="Modified" />
+                <section name="CUSTOMER_DETAILS_TAB" showlabel="false" showbar="false" id="{0ed6b616-7ef0-4ffe-9a77-610beef03f9c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Top" ordinalvalue="3" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{98f3b282-986b-4ace-9df9-9f47e1740e0d}" showlabel="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{309AA48F-B748-4C9E-A0A8-F8A93BE633E5}" colspan="1" showlabel="false" ordinalvalue="10001">
+                        <labels>
+                          <label description="Company Name" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{18922d47-153a-1a49-e025-dd6a6eb57d9d}" showlabel="true" colspan="1" rowspan="5" ordinalvalue="10002">
+                        <control id="contactopportunitiesgrid" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{190134bb-c37d-21c0-338c-190464d1ea17}" solutionaction="Modified">
+                          <parameters>
+                            <HeaderColorCode solutionaction="Added" />
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6120B848-D4DA-45E2-9E0D-EFD7D3898E50}" showlabel="true" colspan="1" rowspan="5" ordinalvalue="10003" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{3e3b602b-b821-4775-ae5d-fedf7ae56508}" showlabel="true" colspan="1" rowspan="8" auto="false" ordinalvalue="10004" solutionaction="Removed" />
+                    </row>
+                  </rows>
+                </section>
+                <section name="SUMMARY_TAB_section_8" showlabel="false" showbar="false" locklevel="0" id="{d0ddeede-d6b0-75da-4eac-02b1173ad410}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="0" solutionaction="Added">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7da15e84-a428-0131-cdac-c23b0bc60527}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Direct Line" languagecode="1033" />
+                        </labels>
+                        <control id="business2" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="business2" disabled="false" uniqueid="{b17872d5-571b-500a-a12c-80c1a9eabeac}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{215da2d0-2b64-3481-8d2d-16107d4d7e5b}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10001">
+                        <labels>
+                          <label description="Business Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone1" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="telephone1" disabled="false" uniqueid="{390b832d-6e0b-8846-b63e-86b6633bb05b}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{290b48ba-c0cc-7746-6dda-93e240e4cc78}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Mobile Phone" languagecode="1033" />
+                        </labels>
+                        <control id="mobilephone" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="mobilephone" disabled="false" uniqueid="{b3390be4-2247-3392-739d-bcc198dd0ee6}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9e3a5cb2-b516-c139-45c9-1b0c7434b607}" showlabel="true" locklevel="0" ordinalvalue="10003">
+                        <labels>
+                          <label description="Other Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone2" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="telephone2" disabled="false" uniqueid="{ac5a3091-4a91-36a9-823a-79d83d4d1b27}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1b54cdb3-1582-c29e-cc9e-9d4bc2a5700b}" showlabel="true" ordinalvalue="10004">
+                        <labels>
+                          <label description="Fax" languagecode="1033" />
+                        </labels>
+                        <control id="fax" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fax" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="DETAILS_TAB" id="{fe1c5c3b-d556-4552-a444-4781214a6d63}" IsUserDefined="0" expanded="true" showlabel="true" ordinalvalue="1">
+          <columns>
+            <column width="34%" id="0">
+              <sections>
+                <section name="PERSONAL INFORMATION" showlabel="true" showbar="false" id="{0F64B9A3-01F2-4411-B0B5-6C6C39D7B011}" IsUserDefined="0" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0" solutionaction="Removed" />
+                <section name="PERSONAL_NOTES_SECTION" showlabel="true" showbar="false" locklevel="0" id="{9435d60e-c5ac-2462-a159-414573dc2e45}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Top" ordinalvalue="1" solutionaction="Removed" />
+                <section name="gdprsection" showlabel="true" showbar="true" locklevel="0" id="{20d7182a-cea3-600e-e636-789b6cbc684c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="2" solutionaction="Removed" />
+                <section name="CONTACT_PREFERENCES" showlabel="true" showbar="false" id="{42aa148d-17fa-4c73-8213-bd22400b74ea}" IsUserDefined="0" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0" solutionaction="Added">
+                  <labels>
+                    <label description="CONTACT PREFERENCES" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{408dda0b-48a7-c05c-e29a-56a93eb97172}" showlabel="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Preferred Method of Contact" languagecode="1033" />
+                        </labels>
+                        <control id="preferredcontactmethodcode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="preferredcontactmethodcode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d4ec2d52-6658-cee9-4a2a-7a8029ad1862}" showlabel="true" locklevel="0" ordinalvalue="10001">
+                        <labels>
+                          <label description="Contact Method" languagecode="1033" />
+                        </labels>
+                        <control id="preferredcontactmethodcode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="preferredcontactmethodcode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6d7df723-ae10-497b-bceb-9936ce78f172}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002">
+                        <labels>
+                          <label description="Email Opt-in 1-1 (Email)" languagecode="1033" />
+                        </labels>
+                        <control id="donotemail" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="donotemail" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2344e926-ebe5-43a9-a634-98a98b1b9267}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Follow Email" languagecode="1033" />
+                        </labels>
+                        <control id="followemail" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="followemail" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{346c9fbe-127b-43ce-8859-02607cc7ca69}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10004">
+                        <labels>
+                          <label description="Email Opt-in Marketing (Bulk Email)" languagecode="1033" />
+                        </labels>
+                        <control id="donotbulkemail" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="donotbulkemail" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8656fe27-7655-4e8f-a8f3-6dffadc35195}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10005">
+                        <labels>
+                          <label description="Status request Email Opt-in Marketing (Bulk Email)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_bulkemailoptinrequest" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_bulkemailoptinrequest" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{569cf3bd-3b14-46d8-a03a-22e6317d1d41}" ordinalvalue="10006">
+                        <labels>
+                          <label description="Phone" languagecode="1033" />
+                        </labels>
+                        <control id="donotphone" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="donotphone" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{28d804f2-b314-42f6-92f8-982f4929bd6f}" ordinalvalue="10007">
+                        <labels>
+                          <label description="Fax" languagecode="1033" />
+                        </labels>
+                        <control id="donotfax" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="donotfax" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dfe9aafd-1acc-488d-b31e-feef6f63a34d}" ordinalvalue="10008">
+                        <labels>
+                          <label description="Mail" languagecode="1033" />
+                        </labels>
+                        <control id="donotpostalmail" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="donotpostalmail" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{828cbcdd-489a-463b-8131-e4d2d69bfe7e}" showlabel="true" locklevel="0" ordinalvalue="10009">
+                        <labels>
+                          <label description="Prefill marketing form" languagecode="1033" />
+                        </labels>
+                        <control id="msdyncrm_rememberme" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="msdyncrm_rememberme" disabled="false" uniqueid="{f5bc3612-7219-41ac-9885-b53a76901a29}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{343a07a0-13bb-4c70-8eb9-5833d499bc65}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10010">
+                        <labels>
+                          <label description="Follow Up Event" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_followupevent" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_followupevent" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="marketing information" showlabel="true" showbar="false" locklevel="0" id="{a188d8ee-35d1-4f22-acf7-9588059a3f08}" IsUserDefined="0" layout="varheight" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0" solutionaction="Removed" />
+                <section name="EventInfoSection" showlabel="true" showbar="false" locklevel="0" id="{055d8d55-94ca-11dc-61a5-998be426523c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="1" solutionaction="Removed" />
+                <section name="CONTACT_PREFERENCES" showlabel="true" showbar="false" id="{42aa148d-17fa-4c73-8213-bd22400b74ea}" IsUserDefined="0" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="2" solutionaction="Removed" />
+                <section name="DETAILS_TAB_section_5" id="24f670f9-9093-41db-a1b7-c2ab56d8974a" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0" solutionaction="Added">
+                  <labels>
+                    <label description="Other" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{973478c0-d664-4e6f-8b74-3df90eafe01d}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description=" My DPAM Card Number" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_mydpam_cardnumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_mydpam_cardnumber" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ff3b84fb-0ce6-4f50-a98d-0caccb969ee4}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10001">
+                        <labels>
+                          <label description="My DPAM User Id" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_mydpam_userid" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_mydpam_userid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1480378e-0aa7-4a20-bded-2d6cba5de640}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002">
+                        <labels>
+                          <label description="Principal Nationality" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_principalnationality" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_principalnationality" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="SubscriptionListsSection" showlabel="true" showbar="false" locklevel="0" id="{7d518806-7730-0b38-5b58-78e833ed553e}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="1" solutionaction="Added">
+                  <labels>
+                    <label description="Subscription lists" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e94dcd8b-c2ce-cd82-55dd-a1d1931a1ab5}" showlabel="false" colspan="1" auto="false" rowspan="7" ordinalvalue="10000">
+                        <labels>
+                          <label description="Subscription lists" languagecode="1033" />
+                        </labels>
+                        <control id="subscribedtolist" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{0c83560d-de2e-e7a7-bd72-b31ce03d7722}">
+                          <parameters>
+                            <ViewId>{6BECD0DF-8978-E911-A820-000D3A3AE762}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>listcontact_association</RelationshipName>
+                            <TargetEntityType>list</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{CD5D6080-5A60-E911-B821-00155D961F09},{6BECD0DF-8978-E911-A820-000D3A3AE762}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <RelationshipRoleOrdinal>2</RelationshipRoleOrdinal>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section name="billing information" showlabel="true" showbar="false" id="{4565ac06-d780-4467-9baa-d03d6af45ae7}" IsUserDefined="0" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0" solutionaction="Removed" />
+                <section name="shipping information" showlabel="true" showbar="false" id="{19e024e7-16f7-40c6-a1d6-e8672a639011}" IsUserDefined="0" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="1" solutionaction="Removed" />
+                <section name="SubscriptionListsSection" showlabel="true" showbar="false" locklevel="0" id="{7d518806-7730-0b38-5b58-78e833ed553e}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="2" solutionaction="Removed" />
+                <section name="gdprsection" showlabel="true" showbar="true" locklevel="0" id="{20d7182a-cea3-600e-e636-789b6cbc684c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0" solutionaction="Added">
+                  <labels>
+                    <label description="Data protection" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{39c34726-52c9-475a-9035-5a808ec32e2a}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Consent given" languagecode="1033" />
+                        </labels>
+                        <control id="msgdpr_gdprconsent" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="msgdpr_gdprconsent" disabled="false" uniqueid="{65918703-ce8e-c017-3203-b0c833e75482}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9d9d0b5c-ac62-4bcd-7e8e-b3ba419375c2}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10001">
+                        <labels>
+                          <label description="Is a child" languagecode="1033" />
+                        </labels>
+                        <control id="msgdpr_gdprischild" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="msgdpr_gdprischild" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b0a7bede-ec55-7962-b25e-711529b50941}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10002">
+                        <labels>
+                          <label description="Parent or custodian" languagecode="1033" />
+                        </labels>
+                        <control id="msgdpr_gdprparentid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="msgdpr_gdprparentid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{013468eb-96d2-4013-8abb-c282a5645ff5}" showlabel="true" locklevel="0" ordinalvalue="10003">
+                        <labels>
+                          <label description="Tracking" languagecode="1033" />
+                        </labels>
+                        <control id="msgdpr_donottrack" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="msgdpr_donottrack" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="DETAILS_TAB_section_marketing" id="10c84e24-efc3-4864-843c-eb96decd6c42" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="1" solutionaction="Added">
+                  <labels>
+                    <label description="MARKETING" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{23cc5f57-a2e9-4f77-83fa-76077fc88cc0}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description="Marketing Only" languagecode="1033" />
+                        </labels>
+                        <control id="marketingonly" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="marketingonly" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f7bb10ba-b2f3-41b8-9a8b-a37330be27ab}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10001">
+                        <labels>
+                          <label description="Originating event" languagecode="1033" />
+                        </labels>
+                        <control id="msevtmgt_originatingeventid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="msevtmgt_originatingeventid" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="insights" id="{2695FF7A-E8D0-427F-AE5E-C49CA537A13D}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="false" visible="true" ordinalvalue="2" solutionaction="Modified">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="insights_section" showlabel="false" showbar="false" locklevel="0" id="{C789051B-E044-4E81-8E85-1EE826FA4151}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{F8E6BF4E-95DF-407D-98F6-F23805E74F00}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Insights" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="EVENTS_ATTENDED_TAB" id="{a4e4ceeb-2da2-e8b9-c58e-ba7b42e611a8}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="3">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="EVENTS_ATTENDED_TAB_section_1" showlabel="true" showbar="false" locklevel="0" id="{b5d4c895-2a38-ab54-0b59-d994b3976603}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" visible="true" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{6c25cb2a-c69a-669b-5b26-5d35ed616461}" showlabel="false" colspan="1" auto="false" rowspan="6" ordinalvalue="10000">
+                        <control id="msevtmgt_EventSubgrid" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{4d369848-be94-e07d-4070-04ab9e6a9d65}">
+                          <parameters>
+                            <ViewId solutionaction="Modified">{DF088590-DFF9-EB11-94EF-000D3A44E9B2}</ViewId>
+                            <ViewIds solutionaction="Modified">{36989E15-D3F3-4065-84C1-9DD3B27210DF},{07FD6735-B4A2-E711-811C-000D3A743413},{DF088590-DFF9-EB11-94EF-000D3A44E9B2}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="EVENTS_ATTENDED_TAB_section_5" showlabel="true" showbar="false" locklevel="0" id="{590ad405-d57d-7064-0635-7943a422bc68}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" availableforphone="false" ordinalvalue="2" solutionaction="Modified" />
+                <section name="EVENTS_ATTENDED_TAB_section_2" showlabel="true" showbar="false" locklevel="0" id="{5ca06376-97a9-b067-1e48-44a2486dc84a}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="3" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{40292ec5-a72b-4ad9-5a18-c65b2b7a8565}" showlabel="true" colspan="1" auto="false" rowspan="7" ordinalvalue="10000" solutionaction="Modified">
+                        <control id="msevtmgt_SessionSubgrid" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{05ad3c38-ae6d-a67d-2eee-d89c2e491836}">
+                          <parameters>
+                            <ViewId solutionaction="Modified">{C9B4FE24-D2AA-4776-AB00-B53F92DE99B3}</ViewId>
+                            <EnableViewPicker solutionaction="Modified">true</EnableViewPicker>
+                            <ViewIds solutionaction="Modified">{C9B4FE24-D2AA-4776-AB00-B53F92DE99B3},{0E6376C1-C382-41A7-864E-10FE9EB57B72}</ViewIds>
+                            <HeaderColorCode solutionaction="Added">#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="EVENTS_ATTENDED_TAB_section_3" showlabel="true" showbar="false" locklevel="0" id="{8019719a-4c0a-0ca1-2881-9d61158329c2}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="4" solutionaction="Modified" />
+                <section name="EVENTS_ATTENDED_TAB_section_4" showlabel="true" showbar="false" locklevel="0" id="{09727573-72ce-361d-52dd-e28ebe532392}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="5" solutionaction="Modified" />
+                <section name="EVENTS_ATTENDED_TAB_section_7" id="90b9a0b1-1a7c-4569-b320-a4f450f783e1" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="1" solutionaction="Added">
+                  <labels>
+                    <label description="Canceled event registrations" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{cfbc60fd-7ab9-43c2-9eea-8f9fce907889}" rowspan="6" colspan="1" showlabel="false" auto="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Canceled events" languagecode="1033" />
+                        </labels>
+                        <control id="Subgrid_CanceledEvent" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{6db6c635-3b39-6db8-b4da-7958a1307800}">
+                          <parameters>
+                            <TargetEntityType>msevtmgt_eventregistration</TargetEntityType>
+                            <ViewId>{2EE16D81-DBF9-EB11-94EF-000D3A44E770}</ViewId>
+                            <ViewIds>{36989E15-D3F3-4065-84C1-9DD3B27210DF},{2EE16D81-DBF9-EB11-94EF-000D3A44E770}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <RelationshipName>msevtmgt_contact_msevtmgt_eventregistration_Contact</RelationshipName>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <IsUserView>false</IsUserView>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId>{0B2E9F4D-3E1C-E611-80D3-00155DF8BFF9}</VisualizationId>
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="documents_sharepoint" id="{1960CA58-ED7E-4E66-A9CB-7566856DC3ED}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="4" solutionaction="Removed" />
+        <tab name="tab_product_interests" id="606ba9df-f22a-4429-81be-66be7e65357c" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="4" solutionaction="Added">
+          <labels>
+            <label description="Product Interests" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_5_section_1" id="784d2d68-80fd-4a11-964c-1fe2e45cc8ee" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{c9b2ee46-0895-4f0f-951e-a21f696ed941}" rowspan="1" colspan="1" showlabel="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Product Interests" languagecode="1033" />
+                        </labels>
+                        <control id="subgrid_product_interests" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <TargetEntityType>dpam_productinterest</TargetEntityType>
+                            <ViewId>{28158EDA-C784-4362-9C9E-B4A946D5F0C2}</ViewId>
+                            <ViewIds>{28158EDA-C784-4362-9C9E-B4A946D5F0C2}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <RelationshipName>dpam_ProductInterest_lk_contact_Contact</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_documents" id="685856e9-5368-4e45-8d95-f95d950565d5" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="5" solutionaction="Added">
+          <labels>
+            <label description="Documents" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_6_section_1" id="fefcb8ef-dd5a-4ca9-99b9-edcee2b148c6" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{3c870c61-ab3c-4ea6-85e0-ee5afb7cafa7}" rowspan="1" colspan="1" auto="false" showlabel="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="New SG control 1648193102565" languagecode="1033" />
+                        </labels>
+                        <control id="Subgrid_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <TargetEntityType>bdp_legaldocument</TargetEntityType>
+                            <ViewId>{DE492A06-7AF8-40E0-856A-53577368E2F9}</ViewId>
+                            <ViewIds>{DE492A06-7AF8-40E0-856A-53577368E2F9}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{3ff9aa06-4e43-41ce-afa9-22a038af5c19}" celllabelposition="Top" columns="1" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{24be01cc-16a6-8eea-8916-42d20a1097ae}" showlabel="true" locklevel="1" ordinalvalue="10001" solutionaction="Modified">
+              <labels>
+                <label description="Owner" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+          </row>
+          <row>
+            <cell id="{10f1f46d-7e6f-46b1-9005-50593aa4a05f}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000" solutionaction="Added">
+              <labels>
+                <label description="Lifestage" languagecode="1033" />
+              </labels>
+              <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <events>
+        <event name="onload" application="true" active="true">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Contact.Form.onLoad" libraryName="DPAM_/Script/Contact.js" handlerUniqueId="{3319ee14-4bdf-404d-b255-ac8a9adfdb6b}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="2" solutionaction="Added" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_os_gender" solutionaction="Added">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Contact.Form.onChange_dpam_os_gender" libraryName="DPAM_/Script/Contact.js" handlerUniqueId="{32f15cb5-9245-4afd-918f-c8d9511f3bb2}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_os_language" solutionaction="Added">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Contact.Form.onChange_dpam_os_language" libraryName="DPAM_/Script/Contact.js" handlerUniqueId="{af4ae301-97cc-4ac3-96d6-7440865d60c5}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+          </Handlers>
+        </event>
+      </events>
+      <controlDescriptions>
+        <controlDescription forControl="{390b832d-6e0b-8846-b63e-86b6633bb05b}" solutionaction="Added">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>telephone1</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone1</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone1</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone1</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{b3390be4-2247-3392-739d-bcc198dd0ee6}" solutionaction="Added">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>mobilephone</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>mobilephone</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>mobilephone</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>mobilephone</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{b17872d5-571b-500a-a12c-80c1a9eabeac}" solutionaction="Added">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>business2</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>business2</valueField>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>business2</valueField>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>business2</valueField>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{ac5a3091-4a91-36a9-823a-79d83d4d1b27}" solutionaction="Added">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>telephone2</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone2</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone2</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone2</valueField>
+              <defaultCC static="true" type="SingleLine.Text">BE</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <formLibraries>
+        <Library name="DPAM_/Script/Contact.js" libraryUniqueId="{12b4af55-6594-4303-9a78-1c4974005923}" solutionaction="Added" />
+      </formLibraries>
+      <footer id="{8082b8e9-27c5-4760-a9cc-15fc474a4d78}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows />
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Contact" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated default contact form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

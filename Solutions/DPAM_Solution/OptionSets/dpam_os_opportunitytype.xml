@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dpam_os_opportunitytype" localizedName="Opportunity Type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.5.2.3</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Opportunity Type" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="100000000">
+      <labels>
+        <label description="New Business" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000001">
+      <labels>
+        <label description="Erosion" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000002">
+      <labels>
+        <label description="Renewal" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{8448b78f-8f42-454e-8e2a-f8196b0419af}</formid>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>0</FormActivationState>
+    <form showImage="true" shownavigationbar="true" maxWidth="1900" headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab name="SUMMARY_TAB" id="{3b0b63a9-d379-689a-0ec3-e71eb4c6a841}" IsUserDefined="0" showlabel="true" expanded="true" locklevel="0" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="ACCOUNT_INFORMATION" showlabel="true" showbar="false" id="{0eb92e6c-bcb8-0d52-a188-d81543ddb7cd}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0">
+                  <labels>
+                    <label description="COUNTERPARTY INFORMATION" languagecode="1033" solutionaction="Modified" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b0e82a7e-5683-d90c-308a-0d779377ea8a}" showlabel="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Counterparty Name" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3441a91e-47c5-672c-7a20-902d6baa9036}" showlabel="true" ordinalvalue="10001" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{8b98a55e-a345-b20e-d46e-801e79d5c1c1}" showlabel="true" ordinalvalue="10002" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{e6441984-4343-813a-aa7e-e2747ad35390}" showlabel="true" ordinalvalue="10001" solutionaction="Modified">
+                        <labels>
+                          <label description="Website" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{87DE203E-B03C-44CC-8B06-438202B82553}" ordinalvalue="10002" solutionaction="Modified">
+                        <labels>
+                          <label description="Parent Counterparty" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5f38af3a-3307-47dc-b36d-d9a5de525e6e}" showlabel="true" ordinalvalue="10005" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{fdfb3948-447c-4da7-8e9a-93d2d2532e73}" locklevel="0" showlabel="true" visible="false" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="Country" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_country" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_country" disabled="false" uniqueid="{a4a05d62-a295-7a4c-1979-2e44e026d99e}">
+                          <parameters>
+                            <DefaultViewId>{7843D2E1-6A8F-45DF-AA70-BC0A7EB710D8}</DefaultViewId>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e67925b7-ebe7-b0b3-e7a2-7d970e8d57bc}" showlabel="true" locklevel="1" visible="false" ordinalvalue="10004" solutionaction="Added">
+                        <labels>
+                          <label description="Country Iso Code" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_country_alpha2code" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_country_alpha2code" disabled="false" uniqueid="{304659a9-61a8-ba33-9db5-a61840ea0779}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e780a0b7-a9de-8d89-15d2-3213db12003b}" showlabel="true" locklevel="0" ordinalvalue="10005" solutionaction="Added">
+                        <labels>
+                          <label description="VAT Number" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_vatnumber" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_vatnumber" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e538eefb-666b-4610-b6e2-ab1de9b42d69}" locklevel="0" ordinalvalue="10006" solutionaction="Added">
+                        <labels>
+                          <label description="Priority Group" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_prioritygroup" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_prioritygroup" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="ADDRESS" showlabel="true" locklevel="0" showbar="false" id="{cc0fe06e-4b5f-4648-A62d-84d1514e1fc5}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{4913500e-605a-809b-e99e-69e2710d09bd}" showlabel="true" locklevel="0" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{e92b42c0-7a08-4a49-bfef-d37d7a251d26}" locklevel="0" ordinalvalue="10000" solutionaction="Added">
+                        <labels>
+                          <label description="Street" languagecode="1033" />
+                        </labels>
+                        <control id="address1_line1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_line1" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{92bad39a-c4c4-488a-8dd6-effcc3b1a8f3}" locklevel="0" ordinalvalue="10001" solutionaction="Added">
+                        <labels>
+                          <label description="Floor/Building" languagecode="1033" />
+                        </labels>
+                        <control id="address1_line2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_line2" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3666daf1-7e63-4450-a5d5-1288a678ed05}" locklevel="0" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="PO Box" languagecode="1033" />
+                        </labels>
+                        <control id="address1_postofficebox" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_postofficebox" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7967e38a-2cfc-45cd-a520-38ec99bbdda3}" locklevel="0" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="ZIP/Postal Code" languagecode="1033" />
+                        </labels>
+                        <control id="address1_postalcode" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_postalcode" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2af3fb26-a22b-4dc3-afb3-90ca0627b901}" locklevel="0" ordinalvalue="10004" solutionaction="Added">
+                        <labels>
+                          <label description="City" languagecode="1033" />
+                        </labels>
+                        <control id="address1_city" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_city" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{96ad5624-82da-472d-adb1-176c19df9d73}" locklevel="0" visible="false" ordinalvalue="10005" solutionaction="Added">
+                        <labels>
+                          <label description="State/Province" languagecode="1033" />
+                        </labels>
+                        <control id="address1_stateorprovince" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_stateorprovince" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eeaaf2e2-8b00-4158-8ac2-7c0547d697fa}" locklevel="0" ordinalvalue="10006" solutionaction="Added">
+                        <labels>
+                          <label description="Country" languagecode="1033" />
+                        </labels>
+                        <control id="address1_country" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_country" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="MapSection" showlabel="false" showbar="false" id="{e1c565b8-7db7-4a44-b4e7-281614ff849b}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="3" solutionaction="Modified">
+                  <labels>
+                    <label description="Map" languagecode="1033" solutionaction="Added" />
+                  </labels>
+                </section>
+                <section name="SUMMARY_TAB_section_8" showlabel="true" showbar="false" locklevel="0" id="{e3733b26-5352-4334-923e-5c3041dbb5d1}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="2" solutionaction="Added">
+                  <labels>
+                    <label description="Address Composite" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{48a8524d-1401-a267-a5cd-1a21b8a622db}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Address 1" languagecode="1033" />
+                        </labels>
+                        <control id="address1_composite" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="address1_composite" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="25%" id="2">
+              <sections>
+                <section name="Summary_section_6" showlabel="false" showbar="false" locklevel="0" id="{ea3bb0a6-b9dc-1b0e-5e7d-74a380ee79a3}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="1" solutionaction="Modified" />
+                <section name="SUMMARY_TAB_section_6" showlabel="false" showbar="false" locklevel="0" id="{d4c3ee9c-ba71-5cdb-31be-2aa505750472}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Top" ordinalvalue="2" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{b187688c-8410-5990-16ec-e153968ab583}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Primary Contact" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0F664FFF-E39E-4676-9191-CBA16972B21D}" colspan="1" showlabel="false" ordinalvalue="10001">
+                        <labels>
+                          <label description="Primary Contact" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8e24c7e3-6a40-5abb-eadb-254eba5478e2}" showlabel="true" colspan="1" auto="false" rowspan="7" ordinalvalue="10002">
+                        <control id="Contacts" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+                          <parameters>
+                            <VisualizationId />
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3E27EE84-1A25-418B-85F5-CDCC7CD5918D}" showlabel="true" rowspan="8" colspan="1" auto="false" ordinalvalue="10004" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{2c745e48-587d-beb8-297d-055b604013b2}" showlabel="true" colspan="1" auto="false" rowspan="7" ordinalvalue="10005" solutionaction="Removed" />
+                    </row>
+                  </rows>
+                </section>
+                <section name="SUMMARY_TAB_section_PhoneNumbers" showlabel="true" showbar="false" locklevel="0" id="{0eed8976-19c2-b29c-6eb3-4ed25657da08}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0" solutionaction="Added">
+                  <labels>
+                    <label description="CONTACT DETAILS" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3441a91e-47c5-672c-7a20-902d6baa9036}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Main Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone1" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="telephone1" disabled="false" uniqueid="{3cbc1e70-9a72-45e0-6856-5ac1a45b67e8}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0c1369b2-b516-3182-b1c8-8005bbce63c8}" showlabel="true" locklevel="0" ordinalvalue="10001">
+                        <labels>
+                          <label description="Other Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone2" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="telephone2" disabled="false" uniqueid="{00010411-1c67-c8ec-6a18-140a5bb2107e}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{88b10307-2e02-4624-69a3-323835a85135}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Telephone 3" languagecode="1033" />
+                        </labels>
+                        <control id="telephone3" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="telephone3" disabled="false" uniqueid="{3d357975-2b4e-c29e-8b5c-20c0b85bbe2d}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8b98a55e-a345-b20e-d46e-801e79d5c1c1}" showlabel="true" ordinalvalue="10003">
+                        <labels>
+                          <label description="Fax" languagecode="1033" />
+                        </labels>
+                        <control id="fax" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fax" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{00ad7a74-4004-4435-ae57-2a4aac1a1c57}" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="emailaddress1" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{83406480-fe8d-4783-a2aa-ab2cc0ec0305}" locklevel="0" ordinalvalue="10005">
+                        <labels>
+                          <label description="Email Address 2" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress2" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="emailaddress2" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{12a0a807-cdb2-47de-a896-d68bc021ec77}" locklevel="0" ordinalvalue="10006">
+                        <labels>
+                          <label description="Email Address 3" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress3" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="emailaddress3" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="DETAILS_TAB" id="{11a42c72-9ded-ea04-253d-2143e731b795}" IsUserDefined="0" showlabel="true" expanded="true" ordinalvalue="1">
+          <columns>
+            <column width="34%" id="0">
+              <sections>
+                <section name="COMPANY_PROFILE" showlabel="true" showbar="false" id="{ca8587c5-18c0-cac1-7c34-6c639eade090}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{59782911-4d1a-38dc-ce49-7dae620dbc51}" showlabel="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Industry" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{930beba3-d531-0808-c403-de95e2ac3e62}" showlabel="true" ordinalvalue="10001">
+                        <labels>
+                          <label description="SIC Code" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1c33ad89-92a1-8433-2378-306259eb57c0}" showlabel="true" ordinalvalue="10002">
+                        <labels>
+                          <label description="Ownership" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a56cc0cd-350e-2901-599b-761d7736e569}" showlabel="false" userspacer="true" ordinalvalue="10005" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{d1d0e05a-1194-4e47-a78a-226bf445a1a7}" locklevel="0" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="Compliance Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_compliancesegmentation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_compliancesegmentation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4e904f2d-c99f-4bb1-8dc3-f1e19722fa56}" locklevel="0" showlabel="true" ordinalvalue="10004" solutionaction="Added">
+                        <labels>
+                          <label description="Legal Form" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_legalform" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_legalform" disabled="false" uniqueid="{aa4ebb3b-cb35-8338-a579-c977eca8ec77}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{C8AE6163-D539-4BE3-A1A0-C6306E977BA3}</DefaultViewId>
+                            <FilterRelationshipName>dpam_counterpartylegalform_lk_country_dpa</FilterRelationshipName>
+                            <DependentAttributeName>account.dpam_lk_country</DependentAttributeName>
+                            <DependentAttributeType>dpam_country</DependentAttributeType>
+                            <AllowFilterOff>true</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="DETAILS_TAB_section_6" showlabel="true" showbar="false" locklevel="0" id="{e201b9ce-c3d5-c922-dba5-528c25066940}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Top" height="auto" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{a4a726a2-8e3e-79d0-02c3-0a04a6b71089}" showlabel="false" locklevel="0" rowspan="3" auto="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Description" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="DETAILS_TAB_section_9" id="d3ac2bc7-c451-4a92-a13c-54464aadf8bd" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="2" solutionaction="Added">
+                  <labels>
+                    <label description="IDENTIFICATION" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8e603681-9bc3-4652-a85a-09b88511a6aa}" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="G2 ID" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_g2_id" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_g2_id" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{95f4718d-a4fa-4d37-9270-ad3b86128066}" locklevel="0" ordinalvalue="10001">
+                        <labels>
+                          <label description="3D ID " languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_3d_id" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_3d_id" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="MARKETING" showlabel="true" locklevel="0" showbar="false" id="{767ab9cb-cb99-45f4-bd68-32742a864c7c}" IsUserDefined="0" layout="varheight" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{b9c3d8fd-12a2-4474-b937-43da8Be00e6f}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Originating Lead" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section name="BILLING" showlabel="true" showbar="false" id="{910de80a-a17e-092a-255d-44d775cb4207}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Left" locklevel="0" celllabelalignment="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{7cd2b88c-b25c-4729-9c27-f59ebb5a1538}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Currency" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0125719c-a5b0-4230-9817-3fba5d6ebfaf}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Credit Limit" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{abc2c862-bcd4-4a4b-ac51-c311d4e66d5b}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Credit Hold" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0bab9157-d14e-441f-969d-80460634c15e}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Payment Terms" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="insights" id="{1E39FB1F-126E-462D-92FF-4412572FB7CA}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="3" solutionaction="Modified">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="insights_section" showlabel="false" showbar="false" locklevel="0" id="{94A5667B-AEF7-48A6-8AF0-2820E2499980}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{F19EE602-3D92-4E79-AD27-55AF519924C1}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Insights" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="documents_sharepoint" id="{5240e6be-ed06-8050-7115-ba225c7a4a13}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="3" solutionaction="Removed" />
+        <tab name="AssetsAndLocationsTab" id="{9d2b89a1-bec3-0b60-b2a7-d459b760e832}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="4" solutionaction="Removed" />
+        <tab name="Locations" id="a6253b23-07e0-445f-b0d1-7b0a5c00a1de" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="2" solutionaction="Added">
+          <labels>
+            <label description="Locations" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="locations_section" id="68f2e810-7199-403c-80a1-2a33c60008f1" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" height="auto" ordinalvalue="0">
+                  <labels>
+                    <label description="Locations" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{b1de2fee-90d5-412e-8244-89b7af2f2b1e}" rowspan="28" colspan="1" showlabel="true" auto="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Locations" languagecode="1033" />
+                        </labels>
+                        <control id="Locations_subgrid" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true" uniqueid="{743e1a0b-2a54-ee99-4ab2-a52560d11039}">
+                          <parameters>
+                            <TargetEntityType>dpam_location</TargetEntityType>
+                            <ViewId>{CDD52980-2FE6-EB11-BACB-000D3A4AF96F}</ViewId>
+                            <ViewIds>{1629A154-4CC7-45D6-8D21-76650534E45F},{CDD52980-2FE6-EB11-BACB-000D3A4AF96F}</ViewIds>
+                            <EnableViewPicker>true</EnableViewPicker>
+                            <RelationshipName>dpam_location_lk_account_Account</RelationshipName>
+                            <RecordsPerPage>25</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <IsUserView>false</IsUserView>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_power_bi_hierarchy" id="cc51e338-534a-488c-9edf-00f51d7351f5" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="4" solutionaction="Added">
+          <labels>
+            <label description="Company Hierarchy" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_6_section_1" id="24e72179-0cc3-4320-803c-f271b239c82c" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell showlabel="false" locklevel="0" id="{73724937-9be3-410a-a3c4-f019b0fb2687}" rowspan="20" colspan="1" auto="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="filteredreport" classid="{8C54228C-1B25-4909-A12A-F2B968BB0D62}">
+                          <parameters>
+                            <PowerBIGroupId>00000000-0000-0000-0000-000000000000</PowerBIGroupId>
+                            <PowerBIReportId>3054ab19-3979-403b-9d4c-662adc221815</PowerBIReportId>
+                            <TileUrl>https://app.powerbi.com/reportEmbed?reportId=3054ab19-3979-403b-9d4c-662adc221815</TileUrl>
+                            <PowerBIFilter>{"Filter": "[{\"$schema\":\"basic\",\"target\":{\"table\":\"Accounts\",\"column\":\"accountid\"},\"operator\":\"In\",\"values\":[$a],\"filterType\":1}]", "Alias": {"$a": "accountid"}}</PowerBIFilter>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onload" application="true" active="true">
+          <Handlers>
+            <Handler functionName="AssetCommon.Account.OnLoad" libraryName="msdyn_/Account/AssetCommon.Account.Library.js" handlerUniqueId="{4537b2be-b015-726d-2973-c312209337ba}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="2" solutionaction="Modified" />
+            <Handler functionName="BDP.DPAM.WR.Account.Form.onLoad" libraryName="DPAM_/Script/Account.js" handlerUniqueId="{c9ef5654-19a4-47e5-961b-d3058386de3e}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="1" solutionaction="Added" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="dpam_s_vatnumber" solutionaction="Added">
+          <Handlers>
+            <Handler functionName="BDP.DPAM.WR.Account.Form.onChange_dpam_lk_vatnumber" libraryName="DPAM_/Script/Account.js" handlerUniqueId="{44d58f95-0def-462c-bb40-819fa60e67ff}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+          </Handlers>
+        </event>
+      </events>
+      <header id="{d5a03552-1183-4347-a237-1f894ba449eb}" columns="111" celllabelposition="Top" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{d3e19d4e-b2ae-409f-9b4e-5976527c6c83}" ordinalvalue="10000" solutionaction="Removed" />
+            <cell id="{2adb5a52-604d-5aad-ba6a-2bbab6c33594}" showlabel="true" ordinalvalue="20001">
+              <labels>
+                <label description="Number of Employees" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+            <cell id="{54b2d0a2-eb77-b3cd-b60a-03ea6944e98e}" showlabel="true" locklevel="1" ordinalvalue="30002">
+              <labels>
+                <label description="Owner" languagecode="1033" solutionaction="Added" />
+              </labels>
+            </cell>
+          </row>
+          <row>
+            <cell id="{55d30dec-c936-4ff2-87ab-6092d8f42204}" locklevel="0" ordinalvalue="10000" solutionaction="Added">
+              <labels>
+                <label description="Status Reason" languagecode="1033" />
+              </labels>
+              <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <Navigation>
+        <NavBarAreas solutionaction="Added">
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{3cbc1e70-9a72-45e0-6856-5ac1a45b67e8}" solutionaction="Added">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>telephone1</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone1</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone1</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone1</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{00010411-1c67-c8ec-6a18-140a5bb2107e}" solutionaction="Added">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>telephone2</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone2</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone2</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone2</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">E164</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{3d357975-2b4e-c29e-8b5c-20c0b85bbe2d}" solutionaction="Added">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>telephone3</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone3</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">International</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone3</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">International</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="bdp_BeBeControls.CheckPhoneNumberControl">
+            <parameters>
+              <valueField>telephone3</valueField>
+              <defaultCC type="SingleLine.Text">dpam_s_country_alpha2code</defaultCC>
+              <outputFormat static="true" type="Enum">International</outputFormat>
+              <displayFormat static="true" type="Enum">International</displayFormat>
+              <showButton static="true" type="Enum">Yes</showButton>
+              <clickToCallType static="true" type="Enum">tel</clickToCallType>
+              <openQuickCreate static="true" type="Enum">Yes</openQuickCreate>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{743e1a0b-2a54-ee99-4ab2-a52560d11039}" solutionaction="Added">
+          <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" formFactor="0">
+            <parameters>
+              <TargetEntityType>dpam_location</TargetEntityType>
+              <ViewId>{BCC85B1E-47D9-419A-B9BD-A7BB9739DC62}</ViewId>
+              <ViewIds />
+              <EnableViewPicker>true</EnableViewPicker>
+              <RelationshipName>dpam_location_lk_account_Account</RelationshipName>
+              <RecordsPerPage>25</RecordsPerPage>
+              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+              <IsUserView>false</IsUserView>
+              <EnableQuickFind>false</EnableQuickFind>
+              <EnableJumpBar>false</EnableJumpBar>
+              <AutoExpand>Fixed</AutoExpand>
+              <ChartGridMode>All</ChartGridMode>
+              <VisualizationId />
+              <IsUserChart>false</IsUserChart>
+              <EnableChartPicker>true</EnableChartPicker>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{CDD52980-2FE6-EB11-BACB-000D3A4AF96F}</ViewId>
+                <columnsDefaultView />
+                <IsUserView>false</IsUserView>
+                <RelationshipName>dpam_location_lk_account_Account</RelationshipName>
+                <TargetEntityType>dpam_location</TargetEntityType>
+                <EnableViewPicker>true</EnableViewPicker>
+                <FilteredViewIds />
+              </data-set>
+              <EnableGroupBy static="true" type="Enum">yes</EnableGroupBy>
+              <EnableEditing static="true" type="Enum">yes</EnableEditing>
+              <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
+              <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse static="true" type="Enum">false</EnableSubGridAutoCollapse>
+              <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+              <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+              <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{CDD52980-2FE6-EB11-BACB-000D3A4AF96F}</ViewId>
+                <columnsDefaultView />
+                <IsUserView>false</IsUserView>
+                <RelationshipName>dpam_location_lk_account_Account</RelationshipName>
+                <TargetEntityType>dpam_location</TargetEntityType>
+                <EnableViewPicker>true</EnableViewPicker>
+                <FilteredViewIds />
+              </data-set>
+              <EnableGroupBy static="true" type="Enum">yes</EnableGroupBy>
+              <EnableEditing static="true" type="Enum">yes</EnableEditing>
+              <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
+              <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse static="true" type="Enum">false</EnableSubGridAutoCollapse>
+              <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+              <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+              <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <DisplayConditions FallbackForm="true" Order="8" solutionaction="Modified" />
+      <formLibraries>
+        <Library name="DPAM_/Script/Account.js" libraryUniqueId="{b5ce692e-9ad4-4063-b2ea-c1eeade67a2d}" solutionaction="Added" />
+      </formLibraries>
+      <footer id="{65b37898-439c-4970-bfef-3778f9eeb2e6}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Account" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated default Account form." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

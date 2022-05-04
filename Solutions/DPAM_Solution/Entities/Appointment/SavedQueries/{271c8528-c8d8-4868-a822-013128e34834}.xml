@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery unmodified="1">
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{271c8528-c8d8-4868-a822-013128e34834}</savedqueryid>
+    <queryapi></queryapi>
+    <querytype>8192</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="appointment">
+          <attribute name="activityid" />
+          <filter type="and">
+            <condition attribute="modifiedon" operator="last-x-days" value="180" />
+          </filter>
+          <link-entity name="activityparty" from="activityid" to="activityid" alias="aa">
+            <filter type="and">
+              <condition attribute="participationtypemask" operator="in">
+                <value>9</value>
+                <value>8</value>
+                <value>5</value>
+                <value>6</value>
+              </condition>
+              <condition attribute="participationtypemask" operator="ne" value="7" />
+              <condition attribute="partyid" operator="eq-userid" />
+            </filter>
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Recent Appointments in which I am a Participant" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Recently changed appointments where I am a participant" languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

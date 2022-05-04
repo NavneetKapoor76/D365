@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <FileToPath map="WebResources\**\*.js" to="..\..\..\WebResources" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsAccount.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Account.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsAppointment.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Appointment.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsCampaignActivity.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.CampaignActivity.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsContact.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Contact.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsContactFrequency.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.ContactFrequency.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsDepartment.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Department.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsEmail.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Email.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsEventRegistration.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.EventRegistration.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsLead.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Lead.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsLetter.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Letter.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsLocation.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Location.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsMarketingEmailTemplate.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.MarketingEmailTemplate.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsOpportunity.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Opportunity.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsOpportunityClose.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.OpportunityClose.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsPhoneCall.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.PhoneCall.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsProductInterest.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.ProductInterest.dll" />
+  <FileToFile map="PluginAssemblies\**\BDPDPAMPluginsTask.dll" to="..\..\..\Assemblies\BDP.DPAM.Plugins.Task.dll" />
+</Mapping>

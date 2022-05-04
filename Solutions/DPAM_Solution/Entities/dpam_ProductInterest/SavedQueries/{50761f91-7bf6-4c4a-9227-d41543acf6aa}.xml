@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{50761f91-7bf6-4c4a-9227-d41543acf6aa}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_productinterestid">
+          <cell name="dpam_lk_contact" width="132" />
+          <cell name="dpam_lk_product" width="174" />
+          <cell name="dpam_os_market" width="100" />
+          <cell name="dpam_lk_shareclass" width="100" />
+          <cell name="dpam_b_factsheet" width="100" />
+          <cell name="dpam_b_fundmanagercomments" width="193" />
+          <cell name="dpam_b_esgfactsheet" width="137" />
+          <cell name="dpam_mos_marketingmaterial" width="154" />
+          <cell name="dpam_mos_language" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_productinterest">
+          <attribute name="dpam_productinterestid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="dpam_name" operator="like" value="{0}" />
+          </filter>
+          <attribute name="dpam_mos_language" />
+          <attribute name="dpam_mos_marketingmaterial" />
+          <attribute name="dpam_b_esgfactsheet" />
+          <attribute name="dpam_b_fundmanagercomments" />
+          <attribute name="dpam_b_factsheet" />
+          <attribute name="dpam_os_market" />
+          <attribute name="dpam_lk_product" />
+          <attribute name="dpam_lk_contact" />
+          <attribute name="dpam_lk_shareclass" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Quick Find Active Product Interests" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

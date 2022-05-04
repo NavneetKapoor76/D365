@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>dpam_deactivatecounterpartycustompage_ae22b</Name>
+  <AppVersion>2022-02-16T11:26:17Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22015.22.0</CreatedByClientVersion>
+  <MinClientVersion>3.22015.22.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"530","primaryDeviceHeight":"220","sienaVersion":"314523aa-9fdb-4c03-ae4b-1a7c0edecf0c","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22015.22","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>Deactivate Counterparty Custom Page</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Counterparties":{"entitySetName":"accounts","logicalName":"account"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>2</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"account","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/dpam_deactivatecounterpartycustompage_ae22b_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/dpam_deactivatecounterpartycustompage_ae22b_DocumentUri.msapp</DocumentUri>
+</CanvasApp>

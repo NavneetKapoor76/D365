@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.Account.PreUpdateAccount: Update of account" SdkMessageProcessingStepId="{e6a58487-4112-ec11-b6e6-6045bd8725f3}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.Account.PreUpdateAccount, BDP.DPAM.Plugins.Account, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b978032b6aa2a30</PluginTypeName>
+  <PluginTypeId>d4494670-6ac8-4f6b-98f5-76f9788f1680</PluginTypeId>
+  <PrimaryEntity>account</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>dpam_lk_country,dpam_lk_localbusinesssegmentation,statuscode</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages>
+    <SdkMessageProcessingStepImage Name="PreImage">
+      <SdkMessageProcessingStepImageId>{60f93c7b-6627-ec11-b6e5-6045bd8b0bf5}</SdkMessageProcessingStepImageId>
+      <Attributes>dpam_lk_country,name,statuscode</Attributes>
+      <EntityAlias>PreImage</EntityAlias>
+      <ImageType>0</ImageType>
+      <MessagePropertyName>Target</MessagePropertyName>
+      <IsCustomizable>1</IsCustomizable>
+    </SdkMessageProcessingStepImage>
+  </SdkMessageProcessingStepImages>
+</SdkMessageProcessingStep>

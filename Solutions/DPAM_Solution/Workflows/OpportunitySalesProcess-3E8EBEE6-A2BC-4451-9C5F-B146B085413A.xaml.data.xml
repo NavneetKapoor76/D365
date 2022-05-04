@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{3e8ebee6-a2bc-4451-9c5f-b146b085413a}" Name="Opportunity Sales Process" Description="This is the default process flow for working on an opportunity." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/OpportunitySalesProcess-3E8EBEE6-A2BC-4451-9C5F-B146B085413A.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>1</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>opportunitysalesprocess</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>6.0.0.0</IntroducedVersion>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <PrimaryEntity>Opportunity</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Opportunity Sales Process" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="This is the default process flow for working on an opportunity." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{6b9ce798-221a-4260-90b2-2a95ed51a5bc}">
+      <label languagecode="1033" description="Develop" />
+    </steplabels>
+    <steplabels id="{d5d16833-ecf9-4ab6-a35f-02f7e43e8fdd}">
+      <label languagecode="1033" description="Target AUM" />
+    </steplabels>
+    <steplabels id="{a18e18b2-8a85-4f2e-96ca-72745e7e73bc}">
+      <label languagecode="1033" description="Probability" />
+    </steplabels>
+    <steplabels id="{04f11eb9-679f-4fe2-8687-659e49edc946}">
+      <label languagecode="1033" description="Est. Close Date" />
+    </steplabels>
+    <steplabels id="{650e06b4-789b-46c1-822b-0da76bedb1ed}">
+      <label languagecode="1033" description="Propose" />
+    </steplabels>
+    <steplabels id="{db4248b2-6b43-4a06-9c03-46c7760443a2}">
+      <label languagecode="1033" description="Target AUM" />
+    </steplabels>
+    <steplabels id="{bc666740-b46f-4c65-80e5-2848b6d6c382}">
+      <label languagecode="1033" description="Probability" />
+    </steplabels>
+    <steplabels id="{a06afd6b-1350-4bf8-b4e5-03aa677ad843}">
+      <label languagecode="1033" description="Est. Close Date" />
+    </steplabels>
+    <steplabels id="{d3ca8878-8d7b-47b9-852d-fcd838790cfd}">
+      <label languagecode="1033" description="Close" />
+    </steplabels>
+    <steplabels id="{0d82da09-5708-4ca6-8a28-cc1e86946e1a}">
+      <label languagecode="1033" description="Target AUM" />
+    </steplabels>
+    <steplabels id="{0c4d4c32-e063-448a-b2a1-3cacdaccfc7e}">
+      <label languagecode="1033" description="Probability" />
+    </steplabels>
+    <steplabels id="{478133c6-4710-4c4b-8f0c-7e9738b284fb}">
+      <label languagecode="1033" description="Est. Close Date" />
+    </steplabels>
+  </labels>
+</Workflow>

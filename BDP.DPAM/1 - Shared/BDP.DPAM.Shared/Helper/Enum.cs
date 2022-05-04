@@ -21,7 +21,49 @@ namespace BDP.DPAM.Shared.Helper
         Inactive = 1
     }
 
-    public enum Contact_Language
+    public enum Location_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
+
+    public enum Contact_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum Contact_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
+
+    public enum Department_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum Department_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
+
+    public enum ContactFrequency_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum ContactFrequency_StatusCode
+    {
+        Active = 1,
+        Inactive = 2
+    }
+
+    public enum Language
     {
         English = 100000000,
         French = 100000001,
@@ -32,29 +74,12 @@ namespace BDP.DPAM.Shared.Helper
         Portuguese = 100000006
     }
 
-    public enum Contact_Gender
-    {
-        Male = 1,
-        Female = 2,
-        NonBinary = 100000000
-    }
-
-    public enum Greeting_Language
-    {
-        English = 100000000,
-        French = 100000001,
-        German = 100000002,
-        Spanish = 100000003,
-        Italian = 100000004,
-        Dutch = 100000005,
-        Portuguese = 100000006
-    }
-
-    public enum Greeting_Gender
+    public enum Gender
     {
         Male = 100000000,
         Female = 100000001,
-        NonBinary = 100000002
+        NonBinary = 100000002,
+        GeneralAddress = 100000003
     }
 
     public enum EventRegistration_StateCode
@@ -92,5 +117,60 @@ namespace BDP.DPAM.Shared.Helper
     {
         Attented = 1,
         Canceled = 2
+    }
+
+    public enum PhoneCall_StatusCode
+    {
+        Open = 1,
+        Made = 2,
+        Received = 4,
+        Canceled = 3
+    }
+
+    public enum Appointment_StatusCode
+    {
+        Free = 1,
+        Tentative = 2,
+        Completed = 3,
+        Canceled = 4,
+        Busy = 5,
+        OutOfOffice = 6
+    }
+
+    public enum Account_StatusCode
+    {
+        Active = 1,
+        Prospect = 100000000,
+        Inactive = 2,
+        ComplianceReason = 100000001
+    }
+
+    public enum Account_StateCode
+    {
+        Active = 0,
+        Inactive = 1
+    }
+
+    public enum Opportunity_StateCode
+    {
+        Open = 0,
+        Won = 1,
+        Lost = 2
+    }
+
+    public enum Opportunity_StatusCode
+    {
+        InProgress = 1,
+        OnHold = 2,
+        Won = 3,
+        Canceled = 4,
+        LostToCompetition = 5
+    }
+
+    public enum MarketingOptinRequest
+    {
+        Processing = 100000000,
+        Handled	= 100000001,
+        NoReaction = 100000002
     }
 }

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.ProductInterest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=af50131d7198f66a" PluginAssemblyId="113ef684-f4dd-458d-872a-53ff25f2bcce" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsProductInterest-113EF684-F4DD-458D-872A-53FF25F2BCCE/BDPDPAMPluginsProductInterest.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.ProductInterest.PreCreateProductInterest, BDP.DPAM.Plugins.ProductInterest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=af50131d7198f66a" PluginTypeId="cb0aaee8-fa7f-4280-94aa-3455236f683b" Name="BDP.DPAM.Plugins.ProductInterest.PreCreateProductInterest">
+      <FriendlyName>5bdd8218-b576-4c41-ac96-f1220073a40a</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.ProductInterest.PreUpdateProductInterest, BDP.DPAM.Plugins.ProductInterest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=af50131d7198f66a" PluginTypeId="c9ed530a-71ab-466d-9d78-c59b4dccbef3" Name="BDP.DPAM.Plugins.ProductInterest.PreUpdateProductInterest">
+      <FriendlyName>7de532d6-e456-46b0-9c08-ae3a28c6b27a</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

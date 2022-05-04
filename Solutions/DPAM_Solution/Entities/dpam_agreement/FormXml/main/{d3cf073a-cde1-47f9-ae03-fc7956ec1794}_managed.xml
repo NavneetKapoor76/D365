@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d3cf073a-cde1-47f9-ae03-fc7956ec1794}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{db5e6d0a-115f-4661-b6a3-3d879f914148}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{f9f86337-f381-43ab-a30c-06415e941a75}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5434520d-c1b9-4479-bb94-cd7e188cd136}">
+                        <labels>
+                          <label description="Agreement Name" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7d53b742-75be-492d-a268-26d9c967269d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Agreement Type" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_agreementtype" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_agreementtype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bbd44b3d-6570-47df-9d01-f6131dccd94a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_counterparty" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_counterparty" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{14d5c6e9-57b7-48e4-8ca6-8184366883be}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date of Signature" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_dt_dateofsignature" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="dpam_dt_dateofsignature" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a031ce0a-450e-4f08-8448-9cbce1d7c1e9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="File (Location of the PDF on a server)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_filelocationofthepdfonaserver" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_filelocationofthepdfonaserver" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{2b88931f-7426-4a32-80dc-040ca1361f31}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{c25806cc-2181-4e0c-bc7c-93a81156c3e4}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{aa34a645-d2a6-4b1e-a72a-a4b3700b9965}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a64826fc-9d8c-44d9-bc16-850a10f90c01}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{655b83d6-1242-4091-a6ac-7c8535b21ff4}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{90c9708a-3ed0-413b-9d58-6526d45541c8}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{4a3da8c9-9705-4e0b-b5a4-459fdf743f26}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{71bcf862-40b2-4d6f-a399-aa12b8aba299}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{8bf3f9ec-0e5d-46c8-aa98-4f6b931cf528}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

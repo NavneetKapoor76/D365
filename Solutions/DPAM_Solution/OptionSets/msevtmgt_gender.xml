@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="msevtmgt_gender" localizedName="Gender" description="Gender" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>0.0.0.1</IntroducedVersion>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Gender" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="Gender" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="100000000" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Male" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="Male" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="100000001" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Female" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="Female" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="100000002" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Non binary" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="100000003">
+      <labels>
+        <label description="General Address" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dpam_gos_marketingmaterial" localizedName="Marketing Material" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.5.37.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Marketing Material" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="100000000">
+      <labels>
+        <label description="Presentation" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000001">
+      <labels>
+        <label description="Flyers" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000002">
+      <labels>
+        <label description="Sales Aid" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

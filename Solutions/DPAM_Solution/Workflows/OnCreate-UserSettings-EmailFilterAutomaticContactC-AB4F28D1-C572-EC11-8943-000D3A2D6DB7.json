@@ -1,0 +1,73 @@
+﻿{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {},
+        "impersonation": {},
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "actions": {
+        "Do_Not_Create_Contact_-_Incoming_Email_Filter": {
+          "inputs": {
+            "authentication": "@parameters('$authentication')",
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateRecord"
+            },
+            "parameters": {
+              "entityName": "usersettingscollection",
+              "item/autocreatecontactonpromote": 0,
+              "item/incomingemailfilteringmethod": 1,
+              "recordId": "@triggerOutputs()?['body/systemuserid']"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "88e113a8-efca-437a-8148-0eed7617e47d"
+          },
+          "runAfter": {},
+          "type": "OpenApiConnection"
+        }
+      },
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "When_a_systemuser_settings_is_added": {
+          "inputs": {
+            "authentication": "@parameters('$authentication')",
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger"
+            },
+            "parameters": {
+              "subscriptionRequest/entityname": "usersettings",
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/scope": 4
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "6869e932-7aee-447f-ac3f-be707a68cf6a"
+          },
+          "type": "OpenApiConnectionWebhook"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

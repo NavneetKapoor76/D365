@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.Email.PreUpdateEmail: Update of email" SdkMessageProcessingStepId="{7f0fbfc8-bd90-ec11-b400-000d3abd5b5a}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.Email.PreUpdateEmail, BDP.DPAM.Plugins.Email, Version=1.0.0.0, Culture=neutral, PublicKeyToken=174f47938367910e</PluginTypeName>
+  <PluginTypeId>1ea146ee-50ea-4a46-9ec9-3580046a05d7</PluginTypeId>
+  <PrimaryEntity>email</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>actualend</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

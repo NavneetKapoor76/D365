@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{098ae145-1567-41ec-8398-86dbaac70c9b}</formid>
+    <IntroducedVersion>8.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{fd376995-f2e5-4709-a944-be9b4a93c5da}" name="tab_1" showlabel="false" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section id="{0fabc85a-8c23-45e5-aef3-76505a537c68}" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <labels>
+                    <label description="COUNTERPARTY DETAILS" languagecode="1033" solutionaction="Modified" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{80627ba0-c245-b17a-78c8-c1c9e7927b7d}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Counterparty Name" languagecode="1033" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Counterparty Reference Panel" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form that displays Reference Panel of Counterparty." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

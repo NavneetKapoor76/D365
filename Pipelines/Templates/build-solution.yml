@@ -1,0 +1,101 @@
+parameters:
+- name: buildType
+  displayName: Build Type
+  type: string
+  default: 'Both'
+  values:
+  - Both
+  - Managed
+  - Unmanaged
+- name: mapCodeComponents
+  displayName: Map Code Based Components from Git
+  type: boolean
+  default: true
+
+steps:  
+# Set pipeline vars for tools paths.
+- template: set-tools-paths.yml
+    
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
+  displayName: 'Install Power Platform Build Tools'
+
+#Pack the solution based on the build type parameter (Managed)
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
+  displayName: 'Pack Solutions (Managed)'
+  inputs:
+    SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
+    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion)_managed.zip'
+    SolutionType: ${{parameters.buildType}}
+  condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, false), eq('${{parameters.buildType}}', 'Managed'))
+
+#Pack the solution based on the build type parameter (Unmanaged, Managed or Both)
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
+  displayName: 'Pack Solutions (Unmanaged and/or Managed)'
+  inputs:
+    SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
+    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip'
+    SolutionType: ${{parameters.buildType}}
+  condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, false), ne('${{parameters.buildType}}', 'Managed'))
+
+- powershell: |
+   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+   $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+   $targetNugetExe = ".\nuget.exe"
+   Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
+   Set-Alias nuget $targetNugetExe -Scope Global -Verbose
+   
+   ./nuget install  Microsoft.CrmSdk.CoreTools -O ./
+   $coreToolsFolder = Get-ChildItem ./ | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
+   move .\$coreToolsFolder\content\bin\coretools\*.* .\
+   Remove-Item .\$coreToolsFolder -Force -Recurse
+   .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
+
+  failOnStderr: true
+  displayName: 'Pack Solution (solution packager)'
+  condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, true))
+
+# We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
+- powershell: |
+    $path = "$(Build.SourcesDirectory)\Config\Data"
+    if(Test-Path $path) {
+        $compress = @{
+            Path = $path + '\*.*'
+            CompressionLevel = 'Fastest'
+            DestinationPath = '$(Build.ArtifactStagingDirectory)/ProductConfigData.zip'
+        }
+        Compress-Archive @compress
+    }
+    
+    if(Test-Path "$(Build.SourcesDirectory)\Config") {
+        Get-ChildItem -Path "$(Build.SourcesDirectory)\Config" | 
+        ForEach-Object {
+            $environment = $_.Name
+            $path = "$(Build.SourcesDirectory)\Config\$environment\Data"
+            if(Test-Path $path) {
+                $compress = @{
+                    Path = $path + '\*.*'
+                    CompressionLevel = 'Fastest'
+                    DestinationPath = '$(Build.ArtifactStagingDirectory)/PostProcessConfigData-' + $environment + '.zip'
+                }
+                Compress-Archive @compress
+            }
+        }
+    }
+  displayName: 'Archive Configuration Migration Data'
+  enabled: true
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Artifacts'
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: drop
+
+#Run Solution Checker against our solution. This is currently only triggered for pipelines that trigger for Pull Requests
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.checker.PowerPlatformChecker@0
+  displayName: 'Run Solution Checker'
+  inputs:
+    authenticationType: PowerPlatformSPN
+    PowerPlatformSPN: '$(EnvironmentUrl)'
+    FilesToAnalyze: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip'
+    RuleSet: '0ad12346-e108-40b8-a956-9a8f95ea18c9'
+  condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))

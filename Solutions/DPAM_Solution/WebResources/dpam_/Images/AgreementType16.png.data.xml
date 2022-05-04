@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{adc4ea29-f392-ec11-b400-6045bd878fef}</WebResourceId>
+  <Name>dpam_/Images/AgreementType16.png</Name>
+  <DisplayName>dpam_/Images/AgreementType16.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.14.28.1</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ImagesAgreementType16pngADC4EA29-F392-EC11-B400-6045BD878FEF</FileName>
+</WebResource>

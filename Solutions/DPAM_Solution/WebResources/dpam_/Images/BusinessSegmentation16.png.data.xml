@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{76608c0c-6dfa-eb11-94ef-000d3a44e9b2}</WebResourceId>
+  <Name>dpam_/Images/BusinessSegmentation16.png</Name>
+  <DisplayName>dpam_/Images/BusinessSegmentation16.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.2.10.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ImagesBusinessSegmentation16png76608C0C-6DFA-EB11-94EF-000D3A44E9B2</FileName>
+</WebResource>

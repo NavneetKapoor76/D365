@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4c09de7a-aa1e-40cb-a1e5-b0c0f27035b4}</formid>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="true" maxWidth="1900" headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab name="RegistrationAndAttendanceTab" id="{528086b7-bc16-9d3e-7788-5a5ed165bb34}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="3">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="RegistrationAndAttendanceTab_section_3" showlabel="true" showbar="false" locklevel="0" id="{ed15e6e9-0905-4a9b-d452-a26a3a21b085}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{acedba6d-d480-1137-2016-40437d72edc6}" showlabel="true" colspan="1" auto="false" rowspan="7" ordinalvalue="10000" solutionaction="Modified">
+                        <control id="Registration" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true" uniqueid="{54c0871b-94c6-30ac-574b-8d56415e2d0d}" solutionaction="Modified">
+                          <parameters>
+                            <ViewId solutionaction="Modified">{36989E15-D3F3-4065-84C1-9DD3B27210DF}</ViewId>
+                            <ViewIds solutionaction="Modified">{36989E15-D3F3-4065-84C1-9DD3B27210DF}</ViewIds>
+                            <HeaderColorCode solutionaction="Modified">#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{233c1354-a5b7-05d9-21e4-b2037e489d29}" showlabel="true" colspan="1" auto="false" rowspan="6" ordinalvalue="10001" solutionaction="Removed" />
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_Event_AttendeePass" Sequence="10001" Area="Info" Id="nav_msevtmgt_Event_AttendeePass" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Attendee Passes" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_event_eventcustomregistrationfield" Sequence="10002" Area="Info" Id="nav_msevtmgt_event_eventcustomregistrationfield" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Event Custom Registration Fields" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_event_lead_originatingeventid" Sequence="10003" Area="Info" Id="nav_msevtmgt_event_lead_originatingeventid" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Leads" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_event_msevtmgt_roomreservation" Sequence="10004" Area="Info" Id="nav_msevtmgt_event_msevtmgt_roomreservation" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Room Reservations" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_event_msevtmgt_sessionregistration_Event" Sequence="10005" Area="Info" Id="nav_msevtmgt_event_msevtmgt_sessionregistration_Event" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Session Registrations" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_Event_Speaker" Sequence="10006" Area="Info" Id="nav_msevtmgt_Event_Speaker" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Speakers" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_event_waitlistitem" Sequence="10007" Area="Info" Id="nav_msevtmgt_event_waitlistitem" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Waitlist Items" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_msevtmgt_event_contact_originatingeventid" Sequence="10008" Area="Info" Id="nav_msevtmgt_msevtmgt_event_contact_originatingeventid" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Contacts" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_msevtmgt_event_hotelroomallocation_Event" Sequence="10009" Area="Info" Id="nav_msevtmgt_msevtmgt_event_hotelroomallocation_Event" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Hotel Room Allocations" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_msevtmgt_event_msevtmgt_eventpurchase" Sequence="10010" Area="Info" Id="nav_msevtmgt_msevtmgt_event_msevtmgt_eventpurchase" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Event Purchases" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyncrm_msevtmgt_event_msdyncrm_formpage" Sequence="10011" Area="Info" Id="nav_msdyncrm_msevtmgt_event_msdyncrm_formpage" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Form pages" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyncrm_msevtmgt_event_msdyncrm_qrcodestyle_event" Sequence="10012" Area="Info" Id="nav_msdyncrm_msevtmgt_event_msdyncrm_qrcodestyle_event" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="QR code styles" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyncrm_msevtmgt_event_msdyncrm_addtocalendarstyle_event" Sequence="10013" Area="Info" Id="nav_msdyncrm_msevtmgt_event_msdyncrm_addtocalendarstyle_event" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="AddToCalendar style" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyncrm_msevtmgt_event_msdyncrm_deprecatedeventactivity_eventid" Sequence="10014" Area="Info" Id="nav_msdyncrm_msevtmgt_event_msdyncrm_deprecatedeventactivity_eventid" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Event activities" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_Event_EventRegistration" Id="nav_msevtmgt_Event_EventRegistration" Show="true" Sequence="10015" Area="Info" solutionaction="Added">
+            <Titles>
+              <Title LCID="1033" Text="Event Registrations" />
+            </Titles>
+          </NavBarByRelationshipItem>
+        </NavBar>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{54c0871b-94c6-30ac-574b-8d56415e2d0d}" solutionaction="Added">
+          <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" formFactor="0">
+            <parameters>
+              <ViewId>{36989E15-D3F3-4065-84C1-9DD3B27210DF}</ViewId>
+              <IsUserView>false</IsUserView>
+              <RelationshipName>msevtmgt_Event_EventRegistration</RelationshipName>
+              <TargetEntityType>msevtmgt_eventregistration</TargetEntityType>
+              <AutoExpand>Fixed</AutoExpand>
+              <EnableQuickFind>false</EnableQuickFind>
+              <EnableViewPicker>false</EnableViewPicker>
+              <ViewIds>{36989E15-D3F3-4065-84C1-9DD3B27210DF}</ViewIds>
+              <EnableJumpBar>false</EnableJumpBar>
+              <ChartGridMode>All</ChartGridMode>
+              <VisualizationId>{0B2E9F4D-3E1C-E611-80D3-00155DF8BFF9}</VisualizationId>
+              <IsUserChart>false</IsUserChart>
+              <EnableChartPicker>true</EnableChartPicker>
+              <RecordsPerPage>4</RecordsPerPage>
+              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{36989E15-D3F3-4065-84C1-9DD3B27210DF}</ViewId>
+                <columnsDefaultView />
+                <IsUserView>false</IsUserView>
+                <RelationshipName>msevtmgt_Event_EventRegistration</RelationshipName>
+                <TargetEntityType>msevtmgt_eventregistration</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+                <FilteredViewIds>{36989E15-D3F3-4065-84C1-9DD3B27210DF}</FilteredViewIds>
+              </data-set>
+              <data-set name="SubGrid">
+                <ViewId>{BA86A1CF-F3C5-E711-80F6-00155D953324}</ViewId>
+                <IsUserView>false</IsUserView>
+                <TargetEntityType>msevtmgt_registrationresponse</TargetEntityType>
+                <SubGridParentId>msevtmgt_eventregistration</SubGridParentId>
+              </data-set>
+              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
+              <EnableEditing static="true" type="Enum">yes</EnableEditing>
+              <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
+              <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse static="true" type="Enum">false</EnableSubGridAutoCollapse>
+              <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+              <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+              <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{36989E15-D3F3-4065-84C1-9DD3B27210DF}</ViewId>
+                <columnsDefaultView />
+                <IsUserView>false</IsUserView>
+                <RelationshipName>msevtmgt_Event_EventRegistration</RelationshipName>
+                <TargetEntityType>msevtmgt_eventregistration</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+                <FilteredViewIds>{36989E15-D3F3-4065-84C1-9DD3B27210DF}</FilteredViewIds>
+              </data-set>
+              <data-set name="SubGrid">
+                <ViewId>{BA86A1CF-F3C5-E711-80F6-00155D953324}</ViewId>
+                <IsUserView>false</IsUserView>
+                <TargetEntityType>msevtmgt_registrationresponse</TargetEntityType>
+                <SubGridParentId>msevtmgt_eventregistration</SubGridParentId>
+              </data-set>
+              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
+              <EnableEditing static="true" type="Enum">yes</EnableEditing>
+              <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
+              <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse static="true" type="Enum">false</EnableSubGridAutoCollapse>
+              <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+              <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+              <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <footer id="{df3cbdb3-ffc8-4de7-96af-b22f4b4ef2af}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Event" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

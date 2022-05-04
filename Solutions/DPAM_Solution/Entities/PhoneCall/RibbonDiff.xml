@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <CustomAction Id="bdp.dpam.phonecall.Button.ReOpen.CustomAction" Location="Mscrm.Form.phonecall.MainTab.Actions.Controls._children" Sequence="5">
+      <CommandUIDefinition>
+        <Button Command="dpam.phonecall.Command.ReOpen" Id="dpam.phonecall.Button.ReOpen" Image32by32="$webresource:dpam_/Images/ReopenActivities32.png" Image16by16="$webresource:dpam_/Images/ReopenActivities16.png" LabelText="$LocLabels:dpam.phonecall.Button.ReOpen.LabelText" Sequence="5" TemplateAlias="o1" ModernImage="Activate" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="dpam.phonecall.Command.ReOpen">
+      <EnableRules>
+        <EnableRule Id="dpam.phonecall.EnableRule.ReOpenActivity" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="dpam.phonecall.DisplayRule.ReOpenActivity" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.PhoneCall.Ribbon.reOpenPhoneCall" Library="$webresource:dpam_/Script/PhoneCall.js">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules>
+      <DisplayRule Id="dpam.phonecall.DisplayRule.ReOpenActivity">
+        <EntityPropertyRule AppliesTo="PrimaryEntity" PropertyName="IsActivity" PropertyValue="true" />
+        <EntityPrivilegeRule PrivilegeType="Write" PrivilegeDepth="Basic" AppliesTo="PrimaryEntity" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="dpam.phonecall.EnableRule.ReOpenActivity">
+        <EntityRule AppliesTo="PrimaryEntity" Context="Form" Default="false" />
+        <RecordPrivilegeRule PrivilegeType="Write" AppliesTo="PrimaryEntity" />
+        <FormStateRule State="Disabled" />
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="dpam.phonecall.Button.ReOpen.LabelText">
+      <Titles>
+        <Title description="Reopen" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

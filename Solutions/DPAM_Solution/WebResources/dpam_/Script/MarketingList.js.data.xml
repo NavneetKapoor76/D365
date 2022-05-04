@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{9a645e1b-0d54-ec11-8c62-00224881148a}</WebResourceId>
+  <Name>dpam_/Script/MarketingList.js</Name>
+  <DisplayName>dpam_/Script/MarketingList.js</DisplayName>
+  <LanguageCode>0</LanguageCode>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.7.7.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ScriptMarketingListjs9A645E1B-0D54-EC11-8C62-00224881148A</FileName>
+</WebResource>

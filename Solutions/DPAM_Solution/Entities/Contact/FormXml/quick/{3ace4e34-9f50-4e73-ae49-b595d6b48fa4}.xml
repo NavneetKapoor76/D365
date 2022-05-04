@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3ace4e34-9f50-4e73-ae49-b595d6b48fa4}</formid>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form maxWidth="400">
+      <tabs>
+        <tab id="{b64619ac-5fce-40f0-8476-577f40f21256}" name="GeneralTab" showlabel="false" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section id="{37851356-c573-46c2-ba0d-67ddc5fc752d}" name="GeneralTab_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{ad295052-2c26-e127-9033-05d5416e2e35}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7b074ae4-fc84-48c4-86b9-8c6ef448119d}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10001" solutionaction="Added">
+                        <labels>
+                          <label description="Counterparty (Marketing Only)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_counterpartymarketingonly" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_counterpartymarketingonly" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c782ff26-c014-4682-b5b1-8ad10847f2d7}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="Country (Marketing Only)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_countrymarketingonly" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_countrymarketingonly" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0dcdd87a-aea2-4056-930b-4c530a611645}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="Business Phone (Marketing Only)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_businessphonemarketingonly" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_businessphonemarketingonly" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Account quick view form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Account quick view form for displaying a selected account in the event registration entity" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

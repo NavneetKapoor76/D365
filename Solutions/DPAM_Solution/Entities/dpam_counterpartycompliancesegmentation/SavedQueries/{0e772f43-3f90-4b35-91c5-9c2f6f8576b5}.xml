@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{0e772f43-3f90-4b35-91c5-9c2f6f8576b5}</savedqueryid>
+    <layoutxml>
+      <grid name="dpam_counterpartycompliancesegmentations" jump="dpam_s_name" select="1" icon="1" preview="1">
+        <row name="dpam_counterpartycompliancesegmentation" id="dpam_counterpartycompliancesegmentationid">
+          <cell name="dpam_s_name" width="300" />
+          <cell name="dpam_lk_cpbusinesssegmentation" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_counterpartycompliancesegmentation">
+          <attribute name="dpam_counterpartycompliancesegmentationid" />
+          <attribute name="dpam_s_name" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <order attribute="dpam_s_name" descending="false" />
+          <attribute name="dpam_lk_cpbusinesssegmentation" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.1.4.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Counterparty Compliance Segmentation Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{43300723-f867-420b-ab28-976a4d12e6c4}</formid>
+    <IntroducedVersion>8.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <DisplayConditions FallbackForm="true" Order="5" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Recent Cases and Entitlements" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form that displays the recent cases and entitlements." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

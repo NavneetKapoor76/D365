@@ -1,0 +1,530 @@
+﻿{
+  "basePath": "/api/v1/lei-records/",
+  "consumes": [],
+  "definitions": {},
+  "host": "api.gleif.org",
+  "info": {
+    "description": "",
+    "title": "Default title",
+    "version": "1.0"
+  },
+  "parameters": {},
+  "paths": {
+    "/": {
+      "get": {
+        "description": "Return LEI record based on params",
+        "operationId": "GetLEIRecordFromParam",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "filter[entity.legalName]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "filter[lei]",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "properties": {
+                "data": {
+                  "description": "data",
+                  "items": {
+                    "properties": {
+                      "attributes": {
+                        "description": "attributes",
+                        "properties": {
+                          "bic": {
+                            "description": "bic",
+                            "type": "string"
+                          },
+                          "entity": {
+                            "description": "entity",
+                            "properties": {
+                              "associatedEntity": {
+                                "description": "associatedEntity",
+                                "properties": {
+                                  "lei": {
+                                    "description": "lei",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "description": "name",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "category": {
+                                "description": "category",
+                                "type": "string"
+                              },
+                              "expiration": {
+                                "description": "expiration",
+                                "properties": {
+                                  "date": {
+                                    "description": "date",
+                                    "type": "string"
+                                  },
+                                  "reason": {
+                                    "description": "reason",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "headquartersAddress": {
+                                "description": "headquartersAddress",
+                                "properties": {
+                                  "addressLines": {
+                                    "description": "addressLines",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "addressNumber": {
+                                    "description": "addressNumber",
+                                    "type": "string"
+                                  },
+                                  "addressNumberWithinBuilding": {
+                                    "description": "addressNumberWithinBuilding",
+                                    "type": "string"
+                                  },
+                                  "city": {
+                                    "description": "city",
+                                    "type": "string"
+                                  },
+                                  "country": {
+                                    "description": "country",
+                                    "type": "string"
+                                  },
+                                  "language": {
+                                    "description": "language",
+                                    "type": "string"
+                                  },
+                                  "mailRouting": {
+                                    "description": "mailRouting",
+                                    "type": "string"
+                                  },
+                                  "postalCode": {
+                                    "description": "postalCode",
+                                    "type": "string"
+                                  },
+                                  "region": {
+                                    "description": "region",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "jurisdiction": {
+                                "description": "jurisdiction",
+                                "type": "string"
+                              },
+                              "legalAddress": {
+                                "description": "legalAddress",
+                                "properties": {
+                                  "addressLines": {
+                                    "description": "addressLines",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "addressNumber": {
+                                    "description": "addressNumber",
+                                    "type": "string"
+                                  },
+                                  "addressNumberWithinBuilding": {
+                                    "description": "addressNumberWithinBuilding",
+                                    "type": "string"
+                                  },
+                                  "city": {
+                                    "description": "city",
+                                    "type": "string"
+                                  },
+                                  "country": {
+                                    "description": "country",
+                                    "type": "string"
+                                  },
+                                  "language": {
+                                    "description": "language",
+                                    "type": "string"
+                                  },
+                                  "mailRouting": {
+                                    "description": "mailRouting",
+                                    "type": "string"
+                                  },
+                                  "postalCode": {
+                                    "description": "postalCode",
+                                    "type": "string"
+                                  },
+                                  "region": {
+                                    "description": "region",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "legalForm": {
+                                "description": "legalForm",
+                                "properties": {
+                                  "id": {
+                                    "description": "id",
+                                    "type": "string"
+                                  },
+                                  "other": {
+                                    "description": "other",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "legalName": {
+                                "description": "legalName",
+                                "properties": {
+                                  "language": {
+                                    "description": "language",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "description": "name",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "otherAddresses": {
+                                "description": "otherAddresses",
+                                "items": {},
+                                "type": "array"
+                              },
+                              "otherNames": {
+                                "description": "otherNames",
+                                "items": {},
+                                "type": "array"
+                              },
+                              "registeredAs": {
+                                "description": "registeredAs",
+                                "type": "string"
+                              },
+                              "registeredAt": {
+                                "description": "registeredAt",
+                                "properties": {
+                                  "id": {
+                                    "description": "id",
+                                    "type": "string"
+                                  },
+                                  "other": {
+                                    "description": "other",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "status": {
+                                "description": "status",
+                                "type": "string"
+                              },
+                              "successorEntity": {
+                                "description": "successorEntity",
+                                "properties": {
+                                  "lei": {
+                                    "description": "lei",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "description": "name",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "transliteratedOtherNames": {
+                                "description": "transliteratedOtherNames",
+                                "items": {},
+                                "type": "array"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "lei": {
+                            "description": "lei",
+                            "type": "string"
+                          },
+                          "registration": {
+                            "description": "registration",
+                            "properties": {
+                              "corroborationLevel": {
+                                "description": "corroborationLevel",
+                                "type": "string"
+                              },
+                              "initialRegistrationDate": {
+                                "description": "initialRegistrationDate",
+                                "type": "string"
+                              },
+                              "lastUpdateDate": {
+                                "description": "lastUpdateDate",
+                                "type": "string"
+                              },
+                              "managingLou": {
+                                "description": "managingLou",
+                                "type": "string"
+                              },
+                              "nextRenewalDate": {
+                                "description": "nextRenewalDate",
+                                "type": "string"
+                              },
+                              "otherValidationAuthorities": {
+                                "description": "otherValidationAuthorities",
+                                "items": {},
+                                "type": "array"
+                              },
+                              "status": {
+                                "description": "status",
+                                "type": "string"
+                              },
+                              "validatedAs": {
+                                "description": "validatedAs",
+                                "type": "string"
+                              },
+                              "validatedAt": {
+                                "description": "validatedAt",
+                                "properties": {
+                                  "id": {
+                                    "description": "id",
+                                    "type": "string"
+                                  },
+                                  "other": {
+                                    "description": "other",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "id": {
+                        "description": "id",
+                        "type": "string"
+                      },
+                      "links": {
+                        "description": "links",
+                        "properties": {
+                          "self": {
+                            "description": "self",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "relationships": {
+                        "description": "relationships",
+                        "properties": {
+                          "direct-parent": {
+                            "description": "direct-parent",
+                            "properties": {
+                              "links": {
+                                "description": "links",
+                                "properties": {
+                                  "reporting-exception": {
+                                    "description": "reporting-exception",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "field-modifications": {
+                            "description": "field-modifications",
+                            "properties": {
+                              "links": {
+                                "description": "links",
+                                "properties": {
+                                  "related": {
+                                    "description": "related",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "lei-issuer": {
+                            "description": "lei-issuer",
+                            "properties": {
+                              "links": {
+                                "description": "links",
+                                "properties": {
+                                  "related": {
+                                    "description": "related",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "managing-lou": {
+                            "description": "managing-lou",
+                            "properties": {
+                              "links": {
+                                "description": "links",
+                                "properties": {
+                                  "related": {
+                                    "description": "related",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "ultimate-parent": {
+                            "description": "ultimate-parent",
+                            "properties": {
+                              "links": {
+                                "description": "links",
+                                "properties": {
+                                  "reporting-exception": {
+                                    "description": "reporting-exception",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "type",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "links": {
+                  "description": "links",
+                  "properties": {
+                    "first": {
+                      "description": "first",
+                      "type": "string"
+                    },
+                    "last": {
+                      "description": "last",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "meta": {
+                  "description": "meta",
+                  "properties": {
+                    "goldenCopy": {
+                      "description": "goldenCopy",
+                      "properties": {
+                        "publishDate": {
+                          "description": "publishDate",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "pagination": {
+                      "description": "pagination",
+                      "properties": {
+                        "currentPage": {
+                          "description": "currentPage",
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "from": {
+                          "description": "from",
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "lastPage": {
+                          "description": "lastPage",
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "perPage": {
+                          "description": "perPage",
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "to": {
+                          "description": "to",
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "total": {
+                          "description": "total",
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Return LEI record based on params"
+      }
+    },
+    "/api/v1/lei-records": {}
+  },
+  "produces": [],
+  "responses": {},
+  "schemes": [
+    "https"
+  ],
+  "security": [],
+  "securityDefinitions": {},
+  "swagger": "2.0",
+  "tags": []
+}

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <CustomAction Id="dpam.list.SetContactFrequenciesForm.Button.CustomAction" Location="Mscrm.Form.list.MainTab.Save.Controls._children" Sequence="45">
+      <CommandUIDefinition>
+        <Button Command="dpam.list.SetContactFrequenciesForm.Command" Id="dpam.list.SetContactFrequenciesForm.Button" Image32by32="$webresource:dpam_/Images/SetContactFrequency32.png" Image16by16="$webresource:dpam_/Images/SetContactFrequency16.png" LabelText="$LocLabels:dpam.list.SetContactFrequenciesForm.Button.LabelText" Sequence="45" TemplateAlias="o2" ModernImage="$webresource:dpam_/Images/SetContactFrequency32.png" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dpam.list.SetContactFrequenciesHome.Button.CustomAction" Location="Mscrm.HomepageGrid.list.MainTab.Management.Controls._children" Sequence="23">
+      <CommandUIDefinition>
+        <Button Command="dpam.list.SetContactFrequenciesHome.Command" Id="dpam.list.SetContactFrequenciesHome.Button" Image32by32="$webresource:dpam_/Images/SetContactFrequency32.png" Image16by16="$webresource:dpam_/Images/SetContactFrequency16.png" LabelText="$LocLabels:dpam.list.SetContactFrequenciesHome.Button.LabelText" Sequence="23" TemplateAlias="o1" ModernImage="$webresource:dpam_/Images/SetContactFrequency32.png" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="dpam.list.SetContactFrequenciesForm.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.list.IsSalesManagerOrAdmin.EnableRule" />
+        <EnableRule Id="dpam.list.IsContactFrequencyCreatedOnEmptyForm.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.MarketingList.Ribbon.openSetContactFrequenciesPageOnForm" Library="$webresource:dpam_/Script/MarketingList.js" />
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="dpam.list.SetContactFrequenciesHome.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.list.MaxOneSelectedRecord.EnableRule" />
+        <EnableRule Id="dpam.list.IsSalesManagerOrAdmin.EnableRule" />
+        <EnableRule Id="dpam.list.IsContactFrequencyCreatedOnEmptyHome.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.MarketingList.Ribbon.openSetContactFrequenciesPage" Library="$webresource:dpam_/Script/MarketingList.js">
+          <CrmParameter Value="FirstSelectedItemId" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="msdyncrm.list.NewMarketingListFromForm.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.list.HideOnMarketingAppFromForm.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="Mscrm.CreatePrimaryEntityPermission" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="XrmCore.Commands.Open.openNewRecord" Library="$webresource:Main_system_library.js">
+          <StringParameter Value="list" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="msdyncrm.list.NewMarketingListFromGrid.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.list.HideOnMarketingAppFromGrid.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="Mscrm.CreateSelectedEntityPermission" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="XrmCore.Commands.Open.openNewRecord" Library="$webresource:Main_system_library.js">
+          <StringParameter Value="list" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules>
+      <DisplayRule Id="Mscrm.CreatePrimaryEntityPermission">
+        <EntityPrivilegeRule PrivilegeType="Create" PrivilegeDepth="Basic" AppliesTo="PrimaryEntity" />
+      </DisplayRule>
+      <DisplayRule Id="Mscrm.CreateSelectedEntityPermission">
+        <EntityPrivilegeRule PrivilegeType="Create" PrivilegeDepth="Basic" AppliesTo="SelectedEntity" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="dpam.list.HideOnMarketingAppFromForm.EnableRule">
+        <CustomRule FunctionName="BDP.DPAM.WR.MarketingList.Ribbon.manageNewMarketingListButtonVisibility" Library="$webresource:dpam_/Script/MarketingList.js">
+          <CrmParameter Value="PrimaryControl" />
+          <BoolParameter Value="false" />
+        </CustomRule>
+      </EnableRule>
+      <EnableRule Id="dpam.list.HideOnMarketingAppFromGrid.EnableRule">
+        <CustomRule FunctionName="BDP.DPAM.WR.MarketingList.Ribbon.manageNewMarketingListButtonVisibility" Library="$webresource:dpam_/Script/MarketingList.js">
+          <CrmParameter Value="PrimaryControl" />
+          <BoolParameter Value="true" />
+        </CustomRule>
+      </EnableRule>
+      <EnableRule Id="dpam.list.IsContactFrequencyCreatedOnEmptyForm.EnableRule">
+        <ValueRule Field="dpam_dt_contactfrequencycreatedon" Value="null" />
+      </EnableRule>
+      <EnableRule Id="dpam.list.IsContactFrequencyCreatedOnEmptyHome.EnableRule">
+        <CustomRule FunctionName="BDP.DPAM.WR.MarketingList.Ribbon.isContactFrequencyCreatedOnEmpty" Library="$webresource:dpam_/Script/MarketingList.js">
+          <CrmParameter Value="FirstSelectedItemId" />
+          <CrmParameter Value="PrimaryControl" />
+        </CustomRule>
+      </EnableRule>
+      <EnableRule Id="dpam.list.IsSalesManagerOrAdmin.EnableRule">
+        <CustomRule FunctionName="BDP.DPAM.WR.MarketingList.Ribbon.isSalesManagerOrAdmin" Library="$webresource:dpam_/Script/MarketingList.js" />
+      </EnableRule>
+      <EnableRule Id="dpam.list.MaxOneSelectedRecord.EnableRule">
+        <SelectionCountRule Minimum="1" Maximum="1" />
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="dpam.list.SetContactFrequenciesForm.Button.LabelText">
+      <Titles>
+        <Title description="Set Contact Frequencies" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.list.SetContactFrequenciesHome.Button.LabelText">
+      <Titles>
+        <Title description="Set Contact Frequencies" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

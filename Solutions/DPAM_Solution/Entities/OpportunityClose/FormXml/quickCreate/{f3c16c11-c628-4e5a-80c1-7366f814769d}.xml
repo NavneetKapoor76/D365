@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{f3c16c11-c628-4e5a-80c1-7366f814769d}</formid>
+    <IntroducedVersion>9.1.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{ad14a423-de81-46b9-9fc7-69ec2fb761c7}" name="OpportunityClose" showlabel="false" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section id="{70445a35-857f-487f-9149-3da36c56de9e}" name="quickOpportunityClose_column1_section1" columns="1" showlabel="true" labelid="{c8c741d1-9909-4318-a81e-6da65a8f9ceb}" IsUserDefined="0" showbar="false" locklevel="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{3eef1c18-786e-4755-a0f6-f51c48aef833}" showlabel="true" locklevel="1" labelid="{67254a93-ba44-4fbe-a15c-04752bd6de5d}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Opportunity" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ee10bbb6-8ce0-48c4-a6a9-53ab9fb4a94b}" showlabel="true" locklevel="1" labelid="{55c4712a-dcfe-450c-9921-873552462b4a}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Status" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="opportunitystatecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="opportunitystatecode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{23f53268-fad8-41f0-9fe5-50af2505ed03}" showlabel="true" locklevel="1" labelid="{00eead6b-78be-4d8e-9610-46ddaa2e1794}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Status Reason" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="opportunitystatuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="opportunitystatuscode" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section id="{350e6411-b83b-4419-8de6-c0260e5d1e9b}" name="quickOpportunityClose_column2_section1" columns="1" showlabel="false" IsUserDefined="0" showbar="false" labelid="{4c2999b6-851d-43e8-b1ac-90b335ab2b8e}" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{993d3580-0825-43a8-819e-e2c03472b117}" showlabel="true" locklevel="1" labelid="{a79b2b2c-10c1-411d-bd15-b2085eb7bc41}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Actual Revenue" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7ecd1378-9229-4168-a1b0-a720b64a735e}" showlabel="true" locklevel="0" labelid="{c2434a58-f645-452a-b2d0-33545cbd2352}" visible="false" ordinalvalue="10002" solutionaction="Modified">
+                        <labels>
+                          <label description="Competitor" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7145472b-19fa-4074-b64b-e5975a1b2efa}" locklevel="1" visible="false" ordinalvalue="10004">
+                        <labels>
+                          <label description="Subject" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section id="{99133df8-5851-4fdb-aaac-8fdf2f32f599}" name="quickOpportunityClose_column3_section1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{fc22af42-dc70-4d72-80fe-dceaef59a346}" showlabel="true" rowspan="3" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Description" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onload" application="true" active="true">
+          <InternalHandlers>
+            <Handler functionName="Mscrm.OpportunityGridCommandActions.onQuickCreateLoadOpportunityClose" libraryName="Sales/Opportunity/Opportunity_main_system_library.js" handlerUniqueId="18a9da46-0878-43bd-b49e-8619c19576f0" enabled="true" passExecutionContext="true" />
+          </InternalHandlers>
+        </event>
+      </events>
+      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Opportunity Close" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Default quick create form for Opportunity Close" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

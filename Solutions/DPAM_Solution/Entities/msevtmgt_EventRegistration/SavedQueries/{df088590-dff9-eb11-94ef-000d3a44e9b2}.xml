@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{df088590-dff9-eb11-94ef-000d3a44e9b2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" icon="1" preview="1">
+        <row name="result" id="msevtmgt_eventregistrationid">
+          <cell name="a_aa3c1bfd8f7a4c478567688556db3b28.msevtmgt_name" width="207" />
+          <cell name="a_aa3c1bfd8f7a4c478567688556db3b28.msevtmgt_eventtype" width="161" />
+          <cell name="a_aa3c1bfd8f7a4c478567688556db3b28.msevtmgt_publishstatus" width="169" />
+          <cell name="a_aa3c1bfd8f7a4c478567688556db3b28.msevtmgt_eventstartdate" width="187" />
+          <cell name="a_aa3c1bfd8f7a4c478567688556db3b28.msevtmgt_eventenddate" width="178" />
+          <cell name="a_aa3c1bfd8f7a4c478567688556db3b28.msevtmgt_primaryvenue" width="170" />
+          <cell name="a_aa3c1bfd8f7a4c478567688556db3b28.createdon" width="178" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="msevtmgt_eventregistration">
+          <attribute name="msevtmgt_eventregistrationid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity alias="a_aa3c1bfd8f7a4c478567688556db3b28" name="msevtmgt_event" to="msevtmgt_eventid" from="msevtmgt_eventid" link-type="outer" visible="false">
+            <attribute name="msevtmgt_name" />
+            <attribute name="msevtmgt_eventtype" />
+            <attribute name="msevtmgt_publishstatus" />
+            <attribute name="msevtmgt_eventstartdate" />
+            <attribute name="msevtmgt_eventenddate" />
+            <attribute name="msevtmgt_primaryvenue" />
+            <attribute name="createdon" />
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.2.9.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Registered events" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

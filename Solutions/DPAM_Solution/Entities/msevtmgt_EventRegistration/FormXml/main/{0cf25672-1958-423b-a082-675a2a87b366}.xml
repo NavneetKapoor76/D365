@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0cf25672-1958-423b-a082-675a2a87b366}</formid>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="true" maxWidth="1900" headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab name="RegistrationResponsesTab" id="{9d845a35-c714-ca58-6273-7665b4514dce}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="1">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="registration_responses_section" showlabel="true" showbar="false" locklevel="0" id="{ad59a25c-e407-3186-67e5-9222d7c01501}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{15485860-01a6-040d-c787-3ccce7ac4d3c}" showlabel="false" colspan="1" auto="false" rowspan="6" ordinalvalue="10000">
+                        <control id="Registration_Responses" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{00e32ce6-0751-8d5d-c7c1-89d96678be40}">
+                          <parameters>
+                            <ViewId solutionaction="Modified">{1FC696C9-B3F9-EB11-94EF-000D3A44E770}</ViewId>
+                            <ViewIds solutionaction="Modified">{C9F47971-17D9-4DFB-94F3-830B470693BA},{1FC696C9-B3F9-EB11-94EF-000D3A44E770}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="SessionRegistrationTab" id="{dc9c8e81-e5aa-644b-c1a9-19aca843947a}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="3">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="session_registrations_section" showlabel="true" showbar="false" locklevel="0" id="{cb1e8390-dd40-296c-5517-01448b4981c3}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{89cb7183-a3b6-c871-ae3a-8bab7162de7b}" showlabel="false" colspan="1" auto="false" rowspan="6" ordinalvalue="10000">
+                        <control id="Session_Registrations" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{e2c0744a-6063-0365-b9ea-d12e285b93b5}">
+                          <parameters>
+                            <ViewId solutionaction="Modified">{93B97308-8601-EC11-94EF-00224880ED75}</ViewId>
+                            <ViewIds solutionaction="Modified">{93B97308-8601-EC11-94EF-00224880ED75},{C9B4FE24-D2AA-4776-AB00-B53F92DE99B3}</ViewIds>
+                            <HeaderColorCode solutionaction="Added">#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar />
+      </Navigation>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.qRCodeForEncodedField_drawQRCodeOnForm" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{e13b8cda-38dd-8b57-b3c1-29301088d24e}" enabled="true" parameters="{   &quot;fieldName&quot;: &quot;msevtmgt_qrcode&quot;,   &quot;webResourceId&quot;: &quot;WebResource_QRCodeWrapper&quot;, }" passExecutionContext="false" ordinalvalue="0" solutionaction="Modified" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="msevtmgt_qrcode">
+          <Handlers>
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.qRCodeForEncodedField_drawQRCodeOnForm" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{dc3ee95a-4143-7cdd-94a0-d51143a22dea}" enabled="true" parameters="{   &quot;fieldName&quot;: &quot;msevtmgt_qrcode&quot;,   &quot;webResourceId&quot;: &quot;WebResource_QRCodeWrapper&quot;, }" passExecutionContext="false" ordinalvalue="0" solutionaction="Modified" />
+          </Handlers>
+        </event>
+      </events>
+      <footer id="{2632932d-0c4b-4528-a87e-8988c790864d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Event registration" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.Account, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b978032b6aa2a30" PluginAssemblyId="1d715480-806c-4fd2-a79f-615452420bfb" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsAccount-1D715480-806C-4FD2-A79F-615452420BFB/BDPDPAMPluginsAccount.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Account.PostCreateAccount, BDP.DPAM.Plugins.Account, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b978032b6aa2a30" PluginTypeId="5305f226-9fca-49cd-9c29-9c17c69e1b47" Name="BDP.DPAM.Plugins.Account.PostCreateAccount">
+      <FriendlyName>132b30b5-2e5e-42f7-a751-b6f85d501e72</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Account.PostUpdateAccount, BDP.DPAM.Plugins.Account, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b978032b6aa2a30" PluginTypeId="8a1fe36e-48f9-410d-ae6f-89ba272dd4d6" Name="BDP.DPAM.Plugins.Account.PostUpdateAccount">
+      <FriendlyName>2e69de39-761f-4610-8e80-9a1e32208462</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Account.PreCreateAccount, BDP.DPAM.Plugins.Account, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b978032b6aa2a30" PluginTypeId="d618b000-ef4f-4f4a-b1b8-73fdc5251fce" Name="BDP.DPAM.Plugins.Account.PreCreateAccount">
+      <FriendlyName>ceff8d57-c9e6-4bb3-8d4e-6c4dd21bbc94</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.Account.PreUpdateAccount, BDP.DPAM.Plugins.Account, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b978032b6aa2a30" PluginTypeId="d4494670-6ac8-4f6b-98f5-76f9788f1680" Name="BDP.DPAM.Plugins.Account.PreUpdateAccount">
+      <FriendlyName>30453c1a-06f8-43ae-b149-a34f572c13f3</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

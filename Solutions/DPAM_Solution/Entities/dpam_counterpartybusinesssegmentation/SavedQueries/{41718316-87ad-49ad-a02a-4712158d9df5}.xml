@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{41718316-87ad-49ad-a02a-4712158d9df5}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_s_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_counterpartybusinesssegmentationid">
+          <cell name="dpam_s_name" width="300" />
+          <cell name="dpam_mos_counterpartytype" width="100" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_counterpartybusinesssegmentation">
+          <attribute name="dpam_counterpartybusinesssegmentationid" />
+          <attribute name="dpam_s_name" />
+          <attribute name="createdon" />
+          <order attribute="dpam_s_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="dpam_mos_counterpartytype" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Counterparty Business Segmentations" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

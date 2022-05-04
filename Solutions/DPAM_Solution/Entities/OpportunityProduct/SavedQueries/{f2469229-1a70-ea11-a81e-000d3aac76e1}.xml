@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{f2469229-1a70-ea11-a81e-000d3aac76e1}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="opportunityproductname" select="1" preview="1" icon="1">
+        <row name="result" id="opportunityproductid">
+          <cell name="productid" width="300" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="opportunityproduct">
+          <attribute name="productid" />
+          <attribute name="opportunityproductid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>9.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Opportunity products Add Products" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
