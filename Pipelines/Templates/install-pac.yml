@@ -9,11 +9,10 @@ steps:
     Set-Alias nuget $targetNugetExe -Scope Global -Verbose
     
     $nugetPackage = "Microsoft.PowerApps.CLI"
-    $outFolder = "pac"
 
-    ./nuget install  $nugetPackage -O $outFolder
-    $pacNugetFolder = Get-ChildItem $outFolder | Where-Object {$_.Name -match $nugetPackage + "."}
-    $pacPath = $pacNugetFolder.FullName + "\tools"
-    echo "##vso[task.setvariable variable=pacPath]$pacPath"
+    ./nuget install  $nugetPackage -O ./
+    $pacNugetFolder = Get-ChildItem ./ | Where-Object {$_.Name -match $nugetPackage + "."}
+    move .\$pacNugetFolder\tools\*.* .\
+    Remove-Item .\$pacNugetFolder -Force -Recurse
   displayName: 'Install pac cli'
 
