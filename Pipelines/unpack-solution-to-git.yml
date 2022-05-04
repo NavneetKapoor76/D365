@@ -45,8 +45,6 @@ stages:
     # Other tasks, which use the PowerApps PowerShell cmdlets, need the environment guid.  Setting it for future use.
     - template: Templates\unpack-solution.yml
       parameters:
-        project: $(Project)
-        repo: $(Repo)
         branch: $(Build.SourceBranchName)
         commitMessage: ${{parameters.CommitComment}}
         email: $(Build.RequestedForEmail)
