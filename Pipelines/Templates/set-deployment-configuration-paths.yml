@@ -1,0 +1,38 @@
+parameters:
+- name: configPath
+  type: string
+- name: environmentName
+  type: string
+steps:
+  #Check for deployment settings for this environment
+- powershell: |
+    $settingFile = "deployment-settings"
+    $deploymentSettingsPath = ''
+    $path = "${{ parameters.configPath }}$settingFile-${{ parameters.environmentName }}.json"
+    if(Test-Path $path)
+    {
+        $deploymentSettingsPath = $path
+    }
+    else
+    {
+        $path = "${{ parameters.configPath }}$settingFile.json"
+        if(Test-Path $path)
+        {
+            $deploymentSettingsPath = $path
+        }
+    }
+
+    if($settingFile -eq "deploymentSettings")
+    {
+        Write-Host "##vso[task.setVariable variable=DeploymentSettingsPath]$deploymentSettingsPath"
+        $useDeploymentSettings = 'false'
+        if($deploymentSettingsPath -ne '') {
+            $useDeploymentSettings = 'true'
+        }
+        Write-Host "##vso[task.setVariable variable=UseDeploymentSettings]$useDeploymentSettings"
+    }
+    else
+    {
+        Write-Host "##vso[task.setVariable variable=CustomDeploymentSettingsPath]$deploymentSettingsPath"
+    }  
+  displayName: 'Check if Deployment Settings Exist'
