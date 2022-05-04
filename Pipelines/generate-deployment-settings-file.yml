@@ -44,8 +44,7 @@ steps:
   condition: succeeded()
 
 - powershell: |
-    $env:PATH = $env:PATH + ";" + "$(pacPath)"
-    pac solution create-settings --solution-zip '$(Build.ArtifactStagingDirectory)\$(SolutionName).zip' --settings-file $(Build.SourcesDirectory)\Config\deployment-settings.json
+    .\pac.exe solution create-settings --solution-zip '$(Build.ArtifactStagingDirectory)\$(SolutionName).zip' --settings-file $(Build.SourcesDirectory)\Config\deployment-settings.json
   failOnStderr: true
   displayName: 'Create Deployment Settings File'
   condition: succeeded()
