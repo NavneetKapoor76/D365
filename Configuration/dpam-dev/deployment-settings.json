@@ -1,0 +1,20 @@
+{
+  "EnvironmentVariables": [
+    {
+      "SchemaName": "dpam_TESTENV",
+      "Value": ""
+    }
+  ],
+  "ConnectionReferences": [
+    {
+      "LogicalName": "bdp_sharedcommondataserviceforapps_ac960",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+    },
+    {
+      "LogicalName": "dpam_sharedcommondataserviceforapps_32790",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+    }
+  ]
+}
