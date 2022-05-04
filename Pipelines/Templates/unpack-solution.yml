@@ -114,7 +114,7 @@ steps:
 
 - template: export-configuration-data.yml
   parameters:
-    configDataSchemaFile: $(Build.SourcesDirectory)\Config\_common\data-schema.xml
+    configDataSchemaFile: $(Build.SourcesDirectory)\Configuration\_common\data-schema.xml
     environmentName: $(EnvironmentName)
 
 # We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
@@ -123,7 +123,7 @@ steps:
     if(Test-Path $path) {
         $extract = @{
             Path = $path
-            DestinationPath = '$(Build.SourcesDirectory)/Config/_common/Data'
+            DestinationPath = '$(Build.SourcesDirectory)/Configuration/_common/Data'
         }
         Expand-Archive @extract
     }
