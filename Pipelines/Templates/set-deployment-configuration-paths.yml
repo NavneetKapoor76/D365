@@ -6,33 +6,18 @@ parameters:
 steps:
   #Check for deployment settings for this environment
 - powershell: |
-    $settingFile = "deployment-settings"
+    $settingFile = "deployment-settings.json"
     $deploymentSettingsPath = ''
-    $path = "${{ parameters.configPath }}$settingFile-${{ parameters.environmentName }}.json"
+    $path = "$(Build.SourcesDirectory)\Configuration\${{parameters.environmentName}}\$settingFile"
     if(Test-Path $path)
     {
-        $deploymentSettingsPath = $path
-    }
-    else
-    {
-        $path = "${{ parameters.configPath }}$settingFile.json"
-        if(Test-Path $path)
-        {
-            $deploymentSettingsPath = $path
-        }
+      $deploymentSettingsPath = $path
     }
 
-    if($settingFile -eq "deploymentSettings")
-    {
-        Write-Host "##vso[task.setVariable variable=DeploymentSettingsPath]$deploymentSettingsPath"
-        $useDeploymentSettings = 'false'
-        if($deploymentSettingsPath -ne '') {
-            $useDeploymentSettings = 'true'
-        }
-        Write-Host "##vso[task.setVariable variable=UseDeploymentSettings]$useDeploymentSettings"
+    Write-Host "##vso[task.setVariable variable=DeploymentSettingsPath]$deploymentSettingsPath"
+    $useDeploymentSettings = 'false'
+    if($deploymentSettingsPath -ne '') {
+      $useDeploymentSettings = 'true'
     }
-    else
-    {
-        Write-Host "##vso[task.setVariable variable=CustomDeploymentSettingsPath]$deploymentSettingsPath"
-    }  
+    Write-Host "##vso[task.setVariable variable=UseDeploymentSettings]$useDeploymentSettings"
   displayName: 'Check if Deployment Settings Exist'
