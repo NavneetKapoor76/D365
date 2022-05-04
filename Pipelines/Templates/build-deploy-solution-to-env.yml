@@ -22,7 +22,7 @@ stages:
     - template: unpack-solution.yml
       parameters:
         branch: $(Build.SourceBranchName) #SHOULD BE THE SPRINT/FEATURE BRANCH
-        commitMessage: 'Updated as part of deployment to Test environment'
+        commitMessage: 'Solution package updated as part of deployment process'
         email: $(Build.RequestedForEmail)
         serviceConnection: $(EnvironmentUrl) #SHOULD BE THE SPRINT/FEATURE ENVIRONMENT
         solutionName: $(SolutionName) 
