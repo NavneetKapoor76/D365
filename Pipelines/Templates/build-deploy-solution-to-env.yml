@@ -2,6 +2,15 @@
 # -Building the solution when changes to the contents of the solution folder are triggered (see trigger-SolutionName.yml for example trigger)
 # -Deploying the solution to a specific environment based on pipeline variables
 # This is most commonly used for PR Validation where both the build and deploy must suceeed in order for the PR checks to succeed.
+
+parameters:
+- name: importUnmanaged
+  type: boolean
+  default: false
+- name: overwriteUnmanagedCustomizations
+  type: boolean
+  default: false
+
 stages:
 - stage: build_and_deploy
   displayName: 'Build and Deploy' 
@@ -10,10 +19,23 @@ stages:
     pool: 
       vmImage: 'windows-latest'
     steps:
+    - template: unpack-solution.yml
+      parameters:
+        branch: $(Build.SourceBranchName) #SHOULD BE THE SPRINT/FEATURE BRANCH
+        commitMessage: 'Updated as part of deployment to Test environment'
+        email: $(Build.RequestedForEmail)
+        serviceConnection: $(EnvironmentUrl) #SHOULD BE THE SPRINT/FEATURE ENVIRONMENT
+        solutionName: $(SolutionName) 
+        userName: $(Build.RequestedFor)
+
     - template: build-solution.yml
+      parameters:
+        buildType: 'Unmanaged'
+        mapCodeComponents: true
 
     - template: deploy-Solution.yml
       parameters:
-        serviceConnection: '$(ServiceConnection)'
-        importUnmanaged: '$(ImportUnmanaged)'
-        skipBuildToolsInstaller: 'true'
+        serviceConnection: '$(EnvironmentUrl)'
+        importUnmanaged: ${{parameters.importUnmanaged}}
+        overwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
+        skipBuildToolsInstaller: true
