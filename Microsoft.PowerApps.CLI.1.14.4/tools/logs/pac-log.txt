@@ -1,0 +1,7 @@
+2022-05-04 14:11:01.0050|INFO|bolt.cli.CommandProcessor|StartExecutingVerb
+2022-05-04 14:11:01.0530|INFO|bolt.cli.CommandProcessor|Verbs: ["solution","create-settings"]
+2022-05-04 14:11:01.0830|INFO|bolt.module.solution.SolutionPackagerProvider|Extract comp settings from zip D:\a\1\a\DPAM_Solution.zip: Starting...
+2022-05-04 14:11:01.5980|INFO|bolt.module.solution.SolutionPackagerProvider|Extract comp settings completed.
+2022-05-04 14:11:01.6275|INFO|bolt.cli.CommandProcessor|EndExecutingVerb
+2022-05-04 14:11:01.6275|INFO|bolt.cli.CommandProcessor|Success: True
+2022-05-04 14:11:01.6275|INFO|bolt.cli.CommandProcessor|Execution Time(ms): 561
