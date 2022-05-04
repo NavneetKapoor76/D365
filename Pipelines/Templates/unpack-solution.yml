@@ -72,6 +72,7 @@ steps:
   inputs:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
+  enabled: false
 
 # Export both unmanaged and managed to put into source control
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.export-solution.PowerPlatformExportSolution@0
