@@ -56,26 +56,17 @@ steps:
 
 # We'll store configuration data as artifacts on the build pipeline to be used during deployment. This includes configuration data created via Configuration data migration tool and deploymentSettings.json and customDeploymentSettings.json 
 - powershell: |
-    $path = "$(Build.SourcesDirectory)\Config\Data"
-    if(Test-Path $path) {
-        $compress = @{
-            Path = $path + '\*.*'
-            CompressionLevel = 'Fastest'
-            DestinationPath = '$(Build.ArtifactStagingDirectory)/ProductConfigData.zip'
-        }
-        Compress-Archive @compress
-    }
-    
-    if(Test-Path "$(Build.SourcesDirectory)\Config") {
-        Get-ChildItem -Path "$(Build.SourcesDirectory)\Config" | 
+    if(Test-Path "$(Build.SourcesDirectory)\Configuration") {
+        Get-ChildItem -Path "$(Build.SourcesDirectory)\Configuration" | 
         ForEach-Object {
             $environment = $_.Name
-            $path = "$(Build.SourcesDirectory)\Config\$environment\Data"
+            $configZipFile = If ($environment -eq "_common") {'$(Build.ArtifactStagingDirectory)/ConfigData.zip'} Else {'$(Build.ArtifactStagingDirectory)/ConfigData-' + $environment + '.zip'}
+            $path = "$(Build.SourcesDirectory)\Configuration\$environment\Data"
             if(Test-Path $path) {
                 $compress = @{
                     Path = $path + '\*.*'
                     CompressionLevel = 'Fastest'
-                    DestinationPath = '$(Build.ArtifactStagingDirectory)/PostProcessConfigData-' + $environment + '.zip'
+                    DestinationPath = $configZipFile
                 }
                 Compress-Archive @compress
             }
