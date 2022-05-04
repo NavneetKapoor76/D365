@@ -1,0 +1,15 @@
+trigger: none
+pr: none
+    
+name: 1.0.$(Date:yyyyMMdd)$(Rev:.r)
+
+variables:
+- group: dev-scope
+- group: project-scope
+
+pool:
+  name: Azure Pipelines
+  vmImage: windows-latest
+
+stages:
+- template: Pipelines\Templates\build-deploy-Solution-To-Environment.yml@PipelineRepo #The @PipelineRepo tells the pipeline where to look for the templates based on the name of the repo you specified above
