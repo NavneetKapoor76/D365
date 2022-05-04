@@ -1,6 +1,4 @@
 parameters:
-- name: configPath
-  type: string
 - name: environmentName
   type: string
 steps:
