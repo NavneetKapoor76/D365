@@ -42,7 +42,7 @@ steps:
 
 - template: Templates\export-configuration-data.yml
   parameters:
-    configDataSchemaFile: $(Build.SourcesDirectory)\Config\environment-data-schema.xml
+    configDataSchemaFile: $(Build.SourcesDirectory)\Configuration\environment-data-schema.xml
     environmentName: '${{parameters.EnvironmentName}}'
 
 - task: CopyFiles@2
@@ -65,7 +65,7 @@ steps:
     if(Test-Path $path) {
         $extract = @{
             Path = $path
-            DestinationPath = '$(Build.SourcesDirectory)/Config/${{parameters.EnvironmentName}}/Data'
+            DestinationPath = '$(Build.SourcesDirectory)/Configuration/${{parameters.EnvironmentName}}/Data'
         }
         Expand-Archive @extract -Force
     }
