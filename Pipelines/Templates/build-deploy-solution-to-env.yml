@@ -22,7 +22,7 @@ stages:
     pool: 
       vmImage: 'windows-latest'
     steps:
-    - ${{ if eq(alignDev, 'true') }}:
+    - ${{ if eq('${{parameters.alignDev}}'', 'true') }}:
       - template: unpack-solution.yml
         parameters:
           branch: $(Build.SourceBranchName) #SHOULD BE THE SPRINT/FEATURE BRANCH
