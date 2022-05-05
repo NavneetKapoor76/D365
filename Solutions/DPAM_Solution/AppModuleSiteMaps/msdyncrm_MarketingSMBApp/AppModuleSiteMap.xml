@@ -2136,17 +2136,6 @@
           <Title LCID="3076" Title="對象" />
           <Title LCID="1028" Title="對象" />
         </Titles>
-        <!--Temporarily removing Contact and Lead tabs for March release, to be added again for April release-->
-        <!--<SubArea Id="ContactSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="contact" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
-          <Titles>
-            <Title LCID="1033" Title="Contacts" />
-          </Titles>
-        </SubArea>
-        <SubArea Id="LeadSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="lead" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
-          <Titles>
-            <Title LCID="1033" Title="Leads" />
-          </Titles>
-        </SubArea>-->
         <SubArea Id="SegmentSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdynmkt_virtualsegment" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Segments" />
@@ -2597,6 +2586,56 @@
             <Title LCID="1028" Title="範本" />
           </Titles>
         </SubArea>
+        <SubArea Id="FragmentsSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdynmkt_fragment" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Content blocks" />
+            <Title LCID="1025" Title="كتل المحتوى" />
+            <Title LCID="1026" Title="Блокове със съдържание" />
+            <Title LCID="1027" Title="Blocs de contingut" />
+            <Title LCID="1029" Title="Bloky obsahu" />
+            <Title LCID="1030" Title="Indholdsblokke" />
+            <Title LCID="1031" Title="Inhaltsblöcke" />
+            <Title LCID="1032" Title="Μπλοκ περιεχομένου" />
+            <Title LCID="3081" Title="Content blocks" />
+            <Title LCID="4105" Title="Content blocks" />
+            <Title LCID="2057" Title="Content blocks" />
+            <Title LCID="3082" Title="Bloques de contenido" />
+            <Title LCID="1061" Title="Sisuplokid" />
+            <Title LCID="1069" Title="Eduki-blokeak" />
+            <Title LCID="1035" Title="Sisältölohkot" />
+            <Title LCID="3084" Title="Blocs de contenu" />
+            <Title LCID="1036" Title="Blocs de contenu" />
+            <Title LCID="1110" Title="Bloques de contido" />
+            <Title LCID="1037" Title="בלוקים של תוכן" />
+            <Title LCID="1050" Title="Blokovi sadržaja" />
+            <Title LCID="1038" Title="Tartalomblokkok" />
+            <Title LCID="1057" Title="Blok konten" />
+            <Title LCID="1040" Title="Blocchi di contenuto" />
+            <Title LCID="1041" Title="コンテンツ ブロック" />
+            <Title LCID="1042" Title="콘텐츠 블록" />
+            <Title LCID="1063" Title="Turinio blokai" />
+            <Title LCID="1062" Title="Satura bloki" />
+            <Title LCID="1044" Title="Innholdsblokker" />
+            <Title LCID="1043" Title="Inhoudsblokken" />
+            <Title LCID="1045" Title="Bloki zawartości" />
+            <Title LCID="1046" Title="Blocos de conteúdo" />
+            <Title LCID="2070" Title="Blocos de conteúdo" />
+            <Title LCID="1048" Title="Blocuri de conținut" />
+            <Title LCID="1049" Title="Блоки содержимого" />
+            <Title LCID="1051" Title="Bloky obsahu" />
+            <Title LCID="1060" Title="Bloki vsebine" />
+            <Title LCID="3098" Title="Блокови садржаја" />
+            <Title LCID="2074" Title="Blokovi sadržaja" />
+            <Title LCID="1053" Title="Innehållsblock" />
+            <Title LCID="1054" Title="บล็อกเนื้อหา" />
+            <Title LCID="1055" Title="İçerik blokları" />
+            <Title LCID="1058" Title="Блоки вмісту" />
+            <Title LCID="1066" Title="Khối nội dung" />
+            <Title LCID="2052" Title="内容块" />
+            <Title LCID="3076" Title="內容區塊" />
+            <Title LCID="1028" Title="內容區塊" />
+          </Titles>
+        </SubArea>
       </Group>
       <Group Id="AssetsGroup" ResourceId="SitemapDesigner.AssetsGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
@@ -3004,56 +3043,7 @@
           <Title LCID="1028" Title="客戶互動" />
         </Titles>
         <SubArea Id="msdyncrm_socialpostingconfiguration_Area" Entity="msdyncrm_socialpostingconfiguration" AvailableOffline="true" PassParams="false" />
-        <SubArea Id="ComplianceSubArea" VectorIcon="/WebResources/icon/msdynmkt_compliancesettings.svg" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="/main.aspx?pagetype=entityrecord&amp;etn=msdynmkt_compliancesettings&amp;id=7f4a6355-1811-4cde-bde3-fee8c85f56b1&amp;formid=c4665b49-b72e-47a5-82b1-87b99315e69a" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
-          <Titles>
-            <Title LCID="1033" Title="Compliance" />
-            <Title LCID="1025" Title="الامتثال" />
-            <Title LCID="1026" Title="Съответствие" />
-            <Title LCID="1027" Title="Compliment" />
-            <Title LCID="1029" Title="Dodržování předpisů" />
-            <Title LCID="1030" Title="Overholdelse" />
-            <Title LCID="1031" Title="Konformität" />
-            <Title LCID="1032" Title="Συμμόρφωση" />
-            <Title LCID="3081" Title="Compliance" />
-            <Title LCID="4105" Title="Compliance" />
-            <Title LCID="2057" Title="Compliance" />
-            <Title LCID="3082" Title="Cumplimiento" />
-            <Title LCID="1061" Title="Vastavus" />
-            <Title LCID="1069" Title="Arau-gordetzea" />
-            <Title LCID="1035" Title="Vaatimustenmukaisuus" />
-            <Title LCID="3084" Title="Conformité" />
-            <Title LCID="1036" Title="Conformité" />
-            <Title LCID="1110" Title="Cumprimento" />
-            <Title LCID="1037" Title="תאימות" />
-            <Title LCID="1050" Title="Sukladnost" />
-            <Title LCID="1038" Title="Megfelelőség" />
-            <Title LCID="1057" Title="Kepatuhan" />
-            <Title LCID="1040" Title="Conformità" />
-            <Title LCID="1041" Title="コンプライアンス" />
-            <Title LCID="1042" Title="규정 준수" />
-            <Title LCID="1063" Title="Atitiktis" />
-            <Title LCID="1062" Title="Atbilstība" />
-            <Title LCID="1044" Title="Samsvar" />
-            <Title LCID="1043" Title="Naleving" />
-            <Title LCID="1045" Title="Zgodność" />
-            <Title LCID="1046" Title="Conformidade" />
-            <Title LCID="2070" Title="Conformidade" />
-            <Title LCID="1048" Title="Conformitate" />
-            <Title LCID="1049" Title="Соблюдение правил" />
-            <Title LCID="1051" Title="Súlad" />
-            <Title LCID="1060" Title="Skladnost" />
-            <Title LCID="3098" Title="Усаглашеност" />
-            <Title LCID="2074" Title="Usaglašenost" />
-            <Title LCID="1053" Title="Efterlevnad" />
-            <Title LCID="1054" Title="การปฏิบัติตามกฎระเบียบ" />
-            <Title LCID="1055" Title="Uyumluluk" />
-            <Title LCID="1058" Title="Відповідність" />
-            <Title LCID="1066" Title="Tuân thủ" />
-            <Title LCID="2052" Title="合规" />
-            <Title LCID="3076" Title="合規性" />
-            <Title LCID="1028" Title="合規性" />
-          </Titles>
-        </SubArea>
+        <SubArea Id="ComplianceSubArea" VectorIcon="/WebResources/icon/msdynmkt_compliancesettings.svg" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="/main.aspx?pagetype=entityrecord&amp;etn=msdynmkt_compliancesettings&amp;id=7f4a6355-1811-4cde-bde3-fee8c85f56b1&amp;formid=c4665b49-b72e-47a5-82b1-87b99315e69a" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
         <SubArea Id="AudienceConfigurationSubArea" VectorIcon="/WebResources/icon/msdynmkt_contactpointsettings.svg" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="msdynmkt_contactpointsettings" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Audience configuration" />
@@ -4368,6 +4358,6 @@
     </Area>
   </SiteMap>
   <LocalizedNames>
-    <LocalizedName description="Analytics and Insights for Customer Engagement" languagecode="1033" />
+    <LocalizedName description="MarketingSMBApp" languagecode="1033" />
   </LocalizedNames>
 </AppModuleSiteMap>

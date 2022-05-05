@@ -129,7 +129,7 @@
                     </row>
                     <row>
                       <cell id="{2a7e38b5-986d-45ff-9f7d-352b121f927e}" showlabel="false" auto="false" rowspan="7" colspan="2" visible="false" ordinalvalue="10001">
-                        <control id="product_dynamic_properties_offline" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true" uniqueid="{9c9b234e-930e-4fea-9b33-09f2742dad47}" solutionaction="Modified">
+                        <control id="product_dynamic_properties_offline" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{9C9B234E-930E-4FEA-9B33-09F2742DAD47}">
                           <parameters />
                         </control>
                       </cell>
@@ -285,69 +285,6 @@
           </row>
         </rows>
       </header>
-      <controlDescriptions>
-        <controlDescription forControl="{9c9b234e-930e-4fea-9b33-09f2742dad47}" solutionaction="Modified">
-          <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
-            <parameters>
-              <ViewId>{63ABC191-F333-47E1-9F3F-EF1CBF8DF1C0}</ViewId>
-              <IsUserView>false</IsUserView>
-              <RelationshipName>Product_DynamicProperty</RelationshipName>
-              <TargetEntityType>dynamicproperty</TargetEntityType>
-              <AutoExpand>Fixed</AutoExpand>
-              <EnableQuickFind>false</EnableQuickFind>
-              <EnableViewPicker>false</EnableViewPicker>
-              <EnableJumpBar>false</EnableJumpBar>
-              <ChartGridMode>Grid</ChartGridMode>
-              <VisualizationId />
-              <IsUserChart>false</IsUserChart>
-              <EnableChartPicker>false</EnableChartPicker>
-              <RecordsPerPage>5</RecordsPerPage>
-            </parameters>
-          </customControl>
-          <customControl formFactor="0" name="MscrmControls.RetrieveProperties.RetrievePropertiesControl">
-            <parameters>
-              <data-set name="Grid">
-                <ViewId>{63ABC191-F333-47E1-9F3F-EF1CBF8DF1C0}</ViewId>
-                <IsUserView>false</IsUserView>
-                <RelationshipName>Product_DynamicProperty</RelationshipName>
-                <TargetEntityType>dynamicproperty</TargetEntityType>
-              </data-set>
-              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
-              <EnableEditing static="true" type="Enum">no</EnableEditing>
-              <ReflowBehavior static="true" type="Enum">Reflow</ReflowBehavior>
-              <EnableFiltering static="true" type="Enum">no</EnableFiltering>
-            </parameters>
-          </customControl>
-          <customControl formFactor="1" name="MscrmControls.RetrieveProperties.RetrievePropertiesControl">
-            <parameters>
-              <data-set name="Grid">
-                <ViewId>{63ABC191-F333-47E1-9F3F-EF1CBF8DF1C0}</ViewId>
-                <IsUserView>false</IsUserView>
-                <RelationshipName>Product_DynamicProperty</RelationshipName>
-                <TargetEntityType>dynamicproperty</TargetEntityType>
-              </data-set>
-              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
-              <EnableEditing static="true" type="Enum">no</EnableEditing>
-              <ReflowBehavior static="true" type="Enum">Reflow</ReflowBehavior>
-              <EnableFiltering static="true" type="Enum">no</EnableFiltering>
-            </parameters>
-          </customControl>
-          <customControl formFactor="2" name="MscrmControls.RetrieveProperties.RetrievePropertiesControl">
-            <parameters>
-              <data-set name="Grid">
-                <ViewId>{63ABC191-F333-47E1-9F3F-EF1CBF8DF1C0}</ViewId>
-                <IsUserView>false</IsUserView>
-                <RelationshipName>Product_DynamicProperty</RelationshipName>
-                <TargetEntityType>dynamicproperty</TargetEntityType>
-              </data-set>
-              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
-              <EnableEditing static="true" type="Enum">no</EnableEditing>
-              <ReflowBehavior static="true" type="Enum">Reflow</ReflowBehavior>
-              <EnableFiltering static="true" type="Enum">no</EnableFiltering>
-            </parameters>
-          </customControl>
-        </controlDescription>
-      </controlDescriptions>
       <footer id="{4541064d-6750-47b4-92a5-96a74f00b613}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
         <rows></rows>
       </footer>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{00bb2668-00b2-47f4-8f34-f51e20b6e45c}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{ab89a4e6-c6d8-4793-9ef3-bcbf87acca13}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{d69e6317-1c19-4c90-92d6-654150a5477b}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d48ad55c-b458-47c7-b753-b722ce9be8bc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="AML Question" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_amlquestion" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_amlquestion" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b7241ff1-fac5-4570-b4c5-250deb3a11ed}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="AML Answer Code" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f39808a6-76e9-4a43-9478-89280b61ea59}" locklevel="0" colspan="1" rowspan="3">
+                        <labels>
+                          <label description="AML Answer" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_ms_amlanswer" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="dpam_ms_amlanswer" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{08195206-0452-49d2-8f47-f1e6b2352067}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="AML Answer Score" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_amlanswerscore" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_amlanswerscore" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f3672eb0-0cd6-47b7-9532-c209ff5a1287}" locklevel="0" colspan="1" rowspan="3">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_ms_description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="dpam_ms_description" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{5442f737-9a1b-4445-b71b-b991d1b94fa1}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{2562619c-f5ff-4ca4-979d-1f1601a0d928}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{88fca98b-1aa8-4d61-95cc-796418e33b01}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d1e3b321-6889-4101-ac44-cde8c864e5f3}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{7e8abf69-013d-4810-9714-cfefde4c94ec}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{966ba08f-8456-44ba-b565-3e8d036bd702}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{25446969-af47-430c-ada5-a3f4e523511b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a1efe217-3f9b-4af1-ba91-154280d1cd38}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{2ef574ca-76ff-4f24-bb12-92df4dbd508b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

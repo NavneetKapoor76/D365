@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.AMLUserAnswer.PreCreateAMLUserAnswer: Create of dpam_amluseranswer" SdkMessageProcessingStepId="{600d08d5-d7bb-ec11-983f-6045bd90eb7e}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.AMLUserAnswer.PreCreateAMLUserAnswer, BDP.DPAM.Plugins.AMLUserAnswer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0fc402fa6846bd59</PluginTypeName>
+  <PluginTypeId>1d8a5e0b-3203-4821-9f6d-9c6e5f66f90b</PluginTypeId>
+  <PrimaryEntity>dpam_amluseranswer</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

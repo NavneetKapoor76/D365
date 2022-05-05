@@ -29,8 +29,8 @@ var BDP;
                         };
                         let navigationOptions = {
                             target: 2,
-                            width: 570,
-                            height: 450,
+                            width: 530,
+                            height: 420,
                             title: "Set Contact Frequencies"
                         };
                         Xrm.Navigation.navigateTo(pageInput, navigationOptions)

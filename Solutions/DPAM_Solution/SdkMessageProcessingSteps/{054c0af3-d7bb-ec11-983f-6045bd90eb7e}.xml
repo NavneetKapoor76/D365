@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.AMLUserAnswer.PreUpdateAMLUserAnswer: Update of dpam_amluseranswer" SdkMessageProcessingStepId="{054c0af3-d7bb-ec11-983f-6045bd90eb7e}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.AMLUserAnswer.PreUpdateAMLUserAnswer, BDP.DPAM.Plugins.AMLUserAnswer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0fc402fa6846bd59</PluginTypeName>
+  <PluginTypeId>69ac63b6-2d0d-429a-a687-80217067a5ed</PluginTypeId>
+  <PrimaryEntity>dpam_amluseranswer</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes>dpam_lk_amlanswer,dpam_lk_amlquestion</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

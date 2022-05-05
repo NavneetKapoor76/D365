@@ -41,6 +41,8 @@
     <RolePrivilege name="prvAppendmsdyn_flowcardtype" level="Basic" />
     <RolePrivilege name="prvAppendmsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvAppendmsdyn_salesinsightssettings" level="Basic" />
+    <RolePrivilege name="prvAppendmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAppendmsdyn_wallsavedqueryusersettings" level="Basic" />
     <RolePrivilege name="prvAppendmsdyncrm_customerjourney" level="Global" />
     <RolePrivilege name="prvAppendmsdyncrm_segment" level="Basic" />
@@ -99,6 +101,8 @@
     <RolePrivilege name="prvAppendTomsdyn_flowcardtype" level="Global" />
     <RolePrivilege name="prvAppendTomsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvAppendTomsdyn_salesinsightssettings" level="Global" />
+    <RolePrivilege name="prvAppendTomsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendTomsdyn_sequencetarget" level="Local" />
     <RolePrivilege name="prvAppendTomsdyn_wallsavedqueryusersettings" level="Basic" />
     <RolePrivilege name="prvAppendTomsdyncrm_customerjourney" level="Global" />
     <RolePrivilege name="prvAppendTomsdyncrm_segment" level="Basic" />
@@ -149,6 +153,8 @@
     <RolePrivilege name="prvAssignImportMap" level="Local" />
     <RolePrivilege name="prvAssignLead" level="Global" />
     <RolePrivilege name="prvAssignMailMergeTemplate" level="Basic" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAssignmsevtmgt_Event" level="Global" />
     <RolePrivilege name="prvAssignmsevtmgt_eventcustomregistrationfield" level="Global" />
     <RolePrivilege name="prvAssignmsevtmgt_eventmanagementactivity" level="Global" />
@@ -169,12 +175,17 @@
     <RolePrivilege name="prvAssignWorkflow" level="Basic" />
     <RolePrivilege name="prvAssignWorkflowSession" level="Basic" />
     <RolePrivilege name="prvCreateExchangeSyncIdMapping" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_extendedusersetting" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_sequencetargetstep" level="Local" />
+    <RolePrivilege name="prvCreatemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvCreatemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvCreateOrgEmailTemplates" level="Global" />
     <RolePrivilege name="prvCreateOwnCalendar" level="Global" />
     <RolePrivilege name="prvCreateSharePointData" level="Global" />
     <RolePrivilege name="prvCreateSharePointDocument" level="Global" />
     <RolePrivilege name="prvDeleteExchangeSyncIdMapping" level="Basic" />
     <RolePrivilege name="prvDeleteMailboxTrackingFolder" level="Basic" />
+    <RolePrivilege name="prvDeletemsdyn_workqueuestate" level="Global" />
     <RolePrivilege name="prvDeleteOwnCalendar" level="Global" />
     <RolePrivilege name="prvDeletePersonalDocumentTemplate" level="Basic" />
     <RolePrivilege name="prvDeleteUserSettings" level="Local" />
@@ -253,16 +264,25 @@
     <RolePrivilege name="prvReadmsdyn_actioncardrolesetting" level="Basic" />
     <RolePrivilege name="prvReadmsdyn_dealmanagersettings" level="Global" />
     <RolePrivilege name="prvReadmsdyn_entityrankingrule" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_extendedusersetting" level="Basic" />
     <RolePrivilege name="prvReadmsdyn_flowcardtype" level="Global" />
     <RolePrivilege name="prvReadmsdyn_icebreakersconfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_PostAlbum" level="Global" />
     <RolePrivilege name="prvReadmsdyn_PostConfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_PostRuleConfig" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_salesaccelerationsettings" level="Global" />
     <RolePrivilege name="prvReadmsdyn_salesinsightssettings" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequence" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvReadmsdyn_sikeyvalueconfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_tour" level="Global" />
     <RolePrivilege name="prvReadmsdyn_wallsavedquery" level="Global" />
     <RolePrivilege name="prvReadmsdyn_wallsavedqueryusersettings" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_workqueuerecord" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvReadmsdyncrm_customerjourney" level="Global" />
     <RolePrivilege name="prvReadmsdyncrm_segment" level="Global" />
     <RolePrivilege name="prvReadmsevtmgt_AttendeePass" level="Global" />
@@ -333,7 +353,13 @@
     <RolePrivilege name="prvSearchAvailability" level="Global" />
     <RolePrivilege name="prvSharemsdyncrm_segment" level="Global" />
     <RolePrivilege name="prvSyncToOutlook" level="Global" />
+    <RolePrivilege name="prvWriteConnection" level="Local" />
     <RolePrivilege name="prvWriteExchangeSyncIdMapping" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_extendedusersetting" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_sequencetargetstep" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvWritemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvWriteOwnCalendar" level="Global" />
     <RolePrivilege name="prvWriteSharePointData" level="Global" />
     <RolePrivilege name="prvWriteSharePointDocument" level="Global" />

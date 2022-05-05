@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{dc9cb297-212f-4bc4-8fec-e043ed8124c8}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dpam_s_name" select="1" icon="1" preview="1">
+        <row name="result" id="dpam_amlquestionid">
+          <cell name="dpam_lk_amlrisktemplate" width="228" />
+          <cell name="dpam_lk_amlquestiongroup" width="190" />
+          <cell name="dpam_s_name" width="167" />
+          <cell name="dpam_ms_amlquestion" width="164" />
+          <cell name="dpam_os_answerformat" width="139" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dpam_amlquestion">
+          <attribute name="dpam_amlquestionid" />
+          <attribute name="dpam_s_name" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="dpam_lk_amlrisktemplate" />
+          <attribute name="dpam_lk_amlquestiongroup" />
+          <attribute name="dpam_ms_amlquestion" />
+          <attribute name="dpam_os_answerformat" />
+          <order attribute="dpam_lk_amlquestiongroup" descending="false" />
+          <order attribute="dpam_s_name" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive AML Questions" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

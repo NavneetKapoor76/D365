@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dpam_gos_typeofbusinessrelationship" localizedName="Type of Business Relationship" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Type of Business Relationship" languagecode="1033" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1033" />
+  </Descriptions>
+  <options>
+    <option value="100000000" ExternalValue="">
+      <labels>
+        <label description="Offer of management services to a UCI as designated management company" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000001" ExternalValue="">
+      <labels>
+        <label description="Offer of management services to a UCI by delegation" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000002" ExternalValue="">
+      <labels>
+        <label description="Delegation of management of UCI (DPAM)" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000005" ExternalValue="">
+      <labels>
+        <label description="Other OPC management functions (administration)" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000006" ExternalValue="">
+      <labels>
+        <label description="Approval of a distributor and / or an intermediary (with contract)" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000007" ExternalValue="">
+      <labels>
+        <label description="Approval of a distributor and / or an intermediary (without contract)" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000008" ExternalValue="">
+      <labels>
+        <label description="Direct marketing of UCIs / Offer of investment products" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000009" ExternalValue="">
+      <labels>
+        <label description="Investment Services Offering (Discretionary Management)" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000010" ExternalValue="">
+      <labels>
+        <label description="Investment Services Offering (Structured Investment Advice)" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000011" ExternalValue="">
+      <labels>
+        <label description="Investment Services Offering (Ad hoc Investment Advice)" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000012" ExternalValue="">
+      <labels>
+        <label description="Investment Services Offering (Not defined yet)" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="100000013" ExternalValue="">
+      <labels>
+        <label description="Other (please specify)" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

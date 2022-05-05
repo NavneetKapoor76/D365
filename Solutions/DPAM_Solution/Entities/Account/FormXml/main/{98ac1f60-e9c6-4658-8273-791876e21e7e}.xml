@@ -157,6 +157,14 @@
                       </cell>
                     </row>
                     <row>
+                      <cell id="{daf64748-f385-4a7e-8e4d-ceade0023a3c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Opted Mifid Category" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_optedmifidcategory" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_optedmifidcategory" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
                       <cell id="{190cf7eb-c01d-4d09-abbc-914d6a33b118}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="AML Rating" languagecode="1033" />
@@ -568,6 +576,29 @@
                     </row>
                   </rows>
                 </section>
+                <section name="DETAILS_TAB_section_9" id="76a18284-23bb-4c44-a901-9c7b2f7d2bf1" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" visible="false">
+                  <labels>
+                    <label description="KYC-AML Custom Page" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8da45b62-f2d8-49ed-a390-cd1cb21a7c5c}" locklevel="0" colspan="1" rowspan="1" visible="true">
+                        <labels>
+                          <label description="ID Card Status" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_idcardstatus" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_idcardstatus" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9b21beb9-90bb-4f36-a70a-e6f604c6e127}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="KYC-AML Open Screen Custom Page" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_int_kycamlopenscreencustompage" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="dpam_int_kycamlopenscreencustompage" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
               </sections>
             </column>
             <column width="50%">
@@ -955,15 +986,15 @@
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{922f34a1-9ab5-451f-b374-02f46cb47f99}" showlabel="true" rowspan="20" colspan="1" auto="false">
+                      <cell id="{c91cc699-d3d1-45c7-a24b-9c585c15577e}" showlabel="true" rowspan="20" colspan="1" auto="false">
                         <labels>
                           <label description="Power BI Report" languagecode="1033" />
                         </labels>
                         <control id="filteredreport" classid="{8C54228C-1B25-4909-A12A-F2B968BB0D62}">
                           <parameters>
-                            <PowerBIGroupId>5e127a6b-3444-464b-b3a5-0dc0f1e0f4c3</PowerBIGroupId>
-                            <PowerBIReportId>e26b90df-d52d-40ae-a615-7af70e972213</PowerBIReportId>
-                            <TileUrl>https://app.powerbi.com/reportEmbed?reportId=e26b90df-d52d-40ae-a615-7af70e972213&amp;pageName=https://app.powerbi.com/reportEmbed?reportId=e26b90df-d52d-40ae-a615-7af70e972213</TileUrl>
+                            <PowerBIGroupId>5E127A6B-3444-464B-B3A5-0DC0F1E0F4C3</PowerBIGroupId>
+                            <PowerBIReportId>E26B90DF-D52D-40AE-A615-7AF70E972213</PowerBIReportId>
+                            <TileUrl>https://app.powerbi.com/reportEmbed?reportId=E26B90DF-D52D-40AE-A615-7AF70E972213&amp;pageName=https://app.powerbi.com/reportEmbed?reportId=e26b90df-d52d-40ae-a615-7af70e972213</TileUrl>
                             <PowerBIFilter>{"Filter":"[{\"$schema\":\"basic\",\"target\":{\"table\":\"NodeElements\",\"column\":\"Id\"},\"operator\":\"In\",\"values\":[$a],\"filterType\":1}]","Alias":{"$a":"accountid"}}</PowerBIFilter>
                           </parameters>
                         </control>
@@ -1070,6 +1101,87 @@
                         </control>
                       </cell>
                     </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_compliance" id="932a1d65-d56e-4bcb-acae-23184d988e92" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Compliance" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_12_section_IdCards" id="3aaeec11-b76b-4652-a508-cdd199be38c2" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="ID Cards" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{03bbf456-547f-4bb3-9667-e4aa8d882b78}" rowspan="1" colspan="1" auto="false">
+                        <labels>
+                          <label description="ID Cards" languagecode="1033" />
+                        </labels>
+                        <control id="Subgrid_IdCards" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <RecordsPerPage>10</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <TargetEntityType>dpam_identificationcard</TargetEntityType>
+                            <ViewId>{F83101CC-BE53-4E44-BA37-CA54F7A248C0}</ViewId>
+                            <ViewIds>{F83101CC-BE53-4E44-BA37-CA54F7A248C0}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <RelationshipName>dpam_identificationcard_lk_counterparty</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_compliance_section_AmlRiskAssessments" id="e6694c41-04b3-4434-be0e-e4d9e24b1232" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="AML Profiling &amp; AML User answers" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{a5362172-111c-4c16-bc2a-b49f3c2e16ff}" rowspan="13" colspan="1" auto="false" showlabel="true">
+                        <labels>
+                          <label description="AML Profiling &amp; AML User answers" languagecode="1033" />
+                        </labels>
+                        <control id="Subgrid_5" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true" uniqueid="{ead2b2de-8832-38a6-d005-000a0c577a25}">
+                          <parameters>
+                            <RecordsPerPage>10</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <TargetEntityType>dpam_amlprofiling</TargetEntityType>
+                            <ViewId>{47FDBA6D-E0C0-463D-84F5-411FEF4D6CC0}</ViewId>
+                            <ViewIds>{47FDBA6D-E0C0-463D-84F5-411FEF4D6CC0}</ViewIds>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <RelationshipName>dpam_amlprofiling_lk_counterparty</RelationshipName>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <IsUserView>false</IsUserView>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
                   </rows>
                 </section>
               </sections>
@@ -1926,6 +2038,65 @@
                 <FilteredViewIds />
               </data-set>
               <EnableGroupBy static="true" type="Enum">yes</EnableGroupBy>
+              <EnableEditing static="true" type="Enum">yes</EnableEditing>
+              <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
+              <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse static="true" type="Enum">false</EnableSubGridAutoCollapse>
+              <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+              <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+              <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{ead2b2de-8832-38a6-d005-000a0c577a25}">
+          <customControl id="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" formFactor="0">
+            <parameters />
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{47FDBA6D-E0C0-463D-84F5-411FEF4D6CC0}</ViewId>
+                <columnsDefaultView />
+                <IsUserView>false</IsUserView>
+                <RelationshipName>dpam_amlprofiling_lk_counterparty</RelationshipName>
+                <TargetEntityType>dpam_amlprofiling</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+                <FilteredViewIds>{47FDBA6D-E0C0-463D-84F5-411FEF4D6CC0}</FilteredViewIds>
+              </data-set>
+              <data-set name="SubGrid">
+                <ViewId>{999E7F76-E558-4E71-833E-9992CBFE6BBD}</ViewId>
+                <IsUserView>false</IsUserView>
+                <TargetEntityType>dpam_amluseranswer</TargetEntityType>
+                <SubGridParentId>dpam_lk_amlprofiling</SubGridParentId>
+              </data-set>
+              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
+              <EnableEditing static="true" type="Enum">yes</EnableEditing>
+              <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
+              <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse static="true" type="Enum">false</EnableSubGridAutoCollapse>
+              <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+              <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+              <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{47FDBA6D-E0C0-463D-84F5-411FEF4D6CC0}</ViewId>
+                <columnsDefaultView />
+                <IsUserView>false</IsUserView>
+                <RelationshipName>dpam_amlprofiling_lk_counterparty</RelationshipName>
+                <TargetEntityType>dpam_amlprofiling</TargetEntityType>
+                <EnableViewPicker>false</EnableViewPicker>
+                <FilteredViewIds>{47FDBA6D-E0C0-463D-84F5-411FEF4D6CC0}</FilteredViewIds>
+              </data-set>
+              <data-set name="SubGrid">
+                <ViewId>{999E7F76-E558-4E71-833E-9992CBFE6BBD}</ViewId>
+                <IsUserView>false</IsUserView>
+                <TargetEntityType>dpam_amluseranswer</TargetEntityType>
+                <SubGridParentId>dpam_lk_amlprofiling</SubGridParentId>
+              </data-set>
+              <EnableGroupBy static="true" type="Enum">no</EnableGroupBy>
               <EnableEditing static="true" type="Enum">yes</EnableEditing>
               <ReflowBehavior static="true" type="Enum">GridOnly</ReflowBehavior>
               <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>

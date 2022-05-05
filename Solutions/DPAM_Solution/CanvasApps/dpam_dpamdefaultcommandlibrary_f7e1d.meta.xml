@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>dpam_dpamdefaultcommandlibrary_f7e1d</Name>
-  <AppVersion>2022-03-10T14:30:00Z</AppVersion>
+  <AppVersion>2021-10-04T06:33:20Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.21093.33.0</CreatedByClientVersion>
   <MinClientVersion>0.0.0.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"20220310T143000Z-3.21093.33.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"false","primaryFormFactor":"Phone","publisherVersion":"3.21092.24.0","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"20211001T113751Z-3.21092.24.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"false","primaryFormFactor":"Phone","publisherVersion":"3.21092.24.0","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>
-  <DisplayName>DPAM_DefaultCommandLibrary_Restored202203301118</DisplayName>
+  <DisplayName>DPAM_DefaultCommandLibrary</DisplayName>
   <Description xsi:nil="true"></Description>
   <CommitMessage>Saved by Command designer.</CommitMessage>
   <Publisher xsi:nil="true"></Publisher>

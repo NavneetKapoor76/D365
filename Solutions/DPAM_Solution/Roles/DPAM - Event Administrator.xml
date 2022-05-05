@@ -2,6 +2,8 @@
 <Role id="{f52ebdc4-d846-ec11-8c62-6045bd8db221}" name="DPAM - Event Administrator" isinherited="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <IsCustomizable>1</IsCustomizable>
   <RolePrivileges>
+    <RolePrivilege name="prvAppendmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAppendmsevtmgt_AttendeePass" level="Global" />
     <RolePrivilege name="prvAppendmsevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" level="Global" />
     <RolePrivilege name="prvAppendmsevtmgt_Building" level="Global" />
@@ -41,6 +43,8 @@
     <RolePrivilege name="prvAppendmsevtmgt_WebinarProvider" level="Global" />
     <RolePrivilege name="prvAppendmsevtmgt_WebinarType" level="Global" />
     <RolePrivilege name="prvAppendmsevtmgt_websiteentityconfiguration" level="Global" />
+    <RolePrivilege name="prvAppendTomsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendTomsdyn_sequencetarget" level="Local" />
     <RolePrivilege name="prvAppendTomsevtmgt_AttendeePass" level="Global" />
     <RolePrivilege name="prvAppendTomsevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" level="Global" />
     <RolePrivilege name="prvAppendTomsevtmgt_Building" level="Global" />
@@ -80,6 +84,9 @@
     <RolePrivilege name="prvAppendTomsevtmgt_WebinarProvider" level="Global" />
     <RolePrivilege name="prvAppendTomsevtmgt_WebinarType" level="Global" />
     <RolePrivilege name="prvAppendTomsevtmgt_websiteentityconfiguration" level="Global" />
+    <RolePrivilege name="prvAssignConnection" level="Local" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAssignmsevtmgt_AttendeePass" level="Global" />
     <RolePrivilege name="prvAssignmsevtmgt_Building" level="Global" />
     <RolePrivilege name="prvAssignmsevtmgt_CheckIn" level="Global" />
@@ -113,6 +120,10 @@
     <RolePrivilege name="prvAssignmsevtmgt_Venue" level="Global" />
     <RolePrivilege name="prvAssignmsevtmgt_waitlistitem" level="Global" />
     <RolePrivilege name="prvAssignmsevtmgt_websiteentityconfiguration" level="Global" />
+    <RolePrivilege name="prvCreatemsdyn_extendedusersetting" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_sequencetargetstep" level="Local" />
+    <RolePrivilege name="prvCreatemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvCreatemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvCreatemsevtmgt_AttendeePass" level="Global" />
     <RolePrivilege name="prvCreatemsevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" level="Global" />
     <RolePrivilege name="prvCreatemsevtmgt_Building" level="Global" />
@@ -151,8 +162,20 @@
     <RolePrivilege name="prvCreatemsevtmgt_webinarconsent" level="Global" />
     <RolePrivilege name="prvCreatemsevtmgt_websiteentityconfiguration" level="Global" />
     <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvDeletemsdyn_workqueuestate" level="Global" />
     <RolePrivilege name="prvDeletemsevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" level="Global" />
     <RolePrivilege name="prvReadAttributeMap" level="Global" />
+    <RolePrivilege name="prvReadConnection" level="Local" />
+    <RolePrivilege name="prvReadConnectionRole" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_extendedusersetting" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_salesaccelerationsettings" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequence" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetargetstep" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_workqueuerecord" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvReadmsevtmgt_AttendeePass" level="Global" />
     <RolePrivilege name="prvReadmsevtmgt_authenticationsettings" level="Global" />
     <RolePrivilege name="prvReadmsevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" level="Global" />
@@ -235,6 +258,12 @@
     <RolePrivilege name="prvSharemsevtmgt_Venue" level="Global" />
     <RolePrivilege name="prvSharemsevtmgt_waitlistitem" level="Global" />
     <RolePrivilege name="prvSharemsevtmgt_websiteentityconfiguration" level="Global" />
+    <RolePrivilege name="prvWriteConnection" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_extendedusersetting" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_sequencetargetstep" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvWritemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvWritemsevtmgt_AttendeePass" level="Global" />
     <RolePrivilege name="prvWritemsevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" level="Global" />
     <RolePrivilege name="prvWritemsevtmgt_Building" level="Global" />

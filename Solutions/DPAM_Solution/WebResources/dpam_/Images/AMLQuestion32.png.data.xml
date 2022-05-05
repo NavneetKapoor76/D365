@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{807c899a-32b6-ec11-983f-6045bd93595c}</WebResourceId>
+  <Name>dpam_/Images/AMLQuestion32.png</Name>
+  <DisplayName>dpam_/Images/AMLQuestion32.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ImagesAMLQuestion32png807C899A-32B6-EC11-983F-6045BD93595C</FileName>
+</WebResource>

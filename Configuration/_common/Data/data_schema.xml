@@ -1,8 +1,37 @@
 <entities >
-  <entity name="dpam_agreementtype" displayname="Agreement Type" etc="10677" primaryidfield="dpam_agreementtypeid" primarynamefield="dpam_s_name" disableplugins="false">
+  <entity name="dpam_country" displayname="Country" etc="10259" primaryidfield="dpam_countryid" primarynamefield="dpam_s_name" disableplugins="false">
     <fields>
-      <field displayname="Agreement Type" name="dpam_s_name" type="string" customfield="true" />
-      <field displayname="Agreement Type" name="dpam_agreementtypeid" type="guid" primaryKey="true" />
+      <field displayname="Alpha-2 Code" name="dpam_s_alpha2code" type="string" customfield="true" />
+      <field displayname="Country" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Country" name="dpam_countryid" type="guid" primaryKey="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Order" name="dpam_int_order" type="number" customfield="true" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="VAT Format" name="dpam_s_vatformat" type="string" customfield="true" />
+      <field displayname="VAT Format Example" name="dpam_s_vatformatexample" type="string" customfield="true" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_counterpartybusinesssegmentation" displayname="CP Business Segmentation" etc="10260" primaryidfield="dpam_counterpartybusinesssegmentationid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Business Segmentation" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Counterparty Business Segmentation" name="dpam_counterpartybusinesssegmentationid" type="guid" primaryKey="true" />
+      <field displayname="Counterparty Type" name="dpam_mos_counterpartytype" type="optionsetvaluecollection" customfield="true" />
       <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
       <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
       <field displayname="Created On" name="createdon" type="datetime" />
@@ -21,6 +50,112 @@
       <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
       <field displayname="Version Number" name="versionnumber" type="bigint" />
     </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_counterpartycompliancesegmentation" displayname="CP Compliance Segmentation" etc="10491" primaryidfield="dpam_counterpartycompliancesegmentationid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Business Segmentation" name="dpam_lk_cpbusinesssegmentation" type="entityreference" lookupType="dpam_counterpartybusinesssegmentation" customfield="true" />
+      <field displayname="Compliance Segmentation" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Compliance Segmentation Category" name="dpam_os_compliancesegmentationcategory" type="optionsetvalue" customfield="true" />
+      <field displayname="Counterparty Compliance Segmentation" name="dpam_counterpartycompliancesegmentationid" type="guid" primaryKey="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Mifid Category" name="dpam_lk_counterpartymifidcategory" type="entityreference" lookupType="dpam_counterpartymifidcategory" customfield="true" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_counterpartylegalform" displayname="CP Legal Form" etc="10492" primaryidfield="dpam_counterpartylegalformid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Abbreviation" name="dpam_s_abbreviation" type="string" customfield="true" />
+      <field displayname="Counterparty Legal Form" name="dpam_counterpartylegalformid" type="guid" primaryKey="true" />
+      <field displayname="Country" name="dpam_lk_country" type="entityreference" lookupType="dpam_country" customfield="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="ELF Code" name="dpam_s_elfcode" type="string" customfield="true" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Legal Form" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_cplocalbusinesssegmentation" displayname="CP Local Business Segmentation" etc="10493" primaryidfield="dpam_cplocalbusinesssegmentationid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Business Segmentation" name="dpam_lk_businesssegmentation" type="entityreference" lookupType="dpam_counterpartybusinesssegmentation" customfield="true" />
+      <field displayname="Counterparty Type" name="dpam_mos_counterpartytype" type="optionsetvaluecollection" customfield="true" />
+      <field displayname="Country" name="dpam_lk_country" type="entityreference" lookupType="dpam_country" customfield="true" />
+      <field displayname="CP Local Business Segmentation" name="dpam_cplocalbusinesssegmentationid" type="guid" primaryKey="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Local Business Segmentation" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_counterpartymifidcategory" displayname="CP Mifid Category" etc="10559" primaryidfield="dpam_counterpartymifidcategoryid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Counterparty Mifid Category" name="dpam_counterpartymifidcategoryid" type="guid" primaryKey="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Mifid Category" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
   </entity>
   <entity name="dpam_greeting" displayname="Greeting" etc="10500" primaryidfield="dpam_greetingid" primarynamefield="dpam_s_name" disableplugins="false">
     <fields>
@@ -46,5 +181,147 @@
       <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
       <field displayname="Version Number" name="versionnumber" type="bigint" />
     </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_contacttitle" displayname="Contact Title" etc="10279" primaryidfield="dpam_contacttitleid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Contact Title" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Contact Title" name="dpam_contacttitleid" type="guid" primaryKey="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Gender" name="dpam_os_gender" type="optionsetvalue" customfield="true" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Language" name="dpam_os_language" type="optionsetvalue" customfield="true" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_leadsource" displayname="Lead Source" etc="10620" primaryidfield="dpam_leadsourceid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Lead Source" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Lead Source" name="dpam_leadsourceid" type="guid" primaryKey="true" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_location" displayname="Location" etc="10263" primaryidfield="dpam_locationid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Business" name="dpam_b_business" type="bool" customfield="true" />
+      <field displayname="City" name="dpam_s_city" type="string" customfield="true" />
+      <field displayname="Counterparty" name="dpam_lk_account" type="entityreference" lookupType="account" customfield="true" />
+      <field displayname="Country" name="dpam_lk_country" type="entityreference" lookupType="dpam_country" customfield="true" />
+      <field displayname="Country Alpha2 Code" name="dpam_s_country_alpha2code" type="string" customfield="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Extra Information" name="dpam_ms_extrainformation" type="string" customfield="true" />
+      <field displayname="Floor/Building" name="dpam_s_street2" type="string" customfield="true" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="legacy bd_cpaddress " name="dpam_legacy_bd_cpaddressid" type="string" customfield="true" />
+      <field displayname="Location" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Location" name="dpam_locationid" type="guid" primaryKey="true" />
+      <field displayname="Main" name="dpam_b_main" type="bool" customfield="true" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Phone Number" name="dpam_s_phonenumber" type="string" customfield="true" />
+      <field displayname="PO Box" name="dpam_postofficebox" type="string" customfield="true" />
+      <field displayname="Primary Contact" name="dpam_lk_primarycontact" type="entityreference" lookupType="contact" customfield="true" />
+      <field displayname="Private" name="dpam_b_private" type="bool" customfield="true" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="State/Province" name="dpam_s_stateprovince" type="string" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Street" name="dpam_s_street1" type="string" customfield="true" />
+      <field displayname="Street 3" name="dpam_s_street3" type="string" customfield="true" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+      <field displayname="ZIP/Postal Code" name="dpam_s_postalcode" type="string" customfield="true" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_agreementtype" displayname="Agreement Type" etc="10677" primaryidfield="dpam_agreementtypeid" primarynamefield="dpam_s_name" disableplugins="false">
+    <fields>
+      <field displayname="Agreement Type" name="dpam_s_name" type="string" customfield="true" />
+      <field displayname="Agreement Type" name="dpam_agreementtypeid" type="guid" primaryKey="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="dpam_settings" displayname="Settings" etc="10495" primaryidfield="dpam_settingsid" primarynamefield="dpam_name" disableplugins="false">
+    <fields>
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Description" name="dpam_ms_description" type="string" customfield="true" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Name" name="dpam_name" type="string" customfield="true" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Settings" name="dpam_settingsid" type="guid" primaryKey="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Value" name="dpam_s_value" type="string" customfield="true" />
+      <field displayname="Version Number" name="versionnumber" type="bigint" />
+    </fields>
+    <relationships />
   </entity>
 </entities>

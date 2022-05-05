@@ -451,9 +451,10 @@
             </column>
             <column width="33%" id="1">
               <sections>
-                <section name="marketing information" showlabel="true" showbar="false" locklevel="0" id="{a188d8ee-35d1-4f22-acf7-9588059a3f08}" IsUserDefined="0" layout="varheight" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="0" solutionaction="Removed" />
-                <section name="EventInfoSection" showlabel="true" showbar="false" locklevel="0" id="{055d8d55-94ca-11dc-61a5-998be426523c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="1" solutionaction="Removed" />
-                <section name="CONTACT_PREFERENCES" showlabel="true" showbar="false" id="{42aa148d-17fa-4c73-8213-bd22400b74ea}" IsUserDefined="0" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="2" solutionaction="Removed" />
+                <section name="contactabilitysection" showlabel="true" showbar="false" locklevel="0" id="{b436a65c-a298-cacc-2cd3-a88ce116ea21}" IsUserDefined="0" layout="varwidth" columns="2" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="2" solutionaction="Modified" />
+                <section name="marketing information" showlabel="true" showbar="false" locklevel="0" id="{a188d8ee-35d1-4f22-acf7-9588059a3f08}" IsUserDefined="0" layout="varheight" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="1" solutionaction="Removed" />
+                <section name="EventInfoSection" showlabel="true" showbar="false" locklevel="0" id="{055d8d55-94ca-11dc-61a5-998be426523c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="2" solutionaction="Removed" />
+                <section name="CONTACT_PREFERENCES" showlabel="true" showbar="false" id="{42aa148d-17fa-4c73-8213-bd22400b74ea}" IsUserDefined="0" columns="1" labelwidth="115" celllabelposition="Left" ordinalvalue="3" solutionaction="Removed" />
                 <section name="DETAILS_TAB_section_5" id="24f670f9-9093-41db-a1b7-c2ab56d8974a" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0" solutionaction="Added">
                   <labels>
                     <label description="Other" languagecode="1033" />
@@ -605,7 +606,7 @@
                 <section name="insights_section" showlabel="false" showbar="false" locklevel="0" id="{C789051B-E044-4E81-8E85-1EE826FA4151}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
                   <rows>
                     <row>
-                      <cell id="{F8E6BF4E-95DF-407D-98F6-F23805E74F00}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                      <cell id="{F8E6BF4E-95DF-407D-98F6-F23805E74F00}" showlabel="false" locklevel="0" ordinalvalue="10001">
                         <labels>
                           <label description="Insights" languagecode="1033" solutionaction="Added" />
                         </labels>
@@ -721,41 +722,6 @@
                             <ViewIds>{28158EDA-C784-4362-9C9E-B4A946D5F0C2}</ViewIds>
                             <EnableViewPicker>false</EnableViewPicker>
                             <RelationshipName>dpam_ProductInterest_lk_contact_Contact</RelationshipName>
-                          </parameters>
-                        </control>
-                      </cell>
-                    </row>
-                  </rows>
-                </section>
-              </sections>
-            </column>
-          </columns>
-        </tab>
-        <tab name="tab_documents" id="685856e9-5368-4e45-8d95-f95d950565d5" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="5" solutionaction="Added">
-          <labels>
-            <label description="Documents" languagecode="1033" />
-          </labels>
-          <columns>
-            <column width="100%" id="0">
-              <sections>
-                <section name="tab_6_section_1" id="fefcb8ef-dd5a-4ca9-99b9-edcee2b148c6" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0">
-                  <labels>
-                    <label description="New Section" languagecode="1033" />
-                  </labels>
-                  <rows>
-                    <row>
-                      <cell locklevel="0" id="{3c870c61-ab3c-4ea6-85e0-ee5afb7cafa7}" rowspan="1" colspan="1" auto="false" showlabel="false" ordinalvalue="10000">
-                        <labels>
-                          <label description="New SG control 1648193102565" languagecode="1033" />
-                        </labels>
-                        <control id="Subgrid_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true">
-                          <parameters>
-                            <RecordsPerPage>4</RecordsPerPage>
-                            <AutoExpand>Fixed</AutoExpand>
-                            <TargetEntityType>bdp_legaldocument</TargetEntityType>
-                            <ViewId>{DE492A06-7AF8-40E0-856A-53577368E2F9}</ViewId>
-                            <ViewIds>{DE492A06-7AF8-40E0-856A-53577368E2F9}</ViewIds>
-                            <EnableViewPicker>false</EnableViewPicker>
                           </parameters>
                         </control>
                       </cell>

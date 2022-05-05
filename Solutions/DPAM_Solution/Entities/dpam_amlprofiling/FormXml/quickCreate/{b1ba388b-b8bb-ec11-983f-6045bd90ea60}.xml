@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b1ba388b-b8bb-ec11-983f-6045bd90ea60}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{30c79b11-e37d-4025-be42-c7cb2326c3bb}">
+          <labels>
+            <label description="New Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{439001d5-e991-4ed8-bb0b-b8fb98a08f79}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{fea50abf-9c41-4e23-b67b-206ecc752471}" locklevel="0" colspan="1" rowspan="1" labelid="{2d6b1d01-cafe-48d4-8ed5-2cf267713476}">
+                        <labels>
+                          <label description="Counterparty" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_counterparty" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_counterparty" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cc4e0f4d-f389-4537-b63b-9b782cb341aa}" locklevel="0" colspan="1" rowspan="1" labelid="{6028c36b-c614-4096-bb80-9217c2519dc2}">
+                        <labels>
+                          <label description="Department" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_department" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_department" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8d9b7d55-be07-47aa-b76c-112d6e623507}" locklevel="0" colspan="1" rowspan="1" labelid="{137591be-05c9-4eb4-aeb8-9060e35f013b}">
+                        <labels>
+                          <label description="AML Risk Template" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_amlrisktemplate" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_amlrisktemplate" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9ed94849-fda4-48a0-b93a-6358b5758059}" locklevel="0" colspan="1" rowspan="1" labelid="{c3096117-b2fb-4b1b-bb87-2e6257df589b}">
+                        <labels>
+                          <label description="AML Final Score" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_amlfinalscore" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_amlfinalscore" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c5e565c8-b9f7-460c-b354-71b023d61b10}" locklevel="0" colspan="1" rowspan="1" labelid="{b57994b9-17f1-41ae-b98a-afa38fe32393}">
+                        <labels>
+                          <label description="AML Score (Calc.)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_amlscorecalc" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_amlscorecalc" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1e9884ca-f805-4e74-a7df-6ff81ad79f75}" locklevel="0" colspan="1" rowspan="1" labelid="{f1205850-827a-4222-b42f-d1c76738883d}">
+                        <labels>
+                          <label description="AML Profiling" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_name" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{977ccbd1-c7f6-45ad-97f0-dd2c94d26580}" locklevel="0" colspan="1" rowspan="1" labelid="{f630ddcb-612d-4eb9-829c-ec7dcd2c0ce5}">
+                        <labels>
+                          <label description="Status Reason" languagecode="1033" />
+                        </labels>
+                        <control id="statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{18bc7b47-d475-4faa-98aa-c1bea0448a94}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{db06abe2-5be8-4247-891a-82cb3cb38aec}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{f816e857-3e8b-4c19-87b6-5f7693f94b5e}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{25e3c36d-3579-4a08-8606-52986c9fa47a}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{48f5d64b-d975-48b3-8011-070767e64202}" />
+        <Role Id="{bf51087a-a1f8-4120-9038-1cb348a1246d}" />
+        <Role Id="{c9b0232f-2014-4d10-91a8-34be6121eabd}" />
+        <Role Id="{9279e494-efe9-4465-9a0d-3baf6adac6e7}" />
+        <Role Id="{d03f7688-5c27-4f6e-907f-3f60c38f9961}" />
+        <Role Id="{38405b30-5ee2-4d2b-98c7-4140b34e4113}" />
+        <Role Id="{a01b1f68-90c9-4375-b247-461fac844a3e}" />
+        <Role Id="{02d3bec6-efe6-4d63-a285-670389290d61}" />
+        <Role Id="{39589377-d8b0-459f-a165-6712255b8235}" />
+        <Role Id="{32a27bfa-0059-4d58-a0c7-70581ada5fb4}" />
+        <Role Id="{4567ffa8-9f90-4796-863f-72bd28768625}" />
+        <Role Id="{fd998c22-5618-423a-9c05-74ab483e5e4b}" />
+        <Role Id="{37c62b12-2ae7-44e9-b7b8-87feb0bb3636}" />
+        <Role Id="{7f3f276d-4ff6-4993-8237-93471fac1693}" />
+        <Role Id="{3aea951d-8a9d-48a9-bdb0-95ea31fbcc1f}" />
+        <Role Id="{eba14b9a-b018-4176-81d5-984a1cf73333}" />
+        <Role Id="{17c54990-7a4e-4752-821e-985ef0a6142a}" />
+        <Role Id="{166f4860-17c9-40a0-aef4-9a12f93b2a91}" />
+        <Role Id="{dce40038-fd03-4bf7-87e1-c1597c3953cc}" />
+        <Role Id="{d257c72c-23cc-4003-b11d-c22d06b389f0}" />
+        <Role Id="{5bda622c-d13a-4a16-b4f2-cdd420e509d3}" />
+        <Role Id="{9d3da75d-0295-48bc-8495-ce85cb048bb0}" />
+        <Role Id="{d1499f84-6dbd-4e51-a03c-d34c6b84e593}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="AML Profiling quick create form" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

@@ -16,9 +16,19 @@
         <Button Alt="$LocLabels:dpam.account.Button4..updatefromleipageform.Alt" Command="dpam.account.command.updatefromleipageform" Id="dpam.account.Button4..updatefromleipageform" Image32by32="/_imgs/ribbon/newrecord32.png" Image16by16="/_imgs/ribbon/NewRecord_16.png" LabelText="$LocLabels:dpam.account.Button4..updatefromleipageform.LabelText" Sequence="51" TemplateAlias="o1" ToolTipTitle="$LocLabels:dpam.account.Button4..updatefromleipageform.ToolTipTitle" ModernImage="New" />
       </CommandUIDefinition>
     </CustomAction>
+    <CustomAction Id="dpam.account.ContinueKYCAML.Button.CustomAction" Location="Mscrm.Form.account.MainTab.Save.Controls._children" Sequence="53">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.account.ContinueKYCAML.Button.Alt" Command="dpam.account.ContinueKYCAML.Command" Id="dpam.account.ContinueKYCAML.Button" LabelText="$LocLabels:dpam.account.ContinueKYCAML.Button.LabelText" Sequence="53" TemplateAlias="o1" ToolTipTitle="$LocLabels:dpam.account.ContinueKYCAML.Button.ToolTipTitle" />
+      </CommandUIDefinition>
+    </CustomAction>
     <CustomAction Id="dpam.account.Deactivate.Button.CustomAction" Location="Mscrm.Form.account.MainTab.Save.Controls._children" Sequence="55">
       <CommandUIDefinition>
         <Button Alt="$LocLabels:dpam.account.Deactivate.Button.Alt" Command="dpam.account.Deactivate.Command" Id="dpam.account.Deactivate.Button" Image32by32="/_imgs/ribbon/Deactivate_32.png" Image16by16="/_imgs/ribbon/Deactivate_16.png" LabelText="$LocLabels:dpam.account.Deactivate.Button.LabelText" Sequence="55" TemplateAlias="o2" ToolTipTitle="$LocLabels:dpam.account.Deactivate.Button.ToolTipTitle" ToolTipDescription="$LocLabels:dpam.account.Deactivate.Button.ToolTipDescription" ModernImage="DeActivate" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dpam.account.StartKYCAML.Button.CustomAction" Location="Mscrm.Form.account.MainTab.Save.Controls._children" Sequence="52">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.account.StartKYCAML.Button.Alt" Command="dpam.account.StartKYCAML.Command" Id="dpam.account.StartKYCAML.Button" LabelText="$LocLabels:dpam.account.StartKYCAML.Button.LabelText" Sequence="52" TemplateAlias="o1" ToolTipTitle="$LocLabels:dpam.account.StartKYCAML.Button.ToolTipTitle" />
       </CommandUIDefinition>
     </CustomAction>
     <HideCustomAction HideActionId="dpam.Mscrm.Form.account.Deactivate.Hide" Location="Mscrm.Form.account.Deactivate" />
@@ -45,6 +55,18 @@
         <JavaScriptFunction FunctionName="BDP.DPAM.WR.Account.Ribbon.openLEICodeSearchPageOnForm" Library="$webresource:DPAM_/Script/Account.js" />
       </Actions>
     </CommandDefinition>
+    <CommandDefinition Id="dpam.account.ContinueKYCAML.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.account.ContinueKycAmlVisibility.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Account.Ribbon.openKYCAMLCustomPage" Library="$webresource:DPAM_/Script/Account.js">
+          <CrmParameter Value="PrimaryControl" />
+          <StringParameter Value="Continue KYC-AML" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
     <CommandDefinition Id="dpam.account.Deactivate.Command">
       <EnableRules />
       <DisplayRules>
@@ -53,6 +75,18 @@
       <Actions>
         <JavaScriptFunction FunctionName="BDP.DPAM.WR.Account.Ribbon.openDeactivateCounterpartyCustomPage" Library="$webresource:DPAM_/Script/Account.js">
           <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="dpam.account.StartKYCAML.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.account.StartKycAmlVisibility.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Account.Ribbon.openKYCAMLCustomPage" Library="$webresource:DPAM_/Script/Account.js">
+          <CrmParameter Value="PrimaryControl" />
+          <StringParameter Value="Start KYC-AML" />
         </JavaScriptFunction>
       </Actions>
     </CommandDefinition>
@@ -71,7 +105,18 @@
         <ValueRule Field="statecode" Value="0" Default="false" InvertResult="false" />
       </DisplayRule>
     </DisplayRules>
-    <EnableRules />
+    <EnableRules>
+      <EnableRule Id="dpam.account.ContinueKycAmlVisibility.EnableRule">
+        <FormStateRule State="Existing" Default="false" InvertResult="false" />
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+        <ValueRule Field="dpam_os_idcardstatus" Value="100000000" Default="false" InvertResult="false" />
+      </EnableRule>
+      <EnableRule Id="dpam.account.StartKycAmlVisibility.EnableRule">
+        <FormStateRule State="Existing" Default="true" InvertResult="false" />
+        <ValueRule Field="dpam_os_idcardstatus" Value="100000001" Default="true" InvertResult="false" />
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+      </EnableRule>
+    </EnableRules>
   </RuleDefinitions>
   <LocLabels>
     <LocLabel Id="dpam.account.button.newfromleipage.Alt">
@@ -119,6 +164,21 @@
         <Title description="Update from LEI" languagecode="1033" />
       </Titles>
     </LocLabel>
+    <LocLabel Id="dpam.account.ContinueKYCAML.Button.Alt">
+      <Titles>
+        <Title description="Continue KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.ContinueKYCAML.Button.LabelText">
+      <Titles>
+        <Title description="Continue KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.ContinueKYCAML.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Continue KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
     <LocLabel Id="dpam.account.Deactivate.Button.Alt">
       <Titles>
         <Title description="Deactivate" languagecode="1033" />
@@ -137,6 +197,21 @@
     <LocLabel Id="dpam.account.Deactivate.Button.ToolTipTitle">
       <Titles>
         <Title description="Deactivate" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.StartKYCAML.Button.Alt">
+      <Titles>
+        <Title description="Start KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.StartKYCAML.Button.LabelText">
+      <Titles>
+        <Title description="Start KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.account.StartKYCAML.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Start KYC-AML" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="Mscrm.Form.account.ViewOrgChart.ToolTipDesc">

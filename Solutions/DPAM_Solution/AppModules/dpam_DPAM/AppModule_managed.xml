@@ -35,6 +35,12 @@
     <AppModuleComponent type="26" id="{1795e537-6270-4c62-8175-77cf045315f3}" />
     <AppModuleComponent type="59" id="{edf35649-5293-de11-97d4-00155da3b01e}" />
     <AppModuleComponent type="1" schemaName="adminsettingsentity" />
+    <AppModuleComponent type="1" schemaName="dpam_amlanswer" />
+    <AppModuleComponent type="1" schemaName="dpam_amlprofiling" />
+    <AppModuleComponent type="1" schemaName="dpam_amlquestion" />
+    <AppModuleComponent type="1" schemaName="dpam_amlquestiongroup" />
+    <AppModuleComponent type="1" schemaName="dpam_amlrisktemplate" />
+    <AppModuleComponent type="1" schemaName="dpam_amluseranswer" />
     <AppModuleComponent type="1" schemaName="appointment" />
     <AppModuleComponent type="1" schemaName="campaign" />
     <AppModuleComponent type="1" schemaName="incident" />
@@ -46,8 +52,8 @@
     <AppModuleComponent type="1" schemaName="contact" />
     <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001004}" />
     <AppModuleComponent type="26" id="{b1328427-6d62-ec11-8f8f-6045bd86f40c}" />
-    <AppModuleComponent type="26" id="{ab7547e5-1772-ec11-8943-000d3a2d692f}" />
     <AppModuleComponent type="26" id="{e51fdf2d-8fa3-ec11-983f-000d3a4cbca6}" />
+    <AppModuleComponent type="26" id="{ab7547e5-1772-ec11-8943-000d3a2d692f}" />
     <AppModuleComponent type="26" id="{73196907-6d62-ec11-8f8f-6045bd86f0e2}" />
     <AppModuleComponent type="26" id="{3a282da1-5d90-e011-95ae-00155d9cfa03}" />
     <AppModuleComponent type="26" id="{3a282da1-5d90-e011-95ae-00155d9cfa02}" />
@@ -129,6 +135,7 @@
     <AppModuleComponent type="59" id="{9dc7adf6-b76f-df11-986c-00155d2e3002}" />
     <AppModuleComponent type="1" schemaName="metric" />
     <AppModuleComponent type="1" schemaName="dpam_greeting" />
+    <AppModuleComponent type="1" schemaName="dpam_identificationcard" />
     <AppModuleComponent type="1" schemaName="invoice" />
     <AppModuleComponent type="1" schemaName="invoicedetail" />
     <AppModuleComponent type="1" schemaName="knowledgearticle" />
@@ -280,6 +287,13 @@
       </canvasappid>
       <iscustomizable>1</iscustomizable>
       <name>dpam_dpam_DPAM_canvasappid_dpam_dpamdefaultcommandlibrary_f7e1d</name>
+    </appelement>
+    <appelement uniquename="dpam_dpam_DPAM_canvasappid_dpam_kycamlcustompage_c2710">
+      <canvasappid>
+        <name>dpam_kycamlcustompage_c2710</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>dpam_dpam_DPAM_canvasappid_dpam_kycamlcustompage_c2710</name>
     </appelement>
     <appelement uniquename="dpam_dpam_DPAM_canvasappid_dpam_leicodesearchpage_1806a">
       <canvasappid>

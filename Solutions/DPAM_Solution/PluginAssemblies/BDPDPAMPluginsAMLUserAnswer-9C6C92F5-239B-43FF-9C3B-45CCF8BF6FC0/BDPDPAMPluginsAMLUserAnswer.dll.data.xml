@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.AMLUserAnswer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0fc402fa6846bd59" PluginAssemblyId="9c6c92f5-239b-43ff-9c3b-45ccf8bf6fc0" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsAMLUserAnswer-9C6C92F5-239B-43FF-9C3B-45CCF8BF6FC0/BDPDPAMPluginsAMLUserAnswer.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.AMLUserAnswer.PreCreateAMLUserAnswer, BDP.DPAM.Plugins.AMLUserAnswer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0fc402fa6846bd59" PluginTypeId="1d8a5e0b-3203-4821-9f6d-9c6e5f66f90b" Name="BDP.DPAM.Plugins.AMLUserAnswer.PreCreateAMLUserAnswer">
+      <FriendlyName>8eb2a289-dcb4-4737-a87d-bb536896e392</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.AMLUserAnswer.PreUpdateAMLUserAnswer, BDP.DPAM.Plugins.AMLUserAnswer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0fc402fa6846bd59" PluginTypeId="69ac63b6-2d0d-429a-a687-80217067a5ed" Name="BDP.DPAM.Plugins.AMLUserAnswer.PreUpdateAMLUserAnswer">
+      <FriendlyName>34c37d93-3bbe-493f-b3b4-fff838e04110</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

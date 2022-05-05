@@ -1,14 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <CustomActions />
+  <CustomActions>
+    <CustomAction Id="dpam.dpam_departments.ContinueKycAml.Button.CustomAction" Location="Mscrm.Form.dpam_departments.MainTab.Save.Controls._children" Sequence="44">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.dpam_departments.ContinueKycAml.Button.Alt" Command="dpam.dpam_departments.ContinueKycAml.Command" Id="dpam.dpam_departments.ContinueKycAml.Button" LabelText="$LocLabels:dpam.dpam_departments.ContinueKycAml.Button.LabelText" Sequence="44" TemplateAlias="o2" ToolTipTitle="$LocLabels:dpam.dpam_departments.ContinueKycAml.Button.ToolTipTitle" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dpam.dpam_departments.StartKycAml.Button.CustomAction" Location="Mscrm.Form.dpam_departments.MainTab.Save.Controls._children" Sequence="47">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dpam.dpam_departments.StartKycAml.Button.Alt" Command="dpam.dpam_departments.StartKycAml.Command" Id="dpam.dpam_departments.StartKycAml.Button" LabelText="$LocLabels:dpam.dpam_departments.StartKycAml.Button.LabelText" Sequence="47" TemplateAlias="o2" ToolTipTitle="$LocLabels:dpam.dpam_departments.StartKycAml.Button.ToolTipTitle" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
   <Templates>
     <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
   </Templates>
-  <CommandDefinitions />
+  <CommandDefinitions>
+    <CommandDefinition Id="dpam.dpam_departments.ContinueKycAml.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.dpam_departments.ContinueKycAmlVisibility.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Department.Ribbon.allMandatoryFieldsAreFilledForIdentificationCard" Library="$webresource:dpam_/Script/Department.js">
+          <CrmParameter Value="PrimaryControl" />
+          <StringParameter Value="Continue KYC-AML" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="dpam.dpam_departments.StartKycAml.Command">
+      <EnableRules>
+        <EnableRule Id="dpam.dpam_departments.StartKycAmlVisibility.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="BDP.DPAM.WR.Department.Ribbon.allMandatoryFieldsAreFilledForIdentificationCard" Library="$webresource:dpam_/Script/Department.js">
+          <CrmParameter Value="PrimaryControl" />
+          <StringParameter Value="Start KYC-AML" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
   <RuleDefinitions>
     <TabDisplayRules />
     <DisplayRules />
-    <EnableRules />
+    <EnableRules>
+      <EnableRule Id="dpam.dpam_departments.ContinueKycAmlVisibility.EnableRule">
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+        <FormStateRule State="Existing" Default="false" InvertResult="false" />
+        <CustomRule FunctionName="BDP.DPAM.WR.Department.Ribbon.startOrContinueKycAmlButtonVisibility" Library="$webresource:dpam_/Script/Department.js" Default="false" InvertResult="false">
+          <CrmParameter Value="PrimaryControl" />
+        </CustomRule>
+      </EnableRule>
+      <EnableRule Id="dpam.dpam_departments.StartKycAmlVisibility.EnableRule">
+        <FormStateRule State="Existing" Default="false" InvertResult="false" />
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+        <CustomRule FunctionName="BDP.DPAM.WR.Department.Ribbon.startOrContinueKycAmlButtonVisibility" Library="$webresource:dpam_/Script/Department.js" Default="false" InvertResult="true">
+          <CrmParameter Value="PrimaryControl" />
+        </CustomRule>
+      </EnableRule>
+    </EnableRules>
   </RuleDefinitions>
-  <LocLabels />
+  <LocLabels>
+    <LocLabel Id="dpam.dpam_departments.ContinueKycAml.Button.Alt">
+      <Titles>
+        <Title description="Continue KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.dpam_departments.ContinueKycAml.Button.LabelText">
+      <Titles>
+        <Title description="Continue KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.dpam_departments.ContinueKycAml.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Continue KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.dpam_departments.StartKycAml.Button.Alt">
+      <Titles>
+        <Title description="Start KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.dpam_departments.StartKycAml.Button.LabelText">
+      <Titles>
+        <Title description="Start KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dpam.dpam_departments.StartKycAml.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Start KYC-AML" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
 </RibbonDiffXml>

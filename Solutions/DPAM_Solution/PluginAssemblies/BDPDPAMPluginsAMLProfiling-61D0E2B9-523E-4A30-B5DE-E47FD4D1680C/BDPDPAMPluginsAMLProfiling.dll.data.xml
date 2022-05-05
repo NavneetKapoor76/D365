@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="BDP.DPAM.Plugins.AMLProfiling, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2456b6983ff94b13" PluginAssemblyId="61d0e2b9-523e-4a30-b5de-e47fd4d1680c" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/BDPDPAMPluginsAMLProfiling-61D0E2B9-523E-4A30-B5DE-E47FD4D1680C/BDPDPAMPluginsAMLProfiling.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.AMLProfiling.PreCreateAMLProfiling, BDP.DPAM.Plugins.AMLProfiling, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2456b6983ff94b13" PluginTypeId="c1b5a4bf-7562-40d5-afeb-5bde597b7687" Name="BDP.DPAM.Plugins.AMLProfiling.PreCreateAMLProfiling">
+      <FriendlyName>ef596e47-1c96-4ea8-a5ea-d1a6d18b3ea3</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="BDP.DPAM.Plugins.AMLProfiling.PreUpdateAMLProfiling, BDP.DPAM.Plugins.AMLProfiling, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2456b6983ff94b13" PluginTypeId="873d492b-1094-460b-bff6-1c9391aae9ec" Name="BDP.DPAM.Plugins.AMLProfiling.PreUpdateAMLProfiling">
+      <FriendlyName>c2659211-728a-4ad4-a457-2863a8bc9f49</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

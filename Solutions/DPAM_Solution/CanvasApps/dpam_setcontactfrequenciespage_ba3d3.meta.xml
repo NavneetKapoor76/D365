@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>dpam_setcontactfrequenciespage_ba3d3</Name>
-  <AppVersion>2022-01-25T13:19:25Z</AppVersion>
+  <AppVersion>2022-04-13T10:34:16Z</AppVersion>
   <Status>Ready</Status>
-  <CreatedByClientVersion>3.21124.16.0</CreatedByClientVersion>
-  <MinClientVersion>3.21124.16.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"529","primaryDeviceHeight":"360","sienaVersion":"6bc5bc9a-a30c-4621-87bf-925c52781d78","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.21124.16","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false"}</Tags>
+  <CreatedByClientVersion>3.22034.17.0</CreatedByClientVersion>
+  <MinClientVersion>3.22034.17.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"529","primaryDeviceHeight":"360","sienaVersion":"e5a123a6-175e-40b6-86ef-b09a8f6204c2","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22034.17","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>

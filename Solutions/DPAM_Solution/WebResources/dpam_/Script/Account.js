@@ -207,6 +207,7 @@ var BDP;
                      * On the main and quick create forms:
                      *      dpam_lk_counterpartymifidcategory
                      *      dpam_lk_compliancesegmentation
+                     *      dpam_lk_optedmifidcategory
                      * Only on the main form:
                      *      dpam_os_amlrating
                      */
@@ -231,10 +232,12 @@ var BDP;
                         }
                         let mifidCategoryControl = formContext.getControl("dpam_lk_counterpartymifidcategory");
                         let complianceSegmentationControl = formContext.getControl("dpam_lk_compliancesegmentation");
+                        let optedmifidCategoryControl = formContext.getControl("dpam_lk_optedmifidcategory");
                         mifidCategoryControl.setVisible(fieldIsVisible);
                         mifidCategoryControl.getAttribute().setRequiredLevel(mifidCategoryRequiredLevel);
                         complianceSegmentationControl.setVisible(fieldIsVisible);
                         complianceSegmentationControl.getAttribute().setRequiredLevel(requiredLevel);
+                        optedmifidCategoryControl.setVisible(fieldIsVisible);
                         if (!fromMainForm)
                             return;
                         formContext.getControl("dpam_os_amlrating").setVisible(fieldIsVisible);
@@ -305,6 +308,47 @@ var BDP;
                         }, function error() {
                             console.log(error);
                         });
+                    }
+                    // SHER-1175 : function to open the KYC-AML Custom Page
+                    static openKYCAMLCustomPage(formContext, buttonName) {
+                        formContext.ui.clearFormNotification("KycAmlCustomPage");
+                        let pageInput = {
+                            pageType: "custom",
+                            name: "dpam_kycamlcustompage_c2710",
+                            entityName: "account",
+                            recordId: formContext.data.entity.getId()
+                        };
+                        let navigationOptions = {
+                            target: 2,
+                            width: 1151,
+                            height: 850,
+                            title: "KYC AML Page"
+                        };
+                        if (this.allMandatoryFieldsAreFilledForIdentificationCard(formContext)) {
+                            Xrm.Navigation.navigateTo(pageInput, navigationOptions)
+                                .then(function success() {
+                                formContext.data.refresh(true).then(function () { formContext.ui.refreshRibbon(); });
+                            }, function error() {
+                                console.log(error);
+                            });
+                        }
+                        else {
+                            let message = buttonName + " : Thanks to first fill the mandatory fields in the main form of the counterparty";
+                            formContext.ui.setFormNotification(message, "ERROR", "KycAmlCustomPage");
+                        }
+                    }
+                    //SHER-1175 : Check if all mandatory field are filled for the identification card
+                    static allMandatoryFieldsAreFilledForIdentificationCard(formContext) {
+                        let allMandatoryFieldsAreFilled = true;
+                        let counterpartyNameAttribute = formContext.getAttribute("name");
+                        let legalFormAttribute = formContext.getAttribute("dpam_lk_legalform");
+                        let addressAttribute = formContext.getAttribute("dpam_s_address1");
+                        let countryAttribute = formContext.getAttribute("dpam_lk_country");
+                        let complianceSegmentationAttribute = formContext.getAttribute("dpam_lk_compliancesegmentation");
+                        if (counterpartyNameAttribute.getValue() == null || legalFormAttribute.getValue() == null || addressAttribute.getValue() == null
+                            || countryAttribute.getValue() == null || complianceSegmentationAttribute.getValue() == null)
+                            allMandatoryFieldsAreFilled = false;
+                        return allMandatoryFieldsAreFilled;
                     }
                 }
                 Account.Ribbon = Ribbon;

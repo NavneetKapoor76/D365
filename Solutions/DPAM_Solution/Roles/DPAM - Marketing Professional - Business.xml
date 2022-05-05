@@ -45,6 +45,8 @@
     <RolePrivilege name="prvAppendmsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvAppendmsdyn_productivityagentscriptstep" level="Basic" />
     <RolePrivilege name="prvAppendmsdyn_salesinsightssettings" level="Basic" />
+    <RolePrivilege name="prvAppendmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAppendmsdyn_SessionData" level="Global" />
     <RolePrivilege name="prvAppendmsdyn_SessionParticipantData" level="Global" />
     <RolePrivilege name="prvAppendmsdyn_sessiontemplate" level="Global" />
@@ -185,6 +187,8 @@
     <RolePrivilege name="prvAppendTomsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvAppendTomsdyn_productivityagentscriptstep" level="Basic" />
     <RolePrivilege name="prvAppendTomsdyn_salesinsightssettings" level="Global" />
+    <RolePrivilege name="prvAppendTomsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendTomsdyn_sequencetarget" level="Local" />
     <RolePrivilege name="prvAppendTomsdyn_SessionData" level="Global" />
     <RolePrivilege name="prvAppendTomsdyn_SessionParticipantData" level="Global" />
     <RolePrivilege name="prvAppendTomsdyn_sessiontemplate" level="Global" />
@@ -300,6 +304,7 @@
     <RolePrivilege name="prvAssignActivity" level="Global" />
     <RolePrivilege name="prvAssignAsyncOperation" level="Basic" />
     <RolePrivilege name="prvAssignCallbackRegistration" level="Basic" />
+    <RolePrivilege name="prvAssignConnection" level="Local" />
     <RolePrivilege name="prvAssignContact" level="Basic" />
     <RolePrivilege name="prvAssignCustomerRelationship" level="Basic" />
     <RolePrivilege name="prvAssigndpam_departments" level="Global" />
@@ -318,6 +323,8 @@
     <RolePrivilege name="prvAssignmsdyn_applicationextension" level="Basic" />
     <RolePrivilege name="prvAssignmsdyn_flowcardtype" level="Basic" />
     <RolePrivilege name="prvAssignmsdyn_productivityagentscriptstep" level="Basic" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAssignmsdyn_SessionData" level="Global" />
     <RolePrivilege name="prvAssignmsdyn_SessionParticipantData" level="Global" />
     <RolePrivilege name="prvAssignmsdyn_sessiontemplate" level="Global" />
@@ -434,15 +441,19 @@
     <RolePrivilege name="prvCreatemsdyn_applicationextension" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_dealmanagersettings" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_entityrankingrule" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_extendedusersetting" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_flowcardtype" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_PostAlbum" level="Global" />
     <RolePrivilege name="prvCreatemsdyn_productivityagentscriptstep" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_salesinsightssettings" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvCreatemsdyn_SessionData" level="Global" />
     <RolePrivilege name="prvCreatemsdyn_SessionParticipantData" level="Global" />
     <RolePrivilege name="prvCreatemsdyn_sessiontemplate" level="Global" />
     <RolePrivilege name="prvCreatemsdyn_solutioncomponentcountdatasource" level="Global" />
     <RolePrivilege name="prvCreatemsdyn_wallsavedqueryusersettings" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvCreatemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvCreatemsdyncrm_appointmentactivitymarketingtemplate" level="Basic" />
     <RolePrivilege name="prvCreatemsdyncrm_contentblock" level="Global" />
     <RolePrivilege name="prvCreatemsdyncrm_contentsettings" level="Global" />
@@ -548,6 +559,7 @@
     <RolePrivilege name="prvDeleteExchangeSyncIdMapping" level="Basic" />
     <RolePrivilege name="prvDeletemsdyn_productivityagentscriptstep" level="Basic" />
     <RolePrivilege name="prvDeletemsdyn_solutioncomponentcountdatasource" level="Global" />
+    <RolePrivilege name="prvDeletemsdyn_workqueuestate" level="Global" />
     <RolePrivilege name="prvDeletemsdyncrm_liveentitydependency" level="Global" />
     <RolePrivilege name="prvDeleteworkflowbinary" level="Basic" />
     <RolePrivilege name="prvFlow" level="Global" />
@@ -618,6 +630,7 @@
     <RolePrivilege name="prvReadmsdyn_applicationextension" level="Basic" />
     <RolePrivilege name="prvReadmsdyn_dealmanagersettings" level="Global" />
     <RolePrivilege name="prvReadmsdyn_entityrankingrule" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_extendedusersetting" level="Basic" />
     <RolePrivilege name="prvReadmsdyn_flowcardtype" level="Global" />
     <RolePrivilege name="prvReadmsdyn_icebreakersconfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_odatav4ds" level="Global" />
@@ -625,7 +638,12 @@
     <RolePrivilege name="prvReadmsdyn_PostConfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_PostRuleConfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_productivityagentscriptstep" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_salesaccelerationsettings" level="Global" />
     <RolePrivilege name="prvReadmsdyn_salesinsightssettings" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequence" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvReadmsdyn_SessionData" level="Global" />
     <RolePrivilege name="prvReadmsdyn_SessionParticipantData" level="Global" />
     <RolePrivilege name="prvReadmsdyn_sessiontemplate" level="Global" />
@@ -635,6 +653,9 @@
     <RolePrivilege name="prvReadmsdyn_tour" level="Global" />
     <RolePrivilege name="prvReadmsdyn_wallsavedquery" level="Global" />
     <RolePrivilege name="prvReadmsdyn_wallsavedqueryusersettings" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_workqueuerecord" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvReadmsdyncrm_appointmentactivitymarketingtemplate" level="Global" />
     <RolePrivilege name="prvReadmsdyncrm_cdnconfiguration" level="Global" />
     <RolePrivilege name="prvReadmsdyncrm_contentblock" level="Global" />
@@ -783,6 +804,7 @@
     <RolePrivilege name="prvWriteActivity" level="Global" />
     <RolePrivilege name="prvWriteAsyncOperation" level="Basic" />
     <RolePrivilege name="prvWriteCallbackRegistration" level="Basic" />
+    <RolePrivilege name="prvWriteConnection" level="Local" />
     <RolePrivilege name="prvWriteContact" level="Global" />
     <RolePrivilege name="prvWriteCustomerRelationship" level="Basic" />
     <RolePrivilege name="prvWritedpam_contactfrequency" level="Local" />
@@ -806,16 +828,21 @@
     <RolePrivilege name="prvWritemsdyn_applicationextension" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_dealmanagersettings" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_entityrankingrule" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_extendedusersetting" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_flowcardtype" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_odatav4ds" level="Global" />
     <RolePrivilege name="prvWritemsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_productivityagentscriptstep" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_salesinsightssettings" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvWritemsdyn_SessionData" level="Global" />
     <RolePrivilege name="prvWritemsdyn_SessionParticipantData" level="Global" />
     <RolePrivilege name="prvWritemsdyn_sessiontemplate" level="Global" />
     <RolePrivilege name="prvWritemsdyn_solutioncomponentcountdatasource" level="Global" />
     <RolePrivilege name="prvWritemsdyn_wallsavedqueryusersettings" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvWritemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvWritemsdyncrm_appointmentactivitymarketingtemplate" level="Global" />
     <RolePrivilege name="prvWritemsdyncrm_contentblock" level="Global" />
     <RolePrivilege name="prvWritemsdyncrm_contentsettings" level="Global" />

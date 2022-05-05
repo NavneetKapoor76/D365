@@ -11,6 +11,8 @@
     <RolePrivilege name="prvAppenddpam_cplocalbusinesssegmentation" level="Global" />
     <RolePrivilege name="prvAppenddpam_greeting" level="Global" />
     <RolePrivilege name="prvAppenddpam_leadsource" level="Global" />
+    <RolePrivilege name="prvAppendmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAppendProduct" level="Global" />
     <RolePrivilege name="prvAppendTodpam_contacttitle" level="Global" />
     <RolePrivilege name="prvAppendTodpam_counterpartybusinesssegmentation" level="Global" />
@@ -21,7 +23,10 @@
     <RolePrivilege name="prvAppendTodpam_cplocalbusinesssegmentation" level="Global" />
     <RolePrivilege name="prvAppendTodpam_greeting" level="Global" />
     <RolePrivilege name="prvAppendTodpam_leadsource" level="Global" />
+    <RolePrivilege name="prvAppendTomsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendTomsdyn_sequencetarget" level="Local" />
     <RolePrivilege name="prvAppendToProduct" level="Global" />
+    <RolePrivilege name="prvAssignConnection" level="Local" />
     <RolePrivilege name="prvAssigndpam_contacttitle" level="Global" />
     <RolePrivilege name="prvAssigndpam_counterpartybusinesssegmentation" level="Global" />
     <RolePrivilege name="prvAssigndpam_counterpartycompliancesegmentation" level="Global" />
@@ -30,6 +35,8 @@
     <RolePrivilege name="prvAssigndpam_country" level="Global" />
     <RolePrivilege name="prvAssigndpam_cplocalbusinesssegmentation" level="Global" />
     <RolePrivilege name="prvAssigndpam_greeting" level="Global" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvCreatedpam_contacttitle" level="Global" />
     <RolePrivilege name="prvCreatedpam_counterpartybusinesssegmentation" level="Global" />
     <RolePrivilege name="prvCreatedpam_counterpartycompliancesegmentation" level="Global" />
@@ -39,8 +46,15 @@
     <RolePrivilege name="prvCreatedpam_cplocalbusinesssegmentation" level="Global" />
     <RolePrivilege name="prvCreatedpam_greeting" level="Global" />
     <RolePrivilege name="prvCreatedpam_leadsource" level="Global" />
+    <RolePrivilege name="prvCreatemsdyn_extendedusersetting" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_sequencetargetstep" level="Local" />
+    <RolePrivilege name="prvCreatemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvCreatemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvCreateProduct" level="Global" />
     <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvDeletemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvReadConnection" level="Local" />
+    <RolePrivilege name="prvReadConnectionRole" level="Global" />
     <RolePrivilege name="prvReaddpam_contacttitle" level="Global" />
     <RolePrivilege name="prvReaddpam_counterpartybusinesssegmentation" level="Global" />
     <RolePrivilege name="prvReaddpam_counterpartycompliancesegmentation" level="Global" />
@@ -50,6 +64,15 @@
     <RolePrivilege name="prvReaddpam_cplocalbusinesssegmentation" level="Global" />
     <RolePrivilege name="prvReaddpam_greeting" level="Global" />
     <RolePrivilege name="prvReaddpam_leadsource" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_extendedusersetting" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_salesaccelerationsettings" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequence" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetargetstep" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_workqueuerecord" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvReadPluginAssembly" level="Global" />
     <RolePrivilege name="prvReadPluginType" level="Global" />
     <RolePrivilege name="prvReadProduct" level="Global" />
@@ -66,6 +89,7 @@
     <RolePrivilege name="prvSharedpam_country" level="Global" />
     <RolePrivilege name="prvSharedpam_cplocalbusinesssegmentation" level="Global" />
     <RolePrivilege name="prvSharedpam_greeting" level="Global" />
+    <RolePrivilege name="prvWriteConnection" level="Local" />
     <RolePrivilege name="prvWritedpam_contacttitle" level="Global" />
     <RolePrivilege name="prvWritedpam_counterpartybusinesssegmentation" level="Global" />
     <RolePrivilege name="prvWritedpam_counterpartycompliancesegmentation" level="Global" />
@@ -75,6 +99,11 @@
     <RolePrivilege name="prvWritedpam_cplocalbusinesssegmentation" level="Global" />
     <RolePrivilege name="prvWritedpam_greeting" level="Global" />
     <RolePrivilege name="prvWritedpam_leadsource" level="Global" />
+    <RolePrivilege name="prvWritemsdyn_extendedusersetting" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_sequencetargetstep" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvWritemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvWriteProduct" level="Global" />
     <RolePrivilege name="prvWriteSharePointData" level="Global" />
   </RolePrivileges>

@@ -1,0 +1,853 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e3b38e47-3cc6-ec11-a7b6-6045bd8902e0}</formid>
+    <IntroducedVersion>1.19.1.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{9022c69a-6f03-4337-b081-7f1c210fe447}" IsUserDefined="1" labelid="{99f444b6-2f62-4319-9cd7-96aa887dae1a}" contenttype="cardSections" expanded="true">
+          <labels>
+            <label description="Client Identification" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="Client_Info" id="39294cda-299a-4e36-95a7-ea60dae74dd7" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{9364164a-66c3-4306-b348-b0a7e9a52389}">
+                  <labels>
+                    <label description="Client Identification" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{02cc5aa4-c364-4c2f-9133-36326bc45db2}" colspan="1" rowspan="1" visible="false" labelid="{14ecbf4b-6ee7-4bb0-b491-250208ce39ae}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f3b0eac0-395f-4512-809a-041675ccceac}" locklevel="0" colspan="1" rowspan="1" labelid="{f4eb82e0-4298-4a4d-9109-595a6daf5681}">
+                        <labels>
+                          <label description="Counterparty Name" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_counterpartyname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_counterpartyname" disabled="false" />
+                      </cell>
+                      <cell id="{862ec2b5-78f5-4889-b10f-6b7788fdeb0b}" locklevel="0" colspan="1" rowspan="1" labelid="{e91a2eda-47e2-4e3e-848c-ee1948679cd5}">
+                        <labels>
+                          <label description="Department Name" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_departmentname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_departmentname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f738597f-cb9d-4680-942b-337db3327edb}" locklevel="0" colspan="1" rowspan="1" labelid="{a9ee5a09-1fb3-44a4-85d7-8ed28c1d9e01}">
+                        <labels>
+                          <label description="Legal Form" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_legalform" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_legalform" disabled="false" />
+                      </cell>
+                      <cell id="{75c7a6f8-7808-493e-bf0f-f57a365ab579}" locklevel="0" colspan="1" rowspan="1" labelid="{0f68338d-8aa4-4ece-8067-48a264f15411}">
+                        <labels>
+                          <label description="Compliance Segmentation" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_compliancesegmentation" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_compliancesegmentation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7b351dc5-ee00-4156-a23c-03318d7e2e67}" locklevel="0" colspan="1" rowspan="1" labelid="{c0d776d1-44dc-4693-b591-e25a29669cbe}">
+                        <labels>
+                          <label description="Address" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_address" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_address" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2884a08d-edfd-49e1-884b-0233ef6f4d86}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="AML Score" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_amlscore" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_amlscore" disabled="true" />
+                      </cell>
+                      <cell id="{036b25d0-e604-44fe-a681-7fdd8f577d2c}" locklevel="0" colspan="1" rowspan="1" labelid="{6f07ca63-0efe-4736-8426-bd28bc625b72}">
+                        <labels>
+                          <label description="Country" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_country" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_country" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{276b7006-4f63-4596-b3db-8330c6633941}" locklevel="0" colspan="1" rowspan="1" labelid="{f96ee3d9-5528-4cee-8f0b-6853feccd054}">
+                        <labels>
+                          <label description="Registry Number" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_registrynumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_registrynumber" disabled="false" />
+                      </cell>
+                      <cell id="{868cbb45-5804-4fa7-9bd9-ca02167ce7a3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Compliance Mifid Status" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_compliancemifidstatus" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_compliancemifidstatus" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5aa069d5-9b92-4b37-909b-e35174a82f48}" locklevel="0" colspan="1" rowspan="1" labelid="{79c6ed05-a5fe-4349-b016-83b7a2a6e409}">
+                        <labels>
+                          <label description="Regulated Market" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_regulatedmarket" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_regulatedmarket" disabled="false" />
+                      </cell>
+                      <cell id="{c30f4b5a-56e3-42bf-baa9-10b33cd9ecdd}" locklevel="0" colspan="1" rowspan="1" labelid="{70561f66-28b4-4957-a55b-0422d6556d9d}">
+                        <labels>
+                          <label description="LEI Number" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_leinumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_leinumber" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5c9044e6-3a92-458f-9c8d-614598a966b4}" locklevel="0" colspan="1" rowspan="1" labelid="{53a91502-95b7-458e-bac5-795733bb9e1e}">
+                        <labels>
+                          <label description="Registered as legal person in the register of eligible investors at the FSMA" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_registeredatfsma" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_registeredatfsma" disabled="false" />
+                      </cell>
+                      <cell id="{fcf9e7c9-dcee-47de-bad8-d150f21390e3}" locklevel="0" colspan="1" rowspan="1" labelid="{36bf48a1-8e85-42d5-ae3a-b8c401b2e8c5}">
+                        <labels>
+                          <label description="Market of listing" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_marketoflisting" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_marketoflisting" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Assets_Held" id="5c20ad93-25a1-4f2e-8814-63f5e477e4f0" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{74b7d546-6623-4b51-9711-6fa94b8f6300}">
+                  <labels>
+                    <label description="Assets Held in Custody" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f27f5619-2fa2-4844-9448-49b5e85ba942}" locklevel="0" colspan="1" rowspan="1" labelid="{0eabe208-ab63-4b7f-91d8-792d58944c15}">
+                        <labels>
+                          <label description="Assets held in custody" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_assetsheldincustody" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_assetsheldincustody" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Accounts" id="b5ff6702-32ed-4389-95f0-e0d962bd8408" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="111" labelwidth="115" labelid="{e00e331e-e45d-493b-ae5a-bb9a80a932ff}">
+                  <labels>
+                    <label description="Accounts" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a1215842-d555-4b76-8c7e-7f755337ca9f}" locklevel="0" colspan="1" rowspan="1" labelid="{1bfd5cde-598c-4dd1-83a2-03a0519969c8}">
+                        <labels>
+                          <label description="Name of account 1" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_nameofaccount1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_nameofaccount1" disabled="false" />
+                      </cell>
+                      <cell id="{c393abc8-8658-40e0-829e-24b05547bdcf}" locklevel="0" colspan="1" rowspan="1" labelid="{7d8b0653-a682-4c47-b263-048f63854570}">
+                        <labels>
+                          <label description="G2 Identifier 1" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_g2identifier1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_g2identifier1" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c0042d6b-3ee5-4667-9484-97239c6404d2}" locklevel="0" colspan="1" rowspan="1" labelid="{e8207c4a-d463-424f-b699-0e3c4247fad6}">
+                        <labels>
+                          <label description="Name of account 2" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_nameofaccount2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_nameofaccount2" disabled="false" />
+                      </cell>
+                      <cell id="{f869a644-9d36-40a0-8392-38e5391e049f}" locklevel="0" colspan="1" rowspan="1" labelid="{4d1611a3-430e-4ee1-8117-0080e24f8724}">
+                        <labels>
+                          <label description="G2 Identifier 2" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_g2identifier2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_g2identifier2" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0c068c0f-c77d-4bcf-9e2e-b6eba9cb9056}" locklevel="0" colspan="1" rowspan="1" labelid="{b2f9ec8a-20a0-4d0b-ae58-d34c09861de1}">
+                        <labels>
+                          <label description="Name of account 3" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_nameofaccount3" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_nameofaccount3" disabled="false" />
+                      </cell>
+                      <cell id="{0e5155cf-02d8-4626-a46f-e568e3f01af6}" locklevel="0" colspan="1" rowspan="1" labelid="{779c9778-7e71-4e1d-9ef7-35f52c587162}">
+                        <labels>
+                          <label description="G2 Identifier 3" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_g2identifier3" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_g2identifier3" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ebfaa670-171f-4075-8fb9-ba2fe50580d5}" locklevel="0" colspan="1" rowspan="1" labelid="{2069f8da-4d37-4a9f-9e54-884a91a6fead}">
+                        <labels>
+                          <label description="Name of account 4" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_nameofaccount4" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_nameofaccount4" disabled="false" />
+                      </cell>
+                      <cell id="{9ef35a8b-9444-42e0-ba61-2eeac431aaa4}" locklevel="0" colspan="1" rowspan="1" labelid="{2ba11be7-1bac-421a-9927-fe4cddf9cd18}">
+                        <labels>
+                          <label description="G2 Identifier 4" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_g2identifier4" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_g2identifier4" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bc62070e-88d6-4095-a685-8dad6630b0ec}" locklevel="0" colspan="1" rowspan="1" labelid="{184d2c20-de07-4c6d-8d09-f20b263a78d7}">
+                        <labels>
+                          <label description="Name of account 5" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_nameofaccount5" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_nameofaccount5" disabled="false" />
+                      </cell>
+                      <cell id="{7755bbc5-e0cb-4bc9-a6ba-542c027f43aa}" locklevel="0" colspan="1" rowspan="1" labelid="{60ff22a2-1ae1-4435-a40c-8ab60f9ef8d6}">
+                        <labels>
+                          <label description="G2 Identifier 5" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_g2identifier5" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_g2identifier5" disabled="false" />
+                      </cell>
+                      <cell id="{d43d9fbb-5572-414d-b94c-b001b489c50d}" locklevel="0" colspan="1" rowspan="1" labelid="{8993a6da-3eb4-4440-a96b-583d58bbc250}">
+                        <labels>
+                          <label description="676 Identifier 1" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_676identifier1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_676identifier1" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{55228ebd-46ff-4b45-bbf1-6a7916ae4da2}" labelid="{860bce97-ef00-44a6-8ff7-3b08408d6f39}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{26629e09-6ab3-4656-8af1-d3fce0e3b3fe}" labelid="{4a9fd75c-c074-46d9-94ca-78fc3d3de17b}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{96863081-a341-4615-acac-9699f57f3b18}" locklevel="0" colspan="1" rowspan="1" labelid="{cda7e5d2-abc0-440a-9f30-d9e8a24acd68}">
+                        <labels>
+                          <label description="676 Identifier 2" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_676identifier2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_676identifier2" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{4e580df9-72a3-4e9e-90f8-a614a63b42e6}" labelid="{9d704b98-22cb-49c0-b67a-4b06d7c2674d}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{1652a931-c03c-4c6a-8312-279a21298516}" labelid="{cd00b893-1834-4618-9ca4-85ef4095cb8c}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{d6fd481b-3717-4913-834a-e55fd53dff3c}" locklevel="0" colspan="1" rowspan="1" labelid="{e2fba756-8769-4035-8ac6-60d7cfd9caeb}">
+                        <labels>
+                          <label description="676 Identifier 3" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_676identifier3" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_676identifier3" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{f2d3fb87-5882-4151-8986-67063ccb85d4}" labelid="{3420cabd-2cac-439d-8494-45cf987c7eaa}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{19dff2cf-8436-419a-9d74-da39317bf6c6}" labelid="{aebcbab7-f166-4f2e-b4ba-65f92258f2ed}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{78981c62-92d6-410b-86ed-acf603f67672}" locklevel="0" colspan="1" rowspan="1" labelid="{4eaccd07-e40e-49a6-a0be-ba5cb30e4451}">
+                        <labels>
+                          <label description="676 Identifier 4" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_676identifier4" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_676identifier4" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{88cc844c-c2df-4733-a756-23868809d77a}" labelid="{bf94b68c-2708-47f5-939b-3cf4794a122d}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{8567c4c8-ec90-4241-9040-3539e3452d79}" labelid="{297bb913-efe3-4d2f-9d0b-f127a15d847e}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{36e1641a-e24c-45f5-b776-b5c629003864}" locklevel="0" colspan="1" rowspan="1" labelid="{c0c0fd32-ceb2-48e6-b334-2139c781ffb6}">
+                        <labels>
+                          <label description="676 Identifier 5" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_676identifier5" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_676identifier5" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_12" id="5bade8a2-0015-4109-8bbc-14a621fa88e7" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Purpose and Nature of the business relationship" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{dc64df5c-70ba-4162-8022-d369c70aede8}" locklevel="0" colspan="1" rowspan="1" labelid="{2a45ae33-86a3-4f90-ae48-49424bf09688}">
+                        <labels>
+                          <label description="Type of Business Relationship" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_typeofbusinessrelationship" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_typeofbusinessrelationship" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9807e2d7-3f64-44ea-857b-ca2cc6aa9ce0}" locklevel="0" colspan="1" rowspan="1" labelid="{a1c6c31f-42c2-49de-a66d-2644fe5530f5}">
+                        <labels>
+                          <label description="DPAM Sales in charge" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_dpamsalesincharge" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_dpamsalesincharge" disabled="false" />
+                      </cell>
+                      <cell id="{2034fb56-0ab1-4e21-abbb-2252032b31ab}" locklevel="0" colspan="1" rowspan="1" labelid="{d90cc156-784c-49f0-913b-b9be4e4e3d36}">
+                        <labels>
+                          <label description="Specify further if needed" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_specifyfurther" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_specifyfurther" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{47c2ab2d-3f7d-4231-9671-be68c77521d2}" locklevel="0" colspan="1" rowspan="1" labelid="{7a05bbf1-1e15-41fc-ad8f-b3432c497660}">
+                        <labels>
+                          <label description="Business Stage" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_businessstage" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_businessstage" disabled="false" />
+                      </cell>
+                      <cell id="{ac65110c-f7e2-4239-8ac1-629f596d176c}" locklevel="0" colspan="1" rowspan="1" labelid="{f08f1d10-07e5-4478-b617-6a2ffc5c1033}">
+                        <labels>
+                          <label description="Date of sending" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_dt_dateofsending" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="dpam_dt_dateofsending" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_13" id="51453757-add7-418a-b97a-b554dc254cc9" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="UCI/AIF" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{923651f2-d419-4a81-adf2-06f473191aca}" locklevel="0" colspan="1" rowspan="1" labelid="{092dcb5e-1ed3-4b4f-8dbb-9cc06331b542}">
+                        <labels>
+                          <label description="Management Company" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_managementcompany" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_managementcompany" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b0b301b0-9a2f-44b1-af05-91115bda2e94}" locklevel="0" colspan="1" rowspan="1" labelid="{87e44c99-aad8-481e-9d1b-6cb9059ba48e}">
+                        <labels>
+                          <label description="Sponsor Identity" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_sponsoridentity" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_sponsoridentity" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{20e5615f-0943-41b5-a9e9-13866c866c4c}" locklevel="0" colspan="1" rowspan="1" labelid="{8bfb0acf-392e-44dd-af5c-683183ace0bb}">
+                        <labels>
+                          <label description="Targeted Investors" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_targetedinvestors" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_targetedinvestors" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ae810d20-5f97-439f-bd4d-379152825468}" locklevel="0" colspan="1" rowspan="1" labelid="{821e517d-99a4-425d-b577-8f26c2c64d12}">
+                        <labels>
+                          <label description="Proposed distribution network" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_proposeddistributionnetwork" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_proposeddistributionnetwork" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1553236c-c857-425f-82d0-1eeb7b3c7cd6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Assets origin" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_assetsorigin" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_assetsorigin" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{84729a17-22eb-4535-9d6c-7d552003f1cc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Beneficial owner(s)" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_beneficialowners" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_beneficialowners" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9414745a-b8f9-4ab0-824f-e0c004e678c4}" locklevel="0" colspan="1" rowspan="1" labelid="{33e74db1-f5b1-42c2-8f44-3fbf859f711a}">
+                        <labels>
+                          <label description="Transfer Agent" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_transferagent" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_transferagent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{75e97a5c-7002-4746-b3cb-7b02fceef8b6}" locklevel="0" colspan="1" rowspan="1" labelid="{0bad8196-ca1d-45db-9527-4cd7cf9b5843}">
+                        <labels>
+                          <label description="Depository" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_depository" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_depository" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d4cb182b-b366-4072-a651-e4c593c2ada2}" locklevel="0" colspan="1" rowspan="1" labelid="{679f9d2f-5336-4f53-a709-17419d71f482}">
+                        <labels>
+                          <label description="Amount of assets" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_amountofassets" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_amountofassets" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4632562f-b082-400e-933b-1d982e5e2239}" locklevel="0" colspan="1" rowspan="1" labelid="{2dc308bb-0abd-497d-8ac4-fe33fa37e7a5}">
+                        <labels>
+                          <label description="Proof of lack of prosecution or reputation problem" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_proofoflackofprosecutionreputation" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_proofoflackofprosecutionreputation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1b26a3d7-04a9-46f7-93a0-d3cd93bc13a5}" locklevel="0" colspan="1" rowspan="1" labelid="{302059f5-8e78-4e6a-a353-286dd9b9d9c1}">
+                        <labels>
+                          <label description="Other information that may influence the ML/FT score" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_otherinformation" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_otherinformation" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_14" id="2ed8138d-e0e8-4daf-801c-137423c60e47" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Distributor" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{f739c6e3-4f44-4bbc-a371-5b3ce89c5530}" locklevel="0" colspan="1" rowspan="1" labelid="{36caba3b-cf8a-49cb-a2ad-1b8588bd43af}">
+                        <labels>
+                          <label description="Mutual Funds 1" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_mutualfunds1" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_mutualfunds1" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{79cbb38c-2b66-4ead-954d-b17275bdec72}" locklevel="0" colspan="1" rowspan="1" labelid="{888c35c1-3d6f-4907-bbf3-9fd89b1eb00a}">
+                        <labels>
+                          <label description="Mutual Funds 2" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_mutualfunds2" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_mutualfunds2" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{37d4fb36-0a20-433a-8217-3898b5247f94}" locklevel="0" colspan="1" rowspan="1" labelid="{086b4b73-6793-4a3e-8e44-0cb02d799daa}">
+                        <labels>
+                          <label description="Mutual Funds 3" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_mutualfunds3" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_mutualfunds3" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2d03a028-0b84-40f0-918a-24bcabe2ffbf}" locklevel="0" colspan="1" rowspan="1" labelid="{d0dc7381-9ca7-42f9-a82a-852fcac9ea55}">
+                        <labels>
+                          <label description="Mutual Funds 4" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_mutualfunds4" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_mutualfunds4" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{39c1b321-00d2-458c-b8ee-4324dace2d8a}" locklevel="0" colspan="1" rowspan="1" labelid="{b64bdeba-bf2e-4e42-88a8-7a20cf8b4696}">
+                        <labels>
+                          <label description="Mutual Funds 5" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_mutualfunds5" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_mutualfunds5" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{09bc9d69-73fc-4055-b0aa-524afbed774f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Targeted Investors" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_targetedinvestors" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_targetedinvestors" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0c05b53e-0160-4397-b2b4-f706de6c5242}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Investors regulated by a supervisory authority" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_investorsregulated" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_investorsregulated" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{385c160b-6356-4f63-aee7-c78783dba325}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Investors subject to a ML / TF prevention law" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_investorssubjecttomltfpreventionlaw" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_investorssubjecttomltfpreventionlaw" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4b81df2e-edbb-4799-8049-c4ac22406cb6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Proposed distribution network" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_proposeddistributionnetwork" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_proposeddistributionnetwork" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0775c07d-16bd-41c6-af5c-ed5345288634}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Distributor has a ML / FT Prevention Policy" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_distributorhasmlftpreventionpolicy" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_distributorhasmlftpreventionpolicy" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a4dd0328-55e5-4470-ba7f-fa2c9de0bdba}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Projected Volume of Assets" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_projectedvolumeofassets" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_projectedvolumeofassets" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a2783f7a-6109-4127-8b82-826a1e76a942}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Proof of lack of prosecution or reputation problem" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_proofoflackofprosecutionreputation" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_proofoflackofprosecutionreputation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5ead9e16-f118-4451-8e7b-51838c9aef53}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Other information that may influence the ML/FT score" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_otherinformation" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_otherinformation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b068a25e-9f7b-4b46-8082-395f5225933c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Identity of Main distributor in case of sub-distributor" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_identityofmaindistributor" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_identityofmaindistributor" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{85fcafbf-b04b-4330-8198-83c28390d825}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Transfer Agent" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_transferagent" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_transferagent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{16a388fd-68a6-4202-b11d-1ea0bd549b80}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Depository" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_depository" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_depository" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_15" id="1bf0a17d-e78d-46b2-b7f0-b1cdd4277e3c" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Investment Services Offering" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{3a8c29fa-e532-4734-a449-2c341bd67667}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Projected Volume of Assets" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_projectedvolumeofassets" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_projectedvolumeofassets" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fe21ce9f-ce93-480d-b1ef-228d3c6ab4c0}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Identity of the depositary" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_identityofthedepositary" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_identityofthedepositary" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f489901f-341d-4927-a971-5268e93af346}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Origin of the assets" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_originoftheassets" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_originoftheassets" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4f32382d-8800-41a4-a798-63a60d7f2a98}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Specify Other Origin" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_specifyotherorigin" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_specifyotherorigin" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ebb6ad89-d8c1-456a-a616-41a6f17facf4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="If patrimonial company / private foundation, origin of the assets brought by the BO" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_originofprivateassets" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_originofprivateassets" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{406f9849-e435-4165-b211-5f0b42f01d06}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nature of Property" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_natureofproperty" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_natureofproperty" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bbec55a3-373e-41cc-a4a9-bbcb66f0532c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Address of Property" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_addressofproperty" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_addressofproperty" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{60d37100-3846-46b4-983f-a21a08c7a7cc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Sale Date Property" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_dt_saledateproperty" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="dpam_dt_saledateproperty" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{25f300ac-79df-46c6-b2be-c1af26670900}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Relationship between owner and donor" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_relationshipbetweenowneranddonor" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_relationshipbetweenowneranddonor" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{60f3abd1-b724-4df6-8212-9459102ec235}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Inheritance/Donation Date" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_dt_inheritancedonationdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="dpam_dt_inheritancedonationdate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dd5921bc-8f4f-49f0-8f9f-a94623c6974e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Specify Other" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_specifyother" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_specifyother" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3cbd11de-dffb-4048-a05c-e902471a99e4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date Other" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_dt_dateother" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="dpam_dt_dateother" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{716786c0-8a47-4c45-a7a3-690bd0b25ca1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Assets Provenance" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_assetsprovenance" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_assetsprovenance" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6872480a-e2a4-4621-b729-dffd1b381027}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Actual Deposits Bank" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_actualdepositsbank" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_actualdepositsbank" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{db68407e-b1a6-4a8c-95a6-e8497766564a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Proof of lack of prosecution or reputation problem" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_proofoflackofprosecutionreputation" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_proofoflackofprosecutionreputation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4561acd4-89dd-4c82-8638-8a56cbb737af}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Evolution of Assets" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_evolutionofassets" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_evolutionofassets" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4f0c9994-754a-4e0f-9d8f-9ccb607b568e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Evolution in Amount" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_int_evolutioninamount" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="dpam_int_evolutioninamount" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c4ea650f-6a50-4c71-92fd-8516c787e81a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Customer's notice" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_os_customersnotification" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_customersnotification" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{58aa3524-4b4c-4b4d-90ea-58535a25c3c9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Other information that may influence the ML/FT score" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_s_otherinformation" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_otherinformation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{29edb93a-693f-4fcd-9d7c-9fd52ad7f863}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Institutional investor verified by EEA agency" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_b_institutionalinvestorverifiedbyeea" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="dpam_b_institutionalinvestorverifiedbyeea" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_8" id="19782e80-7945-48df-b2a7-73199ae8759e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" visible="false" labelid="{41788ab4-a26f-4245-ad28-f65a90c0f5f3}">
+                  <labels>
+                    <label description="Technical Field" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5354dd0e-c9d3-4ca9-9c18-98ce36a7fe4a}" locklevel="0" colspan="1" rowspan="1" labelid="{f379dc34-b207-408c-92be-93997290b775}">
+                        <labels>
+                          <label description="Open Screen Custom Page" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_int_openscreencustompage" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="dpam_int_openscreencustompage" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{32c595c0-9c59-4a8f-880f-9146927a57ba}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{f02c3896-cc19-4059-a14c-f6b497f23e97}" showlabel="false" labelid="{ec3e8ee4-25d9-4a47-a370-9afbcce2c088}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3030cb46-08fa-48a1-ad46-6f0ce5112f60}" showlabel="false" labelid="{8063791c-9584-4b21-a299-cc6bbbb1f5d6}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{db6746a3-b9c5-4a14-96e1-4e0cadc823bb}" showlabel="false" labelid="{3c690402-3ce3-4fea-8a48-9221676ef530}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{510e9347-cd35-4006-b075-47eaf4cee5e0}" colspan="1" rowspan="1" labelid="{2dbb6d18-71de-45cb-93c1-357ba0eba29e}">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+            <cell id="{01f0ef00-fb4b-40c0-afb8-828cbd24e337}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Status" languagecode="1033" />
+              </labels>
+              <control id="header_statecode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+            </cell>
+            <cell id="{de577e5a-ca46-4850-9aca-27cffa4450ed}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="ID Card Status Reason" languagecode="1033" />
+              </labels>
+              <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{ef736f90-9b67-429c-8110-2651856f3196}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{0b1a10a4-cb29-42f5-a770-ddaaa8df23fa}" showlabel="false" labelid="{0140812b-6e60-4a3f-8b68-18dbd89c5167}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{39c97f1a-2002-4d54-8c1a-fc3ff44b2e23}" showlabel="false" labelid="{aee7cb68-e3d9-456e-9d0e-94ad61a26c87}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{87d93441-1949-4d2f-b266-a1f84f1f9ecb}" showlabel="false" labelid="{bc57ee14-a333-414f-92da-64313a21401a}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{48f5d64b-d975-48b3-8011-070767e64202}" />
+        <Role Id="{bf51087a-a1f8-4120-9038-1cb348a1246d}" />
+        <Role Id="{c9b0232f-2014-4d10-91a8-34be6121eabd}" />
+        <Role Id="{9279e494-efe9-4465-9a0d-3baf6adac6e7}" />
+        <Role Id="{d03f7688-5c27-4f6e-907f-3f60c38f9961}" />
+        <Role Id="{38405b30-5ee2-4d2b-98c7-4140b34e4113}" />
+        <Role Id="{a01b1f68-90c9-4375-b247-461fac844a3e}" />
+        <Role Id="{02d3bec6-efe6-4d63-a285-670389290d61}" />
+        <Role Id="{39589377-d8b0-459f-a165-6712255b8235}" />
+        <Role Id="{32a27bfa-0059-4d58-a0c7-70581ada5fb4}" />
+        <Role Id="{4567ffa8-9f90-4796-863f-72bd28768625}" />
+        <Role Id="{fd998c22-5618-423a-9c05-74ab483e5e4b}" />
+        <Role Id="{37c62b12-2ae7-44e9-b7b8-87feb0bb3636}" />
+        <Role Id="{7f3f276d-4ff6-4993-8237-93471fac1693}" />
+        <Role Id="{3aea951d-8a9d-48a9-bdb0-95ea31fbcc1f}" />
+        <Role Id="{eba14b9a-b018-4176-81d5-984a1cf73333}" />
+        <Role Id="{17c54990-7a4e-4752-821e-985ef0a6142a}" />
+        <Role Id="{166f4860-17c9-40a0-aef4-9a12f93b2a91}" />
+        <Role Id="{dce40038-fd03-4bf7-87e1-c1597c3953cc}" />
+        <Role Id="{d257c72c-23cc-4003-b11d-c22d06b389f0}" />
+        <Role Id="{5bda622c-d13a-4a16-b4f2-cdd420e509d3}" />
+        <Role Id="{9d3da75d-0295-48bc-8495-ce85cb048bb0}" />
+        <Role Id="{d1499f84-6dbd-4e51-a03c-d34c6b84e593}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Identification Card main form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

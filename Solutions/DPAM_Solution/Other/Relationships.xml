@@ -2,16 +2,17 @@
 <EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityRelationship Name="account_parent_account" />
   <EntityRelationship Name="Account_Tasks" unmodified="1" />
-  <EntityRelationship Name="bdp_LegalDocument_bdp_DocumentLatestVersi" />
-  <EntityRelationship Name="bdp_LegalDocument_Contact_Contact" />
   <EntityRelationship Name="bookableresourcebooking_Tasks" unmodified="1" />
   <EntityRelationship Name="bookableresourcebookingheader_Tasks" unmodified="1" />
   <EntityRelationship Name="bulkoperation_Tasks" unmodified="1" />
-  <EntityRelationship Name="business_unit_bdp_legaldocument" />
-  <EntityRelationship Name="business_unit_bdp_question" />
-  <EntityRelationship Name="business_unit_bdp_questionnaireresult" />
   <EntityRelationship Name="business_unit_dpam_agreement" />
   <EntityRelationship Name="business_unit_dpam_agreementtype" />
+  <EntityRelationship Name="business_unit_dpam_amlanswer" />
+  <EntityRelationship Name="business_unit_dpam_amlprofiling" />
+  <EntityRelationship Name="business_unit_dpam_amlquestion" />
+  <EntityRelationship Name="business_unit_dpam_amlquestiongroup" />
+  <EntityRelationship Name="business_unit_dpam_amlrisktemplate" />
+  <EntityRelationship Name="business_unit_dpam_amluseranswer" />
   <EntityRelationship Name="business_unit_dpam_contactfrequency" />
   <EntityRelationship Name="business_unit_dpam_contacttitle" />
   <EntityRelationship Name="business_unit_dpam_counterpartybusinesssegmentation" />
@@ -22,6 +23,7 @@
   <EntityRelationship Name="business_unit_dpam_cplocalbusinesssegmentation" />
   <EntityRelationship Name="business_unit_dpam_departments" />
   <EntityRelationship Name="business_unit_dpam_greeting" />
+  <EntityRelationship Name="business_unit_dpam_identificationcard" />
   <EntityRelationship Name="business_unit_dpam_jobfunction" />
   <EntityRelationship Name="business_unit_dpam_leadsource" />
   <EntityRelationship Name="business_unit_dpam_location" />
@@ -43,8 +45,19 @@
   <EntityRelationship Name="dpam_Account_lk_dmu_Account" />
   <EntityRelationship Name="dpam_Account_lk_legalform_dpam_counterpartyleg" />
   <EntityRelationship Name="dpam_Account_lk_localbusinesssegmentation_dpam" />
+  <EntityRelationship Name="dpam_Account_lk_optedmifidcategory" />
   <EntityRelationship Name="dpam_agreement_lk_agreementtype" />
   <EntityRelationship Name="dpam_agreement_lk_counterparty_Account" />
+  <EntityRelationship Name="dpam_amlanswer_lk_amlquestion" />
+  <EntityRelationship Name="dpam_amlprofiling_lk_amlrisktemplate" />
+  <EntityRelationship Name="dpam_amlprofiling_lk_counterparty" />
+  <EntityRelationship Name="dpam_amlprofiling_lk_department" />
+  <EntityRelationship Name="dpam_amlquestion_lk_amlquestiongroup" />
+  <EntityRelationship Name="dpam_amlquestion_lk_amlrisktemplate" />
+  <EntityRelationship Name="dpam_amlquestiongroup_lk_amlrisktemplate" />
+  <EntityRelationship Name="dpam_amluseranswer_lk_amlanswer" />
+  <EntityRelationship Name="dpam_amluseranswer_lk_amlprofiling" />
+  <EntityRelationship Name="dpam_amluseranswer_lk_amlquestion" />
   <EntityRelationship Name="dpam_BusinessUnit_lk_country_dpam_country" />
   <EntityRelationship Name="dpam_Contact_lk_contacttitle_dpam_contacttitle" />
   <EntityRelationship Name="dpam_Contact_lk_country_dpam_country" />
@@ -63,7 +76,24 @@
   <EntityRelationship Name="dpam_departments_lk_localbusinesssegmenta" />
   <EntityRelationship Name="dpam_departments_lk_location_dpam_locatio" />
   <EntityRelationship Name="dpam_departments_lk_mifidcategory_dpam_Co" />
+  <EntityRelationship Name="dpam_departments_lk_optedmifidcategory" />
   <EntityRelationship Name="dpam_dpam_greeting_contact_lk_greeting" />
+  <EntityRelationship Name="dpam_identificationcard_lk_actualdepositsbank" />
+  <EntityRelationship Name="dpam_identificationcard_lk_assetsheldincustody" />
+  <EntityRelationship Name="dpam_identificationcard_lk_assetsprovenance" />
+  <EntityRelationship Name="dpam_identificationcard_lk_counterparty" />
+  <EntityRelationship Name="dpam_identificationcard_lk_department" />
+  <EntityRelationship Name="dpam_identificationcard_lk_depository" />
+  <EntityRelationship Name="dpam_identificationcard_lk_identitydepositary" />
+  <EntityRelationship Name="dpam_identificationcard_lk_maindistributor" />
+  <EntityRelationship Name="dpam_identificationcard_lk_managementcompany" />
+  <EntityRelationship Name="dpam_identificationcard_lk_mutualfunds1" />
+  <EntityRelationship Name="dpam_identificationcard_lk_mutualfunds2" />
+  <EntityRelationship Name="dpam_identificationcard_lk_mutualfunds3" />
+  <EntityRelationship Name="dpam_identificationcard_lk_mutualfunds4" />
+  <EntityRelationship Name="dpam_identificationcard_lk_mutualfunds5" />
+  <EntityRelationship Name="dpam_identificationcard_lk_sponsoridentity" />
+  <EntityRelationship Name="dpam_identificationcard_lk_transferagent" />
   <EntityRelationship Name="dpam_Lead_lk_businesssegmentation_dpam_counter" />
   <EntityRelationship Name="dpam_Lead_lk_country_dpam_country" />
   <EntityRelationship Name="dpam_Lead_lk_leadsource_dpam_leadsource" />
@@ -83,23 +113,27 @@
   <EntityRelationship Name="dpam_shareclass_Product_Product" />
   <EntityRelationship Name="entitlement_Tasks" unmodified="1" />
   <EntityRelationship Name="entitlementtemplate_Tasks" unmodified="1" />
-  <EntityRelationship Name="FileAttachment_bdp_LegalDocument_bdp_File" />
-  <EntityRelationship Name="FileAttachment_bdp_Question_bdp_Testfile" />
   <EntityRelationship Name="Incident_Tasks" unmodified="1" />
   <EntityRelationship Name="Invoice_Tasks" unmodified="1" />
   <EntityRelationship Name="KnowledgeArticle_Tasks" unmodified="1" />
   <EntityRelationship Name="KnowledgeBaseRecord_Tasks" unmodified="1" />
   <EntityRelationship Name="Lead_Tasks" unmodified="1" />
-  <EntityRelationship Name="lk_bdp_legaldocument_createdby" />
-  <EntityRelationship Name="lk_bdp_legaldocument_modifiedby" />
-  <EntityRelationship Name="lk_bdp_question_createdby" />
-  <EntityRelationship Name="lk_bdp_question_modifiedby" />
-  <EntityRelationship Name="lk_bdp_questionnaireresult_createdby" />
-  <EntityRelationship Name="lk_bdp_questionnaireresult_modifiedby" />
   <EntityRelationship Name="lk_dpam_agreement_createdby" />
   <EntityRelationship Name="lk_dpam_agreement_modifiedby" />
   <EntityRelationship Name="lk_dpam_agreementtype_createdby" />
   <EntityRelationship Name="lk_dpam_agreementtype_modifiedby" />
+  <EntityRelationship Name="lk_dpam_amlanswer_createdby" />
+  <EntityRelationship Name="lk_dpam_amlanswer_modifiedby" />
+  <EntityRelationship Name="lk_dpam_amlprofiling_createdby" />
+  <EntityRelationship Name="lk_dpam_amlprofiling_modifiedby" />
+  <EntityRelationship Name="lk_dpam_amlquestion_createdby" />
+  <EntityRelationship Name="lk_dpam_amlquestion_modifiedby" />
+  <EntityRelationship Name="lk_dpam_amlquestiongroup_createdby" />
+  <EntityRelationship Name="lk_dpam_amlquestiongroup_modifiedby" />
+  <EntityRelationship Name="lk_dpam_amlrisktemplate_createdby" />
+  <EntityRelationship Name="lk_dpam_amlrisktemplate_modifiedby" />
+  <EntityRelationship Name="lk_dpam_amluseranswer_createdby" />
+  <EntityRelationship Name="lk_dpam_amluseranswer_modifiedby" />
   <EntityRelationship Name="lk_dpam_contactfrequency_createdby" />
   <EntityRelationship Name="lk_dpam_contactfrequency_modifiedby" />
   <EntityRelationship Name="lk_dpam_contacttitle_createdby" />
@@ -120,6 +154,8 @@
   <EntityRelationship Name="lk_dpam_departments_modifiedby" />
   <EntityRelationship Name="lk_dpam_greeting_createdby" />
   <EntityRelationship Name="lk_dpam_greeting_modifiedby" />
+  <EntityRelationship Name="lk_dpam_identificationcard_createdby" />
+  <EntityRelationship Name="lk_dpam_identificationcard_modifiedby" />
   <EntityRelationship Name="lk_dpam_jobfunction_createdby" />
   <EntityRelationship Name="lk_dpam_jobfunction_modifiedby" />
   <EntityRelationship Name="lk_dpam_leadsource_createdby" />
@@ -191,11 +227,14 @@
   <EntityRelationship Name="opportunity_parent_account" unmodified="1" />
   <EntityRelationship Name="opportunity_parent_contact" unmodified="1" />
   <EntityRelationship Name="Opportunity_Tasks" unmodified="1" />
-  <EntityRelationship Name="owner_bdp_legaldocument" />
-  <EntityRelationship Name="owner_bdp_question" />
-  <EntityRelationship Name="owner_bdp_questionnaireresult" />
   <EntityRelationship Name="owner_dpam_agreement" />
   <EntityRelationship Name="owner_dpam_agreementtype" />
+  <EntityRelationship Name="owner_dpam_amlanswer" />
+  <EntityRelationship Name="owner_dpam_amlprofiling" />
+  <EntityRelationship Name="owner_dpam_amlquestion" />
+  <EntityRelationship Name="owner_dpam_amlquestiongroup" />
+  <EntityRelationship Name="owner_dpam_amlrisktemplate" />
+  <EntityRelationship Name="owner_dpam_amluseranswer" />
   <EntityRelationship Name="owner_dpam_contactfrequency" />
   <EntityRelationship Name="owner_dpam_contacttitle" />
   <EntityRelationship Name="owner_dpam_counterpartybusinesssegmentation" />
@@ -206,6 +245,7 @@
   <EntityRelationship Name="owner_dpam_cplocalbusinesssegmentation" />
   <EntityRelationship Name="owner_dpam_departments" />
   <EntityRelationship Name="owner_dpam_greeting" />
+  <EntityRelationship Name="owner_dpam_identificationcard" />
   <EntityRelationship Name="owner_dpam_jobfunction" />
   <EntityRelationship Name="owner_dpam_leadsource" />
   <EntityRelationship Name="owner_dpam_location" />
@@ -215,11 +255,14 @@
   <EntityRelationship Name="Quote_Tasks" unmodified="1" />
   <EntityRelationship Name="SalesOrder_Tasks" unmodified="1" />
   <EntityRelationship Name="site_Tasks" unmodified="1" />
-  <EntityRelationship Name="team_bdp_legaldocument" />
-  <EntityRelationship Name="team_bdp_question" />
-  <EntityRelationship Name="team_bdp_questionnaireresult" />
   <EntityRelationship Name="team_dpam_agreement" />
   <EntityRelationship Name="team_dpam_agreementtype" />
+  <EntityRelationship Name="team_dpam_amlanswer" />
+  <EntityRelationship Name="team_dpam_amlprofiling" />
+  <EntityRelationship Name="team_dpam_amlquestion" />
+  <EntityRelationship Name="team_dpam_amlquestiongroup" />
+  <EntityRelationship Name="team_dpam_amlrisktemplate" />
+  <EntityRelationship Name="team_dpam_amluseranswer" />
   <EntityRelationship Name="team_dpam_contactfrequency" />
   <EntityRelationship Name="team_dpam_contacttitle" />
   <EntityRelationship Name="team_dpam_counterpartybusinesssegmentation" />
@@ -230,17 +273,21 @@
   <EntityRelationship Name="team_dpam_cplocalbusinesssegmentation" />
   <EntityRelationship Name="team_dpam_departments" />
   <EntityRelationship Name="team_dpam_greeting" />
+  <EntityRelationship Name="team_dpam_identificationcard" />
   <EntityRelationship Name="team_dpam_jobfunction" />
   <EntityRelationship Name="team_dpam_leadsource" />
   <EntityRelationship Name="team_dpam_location" />
   <EntityRelationship Name="team_dpam_productinterest" />
   <EntityRelationship Name="team_dpam_settings" />
   <EntityRelationship Name="team_dpam_shareclass" />
-  <EntityRelationship Name="user_bdp_legaldocument" />
-  <EntityRelationship Name="user_bdp_question" />
-  <EntityRelationship Name="user_bdp_questionnaireresult" />
   <EntityRelationship Name="user_dpam_agreement" />
   <EntityRelationship Name="user_dpam_agreementtype" />
+  <EntityRelationship Name="user_dpam_amlanswer" />
+  <EntityRelationship Name="user_dpam_amlprofiling" />
+  <EntityRelationship Name="user_dpam_amlquestion" />
+  <EntityRelationship Name="user_dpam_amlquestiongroup" />
+  <EntityRelationship Name="user_dpam_amlrisktemplate" />
+  <EntityRelationship Name="user_dpam_amluseranswer" />
   <EntityRelationship Name="user_dpam_contactfrequency" />
   <EntityRelationship Name="user_dpam_contacttitle" />
   <EntityRelationship Name="user_dpam_counterpartybusinesssegmentation" />
@@ -251,6 +298,7 @@
   <EntityRelationship Name="user_dpam_cplocalbusinesssegmentation" />
   <EntityRelationship Name="user_dpam_departments" />
   <EntityRelationship Name="user_dpam_greeting" />
+  <EntityRelationship Name="user_dpam_identificationcard" />
   <EntityRelationship Name="user_dpam_jobfunction" />
   <EntityRelationship Name="user_dpam_leadsource" />
   <EntityRelationship Name="user_dpam_location" />

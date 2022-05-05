@@ -189,13 +189,26 @@
                       </cell>
                     </row>
                     <row>
+                      <cell id="{c688fadb-8951-492a-8aac-71c9b3dff3a3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Opted Mifid Category" languagecode="1033" />
+                        </labels>
+                        <control id="dpam_lk_optedmifidcategory" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_optedmifidcategory" disabled="false" />
+                      </cell>
+                      <cell showlabel="false" locklevel="0" id="{3784a055-373e-4375-a36c-4790ba2d1744}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
                       <cell id="{f06d104b-acd6-4614-b7e8-bd21a398a096}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="AML Rating" languagecode="1033" />
                         </labels>
                         <control id="dpam_os_amlrating" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dpam_os_amlrating" disabled="false" />
                       </cell>
-                      <cell showlabel="false" locklevel="0" id="{3784a055-373e-4375-a36c-4790ba2d1744}">
+                      <cell showlabel="false" locklevel="0" id="{edb2f2c6-b2d0-4ef2-809c-bf776cf0c33e}">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -208,7 +221,7 @@
                         </labels>
                         <control id="dpam_s_g2_id" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_g2_id" disabled="false" />
                       </cell>
-                      <cell showlabel="false" locklevel="0" id="{edb2f2c6-b2d0-4ef2-809c-bf776cf0c33e}">
+                      <cell locklevel="0" id="{32034705-56c4-4dbd-905d-b59cce5d6579}">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -221,7 +234,7 @@
                         </labels>
                         <control id="dpam_s_3d_id" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_3d_id" disabled="false" />
                       </cell>
-                      <cell locklevel="0" id="{32034705-56c4-4dbd-905d-b59cce5d6579}">
+                      <cell locklevel="0" id="{4edd4aea-5d31-4c83-b170-4ffafb2460d2}">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -234,7 +247,7 @@
                         </labels>
                         <control id="dpam_s_otheridnumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dpam_s_otheridnumber" disabled="false" />
                       </cell>
-                      <cell locklevel="0" id="{4edd4aea-5d31-4c83-b170-4ffafb2460d2}">
+                      <cell locklevel="0" id="{0c80cf42-2af9-4168-bd2f-a63d646e097f}">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>

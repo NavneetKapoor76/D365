@@ -208,6 +208,56 @@
           </Titles>
           <Privilege Entity="msdyn_dealmanageraccess" Privilege="Read" />
         </SubArea>
+        <SubArea Id="SalesAccelerationInstance_ViralTrial" VectorIcon="/WebResources/Sales/_imgs/SiteMap/salesacceleration.svg" Icon="/WebResources/Sales/_imgs/SiteMap/salesacceleration.svg" Url="/main.aspx?pagetype=control&amp;controlName=MscrmControls.AcceleratedSales.AnchorShellControl" Client="All" AvailableOffline="false" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <IsVisible settings="msdyn_ShowWorkspaceSitemapForEveryone" defaultValue="false" />
+          <Titles>
+            <Title LCID="1033" Title="Sales accelerator" />
+            <Title LCID="1025" Title="Sales accelerator" />
+            <Title LCID="1026" Title="Sales accelerator" />
+            <Title LCID="1027" Title="Sales accelerator" />
+            <Title LCID="1029" Title="Sales accelerator" />
+            <Title LCID="1030" Title="Sales accelerator" />
+            <Title LCID="1031" Title="Sales accelerator" />
+            <Title LCID="1032" Title="Sales accelerator" />
+            <Title LCID="3082" Title="Sales accelerator" />
+            <Title LCID="1061" Title="Sales accelerator" />
+            <Title LCID="1069" Title="Sales accelerator" />
+            <Title LCID="1035" Title="Sales accelerator" />
+            <Title LCID="1036" Title="Sales accelerator" />
+            <Title LCID="1110" Title="Sales accelerator" />
+            <Title LCID="1037" Title="Sales accelerator" />
+            <Title LCID="1081" Title="Sales accelerator" />
+            <Title LCID="1050" Title="Sales accelerator" />
+            <Title LCID="1038" Title="Sales accelerator" />
+            <Title LCID="1057" Title="Sales accelerator" />
+            <Title LCID="1040" Title="Sales accelerator" />
+            <Title LCID="1041" Title="Sales accelerator" />
+            <Title LCID="1087" Title="Sales accelerator" />
+            <Title LCID="1042" Title="Sales accelerator" />
+            <Title LCID="1063" Title="Sales accelerator" />
+            <Title LCID="1062" Title="Sales accelerator" />
+            <Title LCID="1086" Title="Sales accelerator" />
+            <Title LCID="1044" Title="Sales accelerator" />
+            <Title LCID="1043" Title="Sales accelerator" />
+            <Title LCID="1045" Title="Sales accelerator" />
+            <Title LCID="1046" Title="Sales accelerator" />
+            <Title LCID="2070" Title="Sales accelerator" />
+            <Title LCID="1048" Title="Sales accelerator" />
+            <Title LCID="1049" Title="Sales accelerator" />
+            <Title LCID="1051" Title="Sales accelerator" />
+            <Title LCID="1060" Title="Sales accelerator" />
+            <Title LCID="3098" Title="Sales accelerator" />
+            <Title LCID="2074" Title="Sales accelerator" />
+            <Title LCID="1053" Title="Sales accelerator" />
+            <Title LCID="1054" Title="Sales accelerator" />
+            <Title LCID="1055" Title="Sales accelerator" />
+            <Title LCID="1058" Title="Sales accelerator" />
+            <Title LCID="1066" Title="Sales accelerator" />
+            <Title LCID="2052" Title="Sales accelerator" />
+            <Title LCID="3076" Title="Sales accelerator" />
+            <Title LCID="1028" Title="Sales accelerator" />
+          </Titles>
+        </SubArea>
         <SubArea Icon="/_imgs/imagestrips/transparent_spacer.gif" Id="Dashboards" ResourceId="Homepage_Dashboards" DescriptionResourceId="Dashboards_Description" Url="/workplace/home_dashboards.aspx" DefaultDashboard="2701de60-8f2a-48a4-8262-4a35ca7441fa" AvailableOffline="false" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Dashboards" />
@@ -1791,6 +1841,56 @@
             <Title LCID="1028" Title="劇本設定" />
           </Titles>
           <Privilege Entity="msdyn_playbooktemplate" Privilege="Read" />
+        </SubArea>
+        <SubArea IntroducedVersion="9.0.0" Icon="/_imgs/svg_4300.svg" VectorIcon="/_imgs/svg_4300.svg" Id="MarketingSettings" Url="/main.aspx?pagetype=inlinedialog&amp;name=MarketingSettingsMDD" DescriptionResourceId="Marketing_Settings_Dsc" AvailableOffline="false" PassParams="false" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Marketing Settings" />
+            <Title LCID="1025" Title="Marketing Settings" />
+            <Title LCID="1026" Title="Marketing Settings" />
+            <Title LCID="1027" Title="Marketing Settings" />
+            <Title LCID="1029" Title="Marketing Settings" />
+            <Title LCID="1030" Title="Marketing Settings" />
+            <Title LCID="1031" Title="Marketing Settings" />
+            <Title LCID="1032" Title="Marketing Settings" />
+            <Title LCID="3082" Title="Marketing Settings" />
+            <Title LCID="1061" Title="Marketing Settings" />
+            <Title LCID="1069" Title="Marketing Settings" />
+            <Title LCID="1035" Title="Marketing Settings" />
+            <Title LCID="1036" Title="Marketing Settings" />
+            <Title LCID="1110" Title="Marketing Settings" />
+            <Title LCID="1037" Title="Marketing Settings" />
+            <Title LCID="1081" Title="Marketing Settings" />
+            <Title LCID="1050" Title="Marketing Settings" />
+            <Title LCID="1038" Title="Marketing Settings" />
+            <Title LCID="1057" Title="Marketing Settings" />
+            <Title LCID="1040" Title="Marketing Settings" />
+            <Title LCID="1041" Title="Marketing Settings" />
+            <Title LCID="1087" Title="Marketing Settings" />
+            <Title LCID="1042" Title="Marketing Settings" />
+            <Title LCID="1063" Title="Marketing Settings" />
+            <Title LCID="1062" Title="Marketing Settings" />
+            <Title LCID="1086" Title="Marketing Settings" />
+            <Title LCID="1044" Title="Marketing Settings" />
+            <Title LCID="1043" Title="Marketing Settings" />
+            <Title LCID="1045" Title="Marketing Settings" />
+            <Title LCID="1046" Title="Marketing Settings" />
+            <Title LCID="2070" Title="Marketing Settings" />
+            <Title LCID="1048" Title="Marketing Settings" />
+            <Title LCID="1049" Title="Marketing Settings" />
+            <Title LCID="1051" Title="Marketing Settings" />
+            <Title LCID="1060" Title="Marketing Settings" />
+            <Title LCID="10266" Title="Marketing Settings" />
+            <Title LCID="9242" Title="Marketing Settings" />
+            <Title LCID="1053" Title="Marketing Settings" />
+            <Title LCID="1054" Title="Marketing Settings" />
+            <Title LCID="1055" Title="Marketing Settings" />
+            <Title LCID="1058" Title="Marketing Settings" />
+            <Title LCID="1066" Title="Marketing Settings" />
+            <Title LCID="2052" Title="Marketing Settings" />
+            <Title LCID="3076" Title="Marketing Settings" />
+            <Title LCID="1028" Title="Marketing Settings" />
+          </Titles>
+          <Privilege Entity="list" Privilege="Read" />
         </SubArea>
       </Group>
       <Group Id="ProductCatalogGrp" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">

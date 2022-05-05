@@ -30,6 +30,8 @@
     <RolePrivilege name="prvAppendmsdyn_flowcardtype" level="Basic" />
     <RolePrivilege name="prvAppendmsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvAppendmsdyn_recording" level="Local" />
+    <RolePrivilege name="prvAppendmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAppendmsdyn_wallsavedqueryusersettings" level="Basic" />
     <RolePrivilege name="prvAppendNote" level="Local" />
     <RolePrivilege name="prvAppendOpportunity" level="Global" />
@@ -68,6 +70,8 @@
     <RolePrivilege name="prvAppendTomsdyn_flowcardtype" level="Global" />
     <RolePrivilege name="prvAppendTomsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvAppendTomsdyn_recording" level="Local" />
+    <RolePrivilege name="prvAppendTomsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvAppendTomsdyn_sequencetarget" level="Local" />
     <RolePrivilege name="prvAppendTomsdyn_wallsavedqueryusersettings" level="Basic" />
     <RolePrivilege name="prvAppendToNote" level="Local" />
     <RolePrivilege name="prvAppendToOpportunity" level="Global" />
@@ -108,6 +112,8 @@
     <RolePrivilege name="prvAssignMailMergeTemplate" level="Basic" />
     <RolePrivilege name="prvAssignmsdyn_duplicateleadmapping" level="Global" />
     <RolePrivilege name="prvAssignmsdyn_recording" level="Basic" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvAssignmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvAssignNote" level="Basic" />
     <RolePrivilege name="prvAssignOpportunity" level="Global" />
     <RolePrivilege name="prvAssignPersonalDocumentTemplate" level="Basic" />
@@ -144,10 +150,14 @@
     <RolePrivilege name="prvCreatemsdyn_actioncardrolesetting" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_duplicateleadmapping" level="Global" />
     <RolePrivilege name="prvCreatemsdyn_entityrankingrule" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_extendedusersetting" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_flowcardtype" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvCreatemsdyn_recording" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvCreatemsdyn_wallsavedqueryusersettings" level="Basic" />
+    <RolePrivilege name="prvCreatemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvCreatemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvCreateNote" level="Basic" />
     <RolePrivilege name="prvCreateOpportunity" level="Global" />
     <RolePrivilege name="prvCreatePersonalDocumentTemplate" level="Basic" />
@@ -183,6 +193,7 @@
     <RolePrivilege name="prvDeletemsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvDeletemsdyn_recording" level="Basic" />
     <RolePrivilege name="prvDeletemsdyn_wallsavedqueryusersettings" level="Basic" />
+    <RolePrivilege name="prvDeletemsdyn_workqueuestate" level="Global" />
     <RolePrivilege name="prvDeleteNote" level="Basic" />
     <RolePrivilege name="prvDeletePersonalDocumentTemplate" level="Basic" />
     <RolePrivilege name="prvDeletePostFollow" level="Basic" />
@@ -254,6 +265,7 @@
     <RolePrivilege name="prvReadmsdyn_actioncardrolesetting" level="Basic" />
     <RolePrivilege name="prvReadmsdyn_duplicateleadmapping" level="Global" />
     <RolePrivilege name="prvReadmsdyn_entityrankingrule" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_extendedusersetting" level="Basic" />
     <RolePrivilege name="prvReadmsdyn_flowcardtype" level="Global" />
     <RolePrivilege name="prvReadmsdyn_icebreakersconfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_leadhygienesetting" level="Global" />
@@ -263,11 +275,19 @@
     <RolePrivilege name="prvReadmsdyn_predictivemodelscore" level="Global" />
     <RolePrivilege name="prvReadmsdyn_predictivescore" level="Global" />
     <RolePrivilege name="prvReadmsdyn_recording" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_salesaccelerationsettings" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_salestag" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequence" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvReadmsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvReadmsdyn_sikeyvalueconfig" level="Global" />
     <RolePrivilege name="prvReadmsdyn_teamsdialeradminsettings" level="Global" />
     <RolePrivilege name="prvReadmsdyn_timespent" level="Global" />
     <RolePrivilege name="prvReadmsdyn_wallsavedquery" level="Global" />
     <RolePrivilege name="prvReadmsdyn_wallsavedqueryusersettings" level="Basic" />
+    <RolePrivilege name="prvReadmsdyn_workqueuerecord" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvReadmsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvReadNewsArticle" level="Global" />
     <RolePrivilege name="prvReadNote" level="Global" />
     <RolePrivilege name="prvReadOfficeGraphDocument" level="Global" />
@@ -355,10 +375,15 @@
     <RolePrivilege name="prvWritemsdyn_actioncardrolesetting" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_duplicateleadmapping" level="Global" />
     <RolePrivilege name="prvWritemsdyn_entityrankingrule" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_extendedusersetting" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_flowcardtype" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_PostAlbum" level="Basic" />
     <RolePrivilege name="prvWritemsdyn_recording" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_sequencetarget" level="Local" />
+    <RolePrivilege name="prvWritemsdyn_sequencetargetstep" level="Local" />
     <RolePrivilege name="prvWritemsdyn_wallsavedqueryusersettings" level="Basic" />
+    <RolePrivilege name="prvWritemsdyn_workqueuestate" level="Global" />
+    <RolePrivilege name="prvWritemsdyn_workqueueusersetting" level="Basic" />
     <RolePrivilege name="prvWriteNote" level="Local" />
     <RolePrivilege name="prvWriteOpportunity" level="Global" />
     <RolePrivilege name="prvWritePersonalDocumentTemplate" level="Basic" />

@@ -276,6 +276,7 @@
                         <labels>
                           <label description="Insights" languagecode="1033" solutionaction="Added" />
                         </labels>
+                        <control id="LeadAccountInsightsCtrl" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msdyncrm_insights_placeholder" disabled="false" uniqueid="{48d797ed-2f85-4d89-a329-69c2a1a0e1dd}" solutionaction="Modified" />
                       </cell>
                     </row>
                   </rows>
@@ -291,10 +292,11 @@
                 <section name="insights_section" showlabel="false" showbar="false" locklevel="0" id="{2328D81F-CA70-4A20-8B62-DA36756DA7D8}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
                   <rows>
                     <row>
-                      <cell id="{58B703D6-BBA5-4078-9499-1D5A1FB35932}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                      <cell id="{58B703D6-BBA5-4078-9499-1D5A1FB35932}" showlabel="false" locklevel="0" ordinalvalue="10001">
                         <labels>
                           <label description="Insights" languagecode="1033" solutionaction="Added" />
                         </labels>
+                        <control id="LeadContactInsightsCtrl" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msdyncrm_insights_placeholder" disabled="false" uniqueid="{adb58b3f-e8a8-432b-bf8c-08196d8f87ed}" solutionaction="Modified" />
                       </cell>
                     </row>
                   </rows>
@@ -338,6 +340,42 @@
           </row>
         </rows>
       </header>
+      <controlDescriptions>
+        <controlDescription forControl="{adb58b3f-e8a8-432b-bf8c-08196d8f87ed}" solutionaction="Modified">
+          <customControl formFactor="0" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">LeadContactInsights</configuration>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">LeadContactInsights</configuration>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">LeadContactInsights</configuration>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{48d797ed-2f85-4d89-a329-69c2a1a0e1dd}" solutionaction="Modified">
+          <customControl formFactor="0" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">LeadAccountInsights</configuration>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">LeadAccountInsights</configuration>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">LeadAccountInsights</configuration>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
       <DisplayConditions FallbackForm="true" Order="3" solutionaction="Modified" />
       <formLibraries>
         <Library name="dpam_/Script/Lead.js" libraryUniqueId="{a6a101fb-99c3-4612-9e47-73cb4b64fd77}" solutionaction="Added" />

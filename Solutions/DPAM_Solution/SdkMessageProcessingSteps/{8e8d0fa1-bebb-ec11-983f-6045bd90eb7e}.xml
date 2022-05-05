@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="BDP.DPAM.Plugins.AMLProfiling.PreCreateAMLProfiling: Create of dpam_amlprofiling" SdkMessageProcessingStepId="{8e8d0fa1-bebb-ec11-983f-6045bd90eb7e}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>BDP.DPAM.Plugins.AMLProfiling.PreCreateAMLProfiling, BDP.DPAM.Plugins.AMLProfiling, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2456b6983ff94b13</PluginTypeName>
+  <PluginTypeId>c1b5a4bf-7562-40d5-afeb-5bde597b7687</PluginTypeId>
+  <PrimaryEntity>dpam_amlprofiling</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

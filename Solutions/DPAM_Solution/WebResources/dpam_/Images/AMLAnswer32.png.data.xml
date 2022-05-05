@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{9bf01113-1fbb-ec11-983f-6045bd90eaf6}</WebResourceId>
+  <Name>dpam_/Images/AMLAnswer32.png</Name>
+  <DisplayName>dpam_/Images/AMLAnswer32.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dpam_ImagesAMLAnswer32png9BF01113-1FBB-EC11-983F-6045BD90EAF6</FileName>
+</WebResource>
