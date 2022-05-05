@@ -3,6 +3,10 @@
     {
       "SchemaName": "dpam_TESTENV",
       "Value": ""
+    },
+    {
+      "SchemaName": "dpam_TESTENV2",
+      "Value": ""
     }
   ],
   "ConnectionReferences": [
