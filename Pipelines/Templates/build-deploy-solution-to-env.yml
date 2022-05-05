@@ -36,10 +36,10 @@ stages:
         buildType: 'Unmanaged'
         mapCodeComponents: true
 - stage: deploy
-  displayName: 'Deploy' 
+  displayName: 'Deploy'
+  dependsOn: build
   jobs:
   - job: deploy
-    dependsOn: build
     pool: 
       vmImage: 'windows-latest'
     steps:
