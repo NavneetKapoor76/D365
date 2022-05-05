@@ -125,7 +125,7 @@ steps:
             Path = $path
             DestinationPath = '$(Build.SourcesDirectory)/Configuration/_common/Data'
         }
-        Expand-Archive @extract
+        Expand-Archive @extract -Force
     }
   displayName: 'Archive Configuration Migration Data'
   enabled: true
