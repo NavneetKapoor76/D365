@@ -33,11 +33,6 @@ steps:
 
 - template: install-powershell-modules.yml
 
-# Other tasks, in this pipeline need to know if the solution already exists. Setting it for future use.
-- template: set-solution-exists.yml
-  parameters:
-    serviceConnection: '${{parameters.serviceConnection}}'
-
 # Get the solution package from artifact uploaded by the build pipeline
 - task: DownloadPipelineArtifact@2
   displayName: 'Download Build Pipeline Artifact'
@@ -94,34 +89,6 @@ steps:
     OverwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
     UseDeploymentSettingsFile: $(UseDeploymentSettings)
     DeploymentSettingsFile: $(DeploymentSettingsPath)
-  condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'), or(eq(variables['setTriggerSolutionUpgrade.TriggerSolutionUpgrade'], 'false'), eq(variables['SolutionExists'], 'false')))
-
-# If the TriggerSolutionUpgrade variable is true, then import the solution as an Upgrade, staging it as a holding solution, so we can apply a solution Upgrade.
-# Doing this will ensure that items removed from the solution in development are also removed from the solution in the target environment after the Upgrade is applied.
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.import-solution.PowerPlatformImportSolution@0
-  displayName: 'Import Managed Solution as Upgrade'
-  inputs:
-    authenticationType: PowerPlatformSPN
-    PowerPlatformSPN: '${{parameters.serviceConnection}}'
-    SolutionInputFile: $(ManagedSolutionPath)
-    HoldingSolution: true
-    OverwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
-    UseDeploymentSettingsFile: $(UseDeploymentSettings)
-    DeploymentSettingsFile: $(DeploymentSettingsPath)
-  condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'), eq(variables['setTriggerSolutionUpgrade.TriggerSolutionUpgrade'], 'true'), eq(variables['SolutionExists'], 'true'))
-
-# NOTE: Sometimes you need to perform intermediary steps between staging the upgrade and applying it.  
-# An example would be moving data from one entity to another before deleting the entity.
-# You would add steps to your pipeline here to accomplish this. 
-
-# If the TriggerSolutionUpgrade variable is true,then apply the solution Upgrade.
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.apply-solution-upgrade.PowerPlatformApplySolutionUpgrade@0
-  inputs:
-    authenticationType: 'PowerPlatformSPN'
-    PowerPlatformSPN: '${{parameters.serviceConnection}}'
-    SolutionName: '$(SolutionName)'
-    AsyncOperation: true
-  condition: and(succeeded(), eq(variables['setTriggerSolutionUpgrade.TriggerSolutionUpgrade'], 'true'), eq(variables['SolutionExists'], 'true'))
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
   displayName: 'Power Platform Publish Customizations '
