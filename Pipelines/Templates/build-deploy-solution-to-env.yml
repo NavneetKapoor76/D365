@@ -22,15 +22,15 @@ stages:
     pool: 
       vmImage: 'windows-latest'
     steps:
-    - template: unpack-solution.yml
-      parameters:
-        branch: $(Build.SourceBranchName) #SHOULD BE THE SPRINT/FEATURE BRANCH
-        commitMessage: 'Solution package updated as part of deployment process'
-        email: $(Build.RequestedForEmail)
-        serviceConnection: $(EnvironmentUrl) #SHOULD BE THE SPRINT/FEATURE ENVIRONMENT
-        solutionName: $(SolutionName) 
-        userName: $(Build.RequestedFor)
-      condition: and(succeeded(), eq(alignDev, 'true'))
+    - ${{ if eq(alignDev, 'true') }}:
+      - template: unpack-solution.yml
+        parameters:
+          branch: $(Build.SourceBranchName) #SHOULD BE THE SPRINT/FEATURE BRANCH
+          commitMessage: 'Solution package updated as part of deployment process'
+          email: $(Build.RequestedForEmail)
+          serviceConnection: $(EnvironmentUrl) #SHOULD BE THE SPRINT/FEATURE ENVIRONMENT
+          solutionName: $(SolutionName) 
+          userName: $(Build.RequestedFor)
     - template: build-solution.yml
       parameters:
         buildType: 'Unmanaged'
