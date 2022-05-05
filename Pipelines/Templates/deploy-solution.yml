@@ -15,23 +15,9 @@ parameters:
   default: 'false'
 
 steps:
-# Set pipeline vars for tools paths.
-- template: set-tools-paths.yml
-
-# Restore PowerShell Module dependencies if available in cache
-# https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops
-- task: Cache@2
-  displayName: Cache Powershell Modules
-  inputs:
-    key:  restoremodules | "$(powerPlatformToolsSubPath)" | $(Build.SourcesDirectory)/Pipelines/Templates/install-powershell-modules.yml
-    path: $(powerPlatformToolsPath)
-    cacheHitVar: powerPlatformToolsPath_IsCached
-
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Install Power Platform Build Tools'
   condition: and(succeeded(), eq('${{parameters.skipBuildToolsInstaller}}', 'false'))
-
-- template: install-powershell-modules.yml
 
 # Get the solution package from artifact uploaded by the build pipeline
 - task: DownloadPipelineArtifact@2
@@ -57,11 +43,19 @@ steps:
   inputs:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
-    SolutionInputFile: '$(UnmanagedSolutionPath)'
+    SolutionInputFile: '$(ArtifactDropPath)/$(SolutionName)_$(SolutionVersion).zip'
     PublishWorkflows: true
     UseDeploymentSettingsFile: $(UseDeploymentSettings)
     DeploymentSettingsFile: $(DeploymentSettingsPath)
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
+
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
+  displayName: 'Power Platform Publish Customizations '
+  inputs:
+    authenticationType: PowerPlatformSPN
+    PowerPlatformSPN: '${{parameters.serviceConnection}}'
+  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
+  # Only publish customizations for when importing unmanaged solutions into a dev environment.
 
 - powershell: |
     $managedSolutionPath = ''
@@ -89,14 +83,7 @@ steps:
     OverwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
     UseDeploymentSettingsFile: $(UseDeploymentSettings)
     DeploymentSettingsFile: $(DeploymentSettingsPath)
-
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
-  displayName: 'Power Platform Publish Customizations '
-  inputs:
-    authenticationType: PowerPlatformSPN
-    PowerPlatformSPN: '${{parameters.serviceConnection}}'
-  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
-  # Only publish customizations for when importing unmanaged solutions into a dev environment.
+  condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
 
 - powershell: |
     $path = "$(Build.SourcesDirectory)\Configuration\_common\Data"
