@@ -43,7 +43,7 @@ stages:
     pool: 
       vmImage: 'windows-latest'
     steps:
-    - template: deploy-Solution.yml
+    - template: deploy-solution.yml
       parameters:
         serviceConnection: '$(EnvironmentUrl)'
         importUnmanaged: ${{parameters.importUnmanaged}}
