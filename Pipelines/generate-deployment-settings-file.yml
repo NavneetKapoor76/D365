@@ -62,7 +62,6 @@ steps:
     }
     else {
         Write-Host "##vso[task.logissue type=warning]There is nothing to commit. No changes have been made since the previous commit. If this is unexpected make sure your changes have been published before committing again."
-        exit 1;
     }
   workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Commit Changes to Git Branch'
