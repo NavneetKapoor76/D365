@@ -15,8 +15,25 @@ parameters:
   default: false
 
 stages:
+- stage: preBuild
+  displayName: 'Align Dev with Git Repo' 
+  condition: eq(${{parameters.alignDev}}, true)
+  jobs:
+  - job: preBuild
+    pool: 
+      vmImage: 'windows-latest'
+    steps:
+    - template: unpack-solution.yml
+      parameters:
+        branch: $(Build.SourceBranchName) #SHOULD BE THE SPRINT/FEATURE BRANCH
+        commitMessage: 'Solution package updated as part of deployment process'
+        email: $(Build.RequestedForEmail)
+        serviceConnection: $(EnvironmentUrl) #SHOULD BE THE SPRINT/FEATURE ENVIRONMENT
+        solutionName: $(SolutionName) 
+        userName: $(Build.RequestedFor)
 - stage: build
-  displayName: 'Build' 
+  displayName: 'Build'
+  dependsOn: preBuild 
   jobs:
   - job: build
     pool: 
