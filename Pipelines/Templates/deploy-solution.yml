@@ -14,10 +14,6 @@ parameters:
   type: string
   default: 'false'
 
-variables:
-- name: EnvirontmentName
-  value: 'dpamdevge'
-
 steps:
 # Set pipeline vars for tools paths.
 - template: set-tools-paths.yml
