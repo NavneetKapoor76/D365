@@ -98,6 +98,39 @@ steps:
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
   # Only publish customizations for when importing unmanaged solutions into a dev environment.
 
-- template: import-configuration-data.yml
-  parameters:
-    serviceConnection: '${{parameters.serviceConnection}}'
+- powershell: |
+    $path = "$(Build.SourcesDirectory)\Configuration\_common\Data"
+    if(Test-Path $path) {
+      echo "##vso[task.setvariable variable=importCommonDataConfig]true"
+      $compress = @{
+        Path = $path + '\*.*'
+        CompressionLevel = 'Fastest'
+        DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
+      }
+      Compress-Archive @compress
+    }
+
+    $path = "$(Build.SourcesDirectory)\Configuration\$(EnvironmentName)\Data"
+    if(Test-Path $path) {
+      echo "##vso[task.setvariable variable=importEnvDataConfig]true"
+      $compress = @{
+        Path = $path + '\*.*'
+        CompressionLevel = 'Fastest'
+        DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData-' + $(EnvironmentName) + '.zip'
+      }
+      Compress-Archive @compress
+    }
+  displayName: 'Archive Configuration Migration Data'
+  enabled: true
+
+- ${{ if eq('$(importCommonDataConfig)', 'true') }}:
+  - template: import-configuration-data.yml
+    parameters:
+      environmentName: '$(EnvironmentName)'
+      configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
+
+- ${{ if eq('$(importEnvDataConfig)', 'true') }}:
+  - template: import-configuration-data.yml
+    parameters:
+      environmentName: '$(EnvironmentName)'
+      configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData-' + $(EnvironmentName) + '.zip'
