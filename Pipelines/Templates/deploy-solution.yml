@@ -116,7 +116,7 @@ steps:
       $compress = @{
         Path = $path + '\*.*'
         CompressionLevel = 'Fastest'
-        DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData-' + $(EnvironmentName) + '.zip'
+        DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
       }
       Compress-Archive @compress
     }
@@ -133,4 +133,4 @@ steps:
   - template: import-configuration-data.yml
     parameters:
       environmentName: '$(EnvironmentName)'
-      configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData-' + $(EnvironmentName) + '.zip'
+      configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
