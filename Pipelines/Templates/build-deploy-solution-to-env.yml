@@ -10,12 +10,15 @@ parameters:
 - name: overwriteUnmanagedCustomizations
   type: boolean
   default: false
+- name: alignDev
+  type: boolean
+  default: false
 
 stages:
-- stage: build_and_deploy
-  displayName: 'Build and Deploy' 
+- stage: build
+  displayName: 'Build' 
   jobs:
-  - job: build_and_deploy_job
+  - job: build
     pool: 
       vmImage: 'windows-latest'
     steps:
@@ -27,12 +30,19 @@ stages:
         serviceConnection: $(EnvironmentUrl) #SHOULD BE THE SPRINT/FEATURE ENVIRONMENT
         solutionName: $(SolutionName) 
         userName: $(Build.RequestedFor)
-
+      condition: and(succeeded(), eq(alignDev, 'true'))
     - template: build-solution.yml
       parameters:
         buildType: 'Unmanaged'
         mapCodeComponents: true
-
+- stage: deploy
+  displayName: 'Deploy' 
+  jobs:
+  - job: deploy
+    dependsOn: build
+    pool: 
+      vmImage: 'windows-latest'
+    steps:
     - template: deploy-Solution.yml
       parameters:
         serviceConnection: '$(EnvironmentUrl)'
