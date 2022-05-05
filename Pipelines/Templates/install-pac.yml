@@ -10,8 +10,8 @@ steps:
     
     $nugetPackage = "Microsoft.PowerApps.CLI"
 
-    ./nuget install  $nugetPackage -O ./
-    $pacNugetFolder = Get-ChildItem ./ | Where-Object {$_.Name -match $nugetPackage + "."}
+    ./nuget install  $nugetPackage -O $(Pipeline.Workspace)
+    $pacNugetFolder = Get-ChildItem $(Pipeline.Workspace) | Where-Object {$_.Name -match $nugetPackage + "."}
     $pacPath = $pacNugetFolder.FullName + "\tools"
     echo "##vso[task.setvariable variable=pacPath]$pacPath"
   displayName: 'Install pac cli'
