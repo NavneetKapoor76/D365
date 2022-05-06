@@ -47,6 +47,7 @@ stages:
 - stage: deploy
   displayName: 'Deploy'
   dependsOn: build
+  condition: and(in(dependencies.preBuild.result, 'Succeeded', 'SucceededWithIssues', 'Skipped'), in(dependencies.build.result, 'Succeeded', 'SucceededWithIssues', 'Skipped'))
   jobs:
   - job: deploy
     pool: 
