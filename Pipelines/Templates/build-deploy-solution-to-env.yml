@@ -33,7 +33,8 @@ stages:
         userName: $(Build.RequestedFor)
 - stage: build
   displayName: 'Build'
-  dependsOn: preBuild 
+  dependsOn: preBuild
+  condition: in(dependencies.preBuild.result, 'Succeeded', 'SucceededWithIssues', 'Skipped')
   jobs:
   - job: build
     pool: 
