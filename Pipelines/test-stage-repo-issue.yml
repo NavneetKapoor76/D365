@@ -21,6 +21,7 @@ stages:
       workingDirectory: $(Build.SourcesDirectory)
       displayName: 'Initialize Git'
     - powershell: |
+        New-Item -Path '$(Build.SourcesDirectory)\Solutions\dummyfile_$(Build.BuildNumber).txt' -ItemType File
         git add --all
       workingDirectory: $(Build.SourcesDirectory)
       displayName: 'Add Changes to Git Branch'
