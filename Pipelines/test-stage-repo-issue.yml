@@ -45,6 +45,11 @@ stages:
     pool: 
       vmImage: 'windows-latest'
     steps:
+    - checkout: none
+    - script: |
+        git checkout origin/$(Build.SourceBranchName) --track
+      workingDirectory: $(Build.SourcesDirectory)
+      displayName: 'Initialize Git'
     - powershell: |
         git status
       workingDirectory: $(Build.SourcesDirectory)
