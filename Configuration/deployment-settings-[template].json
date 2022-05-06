@@ -1,5 +1,10 @@
 {
-  "EnvironmentVariables": [],
+  "EnvironmentVariables": [
+    {
+      "SchemaName": "dpam_LEISearchCanvasAppURL",
+      "Value": ""
+    }
+  ],
   "ConnectionReferences": [
     {
       "LogicalName": "dpam_sharedcommondataserviceforapps_32790",
