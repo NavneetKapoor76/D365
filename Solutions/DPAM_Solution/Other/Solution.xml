@@ -9671,7 +9671,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="Activities/SystemLibraries/Appointment_main_system_library.js" displayName="Activities/SystemLibraries/Appointment_main_system_library.js" solution="msdynce_Activities (9.0.1.2033)" />
-        <Dependent type="60" displayName="Appointment" parentDisplayName="Appointment" id="{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}" />
+        <Dependent type="60" displayName="Appointment quick create form." parentDisplayName="Appointment" id="{5895e983-598b-4834-80f9-68a4e9f4f744}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="Activities/SystemLibraries/PhoneCall_main_system_library.js" displayName="Activities/SystemLibraries/PhoneCall_main_system_library.js" solution="msdynce_Activities (9.0.1.2033)" />
@@ -10264,6 +10264,12 @@
         <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
+        <Dependent type="60" displayName="Lead" parentDisplayName="Lead" id="{4b7e9879-1f21-ec11-b6e6-000d3aaf3826}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Counterparty" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>
       <MissingDependency>
@@ -10283,12 +10289,6 @@
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
         <Dependent type="60" displayName=" main form" parentDisplayName="Counterparty" id="{cae923c9-18ee-eb11-bacb-000d3aaf8c09}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty main form" parentDisplayName="Counterparty" id="{cbc4578e-5653-ec11-8c62-002248811c5c}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">

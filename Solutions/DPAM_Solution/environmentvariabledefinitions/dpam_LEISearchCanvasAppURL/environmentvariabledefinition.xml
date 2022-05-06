@@ -1,0 +1,10 @@
+<environmentvariabledefinition schemaname="dpam_LEISearchCanvasAppURL">
+  <displayname default="LEI Search Canvas App URL">
+    <label description="LEI Search Canvas App URL" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.20.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>
