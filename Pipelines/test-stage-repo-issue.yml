@@ -1,0 +1,27 @@
+stages:
+- stage: preBuild
+  displayName: 'Align Dev with Git Repo' 
+  jobs:
+  - job: preBuild
+    pool: 
+      vmImage: 'windows-latest'
+    steps:
+    - 
+- stage: build
+  displayName: 'Build'
+  dependsOn: preBuild
+  jobs:
+  - job: build
+    pool: 
+      vmImage: 'windows-latest'
+    steps:
+    - 
+- stage: deploy
+  displayName: 'Deploy'
+  dependsOn: build
+  jobs:
+  - job: deploy
+    pool: 
+      vmImage: 'windows-latest'
+    steps:
+    - 
