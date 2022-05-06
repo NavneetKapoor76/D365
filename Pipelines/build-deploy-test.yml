@@ -15,4 +15,4 @@ stages:
 - template: "Templates/build-deploy-solution-to-env.yml"
   parameters:
     importUnmanaged: true
-    alignDev: false
+    alignDev: true
