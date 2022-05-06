@@ -15,9 +15,9 @@ stages:
     steps:
     # Configure email/name and checkout git branch
     - script: |
-      git config user.email "$(Build.RequestedForEmail)"
-      git config user.name "$(Build.RequestedFor)"
-      git checkout origin/$(Build.SourceBranchName) --track
+        git config user.email "$(Build.RequestedForEmail)"
+        git config user.name "$(Build.RequestedFor)"
+        git checkout origin/$(Build.SourceBranchName) --track
       workingDirectory: $(Build.SourcesDirectory)
       displayName: 'Initialize Git'
     - powershell: |
@@ -32,7 +32,7 @@ stages:
       displayName: 'Commit Changes to Git Branch'
       continueOnError: true
     - script: |
-      git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin $(Build.SourceBranchName)
+        git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin $(Build.SourceBranchName)
       workingDirectory: $(Build.SourcesDirectory)
       displayName: 'Push to $(Branch) Remote Branch'
       condition: succeeded()
