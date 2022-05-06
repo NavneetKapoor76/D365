@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{578aa3d6-4bb6-41be-ae91-4e3fc2579c49}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Share Class" languagecode="1033" />
                         </labels>
                         <control id="dpam_s_shareclass" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_shareclass" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{ebdc30cc-2b4f-427a-aeb1-9e53a6e72a80}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>

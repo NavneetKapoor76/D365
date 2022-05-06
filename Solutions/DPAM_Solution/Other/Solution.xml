@@ -493,6 +493,12 @@
         <Dependent type="92" id="{ad38614d-e392-ec11-b400-6045bd878fef}" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="1" schemaName="campaignresponse" displayName="Campaign Response" solution="msdynce_Marketing (9.0.4.37)">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="26" schemaName="Counterparties: Responded to Campaigns in Last 6 Months" displayName="Counterparties: Responded to Campaigns in Last 6 Months" parentSchemaName="account" parentDisplayName="Counterparty" id="{49fb9771-09e1-4e70-b193-198752493577}" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="1" schemaName="competitor" displayName="Competitor" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
@@ -589,24 +595,6 @@
         <Dependent type="1" schemaName="leadtoopportunitysalesprocess" displayName="Lead To Opportunity Sales Process" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="leadtoopportunitysalesprocess" displayName="Lead To Opportunity Sales Process" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="29" displayName="Lead to Opportunity Sales Process" id="{919e14d1-6489-4852-abd0-a63a6ecaac5d}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="leadtoopportunitysalesprocess" displayName="Lead To Opportunity Sales Process" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="dpam_DPAM" displayName="Sales" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="leadtoopportunitysalesprocess" displayName="Lead To Opportunity Sales Process" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="1" schemaName="list" displayName="Marketing list" solution="msdynce_Marketing (9.0.4.37)">
           <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
         </Required>
@@ -653,12 +641,6 @@
           <package>DynamicsMKT_AnchorSolution (1.1.10512.27)</package>
         </Required>
         <Dependent type="62" schemaName="msdyncrm_MarketingSMBApp" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="msdyn_dealmanageraccess" displayName="dealmanageraccess" solution="msdynce_DealManager (9.0.220405.12)">
-          <package>msdynce_SalesInsightsAnchor (9.0.22034.10023)</package>
-        </Required>
-        <Dependent type="62" schemaName="SalesHubSitemap" />
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="msdyn_forecastconfiguration" displayName="Forecast Configuration" solution="msdyn_Forecasting (9.0.22033.10110)">
@@ -1187,24 +1169,6 @@
         <Dependent type="1" schemaName="msdyncrm_marketingemailtemplate" displayName="Marketing email template" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyncrm_marketingemailtemplate" displayName="Marketing email template" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
-          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
-        </Required>
-        <Dependent type="62" schemaName="msdyncrm_MarketingSMBApp" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="msdyncrm_marketingemailtemplate" displayName="Marketing email template" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
-          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
-        </Required>
-        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="msdyncrm_marketingemailtemplate" displayName="Marketing email template" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
-          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
-        </Required>
-        <Dependent type="92" id="{6882170b-738e-ec11-b400-000d3aafdcbf}" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="1" schemaName="msdyncrm_marketingemailtestsend" displayName="Marketing email test send" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
@@ -1239,18 +1203,6 @@
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
         <Dependent type="1" schemaName="msdyncrm_marketingformfield" displayName="Marketing form field" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="msdyncrm_marketingformfield" displayName="Marketing form field" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
-          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
-        </Required>
-        <Dependent type="62" schemaName="msdyncrm_MarketingSMBApp" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="msdyncrm_marketingformfield" displayName="Marketing form field" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
-          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
-        </Required>
-        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="msdyncrm_marketingformsubmission" displayName="Marketing form submission" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
@@ -1546,6 +1498,12 @@
           <package>DynamicsMKT_AnchorSolution (1.1.10512.27)</package>
         </Required>
         <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdynmkt_fragment" displayName="Content block" solution="DynamicsMKT_Fragments (1.1.10512.23)">
+          <package>DynamicsMKT_AnchorSolution (1.1.10512.27)</package>
+        </Required>
+        <Dependent type="62" schemaName="msdyncrm_MarketingSMBApp" />
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="msdynmkt_journey" displayName="Journey" solution="DynamicsMKT_CxpOrchestrationUI (1.1.10512.15)">
@@ -2262,30 +2220,6 @@
         <Dependent type="1" schemaName="opportunityclose" displayName="Opportunity Close" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="opportunityclose" displayName="Opportunity Close" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="dpam_DPAM" displayName="Sales" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="opportunityclose" displayName="Opportunity Close" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="opportunityclose" displayName="Opportunity Close" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="92" id="{0588cbed-e092-ec11-b400-6045bd878fef}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="opportunityclose" displayName="Opportunity Close" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="92" id="{7738cddb-e092-ec11-b400-6045bd878fef}" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="1" schemaName="opportunityproduct" displayName="Opportunity Product" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
@@ -2296,24 +2230,6 @@
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
         <Dependent type="1" schemaName="opportunitysalesprocess" displayName="Opportunity Sales Process" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="opportunitysalesprocess" displayName="Opportunity Sales Process" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="29" displayName="Opportunity Sales Process" id="{3e8ebee6-a2bc-4451-9c5f-b146b085413a}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="opportunitysalesprocess" displayName="Opportunity Sales Process" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="dpam_DPAM" displayName="Sales" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="opportunitysalesprocess" displayName="Opportunity Sales Process" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="phonetocaseprocess" displayName="Phone To Case Process" solution="msdynce_Service (9.0.5.56)">
@@ -2451,7 +2367,7 @@
         <Required type="10" schemaName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" displayName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" parentSchemaName="contact" parentDisplayName="Contact" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
-        <Dependent type="10" schemaName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" displayName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" parentSchemaName="contact" parentDisplayName="Contact" />
+        <Dependent type="10" schemaName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" displayName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" parentSchemaName="contact" parentDisplayName="Contact" />
       </MissingDependency>
       <MissingDependency>
         <Required type="10" schemaName="msdyncrm_msdyncrm_marketingpage_contact_marketingpageid" displayName="msdyncrm_msdyncrm_marketingpage_contact_marketingpageid" parentSchemaName="contact" parentDisplayName="Contact" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
@@ -2499,7 +2415,7 @@
         <Required type="10" schemaName="msgdpr_contact_msgdpr_gdprparent" displayName="msgdpr_contact_msgdpr_gdprparent" parentSchemaName="contact" parentDisplayName="Contact" solution="MicrosoftDynamics_MktConsentManagement (1.82.2016.0)">
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
+        <Dependent type="10" schemaName="msgdpr_contact_msgdpr_gdprparent" displayName="msgdpr_contact_msgdpr_gdprparent" parentSchemaName="contact" parentDisplayName="Contact" />
       </MissingDependency>
       <MissingDependency>
         <Required type="10" schemaName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" displayName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" parentSchemaName="contact" parentDisplayName="Contact" solution="MicrosoftDynamics_MktConsentManagement (1.82.2016.0)">
@@ -2925,7 +2841,7 @@
         <Required type="2" schemaName="defaultpricelevelid" displayName="Price List" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_ProductManagement (9.0.4.0066)">
           <package>msdynce_ProductManagementAnchor (9.0.22034.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Information" parentDisplayName="Counterparty" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
+        <Dependent type="2" schemaName="defaultpricelevelid" displayName="Price List" parentSchemaName="account" parentDisplayName="Counterparty" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="msdyncrm_insights_placeholder" displayName="Insights" parentSchemaName="account" parentDisplayName="Counterparty" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
@@ -2958,16 +2874,52 @@
         <Dependent type="60" displayName="Counterparty main form" parentDisplayName="Counterparty" id="{cbc4578e-5653-ec11-8c62-002248811c5c}" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="2" schemaName="msevtmgt_hotelgroup" displayName="Hotel group" parentSchemaName="account" parentDisplayName="Counterparty" solution="MicrosoftDynamics_EventManagement (1.43.1028.0)">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="2" schemaName="msevtmgt_hotelgroup" displayName="Hotel group" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="2" schemaName="opendeals" displayName="Open Deals" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Account Hierarchy Tile Form" parentDisplayName="Counterparty" id="{69cff312-cfb6-4289-9631-249ab85d2c62}" />
+        <Dependent type="2" schemaName="opendeals" displayName="Open Deals" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="opendeals_date" displayName="Open Deals (Last Updated On)" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="opendeals_date" displayName="Open Deals (Last Updated On)" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="opendeals_state" displayName="Open Deals (State)" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="opendeals_state" displayName="Open Deals (State)" parentSchemaName="account" parentDisplayName="Counterparty" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="openrevenue" displayName="Open Revenue" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Account Hierarchy Tile Form" parentDisplayName="Counterparty" id="{69cff312-cfb6-4289-9631-249ab85d2c62}" />
+        <Dependent type="2" schemaName="openrevenue" displayName="Open Revenue" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="openrevenue_base" displayName="Open Revenue (Base)" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="openrevenue_base" displayName="Open Revenue (Base)" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="openrevenue_date" displayName="Open Revenue (Last Updated On)" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="openrevenue_date" displayName="Open Revenue (Last Updated On)" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="openrevenue_state" displayName="Open Revenue (State)" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="openrevenue_state" displayName="Open Revenue (State)" parentSchemaName="account" parentDisplayName="Counterparty" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_LeadManagement (9.0.4.0066)">
@@ -2976,52 +2928,22 @@
         <Dependent type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
+        <Required type="2" schemaName="preferredequipmentid" displayName="Preferred Facility/Equipment" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Service (9.0.5.56)">
+          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
         </Required>
-        <Dependent type="60" displayName="Counterparty for Multisession experience" parentDisplayName="Counterparty" id="{51dca86c-5cce-4d16-bfcd-ba61384ff003}" />
+        <Dependent type="2" schemaName="preferredequipmentid" displayName="Preferred Facility/Equipment" parentSchemaName="account" parentDisplayName="Counterparty" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
+        <Required type="2" schemaName="preferredserviceid" displayName="Preferred Service" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Service (9.0.5.56)">
+          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
         </Required>
-        <Dependent type="60" displayName="Account" parentDisplayName="Counterparty" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty for Interactive experience" parentDisplayName="Counterparty" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Information" parentDisplayName="Counterparty" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName=" main form" parentDisplayName="Counterparty" id="{cae923c9-18ee-eb11-bacb-000d3aaf8c09}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Sales Insights" parentDisplayName="Counterparty" id="{cb430327-bcc1-416d-959d-db7592e685af}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Counterparty" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
+        <Dependent type="2" schemaName="preferredserviceid" displayName="Preferred Service" parentSchemaName="account" parentDisplayName="Counterparty" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="territoryid" displayName="Territory" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Information" parentDisplayName="Counterparty" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
+        <Dependent type="2" schemaName="territoryid" displayName="Territory" parentSchemaName="account" parentDisplayName="Counterparty" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="isonlinemeeting" displayName="Is Online Meeting" parentSchemaName="appointment" parentDisplayName="Appointment" solution="msft_ActivitiesInfra_Extensions (9.2.0.15)" />
@@ -3046,6 +2968,18 @@
           <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
         </Required>
         <Dependent type="92" id="{9352626c-e392-ec11-b400-6045bd878fef}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="activityid" displayName="Campaign Response" parentSchemaName="campaignresponse" parentDisplayName="Campaign Response" solution="msdynce_Marketing (9.0.4.37)">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="26" schemaName="Counterparties: Responded to Campaigns in Last 6 Months" displayName="Counterparties: Responded to Campaigns in Last 6 Months" parentSchemaName="account" parentDisplayName="Counterparty" id="{49fb9771-09e1-4e70-b193-198752493577}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="receivedon" displayName="Received On" parentSchemaName="campaignresponse" parentDisplayName="Campaign Response" solution="msdynce_Marketing (9.0.4.37)">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="26" schemaName="Counterparties: Responded to Campaigns in Last 6 Months" displayName="Counterparties: Responded to Campaigns in Last 6 Months" parentSchemaName="account" parentDisplayName="Counterparty" id="{49fb9771-09e1-4e70-b193-198752493577}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="address1_composite" displayName="Address 1" parentSchemaName="competitor" parentDisplayName="Competitor" solution="msdynce_Sales (9.0.4.0076)">
@@ -4404,18 +4338,6 @@
         <Dependent type="2" schemaName="createdfromcode" displayName="Marketing List Member Type" parentSchemaName="list" parentDisplayName="Marketing list" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="createdfromcode" displayName="Marketing List Member Type" parentSchemaName="list" parentDisplayName="Marketing list" solution="msdynce_Marketing (9.0.4.37)">
-          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Marketing List Light" parentDisplayName="Marketing list" id="{07a20eff-82ea-442b-ad8e-8295048e563d}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="createdfromcode" displayName="Marketing List Member Type" parentSchemaName="list" parentDisplayName="Marketing list" solution="msdynce_Marketing (9.0.4.37)">
-          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Marketing list" parentDisplayName="Marketing list" id="{6e77626b-e693-44f0-a1c7-359b1a7a9a4c}" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="2" schemaName="description" displayName="Description" parentSchemaName="list" parentDisplayName="Marketing list" solution="msdynce_Marketing (9.0.4.37)">
           <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
         </Required>
@@ -4426,6 +4348,18 @@
           <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
         </Required>
         <Dependent type="60" displayName="Marketing list" parentDisplayName="Marketing list" id="{6e77626b-e693-44f0-a1c7-359b1a7a9a4c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="donotsendonoptout" displayName="Exclude Members Who Opt Out" parentSchemaName="list" parentDisplayName="Marketing list" solution="msdynce_Marketing (9.0.4.37)">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="donotsendonoptout" displayName="Exclude Members Who Opt Out" parentSchemaName="list" parentDisplayName="Marketing list" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="ignoreinactivelistmembers" displayName="Ignore Inactive List Members" parentSchemaName="list" parentDisplayName="Marketing list" solution="msdynce_Marketing (9.0.4.37)">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="ignoreinactivelistmembers" displayName="Ignore Inactive List Members" parentSchemaName="list" parentDisplayName="Marketing list" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="lastusedon" displayName="Last Used On" parentSchemaName="list" parentDisplayName="Marketing list" solution="msdynce_Marketing (9.0.4.37)">
@@ -6289,6 +6223,12 @@
         <Required type="2" schemaName="actualclosedate" displayName="Actual Close Date" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
+        <Dependent type="26" schemaName="Counterparties: Influenced Deals That We Won" displayName="Counterparties: Influenced Deals That We Won" parentSchemaName="account" parentDisplayName="Counterparty" id="{15c63745-0a6e-4322-8416-a62c84d90279}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="actualclosedate" displayName="Actual Close Date" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
         <Dependent type="26" schemaName="Recent Opportunities" displayName="Recent Opportunities" parentSchemaName="opportunity" parentDisplayName="Opportunity" id="{9c3f7ee8-eca7-e211-9fb6-00155dd0ea05}" />
       </MissingDependency>
       <MissingDependency>
@@ -6361,6 +6301,18 @@
         <Required type="2" schemaName="opportunityid" displayName="Opportunity" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
+        <Dependent type="2" schemaName="opendeals" displayName="Open Deals" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="opportunityid" displayName="Opportunity" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="2" schemaName="openrevenue" displayName="Open Revenue" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="opportunityid" displayName="Opportunity" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
         <Dependent type="2" schemaName="dpam_cs_longname" displayName="Long Name" parentSchemaName="opportunity" parentDisplayName="Opportunity" />
       </MissingDependency>
       <MissingDependency>
@@ -6410,6 +6362,12 @@
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
         <Dependent type="26" schemaName="Opportunities I am a member of" displayName="Opportunities I am a member of" parentSchemaName="opportunity" parentDisplayName="Opportunity" id="{0fa11297-a5db-446b-89ee-7b0771d1d590}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="opportunityid" displayName="Opportunity" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="26" schemaName="Counterparties: Influenced Deals That We Won" displayName="Counterparties: Influenced Deals That We Won" parentSchemaName="account" parentDisplayName="Counterparty" id="{15c63745-0a6e-4322-8416-a62c84d90279}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="opportunityid" displayName="Opportunity" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
@@ -7504,6 +7462,18 @@
         <Dependent type="29" displayName="Opportunity Product - Default Quantity and Unit" id="{104d705d-6f1c-ec11-b6e6-6045bd8d255d}" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="20" displayName="CEO-Business Manager" solution="msdynce_LeadManagement (9.0.4.0066)" id="{06a7ef51-20fe-476f-9ab1-112b4c7df003}" parentId="{85937b6b-91a1-46ed-9778-929fc9f61812}">
+          <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Marketing Professional" solution="msdynce_Marketing (9.0.4.37)" id="{09a8b0a9-1d00-4299-9cda-47065cab9549}" parentId="{09a25608-d28b-4d47-b57c-79271fe6a525}">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="20" displayName="Customer Service Representative" solution="msdynce_Service (9.0.5.56)" id="{22ee5aee-24bf-4f9f-99a0-60f12983a5a4}" parentId="{ecfd0b44-5720-45e3-ae68-417ddb0fb654}">
           <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
         </Required>
@@ -7516,8 +7486,20 @@
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Counterparty" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="20" displayName="Customer Service Representative" solution="msdynce_Service (9.0.5.56)" id="{22ee5aee-24bf-4f9f-99a0-60f12983a5a4}" parentId="{ecfd0b44-5720-45e3-ae68-417ddb0fb654}">
+          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="20" displayName="Dynamics 365 App for Outlook User" solution="AppforOutlookPatch (1.2.386)" id="{2407db5e-edae-4e36-9be1-fd61d4d15809}" />
         <Dependent type="20" displayName="Dynamics 365 App for Outlook User" id="{2407db5e-edae-4e36-9be1-fd61d4d15809}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Event Planner" solution="MicrosoftDynamics_EventManagement (1.43.1028.0)" id="{26fca5d6-c18f-e611-80d7-00155d4b201d}">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
       </MissingDependency>
       <MissingDependency>
         <Required type="20" displayName="Salesperson" solution="msdynce_Sales (9.0.4.0076)" id="{27e1c62d-8698-47bb-aa7d-57c8dc85c573}" parentId="{a4be89ff-7c35-4d69-9900-999c3f603e6f}">
@@ -7526,6 +7508,12 @@
         <Dependent type="20" displayName="Salesperson" id="{27e1c62d-8698-47bb-aa7d-57c8dc85c573}" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="20" displayName="Scheduler" solution="msdynce_Service (9.0.5.56)" id="{38010248-77a4-4925-b023-b8bb266047ae}" parentId="{dcd60b89-421c-44ae-bff0-dd6323df885c}">
+          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="20" displayName="Customer service app access" solution="msdynce_Customerservicehub (9.0.5.0056)" id="{3dac4d9e-568c-e611-80d4-00155d42a122}">
           <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
         </Required>
@@ -7538,6 +7526,30 @@
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Counterparty" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="20" displayName="Vice President of Marketing" solution="msdynce_Marketing (9.0.4.37)" id="{57d37805-324b-474d-9b83-74f51688f0bd}" parentId="{6caba073-59a8-4d6b-8e7b-4ccb50c5166b}">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Vice President of Sales" solution="msdynce_Sales (9.0.4.0076)" id="{664ac006-d7b6-4344-a14b-d095ddd2e185}" parentId="{29123793-6ae5-4955-9f1a-f10ceb9705f1}">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Marketing Services User" solution="MicrosoftDynamics_Marketing (1.82.2016.0)" id="{7c54ac52-9d1b-e711-80e1-00155d982906}">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Knowledge Manager" solution="msdynce_KnowledgeManagementPatch (9.0.22041.5035)" id="{90f1d430-2b78-46bd-b57d-d249f9c6b617}" parentId="{b4b40b17-cf37-4ea8-b2c5-b580f2f48654}">
+          <package>msdynce_KnowledgeManagementAnchor (9.0.22041.5035)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="20" displayName="CSR Manager" solution="msdynce_Service (9.0.5.56)" id="{9380e2de-bb09-478c-9241-7ca4ad19e2e9}" parentId="{1808b939-dd07-4ca7-aa99-ddd2734378f1}">
           <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
         </Required>
@@ -7548,6 +7560,54 @@
           <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Counterparty" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="CSR Manager" solution="msdynce_Service (9.0.5.56)" id="{9380e2de-bb09-478c-9241-7ca4ad19e2e9}" parentId="{1808b939-dd07-4ca7-aa99-ddd2734378f1}">
+          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Event Administrator" solution="MicrosoftDynamics_EventManagement (1.43.1028.0)" id="{a31a2242-bf8f-e611-80d7-00155d4b201d}">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Schedule Manager" solution="msdynce_Service (9.0.5.56)" id="{b593974b-f5b2-46c2-ae21-084f832891e5}" parentId="{debec338-bca7-4882-ae04-84e6ddda2984}">
+          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Marketing Manager - Business" solution="MicrosoftDynamics_MarketingAppRoles (1.82.2016.0)" id="{bf157a3a-cde8-e611-80d8-00155d4b205a}">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Marketing Professional - Business" solution="MicrosoftDynamics_Marketing (1.82.2016.0)" id="{ce995e5a-cee8-e611-80d8-00155d4b205a}">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Marketing, Business App Access" solution="MicrosoftDynamics_Marketing (1.82.2016.0)" id="{e9133cb3-92e5-41c1-a242-9d17098e5f7b}">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Sales Manager" solution="msdynce_Sales (9.0.4.0076)" id="{e96c126b-4ef6-401e-87d1-f472fed54dbe}" parentId="{c0ed2f4f-6f92-4691-92ba-78f2931e8fba}">
+          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="20" displayName="Marketing Manager" solution="msdynce_Marketing (9.0.4.37)" id="{ff4ab7ef-fcba-4ed2-a3c5-59137a34ed8e}" parentId="{d9d602db-2761-4170-877f-983494567c08}">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="AppforOutlookModule" displayName="Dynamics 365 App for Outlook" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Lead Advanced Find View" displayName="Lead Advanced Find View" parentSchemaName="lead" parentDisplayName="Lead" solution="msdynce_LeadManagement (9.0.4.0066)" id="{00000000-0000-0000-00aa-000000666700}">
@@ -7854,18 +7914,6 @@
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
         <Dependent type="26" schemaName="Counterparty names list" displayName="Counterparty names list" parentSchemaName="account" parentDisplayName="Counterparty" id="{199a7fea-93b3-47c8-b950-4b6d60b2c955}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Counterparty names list" displayName="Counterparty names list" parentSchemaName="account" parentDisplayName="Counterparty" solution="MicrosoftDynamics_Marketing (1.82.2016.0)" id="{199a7fea-93b3-47c8-b950-4b6d60b2c955}">
-          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty" parentDisplayName="Counterparty" id="{98ac1f60-e9c6-4658-8273-791876e21e7e}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Counterparty names list" displayName="Counterparty names list" parentSchemaName="account" parentDisplayName="Counterparty" solution="MicrosoftDynamics_Marketing (1.82.2016.0)" id="{199a7fea-93b3-47c8-b950-4b6d60b2c955}">
-          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty main form" parentDisplayName="Counterparty" id="{cbc4578e-5653-ec11-8c62-002248811c5c}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Product Family Lookup View" displayName="Product Family Lookup View" parentSchemaName="product" parentDisplayName="Product" solution="msdynce_ProductManagement (9.0.4.0066)" id="{19d7f2e0-e427-40fb-85e8-53e7cef2b166}">
@@ -8176,36 +8224,6 @@
         <Dependent type="26" schemaName="All Counterparties" displayName="All Counterparties" parentSchemaName="account" parentDisplayName="Counterparty" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="26" schemaName="All Counterparties" displayName="All Counterparties" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_AppCommon (9.0.4.0066)" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}">
-          <package>msdynce_AppCommonAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Marketing List Light" parentDisplayName="Marketing list" id="{07a20eff-82ea-442b-ad8e-8295048e563d}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="All Counterparties" displayName="All Counterparties" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_AppCommon (9.0.4.0066)" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}">
-          <package>msdynce_AppCommonAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparties Dashboard" parentDisplayName="Counterparty" id="{15915835-b87c-49ec-9ffc-bfac3ac44ef1}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="All Counterparties" displayName="All Counterparties" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_AppCommon (9.0.4.0066)" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}">
-          <package>msdynce_AppCommonAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Marketing list" parentDisplayName="Marketing list" id="{6e77626b-e693-44f0-a1c7-359b1a7a9a4c}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="All Counterparties" displayName="All Counterparties" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_AppCommon (9.0.4.0066)" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}">
-          <package>msdynce_AppCommonAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty" parentDisplayName="Counterparty" id="{98ac1f60-e9c6-4658-8273-791876e21e7e}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="All Counterparties" displayName="All Counterparties" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_AppCommon (9.0.4.0066)" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}">
-          <package>msdynce_AppCommonAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty main form" parentDisplayName="Counterparty" id="{cbc4578e-5653-ec11-8c62-002248811c5c}" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="26" schemaName="Excluded Contacts Campaigns" displayName="Excluded Contacts Campaigns" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_MarketingPatch (9.0.1904.1019)" id="{69103b65-f27e-45ce-a69c-eb1a7c805a45}">
           <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
         </Required>
@@ -8258,24 +8276,6 @@
           <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
         </Required>
         <Dependent type="26" schemaName="Excluded Counterparties Campaigns" displayName="Excluded Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" id="{7de498c2-508f-49a4-b2e8-d550d5b1b9ee}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Excluded Counterparties Campaigns" displayName="Excluded Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_MarketingPatch (9.0.1904.1019)" id="{7de498c2-508f-49a4-b2e8-d550d5b1b9ee}">
-          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty" parentDisplayName="Counterparty" id="{98ac1f60-e9c6-4658-8273-791876e21e7e}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Excluded Counterparties Campaigns" displayName="Excluded Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_MarketingPatch (9.0.1904.1019)" id="{7de498c2-508f-49a4-b2e8-d550d5b1b9ee}">
-          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty main form" parentDisplayName="Counterparty" id="{cbc4578e-5653-ec11-8c62-002248811c5c}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Excluded Counterparties Campaigns" displayName="Excluded Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_MarketingPatch (9.0.1904.1019)" id="{7de498c2-508f-49a4-b2e8-d550d5b1b9ee}">
-          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="dpam_DPAM" displayName="Sales" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Active waitlist items for the event and session form" displayName="Active waitlist items for the event and session form" parentSchemaName="msevtmgt_waitlistitem" parentDisplayName="Waitlist Item" solution="MicrosoftDynamics_EventManagement (1.43.1028.0)" id="{7ea5a176-5f6a-e811-8105-00155d298403}">
@@ -8562,34 +8562,10 @@
         <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="26" schemaName="Connected IoT Devices" displayName="Connected IoT Devices" parentSchemaName="connection" parentDisplayName="Connection" solution="IoTConnector (1.8.9.7)" id="{cf3aa82e-635b-e611-810b-00155dbd6a1d}">
-          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
-        </Required>
-        <Dependent type="60" displayName="Opportunity" parentDisplayName="Opportunity" id="{a837e4a7-01b8-4f82-a475-be9abd67e667}" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="26" schemaName="Selected Counterparties Campaigns" displayName="Selected Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_MarketingPatch (9.0.1904.1019)" id="{d15e48f6-e8fe-e811-8165-000d3af92c6e}">
           <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
         </Required>
         <Dependent type="26" schemaName="Selected Counterparties Campaigns" displayName="Selected Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" id="{d15e48f6-e8fe-e811-8165-000d3af92c6e}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Selected Counterparties Campaigns" displayName="Selected Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_MarketingPatch (9.0.1904.1019)" id="{d15e48f6-e8fe-e811-8165-000d3af92c6e}">
-          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty" parentDisplayName="Counterparty" id="{98ac1f60-e9c6-4658-8273-791876e21e7e}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Selected Counterparties Campaigns" displayName="Selected Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_MarketingPatch (9.0.1904.1019)" id="{d15e48f6-e8fe-e811-8165-000d3af92c6e}">
-          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Counterparty main form" parentDisplayName="Counterparty" id="{cbc4578e-5653-ec11-8c62-002248811c5c}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Selected Counterparties Campaigns" displayName="Selected Counterparties Campaigns" parentSchemaName="account" parentDisplayName="Counterparty" solution="msdynce_MarketingPatch (9.0.1904.1019)" id="{d15e48f6-e8fe-e811-8165-000d3af92c6e}">
-          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="dpam_DPAM" displayName="Sales" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Active attendee passes" displayName="Active attendee passes" parentSchemaName="msevtmgt_attendeepass" parentDisplayName="Attendee Pass" solution="MicrosoftDynamics_EventManagement (1.43.1028.0)" id="{d60e0c4f-2e74-4413-912e-24fa8ff59c74}">
@@ -9033,12 +9009,6 @@
         <Required type="59" schemaName="Top Customers" displayName="Top Customers" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)" id="{8bc5fb18-48f2-4782-9e16-3d452fa4ddce}">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
-        <Dependent type="60" displayName="App for Outlook Account Quick View" parentDisplayName="Counterparty" id="{76b81f10-2a08-4f1a-9454-ee38bea94eb5}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="59" schemaName="Top Customers" displayName="Top Customers" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)" id="{8bc5fb18-48f2-4782-9e16-3d452fa4ddce}">
-          <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
-        </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Counterparty" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>
       <MissingDependency>
@@ -9202,12 +9172,6 @@
           <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
         </Required>
         <Dependent type="60" displayName="App for Outlook Counterparty Quick View" parentDisplayName="Counterparty" id="{65bd97b3-2c38-4c6a-87e5-7286d87bd9ac}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="59" schemaName="Case Mix (By Business Unit)" displayName="Case Mix (By Business Unit)" parentSchemaName="incident" parentDisplayName="Case" solution="msdynce_Service (9.0.5.56)" id="{f10375a6-4893-de11-97d4-00155da3b01e}">
-          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
-        </Required>
-        <Dependent type="60" displayName="App for Outlook Account Quick View" parentDisplayName="Counterparty" id="{76b81f10-2a08-4f1a-9454-ee38bea94eb5}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="59" schemaName="Leads by Rating" displayName="Leads by Rating" parentSchemaName="lead" parentDisplayName="Lead" solution="msdynce_LeadManagement (9.0.4.0066)" id="{f5976c58-5693-de11-97d4-00155da3b01e}">
@@ -9958,6 +9922,18 @@
         <Dependent type="1" schemaName="msdyncrm_customerjourney" displayName="Customer journey" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="61" schemaName="msdyncrm_/Sitemap/MarketingEmailTemplate.svg" displayName="msdyncrm_/Sitemap/MarketingEmailTemplate.svg" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="1" schemaName="msdyncrm_marketingemailtemplate" displayName="Marketing email template" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyncrm_/Sitemap/MarketingFormField.svg" displayName="msdyncrm_/Sitemap/MarketingFormField.svg" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="1" schemaName="msdyncrm_marketingformfield" displayName="Marketing form field" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="61" schemaName="msdyncrm_/Sitemap/msdyncrm_GetStarted.svg" displayName="msdyncrm_/Sitemap/msdyncrm_GetStarted.svg" solution="MicrosoftDynamics_MktIntegration (1.82.2016.0)">
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
@@ -10282,13 +10258,13 @@
         <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Opportunity" parentDisplayName="Opportunity" id="{a837e4a7-01b8-4f82-a475-be9abd67e667}" />
+        <Dependent type="60" displayName=" main form" parentDisplayName="Counterparty" id="{cae923c9-18ee-eb11-bacb-000d3aaf8c09}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
-        <Dependent type="60" displayName=" main form" parentDisplayName="Counterparty" id="{cae923c9-18ee-eb11-bacb-000d3aaf8c09}" />
+        <Dependent type="60" displayName="Counterparty main form" parentDisplayName="Counterparty" id="{cbc4578e-5653-ec11-8c62-002248811c5c}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
@@ -10945,6 +10921,18 @@
         <Dependent type="80" schemaName="msdyncrm_MarketingSMBApp" displayName="Marketing" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="9" schemaName="list_donotsendonoptout" displayName="Exclude Members Who Opt Out" solution="msdynce_Marketing (9.0.4.37)">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="9" schemaName="list_donotsendonoptout" displayName="Exclude Members Who Opt Out" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="9" schemaName="list_ignoreinactivelistmembers" displayName="Ignore Inactive List Members" solution="msdynce_Marketing (9.0.4.37)">
+          <package>msdynce_MarketingAnchor (9.0.22034.10001)</package>
+        </Required>
+        <Dependent type="9" schemaName="list_ignoreinactivelistmembers" displayName="Ignore Inactive List Members" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="9" schemaName="msdyncrm_messagedesignation" displayName="Legal designation" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
@@ -10957,6 +10945,12 @@
         <Dependent type="9" schemaName="msevtmgt_gender" displayName="Gender" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="9" schemaName="msevtmgt_nooryes" displayName="Yes/no option set" solution="MicrosoftDynamics_EventManagement (1.43.1028.0)">
+          <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
+        </Required>
+        <Dependent type="2" schemaName="msevtmgt_hotelgroup" displayName="Hotel group" parentSchemaName="account" parentDisplayName="Counterparty" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="9" schemaName="opportunity_statecode" displayName="Status" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.22034.10001)</package>
         </Required>
@@ -10967,6 +10961,12 @@
           <package>msdynce_LeadManagementAnchor (9.0.22034.10001)</package>
         </Required>
         <Dependent type="2" schemaName="purchasetimeframe" displayName="Investment Timeframe" parentSchemaName="opportunity" parentDisplayName="Opportunity" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="msdyn_knowledgemanagementsetting" displayName="msdyn_product_csac" solution="msdyn_AssetCommon (1.0.25.1)" id.msdyn_uniquename="msdyn_product_csac">
+          <package>msdynce_ServiceAnchor (9.0.22041.1005)</package>
+        </Required>
+        <Dependent type="msdyn_knowledgemanagementsetting" displayName="msdyn_product_csac" id.msdyn_uniquename="msdyn_product_csac" />
       </MissingDependency>
     </MissingDependencies>
   </SolutionManifest>

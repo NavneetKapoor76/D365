@@ -3,6 +3,15 @@
   <Name LocalizedName="Marketing list" OriginalName="Marketing List">List</Name>
   <EntityInfo>
     <entity Name="List">
+      <LocalizedNames>
+        <LocalizedName description="Marketing list" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Marketing lists" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="A collection of existing or potential customers created for a marketing campaign or other purposes." languagecode="1033" />
+      </Descriptions>
       <attributes>
         <attribute PhysicalName="CreatedFromCode">
           <Type>picklist</Type>

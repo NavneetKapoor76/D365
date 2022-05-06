@@ -475,7 +475,7 @@
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>
-  <EntityRelationship Name="business_unit_parent_business_unit" unmodified="1">
+  <EntityRelationship Name="business_unit_parent_business_unit">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IntroducedVersion>5.0.0.0</IntroducedVersion>
     <IsHierarchical>1</IsHierarchical>

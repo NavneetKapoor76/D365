@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{87b50ecf-e2cd-4f52-abd8-4330c76f2440}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Local Business Segmentation" languagecode="1033" />
                         </labels>
                         <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{fab58529-fb08-48c4-9f60-30b96c1463ae}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>

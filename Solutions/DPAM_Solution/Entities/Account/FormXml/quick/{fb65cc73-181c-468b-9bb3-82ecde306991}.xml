@@ -6,7 +6,7 @@
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
     <form maxWidth="400">
-      <DisplayConditions Order="13" solutionaction="Modified" />
+      <DisplayConditions FallbackForm="false" Order="13" solutionaction="Modified" />
     </form>
     <LocalizedNames>
       <LocalizedName description="App for Outlook Account Card" languagecode="1033" />

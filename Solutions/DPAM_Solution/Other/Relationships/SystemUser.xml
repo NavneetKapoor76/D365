@@ -1018,7 +1018,7 @@
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>
-  <EntityRelationship Name="lk_task_createdby" unmodified="1">
+  <EntityRelationship Name="lk_task_createdby">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IntroducedVersion>5.0.0.0</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>

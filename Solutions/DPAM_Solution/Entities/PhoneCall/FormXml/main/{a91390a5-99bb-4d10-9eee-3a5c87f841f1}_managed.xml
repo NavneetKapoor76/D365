@@ -6,6 +6,19 @@
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
     <form headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab name="phonecall" showlabel="false" verticallayout="true" id="{A22C3771-5942-48AA-8DA7-098AF8C01BB7}" IsUserDefined="0" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="1">
+              <sections>
+                <section name="tab_2_section_2" showlabel="false" showbar="false" locklevel="0" id="{4a080252-866c-7442-5775-a75a626c87b3}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115" labelid="{7943cc45-ce22-48c2-a081-6375db696f5c}" ordinalvalue="0">
+                  <rows />
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
       <events>
         <event name="onload" application="true" active="true">
           <Handlers>
@@ -18,7 +31,9 @@
         <Library name="dpam_/Script/PhoneCall.js" libraryUniqueId="{b628fef3-0729-41bb-bc57-11bf27a9f159}" solutionaction="Added" />
       </formLibraries>
       <footer id="{66abe21e-05f6-462f-b81d-1dbb4695c9c2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows>
+          <row />
+        </rows>
       </footer>
     </form>
     <LocalizedNames>

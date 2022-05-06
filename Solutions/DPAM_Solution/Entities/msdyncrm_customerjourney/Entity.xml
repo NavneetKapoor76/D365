@@ -3,6 +3,15 @@
   <Name LocalizedName="Customer journey" OriginalName="Customer journey">msdyncrm_customerjourney</Name>
   <EntityInfo>
     <entity Name="msdyncrm_customerjourney">
+      <LocalizedNames>
+        <LocalizedName description="Customer journey" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Customer journeys" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
       <attributes />
       <EntitySetName>msdyncrm_customerjourneys</EntitySetName>
       <IsDuplicateCheckSupported>0</IsDuplicateCheckSupported>

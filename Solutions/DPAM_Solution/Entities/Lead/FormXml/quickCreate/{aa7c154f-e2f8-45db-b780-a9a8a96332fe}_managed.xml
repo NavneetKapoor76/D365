@@ -114,13 +114,6 @@
                     <row>
                       <cell id="{98cc5527-c277-63bb-2465-86ebb86a6952}" showlabel="true" locklevel="0" ordinalvalue="10003" solutionaction="Removed" />
                     </row>
-                    <row>
-                      <cell showlabel="false" locklevel="0" id="{a3dc4df7-2dcb-4aa9-b280-f64fa361540e}" ordinalvalue="10000" solutionaction="Added">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                      </cell>
-                    </row>
                   </rows>
                 </section>
               </sections>
@@ -137,13 +130,6 @@
                     </row>
                     <row>
                       <cell id="{17b2796d-5aec-c6dd-22d2-54833b65650c}" showlabel="true" locklevel="0" rowspan="2" ordinalvalue="10002" solutionaction="Removed" />
-                    </row>
-                    <row>
-                      <cell showlabel="false" locklevel="0" id="{f0ae54d2-5533-4625-bcee-f77fc9b32b36}" ordinalvalue="10000" solutionaction="Added">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                      </cell>
                     </row>
                   </rows>
                 </section>

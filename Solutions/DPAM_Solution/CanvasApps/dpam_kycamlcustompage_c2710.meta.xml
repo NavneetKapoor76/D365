@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>dpam_kycamlcustompage_c2710</Name>
-  <AppVersion>2022-05-05T12:47:02Z</AppVersion>
+  <AppVersion>2022-05-06T09:45:33Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.22044.27.0</CreatedByClientVersion>
   <MinClientVersion>3.22044.27.0</MinClientVersion>
@@ -10,9 +10,9 @@
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
   <DisplayName>KYC-AML Custom Page</DisplayName>
-  <Description xsi:nil="true"></Description>
-  <CommitMessage xsi:nil="true"></CommitMessage>
-  <Publisher xsi:nil="true"></Publisher>
+  <Description></Description>
+  <CommitMessage></CommitMessage>
+  <Publisher></Publisher>
   <AuthorizationReferences>[]</AuthorizationReferences>
   <ConnectionReferences>{}</ConnectionReferences>
   <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Counterparties":{"entitySetName":"accounts","logicalName":"account"},"Countries":{"entitySetName":"dpam_countries","logicalName":"dpam_country"},"Departments":{"entitySetName":"dpam_departmentses","logicalName":"dpam_departments"},"Identification Cards":{"entitySetName":"dpam_identificationcards","logicalName":"dpam_identificationcard"},"CP Legal Forms":{"entitySetName":"dpam_counterpartylegalforms","logicalName":"dpam_counterpartylegalform"},"CP Compliance Segmentations":{"entitySetName":"dpam_counterpartycompliancesegmentations","logicalName":"dpam_counterpartycompliancesegmentation"},"Locations":{"entitySetName":"dpam_locations","logicalName":"dpam_location"},"Users":{"entitySetName":"systemusers","logicalName":"systemuser"},"Teams":{"entitySetName":"teams","logicalName":"team"},"Products":{"entitySetName":"products","logicalName":"product"},"Settings":{"entitySetName":"dpam_settingses","logicalName":"dpam_settings"},"AML Risk Templates":{"entitySetName":"dpam_amlrisktemplates","logicalName":"dpam_amlrisktemplate"},"AML Question Groups":{"entitySetName":"dpam_amlquestiongroups","logicalName":"dpam_amlquestiongroup"},"AML User Answers":{"entitySetName":"dpam_amluseranswers","logicalName":"dpam_amluseranswer"},"AML Questions":{"entitySetName":"dpam_amlquestions","logicalName":"dpam_amlquestion"},"AML Profilings":{"entitySetName":"dpam_amlprofilings","logicalName":"dpam_amlprofiling"},"AML Answers":{"entitySetName":"dpam_amlanswers","logicalName":"dpam_amlanswer"}}}}</DatabaseReferences>
@@ -24,7 +24,7 @@
   <AdminControlBypassConsent>0</AdminControlBypassConsent>
   <EmbeddedApp xsi:nil="true"></EmbeddedApp>
   <IntroducedVersion>1.0</IntroducedVersion>
-  <CdsDependencies>{"cdsdependencies":[{"logicalname":"account","componenttype":1},{"logicalname":"dpam_country","componenttype":1},{"logicalname":"dpam_departments","componenttype":1},{"logicalname":"dpam_identificationcard","componenttype":1},{"logicalname":"dpam_counterpartylegalform","componenttype":1},{"logicalname":"dpam_counterpartycompliancesegmentation","componenttype":1},{"logicalname":"dpam_location","componenttype":1},{"logicalname":"systemuser","componenttype":1},{"logicalname":"team","componenttype":1},{"logicalname":"product","componenttype":1},{"logicalname":"dpam_settings","componenttype":1},{"logicalname":"dpam_amlrisktemplate","componenttype":1},{"logicalname":"dpam_amlquestiongroup","componenttype":1},{"logicalname":"dpam_amluseranswer","componenttype":1},{"logicalname":"dpam_amlquestion","componenttype":1},{"logicalname":"dpam_amlprofiling","componenttype":1},{"logicalname":"dpam_amlanswer","componenttype":1}]}</CdsDependencies>
+  <CdsDependencies>{"cdsdependencies":[{"componenttype":1,"logicalname":"account"},{"componenttype":1,"logicalname":"dpam_country"},{"componenttype":1,"logicalname":"dpam_departments"},{"componenttype":1,"logicalname":"dpam_identificationcard"},{"componenttype":1,"logicalname":"dpam_counterpartylegalform"},{"componenttype":1,"logicalname":"dpam_counterpartycompliancesegmentation"},{"componenttype":1,"logicalname":"dpam_location"},{"componenttype":1,"logicalname":"systemuser"},{"componenttype":1,"logicalname":"team"},{"componenttype":1,"logicalname":"product"},{"componenttype":1,"logicalname":"dpam_settings"},{"componenttype":1,"logicalname":"dpam_amlrisktemplate"},{"componenttype":1,"logicalname":"dpam_amlquestiongroup"},{"componenttype":1,"logicalname":"dpam_amluseranswer"},{"componenttype":1,"logicalname":"dpam_amlquestion"},{"componenttype":1,"logicalname":"dpam_amlprofiling"},{"componenttype":1,"logicalname":"dpam_amlanswer"}]}</CdsDependencies>
   <IsCustomizable>1</IsCustomizable>
   <BackgroundImageUri>/CanvasApps/dpam_kycamlcustompage_c2710_BackgroundImageUri</BackgroundImageUri>
   <DocumentUri>/CanvasApps/dpam_kycamlcustompage_c2710_DocumentUri.msapp</DocumentUri>

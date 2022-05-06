@@ -63,6 +63,11 @@
                         </labels>
                         <control id="dpam_lk_country" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dpam_lk_country" disabled="false" />
                       </cell>
+                      <cell id="{5ecc9d06-7133-431c-a661-4f1f967f32a7}" ordinalvalue="20009" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
                     </row>
                   </rows>
                 </section>
@@ -72,48 +77,12 @@
         </tab>
       </tabs>
       <header id="{9188d4f0-126d-4781-a245-af06b415fe2e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows>
-          <row>
-            <cell id="{cbe6939b-c450-4a2b-8dc7-4897fca9aa4a}" showlabel="false" ordinalvalue="10000">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{cc377cd5-591d-4a30-85be-6a240d92cc86}" showlabel="false" ordinalvalue="20001">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{31f18082-8f63-4581-a485-7d037e437ba2}" showlabel="false" ordinalvalue="30002">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-          </row>
-        </rows>
+        <rows></rows>
       </header>
       <footer id="{3f6847ef-3c22-404f-a140-363f692cbd63}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows>
-          <row>
-            <cell id="{3a04700b-4b67-42b4-b3f8-857062806467}" showlabel="false" ordinalvalue="10000">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{cf790aa7-3fe1-4ad5-a74f-e6ff284e792e}" showlabel="false" ordinalvalue="20001">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{9696dff8-1421-492f-b1f3-4ddffac62928}" showlabel="false" ordinalvalue="30002">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-          </row>
-        </rows>
+        <rows></rows>
       </footer>
-      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+      <DisplayConditions FallbackForm="true" Order="0" solutionaction="Added">
         <Everyone />
       </DisplayConditions>
     </form>

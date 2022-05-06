@@ -281,7 +281,7 @@
                   <labels>
                     <label description="New Section" languagecode="1033" />
                   </labels>
-                  <rows></rows>
+                  <rows />
                 </section>
               </sections>
             </column>
@@ -305,7 +305,7 @@
         </rows>
       </header>
       <footer id="{866bad36-110c-4f05-a287-5424c07aab4f}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows />
       </footer>
     </form>
     <LocalizedNames>

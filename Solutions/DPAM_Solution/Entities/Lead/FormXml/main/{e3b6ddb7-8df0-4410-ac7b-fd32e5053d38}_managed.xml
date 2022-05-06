@@ -381,7 +381,7 @@
         <Library name="dpam_/Script/Lead.js" libraryUniqueId="{a6a101fb-99c3-4612-9e47-73cb4b64fd77}" solutionaction="Added" />
       </formLibraries>
       <footer id="{71e2c17e-083c-4933-a05d-b5902553333f}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows />
       </footer>
     </form>
     <LocalizedNames>

@@ -185,13 +185,6 @@
                     <row>
                       <cell id="{C5E57D6C-8A9E-4A0D-89ED-D3F5B59B57AA}" showlabel="true" locklevel="0" ordinalvalue="10003" solutionaction="Removed" />
                     </row>
-                    <row>
-                      <cell showlabel="false" locklevel="0" id="{a9aeda30-7966-432d-8dbe-2e6457045419}" ordinalvalue="10000" solutionaction="Added">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                      </cell>
-                    </row>
                   </rows>
                 </section>
               </sections>

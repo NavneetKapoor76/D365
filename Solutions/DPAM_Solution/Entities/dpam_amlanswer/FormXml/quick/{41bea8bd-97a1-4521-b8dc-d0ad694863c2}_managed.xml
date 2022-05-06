@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{30318663-e360-40d6-abc3-5d36627ffcfc}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="AML Answer Code" languagecode="1033" />
                         </labels>
                         <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{15b9ca9b-3dc9-4a58-b268-16e691adb2e9}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>

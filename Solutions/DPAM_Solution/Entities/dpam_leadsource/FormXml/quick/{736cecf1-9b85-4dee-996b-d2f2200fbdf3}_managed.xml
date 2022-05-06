@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{1a14b432-a092-42c9-a2ab-679c6336441b}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Lead Source" languagecode="1033" />
                         </labels>
                         <control id="dpam_s_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dpam_s_name" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{63a73981-5e29-4153-bd86-0583db247984}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>

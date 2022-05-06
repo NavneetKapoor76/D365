@@ -7,6 +7,17 @@
     <FormActivationState>1</FormActivationState>
     <form shownavigationbar="true" showImage="true" maxWidth="1900" headerdensity="HighWithControls" solutionaction="Modified">
       <tabs>
+        <tab verticallayout="true" id="{0ac965cc-f4c1-44d5-b2a2-c7235987d6ab}" IsUserDefined="1" name="GeneralTab" locklevel="0" expanded="true" showlabel="true" ordinalvalue="0">
+          <columns>
+            <column width="44%" id="1">
+              <sections>
+                <section showlabel="false" showbar="false" id="{310112ca-8b40-47d4-9385-076dd38675e3}" IsUserDefined="0" height="auto" ordinalvalue="0">
+                  <rows />
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
         <tab name="RegistrationResponsesTab" id="{9d845a35-c714-ca58-6273-7665b4514dce}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="1">
           <columns>
             <column width="100%" id="0">
@@ -69,9 +80,11 @@
         </event>
       </events>
       <footer id="{2632932d-0c4b-4528-a87e-8988c790864d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows>
+          <row />
+        </rows>
       </footer>
-      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+      <DisplayConditions FallbackForm="true" Order="0" solutionaction="Added">
         <Everyone />
       </DisplayConditions>
     </form>

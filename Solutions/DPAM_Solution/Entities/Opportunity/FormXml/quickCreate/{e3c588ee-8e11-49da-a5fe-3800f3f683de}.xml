@@ -144,13 +144,6 @@
                     <row>
                       <cell id="{55988d72-9e9e-0968-dc28-7ecb6b0051e3}" showlabel="false" locklevel="0" rowspan="3" ordinalvalue="10000" solutionaction="Removed" />
                     </row>
-                    <row>
-                      <cell showlabel="false" locklevel="0" id="{88899737-4fec-44f0-9ebf-7e900828c062}" ordinalvalue="10000" solutionaction="Added">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                      </cell>
-                    </row>
                   </rows>
                 </section>
               </sections>

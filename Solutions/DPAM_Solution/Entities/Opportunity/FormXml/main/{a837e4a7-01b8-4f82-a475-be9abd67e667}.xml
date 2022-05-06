@@ -375,7 +375,7 @@
                         <labels>
                           <label description="Stakeholders (Contacts)" languagecode="1033" solutionaction="Modified" />
                         </labels>
-                        <control id="Stakeholders" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{36D5BB4F-04A4-4885-86A7-2E60EBCC03F2}">
+                        <control id="Stakeholders" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true" uniqueid="{36d5bb4f-04a4-4885-86a7-2e60ebcc03f2}" solutionaction="Modified">
                           <parameters>
                             <ViewId solutionaction="Modified">{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23}</ViewId>
                             <ViewIds solutionaction="Modified">{7C0E0725-CCD9-4525-9313-665FD075652F},{32B187E5-CC84-EC11-8D21-000D3A4C0E23},{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23},{FE4BC089-8901-466C-A41B-1C1090F204D4},{4E3600FA-B9C8-49F4-B69A-51EBA06D9BDF},{BA3387BF-382D-4376-A538-5B02467925D3},{CF3AA82E-635B-E611-810B-00155DBD6A1D},{3BAC2341-185C-EC11-8F8F-000D3AAD6726},{41275278-1458-EC11-8F8F-000D3AC2177C},{DDB43BE7-F7DA-4D90-845F-06552A446DA0},{23FB1036-E41D-4D75-8AA7-27569B5B6512},{4C0E2477-FEC0-47B4-BE3E-E5FFAFFCB651}</ViewIds>
@@ -388,7 +388,7 @@
                     </row>
                     <row>
                       <cell id="{92822c63-42c0-4b31-8cb5-8ce123553796}" colspan="1" auto="false" rowspan="6" showlabel="true" ordinalvalue="10003" solutionaction="Modified">
-                        <control id="Pursuit_Team" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{74D56A28-6093-4345-8F1D-B1BCE70AA0A0}">
+                        <control id="Pursuit_Team" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true" uniqueid="{74d56a28-6093-4345-8f1d-b1bce70aa0a0}" solutionaction="Modified">
                           <parameters>
                             <ViewId solutionaction="Modified">{32B187E5-CC84-EC11-8D21-000D3A4C0E23}</ViewId>
                             <ViewIds solutionaction="Modified">{7C0E0725-CCD9-4525-9313-665FD075652F},{32B187E5-CC84-EC11-8D21-000D3A4C0E23},{C82CFFCD-CB84-EC11-8D21-000D3A4C0E23},{FE4BC089-8901-466C-A41B-1C1090F204D4},{4E3600FA-B9C8-49F4-B69A-51EBA06D9BDF},{BA3387BF-382D-4376-A538-5B02467925D3},{CF3AA82E-635B-E611-810B-00155DBD6A1D},{3BAC2341-185C-EC11-8F8F-000D3AAD6726},{41275278-1458-EC11-8F8F-000D3AC2177C},{DDB43BE7-F7DA-4D90-845F-06552A446DA0},{23FB1036-E41D-4D75-8AA7-27569B5B6512},{4C0E2477-FEC0-47B4-BE3E-E5FFAFFCB651}</ViewIds>
@@ -552,7 +552,7 @@
       </events>
       <controlDescriptions>
         <controlDescription forControl="{393b71b2-4997-7135-242b-b0ac80dd1194}" solutionaction="Removed" />
-        <controlDescription forControl="{36D5BB4F-04A4-4885-86A7-2E60EBCC03F2}" solutionaction="Modified">
+        <controlDescription forControl="{36d5bb4f-04a4-4885-86a7-2e60ebcc03f2}" solutionaction="Modified">
           <customControl formFactor="0" name="MscrmControls.Grid.ReadOnlyGrid">
             <parameters>
               <data-set name="Grid">
@@ -590,7 +590,7 @@
             </parameters>
           </customControl>
         </controlDescription>
-        <controlDescription forControl="{74D56A28-6093-4345-8F1D-B1BCE70AA0A0}" solutionaction="Modified">
+        <controlDescription forControl="{74d56a28-6093-4345-8f1d-b1bce70aa0a0}" solutionaction="Modified">
           <customControl formFactor="0" name="MscrmControls.Grid.ReadOnlyGrid">
             <parameters>
               <data-set name="Grid">

@@ -31,7 +31,7 @@
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
   </EntityRelationship>
-  <EntityRelationship Name="Account_Tasks" unmodified="1">
+  <EntityRelationship Name="Account_Tasks">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IntroducedVersion>5.0.0.0</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
@@ -594,7 +594,7 @@
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
   </EntityRelationship>
-  <EntityRelationship Name="opportunity_parent_account" unmodified="1">
+  <EntityRelationship Name="opportunity_parent_account">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IntroducedVersion>5.0.0.0</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
@@ -619,6 +619,9 @@
         <NavPaneOrder>1</NavPaneOrder>
         <NavigationPropertyName>parentaccountid</NavigationPropertyName>
         <RelationshipRoleType>1</RelationshipRoleType>
+      </EntityRelationshipRole>
+      <EntityRelationshipRole>
+        <RelationshipRoleType>0</RelationshipRoleType>
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
   </EntityRelationship>

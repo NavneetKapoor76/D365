@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>dpam_disqualifyleadcustompage_3731d</Name>
-  <AppVersion>2022-02-16T08:06:06Z</AppVersion>
+  <AppVersion>2022-05-06T09:44:42Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.22015.22.0</CreatedByClientVersion>
   <MinClientVersion>3.22015.22.0</MinClientVersion>
@@ -10,9 +10,9 @@
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>
   <DisplayName>Disqualify Lead Custom Page</DisplayName>
-  <Description xsi:nil="true"></Description>
-  <CommitMessage xsi:nil="true"></CommitMessage>
-  <Publisher xsi:nil="true"></Publisher>
+  <Description></Description>
+  <CommitMessage></CommitMessage>
+  <Publisher></Publisher>
   <AuthorizationReferences>[]</AuthorizationReferences>
   <ConnectionReferences>{}</ConnectionReferences>
   <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Leads":{"entitySetName":"leads","logicalName":"lead"}}}}</DatabaseReferences>
@@ -24,7 +24,7 @@
   <AdminControlBypassConsent>0</AdminControlBypassConsent>
   <EmbeddedApp xsi:nil="true"></EmbeddedApp>
   <IntroducedVersion>1.0</IntroducedVersion>
-  <CdsDependencies>{"cdsdependencies":[{"logicalname":"lead","componenttype":1}]}</CdsDependencies>
+  <CdsDependencies>{"cdsdependencies":[{"componenttype":1,"logicalname":"lead"}]}</CdsDependencies>
   <IsCustomizable>1</IsCustomizable>
   <BackgroundImageUri>/CanvasApps/dpam_disqualifyleadcustompage_3731d_BackgroundImageUri</BackgroundImageUri>
   <DocumentUri>/CanvasApps/dpam_disqualifyleadcustompage_3731d_DocumentUri.msapp</DocumentUri>

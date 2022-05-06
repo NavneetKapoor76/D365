@@ -15,6 +15,7 @@
                   <labels>
                     <label description="" languagecode="1033" solutionaction="Modified" />
                   </labels>
+                  <rows />
                 </section>
               </sections>
             </column>
@@ -33,7 +34,9 @@
         <Library name="dpam_/Script/PhoneCall.js" libraryUniqueId="{b628fef3-0729-41bb-bc57-11bf27a9f159}" solutionaction="Added" />
       </formLibraries>
       <footer id="{66abe21e-05f6-462f-b81d-1dbb4695c9c2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows>
+          <row />
+        </rows>
       </footer>
     </form>
     <LocalizedNames>

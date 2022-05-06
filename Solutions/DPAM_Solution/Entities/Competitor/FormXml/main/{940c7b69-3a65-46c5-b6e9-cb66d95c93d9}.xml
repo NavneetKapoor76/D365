@@ -72,13 +72,6 @@
                     <row>
                       <cell id="{eca4b763-a633-0243-3d4e-9abb0bd9ee3b}" showlabel="true" rowspan="4" ordinalvalue="10001" solutionaction="Removed" />
                     </row>
-                    <row>
-                      <cell showlabel="false" locklevel="0" id="{0407e642-02c1-4cf0-8109-c66dc8c2ba0b}" ordinalvalue="10000" solutionaction="Added">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                      </cell>
-                    </row>
                   </rows>
                 </section>
               </sections>
@@ -103,25 +96,7 @@
         </rows>
       </header>
       <footer id="{858a7553-2e67-485f-b585-1693232a7ffe}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows>
-          <row>
-            <cell id="{8d064227-0ce4-444f-8b99-37b2b41762bf}" showlabel="false" ordinalvalue="10000">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{2d5a7edd-e3d9-42f3-b2ea-7c8d9cfe8ea0}" showlabel="false" ordinalvalue="20001">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{d48929c8-cd93-492e-9b17-f21f319b49ee}" showlabel="false" ordinalvalue="30002">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-          </row>
-        </rows>
+        <rows></rows>
       </footer>
     </form>
     <LocalizedNames>

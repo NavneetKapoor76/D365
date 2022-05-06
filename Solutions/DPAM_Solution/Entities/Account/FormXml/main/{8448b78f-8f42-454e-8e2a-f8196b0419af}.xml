@@ -437,6 +437,7 @@
                         <labels>
                           <label description="Insights" languagecode="1033" solutionaction="Added" />
                         </labels>
+                        <control id="AccountInsightsCtrl" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msdyncrm_insights_placeholder" disabled="false" uniqueid="{ac618e15-235f-45e0-a2ee-db9e0c444832}" solutionaction="Modified" />
                       </cell>
                     </row>
                   </rows>
@@ -619,6 +620,23 @@
         </NavBarAreas>
       </Navigation>
       <controlDescriptions>
+        <controlDescription forControl="{ac618e15-235f-45e0-a2ee-db9e0c444832}" solutionaction="Modified">
+          <customControl formFactor="0" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">AccountInsights</configuration>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">AccountInsights</configuration>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.InsightsControl.InsightsControl">
+            <parameters>
+              <configuration static="true" type="SingleLine.Text">AccountInsights</configuration>
+            </parameters>
+          </customControl>
+        </controlDescription>
         <controlDescription forControl="{3cbc1e70-9a72-45e0-6856-5ac1a45b67e8}" solutionaction="Added">
           <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
             <parameters>
@@ -808,7 +826,7 @@
         <Library name="DPAM_/Script/Account.js" libraryUniqueId="{b5ce692e-9ad4-4063-b2ea-c1eeade67a2d}" solutionaction="Added" />
       </formLibraries>
       <footer id="{65b37898-439c-4970-bfef-3778f9eeb2e6}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows />
       </footer>
     </form>
     <LocalizedNames>

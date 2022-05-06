@@ -190,7 +190,7 @@
         </controlDescription>
       </controlDescriptions>
       <footer id="{8afee9eb-8a47-4cc9-a946-2847823eb2b3}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows />
       </footer>
     </form>
     <LocalizedNames>

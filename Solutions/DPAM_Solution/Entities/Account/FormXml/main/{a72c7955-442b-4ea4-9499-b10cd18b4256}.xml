@@ -213,7 +213,7 @@
         </event>
       </events>
       <footer id="{cf91b963-3f9a-4b20-b275-47d02caf5160}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows />
       </footer>
     </form>
     <LocalizedNames>

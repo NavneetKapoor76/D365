@@ -96,7 +96,7 @@
         <Library name="dpam_/Script/Connection.js" libraryUniqueId="{e55d5cf6-48ea-4511-a10f-0b959ad3b264}" />
       </formLibraries>
       <Navigation solutionaction="Added">
-        <NavBar></NavBar>
+        <NavBar />
         <NavBarAreas>
           <NavBarArea Id="Info">
             <Titles>
@@ -126,7 +126,7 @@
         </NavBarAreas>
       </Navigation>
       <controlDescriptions solutionaction="Added" />
-      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+      <DisplayConditions FallbackForm="true" Order="0" solutionaction="Added">
         <Everyone />
       </DisplayConditions>
     </form>

@@ -49,7 +49,9 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{32a30c13-1750-b89e-a057-e02b7bc06626}" showlabel="true" locklevel="0" ordinalvalue="10007" solutionaction="Modified" />
+                      <cell id="{32a30c13-1750-b89e-a057-e02b7bc06626}" showlabel="true" locklevel="0" ordinalvalue="10007" solutionaction="Modified">
+                        <control id="isonlinemeeting" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="isonlinemeeting" disabled="false" uniqueid="{5b7da1d6-e65e-a356-2d63-e4414175ea30}" solutionaction="Modified" />
+                      </cell>
                     </row>
                     <row>
                       <cell id="{c50648bb-e47c-4707-a453-f68f5e4f80a5}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10005" solutionaction="Added">

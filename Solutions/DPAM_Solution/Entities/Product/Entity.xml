@@ -3,6 +3,15 @@
   <Name LocalizedName="Product" OriginalName="Product">Product</Name>
   <EntityInfo>
     <entity Name="Product">
+      <LocalizedNames>
+        <LocalizedName description="Product" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Products" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Information about products and their pricing information." languagecode="1033" />
+      </Descriptions>
       <attributes>
         <attribute PhysicalName="dpam_legacy_productid">
           <Type>nvarchar</Type>

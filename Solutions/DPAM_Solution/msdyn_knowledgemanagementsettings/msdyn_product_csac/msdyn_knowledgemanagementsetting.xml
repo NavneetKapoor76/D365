@@ -1,0 +1,10 @@
+<msdyn_knowledgemanagementsetting msdyn_uniquename="msdyn_product_csac">
+  <iscustomizable>1</iscustomizable>
+  <msdyn_actionlist>[-1,0,1,2,3,-1]</msdyn_actionlist>
+  <msdyn_entityname>product</msdyn_entityname>
+  <msdyn_isautosuggestionsenabled>0</msdyn_isautosuggestionsenabled>
+  <msdyn_showcontextualactions>1</msdyn_showcontextualactions>
+  <msdyn_status>1</msdyn_status>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</msdyn_knowledgemanagementsetting>

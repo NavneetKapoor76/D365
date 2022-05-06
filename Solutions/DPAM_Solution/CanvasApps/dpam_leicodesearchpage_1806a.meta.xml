@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>dpam_leicodesearchpage_1806a</Name>
-  <AppVersion>2022-03-09T10:04:58Z</AppVersion>
+  <AppVersion>2022-05-06T09:45:53Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.22022.23.0</CreatedByClientVersion>
   <MinClientVersion>3.22022.23.0</MinClientVersion>
@@ -10,11 +10,11 @@
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(0, 205, 118, 1)</BackgroundColor>
   <DisplayName>LEI Code Search Page</DisplayName>
-  <Description xsi:nil="true"></Description>
-  <CommitMessage xsi:nil="true"></CommitMessage>
-  <Publisher xsi:nil="true"></Publisher>
+  <Description></Description>
+  <CommitMessage></CommitMessage>
+  <Publisher></Publisher>
   <AuthorizationReferences>[]</AuthorizationReferences>
-  <ConnectionReferences>{"a2f6d38a-0e27-4857-924b-5840c575c6b6":{"id":"/providers/microsoft.powerapps/apis/shared_dpam-5fdpam-20-2d-20gleif-20api-20-2d-20with-20-444a8c1b8e0c07a7","displayName":"DPAM - GLEIF API - With Params","iconUri":"https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png","dataSources":["DPAM-GLEIFAPI-PARAMS"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["GetLEIRecordFromParam"],"customApiLogicalName":"dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20","isCustomApiSolutionAware":true}}</ConnectionReferences>
+  <ConnectionReferences>{"a2f6d38a-0e27-4857-924b-5840c575c6b6":{"id":"/providers/Microsoft.PowerApps/apis/shared_dpam-5fdpam-20-2d-20gleif-20api-20-2d-20with-20-61ba7256d7b6d11e","displayName":"DPAM - GLEIF API - With Params","iconUri":"https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png","dataSources":["DPAM-GLEIFAPI-PARAMS"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["GetLEIRecordFromParam"],"customApiLogicalName":"dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20","isCustomApiSolutionAware":true}}</ConnectionReferences>
   <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Counterparties":{"entitySetName":"accounts","logicalName":"account"},"Locations":{"entitySetName":"dpam_locations","logicalName":"dpam_location"},"Countries":{"entitySetName":"dpam_countries","logicalName":"dpam_country"},"Settings":{"entitySetName":"dpam_settingses","logicalName":"dpam_settings"},"CP Legal Forms":{"entitySetName":"dpam_counterpartylegalforms","logicalName":"dpam_counterpartylegalform"}}}}</DatabaseReferences>
   <AppComponents>[]</AppComponents>
   <AppComponentDependencies>[]</AppComponentDependencies>
@@ -24,7 +24,7 @@
   <AdminControlBypassConsent>0</AdminControlBypassConsent>
   <EmbeddedApp xsi:nil="true"></EmbeddedApp>
   <IntroducedVersion>1.0</IntroducedVersion>
-  <CdsDependencies>{"cdsdependencies":[{"logicalname":"dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20","componenttype":372,"componenttypeplatformname":"connector"},{"logicalname":"account","componenttype":1},{"logicalname":"dpam_location","componenttype":1},{"logicalname":"dpam_country","componenttype":1},{"logicalname":"dpam_settings","componenttype":1},{"logicalname":"dpam_counterpartylegalform","componenttype":1}]}</CdsDependencies>
+  <CdsDependencies>{"cdsdependencies":[{"componenttype":372,"logicalname":"dpam_5Fdpam-20-2D-20gleif-20api-20-2D-20with-20","componenttypeplatformname":"connector"},{"componenttype":1,"logicalname":"account"},{"componenttype":1,"logicalname":"dpam_location"},{"componenttype":1,"logicalname":"dpam_country"},{"componenttype":1,"logicalname":"dpam_settings"},{"componenttype":1,"logicalname":"dpam_counterpartylegalform"}]}</CdsDependencies>
   <IsCustomizable>1</IsCustomizable>
   <BackgroundImageUri>/CanvasApps/dpam_leicodesearchpage_1806a_BackgroundImageUri</BackgroundImageUri>
   <DocumentUri>/CanvasApps/dpam_leicodesearchpage_1806a_DocumentUri.msapp</DocumentUri>

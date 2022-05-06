@@ -3,6 +3,15 @@
   <Name LocalizedName="Opportunity Sales Process" OriginalName="Opportunity Sales Process">OpportunitySalesProcess</Name>
   <EntityInfo>
     <entity Name="OpportunitySalesProcess">
+      <LocalizedNames>
+        <LocalizedName description="Opportunity Sales Process" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Opportunity Sales Process" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Opportunity Sales Process Business Process Flow" languagecode="1033" />
+      </Descriptions>
       <attributes>
         <attribute PhysicalName="OpportunityId">
           <Type>lookup</Type>

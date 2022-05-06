@@ -33,7 +33,7 @@
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
   </EntityRelationship>
-  <EntityRelationship Name="Contact_Tasks" unmodified="1">
+  <EntityRelationship Name="Contact_Tasks">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IntroducedVersion>5.0.0.0</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
@@ -181,7 +181,7 @@
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
   </EntityRelationship>
-  <EntityRelationship Name="opportunity_parent_contact" unmodified="1">
+  <EntityRelationship Name="opportunity_parent_contact">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IntroducedVersion>5.0.0.0</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
@@ -206,6 +206,9 @@
         <NavPaneOrder>10000</NavPaneOrder>
         <NavigationPropertyName>parentcontactid</NavigationPropertyName>
         <RelationshipRoleType>1</RelationshipRoleType>
+      </EntityRelationshipRole>
+      <EntityRelationshipRole>
+        <RelationshipRoleType>0</RelationshipRoleType>
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
   </EntityRelationship>
