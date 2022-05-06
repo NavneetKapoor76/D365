@@ -15,8 +15,10 @@ parameters:
   default: 'false'
 
 steps:
-- checkout: self
-  clean: true
+- script: |
+    git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" pull origin $(Build.SourceBranchName)
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: 'Git: Get latest version'
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Install Power Platform Build Tools'
@@ -60,6 +62,8 @@ steps:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
+  timeoutInMinutes: 60
+
   # Only publish customizations for when importing unmanaged solutions into a dev environment.
 
 - powershell: |
