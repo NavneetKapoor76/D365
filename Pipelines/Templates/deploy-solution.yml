@@ -17,7 +17,7 @@ parameters:
 steps:
 - checkout: self
   clean: true
-  
+
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Install Power Platform Build Tools'
   condition: and(succeeded(), eq('${{parameters.skipBuildToolsInstaller}}', 'false'))
@@ -50,6 +50,8 @@ steps:
     PublishWorkflows: true
     UseDeploymentSettingsFile: $(UseDeploymentSettings)
     DeploymentSettingsFile: $(DeploymentSettingsPath)
+    AsyncOperation: true
+    MaxAsyncWaitTime: 120
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
