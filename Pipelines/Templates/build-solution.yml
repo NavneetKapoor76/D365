@@ -12,7 +12,10 @@ parameters:
   type: boolean
   default: true
 
-steps:  
+steps:
+- checkout: self
+  clean: true
+  
 # Set pipeline vars for tools paths.
 - template: set-tools-paths.yml
     
