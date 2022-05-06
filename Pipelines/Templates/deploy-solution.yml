@@ -15,6 +15,9 @@ parameters:
   default: 'false'
 
 steps:
+- checkout: self
+  clean: true
+  
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Install Power Platform Build Tools'
   condition: and(succeeded(), eq('${{parameters.skipBuildToolsInstaller}}', 'false'))
