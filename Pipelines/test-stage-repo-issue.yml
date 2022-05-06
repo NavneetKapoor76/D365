@@ -46,7 +46,7 @@ stages:
       vmImage: 'windows-latest'
     steps:
     - script: |
-        git pull
+        git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" pull origin $(Build.SourceBranchName)
       workingDirectory: $(Build.SourcesDirectory)
       displayName: 'Initialize Git'
     - powershell: |
