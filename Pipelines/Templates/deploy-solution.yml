@@ -151,13 +151,13 @@ steps:
   displayName: 'Get Configuration Migration Data from Repo'
   enabled: true
 
-- ${{ if eq(variables.importCommonDataConfig, 'true') }}:
+- ${{ if eq(variables['importCommonDataConfig'], 'true') }}:
   - template: import-configuration-data.yml
     parameters:
       environmentName: '$(EnvironmentName)'
       configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
 
-- ${{ if eq(variables.importEnvDataConfig, 'true') }}:
+- ${{ if eq(variables['importEnvDataConfig'], 'true') }}:
   - template: import-configuration-data.yml
     parameters:
       environmentName: '$(EnvironmentName)'
