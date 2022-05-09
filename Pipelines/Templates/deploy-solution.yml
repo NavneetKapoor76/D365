@@ -62,7 +62,8 @@ steps:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
-  timeoutInMinutes: 60
+  timeoutInMinutes: 20
+  retryCountOnTaskFailure: 3
 
   # Only publish customizations for when importing unmanaged solutions into a dev environment.
 
