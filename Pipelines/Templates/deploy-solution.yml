@@ -69,7 +69,7 @@ steps:
   enabled: false
 
 # Set pipeline vars for tools paths.
-- ${{ if eq('${{parameters.importUnmanaged}}', 'true') }}:
+- ${{ if eq(parameters.importUnmanaged, 'true') }}:
   - template: set-tools-paths.yml
 
 # Restore PowerShell Module dependencies if available in cache
@@ -82,7 +82,7 @@ steps:
     cacheHitVar: powerPlatformToolsPath_IsCached
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
 
-- ${{ if and(eq('${{parameters.importUnmanaged}}', 'true'), ne(variables.powerPlatformToolsPath_IsCached, 'true')) }}:
+- ${{ if and(eq(parameters.importUnmanaged, 'true'), ne(variables.powerPlatformToolsPath_IsCached, 'true')) }}:
   - template: install-powershell-modules.yml
 
 - powershell: |
