@@ -42,8 +42,9 @@ stages:
     steps:
     - template: build-solution.yml
       parameters:
-        buildType: 'Unmanaged'
+        buildType: 'Both'
         mapCodeComponents: true
+        exportManaged: true
 - stage: deployDev
   displayName: 'Deploy to Dev'
   dependsOn: build
