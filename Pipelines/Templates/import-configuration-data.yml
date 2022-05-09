@@ -7,6 +7,7 @@ parameters:
 steps:
 - powershell: |
     $path = ${{parameters.configDataFile}}
+    Write-Host $path
     if(Test-Path $path) {
       Write-Host "Import ${{parameters.configDataFile}}"
       $microsoftConfigurationMigrationPowerShellModule = '$(Microsoft_Xrm_Tooling_ConfigurationMigration)'
