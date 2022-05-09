@@ -62,14 +62,14 @@ steps:
         SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
         SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion)_managed.zip'
         SolutionType: ${{parameters.buildType}}
-  - ${{ else if ne(parameters.buildType, 'Managed') }}: #Export the managed solution instead of packing it from the source code
+  - ${{ elseif ne(parameters.buildType, 'Managed') }}: #Export the managed solution instead of packing it from the source code
     - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
       displayName: 'Pack Unmanaged Solution using Power Platform Build Tools'
       inputs:
         SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
         SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion)_managed.zip'
         SolutionType: 'Unmanaged'
-- ${{ else if eq(parameters.exportManaged, false) }}: # If we need to map the components then we use the solution packager
+- ${{ elseif eq(parameters.exportManaged, false) }}: # If we need to map the components then we use the solution packager
   - powershell: |
    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
    $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
@@ -84,7 +84,7 @@ steps:
    .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
   failOnStderr: true
   displayName: 'Pack Solutions using Solution Packager'
-- ${{ else if ne(parameters.buildType, 'Managed')}}:
+- ${{ elseif ne(parameters.buildType, 'Managed')}}:
   - powershell: |
   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
   $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
