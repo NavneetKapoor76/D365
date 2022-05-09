@@ -42,21 +42,6 @@ steps:
   parameters:
     environmentName: $(EnvironmentName)
 
-# If called from import-unmanaged-to-dev-environment.yml, this task will run to deploy an unmanaged solution
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.import-solution.PowerPlatformImportSolution@0
-  displayName: 'Import Unmanaged Solution'
-  inputs:
-    authenticationType: PowerPlatformSPN
-    PowerPlatformSPN: '${{parameters.serviceConnection}}'
-    SolutionInputFile: '$(ArtifactDropPath)/$(SolutionName)_$(SolutionVersion).zip'
-    PublishWorkflows: true
-    UseDeploymentSettingsFile: $(UseDeploymentSettings)
-    DeploymentSettingsFile: $(DeploymentSettingsPath)
-    AsyncOperation: true
-    MaxAsyncWaitTime: 120
-  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
-  enabled: false
-
   # Only publish customizations for when importing unmanaged solutions into a dev environment.
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
   displayName: 'Power Platform Publish Customizations '
@@ -84,6 +69,21 @@ steps:
 
 - ${{ if and(eq(parameters.importUnmanaged, 'true'), ne(variables.powerPlatformToolsPath_IsCached, 'true')) }}:
   - template: install-powershell-modules.yml
+
+# If called from import-unmanaged-to-dev-environment.yml, this task will run to deploy an unmanaged solution
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.import-solution.PowerPlatformImportSolution@0
+  displayName: 'Import Unmanaged Solution'
+  inputs:
+    authenticationType: PowerPlatformSPN
+    PowerPlatformSPN: '${{parameters.serviceConnection}}'
+    SolutionInputFile: '$(ArtifactDropPath)/$(SolutionName)_$(SolutionVersion).zip'
+    PublishWorkflows: true
+    UseDeploymentSettingsFile: $(UseDeploymentSettings)
+    DeploymentSettingsFile: $(DeploymentSettingsPath)
+    AsyncOperation: true
+    MaxAsyncWaitTime: 120
+  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
+  enabled: false
 
 - powershell: |
     $microsoftXrmDataPowerShellModule = '$(Microsoft_Xrm_Data_PowerShell)'
