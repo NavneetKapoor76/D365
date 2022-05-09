@@ -126,40 +126,32 @@ steps:
 - powershell: |
     $path = "$(Build.SourcesDirectory)\Configuration\_common\Data"
     if(Test-Path $path) {
-      echo "##vso[task.setvariable variable=importCommonDataConfig]true"
       $compress = @{
         Path = $path + '\*.*'
         CompressionLevel = 'Fastest'
         DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
       }
       Compress-Archive @compress
-    } else {
-      echo "##vso[task.setvariable variable=importCommonDataConfig]false"
     }
 
     $path = "$(Build.SourcesDirectory)\Configuration\$(EnvironmentName)\Data"
     if(Test-Path $path) {
-      echo "##vso[task.setvariable variable=importEnvDataConfig]true"
       $compress = @{
         Path = $path + '\*.*'
         CompressionLevel = 'Fastest'
         DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
       }
       Compress-Archive @compress
-    } else {
-      echo "##vso[task.setvariable variable=importEnvDataConfig]false"
     }
-  displayName: 'Get Configuration Migration Data from Repo'
+  displayName: 'Zip Configuration Migration Data from Repo'
   enabled: true
 
-- ${{ if eq('$(importCommonDataConfig)', 'true') }}:
-  - template: import-configuration-data.yml
-    parameters:
-      environmentName: '$(EnvironmentName)'
-      configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
+- template: import-configuration-data.yml
+  parameters:
+    environmentName: '$(EnvironmentName)'
+    configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
 
-- ${{ if eq('$(mportEnvDataConfig)', 'true') }}:
-  - template: import-configuration-data.yml
-    parameters:
-      environmentName: '$(EnvironmentName)'
-      configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
+- template: import-configuration-data.yml
+  parameters:
+    environmentName: '$(EnvironmentName)'
+    configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
