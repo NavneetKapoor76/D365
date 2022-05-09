@@ -132,6 +132,8 @@ steps:
         DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
       }
       Compress-Archive @compress
+    } else {
+      echo "##vso[task.setvariable variable=importCommonDataConfig]false"
     }
 
     $path = "$(Build.SourcesDirectory)\Configuration\$(EnvironmentName)\Data"
@@ -143,6 +145,8 @@ steps:
         DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
       }
       Compress-Archive @compress
+    } else {
+      echo "##vso[task.setvariable variable=importEnvDataConfig]false"
     }
   displayName: 'Get Configuration Migration Data from Repo'
   enabled: true
