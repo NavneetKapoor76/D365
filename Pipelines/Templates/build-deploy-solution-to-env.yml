@@ -71,6 +71,6 @@ stages:
     steps:
     - template: deploy-solution.yml
       parameters:
-        serviceConnection: '$(EnvironmentUrl)'
+        serviceConnection: 'https://$(TestEnvironmentName).crm4.dynamics.com/'
         importUnmanaged: false
         overwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
