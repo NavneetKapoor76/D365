@@ -17,7 +17,7 @@ parameters:
 stages:
 - stage: preBuild
   displayName: 'Align Dev with Git Repo' 
-  condition: eq(${{parameters.alignDev}}, true)
+  condition: false #eq(${{parameters.alignDev}}, true)
   jobs:
   - job: preBuild
     pool: 
@@ -34,7 +34,7 @@ stages:
 - stage: build
   displayName: 'Build'
   dependsOn: preBuild
-  condition: in(dependencies.preBuild.result, 'Succeeded', 'SucceededWithIssues', 'Skipped')
+  condition: false #in(dependencies.preBuild.result, 'Succeeded', 'SucceededWithIssues', 'Skipped')
   jobs:
   - job: build
     pool: 
