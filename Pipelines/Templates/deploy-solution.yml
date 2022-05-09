@@ -72,7 +72,6 @@ steps:
     AsyncOperation: true
     MaxAsyncWaitTime: 120
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
-  enabled: false
 
 - powershell: |
     $microsoftXrmDataPowerShellModule = '$(Microsoft_Xrm_Data_PowerShell)'
@@ -82,7 +81,6 @@ steps:
     Publish-CrmAllCustomization -conn $conn
   displayName: 'Publish All Customizations'
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
-  enabled: false
 
 # Only publish customizations for when importing unmanaged solutions into a dev environment.
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
