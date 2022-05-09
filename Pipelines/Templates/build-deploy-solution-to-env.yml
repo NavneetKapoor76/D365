@@ -17,7 +17,7 @@ parameters:
 stages:
 - stage: preBuild
   displayName: 'Align Dev with Git Repo' 
-  condition: false #eq(${{parameters.alignDev}}, true)
+  condition: eq(${{parameters.alignDev}}, true)
   jobs:
   - job: preBuild
     pool: 
@@ -34,7 +34,7 @@ stages:
 - stage: build
   displayName: 'Build'
   dependsOn: preBuild
-  condition: false #in(dependencies.preBuild.result, 'Succeeded', 'SucceededWithIssues', 'Skipped')
+  condition: in(dependencies.preBuild.result, 'Succeeded', 'SucceededWithIssues', 'Skipped')
   jobs:
   - job: build
     pool: 
@@ -44,10 +44,10 @@ stages:
       parameters:
         buildType: 'Unmanaged'
         mapCodeComponents: true
-- stage: deploy
-  displayName: 'Deploy'
+- stage: deployDev
+  displayName: 'Deploy to Dev'
   dependsOn: build
-  condition: and(in(dependencies.preBuild.result, 'Succeeded', 'SucceededWithIssues', 'Skipped'), in(dependencies.build.result, 'Succeeded', 'SucceededWithIssues', 'Skipped'))
+  condition: and(in(dependencies.build.result, 'Succeeded', 'SucceededWithIssues'), eq(${{parameters.alignDev}}, true))
   jobs:
   - job: deploy
     pool: 
@@ -59,3 +59,17 @@ stages:
         importUnmanaged: ${{parameters.importUnmanaged}}
         overwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
         skipBuildToolsInstaller: false
+- stage: deployTst
+  displayName: 'Deploy to Test'
+  dependsOn: deployDev
+  condition: in(dependencies.build.result, 'Succeeded', 'SucceededWithIssues')
+  jobs:
+  - job: deploy
+    pool: 
+      vmImage: 'windows-latest'
+    steps:
+    - template: deploy-solution.yml
+      parameters:
+        serviceConnection: '$(EnvironmentUrl)'
+        importUnmanaged: false
+        overwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
