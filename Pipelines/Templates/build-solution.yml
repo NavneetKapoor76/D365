@@ -71,32 +71,32 @@ steps:
         SolutionType: 'Unmanaged'
 - ${{ elseif eq(parameters.exportManaged, false) }}: # If we need to map the components then we use the solution packager
   - powershell: |
-   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-   $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
-   $targetNugetExe = ".\nuget.exe"
-   Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
-   Set-Alias nuget $targetNugetExe -Scope Global -Verbose
-   
-   ./nuget install  Microsoft.CrmSdk.CoreTools -O ./
-   $coreToolsFolder = Get-ChildItem ./ | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
-   move .\$coreToolsFolder\content\bin\coretools\*.* .\
-   Remove-Item .\$coreToolsFolder -Force -Recurse
-   .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+    $targetNugetExe = ".\nuget.exe"
+    Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
+    Set-Alias nuget $targetNugetExe -Scope Global -Verbose
+    
+    ./nuget install  Microsoft.CrmSdk.CoreTools -O ./
+    $coreToolsFolder = Get-ChildItem ./ | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
+    move .\$coreToolsFolder\content\bin\coretools\*.* .\
+    Remove-Item .\$coreToolsFolder -Force -Recurse
+    .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
   failOnStderr: true
   displayName: 'Pack Solutions using Solution Packager'
 - ${{ elseif ne(parameters.buildType, 'Managed')}}:
   - powershell: |
-  [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-  $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
-  $targetNugetExe = ".\nuget.exe"
-  Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
-  Set-Alias nuget $targetNugetExe -Scope Global -Verbose
-  
-  ./nuget install  Microsoft.CrmSdk.CoreTools -O ./
-  $coreToolsFolder = Get-ChildItem ./ | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
-  move .\$coreToolsFolder\content\bin\coretools\*.* .\
-  Remove-Item .\$coreToolsFolder -Force -Recurse
-  .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype 'Unmanaged' /errorlevel 'Warning' /map $(BuildMappingFile)
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+    $targetNugetExe = ".\nuget.exe"
+    Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
+    Set-Alias nuget $targetNugetExe -Scope Global -Verbose
+    
+    ./nuget install  Microsoft.CrmSdk.CoreTools -O ./
+    $coreToolsFolder = Get-ChildItem ./ | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
+    move .\$coreToolsFolder\content\bin\coretools\*.* .\
+    Remove-Item .\$coreToolsFolder -Force -Recurse
+    .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype 'Unmanaged' /errorlevel 'Warning' /map $(BuildMappingFile)
   failOnStderr: true
   displayName: 'Pack Unmanaged Solution using Solution Packager'
 
