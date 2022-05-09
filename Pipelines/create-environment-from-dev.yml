@@ -46,7 +46,7 @@ steps:
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Power Platform Tool Installer '
 
-- ${{ if eq(parameters.EnvironmentType, 'New + Solution') }}:
+- ${{ if or(eq(parameters.EnvironmentType, 'New + Solution'), eq(parameters.EnvironmentType, 'New + Solution + Data')) }}:
   - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.create-environment.PowerPlatformCreateEnvironment@0
     displayName: 'Power Platform Create Environment '
     inputs:
@@ -57,6 +57,16 @@ steps:
       LocationName: europe
       CurrencyName: EUR
       DomainName: ${{parameters.EnvironmentName}}
+  
+  - ${{ if eq(parameters.EnvironmentType, 'New + Solution + Data') }}:
+    - template: import-configuration-data.yml
+      parameters:
+        environmentName: ${{parameters.EnvironmentName}}
+        configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData.zip"
+    - template: import-configuration-data.yml
+      parameters:
+        environmentName: ${{parameters.EnvironmentName}}
+        configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip"
 
 - ${{ else }}:
   - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.copy-environment.PowerPlatformCopyEnvironment@0
