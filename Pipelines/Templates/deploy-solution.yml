@@ -83,7 +83,7 @@ steps:
   displayName: 'Publish All Customizations'
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
   enabled: false
-  
+
 # Only publish customizations for when importing unmanaged solutions into a dev environment.
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
   displayName: 'Power Platform Publish Customizations '
@@ -152,13 +152,13 @@ steps:
   displayName: 'Get Configuration Migration Data from Repo'
   enabled: true
 
-- ${{ if eq(variables['importCommonDataConfig'], 'true') }}:
+- ${{ if eq($(importCommonDataConfig), 'true') }}:
   - template: import-configuration-data.yml
     parameters:
       environmentName: '$(EnvironmentName)'
       configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
 
-- ${{ if eq(variables['importEnvDataConfig'], 'true') }}:
+- ${{ if eq($(mportEnvDataConfig), 'true') }}:
   - template: import-configuration-data.yml
     parameters:
       environmentName: '$(EnvironmentName)'
