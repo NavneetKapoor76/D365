@@ -6,6 +6,8 @@ parameters:
 
 steps:
 - powershell: |
+    Write-Host ${{parameters.configDataFile}}
+    Write-Host ${{parameters.environmentName}}
     $path = ${{parameters.configDataFile}}
     Write-Host $path
     if(Test-Path $path) {
