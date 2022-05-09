@@ -7,6 +7,10 @@ parameters:
   - Both
   - Managed
   - Unmanaged
+- name: exportManaged
+  displayName: Export managed solution (Instead of Packing)
+  type: boolean
+  default: false
 - name: mapCodeComponents
   displayName: Map Code Based Components from Git
   type: boolean
@@ -37,25 +41,36 @@ steps:
   displayName: 'Flatten JSON files'
   enabled: true
 
-#Pack the solution based on the build type parameter (Managed)
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
-  displayName: 'Pack Solutions (Managed)'
-  inputs:
-    SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
-    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion)_managed.zip'
-    SolutionType: ${{parameters.buildType}}
-  condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, false), eq('${{parameters.buildType}}', 'Managed'))
+#If we need to export the managed solution we do it here and then we take care of the other scenarios with Power Build Tools or Solution Packager
+- ${{ if and(eq(${{parameters.mapCodeComponents}}, false), eq(${{parameters.exportManaged}}, false), ne('${{parameters.buildType}}', 'Unmanaged')) }}:
+  - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.export-solution.PowerPlatformExportSolution@0
+    displayName: 'Export Managed Solution'
+    inputs:
+      authenticationType: PowerPlatformSPN
+      PowerPlatformSPN: '$(EnvironmentUrl)'
+      SolutionName: '$(SolutionName)'
+      SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion)_managed.zip'
+      Managed: true
 
-#Pack the solution based on the build type parameter (Unmanaged, Managed or Both)
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
-  displayName: 'Pack Solutions (Unmanaged and/or Managed)'
-  inputs:
-    SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
-    SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip'
-    SolutionType: ${{parameters.buildType}}
-  condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, false), ne('${{parameters.buildType}}', 'Managed'))
-
-- powershell: |
+#If no need to map the components then we use the normal packing feature from Power Build Tools
+- ${{ if eq(${{parameters.mapCodeComponents}}, false) }}:
+  #If no need to export the managed solution
+  - ${{ if eq(${{parameters.exportManaged}}, false) }}:
+    - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
+      displayName: 'Pack Solutions using Power Platform Build Tools'
+      inputs:
+        SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
+        SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion)_managed.zip'
+        SolutionType: ${{parameters.buildType}}
+  - ${{ else if ne('${{parameters.buildType}}', 'Managed') }}: #Export the managed solution instead of packing it from the source code
+    - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.pack-solution.PowerPlatformPackSolution@0
+      displayName: 'Pack Unmanaged Solution using Power Platform Build Tools'
+      inputs:
+        SolutionSourceFolder: $(Build.SourcesDirectory)\Solutions\$(SolutionName)
+        SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion)_managed.zip'
+        SolutionType: 'Unmanaged'
+- ${{ else if eq(${{parameters.exportManaged}}, false) }}: # If we need to map the components then we use the solution packager
+  - powershell: |
    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
    $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
    $targetNugetExe = ".\nuget.exe"
@@ -67,10 +82,23 @@ steps:
    move .\$coreToolsFolder\content\bin\coretools\*.* .\
    Remove-Item .\$coreToolsFolder -Force -Recurse
    .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype ${{parameters.buildType}} /errorlevel 'Warning' /map $(BuildMappingFile)
-
   failOnStderr: true
-  displayName: 'Pack Solution (solution packager)'
-  condition: and(succeeded(), eq(${{parameters.mapCodeComponents}}, true))
+  displayName: 'Pack Solutions using Solution Packager'
+- ${{ else if ne('${{parameters.buildType}}', 'Managed')}}:
+  - powershell: |
+  [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+  $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+  $targetNugetExe = ".\nuget.exe"
+  Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
+  Set-Alias nuget $targetNugetExe -Scope Global -Verbose
+  
+  ./nuget install  Microsoft.CrmSdk.CoreTools -O ./
+  $coreToolsFolder = Get-ChildItem ./ | Where-Object {$_.Name -match 'Microsoft.CrmSdk.CoreTools.'}
+  move .\$coreToolsFolder\content\bin\coretools\*.* .\
+  Remove-Item .\$coreToolsFolder -Force -Recurse
+  .\SolutionPackager.exe /action "Pack" /zipFile '$(Build.ArtifactStagingDirectory)\$(SolutionName)_$(SolutionVersion).zip' /folder $(UnpackedFolder) /packagetype 'Unmanaged' /errorlevel 'Warning' /map $(BuildMappingFile)
+  failOnStderr: true
+  displayName: 'Pack Unmanaged Solution using Solution Packager'
 
 - powershell: |
     if(Test-Path "$(Build.SourcesDirectory)\Configuration") {
