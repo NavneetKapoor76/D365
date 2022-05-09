@@ -7,8 +7,14 @@ parameters:
 steps:
 - powershell: |
     $path = "$(Pipeline.Workspace)/ConfigurationMigrationData-${{parameters.environmentName}}.zip"
-    Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
-    $microsoftConfigurationMigrationPowerShellModule = '$(Microsoft_Xrm_Tooling_ConfigurationMigration)'
-    Import-Module $microsoftConfigurationMigrationPowerShellModule -RequiredVersion $(configurationMigrationPowerShellVersion) -Force
-    Export-CrmDataFile -SchemaFile "${{parameters.configDataSchemaFile}}" -DataFile $path -CrmConnection "$(CdsBaseConnectionString)https://${{parameters.environmentName}}.crm4.dynamics.com/" -LogWriteDirectory "$(Pipeline.Workspace)" -Verbose
+    if(Test-Path $path) {
+      Write-Host "Export configuration data using schema file ${{parameters.configDataSchemaFile}}"
+      Write-Host "##vso[task.setvariable variable=ConfigurationMigrationFilePath]$path"
+      $microsoftConfigurationMigrationPowerShellModule = '$(Microsoft_Xrm_Tooling_ConfigurationMigration)'
+      Import-Module $microsoftConfigurationMigrationPowerShellModule -RequiredVersion $(configurationMigrationPowerShellVersion) -Force
+      Export-CrmDataFile -SchemaFile "${{parameters.configDataSchemaFile}}" -DataFile $path -CrmConnection "$(CdsBaseConnectionString)https://${{parameters.environmentName}}.crm4.dynamics.com/" -LogWriteDirectory "$(Pipeline.Workspace)" -Verbose
+    } else {
+      Write-Host "${{parameters.configDataSchemaFile}} was not found. Skip export of configuration data."
+    }
+    
   displayName: 'Export Configuration Data'
