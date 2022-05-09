@@ -10,9 +10,11 @@ parameters:
 - name: EnvironmentDisplayName
   displayName: Environment Display Name
   type: string
+  default: ''
 - name: EnvironmentName
   displayName: Environment Name
   type: string
+  default: ''
 - name: EnvironmentType
   displayName: Environment Copy Method
   type: string
@@ -25,6 +27,7 @@ parameters:
 - name: NewBranchName
   displayName: New Branch Name
   type: string
+  default: ''
 
 pool:
   name: Azure Pipelines
