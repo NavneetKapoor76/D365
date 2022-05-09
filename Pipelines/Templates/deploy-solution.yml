@@ -149,9 +149,9 @@ steps:
 - template: import-configuration-data.yml
   parameters:
     environmentName: '$(EnvironmentName)'
-    configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
+    configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData.zip"
 
 - template: import-configuration-data.yml
   parameters:
     environmentName: '$(EnvironmentName)'
-    configDataFile: '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
+    configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip"
