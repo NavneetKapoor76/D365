@@ -21,8 +21,9 @@ parameters:
   default: New + Solution
   values:
   - New + Solution
-  - New + Solution + Data
   - MinimalCopy
+  - New + Solution + Data
+  - MinimalCopy + Data
   - FullCopy
 - name: NewBranchName
   displayName: New Branch Name
@@ -59,11 +60,11 @@ steps:
       DomainName: ${{parameters.EnvironmentName}}
   
   - ${{ if eq(parameters.EnvironmentType, 'New + Solution + Data') }}:
-    - template: import-configuration-data.yml
+    - template: templates/import-configuration-data.yml
       parameters:
         environmentName: ${{parameters.EnvironmentName}}
         configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData.zip"
-    - template: import-configuration-data.yml
+    - template: templates/import-configuration-data.yml
       parameters:
         environmentName: ${{parameters.EnvironmentName}}
         configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip"
@@ -78,3 +79,15 @@ steps:
       CopyType: ${{parameters.EnvironmentType}}
       OverrideFriendlyName: true
       FriendlyName: ${{parameters.EnvironmentDisplayName}}
+  
+  - ${{ if eq(parameters.EnvironmentType, 'MinimalCopy + Data') }}:
+    - template: templates/import-configuration-data.yml
+      parameters:
+        environmentName: ${{parameters.EnvironmentName}}
+        configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData.zip"
+  
+  - ${{ if eq(parameters.EnvironmentType, 'FullCopy') }}:
+    - template: templates/import-configuration-data.yml
+      parameters:
+        environmentName: ${{parameters.EnvironmentName}}
+        configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip"
