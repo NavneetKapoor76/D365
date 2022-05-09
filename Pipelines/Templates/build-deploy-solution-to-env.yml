@@ -59,7 +59,6 @@ stages:
         serviceConnection: '$(EnvironmentUrl)'
         importUnmanaged: ${{parameters.importUnmanaged}}
         overwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
-        skipBuildToolsInstaller: false
 - stage: deployTst
   displayName: 'Deploy to Test'
   dependsOn: deployDev
