@@ -10,9 +10,6 @@ parameters:
 - name: overwriteUnmanagedCustomizations
   type: string
   default: 'true'
-- name: skipBuildToolsInstaller
-  type: string
-  default: 'false'
 
 steps:
 - script: |
@@ -22,7 +19,6 @@ steps:
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.tool-installer.PowerPlatformToolInstaller@0
   displayName: 'Install Power Platform Build Tools'
-  condition: and(succeeded(), eq('${{parameters.skipBuildToolsInstaller}}', 'false'))
 
 # Get the solution package from artifact uploaded by the build pipeline
 - task: DownloadPipelineArtifact@2
@@ -93,28 +89,12 @@ steps:
   retryCountOnTaskFailure: 3
   enabled: false
 
-- powershell: |
-    $managedSolutionPath = ''
-    $artifactDropPath = "$(Pipeline.Workspace)/buildPipeline/drop/"
-    #Attempt to find the managed solution in the build pipeline drop if build and deploy are seperate pipelines
-    Get-ChildItem -Path "$(ArtifactDropPath)" -Filter "$(SolutionName)*.zip" | 
-    ForEach-Object {
-        If ($_.FullName.Contains("_managed")) 
-        { 
-            $managedSolutionPath = $_.FullName 
-        }
-    }
-    Write-Host "##vso[task.setVariable variable=ManagedSolutionPath]$managedSolutionPath"
-  displayName: 'Get managed solution zip path'
-  condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
-
-# If the TriggerSolutionUpgrade variable is false, then import the solution as an Update
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.import-solution.PowerPlatformImportSolution@0
   displayName: 'Import Managed Solution as Update'
   inputs:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
-    SolutionInputFile: $(ManagedSolutionPath)
+    SolutionInputFile: '$(ArtifactDropPath)/$(SolutionName)_$(SolutionVersion)_managed.zip'
     PublishWorkflows: true
     OverwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
     UseDeploymentSettingsFile: $(UseDeploymentSettings)
