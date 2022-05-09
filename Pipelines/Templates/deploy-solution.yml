@@ -42,17 +42,6 @@ steps:
   parameters:
     environmentName: $(EnvironmentName)
 
-  # Only publish customizations for when importing unmanaged solutions into a dev environment.
-- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
-  displayName: 'Power Platform Publish Customizations '
-  inputs:
-    authenticationType: PowerPlatformSPN
-    PowerPlatformSPN: '${{parameters.serviceConnection}}'
-  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
-  timeoutInMinutes: 20
-  retryCountOnTaskFailure: 3
-  enabled: false
-
 # Set pipeline vars for tools paths.
 - ${{ if eq(parameters.importUnmanaged, 'true') }}:
   - template: set-tools-paths.yml
@@ -93,6 +82,18 @@ steps:
     Publish-CrmAllCustomization -conn $conn
   displayName: 'Publish All Customizations'
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
+  enabled: false
+  
+# Only publish customizations for when importing unmanaged solutions into a dev environment.
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
+  displayName: 'Power Platform Publish Customizations '
+  inputs:
+    authenticationType: PowerPlatformSPN
+    PowerPlatformSPN: '${{parameters.serviceConnection}}'
+  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
+  timeoutInMinutes: 20
+  retryCountOnTaskFailure: 3
+  enabled: false
 
 - powershell: |
     $managedSolutionPath = ''
