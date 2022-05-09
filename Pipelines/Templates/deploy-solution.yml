@@ -42,9 +42,8 @@ steps:
   parameters:
     environmentName: $(EnvironmentName)
 
-- ${{ if eq('${{parameters.importUnmanaged}}', 'true') }}:
-  # If called from import-unmanaged-to-dev-environment.yml, this task will run to deploy an unmanaged solution
-  - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.import-solution.PowerPlatformImportSolution@0
+# If called from import-unmanaged-to-dev-environment.yml, this task will run to deploy an unmanaged solution
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.import-solution.PowerPlatformImportSolution@0
   displayName: 'Import Unmanaged Solution'
   inputs:
     authenticationType: PowerPlatformSPN
@@ -55,40 +54,45 @@ steps:
     DeploymentSettingsFile: $(DeploymentSettingsPath)
     AsyncOperation: true
     MaxAsyncWaitTime: 120
+  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
   enabled: false
 
   # Only publish customizations for when importing unmanaged solutions into a dev environment.
-  - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.publish-customizations.PowerPlatformPublishCustomizations@0
   displayName: 'Power Platform Publish Customizations '
   inputs:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
+  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
   timeoutInMinutes: 20
   retryCountOnTaskFailure: 3
   enabled: false
 
-  # Set pipeline vars for tools paths.
+# Set pipeline vars for tools paths.
+- ${{ if eq('${{parameters.importUnmanaged}}', 'true') }}:
   - template: set-tools-paths.yml
 
-  # Restore PowerShell Module dependencies if available in cache
-  # https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops
-  - task: Cache@2
-    displayName: Cache Powershell Modules
-    inputs:
-      key:  restoremodules | "$(powerPlatformToolsSubPath)" | $(Build.SourcesDirectory)/Pipelines/Templates/install-powershell-modules.yml
-      path: $(powerPlatformToolsPath)
-      cacheHitVar: powerPlatformToolsPath_IsCached
+# Restore PowerShell Module dependencies if available in cache
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops
+- task: Cache@2
+  displayName: Cache Powershell Modules
+  inputs:
+    key:  restoremodules | "$(powerPlatformToolsSubPath)" | $(Build.SourcesDirectory)/Pipelines/Templates/install-powershell-modules.yml
+    path: $(powerPlatformToolsPath)
+    cacheHitVar: powerPlatformToolsPath_IsCached
+  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
 
-  - ${{ if ne(variables.powerPlatformToolsPath_IsCached, 'true') }}:
-    - template: install-powershell-modules.yml
+- ${{ if and(eq('${{parameters.importUnmanaged}}', 'true'), ne(variables.powerPlatformToolsPath_IsCached, 'true')) }}:
+  - template: install-powershell-modules.yml
 
-  - powershell: |
-      $microsoftXrmDataPowerShellModule = '$(Microsoft_Xrm_Data_PowerShell)'
-      Import-Module $microsoftXrmDataPowerShellModule -Force -RequiredVersion $(XrmDataPowerShellVersion) -ArgumentList @{ NonInteractive = $true }
-      $conn = Get-CrmConnection -ConnectionString "$(CdsBaseConnectionString)${{parameters.serviceConnection}}"
-      Write-Host "Publish customizations using PowerShell CmdLet (to be removed when timeout issue is fixed on Power Build Tools)"
-      Publish-CrmAllCustomization -conn $conn
-    displayName: 'Publish All Customizations'
+- powershell: |
+    $microsoftXrmDataPowerShellModule = '$(Microsoft_Xrm_Data_PowerShell)'
+    Import-Module $microsoftXrmDataPowerShellModule -Force -RequiredVersion $(XrmDataPowerShellVersion) -ArgumentList @{ NonInteractive = $true }
+    $conn = Get-CrmConnection -ConnectionString "$(CdsBaseConnectionString)${{parameters.serviceConnection}}"
+    Write-Host "Publish customizations using PowerShell CmdLet (to be removed when timeout issue is fixed on Power Build Tools)"
+    Publish-CrmAllCustomization -conn $conn
+  displayName: 'Publish All Customizations'
+  condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
 
 - powershell: |
     $managedSolutionPath = ''
