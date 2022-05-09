@@ -15,4 +15,4 @@ steps:
     } else {
       Write-Host "${{parameters.configDataFile}} was not found. Skip import."
     }
-  displayName: 'Export Configuration Data'
+  displayName: 'Import Configuration Data'
