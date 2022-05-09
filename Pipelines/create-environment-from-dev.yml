@@ -37,11 +37,6 @@ variables:
 - group: "dev-scope"
 - group: "project-scope"
 
-resources:
-  repositories:
-  - repository: self
-    type: git
-
 steps:
 - script: |
    git checkout -b ${{parameters.NewBranchName}} sprint
