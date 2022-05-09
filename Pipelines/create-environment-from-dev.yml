@@ -58,7 +58,17 @@ steps:
       LocationName: europe
       CurrencyName: EUR
       DomainName: ${{parameters.EnvironmentName}}
-  
+
+  # Export both unmanaged and managed to put into source control
+  - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.export-solution.PowerPlatformExportSolution@0
+    displayName: 'Export Unmanaged Solution'
+    inputs:
+      authenticationType: PowerPlatformSPN
+      PowerPlatformSPN: '$(EnvironmentUrl)'
+      SolutionName: '$(SolutionName)'
+      SolutionOutputFile: '$(Build.ArtifactStagingDirectory)\$(SolutionName).zip'
+    condition: succeeded()
+
   - ${{ if eq(parameters.EnvironmentType, 'New + Solution + Data') }}:
     - template: templates/import-configuration-data.yml
       parameters:
