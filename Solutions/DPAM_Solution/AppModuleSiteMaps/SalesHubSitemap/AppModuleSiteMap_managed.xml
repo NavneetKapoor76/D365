@@ -195,7 +195,53 @@
         </SubArea>
         <SubArea IntroducedVersion="9.0.0" Icon="$webresource:Sales/_imgs/saleAdminSetting/GsChatCollabIcon.svg" VectorIcon="$webresource:Sales/_imgs/saleAdminSetting/GsChatCollabIcon.svg" Id="TeamsMeetings" Url="/main.aspx?pagetype=control&amp;controlName=MscrmControls.TeamsMeetingIntegrationAdmin.TeamsMeetingIntegrationAdmin" AvailableOffline="false" PassParams="true" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" ordinalvalue="5" solutionaction="Modified" />
         <SubArea Id="LinkedinIntegration" DescriptionResourceId="PDF_Generation_Settings_Dsc" VectorIcon="$webresource:Sales/_imgs/saleAdminSetting/GsLinkedInIcon.svg" Icon="/WebResources/Sales/_imgs/saleAdminSetting/GsLinkedInIcon.svg" Url="/main.aspx?pagetype=control&amp;controlName=MscrmControls.FieldControls.CCFadminsettings&amp;data={&quot;id&quot;:&quot;overview&quot;,&quot;ismanage&quot;:&quot;li&quot;}" IntroducedVersion="9.0.0" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="false" PassParams="true" Sku="All,OnPremise,Live,SPLA" ordinalvalue="4" solutionaction="Modified" />
-        <SubArea IntroducedVersion="9.0.0" Icon="$webresource:Sales/_imgs/saleAdminSetting/GsAnalyticsIcon.svg" VectorIcon="$webresource:Sales/_imgs/saleAdminSetting/GsAnalyticsIcon.svg" Id="SalesReporting" Url="/main.aspx?pagetype=control&amp;controlName=MscrmControls.FieldControls.CCFadminsettings&amp;data={&quot;id&quot;:&quot;overview&quot;,&quot;ismanage&quot;:&quot;srep&quot;}" DescriptionResourceId="PDF_Generation_Settings_Dsc" AvailableOffline="false" PassParams="true" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" ordinalvalue="7" solutionaction="Modified" />
+        <SubArea IntroducedVersion="9.0.0" Icon="$webresource:Sales/_imgs/saleAdminSetting/GsAnalyticsIcon.svg" VectorIcon="$webresource:Sales/_imgs/saleAdminSetting/GsAnalyticsIcon.svg" Id="SalesReporting" Url="/main.aspx?pagetype=control&amp;controlName=MscrmControls.FieldControls.CCFadminsettings&amp;data={&quot;id&quot;:&quot;overview&quot;,&quot;ismanage&quot;:&quot;srep&quot;}" DescriptionResourceId="PDF_Generation_Settings_Dsc" AvailableOffline="false" PassParams="true" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" ordinalvalue="7" solutionaction="Modified">
+          <Titles>
+            <Title LCID="1025" Title="Sales usage reports" ordinalvalue="1" solutionaction="Modified" />
+            <Title LCID="1026" Title="Sales usage reports" ordinalvalue="2" solutionaction="Modified" />
+            <Title LCID="1027" Title="Sales usage reports" ordinalvalue="3" solutionaction="Modified" />
+            <Title LCID="1029" Title="Sales usage reports" ordinalvalue="4" solutionaction="Modified" />
+            <Title LCID="1030" Title="Sales usage reports" ordinalvalue="5" solutionaction="Modified" />
+            <Title LCID="1031" Title="Sales usage reports" ordinalvalue="6" solutionaction="Modified" />
+            <Title LCID="1032" Title="Sales usage reports" ordinalvalue="7" solutionaction="Modified" />
+            <Title LCID="1061" Title="Sales usage reports" ordinalvalue="9" solutionaction="Modified" />
+            <Title LCID="1069" Title="Sales usage reports" ordinalvalue="10" solutionaction="Modified" />
+            <Title LCID="1035" Title="Sales usage reports" ordinalvalue="11" solutionaction="Modified" />
+            <Title LCID="1036" Title="Sales usage reports" ordinalvalue="12" solutionaction="Modified" />
+            <Title LCID="1110" Title="Sales usage reports" ordinalvalue="13" solutionaction="Modified" />
+            <Title LCID="1037" Title="Sales usage reports" ordinalvalue="14" solutionaction="Modified" />
+            <Title LCID="1081" Title="Sales usage reports" ordinalvalue="15" solutionaction="Modified" />
+            <Title LCID="1050" Title="Sales usage reports" ordinalvalue="16" solutionaction="Modified" />
+            <Title LCID="1038" Title="Sales usage reports" ordinalvalue="17" solutionaction="Modified" />
+            <Title LCID="1057" Title="Sales usage reports" ordinalvalue="18" solutionaction="Modified" />
+            <Title LCID="1040" Title="Sales usage reports" ordinalvalue="19" solutionaction="Modified" />
+            <Title LCID="1041" Title="Sales usage reports" ordinalvalue="20" solutionaction="Modified" />
+            <Title LCID="1087" Title="Sales usage reports" ordinalvalue="21" solutionaction="Modified" />
+            <Title LCID="1042" Title="Sales usage reports" ordinalvalue="22" solutionaction="Modified" />
+            <Title LCID="1063" Title="Sales usage reports" ordinalvalue="23" solutionaction="Modified" />
+            <Title LCID="1062" Title="Sales usage reports" ordinalvalue="24" solutionaction="Modified" />
+            <Title LCID="1086" Title="Sales usage reports" ordinalvalue="25" solutionaction="Modified" />
+            <Title LCID="1044" Title="Sales usage reports" ordinalvalue="26" solutionaction="Modified" />
+            <Title LCID="1043" Title="Sales usage reports" ordinalvalue="27" solutionaction="Modified" />
+            <Title LCID="1045" Title="Sales usage reports" ordinalvalue="28" solutionaction="Modified" />
+            <Title LCID="1046" Title="Sales usage reports" ordinalvalue="29" solutionaction="Modified" />
+            <Title LCID="2070" Title="Sales usage reports" ordinalvalue="30" solutionaction="Modified" />
+            <Title LCID="1048" Title="Sales usage reports" ordinalvalue="31" solutionaction="Modified" />
+            <Title LCID="1049" Title="Sales usage reports" ordinalvalue="32" solutionaction="Modified" />
+            <Title LCID="1051" Title="Sales usage reports" ordinalvalue="33" solutionaction="Modified" />
+            <Title LCID="1060" Title="Sales usage reports" ordinalvalue="34" solutionaction="Modified" />
+            <Title LCID="10266" Title="Sales usage reports" ordinalvalue="35" solutionaction="Modified" />
+            <Title LCID="9242" Title="Sales usage reports" ordinalvalue="36" solutionaction="Modified" />
+            <Title LCID="1053" Title="Sales usage reports" ordinalvalue="37" solutionaction="Modified" />
+            <Title LCID="1054" Title="Sales usage reports" ordinalvalue="38" solutionaction="Modified" />
+            <Title LCID="1055" Title="Sales usage reports" ordinalvalue="39" solutionaction="Modified" />
+            <Title LCID="1058" Title="Sales usage reports" ordinalvalue="40" solutionaction="Modified" />
+            <Title LCID="1066" Title="Sales usage reports" ordinalvalue="41" solutionaction="Modified" />
+            <Title LCID="2052" Title="Sales usage reports" ordinalvalue="42" solutionaction="Modified" />
+            <Title LCID="3076" Title="Sales usage reports" ordinalvalue="43" solutionaction="Modified" />
+            <Title LCID="1028" Title="Sales usage reports" ordinalvalue="44" solutionaction="Modified" />
+          </Titles>
+        </SubArea>
         <SubArea Id="TeamsCallsIntegration" VectorIcon="$webresource:Sales/_imgs/saleAdminSetting/GsTeamsCallsIcon.svg" Icon="/WebResources/Sales/_imgs/saleAdminSetting/GsTeamsCallsIcon.svg" Url="/main.aspx?pagetype=control&amp;controlName=MscrmControls.TeamsDialerSettings.DialerSettingsHostControl&amp;data={&quot;id&quot;:&quot;overview&quot;,&quot;ismanage&quot;:&quot;tc&quot;}" IntroducedVersion="9.0.0" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="false" PassParams="true" Sku="All,OnPremise,Live,SPLA" ordinalvalue="6" solutionaction="Modified">
           <Titles>
             <Title LCID="1051" Title="Hovory v službe Teams (verzia Preview)" ordinalvalue="33" solutionaction="Modified" />

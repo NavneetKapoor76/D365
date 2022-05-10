@@ -170,6 +170,7 @@
   <EntityRelationship Name="lk_dpam_shareclass_modifiedby" />
   <EntityRelationship Name="lk_task_createdby" />
   <EntityRelationship Name="msdyn_customerasset_Tasks" />
+  <EntityRelationship Name="msdyn_insightsid_salesaccelerationinsights" />
   <EntityRelationship Name="msdyn_msdyn_functionallocation_account" />
   <EntityRelationship Name="msdyn_msdyn_segment_account" />
   <EntityRelationship Name="msdyn_msdyn_segment_contact" />

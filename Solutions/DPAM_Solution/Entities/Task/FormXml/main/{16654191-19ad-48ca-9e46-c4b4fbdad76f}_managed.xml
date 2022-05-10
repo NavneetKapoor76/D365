@@ -128,7 +128,7 @@
         </rows>
       </header>
       <footer id="{f6956892-91e2-472b-83df-661ffa369e01}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows />
       </footer>
       <Navigation solutionaction="Added">
         <NavBar />

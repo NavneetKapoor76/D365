@@ -77,10 +77,10 @@
         </tab>
       </tabs>
       <header id="{9188d4f0-126d-4781-a245-af06b415fe2e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows />
       </header>
       <footer id="{3f6847ef-3c22-404f-a140-363f692cbd63}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows></rows>
+        <rows />
       </footer>
       <DisplayConditions FallbackForm="true" Order="0" solutionaction="Added">
         <Everyone />
