@@ -42,7 +42,7 @@ steps:
   enabled: true
 
 #If we need to export the managed solution we do it here and then we take care of the other scenarios with Power Build Tools or Solution Packager
-- ${{ if and(eq(parameters.mapCodeComponents, false), eq(parameters.exportManaged, false), ne(parameters.buildType, 'Unmanaged')) }}:
+- ${{ if and(eq(parameters.exportManaged, true), ne(parameters.buildType, 'Unmanaged')) }}:
   - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.export-solution.PowerPlatformExportSolution@0
     displayName: 'Export Managed Solution'
     inputs:
