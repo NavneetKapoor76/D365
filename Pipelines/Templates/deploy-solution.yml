@@ -68,6 +68,7 @@ steps:
     AsyncOperation: true
     MaxAsyncWaitTime: 120
   condition: and(succeeded(), eq('${{parameters.importUnmanaged}}', 'true'))
+  enabled: false
 
 - powershell: |
     $microsoftXrmDataPowerShellModule = '$(Microsoft_Xrm_Data_PowerShell)'
