@@ -643,6 +643,12 @@
         <Dependent type="62" schemaName="msdyncrm_MarketingSMBApp" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="1" schemaName="msdyn_dealmanageraccess" displayName="dealmanageraccess" solution="msdynce_DealManager (9.0.220405.13)">
+          <package>msdynce_SalesInsightsAnchor (9.0.22042.10020)</package>
+        </Required>
+        <Dependent type="62" schemaName="SalesHubSitemap" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="1" schemaName="msdyn_forecastconfiguration" displayName="Forecast Configuration" solution="msdyn_Forecasting (9.0.22042.10000)">
           <package>msdyn_SalesIntegrationsAddOns (9.0.22042.10003)</package>
         </Required>
@@ -3147,7 +3153,7 @@
         <Required type="2" schemaName="msdyncrm_marketingformid" displayName="Source form" parentSchemaName="contact" parentDisplayName="Contact" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
-        <Dependent type="10" schemaName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" displayName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" parentSchemaName="contact" parentDisplayName="Contact" />
+        <Dependent type="10" schemaName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" displayName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" parentSchemaName="contact" parentDisplayName="Contact" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="msdyncrm_marketingpageid" displayName="Source landing page" parentSchemaName="contact" parentDisplayName="Contact" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
@@ -3195,7 +3201,7 @@
         <Required type="2" schemaName="msgdpr_consentchangesourceformid" displayName="consent change source form Id" parentSchemaName="contact" parentDisplayName="Contact" solution="MicrosoftDynamics_MktConsentManagement (1.82.2016.0)">
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
-        <Dependent type="10" schemaName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" displayName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" parentSchemaName="contact" parentDisplayName="Contact" />
+        <Dependent type="10" schemaName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" displayName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" parentSchemaName="contact" parentDisplayName="Contact" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="msgdpr_donottrack" displayName="Do not track" parentSchemaName="contact" parentDisplayName="Contact" solution="MicrosoftDynamics_MktConsentManagement (1.82.2016.0)">
@@ -4831,7 +4837,7 @@
         <Required type="2" schemaName="msdyncrm_marketingformid" displayName="Marketing form" parentSchemaName="msdyncrm_marketingform" parentDisplayName="Marketing form" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
           <package>MicrosoftDynamics_MktCompleteAnchorSolution (1.82.2016.0)</package>
         </Required>
-        <Dependent type="10" schemaName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" displayName="msdyncrm_msdyncrm_marketingform_contact_marketingformid" parentSchemaName="contact" parentDisplayName="Contact" />
+        <Dependent type="10" schemaName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" displayName="msgdpr_msdyncrm_marketingform_contact_consentchangesourceformId" parentSchemaName="contact" parentDisplayName="Contact" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="msdyncrm_name" displayName="Name" parentSchemaName="msdyncrm_marketingform" parentDisplayName="Marketing form" solution="MicrosoftDynamics_Marketing (1.82.2016.0)">
