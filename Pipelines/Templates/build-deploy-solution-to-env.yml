@@ -73,3 +73,5 @@ stages:
         serviceConnection: 'https://$(TestEnvironmentName).crm4.dynamics.com/'
         importUnmanaged: false
         overwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
+        importCommonData: true
+        importEnvSpecificData: true
