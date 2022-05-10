@@ -6,10 +6,16 @@ parameters:
   type: string
 - name: importUnmanaged
   type: string
-  default: 'false'
+  default: false
 - name: overwriteUnmanagedCustomizations
   type: string
-  default: 'true'
+  default: true
+- name: importCommonData
+  type: string
+  default: false
+- name: importEnvSpecificData
+  type: string
+  default: false
 
 steps:
 - script: |
@@ -102,35 +108,38 @@ steps:
     DeploymentSettingsFile: $(DeploymentSettingsPath)
   condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
 
-- powershell: |
-    $path = "$(Build.SourcesDirectory)\Configuration\_common\Data"
-    if(Test-Path $path) {
-      $compress = @{
-        Path = $path + '\*.*'
-        CompressionLevel = 'Fastest'
-        DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
+- ${{ if or(eq(parameters.importCommonData, true), eq(parameters.importEnvSpecificData, true)) }}
+  - powershell: |
+      $path = "$(Build.SourcesDirectory)\Configuration\_common\Data"
+      if(Test-Path $path) {
+        $compress = @{
+          Path = $path + '\*.*'
+          CompressionLevel = 'Fastest'
+          DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData.zip'
+        }
+        Compress-Archive @compress
       }
-      Compress-Archive @compress
-    }
 
-    $path = "$(Build.SourcesDirectory)\Configuration\$(EnvironmentName)\Data"
-    if(Test-Path $path) {
-      $compress = @{
-        Path = $path + '\*.*'
-        CompressionLevel = 'Fastest'
-        DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
+      $path = "$(Build.SourcesDirectory)\Configuration\$(EnvironmentName)\Data"
+      if(Test-Path $path) {
+        $compress = @{
+          Path = $path + '\*.*'
+          CompressionLevel = 'Fastest'
+          DestinationPath = '$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip'
+        }
+        Compress-Archive @compress
       }
-      Compress-Archive @compress
-    }
-  displayName: 'Zip Configuration Migration Data from Repo'
-  enabled: true
+    displayName: 'Zip Configuration Migration Data from Repo'
+    enabled: true
 
-- template: import-configuration-data.yml
-  parameters:
-    environmentName: '$(EnvironmentName)'
-    configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData.zip"
+- ${{ if eq(parameters.importCommonData, true) }}
+  - template: import-configuration-data.yml
+    parameters:
+      environmentName: '$(EnvironmentName)'
+      configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData.zip"
 
-- template: import-configuration-data.yml
-  parameters:
-    environmentName: '$(EnvironmentName)'
-    configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip"
+- ${{ if eq(parameters.importEnvSpecificData, true) }}
+  - template: import-configuration-data.yml
+    parameters:
+      environmentName: '$(EnvironmentName)'
+      configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData-$(EnvironmentName).zip"
