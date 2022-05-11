@@ -5,7 +5,7 @@ name: 1.0.$(Date:yyyyMMdd)$(Rev:.r)
 
 parameters:
 - name: alignDev
-  displayName: Align Repo <-> Dev Environment
+  displayName: "Align Repo <-> Dev Environment"
   type: boolean
   default: false
 
