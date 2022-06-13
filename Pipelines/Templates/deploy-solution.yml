@@ -108,7 +108,7 @@ steps:
     DeploymentSettingsFile: $(DeploymentSettingsPath)
   condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
 
-- ${{ if or(eq(parameters.importCommonData, true), eq(parameters.importEnvSpecificData, true)) }}
+- ${{ if or(eq(parameters.importCommonData, true), eq(parameters.importEnvSpecificData, true)) }}:
   - powershell: |
       $path = "$(Build.SourcesDirectory)\Configuration\_common\Data"
       if(Test-Path $path) {
@@ -132,13 +132,13 @@ steps:
     displayName: 'Zip Configuration Migration Data from Repo'
     enabled: true
 
-- ${{ if eq(parameters.importCommonData, true) }}
+- ${{ if eq(parameters.importCommonData, true) }}:
   - template: import-configuration-data.yml
     parameters:
       environmentName: '$(EnvironmentName)'
       configDataFile: "$(Build.ArtifactStagingDirectory)/ConfigData.zip"
 
-- ${{ if eq(parameters.importEnvSpecificData, true) }}
+- ${{ if eq(parameters.importEnvSpecificData, true) }}:
   - template: import-configuration-data.yml
     parameters:
       environmentName: '$(EnvironmentName)'
