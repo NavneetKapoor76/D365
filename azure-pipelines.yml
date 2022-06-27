@@ -18,4 +18,4 @@ steps:
     azureSubscription: 'Azure Service connection - Non Production'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az group create --name Testrg'
+    inlineScript: 'az group create --location westeurope --name Testrg'
