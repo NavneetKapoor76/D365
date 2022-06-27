@@ -32,7 +32,7 @@ steps:
 
 - task: AzureFunctionApp@1
   inputs:
-    azureSubscription: 'Non-Production (92def687-7728-4372-92db-540822a0e6b7)'
+    azureSubscription: 'Azure Service connection - Non Production'
     appType: 'functionApp'
     appName: 'azdbdpeuw-func-sherlock-001'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
