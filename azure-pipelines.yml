@@ -10,7 +10,7 @@ pool:
   vmImage: windows-latest
 
 steps:
-- script: echo Hello, world!
+- script: echo Create Resource Group
   displayName: 'Run a one-line script'
 
 - task: AzureCLI@2
