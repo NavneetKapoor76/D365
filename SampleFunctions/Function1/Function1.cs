@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
 
-namespace MessageSender.Function
+namespace azdbdpeuw-func-sherlock-001.Function
 {
     public static class Function1
     {
