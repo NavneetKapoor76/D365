@@ -29,15 +29,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-
-- task: AzureFunctionApp@1
-  inputs:
-    azureSubscription: 'Non-Production (92def687-7728-4372-92db-540822a0e6b7)'
-    appType: 'functionApp'
-    appName: 'azdbdpeuw-func-sherlock-001'
-    deployToSlotOrASE: true
-    resourceGroupName: 'azdbdpeuw-rg-sherlock001'
-    slotName: 'production'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    appSettings: '-Environment "Dev"'
-    deploymentMethod: 'auto'
