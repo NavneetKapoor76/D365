@@ -13,7 +13,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/SampleAzureFunctions/*.csproj'
+    projects: '**/SampleAzureFunctions/**/*.csproj'
     arguments: '--output $(Build.BinariesDirectory)/publish_output --configuration Release'
 
 - task: ArchiveFiles@2
