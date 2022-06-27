@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
 
-namespace azdbdpeuwfunc
+namespace azdbdpeuw-func-sherlock-001
 {
     public static class Function1
     {
