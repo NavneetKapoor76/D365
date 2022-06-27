@@ -1,0 +1,26 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+https://.azurewebsites.net
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "azdbdpeuw-func-sherlock-001", "azdbdpeuw-func-sherlock-001\azdbdpeuw-func-sherlock-001.csproj", "{464BCD9B-CE06-4A26-9BE6-F806F0A766EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{464BCD9B-CE06-4A26-9BE6-F806F0A766EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464BCD9B-CE06-4A26-9BE6-F806F0A766EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464BCD9B-CE06-4A26-9BE6-F806F0A766EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464BCD9B-CE06-4A26-9BE6-F806F0A766EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38D5621A-D214-491E-AF3A-04FBD8DF6295}
+	EndGlobalSection
+EndGlobal
