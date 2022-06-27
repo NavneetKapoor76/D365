@@ -109,7 +109,7 @@ steps:
     DeploymentSettingsFile: $(DeploymentSettingsPath)
   condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
 
-  - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.apply-solution-upgrade.PowerPlatformApplySolutionUpgrade@0
+- task: microsoft-IsvExpTools.PowerPlatform-BuildTools.apply-solution-upgrade.PowerPlatformApplySolutionUpgrade@0
   inputs:
     authenticationType: 'PowerPlatformSPN'
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
