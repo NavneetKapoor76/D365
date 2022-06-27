@@ -97,15 +97,24 @@ steps:
   enabled: false
 
 - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.import-solution.PowerPlatformImportSolution@0
-  displayName: 'Import Managed Solution as Update'
+  displayName: 'Import Managed Solution as Upgrade'
   inputs:
     authenticationType: PowerPlatformSPN
     PowerPlatformSPN: '${{parameters.serviceConnection}}'
     SolutionInputFile: '$(ArtifactDropPath)/$(SolutionName)_$(SolutionVersion)_managed.zip'
     PublishWorkflows: true
+    HoldingSolution: true
     OverwriteUnmanagedCustomizations: ${{parameters.overwriteUnmanagedCustomizations}}
     UseDeploymentSettingsFile: $(UseDeploymentSettings)
     DeploymentSettingsFile: $(DeploymentSettingsPath)
+  condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
+
+  - task: microsoft-IsvExpTools.PowerPlatform-BuildTools.apply-solution-upgrade.PowerPlatformApplySolutionUpgrade@0
+  inputs:
+    authenticationType: 'PowerPlatformSPN'
+    PowerPlatformSPN: '${{parameters.serviceConnection}}'
+    SolutionName: '$(SolutionName)'
+    AsyncOperation: true
   condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
 
 - ${{ if or(eq(parameters.importCommonData, true), eq(parameters.importEnvSpecificData, true)) }}:
