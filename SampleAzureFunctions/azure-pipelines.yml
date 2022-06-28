@@ -4,7 +4,7 @@ steps:
 
 - script: |
     dotnet restore
-    dotnet build **/SampleAzureFunctions/**/*.sln --configuration Release
+    dotnet build --configuration Release
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
