@@ -4,7 +4,7 @@ trigger:
 variables:
   # Azure service connection established during pipeline creation
   azureSubscription: 'Azure Service connection - Non Production'
-  appName: 'azdbdpeuw-func-sherlock-001'
+  appName: 'azdtdpeuw-func-sherlock-001'
   # Agent VM image name
   vmImageName: 'windows-latest'
 steps:
