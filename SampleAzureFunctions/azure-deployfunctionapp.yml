@@ -6,16 +6,11 @@ variables:
   azureSubscription: 'Azure Service connection - Non Production'
   appName: 'azdbdpeuw-func-sherlock-001'
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
-
-- task: AzureFunctionApp@1 # Add this at the end of your file
+  vmImageName: 'windows-latest'
+- task: AzureFunctionApp@1
   inputs:
-    azureSubscription: $(azureSubscription)
-    appType: functionApp # default is functionApp
+    azureSubscription: 'Azure Service connection - Non Production'
+    appType: 'functionApp'
     appName: $(appName)
-    package: $(System.ArtifactsDirectory)/**/*.zip
-    #Uncomment the next lines to deploy to a deployment slot
-    #Note that deployment slots is not supported for Linux Dynamic SKU
-    #deployToSlotOrASE: true
-    #resourceGroupName: '<Resource Group Name>'
-    #slotName: '<Slot name>'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
