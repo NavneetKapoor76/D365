@@ -4,14 +4,14 @@ trigger:
 variables:
   # Azure service connection established during pipeline creation
   azureSubscription: 'Azure Service connection - Non Production'
-  appName: 'azdtdpeuw-func-sherlock-001'
+  appName: 'azabdp-sc-main-001'
   # Agent VM image name
   vmImageName: 'windows-latest'
 steps:
 - task: AzureFunctionApp@1
   inputs:
-    azureSubscription: 'Azure Service connection - Non Production'
+    azureSubscription: 'azabdp-sc-main-001'
     appType: 'functionApp'
-    appName: $(appName)
+    appName: 'azdbdpeuw-func-sherlock-006'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
