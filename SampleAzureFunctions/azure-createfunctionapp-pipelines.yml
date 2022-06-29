@@ -18,7 +18,7 @@ steps:
     azureSubscription: 'azabdp-sc-main-001'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az storage account create --name azdbdpeuw-rg-sherlock006 --resource-group azdbdpeuw-rg-sherlock006 --location westeurope --sku Standard_RAGRS --kind StorageV2 --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
+    inlineScript: 'az storage account create --name azdbdpeuwstsherlock006 --resource-group azdbdpeuw-rg-sherlock006 --location westeurope --sku Standard_RAGRS --kind StorageV2 --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
 
 - task: AzureCLI@2
   inputs:
