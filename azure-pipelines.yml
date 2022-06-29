@@ -18,4 +18,4 @@ steps:
     azureSubscription: 'azabdp-sc-main-001'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az group create --location westeurope --name azdbdpeuw-rg-sherlock006--tags Region=EUW Environment=Dev CostCenter=TBD CostResponsible=TBD Country=TBD'
+    inlineScript: 'az group create --location westeurope --name azdbdpeuw-rg-sherlock006--tags Region=EUW Environment=DEV'
