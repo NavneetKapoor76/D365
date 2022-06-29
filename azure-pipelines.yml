@@ -15,7 +15,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Azure Service connection - Non Production'
+    azureSubscription: 'azabdp-sc-main-001'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az group create --location westeurope --name sherlock004 --tags Region=EUN Environment=Dev CostCenter=TBD CostResponsible=TBD Country=TBD'
+    inlineScript: 'az group create --location westeurope --name azdbdpeuw-rg-sherlock006--tags Region=EUW Environment=Dev CostCenter=TBD CostResponsible=TBD Country=TBD'
