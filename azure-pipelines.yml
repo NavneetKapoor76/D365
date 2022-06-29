@@ -18,4 +18,4 @@ steps:
     azureSubscription: 'Azure Service connection - Non Production'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az group create --location westeurope --name aztbdpeun-rg-sherlock003 --tags Region=EUN Environment=Dev CostCenter=TBD CostResponsible=TBD Country=TBD'
+    inlineScript: 'az group create --location westeurope --name sherlock004 --tags Region=EUN Environment=Dev CostCenter=TBD CostResponsible=TBD Country=TBD'
