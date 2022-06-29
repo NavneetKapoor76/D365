@@ -1,6 +1,6 @@
 
 trigger:
-- none
+- NK4024-1
 pool:
   vmImage: 'windows-latest'
 steps:
