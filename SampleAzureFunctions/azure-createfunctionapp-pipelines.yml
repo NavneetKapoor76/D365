@@ -25,4 +25,4 @@ steps:
     azureSubscription: 'azabdp-sc-main-001'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az functionapp create --consumption-plan-location westeurope --name azdbdpeuw-func-sherlock-006 --storage-account azdbdpeuwstsherlock006 --resource-group azdbdpeuw-rg-sherlock006 --authlevel "anonymous" --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
+    inlineScript: 'az functionapp create --consumption-plan-location westeurope --name azdbdpeuw-func-sherlock-006 --storage-account azdbdpeuwstsherlock006 --resource-group azdbdpeuw-rg-sherlock006 --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
