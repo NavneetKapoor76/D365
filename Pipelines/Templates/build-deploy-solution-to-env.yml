@@ -20,6 +20,7 @@ stages:
   condition: eq(${{parameters.alignDev}}, true)
   jobs:
   - job: preBuild
+    timeoutInMinutes: 0
     pool: 
       vmImage: 'windows-latest'
     steps:
@@ -37,6 +38,7 @@ stages:
   condition: in(dependencies.preBuild.result, 'Succeeded', 'SucceededWithIssues', 'Skipped')
   jobs:
   - job: build
+    timeoutInMinutes: 0
     pool: 
       vmImage: 'windows-latest'
     steps:
@@ -51,6 +53,7 @@ stages:
   condition: and(in(dependencies.build.result, 'Succeeded', 'SucceededWithIssues'), eq(${{parameters.alignDev}}, true))
   jobs:
   - job: deploy
+    timeoutInMinutes: 0
     pool: 
       vmImage: 'windows-latest'
     steps:
@@ -65,6 +68,7 @@ stages:
   condition: in(dependencies.build.result, 'Succeeded', 'SucceededWithIssues')
   jobs:
   - job: deploy
+    timeoutInMinutes: 0
     pool: 
       vmImage: 'windows-latest'
     steps:
