@@ -117,6 +117,18 @@ steps:
     AsyncOperation: true
   condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
 
+# Restore PowerShell Module dependencies if available in cache
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops
+- task: Cache@2
+  displayName: Cache Powershell Modules
+  inputs:
+    key:  restoremodules | "$(powerPlatformToolsSubPath)" | $(Build.SourcesDirectory)/Pipelines/Templates/install-powershell-modules.yml
+    path: $(powerPlatformToolsPath)
+    cacheHitVar: powerPlatformToolsPath_IsCached
+
+- ${{ if ne(variables.powerPlatformToolsPath_IsCached, 'true') }}:
+  - template: install-powershell-modules.yml
+
 - ${{ if or(eq(parameters.importCommonData, true), eq(parameters.importEnvSpecificData, true)) }}:
   - powershell: |
       $path = "$(Build.SourcesDirectory)\Configuration\_common\Data"
