@@ -117,6 +117,9 @@ steps:
     AsyncOperation: true
   condition: and(succeeded(), ne('${{parameters.importUnmanaged}}', 'true'))
 
+# Set pipeline vars for tools paths.
+- template: set-tools-paths.yml
+
 # Restore PowerShell Module dependencies if available in cache
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching?view=azure-devops
 - task: Cache@2
