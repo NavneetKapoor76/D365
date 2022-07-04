@@ -19,10 +19,16 @@ steps:
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: 'az storage account create --name azdbdpeuwstsherlock006 --resource-group azdbdpeuw-rg-sherlock006 --location westeurope --sku Standard_RAGRS --kind StorageV2 --public-network-access Disabled --allow-blob-public-access false --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'azabdp-sc-main-001'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az appservice plan create --name azdbdpeuw-plan-sherlock-006 --resource-group azdbdpeuw-rg-sherlock006 --location westeurope --sku P1V3 --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
 
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'azabdp-sc-main-001'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az functionapp create --consumption-plan-location westeurope --name azdbdpeuw-func-sherlock-006 --storage-account azdbdpeuwstsherlock006 --resource-group azdbdpeuw-rg-sherlock006 --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
+    inlineScript: 'az functionapp create -p azdbdpeuw-plan-sherlock-006 --name azdbdpeuw-func-sherlock-006 --storage-account azdbdpeuwstsherlock006 --resource-group azdbdpeuw-rg-sherlock006 --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
