@@ -10,6 +10,7 @@ pool:
   vmImage: windows-latest
 
 steps:
+- checkout: none
 - script: 'echo "BuildId = $(Build.BuildId)"' 
   displayName: Create Storage Account
 - task: AzureCLI@2
