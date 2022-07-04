@@ -15,7 +15,7 @@ steps:
     azureSubscription: 'azabdp-sc-main-001'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az storage account create --name azdbdpeuwstsherlock006 --resource-group azdbdpeuw-rg-sherlock006 --location westeurope --sku Standard_RAGRS --kind StorageV2 --public-network-access Disabled --allow-blob-public-access false --enable-hierarchical-namespace true --allow-cross-tenant-replication false --min-tls-version TLS1_2 --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
+    inlineScript: 'az storage account create --name azdbdpeuwstsherlock006 --resource-group azdbdpeuw-rg-sherlock006 --location westeurope --sku Standard_LRS --kind StorageV2 --public-network-access Disabled --allow-blob-public-access false --enable-hierarchical-namespace true --allow-cross-tenant-replication false --min-tls-version TLS1_2 --tags Region=EUW Environment=DEV CostCenter=TBD CostResponsible=TBD Country=TBD'
 - script: 'echo "BuildId = $(Build.BuildId)"' 
   displayName: Create Service Plan
 - task: AzureCLI@2
